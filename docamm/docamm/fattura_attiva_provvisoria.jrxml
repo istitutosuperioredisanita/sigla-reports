@@ -165,7 +165,6 @@ order by progressivo_riga]]>
 	<field name="DT_RICEZIONE_SDI" class="java.sql.Timestamp"/>
 	<field name="FL_ORDINE_ELETTRONICO" class="java.lang.String"/>
 	<field name="DT_ORDINE" class="java.sql.Timestamp"/>
-	<field name="ID_PENDENZA_PAGOPA" class="java.math.BigDecimal"/>
 	<field name="PROGRESSIVO_RIGA" class="java.math.BigDecimal"/>
 	<field name="CD_TARIFFARIO" class="java.lang.String"/>
 	<field name="DS_RIGA_FATTURA" class="java.lang.String"/>
