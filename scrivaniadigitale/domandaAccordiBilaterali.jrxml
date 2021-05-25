@@ -496,7 +496,7 @@
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="0" y="6" width="556" height="17" uuid="291517b7-fc21-45ce-8e67-b01b6093e828"/>
 				<textElement textAlignment="Left" verticalAlignment="Justified" markup="styled">
-					<font fontName="SansSerif" size="11" isBold="false" isItalic="false"/>
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA["<style isBold=\"true\" isUnderline=\"true\">Proposta di Ricerca :</style>"]]></textFieldExpression>
@@ -504,7 +504,7 @@
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="0" y="27" width="556" height="17" uuid="c285b73c-30a0-4318-9d6f-a6e423585258"/>
 				<textElement textAlignment="Left" verticalAlignment="Justified" markup="html">
-					<font fontName="SansSerif" size="11" isBold="false" isItalic="false"/>
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propostaDiRicerca} +"\r\n"]]></textFieldExpression>
@@ -515,7 +515,7 @@
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="0" y="7" width="556" height="17" uuid="95417880-5ad8-4a59-ac7e-ddafff7aff12"/>
 				<textElement textAlignment="Left" verticalAlignment="Justified" markup="styled">
-					<font fontName="SansSerif" size="11" isBold="false" isItalic="false"/>
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA["<style isBold=\"true\" isUnderline=\"true\">Obiettivi :</style> \r\n "+ $F{obiettivi} +"\r\n"]]></textFieldExpression>
@@ -526,7 +526,7 @@
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="0" y="7" width="556" height="17" uuid="793a2d50-7d78-4253-b286-9c299dfe44fb"/>
 				<textElement textAlignment="Left" verticalAlignment="Justified" markup="styled">
-					<font fontName="SansSerif" size="11" isBold="false" isItalic="false"/>
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA["<style isBold=\"true\" isUnderline=\"true\">Piano di Lavoro Primo Anno :</style> \r\n"+ $F{pianoDiLavoroPrimoAnno} +"\r\n"]]></textFieldExpression>
@@ -537,7 +537,7 @@
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="0" y="7" width="556" height="17" uuid="7675df53-8a74-4b6e-8fac-3428dc3502d8"/>
 				<textElement textAlignment="Left" verticalAlignment="Justified" markup="styled">
-					<font fontName="SansSerif" size="11" isBold="false" isItalic="false"/>
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA["<style isBold=\"true\" isUnderline=\"true\">Piano di Lavoro Secondo Anno :</style> \r\n"+ $F{pianoDiLavoroSecondoAnno} +"\r\n"]]></textFieldExpression>
@@ -548,7 +548,7 @@
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="0" y="7" width="556" height="17" uuid="da07140c-21bd-43d8-945a-ac7f569dab75"/>
 				<textElement textAlignment="Left" verticalAlignment="Justified" markup="styled">
-					<font fontName="SansSerif" size="11" isBold="false" isItalic="false"/>
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA["<style isBold=\"true\" isUnderline=\"true\">Piano di Lavoro Terzo Anno :</style> \r\n"+ $F{pianoDiLavoroTerzoAnno} +"\r\n"]]></textFieldExpression>
