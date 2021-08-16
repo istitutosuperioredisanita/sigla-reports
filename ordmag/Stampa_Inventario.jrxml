@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TestInventario" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0350832c-5005-4d3f-aa55-d9df7a8e928f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JsonTestInventario"/>
+	<queryString language="json">
+		<![CDATA[]]>
+	</queryString>
+	<field name="cd_magazzino" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="cd_magazzino"/>
+		<fieldDescription><![CDATA[cd_magazzino]]></fieldDescription>
+	</field>
+	<field name="cod_articolo" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="cod_articolo"/>
+		<fieldDescription><![CDATA[cod_articolo]]></fieldDescription>
+	</field>
+	<field name="giacenza" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="giacenza"/>
+		<fieldDescription><![CDATA[giacenza]]></fieldDescription>
+	</field>
+	<field name="annoLotto" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="annoLotto"/>
+		<fieldDescription><![CDATA[annoLotto]]></fieldDescription>
+	</field>
+	<field name="tipoLotto" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="tipoLotto"/>
+		<fieldDescription><![CDATA[tipoLotto]]></fieldDescription>
+	</field>
+	<field name="numeroLotto" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="numeroLotto"/>
+		<fieldDescription><![CDATA[numeroLotto]]></fieldDescription>
+	</field>
+	<field name="categoriaGruppo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="categoriaGruppo"/>
+		<fieldDescription><![CDATA[categoriaGruppo]]></fieldDescription>
+	</field>
+	<field name="descArticolo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="descArticolo"/>
+		<fieldDescription><![CDATA[descArticolo]]></fieldDescription>
+	</field>
+	<field name="um" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="um"/>
+		<fieldDescription><![CDATA[um]]></fieldDescription>
+	</field>
+	<field name="descCatGrp" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="descCatGrp"/>
+		<fieldDescription><![CDATA[descCatGrp]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="61" y="0" width="100" height="30" uuid="98720aac-4ccc-45b3-829c-e6d6c38ff5b9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7707e082-08df-4748-8f9d-28770a4bcaad"/>
+				</reportElement>
+				<text><![CDATA[cd_magazzino]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="0" width="100" height="30" uuid="4e8631a8-853d-4f96-b412-7d870313ba0a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2ffef26-fc4a-4dbb-b7a4-b6385bb765c1"/>
+				</reportElement>
+				<text><![CDATA[cod_articolo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="61" y="46" width="100" height="30" uuid="565e7027-6071-4769-b406-edcdad42b2a3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7707e082-08df-4748-8f9d-28770a4bcaad"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cd_magazzino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="40" width="100" height="30" uuid="6e0e8c8c-ea8e-432f-95b9-74e8def7c8de">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2ffef26-fc4a-4dbb-b7a4-b6385bb765c1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cod_articolo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
