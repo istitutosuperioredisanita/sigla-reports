@@ -97,7 +97,7 @@
 				<textFieldExpression><![CDATA[$F{cod_articolo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="40" width="100" height="30" uuid="9e8f9548-96a2-480f-811b-17156ca39838">
+				<reportElement x="310" y="40" width="100" height="30" uuid="9e8f9548-96a2-480f-811b-17156ca39838">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6aa3f73f-b967-4ff6-84b1-f79872d3e7c2"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{descArticolo}]]></textFieldExpression>
