@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TestInventario" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0350832c-5005-4d3f-aa55-d9df7a8e928f">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JsonTestInventario"/>
 	<queryString language="json">
@@ -68,6 +68,18 @@
 				</reportElement>
 				<text><![CDATA[cod_articolo]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="100" height="30" uuid="54437a67-6101-49e1-8816-6d92fff44c59">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2ffef26-fc4a-4dbb-b7a4-b6385bb765c1"/>
+				</reportElement>
+				<text><![CDATA[desc articolo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="389" y="0" width="100" height="30" uuid="fc44c4f9-33bf-4ff5-87e1-597dc6cc1412">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6aa3f73f-b967-4ff6-84b1-f79872d3e7c2"/>
+				</reportElement>
+				<text><![CDATA[descArticolo]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
@@ -83,6 +95,12 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2ffef26-fc4a-4dbb-b7a4-b6385bb765c1"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{cod_articolo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="40" width="100" height="30" uuid="9e8f9548-96a2-480f-811b-17156ca39838">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6aa3f73f-b967-4ff6-84b1-f79872d3e7c2"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{descArticolo}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
