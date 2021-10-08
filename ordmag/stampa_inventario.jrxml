@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TestInventario" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0350832c-5005-4d3f-aa55-d9df7a8e928f">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JsonTestInventario"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterStampeInv"/>
 	<queryString language="json">
 		<![CDATA[]]>
 	</queryString>
@@ -29,7 +29,7 @@
 		<property name="net.sf.jasperreports.json.field.expression" value="numeroLotto"/>
 		<fieldDescription><![CDATA[numeroLotto]]></fieldDescription>
 	</field>
-	<field name="categoriaGruppo" class="java.lang.String">
+	<field name="categoriaGruppo" class="java.math.BigDecimal">
 		<property name="net.sf.jasperreports.json.field.expression" value="categoriaGruppo"/>
 		<fieldDescription><![CDATA[categoriaGruppo]]></fieldDescription>
 	</field>
@@ -45,6 +45,52 @@
 		<property name="net.sf.jasperreports.json.field.expression" value="descCatGrp"/>
 		<fieldDescription><![CDATA[descCatGrp]]></fieldDescription>
 	</field>
+	<field name="importoUnitario" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="importoUnitario"/>
+		<fieldDescription><![CDATA[importoUnitario]]></fieldDescription>
+	</field>
+	<field name="cdCds" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="cdCds"/>
+		<fieldDescription><![CDATA[cdCds]]></fieldDescription>
+	</field>
+	<variable name="giacenza1" class="java.lang.Integer" resetType="Group" resetGroup="Gruppo1" calculation="Sum">
+		<variableExpression><![CDATA[$F{giacenza}]]></variableExpression>
+	</variable>
+	<variable name="giacenza2" class="java.lang.Integer" resetType="Group" resetGroup="Gruppo1" calculation="Sum">
+		<variableExpression><![CDATA[$F{giacenza}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="Gruppo1">
+		<groupExpression><![CDATA[$F{cod_articolo}]]></groupExpression>
+		<groupHeader>
+			<band height="73">
+				<textField>
+					<reportElement x="70" y="18" width="100" height="30" uuid="124ae44f-e214-4495-a8e6-579360c14527"/>
+					<textFieldExpression><![CDATA[$F{cod_articolo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="170" y="20" width="100" height="30" uuid="1d611aa1-17c0-4728-aff0-e6f417a6fb51"/>
+					<textFieldExpression><![CDATA[$F{descArticolo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="16" width="50" height="21" uuid="22a67e2a-cc89-4e55-a61f-aa4836657a4f"/>
+					<text><![CDATA[GRUPPO]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="320" y="16" width="100" height="30" uuid="c6210132-4550-4e7c-aea9-108bcd17c42a"/>
+					<textFieldExpression><![CDATA[$V{giacenza2}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="57">
+				<textField>
+					<reportElement x="340" y="13" width="100" height="30" uuid="bdebf8fa-cd21-4bf0-b77a-8c47504b40e4"/>
+					<textFieldExpression><![CDATA[$V{giacenza1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -55,54 +101,10 @@
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
-			<staticText>
-				<reportElement x="61" y="0" width="100" height="30" uuid="98720aac-4ccc-45b3-829c-e6d6c38ff5b9">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7707e082-08df-4748-8f9d-28770a4bcaad"/>
-				</reportElement>
-				<text><![CDATA[cd_magazzino]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="245" y="0" width="100" height="30" uuid="4e8631a8-853d-4f96-b412-7d870313ba0a">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2ffef26-fc4a-4dbb-b7a4-b6385bb765c1"/>
-				</reportElement>
-				<text><![CDATA[cod_articolo]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="380" y="0" width="100" height="30" uuid="54437a67-6101-49e1-8816-6d92fff44c59">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2ffef26-fc4a-4dbb-b7a4-b6385bb765c1"/>
-				</reportElement>
-				<text><![CDATA[desc articolo]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="389" y="0" width="100" height="30" uuid="fc44c4f9-33bf-4ff5-87e1-597dc6cc1412">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6aa3f73f-b967-4ff6-84b1-f79872d3e7c2"/>
-				</reportElement>
-				<text><![CDATA[descArticolo]]></text>
-			</staticText>
-		</band>
+		<band height="61" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
-			<textField>
-				<reportElement x="61" y="46" width="100" height="30" uuid="565e7027-6071-4769-b406-edcdad42b2a3">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7707e082-08df-4748-8f9d-28770a4bcaad"/>
-				</reportElement>
-				<textFieldExpression><![CDATA[$F{cd_magazzino}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="190" y="40" width="100" height="30" uuid="6e0e8c8c-ea8e-432f-95b9-74e8def7c8de">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2ffef26-fc4a-4dbb-b7a4-b6385bb765c1"/>
-				</reportElement>
-				<textFieldExpression><![CDATA[$F{cod_articolo}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="310" y="40" width="100" height="30" uuid="9e8f9548-96a2-480f-811b-17156ca39838">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6aa3f73f-b967-4ff6-84b1-f79872d3e7c2"/>
-				</reportElement>
-				<textFieldExpression><![CDATA[$F{descArticolo}]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="86" splitType="Stretch"/>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>
