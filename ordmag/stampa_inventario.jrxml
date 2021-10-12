@@ -6,7 +6,7 @@
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="553"/>
 	<parameter name="flRaggCatGruppo" class="java.lang.Boolean"/>
 	<parameter name="flDettaglioArticolo" class="java.lang.Boolean"/>
-	<parameter name="dataInventario" class="java.lang.String"/>
+	<parameter name="dataInventario" class="java.util.Date"/>
 	<queryString language="json">
 		<![CDATA[]]>
 	</queryString>
@@ -354,7 +354,7 @@
 				<textElement>
 					<font size="18" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Inventario al : "]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Inventario al : "+$P{dataInventario}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="360" y="0" width="190" height="30" uuid="6dd16e8d-5934-49c7-9118-7f3f0f672df1"/>
