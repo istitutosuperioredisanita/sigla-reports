@@ -354,7 +354,7 @@
 				<textElement>
 					<font size="18" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Inventario al : "+$P{dataInventario}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Inventario al : "+new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{dataInventario})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="360" y="0" width="190" height="30" uuid="6dd16e8d-5934-49c7-9118-7f3f0f672df1"/>
