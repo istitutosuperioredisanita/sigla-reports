@@ -113,11 +113,68 @@
 					<text><![CDATA[Magazzino]]></text>
 				</staticText>
 			</band>
+			<band height="44">
+				<printWhenExpression><![CDATA[$P{flDettaglioArticolo}&&!$P{flRaggCatGruppo}]]></printWhenExpression>
+				<staticText>
+					<reportElement x="50" y="3" width="300" height="31" uuid="9207691d-16f3-409b-a1fe-d8888ea0e22a">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+					</reportElement>
+					<box padding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+					<text><![CDATA[Descrizione]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="3" width="50" height="31" uuid="70d4f6f1-c174-404c-9a72-53051ae72f07">
+						<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+					</reportElement>
+					<box padding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+					<text><![CDATA[Articolo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="350" y="3" width="70" height="31" uuid="2d3b814e-0fce-49dc-9425-143631cc4ac3">
+						<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+					</reportElement>
+					<box padding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+					<text><![CDATA[Giacenza]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="420" y="3" width="130" height="31" uuid="5ac49f15-e074-49d1-901e-158c38749e82">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+					</reportElement>
+					<box padding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+					<text><![CDATA[Costo effettivo]]></text>
+				</staticText>
+			</band>
 		</groupHeader>
 		<groupFooter>
 			<band height="53">
 				<staticText>
-					<reportElement x="0" y="0" width="468" height="30" uuid="46ec6cdc-7911-48ca-a70f-cbe0aef4c5fc"/>
+					<reportElement x="0" y="8" width="420" height="30" uuid="46ec6cdc-7911-48ca-a70f-cbe0aef4c5fc"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -128,7 +185,15 @@
 					<text><![CDATA[Totale Generale]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="468" y="0" width="85" height="30" uuid="8edc031b-6941-485f-b80a-10ce2668a5fc"/>
+					<reportElement x="420" y="8" width="125" height="30" uuid="8edc031b-6941-485f-b80a-10ce2668a5fc">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement textAlignment="Right"/>
 					<textFieldExpression><![CDATA[$V{Importo Magazzino}]]></textFieldExpression>
 				</textField>
@@ -144,9 +209,11 @@
 		</groupHeader>
 		<groupFooter>
 			<band height="50">
-				<printWhenExpression><![CDATA[($P{flRaggCatGruppo}||$P{flDettaglioArticolo})]]></printWhenExpression>
+				<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
 				<textField>
-					<reportElement x="468" y="0" width="85" height="30" uuid="60939382-e2cc-4f43-a3e9-b3b67509f85e"/>
+					<reportElement x="420" y="8" width="125" height="30" uuid="60939382-e2cc-4f43-a3e9-b3b67509f85e">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -157,7 +224,7 @@
 					<textFieldExpression><![CDATA[$V{ImpRagCategoria}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="0" y="0" width="468" height="30" uuid="4260e95f-c2b7-4767-9df4-fd3a25e826a2"/>
+					<reportElement x="0" y="8" width="420" height="30" uuid="4260e95f-c2b7-4767-9df4-fd3a25e826a2"/>
 					<textElement textAlignment="Right"/>
 					<textFieldExpression><![CDATA["Totale Categoria "+$F{cod_categoria}+"  "]]></textFieldExpression>
 				</textField>
@@ -167,97 +234,75 @@
 	<group name="Gruppo">
 		<groupExpression><![CDATA[$F{cod_gruppo}]]></groupExpression>
 		<groupHeader>
-			<band height="35">
+			<band height="34">
 				<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
 				<textField>
-					<reportElement x="239" y="0" width="311" height="30" uuid="fcfdcaaf-5fbb-48d1-9470-d489f1268ed0"/>
+					<reportElement x="239" y="2" width="311" height="30" uuid="fcfdcaaf-5fbb-48d1-9470-d489f1268ed0">
+						<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
+					</reportElement>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
+					<textElement textAlignment="Justified">
+						<font size="14"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{descCatGrp}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="192" y="0" width="47" height="30" uuid="a2a7638b-a119-4807-a8e3-9ac061b92f60"/>
+					<reportElement x="192" y="2" width="47" height="30" uuid="a2a7638b-a119-4807-a8e3-9ac061b92f60">
+						<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
+					</reportElement>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
+					<textElement textAlignment="Justified">
+						<font size="14"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{cod_gruppo}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="130" y="0" width="62" height="30" uuid="7a56b01b-3b3c-4f87-94a2-6387189d5bd2"/>
+					<reportElement x="130" y="2" width="62" height="30" uuid="7a56b01b-3b3c-4f87-94a2-6387189d5bd2">
+						<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
+					</reportElement>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
+					<textElement textAlignment="Justified">
+						<font size="14"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{cod_categoria}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="0" y="0" width="130" height="30" uuid="ab90775f-325c-44d7-9583-05363d17b91a"/>
+					<reportElement x="0" y="2" width="130" height="30" uuid="ab90775f-325c-44d7-9583-05363d17b91a">
+						<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
+					</reportElement>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement>
+					<textElement textAlignment="Justified">
 						<font size="14" isBold="true" isItalic="true"/>
 					</textElement>
 					<text><![CDATA[Categoria/Gruppo]]></text>
 				</staticText>
 			</band>
-		</groupHeader>
-		<groupFooter>
-			<band height="61">
-				<printWhenExpression><![CDATA[($P{flRaggCatGruppo}||$P{flDettaglioArticolo})]]></printWhenExpression>
-				<textField>
-					<reportElement x="468" y="16" width="85" height="30" uuid="01d469b6-25b2-47f9-b41a-9b8b0393ba50"/>
-					<box>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[$V{ImpRaggrCatGruppo}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="0" y="16" width="468" height="30" uuid="4b974bc8-17d5-4af3-af01-9375c782660f"/>
-					<box>
-						<bottomPen lineWidth="1.0"/>
-					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA["Totale Gruppo "+$F{cod_gruppo}+"  "]]></textFieldExpression>
-				</textField>
-			</band>
-		</groupFooter>
-	</group>
-	<group name="Articolo">
-		<groupExpression><![CDATA[$F{cod_articolo}]]></groupExpression>
-		<groupHeader>
-			<band height="31">
-				<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+			<band height="44">
+				<printWhenExpression><![CDATA[$P{flRaggCatGruppo}&&$P{flDettaglioArticolo}]]></printWhenExpression>
 				<staticText>
-					<reportElement x="0" y="0" width="50" height="30" uuid="b3707e5f-efd2-4a09-b280-b01c5329d75a"/>
-					<box padding="5">
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
-					<text><![CDATA[Articolo]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="50" y="0" width="300" height="30" uuid="a391da00-e589-456c-aabe-0e001e690a7c">
+					<reportElement x="50" y="10" width="300" height="31" uuid="ed0f83f3-42f2-40d4-9a8c-17f7c97422a2">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<printWhenExpression><![CDATA[$P{flDettaglioArticolo}&&$P{flRaggCatGruppo}]]></printWhenExpression>
 					</reportElement>
 					<box padding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -269,7 +314,22 @@
 					<text><![CDATA[Descrizione]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="350" y="0" width="70" height="30" uuid="b1039884-1f2e-4d93-b430-c49f651d5526"/>
+					<reportElement x="0" y="10" width="50" height="31" uuid="56dd6262-a540-4456-9c7b-ea5637fa7368">
+						<printWhenExpression><![CDATA[$P{flDettaglioArticolo}&&$P{flRaggCatGruppo}]]></printWhenExpression>
+					</reportElement>
+					<box padding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+					<text><![CDATA[Articolo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="350" y="10" width="70" height="31" uuid="207ce110-51dc-4283-89d2-cb33fa4483f4">
+						<printWhenExpression><![CDATA[$P{flDettaglioArticolo}&&$P{flRaggCatGruppo}]]></printWhenExpression>
+					</reportElement>
 					<box padding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -280,8 +340,9 @@
 					<text><![CDATA[Giacenza]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="420" y="0" width="130" height="30" uuid="2eff40fb-7fce-45cc-8a8e-45f5aa0a6620">
+					<reportElement x="420" y="10" width="130" height="31" uuid="9be64e9c-ee49-478e-9e85-aeb1e21be804">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<printWhenExpression><![CDATA[$P{flDettaglioArticolo}&&$P{flRaggCatGruppo}]]></printWhenExpression>
 					</reportElement>
 					<box padding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -295,50 +356,90 @@
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="60">
+			<band height="52">
+				<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
+				<textField>
+					<reportElement x="420" y="20" width="125" height="30" uuid="01d469b6-25b2-47f9-b41a-9b8b0393ba50">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{ImpRaggrCatGruppo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="20" width="420" height="30" uuid="4b974bc8-17d5-4af3-af01-9375c782660f"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA["Totale Gruppo "+$F{cod_gruppo}+"  "]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Articolo">
+		<groupExpression><![CDATA[$F{cod_articolo}]]></groupExpression>
+		<groupHeader>
+			<band height="3">
+				<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="28">
 				<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
 				<textField>
-					<reportElement x="0" y="0" width="50" height="30" uuid="42c4c497-f748-41b6-9625-6e998a41e151"/>
+					<reportElement x="0" y="0" width="50" height="28" uuid="42c4c497-f748-41b6-9625-6e998a41e151"/>
 					<box padding="5">
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$F{cod_articolo}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="50" y="0" width="300" height="30" uuid="b0de2e57-0ec3-4bc0-af0d-372da2733e5d"/>
+					<reportElement x="50" y="0" width="300" height="28" uuid="b0de2e57-0ec3-4bc0-af0d-372da2733e5d"/>
 					<box padding="5">
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$F{descArticolo}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="350" y="0" width="70" height="30" uuid="b97b5b70-a098-41e2-98bb-0d4e4f1ce83a"/>
+					<reportElement x="350" y="0" width="70" height="28" uuid="b97b5b70-a098-41e2-98bb-0d4e4f1ce83a"/>
 					<box padding="5">
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$V{giacenzaTotArt}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="420" y="0" width="130" height="30" uuid="a74616af-083b-40a0-befa-c22d55055759"/>
+					<reportElement x="420" y="0" width="130" height="28" uuid="a74616af-083b-40a0-befa-c22d55055759"/>
 					<box padding="5">
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$V{ImpRaggArticolo}]]></textFieldExpression>
 				</textField>
 			</band>
