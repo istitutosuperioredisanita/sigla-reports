@@ -427,7 +427,7 @@ Istituto Superiore Sanita`]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA[$P{descMagazzino}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$P{descMagazzino}.equals("*")?"":$P{descMagazzino}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<staticText>
