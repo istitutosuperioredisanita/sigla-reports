@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StampaInventario" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11c15183-8e09-4419-b27d-a899adb1799d">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StampaConsumi" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11c15183-8e09-4419-b27d-a899adb1799d">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConsumiDataAdapter.xml"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="390"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="596"/>
@@ -564,18 +564,239 @@ Istituto Superiore Sanita`]]></text>
 		</band>
 	</pageFooter>
 	<noData>
-		<band height="86">
+		<band height="350">
 			<staticText>
-				<reportElement x="360" y="0" width="190" height="30" uuid="644e76a7-8cc2-4f03-8562-2a5521d06341"/>
-				<textElement>
-					<font size="14"/>
-				</textElement>
-				<text><![CDATA[Istituto Superiore Sanita`]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="180" y="40" width="218" height="30" uuid="19b4422e-f150-4939-8a7e-5ff5174044fb"/>
+				<reportElement x="180" y="320" width="218" height="30" uuid="19b4422e-f150-4939-8a7e-5ff5174044fb"/>
 				<text><![CDATA[Nessun dato da stampare]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="0" y="280" width="480" height="30" uuid="957706ef-1838-451f-a605-4a8a408f6d6b"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stampa prelievi per Unità Organizzativa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="280" width="76" height="30" uuid="65815d5f-e35b-4607-84c6-1d43030140a9"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+				<text><![CDATA[I.S.S.
+Istituto Superiore Sanita`]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="5" width="556" height="30" uuid="e3771361-f11f-4bc3-b58e-8ead22f4d458"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valori Selezionati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="35" width="556" height="30" uuid="436a351a-0c3b-4b75-b4e4-ef880f8d51f1"/>
+				<box topPadding="5"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[PRELIEVI PER UO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="65" width="100" height="19" uuid="847271e8-bfa6-466b-bbe7-3dbece8ecc3f"/>
+				<box leftPadding="2"/>
+				<text><![CDATA[Valuta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="65" width="456" height="19" uuid="258639e0-9817-4a4e-920f-9f8467893354"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[EUR-EURO]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="94" width="556" height="20" uuid="247d2a3b-f3ad-4d7a-8682-b75fc02e78d0">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="ElementGroupHeight" x="0" y="0" width="100" height="20" uuid="1210f14e-ee8c-47c4-b456-f2affa9e34f9"/>
+					<box leftPadding="2"/>
+					<text><![CDATA[Dalla UO]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="ElementGroupHeight" x="100" y="0" width="180" height="20" uuid="c05c70c9-2fae-40cd-829b-bb1e27cdee66"/>
+					<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textFieldExpression><![CDATA[$P{descDaUnitaOper}.equals("*")?"":$P{descDaUnitaOper}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="280" y="0" width="100" height="20" uuid="5e344144-73cb-4690-8940-244300bda4a1"/>
+					<box leftPadding="5"/>
+					<text><![CDATA[Dalla UO]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement x="380" y="0" width="176" height="20" uuid="8f5e6c95-7606-482a-bcf9-be18ab8bf260"/>
+					<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textFieldExpression><![CDATA[$P{descAUnitaOper}.equals("*")?"":$P{descAUnitaOper}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="119" width="556" height="20" uuid="8301c18e-5d01-4470-beec-c7e9d8d1c3b7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="100" height="20" uuid="3149f0d1-91fd-4a66-978c-b78628f511c2">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2"/>
+					<text><![CDATA[Magazzino]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="100" y="0" width="456" height="20" uuid="69d60ce3-ee05-45ba-81f8-3e8cfc84d88c"/>
+					<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textFieldExpression><![CDATA[$P{descMagazzino}.equals("*")?"":$P{descMagazzino}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="147" width="100" height="20" uuid="156af12f-8832-4773-a2db-473362877f71">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="5" leftPadding="2"/>
+				<text><![CDATA[Data Competenza]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="100" y="147" width="456" height="20" uuid="c6baf15f-1555-4656-b090-45cd82196dd7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="5" leftPadding="5" rightPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{dataRiferimento})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="172" width="100" height="20" uuid="2369f687-c2a1-4bb2-9583-f058b94451ca">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="5" leftPadding="2"/>
+				<text><![CDATA[Da Data Movimento]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="100" y="172" width="180" height="20" uuid="c6513be0-6db1-4c7a-9f01-6e52ded0dac9"/>
+				<box topPadding="5" leftPadding="5" rightPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{daDataMovimento})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="280" y="172" width="100" height="20" uuid="d1cbc697-278d-44f2-b4cf-3d00d12db44c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="5"/>
+				<text><![CDATA[A Data Movimento]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="380" y="174" width="176" height="18" uuid="8680fb3e-2d2d-463e-ba7c-c8cb31818eee"/>
+				<box topPadding="5" leftPadding="5" rightPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{aDataMovimento})]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="0" y="204" width="556" height="20" uuid="7c835517-ad26-4f93-ad54-60061ae2931e"/>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="100" height="20" uuid="abefb43b-45e1-4da2-9053-a86062577525"/>
+					<box leftPadding="2"/>
+					<text><![CDATA[Da Categoria/Gruppo]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="100" y="0" width="180" height="20" uuid="c53aa163-4503-475b-a477-a0e4ada54777"/>
+					<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textFieldExpression><![CDATA[$P{descCatGruppoDa}.equals("*")?"":$P{descCatGruppoDa}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="280" y="0" width="100" height="20" uuid="1a78309d-628e-4286-bbaf-34fe2d5ed02d"/>
+					<box leftPadding="5"/>
+					<text><![CDATA[A Categoria/Gruppo]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="380" y="0" width="176" height="20" uuid="85a995e5-d6b9-462b-b000-734b38be7d3d"/>
+					<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textFieldExpression><![CDATA[$P{descCatGruppoA}.equals("*")?"":$P{descCatGruppoA}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="234" width="556" height="30" uuid="cb8ee892-cc05-4b4a-85d1-a959a0b62575"/>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="100" height="30" uuid="4426a765-62ee-454e-8819-0d13aebc07e8"/>
+					<box leftPadding="2"/>
+					<text><![CDATA[Da Articolo]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="100" y="0" width="180" height="30" uuid="5d1cebed-ef2c-4e5e-96f8-d2057f4a8d22"/>
+					<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textFieldExpression><![CDATA[$P{descDaBene}.equals("*")?"":$P{descDaBene}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="280" y="0" width="100" height="30" uuid="23cb5f86-a1ec-4a5f-9920-f4b82e884ff8"/>
+					<box leftPadding="5"/>
+					<text><![CDATA[A Articolo]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="380" y="0" width="176" height="30" uuid="f52f2842-fdd4-4472-b8d8-de861081c3ac"/>
+					<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textFieldExpression><![CDATA[$P{descABene}.equals("*")?"":$P{descABene}]]></textFieldExpression>
+				</textField>
+			</frame>
 		</band>
 	</noData>
 </jasperReport>
