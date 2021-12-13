@@ -28,6 +28,7 @@
 	<parameter name="cd_bene_servizio_a" class="java.lang.String"/>
 	<parameter name="dt_bolla_sca_da" class="java.sql.Date"/>
 	<parameter name="dt_bolla_sca_a" class="java.sql.Date"/>
+	<parameter name="pg_bolla_sca" class="java.lang.Long"/>
 	<queryString>
 		<![CDATA[select b.cd_cds,b.cd_magazzino,
 b.esercizio,
