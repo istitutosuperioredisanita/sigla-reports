@@ -183,7 +183,7 @@ order by b.esercizio,b.cd_magazzino,b.cd_numeratore_mag,b.dt_bolla_sca,b.pg_boll
 					<text><![CDATA[ARTICOLO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-4" style="TNRG10" x="110" y="4" width="82" height="26" uuid="51acb115-cc9c-4d81-b856-28ac2e7e3c7b"/>
+					<reportElement key="staticText-4" style="TNRG10" x="110" y="1" width="82" height="26" uuid="51acb115-cc9c-4d81-b856-28ac2e7e3c7b"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -209,7 +209,7 @@ order by b.esercizio,b.cd_magazzino,b.cd_numeratore_mag,b.dt_bolla_sca,b.pg_boll
 					<text><![CDATA[U.M.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-4" style="TNRG10" x="330" y="0" width="90" height="26" uuid="015ea14b-2fe5-4384-95b4-4a8bd9f38ea7"/>
+					<reportElement key="staticText-4" style="TNRG10" x="330" y="1" width="90" height="26" uuid="015ea14b-2fe5-4384-95b4-4a8bd9f38ea7"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -221,25 +221,11 @@ order by b.esercizio,b.cd_magazzino,b.cd_numeratore_mag,b.dt_bolla_sca,b.pg_boll
 					</textElement>
 					<text><![CDATA[Q.TA' SCARICATA]]></text>
 				</staticText>
-				<staticText>
-					<reportElement key="staticText-4" style="TNRG10" x="433" y="1" width="67" height="26" uuid="3fe5c2e5-8f33-455f-a66e-cfa446fed478"/>
-					<box>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.0" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement verticalAlignment="Middle">
-						<font isBold="true"/>
-					</textElement>
-					<text><![CDATA[VALORE
-]]></text>
-				</staticText>
 				<line>
 					<reportElement x="0" y="29" width="802" height="1" uuid="2be8e675-d488-41cc-86f5-1f09ac898fd1"/>
 				</line>
 				<staticText>
-					<reportElement key="staticText-4" style="TNRG10" x="510" y="0" width="130" height="26" uuid="d4edc7bc-84c1-49b1-9816-d3dbb3b2f829"/>
+					<reportElement key="staticText-4" style="TNRG10" x="510" y="1" width="130" height="26" uuid="d4edc7bc-84c1-49b1-9816-d3dbb3b2f829"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -263,6 +249,19 @@ order by b.esercizio,b.cd_magazzino,b.cd_numeratore_mag,b.dt_bolla_sca,b.pg_boll
 						<font isBold="true"/>
 					</textElement>
 					<text><![CDATA[LOTTO FORNITORE/PRODUZ.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-4" style="TNRG10" x="433" y="1" width="67" height="26" uuid="7af106b1-9f6f-4700-ab26-bc44dddb951a"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[VALORE]]></text>
 				</staticText>
 			</band>
 		</groupHeader>
