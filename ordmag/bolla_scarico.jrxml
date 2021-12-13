@@ -16,7 +16,7 @@
 	<style name="TNRG8" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR9" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman"/>
 	<style name="TNRG9" fontName="Times New Roman" fontSize="9" isBold="true" pdfFontName="Times-Bold"/>
-	<parameter name="esercizio" class="java.lang.Integer"/>
+	<parameter name="esercizio" class="java.lang.Long"/>
 	<parameter name="pg_bolla_sca" class="java.lang.Long"/>
 	<parameter name="cd_cds" class="java.lang.String"/>
 	<parameter name="cd_numeratore_mag" class="java.lang.String"/>
