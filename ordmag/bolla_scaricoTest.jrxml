@@ -17,7 +17,6 @@
 	<style name="TNR9" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman"/>
 	<style name="TNRG9" fontName="Times New Roman" fontSize="9" isBold="true" pdfFontName="Times-Bold"/>
 	<parameter name="esercizio" class="java.lang.Integer"/>
-	<parameter name="pg_bolla_sca" class="java.lang.Long"/>
 	<parameter name="cd_cds" class="java.lang.String"/>
 	<parameter name="cd_numeratore_mag" class="java.lang.String"/>
 	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
@@ -27,8 +26,6 @@
 	<parameter name="cd_unita_operativa" class="java.lang.String"/>
 	<parameter name="cd_bene_servizio_da" class="java.lang.String"/>
 	<parameter name="cd_bene_servizio_a" class="java.lang.String"/>
-	<parameter name="pg_bolla_sca_da" class="java.lang.Long"/>
-	<parameter name="pg_bolla_sca_a" class="java.lang.Long"/>
 	<parameter name="dt_bolla_sca_da" class="java.sql.Date"/>
 	<parameter name="dt_bolla_sca_a" class="java.sql.Date"/>
 	<queryString>
@@ -69,11 +66,6 @@ where ( $P{esercizio} is null or b.esercizio=$P{esercizio})
 and  ( $P{cd_cds} is null or b.cd_cds=$P{cd_cds} )
 and ( $P{cd_magazzino} is null or b.cd_magazzino=$P{cd_magazzino} )
 and ( $P{cd_numeratore_mag} is null or b.cd_numeratore_mag=$P{cd_numeratore_mag} )
-and (  $P{pg_bolla_sca}  is null or b.pg_bolla_sca=$P{pg_bolla_sca}  )
-and (  $P{pg_bolla_sca_da}  is null or b.pg_bolla_sca>=$P{pg_bolla_sca_da}  )
-and (  $P{pg_bolla_sca_a}  is null or b.pg_bolla_sca<=$P{pg_bolla_sca_a}  )
-and (  $P{dt_bolla_sca_da}  is null or b.dt_bolla_sca>=$P{dt_bolla_sca_da}  )
-and (  $P{dt_bolla_sca_a}  is null or b.dt_bolla_sca<=$P{dt_bolla_sca_a}  )
 order by b.esercizio,b.cd_magazzino,b.cd_numeratore_mag,b.dt_bolla_sca,b.pg_bolla_sca]]>
 	</queryString>
 	<field name="CD_CDS" class="java.lang.String">
