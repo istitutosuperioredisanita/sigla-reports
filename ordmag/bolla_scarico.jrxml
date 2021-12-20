@@ -74,6 +74,8 @@ and (  $P{pg_bolla_sca_da}  is null or b.pg_bolla_sca>=$P{pg_bolla_sca_da}  )
 and (  $P{pg_bolla_sca_a}  is null or b.pg_bolla_sca<=$P{pg_bolla_sca_a}  )
 and (  $P{dt_bolla_sca_da}  is null or b.dt_bolla_sca>=$P{dt_bolla_sca_da}  )
 and (  $P{dt_bolla_sca_a}  is null or b.dt_bolla_sca<=$P{dt_bolla_sca_a}  )
+and (  $P{cd_bene_servizio_da}  is null or b.dt_bolla_sca>=$P{cd_bene_servizio_da}  )
+and (  $P{cd_bene_servizio_a}  is null or b.dt_bolla_sca<=$P{cd_bene_servizio_a}  )
 order by b.esercizio,b.cd_magazzino,b.cd_numeratore_mag,b.dt_bolla_sca,b.pg_bolla_sca]]>
 	</queryString>
 	<field name="CD_CDS" class="java.lang.String">
