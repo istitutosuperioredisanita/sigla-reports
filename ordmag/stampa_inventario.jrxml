@@ -423,15 +423,8 @@
 				</textElement>
 				<textFieldExpression><![CDATA["Inventario al : "+new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{dataInventario})]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="360" y="30" width="190" height="30" uuid="635855f4-83f8-4924-b735-39eed76a924b"/>
-				<textElement>
-					<font size="14"/>
-				</textElement>
-				<text><![CDATA[Istituto Superiore Sanita`]]></text>
-			</staticText>
 			<image onErrorType="Blank">
-				<reportElement x="0" y="0" width="330" height="40" uuid="050e130b-48dd-4845-9597-a21471a2795e"/>
+				<reportElement x="0" y="0" width="340" height="50" uuid="050e130b-48dd-4845-9597-a21471a2795e"/>
 				<imageExpression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
 			</image>
 		</band>
