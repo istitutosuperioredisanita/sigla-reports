@@ -131,11 +131,11 @@ Istituto Superiore Sanita`]]></text>
 						<textElement verticalAlignment="Top"/>
 						<text><![CDATA[Unità Organizzativa]]></text>
 					</staticText>
-					<textField evaluationTime="Group" evaluationGroup="GruppoUO">
+					<textField textAdjust="StretchHeight" evaluationTime="Group" evaluationGroup="GruppoUO">
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="470" y="0" width="87" height="20" printWhenGroupChanges="GruppoUO" uuid="18c6194d-cf7e-4be8-8d17-04456087f041"/>
 						<box rightPadding="5"/>
 						<textElement textAlignment="Right"/>
-						<textFieldExpression><![CDATA[$V{CostoPerUo}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{CostoPerUo}==null?BigDecimal.ZERO:new DecimalFormat("#,##0.00").format($V{CostoPerUo})]]></textFieldExpression>
 					</textField>
 				</frame>
 				<image onErrorType="Blank">
@@ -173,11 +173,11 @@ Istituto Superiore Sanita`]]></text>
 						<textElement verticalAlignment="Top"/>
 						<text><![CDATA[Magazzino]]></text>
 					</staticText>
-					<textField evaluationTime="Group" evaluationGroup="Gruppo Magazzino">
+					<textField textAdjust="StretchHeight" evaluationTime="Group" evaluationGroup="Gruppo Magazzino">
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="470" y="0" width="86" height="20" printWhenGroupChanges="Gruppo Magazzino" uuid="e90b0dca-cd7f-4271-8b60-a98d658e5405"/>
 						<box rightPadding="5"/>
 						<textElement textAlignment="Right"/>
-						<textFieldExpression><![CDATA[$V{CostoPerMagazzino}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{CostoPerMagazzino}==null?BigDecimal.ZERO:new DecimalFormat("#,##0.00").format($V{CostoPerMagazzino})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
@@ -198,7 +198,7 @@ Istituto Superiore Sanita`]]></text>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="470" y="2" width="87" height="20" printWhenGroupChanges="Gruppo Categoria/gruppo" uuid="acf2cc72-c3f3-4de8-8b04-6101a9aed1c7"/>
 						<box rightPadding="5"/>
 						<textElement textAlignment="Right"/>
-						<textFieldExpression><![CDATA[$V{CostoPerCatGruppo}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{CostoPerCatGruppo}==null?BigDecimal.ZERO:new DecimalFormat("#,##0.00").format($V{CostoPerCatGruppo})]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="201" y="2" width="269" height="20" printWhenGroupChanges="Gruppo Categoria/gruppo" uuid="3db8a5a1-0e04-4a91-b653-e16b68c8570c"/>
@@ -332,7 +332,7 @@ Istituto Superiore Sanita`]]></text>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="470" y="0" width="86" height="30" uuid="3e9690d8-860f-421a-b185-260d85f50592"/>
 						<box leftPadding="5" rightPadding="5"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[$V{CostoPerArticolo}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{CostoPerArticolo}==null?BigDecimal.ZERO:new DecimalFormat("#,##0.00").format($V{CostoPerArticolo})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
