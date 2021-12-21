@@ -170,10 +170,10 @@
 		</groupHeader>
 		<groupFooter>
 			<band height="38">
-				<textField>
+				<textField textAdjust="StretchHeight">
 					<reportElement positionType="Float" x="420" y="8" width="124" height="30" uuid="6b46cc8b-454e-4357-b2ba-8a16f526baa2"/>
 					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[$V{ImportoMagazzino}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{ImportoMagazzino}==null?BigDecimal.ZERO:new DecimalFormat("#,##0.00").format($V{ImportoMagazzino})]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement positionType="Float" x="0" y="8" width="420" height="30" uuid="eeb43c2d-ae02-453c-ac6e-551ea76ed30e"/>
@@ -200,12 +200,12 @@
 		<groupFooter>
 			<band height="38">
 				<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
-				<textField>
+				<textField textAdjust="StretchHeight">
 					<reportElement positionType="Float" x="420" y="8" width="125" height="30" uuid="c17006a7-6236-402c-8d1b-dc694fc6c7f8">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[$V{ImportoCategoria}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{ImportoCategoria}==null?BigDecimal.ZERO:new DecimalFormat("#,##0.00").format($V{ImportoCategoria})]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement positionType="Float" x="0" y="8" width="420" height="30" uuid="fe80db40-c905-4fec-9b01-02ddb01eaab2"/>
@@ -339,12 +339,12 @@
 		<groupFooter>
 			<band height="42">
 				<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
-				<textField>
+				<textField textAdjust="StretchHeight">
 					<reportElement positionType="Float" x="420" y="12" width="125" height="30" uuid="fa62e921-5bc0-4f12-b585-48c1e168e9b3">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[$V{ImportoGruppo}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{ImportoGruppo}==null?BigDecimal.ZERO:new DecimalFormat("#,##0.00").format($V{ImportoGruppo})]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement positionType="Float" x="0" y="12" width="420" height="30" uuid="22373ee3-139e-4961-9c8f-6cc8b0050da4"/>
@@ -380,13 +380,13 @@
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
 						<textFieldExpression><![CDATA[$V{giacenzaArticolo}]]></textFieldExpression>
 					</textField>
-					<textField>
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="420" y="0" width="130" height="30" uuid="73ec9610-7739-414f-83ce-b461973a775b"/>
+					<textField textAdjust="StretchHeight">
+						<reportElement key="" positionType="Float" stretchType="ElementGroupHeight" x="420" y="0" width="130" height="30" uuid="73ec9610-7739-414f-83ce-b461973a775b"/>
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[$V{importoArticolo}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{importoArticolo}==null?BigDecimal.ZERO:new DecimalFormat("#,##0.00").format($V{importoArticolo})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="2" width="50" height="28" uuid="996cf5ed-f080-46f9-848a-a7786540a753"/>
