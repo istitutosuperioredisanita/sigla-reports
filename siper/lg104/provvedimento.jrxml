@@ -34,6 +34,9 @@
 	<style name="TNRG16" fontName="DejaVu Sans" fontSize="16" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
 	<style name="TNRGC16" fontName="DejaVu Sans" fontSize="16" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic" isPdfEmbedded="true"/>
 	<style name="TNR11" isDefault="true" fontName="DejaVu Sans" fontSize="11" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString language="json">
 		<![CDATA[]]>
 	</queryString>
@@ -291,7 +294,7 @@ $F{dip_nominativo}.trim()+" ha chiesto di poter usufruire dei benefici previsti 
 		<band height="90" splitType="Stretch">
 			<image scaleImage="FillFrame" onErrorType="Icon">
 				<reportElement key="image-1" x="0" y="0" width="529" height="80" uuid="57a51953-a4c8-42aa-8357-cd3210d3f395"/>
-				<imageExpression><![CDATA["../../img/Logo CNR-2010-ITA-09-high.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{DIR_IMAGE} + "Logo CNR-2010-ITA-09-high.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</pageHeader>
