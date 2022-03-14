@@ -9,7 +9,7 @@
 	<property name="net.sf.jasperreports.export.pdf.tagged" value="true"/>
 	<property name="net.sf.jasperreports.default.pdf.font.name" value="DejaVu Sans"/>
 	<property name="net.sf.jasperreports.default.pdf.embedded" value="true"/>
-	<property name="net.sf.jasperreports.export.pdfa.icc.profile.path" value="AdobeRGB1998.icc"/>
+	<property name="net.sf.jasperreports.export.pdfa.icc.profile.path" value="/fonts/AdobeRGB1998.icc"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
