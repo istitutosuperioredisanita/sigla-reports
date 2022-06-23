@@ -98,7 +98,7 @@
 					<reportElement key="staticText-3" style="TNR12" x="0" y="136" width="535" height="31" uuid="eba7f566-fd9d-49bf-bce0-55839a634eec"/>
 					<textElement textAlignment="Center"/>
 					<text><![CDATA[Ufficio Gestione Risorse Umane
-Dott. Pierluigi Raimondi a.i.
+Dott. Pierluigi Raimondi
 ]]></text>
 				</staticText>
 				<staticText>
@@ -144,7 +144,7 @@ Dott. Pierluigi Raimondi a.i.
 				<staticText>
 					<reportElement key="staticText-4" style="TNR12" x="0" y="4" width="535" height="15" uuid="d7b4f5f8-4a18-43ff-b49f-8c0d469ac075"/>
 					<textElement textAlignment="Center"/>
-					<text><![CDATA[IL DIRIGENTE]]></text>
+					<text><![CDATA[IL DIRIGENTE a.i.]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-5" style="TNR11" x="10" y="59" width="515" height="13" uuid="9e84acb6-cbcd-46b5-acbf-2954d3f6f95c"/>
