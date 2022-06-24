@@ -262,7 +262,7 @@ $F{dip_nominativo}.trim()+" ha chiesto di poter usufruire dei benefici previsti 
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-8" style="TNR11" x="10" y="0" width="515" height="13" uuid="22c99583-20da-4872-8692-bc205060c17e"/>
 					<textElement textAlignment="Justified"/>
-					<textFieldExpression><![CDATA["Il dipendente "+$F{dip_nominativo}.trim()+", a decorrrere dal "+$F{data_inizio_diritto}+
+					<textFieldExpression><![CDATA["Il dipendente "+$F{dip_nominativo}.trim()+", a decorrere dal "+$F{data_inizio_diritto}+
 ($F{provv_data_fine}!=null&&$F{provv_data_fine}!=""?" al "+$F{provv_data_fine}:"")+", può usufruire "+($F{provv_diritto_ricon}==null?"":"di "+$F{provv_diritto_ricon})+" ai sensi dell'art. 33 della Legge 5.2.1992, n.104, come modificato, da ultimo, dalla Legge 4.11.2010, n.183."]]></textFieldExpression>
 				</textField>
 			</band>
