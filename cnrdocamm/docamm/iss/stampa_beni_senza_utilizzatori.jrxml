@@ -44,7 +44,7 @@ order by CD_UNITA_ORGANIZZATIVA,nr_inventario]]>
 	<group name="uo" isStartNewPage="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></groupExpression>
 		<groupHeader>
-			<band height="20" splitType="Stretch">
+			<band height="69" splitType="Stretch">
 				<line>
 					<reportElement key="line-2" x="0" y="18" width="535" height="1" uuid="8be7fb90-fd27-4db8-ba49-17c9bc8ba0bd"/>
 					<graphicElement>
@@ -61,6 +61,63 @@ order by CD_UNITA_ORGANIZZATIVA,nr_inventario]]>
 					</box>
 					<textFieldExpression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></textFieldExpression>
 				</textField>
+				<staticText>
+					<reportElement key="staticText-6" style="TNR12B" x="344" y="25" width="181" height="30" uuid="8fabc8cf-7334-4816-b40b-157ea5bac3c8"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[Etichetta]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-3" style="TNR12B" x="29" y="25" width="78" height="30" uuid="712ebda8-6b49-40f3-97a6-6f1179fb3949"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<text><![CDATA[ Data
+ Registrazione]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-6" style="TNR12B" x="278" y="25" width="66" height="30" uuid="0a128e97-3f21-4534-8a3f-a779137a2098"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[ Progressivo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-4" style="TNR12B" x="107" y="25" width="90" height="30" uuid="15f88762-48b7-4da4-8e08-370288c16378"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[ Codice
+ Inventario]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-5" style="TNR12B" x="197" y="25" width="80" height="30" uuid="bbfd01b5-d583-413f-8f74-70477164d798"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[ Numero
+ Inventario]]></text>
+				</staticText>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -74,7 +131,7 @@ order by CD_UNITA_ORGANIZZATIVA,nr_inventario]]>
 		<band splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="115" splitType="Stretch">
+		<band height="104" splitType="Stretch">
 			<image>
 				<reportElement key="image-1" x="7" y="0" width="501" height="40" uuid="1c64e202-bd1b-4d59-8188-4e576a5ef4fa"/>
 				<box>
@@ -112,63 +169,6 @@ order by CD_UNITA_ORGANIZZATIVA,nr_inventario]]>
 				</box>
 				<text><![CDATA[Uo]]></text>
 			</staticText>
-			<staticText>
-				<reportElement key="staticText-3" style="TNR12B" x="112" y="80" width="78" height="30" uuid="712ebda8-6b49-40f3-97a6-6f1179fb3949"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<text><![CDATA[ Data
- Registrazione]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-4" style="TNR12B" x="190" y="80" width="90" height="30" uuid="15f88762-48b7-4da4-8e08-370288c16378"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[ Codice
- Inventario]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-5" style="TNR12B" x="280" y="80" width="80" height="30" uuid="bbfd01b5-d583-413f-8f74-70477164d798"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right"/>
-				<text><![CDATA[ Numero
- Inventario]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-6" style="TNR12B" x="361" y="80" width="66" height="30" uuid="0a128e97-3f21-4534-8a3f-a779137a2098"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right"/>
-				<text><![CDATA[ Progressivo]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-6" style="TNR12B" x="427" y="80" width="103" height="30" uuid="8fabc8cf-7334-4816-b40b-157ea5bac3c8"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right"/>
-				<text><![CDATA[Etichetta]]></text>
-			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
@@ -177,7 +177,7 @@ order by CD_UNITA_ORGANIZZATIVA,nr_inventario]]>
 	<detail>
 		<band height="22" splitType="Stretch">
 			<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField" style="TNR10" x="112" y="3" width="78" height="14" uuid="0159f09e-91bc-4089-9649-b2a95598a8a9"/>
+				<reportElement key="textField" style="TNR10" x="29" y="3" width="78" height="14" uuid="0159f09e-91bc-4089-9649-b2a95598a8a9"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -187,7 +187,7 @@ order by CD_UNITA_ORGANIZZATIVA,nr_inventario]]>
 				<textFieldExpression><![CDATA[$F{DATA_REGISTRAZIONE}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR10" x="190" y="3" width="90" height="14" uuid="f2ca27fa-e5f1-41c1-b7df-3b72143c90c6"/>
+				<reportElement key="textField" style="TNR10" x="107" y="3" width="90" height="14" uuid="f2ca27fa-e5f1-41c1-b7df-3b72143c90c6"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -198,7 +198,7 @@ order by CD_UNITA_ORGANIZZATIVA,nr_inventario]]>
 				<textFieldExpression><![CDATA[$F{PG_INVENTARIO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR10" x="280" y="3" width="80" height="14" uuid="33690640-7e9d-4bd4-b884-7ea20e28c268"/>
+				<reportElement key="textField" style="TNR10" x="197" y="3" width="80" height="14" uuid="33690640-7e9d-4bd4-b884-7ea20e28c268"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -209,7 +209,7 @@ order by CD_UNITA_ORGANIZZATIVA,nr_inventario]]>
 				<textFieldExpression><![CDATA[$F{NR_INVENTARIO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR10" x="370" y="3" width="54" height="14" uuid="940bce09-e5ec-402d-8c3c-f6b7c2a5fc57"/>
+				<reportElement key="textField" style="TNR10" x="284" y="3" width="54" height="14" uuid="940bce09-e5ec-402d-8c3c-f6b7c2a5fc57"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -220,7 +220,7 @@ order by CD_UNITA_ORGANIZZATIVA,nr_inventario]]>
 				<textFieldExpression><![CDATA[$F{PROGRESSIVO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR10" x="427" y="2" width="103" height="14" uuid="9b3a4006-943d-47be-9707-224d71112a8d"/>
+				<reportElement key="textField" style="TNR10" x="344" y="2" width="181" height="14" uuid="9b3a4006-943d-47be-9707-224d71112a8d"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
