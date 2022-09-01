@@ -228,7 +228,7 @@ order by CD_UNITA_ORGANIZZATIVA,nr_inventario]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$F{NR_INVENTARIO}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ETICHETTA}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
