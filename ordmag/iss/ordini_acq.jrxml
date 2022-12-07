@@ -239,8 +239,8 @@ and ord.NUMERO= $P{NUMERO}]]>
 		<variableExpression><![CDATA[$F{PG_OBBLIGAZIONE} != null  ? "-"+ $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+"	EUR	"+$F{IM_SCADENZA} : ""  ]]></variableExpression>
 		<initialValueExpression><![CDATA[""]]></initialValueExpression>
 	</variable>
-	<variable name="Impegni" class="java.lang.String" resetType="None" incrementType="Column" calculation="First">
-		<variableExpression><![CDATA[$V{Impegno}+"<br>"]]></variableExpression>
+	<variable name="Impegni" class="java.lang.String" resetType="Column">
+		<variableExpression><![CDATA[$V{Impegni}!=null? ($V{Impegni}+"<br>"+$V{Impegno}):($V{Impegno})]]></variableExpression>
 	</variable>
 	<pageHeader>
 		<band height="201" splitType="Stretch">
@@ -676,7 +676,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$V{TotaleIva}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{TotaleIva})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" mode="Transparent" x="570" y="28" width="40" height="14" uuid="19da08f8-43f5-4e5d-b85a-bf130e746e32">
@@ -710,7 +710,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$V{TotaleMerce}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{TotaleMerce})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" mode="Transparent" x="570" y="42" width="40" height="14" uuid="313cee8d-cddc-4bd1-94ba-03a9b3b19276">
@@ -757,7 +757,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$V{ImportoTotOrdine}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{ImportoTotOrdine})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" mode="Transparent" x="460" y="56" width="110" height="14" uuid="c72b26c6-ccc7-497a-b3bd-89985a9723ec">
@@ -772,7 +772,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 				<text><![CDATA[ TOTALE GENERALE]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="22" y="15" width="388" height="65" uuid="85f791ec-3050-490b-bd17-09ce61fe9968">
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="22" y="15" width="388" height="27" uuid="85f791ec-3050-490b-bd17-09ce61fe9968">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 				</reportElement>
@@ -807,7 +807,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 				<reportElement positionType="Float" x="21" y="90" width="289" height="10" uuid="c8c49c98-3a6f-43b4-b40d-04f39d180e74"/>
 				<text><![CDATA[Impegno/i di spesa]]></text>
 			</staticText>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="21" y="102" width="288" height="20" uuid="4ee6b585-d29c-4d1d-83f9-c4123ebe69ac"/>
 				<box leftPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
