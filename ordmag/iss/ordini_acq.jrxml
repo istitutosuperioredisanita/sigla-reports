@@ -236,7 +236,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 		<variableExpression><![CDATA[$F{IM_IVA_DIVISA}]]></variableExpression>
 	</variable>
 	<variable name="Impegno" class="java.lang.String">
-		<variableExpression><![CDATA[$F{PG_OBBLIGAZIONE} != null  ? CONCATENATE( "-"+ $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+"	EUR	"+$F{IM_SCADENZA}) : "" ]]></variableExpression>
+		<variableExpression><![CDATA[$F{PG_OBBLIGAZIONE} != null  ? "-"+ $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+"	EUR	"+$F{IM_SCADENZA} : ""  ]]></variableExpression>
 		<initialValueExpression><![CDATA[""]]></initialValueExpression>
 	</variable>
 	<variable name="Impegni" class="java.lang.String" resetType="None" incrementType="Column" calculation="First">
