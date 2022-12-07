@@ -236,7 +236,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 		<variableExpression><![CDATA[$F{IM_IVA_DIVISA}]]></variableExpression>
 	</variable>
 	<variable name="Impegno" class="java.lang.String">
-		<variableExpression><![CDATA[CONCATENATE( $F{PG_OBBLIGAZIONE} != null ? ("-"+ $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+"	EUR	"+$F{IM_SCADENZA}) : "")]]></variableExpression>
+		<variableExpression><![CDATA[$F{PG_OBBLIGAZIONE} != null  ? CONCATENATE( "-"+ $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+"	EUR	"+$F{IM_SCADENZA}) : "" ]]></variableExpression>
 		<initialValueExpression><![CDATA[""]]></initialValueExpression>
 	</variable>
 	<variable name="Impegni" class="java.lang.String" resetType="None" incrementType="Column" calculation="First">
@@ -710,7 +710,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{TotaleMerce})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{TotaleMerce}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" mode="Transparent" x="570" y="42" width="40" height="14" uuid="313cee8d-cddc-4bd1-94ba-03a9b3b19276">
@@ -733,7 +733,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ScontoTotale})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{ScontoTotale})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" mode="Transparent" x="570" y="56" width="40" height="14" uuid="239304ce-99f5-4f6f-8c75-67eca67bca7c">
