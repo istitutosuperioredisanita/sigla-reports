@@ -240,7 +240,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 		<initialValueExpression><![CDATA[""]]></initialValueExpression>
 	</variable>
 	<variable name="Impegni" class="java.lang.String" resetType="Column">
-		<variableExpression><![CDATA[$V{Impegni}!=null? ($V{Impegni}+"<br>"+$V{Impegno}):($V{Impegno})]]></variableExpression>
+		<variableExpression><![CDATA[$V{Impegni}!=null? ($V{Impegni}+"<br>"+$V{Impegno}):($V{Impegno}+"CIAO")]]></variableExpression>
 	</variable>
 	<pageHeader>
 		<band height="201" splitType="Stretch">
