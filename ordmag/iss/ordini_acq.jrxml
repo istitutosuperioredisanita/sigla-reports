@@ -245,7 +245,7 @@ and ord.NUMERO= $P{NUMERO}]]>
 		<variableExpression><![CDATA[$V{Impegni}!=null ? ("IMPEGNI NOT NULL"+"<br>"+$V{Impegno}) :"IMPEGNO"]]></variableExpression>
 	</variable>
 	<pageHeader>
-		<band height="259" splitType="Stretch">
+		<band height="228" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
 				<reportElement x="647" y="79" width="44" height="18" uuid="7a9b61f1-2135-4358-a04b-0d5d2fff2ded">
