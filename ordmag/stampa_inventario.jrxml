@@ -63,7 +63,7 @@
 		<property name="net.sf.jasperreports.json.field.expression" value="um"/>
 		<fieldDescription><![CDATA[um]]></fieldDescription>
 	</field>
-	<field name="importoUnitario" class="java.math.BigDecimal">
+	<field name="importoUnitario" class="java.lang.String">
 		<property name="net.sf.jasperreports.json.field.expression" value="importoUnitario"/>
 		<fieldDescription><![CDATA[importoUnitario]]></fieldDescription>
 	</field>
@@ -75,7 +75,7 @@
 		<variableExpression><![CDATA[$F{giacenza}]]></variableExpression>
 	</variable>
 	<variable name="importoArticolo" class="java.math.BigDecimal" resetType="Group" resetGroup="Articolo" calculation="Sum">
-		<variableExpression><![CDATA[$F{importoUnitario}.multiply(new BigDecimal($F{giacenza}))]]></variableExpression>
+		<variableExpression><![CDATA[new BigDecimal($F{importoUnitario}).multiply(new BigDecimal($F{giacenza}))]]></variableExpression>
 	</variable>
 	<variable name="ImportoGruppo" class="java.math.BigDecimal" resetType="Group" resetGroup="Gruppo1" incrementType="Group" incrementGroup="Articolo" calculation="Sum">
 		<variableExpression><![CDATA[$V{importoArticolo}]]></variableExpression>
