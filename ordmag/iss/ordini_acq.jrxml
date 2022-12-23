@@ -256,10 +256,10 @@ order by cr.riga ,cr.consegna]]>
 	<variable name="TotaleIva" class="java.math.BigDecimal" incrementType="Group" incrementGroup="GruppoRiga" calculation="Sum">
 		<variableExpression><![CDATA[$F{IM_IVA_DIVISA}]]></variableExpression>
 	</variable>
-	<variable name="Impegno" class="java.lang.String" resetType="Group" resetGroup="GruppoConsegna" incrementType="Group" incrementGroup="GruppoRiga">
+	<variable name="Impegno" class="java.lang.String" resetType="Group" resetGroup="GruppoRiga">
 		<variableExpression><![CDATA[$F{PG_OBBLIGAZIONE} != null  ? "-"+ $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+"	EUR	"+$F{IM_SCADENZA} : null]]></variableExpression>
 	</variable>
-	<variable name="Impegni" class="java.lang.String" resetType="Group" resetGroup="GruppoConsegna" incrementType="Group" incrementGroup="GruppoRiga">
+	<variable name="Impegni" class="java.lang.String" resetType="Group" resetGroup="GruppoOrdine" incrementType="Group" incrementGroup="GruppoRiga">
 		<variableExpression><![CDATA[$V{Impegni}!=null ? ($V{Impegni}+"<br>"+$V{Impegno}) :$V{Impegno}]]></variableExpression>
 	</variable>
 	<variable name="ImpTotConsegna" class="java.math.BigDecimal" resetType="Group" resetGroup="GruppoConsegna">
@@ -270,27 +270,12 @@ order by cr.riga ,cr.consegna]]>
 	</variable>
 	<group name="GruppoOrdine">
 		<groupExpression><![CDATA[($F{CD_CDS}+$F{CD_UNITA_OPER_CONS}+$F{ESERCIZIO_CONS}+$F{CD_NUMERATORE_CONS}+$F{NUMERO_CONS})]]></groupExpression>
-		<groupHeader>
-			<band/>
-		</groupHeader>
-		<groupFooter>
-			<band height="7"/>
-		</groupFooter>
 	</group>
 	<group name="GruppoRiga">
 		<groupExpression><![CDATA[($F{CD_CDS}+$F{CD_UNITA_OPER_CONS}+$F{ESERCIZIO_CONS}+$F{CD_NUMERATORE_CONS}+$F{NUMERO_CONS}+$F{RIGA_CONS})]]></groupExpression>
-		<groupHeader>
-			<band/>
-		</groupHeader>
-		<groupFooter>
-			<band height="3"/>
-		</groupFooter>
 	</group>
 	<group name="GruppoConsegna">
 		<groupExpression><![CDATA[($F{CD_CDS}+$F{CD_UNITA_OPER_CONS}+$F{ESERCIZIO_CONS}+$F{CD_NUMERATORE_CONS}+$F{NUMERO_CONS}+$F{RIGA_CONS}+$F{CONSEGNA})]]></groupExpression>
-		<groupHeader>
-			<band/>
-		</groupHeader>
 		<groupFooter>
 			<band height="54">
 				<textField>
@@ -715,21 +700,21 @@ order by cr.riga ,cr.consegna]]>
 		</band>
 	</pageHeader>
 	<lastPageFooter>
-		<band height="240">
+		<band height="240" splitType="Prevent">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement positionType="Float" x="36" y="126" width="155" height="20" uuid="ca2fe49b-e92c-4408-95d9-7c19bcbafa4c"/>
+				<reportElement positionType="Float" x="36" y="146" width="155" height="20" uuid="ca2fe49b-e92c-4408-95d9-7c19bcbafa4c"/>
 				<text><![CDATA[IL RESPONSABILE DEL C.R.A]]></text>
 			</staticText>
 			<line>
-				<reportElement positionType="Float" x="39" y="157" width="160" height="1" uuid="a8a2b7ea-b6ae-4d69-9b16-4934a4c187ff"/>
+				<reportElement positionType="Float" x="39" y="177" width="160" height="1" uuid="a8a2b7ea-b6ae-4d69-9b16-4934a4c187ff"/>
 			</line>
 			<staticText>
-				<reportElement positionType="Float" x="547" y="126" width="130" height="20" uuid="c83a83a1-28e9-4ebe-ae80-3e8396f4c771"/>
+				<reportElement positionType="Float" x="547" y="146" width="130" height="20" uuid="c83a83a1-28e9-4ebe-ae80-3e8396f4c771"/>
 				<text><![CDATA[IL RICHIEDENTE]]></text>
 			</staticText>
 			<line>
-				<reportElement positionType="Float" x="547" y="160" width="155" height="1" uuid="703d794f-95b3-4d09-ba61-cfc6afbe943c"/>
+				<reportElement positionType="Float" x="547" y="180" width="155" height="1" uuid="703d794f-95b3-4d09-ba61-cfc6afbe943c"/>
 			</line>
 			<line>
 				<reportElement positionType="Float" x="11" y="8" width="689" height="1" uuid="0ac19b25-99b2-45d1-a381-e56b2485db3e">
@@ -737,9 +722,9 @@ order by cr.riga ,cr.consegna]]>
 				</reportElement>
 			</line>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="15" y="24" width="678" height="65" uuid="cb683f02-2a33-4a29-a39c-d2d058929590"/>
-				<textField textAdjust="StretchHeight" evaluationTime="Report" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="2" y="54" width="288" height="11" uuid="e1d42666-497a-47c5-b1f7-31f3db6588dc"/>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="15" y="24" width="678" height="116" uuid="cb683f02-2a33-4a29-a39c-d2d058929590"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="1" y="54" width="292" height="16" uuid="e1d42666-497a-47c5-b1f7-31f3db6588dc"/>
 					<box leftPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
