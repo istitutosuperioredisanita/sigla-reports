@@ -265,7 +265,7 @@ $F{STATO}.trim().equals("A")?($F{IM_DOC}.subtract($F{IM_RITENUTE})).negate():($F
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement markup="styled"/>
-					<text><![CDATA[CNR]]></text>
+					<text><![CDATA[ISS]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-6" style="TNR11BOLD" x="485" y="4" width="251" height="13" uuid="a96a1cd0-71d9-430e-8609-2e3b200bd4b1"/>
