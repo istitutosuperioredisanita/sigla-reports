@@ -272,9 +272,10 @@ $F{STATO}.trim().equals("A")?($F{IM_DOC}.subtract($F{IM_RITENUTE})).negate():($F
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="16" splitType="Prevent">
+			<band height="31" splitType="Prevent">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<break>
-					<reportElement key="element-1" style="NORMAL" x="0" y="15" width="842" height="1" uuid="f428cc9d-f380-4a2a-870a-80020812a58b"/>
+					<reportElement key="element-1" style="NORMAL" x="0" y="30" width="842" height="1" uuid="f428cc9d-f380-4a2a-870a-80020812a58b"/>
 				</break>
 				<staticText>
 					<reportElement key="staticText-21" style="BOLD" x="10" y="3" width="790" height="13" uuid="fdd1f1fa-1916-44c3-8e09-1da8db815bfc"/>
@@ -285,7 +286,18 @@ $F{STATO}.trim().equals("A")?($F{IM_DOC}.subtract($F{IM_RITENUTE})).negate():($F
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center"/>
-					<text><![CDATA[SI AUTORIZZA IL PAGAMENTO IL DIRETTORE DELL’UFFICIO BILANCIO, RAGIONERIA E AFFARI FISCALI]]></text>
+					<text><![CDATA[SI AUTORIZZA IL PAGAMENTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-21" style="BOLD" x="10" y="16" width="790" height="13" uuid="155be02a-ff13-4c93-83b5-9a12e90fc807"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[IL DIRETTORE DELL’UFFICIO BILANCIO, RAGIONERIA E AFFARI FISCALI]]></text>
 				</staticText>
 			</band>
 		</groupFooter>
