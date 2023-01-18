@@ -286,14 +286,15 @@ $F{STATO}.trim().equals("A")?($F{IM_DOC}.subtract($F{IM_RITENUTE})).negate():($F
 		<groupFooter>
 			<band height="16" splitType="Prevent">
 				<staticText>
-					<reportElement key="staticText-21" style="BOLD" x="315" y="3" width="130" height="13" uuid="d0bd19df-aab7-4fbe-acc9-0d26a8d5d8ed"/>
+					<reportElement key="staticText-21" style="BOLD" x="10" y="3" width="790" height="13" uuid="d0bd19df-aab7-4fbe-acc9-0d26a8d5d8ed"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<text><![CDATA[IL RESPONSABILE]]></text>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[SI AUTORIZZA IL PAGAMENTO IL DIRETTORE DELL’UFFICIO BILANCIO, RAGIONERIA E AFFARI FISCALI]]></text>
 				</staticText>
 			</band>
 		</groupFooter>
