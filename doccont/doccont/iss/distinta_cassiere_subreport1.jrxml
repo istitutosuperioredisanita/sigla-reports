@@ -273,19 +273,20 @@ $F{STATO}.trim().equals("A")?($F{IM_DOC}.subtract($F{IM_RITENUTE})).negate():($F
 		</groupHeader>
 		<groupFooter>
 			<band height="16" splitType="Prevent">
+				<break>
+					<reportElement key="element-1" style="NORMAL" x="0" y="15" width="842" height="1" uuid="f428cc9d-f380-4a2a-870a-80020812a58b"/>
+				</break>
 				<staticText>
-					<reportElement key="staticText-21" style="BOLD" x="315" y="3" width="130" height="13" uuid="41a34526-996d-4dd6-882c-3de98f3ad86e"/>
+					<reportElement key="staticText-21" style="BOLD" x="10" y="3" width="790" height="13" uuid="fdd1f1fa-1916-44c3-8e09-1da8db815bfc"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<text><![CDATA[IL RESPONSABILE]]></text>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[SI AUTORIZZA IL PAGAMENTO IL DIRETTORE DELL’UFFICIO BILANCIO, RAGIONERIA E AFFARI FISCALI]]></text>
 				</staticText>
-				<break>
-					<reportElement key="element-1" style="NORMAL" x="0" y="15" width="842" height="1" uuid="f428cc9d-f380-4a2a-870a-80020812a58b"/>
-				</break>
 			</band>
 		</groupFooter>
 	</group>
