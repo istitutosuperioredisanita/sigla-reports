@@ -43,7 +43,7 @@ riga.CD_VOCE_IVA,
 riga.SCONTO1,
 riga.SCONTO2,
 riga.SCONTO3,
-bene.UNITA_MISURA,
+riga.CD_UNITA_MISURA,
 cr.CD_UOP_DEST,
 cr.QUANTITA,
 cr.DT_PREV_CONSEGNA,
@@ -154,8 +154,8 @@ order by cr.riga ,cr.consegna]]>
 	<field name="SCONTO3" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="SCONTO3"/>
 	</field>
-	<field name="UNITA_MISURA" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="UNITA_MISURA"/>
+	<field name="CD_UNITA_MISURA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_UNITA_MISURA"/>
 	</field>
 	<field name="CD_UOP_DEST" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_UOP_DEST"/>
@@ -309,7 +309,7 @@ order by cr.riga ,cr.consegna]]>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<paragraph leftIndent="10"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{UNITA_MISURA}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{CD_UNITA_MISURA}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement positionType="Float" x="379" y="8" width="41" height="18" uuid="59632ba1-c935-41a7-9764-de899beafb36"/>
