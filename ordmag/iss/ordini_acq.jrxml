@@ -266,7 +266,7 @@ order by cr.riga ,cr.consegna]]>
 		<variableExpression><![CDATA[new java.math.BigDecimal ( $F{PREZZO_UNITARIO}.doubleValue()*$F{QUANTITA}.doubleValue())]]></variableExpression>
 	</variable>
 	<variable name="ImportoConsegneOriginale" class="java.math.BigDecimal" incrementType="Group" incrementGroup="GruppoConsegna" calculation="Sum">
-		<variableExpression><![CDATA[new java.math.BigDecimal (  $F{PREZZO_UNITARIO}.doubleValue()*$F{QUANTITA}.doubleValue() ).setScale(2, BigDecimal.ROUND_CEILING)]]></variableExpression>
+		<variableExpression><![CDATA[new java.math.BigDecimal (  $F{PREZZO_UNITARIO}.doubleValue()*$F{QUANTITA}.doubleValue() ).setScale(2, RoundingMode.FLOOR)]]></variableExpression>
 	</variable>
 	<group name="GruppoOrdine">
 		<groupExpression><![CDATA[($F{CD_CDS}+$F{CD_UNITA_OPER_CONS}+$F{ESERCIZIO_CONS}+$F{CD_NUMERATORE_CONS}+$F{NUMERO_CONS})]]></groupExpression>
