@@ -312,7 +312,7 @@ order by progressivo_riga]]>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement style="TNR10" x="68" y="4" width="486" height="14" isRemoveLineWhenBlank="true" uuid="cf40d07b-65d4-4260-a3db-db6851546c60"/>
-					<textFieldExpression><![CDATA["Istituto Superiore di Sanità"]]></textFieldExpression>
+					<textFieldExpression><![CDATA["Istituto Superiore di Sanità "]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement style="TNRG10" x="110" y="138" width="156" height="14" isRemoveLineWhenBlank="true" uuid="e6fc1fec-1edf-49a0-8618-a46cd49c2028"/>
