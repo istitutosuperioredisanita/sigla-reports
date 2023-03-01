@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ordini_acq_obbligazioni" pageWidth="300" pageHeight="200" columnWidth="300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e8af5135-f4af-44fe-a407-7f60a3cf6368">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
+	<parameter name="CD_CDS" class="java.lang.String">
+		<defaultValueExpression><![CDATA["000"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CD_UNITA_OPERATIVA" class="java.lang.String">
+		<defaultValueExpression><![CDATA["OMM"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ESERCIZIO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2023]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CD_NUMERATORE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["DOM"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="NUMERO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[select distinct
+obb.esercizio as esercizio_obb,
+obb.pg_obbligazione,
+obb.pg_obbligazione_scadenzario,
+obb.im_scadenza
+from  ordine_acq_consegna cr 
+left OUTER join OBBLIGAZIONE_SCADENZARIO obb on cr.CD_CDS_OBBL=obb.CD_CDS and
+cr.ESERCIZIO_OBBL=obb.ESERCIZIO and
+cr.ESERCIZIO_ORIG_OBBL=obb.ESERCIZIO_ORIGINALE and
+cr.PG_OBBLIGAZIONE=obb.PG_OBBLIGAZIONE and 
+cr.PG_OBBLIGAZIONE_SCAD=obb.PG_OBBLIGAZIONE_SCADENZARIO
+where cr.CD_CDS=  $P{CD_CDS} 
+and cr.CD_UNITA_OPERATIVA=  $P{CD_UNITA_OPERATIVA}
+and cr.ESERCIZIO=  $P{ESERCIZIO}
+and cr.CD_NUMERATORE= $P{CD_NUMERATORE}
+and cr.NUMERO= $P{NUMERO}]]>
+	</queryString>
+	<field name="ESERCIZIO_OBB" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_OBB"/>
+	</field>
+	<field name="PG_OBBLIGAZIONE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_OBBLIGAZIONE"/>
+	</field>
+	<field name="PG_OBBLIGAZIONE_SCADENZARIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_OBBLIGAZIONE_SCADENZARIO"/>
+	</field>
+	<field name="IM_SCADENZA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IM_SCADENZA"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="15">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="300" height="13" uuid="eb774dfa-b736-4645-9ebe-69f13f4f305a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<text><![CDATA[Impegno/i di spesa]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="10" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="0" y="0" width="300" height="10" uuid="08918be5-8fe9-4c2b-8bb9-d413c94ad783">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2c00aa66-0975-4191-9f21-37aa238afa6b"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+"	EUR	"+$F{IM_SCADENZA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

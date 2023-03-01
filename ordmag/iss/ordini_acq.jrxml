@@ -724,17 +724,6 @@ order by cr.riga ,cr.consegna]]>
 			<frame>
 				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="15" y="24" width="678" height="116" uuid="cb683f02-2a33-4a29-a39c-d2d058929590"/>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="1" y="54" width="292" height="16" uuid="e1d42666-497a-47c5-b1f7-31f3db6588dc"/>
-					<box leftPadding="5">
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement markup="html"/>
-					<textFieldExpression><![CDATA[$V{Impegni}]]></textFieldExpression>
-				</textField>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="0" y="1" width="388" height="27" uuid="89259ec5-0896-4e61-a0cd-72a57f5b9b03">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
@@ -838,10 +827,6 @@ order by cr.riga ,cr.consegna]]>
 					</box>
 					<text><![CDATA[ TOTALE GENERALE]]></text>
 				</staticText>
-				<staticText>
-					<reportElement positionType="Float" x="1" y="42" width="289" height="10" uuid="dc81aa4e-517f-4943-82e2-6635e6ed4adb"/>
-					<text><![CDATA[Impegno/i di spesa]]></text>
-				</staticText>
 				<textField evaluationTime="Report">
 					<reportElement positionType="Float" mode="Transparent" x="588" y="0" width="90" height="14" uuid="9d3d4099-4377-4174-9a48-2558d12fb60c">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -884,6 +869,29 @@ order by cr.riga ,cr.consegna]]>
 					</box>
 					<text><![CDATA[ SCONTO APPLICATO]]></text>
 				</staticText>
+				<subreport>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="0" y="38" width="337" height="77" isPrintInFirstWholeBand="true" uuid="04324449-0e46-48ed-8d20-1050734e5f91"/>
+					<subreportParameter name="CD_CDS">
+						<subreportParameterExpression><![CDATA[$P{CD_CDS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="CD_UNITA_OPERATIVA">
+						<subreportParameterExpression><![CDATA[$P{CD_UNITA_OPERATIVA}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="ESERCIZIO">
+						<subreportParameterExpression><![CDATA[$P{ESERCIZIO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="CD_NUMERATORE">
+						<subreportParameterExpression><![CDATA[$P{CD_NUMERATORE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="NUMERO">
+						<subreportParameterExpression><![CDATA[$P{NUMERO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="DIR_SUBREPORT">
+						<subreportParameterExpression><![CDATA[$P{DIR_SUBREPORT}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{DIR_SUBREPORT}+"ordini_acq_obbligazioni.jasper"]]></subreportExpression>
+				</subreport>
 			</frame>
 		</band>
 	</lastPageFooter>
