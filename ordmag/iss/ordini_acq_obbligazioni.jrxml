@@ -19,7 +19,7 @@
 		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
 	</parameter>
 	<queryString language="SQL">
-		<![CDATA[select distinct
+		<![CDATA[select  distinct
 obb.esercizio as esercizio_obb,
 obb.pg_obbligazione,
 obb.pg_obbligazione_scadenzario,

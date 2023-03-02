@@ -700,31 +700,31 @@ order by cr.riga ,cr.consegna]]>
 		</band>
 	</pageHeader>
 	<lastPageFooter>
-		<band height="240" splitType="Prevent">
+		<band height="641" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement positionType="Float" x="36" y="146" width="155" height="20" uuid="ca2fe49b-e92c-4408-95d9-7c19bcbafa4c"/>
+				<reportElement positionType="Float" x="36" y="159" width="155" height="20" uuid="ca2fe49b-e92c-4408-95d9-7c19bcbafa4c"/>
 				<text><![CDATA[IL RESPONSABILE DEL C.R.A]]></text>
 			</staticText>
 			<line>
-				<reportElement positionType="Float" x="39" y="177" width="160" height="1" uuid="a8a2b7ea-b6ae-4d69-9b16-4934a4c187ff"/>
+				<reportElement positionType="Float" x="39" y="190" width="160" height="1" uuid="a8a2b7ea-b6ae-4d69-9b16-4934a4c187ff"/>
 			</line>
 			<staticText>
-				<reportElement positionType="Float" x="547" y="146" width="130" height="20" uuid="c83a83a1-28e9-4ebe-ae80-3e8396f4c771"/>
+				<reportElement positionType="Float" x="547" y="159" width="130" height="20" uuid="c83a83a1-28e9-4ebe-ae80-3e8396f4c771"/>
 				<text><![CDATA[IL RICHIEDENTE]]></text>
 			</staticText>
 			<line>
-				<reportElement positionType="Float" x="547" y="180" width="155" height="1" uuid="703d794f-95b3-4d09-ba61-cfc6afbe943c"/>
+				<reportElement positionType="Float" x="547" y="193" width="155" height="1" uuid="703d794f-95b3-4d09-ba61-cfc6afbe943c"/>
 			</line>
 			<line>
-				<reportElement positionType="Float" x="11" y="8" width="689" height="1" uuid="0ac19b25-99b2-45d1-a381-e56b2485db3e">
+				<reportElement positionType="Float" x="11" y="21" width="689" height="1" uuid="0ac19b25-99b2-45d1-a381-e56b2485db3e">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 			</line>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="15" y="24" width="678" height="116" uuid="cb683f02-2a33-4a29-a39c-d2d058929590"/>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="15" y="37" width="678" height="116" uuid="cb683f02-2a33-4a29-a39c-d2d058929590"/>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="0" y="1" width="388" height="27" uuid="89259ec5-0896-4e61-a0cd-72a57f5b9b03">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="0" y="14" width="388" height="27" uuid="89259ec5-0896-4e61-a0cd-72a57f5b9b03">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
@@ -737,7 +737,7 @@ order by cr.riga ,cr.consegna]]>
 +($F{NOTA2PRECODIFICATA}!=null? "-" +$F{NOTA2PRECODIFICATA}:"")]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Report">
-					<reportElement positionType="Float" mode="Transparent" x="588" y="14" width="90" height="14" uuid="8e607e56-a01e-48bc-8ea6-526ddbec4790">
+					<reportElement positionType="Float" mode="Transparent" x="588" y="27" width="90" height="14" uuid="8e607e56-a01e-48bc-8ea6-526ddbec4790">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<box leftPadding="0" rightPadding="5">
@@ -749,7 +749,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format(new java.math.BigDecimal ( $V{ImportoConsegneOriginale}.doubleValue() - $V{ImpTotOrdineNetto}.doubleValue() ))]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Report">
-					<reportElement positionType="Float" mode="Transparent" x="588" y="42" width="90" height="14" uuid="6d0d637d-4434-4bfd-8cb9-4717b37a1c56">
+					<reportElement positionType="Float" mode="Transparent" x="588" y="55" width="90" height="14" uuid="6d0d637d-4434-4bfd-8cb9-4717b37a1c56">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
@@ -762,7 +762,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{ImportoTotOrdine})]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="438" y="0" width="110" height="14" uuid="2be82290-0528-4267-b07b-9a6c460560d7">
+					<reportElement positionType="Float" mode="Transparent" x="438" y="13" width="110" height="14" uuid="2be82290-0528-4267-b07b-9a6c460560d7">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<box>
@@ -773,7 +773,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[ TOTALE MERCE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="548" y="28" width="40" height="14" uuid="debad836-df2e-4094-ba3e-5350d2e7082b">
+					<reportElement positionType="Float" mode="Transparent" x="548" y="41" width="40" height="14" uuid="debad836-df2e-4094-ba3e-5350d2e7082b">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
@@ -784,7 +784,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[         EUR]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="438" y="28" width="110" height="14" uuid="e45b9e0b-08db-4308-baf1-3e99f813ebc8">
+					<reportElement positionType="Float" mode="Transparent" x="438" y="41" width="110" height="14" uuid="e45b9e0b-08db-4308-baf1-3e99f813ebc8">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<box>
@@ -794,7 +794,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[ TOTALE IVA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="548" y="14" width="40" height="14" uuid="11a60675-c241-4ca3-a432-b1495feed0b9">
+					<reportElement positionType="Float" mode="Transparent" x="548" y="27" width="40" height="14" uuid="11a60675-c241-4ca3-a432-b1495feed0b9">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -804,7 +804,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[         EUR]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="548" y="0" width="40" height="14" uuid="22edc7f7-d700-4021-9d5d-0e3b8d8378d5">
+					<reportElement positionType="Float" mode="Transparent" x="548" y="13" width="40" height="14" uuid="22edc7f7-d700-4021-9d5d-0e3b8d8378d5">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
@@ -816,7 +816,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[         EUR]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="438" y="42" width="110" height="14" uuid="3d67c0a2-2b8d-4627-b3ee-7ae0c634e800">
+					<reportElement positionType="Float" mode="Transparent" x="438" y="55" width="110" height="14" uuid="3d67c0a2-2b8d-4627-b3ee-7ae0c634e800">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
@@ -828,7 +828,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[ TOTALE GENERALE]]></text>
 				</staticText>
 				<textField evaluationTime="Report">
-					<reportElement positionType="Float" mode="Transparent" x="588" y="0" width="90" height="14" uuid="9d3d4099-4377-4174-9a48-2558d12fb60c">
+					<reportElement positionType="Float" mode="Transparent" x="588" y="13" width="90" height="14" uuid="9d3d4099-4377-4174-9a48-2558d12fb60c">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -840,7 +840,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{ImpTotOrdineNetto})]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="548" y="42" width="40" height="14" uuid="1580dac8-bcae-4502-982a-b05f2325a20d">
+					<reportElement positionType="Float" mode="Transparent" x="548" y="55" width="40" height="14" uuid="1580dac8-bcae-4502-982a-b05f2325a20d">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -851,7 +851,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[         EUR]]></text>
 				</staticText>
 				<textField evaluationTime="Report">
-					<reportElement positionType="Float" mode="Transparent" x="588" y="28" width="90" height="14" uuid="438234e3-2c7d-414b-bc2b-c3fde3b9f27c">
+					<reportElement positionType="Float" mode="Transparent" x="588" y="41" width="90" height="14" uuid="438234e3-2c7d-414b-bc2b-c3fde3b9f27c">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -862,7 +862,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{TotaleIva})]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="438" y="14" width="110" height="14" uuid="73de3ff1-35a8-48a8-b7be-c71fc6befde8"/>
+					<reportElement positionType="Float" mode="Transparent" x="438" y="27" width="110" height="14" uuid="73de3ff1-35a8-48a8-b7be-c71fc6befde8"/>
 					<box>
 						<leftPen lineWidth="1.0"/>
 						<rightPen lineWidth="1.0"/>
@@ -870,7 +870,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[ SCONTO APPLICATO]]></text>
 				</staticText>
 				<subreport>
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="0" y="38" width="337" height="77" isPrintInFirstWholeBand="true" uuid="04324449-0e46-48ed-8d20-1050734e5f91"/>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="0" y="51" width="337" height="77" isPrintInFirstWholeBand="true" uuid="04324449-0e46-48ed-8d20-1050734e5f91"/>
 					<subreportParameter name="CD_CDS">
 						<subreportParameterExpression><![CDATA[$P{CD_CDS}]]></subreportParameterExpression>
 					</subreportParameter>
