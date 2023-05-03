@@ -276,10 +276,151 @@ order by cr.riga ,cr.consegna]]>
 	</group>
 	<group name="GruppoConsegna">
 		<groupExpression><![CDATA[($F{CD_CDS}+$F{CD_UNITA_OPER_CONS}+$F{ESERCIZIO_CONS}+$F{CD_NUMERATORE_CONS}+$F{NUMERO_CONS}+$F{RIGA_CONS}+$F{CONSEGNA})]]></groupExpression>
+		<groupHeader>
+			<band height="51">
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="30" y="21" width="657" height="30" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="dd36fb2d-27ab-4fc7-b9dd-82ee79e3e5d8">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					</reportElement>
+					<box leftPadding="5">
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+						<paragraph leftIndent="4"/>
+					</textElement>
+					<text><![CDATA[DESCRIZIONE ARTICOLO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="10" y="1" width="20" height="50" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="c3cbba20-f9ee-4017-9eaa-49004f43a884">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement rotation="Right">
+						<font fontName="Times New Roman" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[  RIGA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="596" y="1" width="91" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="f09fb1e5-f17f-4078-9a45-e8a4895fa5b3">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[UO. RICEVENTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="265" y="1" width="109" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="cb448620-7922-41e0-8dd0-977e23e6bedc"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[PREZZO UNITARIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="486" y="1" width="110" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="160487b4-0504-48eb-8a3a-a2c30d84d142"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[IMPORO RIGA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="165" y="1" width="30" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="bfe5c91e-37ae-43aa-bf3e-5fe2c9c5747a"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[U.M.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="30" y="1" width="135" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="5bc34655-f598-4a7a-909e-3f3a12cf4450"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CODICE ARTICOLO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="195" y="1" width="70" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="1477489f-c39f-48b5-8687-eaed2789a981"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[QUANTITA']]></text>
+				</staticText>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="374" y="1" width="41" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="08354c24-6dec-4039-8384-071d62d4528b"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[IVA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="415" y="1" width="71" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="c327c755-063b-4598-b156-f5f5c1d28259"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SCONTO]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
 		<groupFooter>
 			<band height="54">
+				<property name="com.jaspersoft.studio.layout"/>
 				<textField>
-					<reportElement positionType="Float" x="270" y="8" width="109" height="18" uuid="0d4e846c-5c7f-46f1-889d-bc57cc0666ef"/>
+					<reportElement positionType="Float" x="266" y="8" width="109" height="18" uuid="0d4e846c-5c7f-46f1-889d-bc57cc0666ef"/>
 					<box>
 						<topPen lineWidth="1.0"/>
 						<rightPen lineWidth="1.0"/>
@@ -288,7 +429,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[$F{PREZZO_UNITARIO}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" x="420" y="8" width="71" height="18" uuid="9b384d42-155b-43af-9f7d-1c3689afc27e">
+					<reportElement positionType="Float" x="416" y="8" width="71" height="18" uuid="9b384d42-155b-43af-9f7d-1c3689afc27e">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -299,7 +440,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[($F{SCONTO1}!=null?$F{SCONTO1}:"")+($F{SCONTO2}!=null?" "+$F{SCONTO2}:"")+($F{SCONTO3}!=null?" "+$F{SCONTO3}:"")]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement positionType="Float" x="170" y="8" width="30" height="19" uuid="22de2716-ba17-483e-b364-3682e4ad85af">
+					<reportElement positionType="Float" x="166" y="8" width="30" height="19" uuid="22de2716-ba17-483e-b364-3682e4ad85af">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
@@ -312,7 +453,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[$F{CD_UNITA_MISURA}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement positionType="Float" x="379" y="8" width="41" height="18" uuid="59632ba1-c935-41a7-9764-de899beafb36"/>
+					<reportElement positionType="Float" x="375" y="8" width="41" height="18" uuid="59632ba1-c935-41a7-9764-de899beafb36"/>
 					<box>
 						<topPen lineWidth="1.0"/>
 						<rightPen lineWidth="1.0"/>
@@ -321,7 +462,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[$F{CD_VOCE_IVA}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Opaque" x="15" y="8" width="20" height="40" backcolor="#ABA19F" uuid="ed8bf4ac-35a3-41d9-ae4d-73764fbe862f">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Opaque" x="11" y="8" width="20" height="46" backcolor="#ABA19F" uuid="ed8bf4ac-35a3-41d9-ae4d-73764fbe862f">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aebae010-0829-496e-9d65-fcbea8a09554"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -336,7 +477,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[$F{RIGA}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement positionType="Float" x="491" y="8" width="110" height="20" uuid="02d95a9c-fb19-4a6b-8d3d-6ff352cb0ade">
+					<reportElement positionType="Float" x="487" y="8" width="110" height="20" uuid="02d95a9c-fb19-4a6b-8d3d-6ff352cb0ade">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
 					<box>
@@ -347,7 +488,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[$F{TOTALECONSEGNA}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" x="601" y="8" width="91" height="18" uuid="a718a670-3754-4534-bb4b-37d901b45b28">
+					<reportElement positionType="Float" x="597" y="8" width="91" height="18" uuid="a718a670-3754-4534-bb4b-37d901b45b28">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -361,7 +502,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[$F{CD_UOP_DEST}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement positionType="Float" x="35" y="8" width="135" height="19" uuid="2e1db2c9-503b-4346-9e6f-7d410d11b80e">
+					<reportElement positionType="Float" x="31" y="8" width="135" height="19" uuid="2e1db2c9-503b-4346-9e6f-7d410d11b80e">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
@@ -374,7 +515,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[$F{CD_BENE_SERVIZIO}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
-					<reportElement positionType="Float" x="35" y="28" width="657" height="20" uuid="c8ee92d5-c9df-4d2a-a984-5448aca8f94e">
+					<reportElement positionType="Float" x="31" y="28" width="657" height="26" uuid="c8ee92d5-c9df-4d2a-a984-5448aca8f94e">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a0fc508-1942-42fa-9e7c-a6671adb9d47"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
@@ -390,7 +531,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[$F{NOTA_RIGA}!=null?$F{DS_BENE_SERVIZIO}+("-"+$F{NOTA_RIGA}+"<br>Data Consegna :  "+new java.text.SimpleDateFormat("dd-MM-yyyy").format($F{DT_PREV_CONSEGNA})):($F{DS_BENE_SERVIZIO}+"<br>Data Consegna :  "+new java.text.SimpleDateFormat("dd-MM-yyyy").format($F{DT_PREV_CONSEGNA}))]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement positionType="Float" x="200" y="8" width="70" height="19" uuid="c5a8ad22-028a-4027-b2b8-8b4d6aba1479">
+					<reportElement positionType="Float" x="196" y="8" width="70" height="19" uuid="c5a8ad22-028a-4027-b2b8-8b4d6aba1479">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
@@ -406,7 +547,7 @@ order by cr.riga ,cr.consegna]]>
 		</groupFooter>
 	</group>
 	<pageHeader>
-		<band height="299" splitType="Stretch">
+		<band height="250" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
 				<reportElement x="647" y="103" width="44" height="18" uuid="7a9b61f1-2135-4358-a04b-0d5d2fff2ded">
@@ -551,142 +692,6 @@ order by cr.riga ,cr.consegna]]>
 				<reportElement x="670" y="0" width="32" height="30" uuid="2c2ec83b-c570-46af-afc4-68825999d0ef"/>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement isPrintRepeatedValues="false" x="599" y="249" width="91" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="f09fb1e5-f17f-4078-9a45-e8a4895fa5b3">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[UO. RICEVENTE]]></text>
-			</staticText>
-			<staticText>
-				<reportElement isPrintRepeatedValues="false" x="198" y="249" width="70" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="1477489f-c39f-48b5-8687-eaed2789a981"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[QUANTITA']]></text>
-			</staticText>
-			<staticText>
-				<reportElement isPrintRepeatedValues="false" x="268" y="249" width="109" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="cb448620-7922-41e0-8dd0-977e23e6bedc"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[PREZZO UNITARIO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement isPrintRepeatedValues="false" x="33" y="269" width="657" height="30" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="dd36fb2d-27ab-4fc7-b9dd-82ee79e3e5d8">
-					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
-				</reportElement>
-				<box leftPadding="5">
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" isBold="true"/>
-					<paragraph leftIndent="4"/>
-				</textElement>
-				<text><![CDATA[DESCRIZIONE ARTICOLO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement isPrintRepeatedValues="false" x="33" y="249" width="135" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="5bc34655-f598-4a7a-909e-3f3a12cf4450"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[CODICE ARTICOLO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement isPrintRepeatedValues="false" x="377" y="249" width="41" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="08354c24-6dec-4039-8384-071d62d4528b"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[IVA]]></text>
-			</staticText>
-			<staticText>
-				<reportElement isPrintRepeatedValues="false" x="168" y="249" width="30" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="bfe5c91e-37ae-43aa-bf3e-5fe2c9c5747a"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[U.M.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement isPrintRepeatedValues="false" x="489" y="249" width="110" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="160487b4-0504-48eb-8a3a-a2c30d84d142"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[IMPORO RIGA]]></text>
-			</staticText>
-			<staticText>
-				<reportElement isPrintRepeatedValues="false" x="418" y="249" width="71" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="c327c755-063b-4598-b156-f5f5c1d28259"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[SCONTO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement isPrintRepeatedValues="false" x="13" y="249" width="20" height="50" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="c3cbba20-f9ee-4017-9eaa-49004f43a884">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement rotation="Right">
-					<font fontName="Times New Roman" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[  RIGA]]></text>
-			</staticText>
 			<subreport>
 				<reportElement x="9" y="22" width="300" height="90" uuid="3222f0d0-f225-46de-887d-a46edae54e40">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -699,32 +704,12 @@ order by cr.riga ,cr.consegna]]>
 			</subreport>
 		</band>
 	</pageHeader>
-	<lastPageFooter>
-		<band height="641" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<staticText>
-				<reportElement positionType="Float" x="36" y="159" width="155" height="20" uuid="ca2fe49b-e92c-4408-95d9-7c19bcbafa4c"/>
-				<text><![CDATA[IL RESPONSABILE DEL C.R.A]]></text>
-			</staticText>
-			<line>
-				<reportElement positionType="Float" x="39" y="190" width="160" height="1" uuid="a8a2b7ea-b6ae-4d69-9b16-4934a4c187ff"/>
-			</line>
-			<staticText>
-				<reportElement positionType="Float" x="547" y="159" width="130" height="20" uuid="c83a83a1-28e9-4ebe-ae80-3e8396f4c771"/>
-				<text><![CDATA[IL RICHIEDENTE]]></text>
-			</staticText>
-			<line>
-				<reportElement positionType="Float" x="547" y="193" width="155" height="1" uuid="703d794f-95b3-4d09-ba61-cfc6afbe943c"/>
-			</line>
-			<line>
-				<reportElement positionType="Float" x="11" y="21" width="689" height="1" uuid="0ac19b25-99b2-45d1-a381-e56b2485db3e">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-			</line>
+	<summary>
+		<band height="272">
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="15" y="37" width="678" height="116" uuid="cb683f02-2a33-4a29-a39c-d2d058929590"/>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="15" y="37" width="678" height="116" uuid="75c19ba8-66ef-4f63-b0cf-af7504af6249"/>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="0" y="14" width="388" height="27" uuid="89259ec5-0896-4e61-a0cd-72a57f5b9b03">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="0" y="14" width="388" height="27" uuid="2a00416d-8baf-48c9-a751-ae0ffee8881d">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
@@ -737,7 +722,7 @@ order by cr.riga ,cr.consegna]]>
 +($F{NOTA2PRECODIFICATA}!=null? "-" +$F{NOTA2PRECODIFICATA}:"")]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Report">
-					<reportElement positionType="Float" mode="Transparent" x="588" y="27" width="90" height="14" uuid="8e607e56-a01e-48bc-8ea6-526ddbec4790">
+					<reportElement positionType="Float" mode="Transparent" x="588" y="27" width="90" height="14" uuid="e8b7ef28-0b97-4950-b4e4-d868c8f4a067">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<box leftPadding="0" rightPadding="5">
@@ -749,7 +734,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format(new java.math.BigDecimal ( $V{ImportoConsegneOriginale}.doubleValue() - $V{ImpTotOrdineNetto}.doubleValue() ))]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Report">
-					<reportElement positionType="Float" mode="Transparent" x="588" y="55" width="90" height="14" uuid="6d0d637d-4434-4bfd-8cb9-4717b37a1c56">
+					<reportElement positionType="Float" mode="Transparent" x="588" y="55" width="90" height="14" uuid="a290f0a0-bb9c-4fc2-aeda-3fc1134b3cd2">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
@@ -762,7 +747,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{ImportoTotOrdine})]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="438" y="13" width="110" height="14" uuid="2be82290-0528-4267-b07b-9a6c460560d7">
+					<reportElement positionType="Float" mode="Transparent" x="438" y="13" width="110" height="14" uuid="7677088c-fd5f-42d5-9738-f0ef343e7d56">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<box>
@@ -773,7 +758,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[ TOTALE MERCE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="548" y="41" width="40" height="14" uuid="debad836-df2e-4094-ba3e-5350d2e7082b">
+					<reportElement positionType="Float" mode="Transparent" x="548" y="41" width="40" height="14" uuid="dfe056d6-c11a-48f1-baa7-0906fe845624">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
@@ -784,7 +769,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[         EUR]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="438" y="41" width="110" height="14" uuid="e45b9e0b-08db-4308-baf1-3e99f813ebc8">
+					<reportElement positionType="Float" mode="Transparent" x="438" y="41" width="110" height="14" uuid="f79beb4b-4e52-4f5f-8ca8-fcb1ab2b971d">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<box>
@@ -794,7 +779,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[ TOTALE IVA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="548" y="27" width="40" height="14" uuid="11a60675-c241-4ca3-a432-b1495feed0b9">
+					<reportElement positionType="Float" mode="Transparent" x="548" y="27" width="40" height="14" uuid="402ad3ef-d963-48e7-ac79-55b6bfc2ebb5">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -804,7 +789,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[         EUR]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="548" y="13" width="40" height="14" uuid="22edc7f7-d700-4021-9d5d-0e3b8d8378d5">
+					<reportElement positionType="Float" mode="Transparent" x="548" y="13" width="40" height="14" uuid="ceede2c4-15ee-4461-a1da-06f78228f4ba">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
@@ -816,7 +801,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[         EUR]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="438" y="55" width="110" height="14" uuid="3d67c0a2-2b8d-4627-b3ee-7ae0c634e800">
+					<reportElement positionType="Float" mode="Transparent" x="438" y="55" width="110" height="14" uuid="c1149892-b7d5-4e73-adfa-0ae5bcf5cf0b">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
@@ -828,7 +813,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[ TOTALE GENERALE]]></text>
 				</staticText>
 				<textField evaluationTime="Report">
-					<reportElement positionType="Float" mode="Transparent" x="588" y="13" width="90" height="14" uuid="9d3d4099-4377-4174-9a48-2558d12fb60c">
+					<reportElement positionType="Float" mode="Transparent" x="588" y="13" width="90" height="14" uuid="174ec7da-b116-4162-b29d-82fa3fcda231">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -840,7 +825,7 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{ImpTotOrdineNetto})]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="548" y="55" width="40" height="14" uuid="1580dac8-bcae-4502-982a-b05f2325a20d">
+					<reportElement positionType="Float" mode="Transparent" x="548" y="55" width="40" height="14" uuid="bd81abe8-16d3-4097-9a32-4dc884ca3ae0">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -851,7 +836,7 @@ order by cr.riga ,cr.consegna]]>
 					<text><![CDATA[         EUR]]></text>
 				</staticText>
 				<textField evaluationTime="Report">
-					<reportElement positionType="Float" mode="Transparent" x="588" y="41" width="90" height="14" uuid="438234e3-2c7d-414b-bc2b-c3fde3b9f27c">
+					<reportElement positionType="Float" mode="Transparent" x="588" y="41" width="90" height="14" uuid="3b6d6569-ab28-4010-a95a-b2cc8d46fd5b">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -862,15 +847,17 @@ order by cr.riga ,cr.consegna]]>
 					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{TotaleIva})]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="438" y="27" width="110" height="14" uuid="73de3ff1-35a8-48a8-b7be-c71fc6befde8"/>
+					<reportElement positionType="Float" mode="Transparent" x="438" y="27" width="110" height="14" uuid="d215c292-01ce-4afc-a208-449a053100dc"/>
 					<box>
 						<leftPen lineWidth="1.0"/>
 						<rightPen lineWidth="1.0"/>
 					</box>
 					<text><![CDATA[ SCONTO APPLICATO]]></text>
 				</staticText>
-				<subreport>
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="0" y="51" width="337" height="77" isPrintInFirstWholeBand="true" uuid="04324449-0e46-48ed-8d20-1050734e5f91"/>
+				<subreport overflowType="Stretch">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="0" y="51" width="337" height="77" isPrintInFirstWholeBand="true" uuid="6111016e-1e3d-4aa9-8f56-06136c9772d9">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
 					<subreportParameter name="CD_CDS">
 						<subreportParameterExpression><![CDATA[$P{CD_CDS}]]></subreportParameterExpression>
 					</subreportParameter>
@@ -893,6 +880,25 @@ order by cr.riga ,cr.consegna]]>
 					<subreportExpression><![CDATA[$P{DIR_SUBREPORT}+"ordini_acq_obbligazioni.jasper"]]></subreportExpression>
 				</subreport>
 			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="36" y="159" width="155" height="20" uuid="7c944271-0646-4e85-8ae0-2085f8e03719"/>
+				<text><![CDATA[IL RESPONSABILE DEL C.R.A]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="39" y="190" width="160" height="1" uuid="8ba73f80-ffe7-4a96-8a91-f8fcd37ff87f"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="547" y="159" width="130" height="20" uuid="cdb921c0-e462-4bfc-b5c6-94a8cd977e83"/>
+				<text><![CDATA[IL RICHIEDENTE]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="547" y="193" width="155" height="1" uuid="a2a0610e-be37-40f6-b323-96e1114c304b"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="11" y="21" width="689" height="1" uuid="c3a236d8-8005-4524-a745-f96ecbdabb0c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
 		</band>
-	</lastPageFooter>
+	</summary>
 </jasperReport>
