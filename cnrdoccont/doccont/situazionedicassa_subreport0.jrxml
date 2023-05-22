@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<!-- Created with Jaspersoft Studio version 6.15.0.final utlizzo versione della libreria JasperReports6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="situazionedicassa_subreport0" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="92f2b230-6359-4335-8a1d-a42d4c7ccb1a">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ISS-TEST"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -33,7 +35,7 @@
 	</parameter>
 	<queryString>
 		<![CDATA[select * from PRT_VPG_SIT_CASSA
-Order by ORDINE]]>
+Order by CDS,ORDINAMENTO,ORDINE]]>
 	</queryString>
 	<field name="ID" class="java.math.BigDecimal"/>
 	<field name="CHIAVE" class="java.lang.String"/>
@@ -46,6 +48,7 @@ Order by ORDINE]]>
 	<field name="TOTALE" class="java.math.BigDecimal"/>
 	<field name="FL_TOTALE" class="java.lang.String"/>
 	<field name="SEGNO" class="java.lang.String"/>
+	<field name="ORDINAMENTO" class="java.lang.String"/>
 	<group name="CDS" isStartNewPage="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[($P{CDS}.equals("999")?$F{CDS}:$P{CDS})]]></groupExpression>
 		<groupHeader>
