@@ -76,7 +76,7 @@
 		<defaultValueExpression><![CDATA["falsetru"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[SELECT PRT_MAND_ELENCO_CNR.*,fl_tesoreria_unica
+		<![CDATA[SELECT PRT_MAND_ELENCO_CNR.*
 FROM PRT_MAND_ELENCO_CNR,parametri_cnr
 WHERE
 parametri_cnr.esercizio =  $P{Esercizio} and
@@ -162,9 +162,6 @@ ORDER BY NUM_MANDATO]]>
 	</field>
 	<field name="TI_PAGAMENTO" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="TI_PAGAMENTO"/>
-	</field>
-	<field name="FL_TESORERIA_UNICA" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="FL_TESORERIA_UNICA"/>
 	</field>
 	<variable name="SUM_LORDO" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO" calculation="Sum">
 		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO})]]></variableExpression>
@@ -829,7 +826,7 @@ Voce]]></text>
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="110" splitType="Stretch">
+		<band height="98" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField textAdjust="StretchHeight" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNRG8" x="706" y="2" width="56" height="14" uuid="a858b4c5-2dba-45d8-8534-cdeeb9e1bfe8"/>
@@ -983,7 +980,7 @@ Voce]]></text>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<text><![CDATA[TOTALE REDIDUI]]></text>
+				<text><![CDATA[TOTALE RESIDUI]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" evaluationTime="Report" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNRG8" x="656" y="40" width="50" height="14" uuid="63a73f11-46be-4d77-b232-41ced40b7d8d"/>
