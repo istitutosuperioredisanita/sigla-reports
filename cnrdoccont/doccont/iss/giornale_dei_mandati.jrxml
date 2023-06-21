@@ -33,22 +33,22 @@
 		<defaultValueExpression><![CDATA[new Integer(2023)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="CDS" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["000"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["999"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DaData" class="java.util.Date" isForPrompting="false">
 		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/01/01")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="AData" class="java.util.Date" isForPrompting="false">
-		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/06/12")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/04/30")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DaNumero" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="ANumero" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["99999999"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="UO_emittente" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["000.000"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="Tipologia" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
@@ -67,13 +67,13 @@
 		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="sospeso" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["falsetru"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="regolarizzazione" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["falsetru"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="accreditamento" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["falsetru"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT PRT_MAND_ELENCO_CNR.*
@@ -91,7 +91,7 @@ AND PRT_MAND_ELENCO_CNR.STATO LIKE $P{Stato}
 and (($P{Stato_trasm}='NT' and
 PRT_MAND_ELENCO_CNR.STATO_TRASMISSIONE in('P','F','N','I')) or
 ($P{Stato_trasm}<>'NT' and PRT_MAND_ELENCO_CNR.STATO_TRASMISSIONE like  $P{Stato_trasm}) )
-AND PRT_MAND_ELENCO_CNR.DATA_EMISSIONE between $P{DaData} and $P{AData}
+AND PRT_MAND_ELENCO_CNR.DT_TRASMISSIONE between $P{DaData} and $P{AData}
 ORDER BY NUM_MANDATO]]>
 	</queryString>
 	<field name="ESERCIZIO" class="java.math.BigDecimal">
