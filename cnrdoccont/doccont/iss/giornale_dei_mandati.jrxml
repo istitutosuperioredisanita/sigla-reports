@@ -91,7 +91,8 @@ AND PRT_MAND_ELENCO_CNR.STATO LIKE $P{Stato}
 and (($P{Stato_trasm}='NT' and
 PRT_MAND_ELENCO_CNR.STATO_TRASMISSIONE in('P','F','N','I')) or
 ($P{Stato_trasm}<>'NT' and PRT_MAND_ELENCO_CNR.STATO_TRASMISSIONE like  $P{Stato_trasm}) )
-AND PRT_MAND_ELENCO_CNR.DT_TRASMISSIONE between $P{DaData} and $P{AData} 
+AND (( ( prt_mand_elenco_cnr.dt_ritrasmissione is null or (prt_mand_elenco_cnr.dt_ritrasmissione is not null and prt_mand_elenco_cnr.dt_annullamento is not null)) and  prt_mand_elenco_cnr.dt_trasmissione between $P{DaData} and $P{AData})
+    or (prt_mand_elenco_cnr.dt_annullamento is null and prt_mand_elenco_cnr.dt_ritrasmissione is not null and  prt_mand_elenco_cnr.dt_ritrasmissione between $P{DaData} and $P{AData}))    
 ORDER BY NUM_MANDATO]]>
 	</queryString>
 	<field name="ESERCIZIO" class="java.math.BigDecimal">
