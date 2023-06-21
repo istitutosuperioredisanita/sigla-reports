@@ -83,7 +83,8 @@ PRT_REVE_ELENCO_CNR.ESERCIZIO = $P{Esercizio} and
 PRT_REVE_ELENCO_CNR.cds_ori_accertamento like
 decode(fl_tesoreria_unica,'Y',decode($P{CDS},CNRCTB020.GETCDCDSENTE ($P{Esercizio}),'%',$P{CDS}),$P{CDS})
 AND PROGRESSIVO between $P{DaNumero} and $P{ANumero}
-AND DT_TRASMISSIONE between $P{DaData} and $P{AData}
+AND (( DT_RITRASMISSIONE is null and DT_TRASMISSIONE between $P{DaData} and $P{AData})
+    or ( dt_ritrasmissione is not null and  dt_ritrasmissione between $P{DaData} and $P{AData}))
 AND uo_ori_accertamento like
 decode(fl_tesoreria_unica,'Y',decode( $P{CDS},CNRCTB020.GETCDCDSENTE ($P{Esercizio}),'%', $P{UO}), $P{UO})
 AND TIPOLOGIA in(decode($P{regolarizzazione},'true','R',''),decode($P{sospeso},'true','S',''),decode($P{reversale},'true','I',''),decode($P{accreditamento},'true','A',''))
