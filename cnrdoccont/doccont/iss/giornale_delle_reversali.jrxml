@@ -289,7 +289,7 @@ ORDER BY PROGRESSIVO]]>
 						<pen lineWidth="0.5" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
-				<textField pattern="###0.00;-###0.00" isBlankWhenNull="false">
+				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
 					<reportElement key="textField" style="TNRG9" x="758" y="4" width="50" height="14" uuid="75dfae44-f673-4571-ae97-9db5a13386bd"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
