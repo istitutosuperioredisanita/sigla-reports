@@ -30,16 +30,16 @@
 	<style name="TNRG11" fontName="Times New Roman" fontSize="11" isBold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR12" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
 	<parameter name="Esercizio" class="java.lang.Integer" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new Integer(2016)]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Integer(2023)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="CDS" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["999"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DaData" class="java.util.Date" isForPrompting="false">
-		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2016/01/01")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/01/01")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="AData" class="java.util.Date" isForPrompting="false">
-		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2016/07/06")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/04/30")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DaNumero" class="java.lang.Integer" isForPrompting="false">
 		<defaultValueExpression><![CDATA[new Integer(0)]]></defaultValueExpression>
@@ -57,9 +57,9 @@
 		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="Stato_trasm" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["NT"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
+	<parameter name="DIR_IMAGE" class="java.lang.String">
 		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="reversale" class="java.lang.String" isForPrompting="false">
@@ -277,7 +277,7 @@ ORDER BY PROGRESSIVO]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center"/>
-					<textFieldExpression><![CDATA[$F{TI_PAGAMENTO}!="I"?"T":$F{TI_PAGAMENTO}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{TI_PAGAMENTO}.equals("I")?$F{TI_PAGAMENTO}:"T"]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>

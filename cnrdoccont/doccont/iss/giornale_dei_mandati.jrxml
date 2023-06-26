@@ -359,7 +359,7 @@ ORDER BY NUM_MANDATO]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center"/>
-					<textFieldExpression><![CDATA[$F{TI_PAGAMENTO}!="I"?"T":$F{TI_PAGAMENTO}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{TI_PAGAMENTO}.equals("I")?$F{TI_PAGAMENTO}:"T"]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
