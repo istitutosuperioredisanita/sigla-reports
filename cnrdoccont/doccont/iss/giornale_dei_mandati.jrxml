@@ -35,10 +35,10 @@
 	<parameter name="CDS" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["999"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="DaData" class="java.util.Date" isForPrompting="false">
+	<parameter name="DaData" class="java.sql.Timestamp" isForPrompting="false">
 		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/01/01")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="AData" class="java.util.Date" isForPrompting="false">
+	<parameter name="AData" class="java.sql.Timestamp" isForPrompting="false">
 		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/04/30")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DaNumero" class="java.lang.String" isForPrompting="false">
@@ -1103,6 +1103,14 @@ Voce]]></text>
 				</box>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$V{TOT_LORDO_BI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="5" width="100" height="30" uuid="bd3b6907-4a8d-4fba-95e7-7da6f6ff97d3"/>
+				<textFieldExpression><![CDATA[$P{DaData}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="40" width="100" height="30" uuid="4ef0afd9-6afc-4f8b-b78e-a401afce215c"/>
+				<textFieldExpression><![CDATA[$P{AData}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
