@@ -164,6 +164,15 @@ ORDER BY NUM_MANDATO]]>
 	<field name="TI_PAGAMENTO" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="TI_PAGAMENTO"/>
 	</field>
+	<field name="DT_TRASMISSIONE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="DT_TRASMISSIONE"/>
+	</field>
+	<field name="DT_RITRASMISSIONE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="DT_RITRASMISSIONE"/>
+	</field>
+	<field name="DT_ANNULLAMENTO" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="DT_ANNULLAMENTO"/>
+	</field>
 	<variable name="SUM_LORDO" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO" calculation="Sum">
 		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO})]]></variableExpression>
 	</variable>
