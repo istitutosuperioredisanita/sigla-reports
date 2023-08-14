@@ -754,7 +754,7 @@ Voce]]></text>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<text><![CDATA[TOTALE GENERALE]]></text>
+				<text><![CDATA[TOTALE GENERALE2]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNRG8" x="728" y="2" width="56" height="14" uuid="aea944da-627f-454e-be6d-52a6c549589f"/>
