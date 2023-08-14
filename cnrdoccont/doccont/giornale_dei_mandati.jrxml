@@ -354,7 +354,7 @@ ORDER BY NUM_MANDATO]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[N. Mandato2]]></text>
+				<text><![CDATA[N. Mandato]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-2" style="TNR10" x="40" y="39" width="50" height="28" uuid="3d11d318-a8ee-4e27-b6a6-a9d677e9fbf5"/>
