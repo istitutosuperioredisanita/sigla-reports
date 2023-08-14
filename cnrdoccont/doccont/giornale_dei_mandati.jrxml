@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="giornale_dei_mandati" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="782" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="49cb67f3-a952-44e2-bbe0-4bb8401c1eb4">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -327,7 +328,7 @@ ORDER BY NUM_MANDATO]]>
 	</title>
 	<pageHeader>
 		<band height="74" splitType="Stretch">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-1" style="TNRG14" x="0" y="13" width="782" height="16" uuid="0631e7f3-cb19-4e2a-9525-1a716f90b2c6"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -556,7 +557,7 @@ Voce]]></text>
 	</columnHeader>
 	<detail>
 		<band height="19" splitType="Stretch">
-			<textField isStretchWithOverflow="true" pattern="###0" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="###0" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNR8" x="234" y="3" width="30" height="14" uuid="ba58145c-c834-4e17-be28-57624fc6ccfe"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -567,7 +568,7 @@ Voce]]></text>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{TERZO_COD}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="###0" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="###0" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNR8" x="416" y="3" width="87" height="14" uuid="dab15ae2-eb15-4d37-aa0b-f0abfa6a522d"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -578,7 +579,7 @@ Voce]]></text>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{NUM_OBBLIGAZIONE}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="###0" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="###0" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNR8" x="388" y="3" width="26" height="14" uuid="a40d970e-6e8c-40fd-b291-15b974294535"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -611,7 +612,7 @@ Voce]]></text>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{RITENUTE})]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
 				<reportElement key="textField" style="TNR8" x="506" y="3" width="43" height="14" uuid="a0b06e76-9a11-45e0-bd56-d2b3c79bd126"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -622,7 +623,7 @@ Voce]]></text>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{COD_VOCE}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNR8" x="264" y="3" width="124" height="14" uuid="67f7d2a7-9275-48ce-bd7e-d33d7638614a"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -649,7 +650,7 @@ Voce]]></text>
 		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="20" splitType="Stretch">
+		<band height="43" splitType="Stretch">
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" style="TNR10" x="582" y="5" width="100" height="14" uuid="fbc2c666-dbf9-4e4c-82e7-fc35500dcbfd"/>
 				<box>
@@ -688,11 +689,19 @@ Voce]]></text>
 					<pen lineWidth="2.0" lineStyle="Solid"/>
 				</graphicElement>
 			</line>
+			<textField>
+				<reportElement x="110" y="0" width="100" height="30" uuid="5fd8213e-63e0-4d54-a300-29d1a01a3f59"/>
+				<textFieldExpression><![CDATA[$P{DaData}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="100" height="30" uuid="101802de-a89b-4f1d-9f1e-d66f69f93e5c"/>
+				<textFieldExpression><![CDATA[$P{AData}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageFooter>
 	<summary>
 		<band height="16" splitType="Stretch">
-			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNRG8" x="673" y="2" width="56" height="14" uuid="a858b4c5-2dba-45d8-8534-cdeeb9e1bfe8"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -703,7 +712,7 @@ Voce]]></text>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$V{TOT_LORDO}.subtract($V{TOT_RITENUTE}.add($V{Tot_Ritenute_Testata}))]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" evaluationTime="Report" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" evaluationTime="Report" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNRG8" x="623" y="2" width="50" height="14" uuid="491ad060-e2f6-488c-a9ba-89d99ff218cc"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -714,7 +723,7 @@ Voce]]></text>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$V{TOT_RITENUTE}.add($V{Tot_Ritenute_Testata})]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNRG8" x="559" y="2" width="62" height="14" uuid="ab498711-3b84-49c3-b669-8b14c928afef"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -736,7 +745,7 @@ Voce]]></text>
 				<textElement textAlignment="Right"/>
 				<text><![CDATA[TOTALE GENERALE]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField" style="TNRG8" x="728" y="2" width="56" height="14" uuid="aea944da-627f-454e-be6d-52a6c549589f"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
