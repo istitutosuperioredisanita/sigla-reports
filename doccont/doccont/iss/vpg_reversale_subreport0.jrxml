@@ -642,7 +642,7 @@ $F{CD_UO_ORIGINE}!= null)]]></printWhenExpression>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<text><![CDATA[Causale di pagamento:]]></text>
+					<text><![CDATA[Causale di incasso:]]></text>
 				</staticText>
 			</band>
 		</groupHeader>
