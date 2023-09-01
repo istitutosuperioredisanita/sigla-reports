@@ -91,7 +91,7 @@ AND PRT_MAND_ELENCO_CNR.STATO LIKE $P{Stato}
 and (($P{Stato_trasm}='NT' and
 PRT_MAND_ELENCO_CNR.STATO_TRASMISSIONE in('P','F','N','I')) or
 ($P{Stato_trasm}<>'NT' and PRT_MAND_ELENCO_CNR.STATO_TRASMISSIONE like  $P{Stato_trasm}) )
-and  prt_mand_elenco_cnr.dt_trasmissione between $P{DaData} and $P{AData})
+and  prt_mand_elenco_cnr.dt_trasmissione between $P{DaData} and $P{AData}
 and EXISTS ( select 1 from siope_plus_esito
 where PRT_MAND_ELENCO_CNR.esercizio=siope_plus_esito.esercizio_mandato
 and PRT_MAND_ELENCO_CNR.cod_cds=siope_plus_esito.cd_cds_mandato
