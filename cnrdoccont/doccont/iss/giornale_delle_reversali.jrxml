@@ -95,8 +95,7 @@ and EXISTS ( select 1 from siope_plus_esito
 where PRT_REVE_ELENCO_CNR.esercizio=siope_plus_esito.esercizio_reversale
 and PRT_REVE_ELENCO_CNR.cod_cds=siope_plus_esito.cd_cds_reversale
 and pg_reversale =progressivo
-and esito_operazione='ACQUISITO'
-and TRUNC( dt_ora_esito_operazione )  between $P{DaNumero} and $P{ANumero}))
+and esito_operazione='ACQUISITO')
 ORDER BY PROGRESSIVO]]>
 	</queryString>
 	<field name="ESERCIZIO" class="java.math.BigDecimal">
