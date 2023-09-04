@@ -39,7 +39,7 @@
 		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/01/01")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="AData" class="java.util.Date" isForPrompting="false">
-		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/04/30")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/06/30")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DaNumero" class="java.lang.Integer" isForPrompting="false">
 		<defaultValueExpression><![CDATA[new Integer(0)]]></defaultValueExpression>
@@ -75,7 +75,12 @@
 		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[SELECT PRT_REVE_ELENCO_CNR.*
+		<![CDATA[SELECT PRT_REVE_ELENCO_CNR.*,
+getstatoreversalerangedate( PRT_REVE_ELENCO_CNR.esercizio,PRT_REVE_ELENCO_CNR.cod_cds,
+prt_reve_elenco_cnr.progressivo,
+PRT_REVE_ELENCO_CNR.stato,
+$P{DaData},
+$P{AData}) statoReale
 FROM PRT_REVE_ELENCO_CNR,parametri_cnr
 WHERE
 parametri_cnr.esercizio =  $P{Esercizio} and
@@ -162,35 +167,47 @@ ORDER BY PROGRESSIVO]]>
 	<field name="TI_PAGAMENTO" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="TI_PAGAMENTO"/>
 	</field>
+	<field name="DT_TRASMISSIONE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="DT_TRASMISSIONE"/>
+	</field>
+	<field name="DT_RITRASMISSIONE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="DT_RITRASMISSIONE"/>
+	</field>
+	<field name="DT_ANNULLAMENTO" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="DT_ANNULLAMENTO"/>
+	</field>
+	<field name="STATOREALE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STATOREALE"/>
+	</field>
 	<variable name="SUM_LORDO" class="java.math.BigDecimal" resetType="Group" resetGroup="PROGRESSIVO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO})]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{LORDO})]]></variableExpression>
 	</variable>
 	<variable name="TOT_LORDO" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO})]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{LORDO})]]></variableExpression>
 	</variable>
 	<variable name="SUM_COMPETENZA" class="java.math.BigDecimal" resetType="Group" resetGroup="PROGRESSIVO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("C")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("C")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_COMPETENZA" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("C")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("C")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="SUM_RESIDUI" class="java.math.BigDecimal" resetType="Group" resetGroup="PROGRESSIVO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_RESIDUI" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="SUM_BT" class="java.math.BigDecimal" resetType="Group" resetGroup="PROGRESSIVO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):((!$F{TI_PAGAMENTO}.equals("I"))?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):((!$F{TI_PAGAMENTO}.equals("I"))?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_BT" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):((!$F{TI_PAGAMENTO}.equals("I"))?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):((!$F{TI_PAGAMENTO}.equals("I"))?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="SUM_BI" class="java.math.BigDecimal" resetType="Group" resetGroup="PROGRESSIVO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_BI" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<group name="PROGRESSIVO">
 		<groupExpression><![CDATA[$F{PROGRESSIVO}]]></groupExpression>
@@ -249,7 +266,7 @@ ORDER BY PROGRESSIVO]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center"/>
-					<textFieldExpression><![CDATA[$F{STATO}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{STATOREALE}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="false">
 					<reportElement key="textField" style="TNR9" x="205" y="2" width="30" height="14" uuid="4b0df5bf-7c90-4984-8ea8-283e2eb4743d"/>
@@ -609,7 +626,7 @@ ORDER BY PROGRESSIVO]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{LORDO})]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

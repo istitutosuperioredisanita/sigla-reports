@@ -39,7 +39,7 @@
 		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/01/01")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="AData" class="java.util.Date" isForPrompting="false">
-		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/04/30")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/06/30")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DaNumero" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
@@ -61,7 +61,7 @@
 		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DIR_IMAGE" class="java.lang.String">
-		<defaultValueExpression><![CDATA["..\\..\\..\\img\\"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="mandato" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
@@ -76,7 +76,12 @@
 		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[SELECT PRT_MAND_ELENCO_CNR.*
+		<![CDATA[SELECT PRT_MAND_ELENCO_CNR.*,
+getstatomandatorangedate( PRT_MAND_ELENCO_CNR.esercizio,PRT_MAND_ELENCO_CNR.cod_cds,
+prt_mand_elenco_cnr.num_mandato,
+PRT_MAND_ELENCO_CNR.stato,
+$P{DaData},
+$P{AData}) statoReale
 FROM PRT_MAND_ELENCO_CNR,parametri_cnr
 WHERE
 parametri_cnr.esercizio =  $P{Esercizio} and
@@ -178,59 +183,62 @@ ORDER BY NUM_MANDATO]]>
 	<field name="DT_ANNULLAMENTO" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="DT_ANNULLAMENTO"/>
 	</field>
+	<field name="STATOREALE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STATOREALE"/>
+	</field>
 	<variable name="SUM_LORDO" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO})]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{LORDO})]]></variableExpression>
 	</variable>
 	<variable name="SUM_RITENUTE" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{RITENUTE})]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{RITENUTE})]]></variableExpression>
 	</variable>
 	<variable name="SUM_NETTO" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO}.add($F{RITENUTE}.negate()))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{LORDO}.add($F{RITENUTE}.negate()))]]></variableExpression>
 	</variable>
 	<variable name="TOT_NETTO" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO}.add($F{RITENUTE}.negate()))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{LORDO}.add($F{RITENUTE}.negate()))]]></variableExpression>
 	</variable>
 	<variable name="TOT_RITENUTE" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{RITENUTE})]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{RITENUTE})]]></variableExpression>
 	</variable>
 	<variable name="TOT_RITENUTE_RESIDUI" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{RITENUTE}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{RITENUTE}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_RITENUTE_COMPETENZA" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("C")?$F{RITENUTE}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("C")?$F{RITENUTE}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_LORDO" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO})]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{LORDO})]]></variableExpression>
 	</variable>
 	<variable name="TOT_LORDO_RESIDUI" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_LORDO_COMPETENZA" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("C")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("C")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="DIFF_Ritenute" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO" calculation="Sum">
 		<variableExpression><![CDATA[$F{RITENUTE_TESTATA}.subtract( $F{RITENUTE} )]]></variableExpression>
 	</variable>
 	<variable name="Sum_Ritenute_Testata" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}))]]></variableExpression>
 	</variable>
 	<variable name="Tot_Ritenute_Testata" class="java.math.BigDecimal" incrementType="Group" incrementGroup="NUM_MANDATO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}))]]></variableExpression>
 	</variable>
 	<variable name="Tot_Ritenute_Testata_Residui" class="java.math.BigDecimal" incrementType="Group" incrementGroup="NUM_MANDATO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}):new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}):new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="Tot_Ritenute_Testata_Competenza" class="java.math.BigDecimal" incrementType="Group" incrementGroup="NUM_MANDATO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):($F{COMPETENZA_RESIDUO}.equals("C")?$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}):new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):($F{COMPETENZA_RESIDUO}.equals("C")?$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}):new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="PAGATO" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{IMP_PAGATO})]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{IMP_PAGATO})]]></variableExpression>
 	</variable>
 	<variable name="PAGATO_RESIDUI" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{IMP_PAGATO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?$F{IMP_PAGATO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="PAGATO_COMPETENZA" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("C")?$F{IMP_PAGATO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("C")?$F{IMP_PAGATO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="SUM_PAGATO" class="java.math.BigDecimal" incrementType="Group" incrementGroup="NUM_MANDATO" calculation="Sum">
 		<variableExpression><![CDATA[$V{PAGATO}]]></variableExpression>
@@ -242,34 +250,34 @@ ORDER BY NUM_MANDATO]]>
 		<variableExpression><![CDATA[$V{PAGATO_COMPETENZA}]]></variableExpression>
 	</variable>
 	<variable name="TOT_LORDO_BI" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_RITENUTE_BI" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{RITENUTE}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{RITENUTE}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="PAGATO_BI" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{IMP_PAGATO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{IMP_PAGATO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="SUM_PAGATO_BI" class="java.math.BigDecimal" incrementType="Group" incrementGroup="NUM_MANDATO" calculation="Sum">
 		<variableExpression><![CDATA[$V{PAGATO_BI}]]></variableExpression>
 	</variable>
 	<variable name="Tot_Ritenute_Testata_Bi" class="java.math.BigDecimal" incrementType="Group" incrementGroup="NUM_MANDATO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}):new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}):new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_LORDO_BT" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):((!$F{TI_PAGAMENTO}.equals("I"))?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):((!$F{TI_PAGAMENTO}.equals("I"))?$F{LORDO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_RITENUTE_BT" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):((!$F{TI_PAGAMENTO}.equals("I"))?$F{RITENUTE}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):((!$F{TI_PAGAMENTO}.equals("I"))?$F{RITENUTE}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="PAGATO_BT" class="java.math.BigDecimal" resetType="Group" resetGroup="NUM_MANDATO">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):((! $F{TI_PAGAMENTO}.equals("I"))?$F{IMP_PAGATO}:new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):((! $F{TI_PAGAMENTO}.equals("I"))?$F{IMP_PAGATO}:new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="SUM_PAGATO_BT" class="java.math.BigDecimal" incrementType="Group" incrementGroup="NUM_MANDATO" calculation="Sum">
 		<variableExpression><![CDATA[$V{PAGATO_BT}]]></variableExpression>
 	</variable>
 	<variable name="Tot_Ritenute_Testata_Bt" class="java.math.BigDecimal" incrementType="Group" incrementGroup="NUM_MANDATO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}):new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}):new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<group name="NUM_MANDATO">
 		<groupExpression><![CDATA[$F{NUM_MANDATO}]]></groupExpression>
@@ -328,7 +336,7 @@ ORDER BY NUM_MANDATO]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center"/>
-					<textFieldExpression><![CDATA[$F{STATO}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{STATOREALE}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="false">
 					<reportElement key="textField" style="TNR8" x="205" y="2" width="30" height="14" uuid="c60334ed-12a3-47b4-8149-be070e94de0b"/>
@@ -361,7 +369,7 @@ ORDER BY NUM_MANDATO]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):
+					<textFieldExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):
 ($F{RITENUTE_TESTATA}.subtract($F{RITENUTE}).equals(new BigDecimal(0))?new BigDecimal(0):$F{RITENUTE_TESTATA}.subtract($F{RITENUTE})))]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="###0" isBlankWhenNull="true">
@@ -748,7 +756,7 @@ Voce]]></text>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{LORDO})]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
 				<reportElement key="textField" style="TNR8" x="655" y="3" width="50" height="14" uuid="f7d94f7a-c273-46b3-af83-035c46f8c891"/>
@@ -759,7 +767,7 @@ Voce]]></text>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{RITENUTE})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{RITENUTE})]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
 				<reportElement key="textField" style="TNR8" x="538" y="3" width="43" height="14" uuid="a0b06e76-9a11-45e0-bd56-d2b3c79bd126"/>
@@ -791,7 +799,7 @@ Voce]]></text>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[($F{STATO}.equals("A")?new BigDecimal(0):$F{LORDO}.subtract($F{RITENUTE}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):$F{LORDO}.subtract($F{RITENUTE}))]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
