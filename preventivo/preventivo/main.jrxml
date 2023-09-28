@@ -49,6 +49,36 @@
 		</band>
 	</title>
 	<detail>
-		<band height="279" splitType="Stretch"/>
+		<band height="322" splitType="Stretch">
+			<subreport>
+				<reportElement x="20" y="40" width="200" height="200" uuid="5e717094-5f18-43d7-9e4f-6feff384858b"/>
+				<subreportParameter name="P_ESERCIZIO">
+					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TIPO_AGGREGAZIONE">
+					<subreportParameterExpression><![CDATA[$P{P_TIPO_AGGREGAZIONE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_NUM_LIV">
+					<subreportParameterExpression><![CDATA[$P{P_NUM_LIV}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TIPO">
+					<subreportParameterExpression><![CDATA[$P{P_TIPO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TIPO_RENDICONTO">
+					<subreportParameterExpression><![CDATA[$P{P_TIPO_RENDICONTO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ORIGINE">
+					<subreportParameterExpression><![CDATA[$P{P_ORIGINE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_VOCE_DA">
+					<subreportParameterExpression><![CDATA[$P{P_VOCE_DA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_VOCE_A">
+					<subreportParameterExpression><![CDATA[$P{P_VOCE_A}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["submain.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
 	</detail>
 </jasperReport>
