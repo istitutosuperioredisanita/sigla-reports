@@ -344,7 +344,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 	</variable>
 	<group name="CD_VOCE"/>
 	<detail>
-		<band height="60" splitType="Stretch">
+		<band height="61" splitType="Stretch">
 			<line>
 				<reportElement x="-2" y="1" width="800" height="1" uuid="ca610f7d-a44f-4183-9960-0fbffdfc7c44"/>
 			</line>
