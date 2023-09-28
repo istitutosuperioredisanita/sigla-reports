@@ -243,10 +243,6 @@
 				<reportElement x="-85" y="38" width="100" height="30" uuid="5791c68e-106a-43d3-a2fd-23321c0b34ef"/>
 				<text><![CDATA[CD_LIVELLO6]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="140" y="40" width="100" height="30" uuid="ae3f0354-284d-472c-a68b-a4beb914e4fe"/>
-				<textFieldExpression><![CDATA[$F{CD_LIVELLO6}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="20" y="41" width="100" height="30" uuid="481d231d-c324-4ea0-a109-2558705b1027"/>
 				<text><![CDATA[PROVA2]]></text>
