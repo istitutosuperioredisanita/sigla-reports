@@ -26,6 +26,9 @@
 	</parameter>
 	<parameter name="P_VOCE_DA" class="java.lang.String"/>
 	<parameter name="P_VOCE_A" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
 	<queryString language="SQL">
 		<![CDATA[SELECT 1 FROM DUAL]]>
 	</queryString>
@@ -77,7 +80,7 @@
 					<subreportParameterExpression><![CDATA[$P{P_VOCE_A}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["submain.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "submain.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
