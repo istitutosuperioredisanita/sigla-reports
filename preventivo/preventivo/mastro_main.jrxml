@@ -343,51 +343,33 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<variableExpression><![CDATA[$F{TOT_RES_TER}]]></variableExpression>
 	</variable>
 	<group name="CD_VOCE"/>
-	<title>
-		<band height="18" splitType="Stretch">
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField-184" x="0" y="0" width="797" height="11" uuid="ed8f4d51-5288-4294-a1f2-c33eacded38a"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
-					<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<textFieldExpression><![CDATA["MASTRO  "+$P{P_ESERCIZIO}]]></textFieldExpression>
-			</textField>
-		</band>
-	</title>
 	<detail>
 		<band height="60" splitType="Stretch">
 			<line>
-				<reportElement x="-2" y="0" width="800" height="1" uuid="ca610f7d-a44f-4183-9960-0fbffdfc7c44"/>
+				<reportElement x="-2" y="1" width="800" height="1" uuid="ca610f7d-a44f-4183-9960-0fbffdfc7c44"/>
 			</line>
 			<line>
-				<reportElement x="1" y="33" width="800" height="1" uuid="f32aaa12-3f3d-4a97-adf3-4896e09262f6"/>
+				<reportElement x="1" y="34" width="800" height="1" uuid="f32aaa12-3f3d-4a97-adf3-4896e09262f6"/>
 			</line>
 			<textField>
-				<reportElement x="197" y="0" width="600" height="30" uuid="4c677a3a-1d5e-48e2-b2be-797cc2832851"/>
+				<reportElement x="197" y="1" width="600" height="30" uuid="4c677a3a-1d5e-48e2-b2be-797cc2832851"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{DS_LIVELLO6}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="97" y="0" width="100" height="30" uuid="2769169e-d210-4fab-af03-318dfae5359d"/>
+				<reportElement x="97" y="1" width="100" height="30" uuid="2769169e-d210-4fab-af03-318dfae5359d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{CD_LIVELLO6}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="0" width="100" height="30" uuid="5f78143d-3819-4543-8c20-cf193a2c9a0a"/>
+				<reportElement x="0" y="1" width="100" height="30" uuid="5f78143d-3819-4543-8c20-cf193a2c9a0a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[VOCE]]></text>
 			</staticText>
 			<subreport>
-				<reportElement x="1" y="34" width="29" height="26" uuid="bd4d9f10-69e3-4098-acfa-89ec6ddf247f"/>
+				<reportElement x="1" y="35" width="29" height="26" uuid="bd4d9f10-69e3-4098-acfa-89ec6ddf247f"/>
 				<subreportParameter name="P_ESERCIZIO">
 					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
 				</subreportParameter>
