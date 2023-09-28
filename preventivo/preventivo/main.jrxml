@@ -49,18 +49,6 @@
 		</band>
 	</title>
 	<detail>
-		<band height="279" splitType="Stretch">
-			<subreport isUsingCache="false">
-				<reportElement x="10" y="10" width="380" height="40" uuid="06c2e7dc-1bbc-4648-9c73-990f210ea80a"/>
-				<subreportParameter name="P_ESERCIZIO">
-					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_TIPO_AGGREGAZIONE">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO_AGGREGAZIONE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["submain.jrxml"]]></subreportExpression>
-			</subreport>
-		</band>
+		<band height="279" splitType="Stretch"/>
 	</detail>
 </jasperReport>
