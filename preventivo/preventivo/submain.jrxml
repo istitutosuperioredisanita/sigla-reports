@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.10.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="submain" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Stampa_mastroScriptlet" uuid="0cd47979-d858-4b3c-92b8-047d04bff09b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SiglaDbSvil"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="P_ESERCIZIO" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="P_TIPO_AGGREGAZIONE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_NUM_LIV" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[6]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_TIPO" class="java.lang.String">
+		<defaultValueExpression><![CDATA["E"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_TIPO_RENDICONTO" class="java.lang.String">
+		<defaultValueExpression><![CDATA["GEST"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_ORIGINE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["REA"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_VOCE_DA" class="java.lang.String"/>
+	<parameter name="P_VOCE_A" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM TMP_STAMPA_RENDICONTO]]>
+	</queryString>
+	<field name="SEQUENZA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="SEQUENZA"/>
+		<property name="com.jaspersoft.studio.field.label" value="SEQUENZA"/>
+	</field>
+	<field name="TIPO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TIPO"/>
+		<property name="com.jaspersoft.studio.field.label" value="TIPO"/>
+	</field>
+	<field name="TOTALE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TOTALE"/>
+		<property name="com.jaspersoft.studio.field.label" value="TOTALE"/>
+	</field>
+	<field name="CD_LIVELLO1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CD_LIVELLO1"/>
+		<property name="com.jaspersoft.studio.field.label" value="CD_LIVELLO1"/>
+	</field>
+	<field name="CD_LIVELLO2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CD_LIVELLO2"/>
+		<property name="com.jaspersoft.studio.field.label" value="CD_LIVELLO2"/>
+	</field>
+	<field name="CD_LIVELLO3" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CD_LIVELLO3"/>
+		<property name="com.jaspersoft.studio.field.label" value="CD_LIVELLO3"/>
+	</field>
+	<field name="CD_LIVELLO4" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CD_LIVELLO4"/>
+		<property name="com.jaspersoft.studio.field.label" value="CD_LIVELLO4"/>
+	</field>
+	<field name="CD_LIVELLO5" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CD_LIVELLO5"/>
+		<property name="com.jaspersoft.studio.field.label" value="CD_LIVELLO5"/>
+	</field>
+	<field name="CD_LIVELLO6" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CD_LIVELLO6"/>
+		<property name="com.jaspersoft.studio.field.label" value="CD_LIVELLO6"/>
+	</field>
+	<field name="CD_LIVELLO7" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CD_LIVELLO7"/>
+		<property name="com.jaspersoft.studio.field.label" value="CD_LIVELLO7"/>
+	</field>
+	<field name="CD_LIVELLO8" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CD_LIVELLO8"/>
+		<property name="com.jaspersoft.studio.field.label" value="CD_LIVELLO8"/>
+	</field>
+	<field name="CD_LIVELLO9" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CD_LIVELLO9"/>
+		<property name="com.jaspersoft.studio.field.label" value="CD_LIVELLO9"/>
+	</field>
+	<field name="DS_LIVELLO1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO1"/>
+		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO1"/>
+	</field>
+	<field name="DS_LIVELLO2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO2"/>
+		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO2"/>
+	</field>
+	<field name="DS_LIVELLO3" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO3"/>
+		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO3"/>
+	</field>
+	<field name="DS_LIVELLO4" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO4"/>
+		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO4"/>
+	</field>
+	<field name="DS_LIVELLO5" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO5"/>
+		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO5"/>
+	</field>
+	<field name="DS_LIVELLO6" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO6"/>
+		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO6"/>
+	</field>
+	<field name="DS_LIVELLO7" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO7"/>
+		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO7"/>
+	</field>
+	<field name="DS_LIVELLO8" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO8"/>
+		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO8"/>
+	</field>
+	<field name="DS_LIVELLO9" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO9"/>
+		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO9"/>
+	</field>
+	<field name="LIVELLO1_DS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LIVELLO1_DS"/>
+		<property name="com.jaspersoft.studio.field.label" value="LIVELLO1_DS"/>
+	</field>
+	<field name="LIVELLO2_DS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LIVELLO2_DS"/>
+		<property name="com.jaspersoft.studio.field.label" value="LIVELLO2_DS"/>
+	</field>
+	<field name="LIVELLO3_DS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LIVELLO3_DS"/>
+		<property name="com.jaspersoft.studio.field.label" value="LIVELLO3_DS"/>
+	</field>
+	<field name="LIVELLO4_DS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LIVELLO4_DS"/>
+		<property name="com.jaspersoft.studio.field.label" value="LIVELLO4_DS"/>
+	</field>
+	<field name="LIVELLO5_DS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LIVELLO5_DS"/>
+		<property name="com.jaspersoft.studio.field.label" value="LIVELLO5_DS"/>
+	</field>
+	<field name="LIVELLO6_DS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LIVELLO6_DS"/>
+		<property name="com.jaspersoft.studio.field.label" value="LIVELLO6_DS"/>
+	</field>
+	<field name="LIVELLO7_DS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LIVELLO7_DS"/>
+		<property name="com.jaspersoft.studio.field.label" value="LIVELLO7_DS"/>
+	</field>
+	<field name="LIVELLO8_DS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LIVELLO8_DS"/>
+		<property name="com.jaspersoft.studio.field.label" value="LIVELLO8_DS"/>
+	</field>
+	<field name="LIVELLO9_DS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LIVELLO9_DS"/>
+		<property name="com.jaspersoft.studio.field.label" value="LIVELLO9_DS"/>
+	</field>
+	<field name="PREV_INI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PREV_INI"/>
+		<property name="com.jaspersoft.studio.field.label" value="PREV_INI"/>
+	</field>
+	<field name="VARIAZIONI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="VARIAZIONI"/>
+		<property name="com.jaspersoft.studio.field.label" value="VARIAZIONI"/>
+	</field>
+	<field name="ASSESTATO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ASSESTATO"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASSESTATO"/>
+	</field>
+	<field name="RIS_PAG" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RIS_PAG"/>
+		<property name="com.jaspersoft.studio.field.label" value="RIS_PAG"/>
+	</field>
+	<field name="RIM_RIS_PAG" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RIM_RIS_PAG"/>
+		<property name="com.jaspersoft.studio.field.label" value="RIM_RIS_PAG"/>
+	</field>
+	<field name="TOT_ACC_IMP" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="TOT_ACC_IMP"/>
+		<property name="com.jaspersoft.studio.field.label" value="TOT_ACC_IMP"/>
+	</field>
+	<field name="DIFF_COMP" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="DIFF_COMP"/>
+		<property name="com.jaspersoft.studio.field.label" value="DIFF_COMP"/>
+	</field>
+	<field name="RES_INI_ES" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RES_INI_ES"/>
+		<property name="com.jaspersoft.studio.field.label" value="RES_INI_ES"/>
+	</field>
+	<field name="RES_RIS_PAG" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RES_RIS_PAG"/>
+		<property name="com.jaspersoft.studio.field.label" value="RES_RIS_PAG"/>
+	</field>
+	<field name="RES_RIM_RIS_PAG" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RES_RIM_RIS_PAG"/>
+		<property name="com.jaspersoft.studio.field.label" value="RES_RIM_RIS_PAG"/>
+	</field>
+	<field name="RES_TOTALI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RES_TOTALI"/>
+		<property name="com.jaspersoft.studio.field.label" value="RES_TOTALI"/>
+	</field>
+	<field name="RES_VAR_PIU" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RES_VAR_PIU"/>
+		<property name="com.jaspersoft.studio.field.label" value="RES_VAR_PIU"/>
+	</field>
+	<field name="RES_VAR_MENO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RES_VAR_MENO"/>
+		<property name="com.jaspersoft.studio.field.label" value="RES_VAR_MENO"/>
+	</field>
+	<field name="CASSA_PREV" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CASSA_PREV"/>
+		<property name="com.jaspersoft.studio.field.label" value="CASSA_PREV"/>
+	</field>
+	<field name="CASSA_RIS_PAG" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CASSA_RIS_PAG"/>
+		<property name="com.jaspersoft.studio.field.label" value="CASSA_RIS_PAG"/>
+	</field>
+	<field name="CASSA_DIFF" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CASSA_DIFF"/>
+		<property name="com.jaspersoft.studio.field.label" value="CASSA_DIFF"/>
+	</field>
+	<field name="TOT_RES_TER" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="TOT_RES_TER"/>
+		<property name="com.jaspersoft.studio.field.label" value="TOT_RES_TER"/>
+	</field>
+	<field name="RES_INI_ES_PREC" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RES_INI_ES_PREC"/>
+		<property name="com.jaspersoft.studio.field.label" value="RES_INI_ES_PREC"/>
+	</field>
+	<field name="TOT_ACC_IMP_PREC" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="TOT_ACC_IMP_PREC"/>
+		<property name="com.jaspersoft.studio.field.label" value="TOT_ACC_IMP_PREC"/>
+	</field>
+	<field name="RIS_PAG_PREC" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RIS_PAG_PREC"/>
+		<property name="com.jaspersoft.studio.field.label" value="RIS_PAG_PREC"/>
+	</field>
+	<field name="PREV_INI_ES_PREC" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PREV_INI_ES_PREC"/>
+		<property name="com.jaspersoft.studio.field.label" value="PREV_INI_ES_PREC"/>
+	</field>
+	<field name="CASSA_PREV_ES_PREC" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CASSA_PREV_ES_PREC"/>
+		<property name="com.jaspersoft.studio.field.label" value="CASSA_PREV_ES_PREC"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="-85" y="38" width="100" height="30" uuid="5791c68e-106a-43d3-a2fd-23321c0b34ef"/>
+				<text><![CDATA[CD_LIVELLO6]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="40" width="100" height="30" uuid="ae3f0354-284d-472c-a68b-a4beb914e4fe"/>
+				<textFieldExpression><![CDATA[$F{CD_LIVELLO6}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="41" width="100" height="30" uuid="481d231d-c324-4ea0-a109-2558705b1027"/>
+				<text><![CDATA[PROVA2]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
