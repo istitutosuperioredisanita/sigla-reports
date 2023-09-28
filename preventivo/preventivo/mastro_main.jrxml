@@ -445,6 +445,9 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 				<subreportParameter name="SUM_CASSA_DIFF_LIV6">
 					<subreportParameterExpression><![CDATA[$V{SUM_CASSA_DIFF_LIV6}]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="SUM_RES_RIM_RIS_PAG_LIV6">
+					<subreportParameterExpression><![CDATA[$V{SUM_RES_RIM_RIS_PAG_LIV6}]]></subreportParameterExpression>
+				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "mastro_residui.jasper"]]></subreportExpression>
 			</subreport>
