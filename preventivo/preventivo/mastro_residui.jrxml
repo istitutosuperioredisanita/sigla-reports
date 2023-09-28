@@ -24,6 +24,9 @@
 	<parameter name="SUM_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
 	<parameter name="SUM_RIM_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
 	<parameter name="P_TIPO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
 	<queryString language="SQL">
 		<![CDATA[-- Query usata sul report dei tab
 SELECT 
@@ -349,8 +352,29 @@ ORDER BY ESERCIZIO_RES]]>
 				<subreportParameter name="P_TIPO">
 					<subreportParameterExpression><![CDATA[$P{P_TIPO}]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="SUM_RES_INI_ES_LIV6">
+					<subreportParameterExpression><![CDATA[$P{SUM_RES_INI_ES_LIV6}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUM_RES_VAR_PIU_LIV6">
+					<subreportParameterExpression><![CDATA[$P{SUM_RES_VAR_PIU_LIV6}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUM_RES_VAR_MENO_LIV6">
+					<subreportParameterExpression><![CDATA[$P{SUM_RES_VAR_MENO_LIV6}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUM_PREV_INI_LIV6">
+					<subreportParameterExpression><![CDATA[$P{SUM_PREV_INI_LIV6}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUM_VAR_PIU_LIV6">
+					<subreportParameterExpression><![CDATA[$P{SUM_VAR_PIU_LIV6}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUM_VAR_MENO_LIV6">
+					<subreportParameterExpression><![CDATA[$P{SUM_VAR_MENO_LIV6}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["mastro_residui_detail.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "mastro_residui_detail.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</summary>
