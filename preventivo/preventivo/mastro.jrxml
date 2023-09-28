@@ -26,6 +26,9 @@
 	</parameter>
 	<parameter name="P_VOCE_DA" class="java.lang.String"/>
 	<parameter name="P_VOCE_A" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[select DS_LIVELLO1E, DS_LIVELLO2E, DS_LIVELLO3E, DS_LIVELLO4E, DS_LIVELLO5E, DS_LIVELLO6E, DS_LIVELLO7E, NULL DS_LIVELLO8E, NULL DS_LIVELLO9E,
 DS_LIVELLO1S, DS_LIVELLO2S, DS_LIVELLO3S, DS_LIVELLO4S, DS_LIVELLO5S, DS_LIVELLO6S, DS_LIVELLO7S, NULL DS_LIVELLO8S, NULL DS_LIVELLO9S,
@@ -184,8 +187,11 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 				<subreportParameter name="P_VOCE_A">
 					<subreportParameterExpression><![CDATA[$P{P_VOCE_A}]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["mastro_main.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "mastro_main.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
