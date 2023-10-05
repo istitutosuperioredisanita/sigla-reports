@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.12.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="residui" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2739b6e1-c7ae-4834-8041-44743e0f00ba">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="residui" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="2" bottomMargin="2" uuid="2739b6e1-c7ae-4834-8041-44743e0f00ba">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="SUB_P_CD_VOCE" class="java.lang.String">
 		<defaultValueExpression><![CDATA[$F{CD_VOCE}]]></defaultValueExpression>
 	</parameter>
@@ -81,32 +90,6 @@ ORDER BY ESERCIZIO_RES]]>
 	<columnHeader>
 		<band height="10">
 			<staticText>
-				<reportElement x="160" y="0" width="150" height="10" uuid="3806a2ab-4c1e-4f03-8e11-f6318cb7f1bc"/>
-				<box padding="5">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[INIZIALE]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="310" y="0" width="150" height="10" uuid="0f36add4-4fdc-4f9e-9ac2-34d888d9ae34"/>
-				<box padding="5">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[VARIAZIONI +]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="460" y="0" width="150" height="10" uuid="3be76a3c-a715-42a6-a935-d22cee2342db"/>
 				<box padding="5">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -131,6 +114,32 @@ ORDER BY ESERCIZIO_RES]]>
 					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ASSESTATO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="0" width="150" height="10" uuid="3806a2ab-4c1e-4f03-8e11-f6318cb7f1bc"/>
+				<box padding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INIZIALE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="0" width="150" height="10" uuid="0f36add4-4fdc-4f9e-9ac2-34d888d9ae34"/>
+				<box padding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VARIAZIONI +]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
