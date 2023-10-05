@@ -135,9 +135,9 @@ ORDER BY ESERCIZIO_RES]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="10" splitType="Stretch">
+		<band height="3" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="160" height="10" uuid="196a672e-ae8b-43d1-b633-8f22389a43e8"/>
+				<reportElement x="0" y="0" width="160" height="3" uuid="196a672e-ae8b-43d1-b633-8f22389a43e8"/>
 				<box padding="5">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -150,7 +150,7 @@ ORDER BY ESERCIZIO_RES]]>
 				<textFieldExpression><![CDATA["RESIDUO: " + $F{ESERCIZIO_RES}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="160" y="0" width="150" height="10" uuid="8104c914-acd5-48cf-b0b6-887f6a9149be"/>
+				<reportElement x="160" y="0" width="150" height="3" uuid="8104c914-acd5-48cf-b0b6-887f6a9149be"/>
 				<box padding="5">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -163,7 +163,7 @@ ORDER BY ESERCIZIO_RES]]>
 				<textFieldExpression><![CDATA[$F{INIZIALE}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="310" y="0" width="150" height="10" uuid="89fb0e43-41e8-4040-9658-166ad56a4867"/>
+				<reportElement x="310" y="0" width="150" height="3" uuid="89fb0e43-41e8-4040-9658-166ad56a4867"/>
 				<box padding="5">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -176,7 +176,7 @@ ORDER BY ESERCIZIO_RES]]>
 				<textFieldExpression><![CDATA[$F{VARIAZ_POS}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="460" y="0" width="150" height="10" uuid="573521e4-f73b-467e-8477-9d362fb6aee5"/>
+				<reportElement x="460" y="0" width="150" height="3" uuid="573521e4-f73b-467e-8477-9d362fb6aee5"/>
 				<box padding="5">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -189,7 +189,7 @@ ORDER BY ESERCIZIO_RES]]>
 				<textFieldExpression><![CDATA[$F{VARIAZ_NEG}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="610" y="0" width="150" height="10" uuid="38a636ea-62f5-49fb-8bb9-175b657217d0"/>
+				<reportElement x="610" y="0" width="150" height="3" uuid="38a636ea-62f5-49fb-8bb9-175b657217d0"/>
 				<box padding="5">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
