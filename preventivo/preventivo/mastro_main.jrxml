@@ -344,7 +344,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 	</variable>
 	<group name="CD_VOCE"/>
 	<detail>
-		<band height="69" splitType="Stretch">
+		<band height="50" splitType="Stretch">
 			<line>
 				<reportElement x="-2" y="1" width="800" height="1" uuid="ca610f7d-a44f-4183-9960-0fbffdfc7c44"/>
 			</line>
@@ -369,7 +369,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 				<text><![CDATA[VOCE]]></text>
 			</staticText>
 			<subreport>
-				<reportElement x="0" y="40" width="29" height="26" uuid="bd4d9f10-69e3-4098-acfa-89ec6ddf247f"/>
+				<reportElement x="0" y="35" width="29" height="15" uuid="bd4d9f10-69e3-4098-acfa-89ec6ddf247f"/>
 				<subreportParameter name="P_ESERCIZIO">
 					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
 				</subreportParameter>

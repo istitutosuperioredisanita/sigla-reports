@@ -162,9 +162,9 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 		</band>
 	</title>
 	<detail>
-		<band height="30" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<subreport>
-				<reportElement x="1" y="0" width="29" height="30" uuid="cbbb55a7-a70e-4531-9d2e-9c1597849ad7">
+				<reportElement x="1" y="0" width="29" height="20" uuid="cbbb55a7-a70e-4531-9d2e-9c1597849ad7">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<subreportParameter name="P_ESERCIZIO">
