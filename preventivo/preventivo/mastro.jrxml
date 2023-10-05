@@ -144,9 +144,9 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 	</variable>
 	<group name="CD_VOCE"/>
 	<title>
-		<band height="11" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-184" x="0" y="0" width="797" height="11" uuid="ed8f4d51-5288-4294-a1f2-c33eacded38a"/>
+				<reportElement key="textField-184" x="0" y="0" width="797" height="30" uuid="ed8f4d51-5288-4294-a1f2-c33eacded38a"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -154,7 +154,7 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
-					<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252"/>
+					<font fontName="Times New Roman" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Mastro di Conto Riepilogo -  " + $V{V_TIPO_DS} + " - " + $P{P_ESERCIZIO}]]></textFieldExpression>
