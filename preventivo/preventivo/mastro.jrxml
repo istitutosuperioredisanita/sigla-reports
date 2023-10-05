@@ -138,6 +138,10 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 		<property name="com.jaspersoft.studio.field.name" value="AVANZO_DEF"/>
 		<property name="com.jaspersoft.studio.field.label" value="AVANZO_DEF"/>
 	</field>
+	<variable name="V_TIPO_DS" class="java.lang.String">
+		<variableExpression><![CDATA[$P{P_TIPO}]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{P_TIPO}.equals("E") ? "Entrata" : "Spesa"]]></initialValueExpression>
+	</variable>
 	<group name="CD_VOCE"/>
 	<title>
 		<band height="11" splitType="Stretch">
@@ -153,7 +157,7 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 					<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA["MASTRO  "+$P{P_ESERCIZIO}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Mastro di Conto Riepilogo -  " + $V{V_TIPO_DS} + " - " + $P{P_ESERCIZIO}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
