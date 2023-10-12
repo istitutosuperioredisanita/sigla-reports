@@ -195,7 +195,7 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "riaccertamento_residui.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "riaccertamento_main.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
