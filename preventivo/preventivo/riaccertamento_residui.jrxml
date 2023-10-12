@@ -24,7 +24,9 @@
 	<parameter name="SUM_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
 	<parameter name="SUM_RIM_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
 	<parameter name="P_TIPO" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
 	<queryString language="SQL">
 		<![CDATA[SELECT ESERCIZIO,
 	ESERCIZIO_RES,
