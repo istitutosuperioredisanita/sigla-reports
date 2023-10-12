@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.10.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="riaccertamento_residui" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2739b6e1-c7ae-4834-8041-44743e0f00ba">
-	<property name="com.jaspersoft.studio.data.sql.tables" value="Vl9BU1NFU1RBVE8gLDE1LDE1LGNlNmQyOTQ2LTA4NDItNDU1Yi05MzJmLTkwYmMzNjc2M2Q3ZDs="/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SiglaDbSvil"/>
 	<parameter name="SUB_P_CD_VOCE" class="java.lang.String">
 		<defaultValueExpression><![CDATA[$F{CD_VOCE}]]></defaultValueExpression>
 	</parameter>
@@ -28,20 +28,24 @@
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
 	<queryString language="SQL">
-		<![CDATA[SELECT ESERCIZIO,
+		<![CDATA[-- Query usata sul report dei tab
+SELECT 
+	ESERCIZIO,
 	ESERCIZIO_RES,
 	CD_VOCE,
-	SUM( IMPORTO_INI_RESIDUI_PROPRI) AS INIZIALE,
-	SUM( VARIAZIONI_POSITIVE) AS VARIAZ_POS,
-	SUM( VARIAZIONI_NEGATIVE) AS VARIAZ_NEG,
-	SUM( IMPORTO_INI_RESIDUI_PROPRI) AS DISPONIBILE
+	SUM(IMPORTO_INI_RESIDUI_PROPRI) AS INIZIALE, 
+	SUM(VARIAZIONI_POSITIVE) AS VARIAZ_POS, 
+	SUM(VARIAZIONI_NEGATIVE) AS VARIAZ_NEG, 
+	SUM(IMPORTO_INI_RESIDUI_PROPRI) AS DISPONIBILE
 FROM V_ASSESTATO va
-WHERE 
-	 'NULL' = $P{SUB_P_CD_VOCE} 
-	 AND 'NULL' <> 'NULL' 
-HAVING 
-	 SUM('NULL') > {1} 
-ORDER BY ESERCIZIO_RES DESC]]>
+WHERE CD_VOCE = $P{SUB_P_CD_VOCE}  AND ESERCIZIO <> ESERCIZIO_RES
+GROUP BY
+	ESERCIZIO, ESERCIZIO_RES, CD_VOCE
+HAVING
+	SUM(IMPORTO_INI_RESIDUI_PROPRI) > 0 OR
+	SUM(VARIAZIONI_POSITIVE) > 0 OR
+	SUM(VARIAZIONI_NEGATIVE) > 0
+ORDER BY ESERCIZIO_RES]]>
 	</queryString>
 	<field name="ESERCIZIO" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.name" value="ESERCIZIO"/>
