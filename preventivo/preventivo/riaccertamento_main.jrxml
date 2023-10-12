@@ -345,32 +345,19 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 	</variable>
 	<group name="CD_VOCE"/>
 	<detail>
-		<band height="50" splitType="Stretch">
-			<line>
-				<reportElement x="-2" y="1" width="800" height="1" uuid="ca610f7d-a44f-4183-9960-0fbffdfc7c44"/>
-			</line>
-			<line>
-				<reportElement x="1" y="34" width="800" height="1" uuid="f32aaa12-3f3d-4a97-adf3-4896e09262f6"/>
-			</line>
+		<band height="35" splitType="Stretch">
 			<textField>
-				<reportElement x="197" y="1" width="600" height="30" uuid="4c677a3a-1d5e-48e2-b2be-797cc2832851"/>
+				<reportElement x="101" y="0" width="600" height="20" uuid="4c677a3a-1d5e-48e2-b2be-797cc2832851"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{DS_LIVELLO6}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="97" y="1" width="100" height="30" uuid="2769169e-d210-4fab-af03-318dfae5359d"/>
+				<reportElement x="0" y="0" width="100" height="20" uuid="2769169e-d210-4fab-af03-318dfae5359d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{CD_LIVELLO6}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="0" y="1" width="100" height="30" uuid="5f78143d-3819-4543-8c20-cf193a2c9a0a"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[VOCE]]></text>
-			</staticText>
 			<subreport>
-				<reportElement x="0" y="35" width="29" height="15" uuid="bd4d9f10-69e3-4098-acfa-89ec6ddf247f"/>
+				<reportElement x="0" y="20" width="29" height="15" uuid="bd4d9f10-69e3-4098-acfa-89ec6ddf247f"/>
 				<subreportParameter name="P_ESERCIZIO">
 					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -448,6 +435,9 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 				</subreportParameter>
 				<subreportParameter name="SUM_RES_RIM_RIS_PAG_LIV6">
 					<subreportParameterExpression><![CDATA[$V{SUM_RES_RIM_RIS_PAG_LIV6}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUM_RES_VAR_MENO_LIV6">
+					<subreportParameterExpression><![CDATA[$V{SUM_RES_VAR_MENO_LIV6}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "riaccertamento_residui.jasper"]]></subreportExpression>
