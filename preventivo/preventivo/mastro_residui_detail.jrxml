@@ -91,7 +91,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="8" isBold="true"/>
+					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ASSESTATO]]></text>
 			</staticText>
@@ -104,7 +104,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-					<font size="8" isBold="true"/>
+					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E") ? "ACCERTATO" : "IMPEGNATO"]]></textFieldExpression>
 			</textField>
@@ -117,7 +117,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-					<font size="8" isBold="true"/>
+					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E") ? "DISPON. ACCERTARE" : "DISPON. IMPEGNARE"]]></textFieldExpression>
 			</textField>
@@ -130,7 +130,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-					<font size="8" isBold="true"/>
+					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E") ? "RISCOSSO" : "PAGATO"]]></textFieldExpression>
 			</textField>
@@ -143,7 +143,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-					<font size="8" isBold="true"/>
+					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E") ? "DISPON. RISCUOTERE" : "DISPON. PAGARE"]]></textFieldExpression>
 			</textField>
@@ -160,7 +160,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="8" isBold="true"/>
+					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["RESIDUO" + $F{ESERCIZIO_RES}]]></textFieldExpression>
 			</textField>
@@ -173,7 +173,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{INIZIALE}]]></textFieldExpression>
 			</textField>
@@ -186,7 +186,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{RISCOSSO}]]></textFieldExpression>
 			</textField>
@@ -199,7 +199,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{DISPON_RISCUOTERE}]]></textFieldExpression>
 			</textField>
@@ -222,7 +222,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{INIZIALE}]]></textFieldExpression>
 			</textField>
@@ -239,7 +239,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="8" isBold="true"/>
+					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[COMPETENZA]]></text>
 			</staticText>
@@ -252,7 +252,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="8" isBold="true"/>
+					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[TOTALE RESIDUI]]></text>
 			</staticText>
@@ -265,7 +265,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="8" isBold="true"/>
+					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[CASSA]]></text>
 			</staticText>
@@ -278,7 +278,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_CASSA_PREV_LIV6}]]></textFieldExpression>
 			</textField>
@@ -291,7 +291,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_CASSA_RIS_PAG_LIV6}]]></textFieldExpression>
 			</textField>
@@ -304,7 +304,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_CASSA_DIFF_LIV6}.compareTo(BigDecimal.ZERO)<0?$P{SUM_CASSA_DIFF_LIV6}.abs():BigDecimal.ZERO]]></textFieldExpression>
 			</textField>
@@ -317,7 +317,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_RES_TOTALI_LIV6}]]></textFieldExpression>
 			</textField>
@@ -330,7 +330,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_RES_TOTALI_LIV6}]]></textFieldExpression>
 			</textField>
@@ -343,7 +343,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_RES_RIS_PAG_LIV6}]]></textFieldExpression>
 			</textField>
@@ -356,7 +356,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_RES_RIM_RIS_PAG_LIV6}]]></textFieldExpression>
 			</textField>
@@ -369,7 +369,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_ASSESTATO_LIV6}]]></textFieldExpression>
 			</textField>
@@ -382,7 +382,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_TOT_ACC_IMP_LIV6}]]></textFieldExpression>
 			</textField>
@@ -395,7 +395,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_DIFF_COMP_LIV6}.compareTo(BigDecimal.ZERO)<0?$P{SUM_DIFF_COMP_LIV6}.abs():BigDecimal.ZERO.abs()]]></textFieldExpression>
 			</textField>
@@ -408,7 +408,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_RIS_PAG_LIV6}]]></textFieldExpression>
 			</textField>
@@ -421,7 +421,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SUM_RIM_RIS_PAG_LIV6}]]></textFieldExpression>
 			</textField>
