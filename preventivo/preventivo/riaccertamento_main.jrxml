@@ -349,14 +349,14 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 			<textField>
 				<reportElement x="140" y="0" width="660" height="20" forecolor="#ABABAB" uuid="4c677a3a-1d5e-48e2-b2be-797cc2832851"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{DS_LIVELLO6}.toUpperCase()]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="0" width="140" height="20" forecolor="#ABABAB" uuid="2769169e-d210-4fab-af03-318dfae5359d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{CD_LIVELLO6}]]></textFieldExpression>
 			</textField>

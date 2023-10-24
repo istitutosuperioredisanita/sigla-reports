@@ -92,7 +92,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Importo al 1 gennaio]]></text>
 			</staticText>
@@ -105,7 +105,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Variazioni]]></text>
 			</staticText>
@@ -118,21 +118,21 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[anno provenienza]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="460" y="0" width="150" height="20" uuid="2958eb94-f84e-4d80-8d9d-6cb52a4b1097"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E") ? "riscossi per" : "pagati per"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="610" y="2" width="150" height="20" uuid="2c53a048-cc9d-4249-a7d3-38a78ac86944"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E") ? "da riscuotere" : "da pagare"]]></textFieldExpression>
 			</textField>
@@ -149,7 +149,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ESERCIZIO_RES}]]></textFieldExpression>
 			</textField>
@@ -254,7 +254,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Totale capitolo = " +  $F{CD_VOCE}]]></textFieldExpression>
 			</textField>
