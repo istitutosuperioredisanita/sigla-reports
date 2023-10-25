@@ -771,7 +771,7 @@
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="79" splitType="Stretch">
+		<band height="103" splitType="Stretch">
 			<staticText>
 				<reportElement style="bold" mode="Transparent" x="0" y="0" width="554" height="22" forecolor="#000000" uuid="4502ab32-5c5f-463d-a3b0-6248477b971e"/>
 				<textElement textAlignment="Justified">
