@@ -183,7 +183,7 @@ ORDER BY ESERCIZIO_RES]]>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{VARIAZIONI}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{VARIAZIONI}.compareTo(BigDecimal.ZERO)>0?$F{VARIAZIONI}:BigDecimal.ZERO]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="460" y="0" width="150" height="10" uuid="573521e4-f73b-467e-8477-9d362fb6aee5"/>
@@ -196,7 +196,7 @@ ORDER BY ESERCIZIO_RES]]>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{VARIAZIONI}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{VARIAZIONI}.compareTo(BigDecimal.ZERO)<0?$F{VARIAZIONI}:BigDecimal.ZERO]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="610" y="0" width="150" height="10" uuid="38a636ea-62f5-49fb-8bb9-175b657217d0"/>
