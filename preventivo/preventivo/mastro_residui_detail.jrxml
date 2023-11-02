@@ -232,7 +232,7 @@ ORDER BY ESERCIZIO_RES]]>
 		</band>
 	</detail>
 	<summary>
-		<band height="105">
+		<band height="30">
 			<staticText>
 				<reportElement x="0" y="10" width="160" height="10" uuid="497e6034-d820-45d7-aa93-d3b418d185d8"/>
 				<box padding="0">
