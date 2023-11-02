@@ -282,7 +282,7 @@ ORDER BY ESERCIZIO_RES]]>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{SUM_F_INIZIALE} + $P{SUM_ASSESTATO_LIV6}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{SUM_F_INIZIALE}.add($P{SUM_ASSESTATO_LIV6})]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="520" y="0" width="120" height="10" uuid="60922f30-23cd-4eeb-91eb-b6738a8cc202"/>
