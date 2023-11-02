@@ -33,19 +33,17 @@
 	ESERCIZIO_RES,
 	CD_VOCE,
 	SUM(IMPORTO_INI_RESIDUI_PROPRI) AS INIZIALE, 
-	SUM(VARIAZIONI_POSITIVE) AS VARIAZ_POS, 
-	SUM(VARIAZIONI_NEGATIVE) AS VARIAZ_NEG, 
-	SUM(IMPORTO_INI_RESIDUI_PROPRI) AS DISPONIBILE,
+	SUM(VARIAZIONI_RESIDUI_PROPRI) AS VARIAZIONI,
 	SUM(IMPORTO_MANREV) AS RISCOSSO,
-	(SUM(IMPORTO_INI_RESIDUI_PROPRI) - SUM(IMPORTO_MANREV)) AS DA_RISCUOTERE
+	(SUM(IMPORTO_INI_RESIDUI_PROPRI) - SUM(IMPORTO_MANREV) + SUM(VARIAZIONI_RESIDUI_PROPRI)) AS DA_RISCUOTERE
 FROM V_ASSESTATO va
 WHERE va.CD_VOCE = $P{SUB_P_CD_VOCE}  AND ESERCIZIO <> ESERCIZIO_RES
 GROUP BY
-	ESERCIZIO, ESERCIZIO_RES, CD_VOCE
+	ESERCIZIO,
+	ESERCIZIO_RES,
+	CD_VOCE
 HAVING
-	SUM(IMPORTO_INI_RESIDUI_PROPRI) > 0 OR
-	SUM(VARIAZIONI_POSITIVE) > 0 OR
-	SUM(VARIAZIONI_NEGATIVE) > 0
+	SUM(IMPORTO_INI_RESIDUI_PROPRI) > 0 
 ORDER BY ESERCIZIO_RES]]>
 	</queryString>
 	<field name="ESERCIZIO" class="java.math.BigDecimal">
@@ -64,20 +62,21 @@ ORDER BY ESERCIZIO_RES]]>
 		<property name="com.jaspersoft.studio.field.name" value="INIZIALE"/>
 		<property name="com.jaspersoft.studio.field.label" value="INIZIALE"/>
 	</field>
-	<field name="VARIAZ_POS" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="VARIAZ_POS"/>
-		<property name="com.jaspersoft.studio.field.label" value="VARIAZ_POS"/>
-	</field>
-	<field name="VARIAZ_NEG" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="VARIAZ_NEG"/>
-		<property name="com.jaspersoft.studio.field.label" value="VARIAZ_NEG"/>
-	</field>
-	<field name="DISPONIBILE" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="DISPONIBILE"/>
-		<property name="com.jaspersoft.studio.field.label" value="DISPONIBILE"/>
-	</field>
 	<field name="RISCOSSO" class="java.math.BigDecimal"/>
+	<field name="VARIAZIONI" class="java.math.BigDecimal"/>
 	<field name="DA_RISCUOTERE" class="java.math.BigDecimal"/>
+	<variable name="SUM_INIZIALE" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{INIZIALE}]]></variableExpression>
+	</variable>
+	<variable name="SUM_VARIAZIONI" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{VARIAZIONI}]]></variableExpression>
+	</variable>
+	<variable name="SUM_RISCOSSO" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{RISCOSSO}]]></variableExpression>
+	</variable>
+	<variable name="SUM_DA_RISCUOTERE" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{DA_RISCUOTERE}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -173,7 +172,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{VARIAZ_NEG}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{VARIAZIONI}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="460" y="0" width="150" height="20" uuid="573521e4-f73b-467e-8477-9d362fb6aee5"/>
@@ -210,7 +209,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{SUM_RES_TOTALI_LIV6}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{SUM_INIZIALE}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="310" y="0" width="150" height="20" uuid="fd43ac73-347a-4aa5-99b4-3a017ac3ca74"/>
@@ -221,7 +220,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{SUM_RES_VAR_MENO_LIV6}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{SUM_VARIAZIONI}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="460" y="0" width="150" height="20" uuid="de408f53-7d6f-4ed5-a4d6-85d38e10fc8c"/>
@@ -232,7 +231,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{SUM_RES_RIS_PAG_LIV6}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{SUM_RISCOSSO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="610" y="0" width="150" height="20" uuid="18768d57-c543-4909-a458-68526947cca5"/>
@@ -243,7 +242,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{SUM_RES_RIM_RIS_PAG_LIV6}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{SUM_DA_RISCUOTERE}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="0" width="160" height="20" uuid="2d36b976-da49-4383-99c7-1307787b8c2b"/>
