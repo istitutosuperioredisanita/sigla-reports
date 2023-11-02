@@ -218,7 +218,7 @@ ORDER BY ESERCIZIO_RES]]>
 			<staticText>
 				<reportElement mode="Opaque" x="0" y="0" width="160" height="18" forecolor="#000000" uuid="3a1ce7c7-0183-435b-aa6e-7ea78fe0c834"/>
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -231,7 +231,7 @@ ORDER BY ESERCIZIO_RES]]>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement isPrintRepeatedValues="false" x="160" y="0" width="150" height="18" uuid="a5a655ef-aa47-4a6a-a375-58f4231cbc1a"/>
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -315,7 +315,7 @@ ORDER BY ESERCIZIO_RES]]>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="310" y="0" width="150" height="19" uuid="14aa5ced-1100-46c1-a406-8814336d4c60"/>
 				<box padding="0">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -323,12 +323,12 @@ ORDER BY ESERCIZIO_RES]]>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$V{SUM_VARIAZIONI_POS}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{SUM_VARIAZIONI_POS}.compareTo(BigDecimal.ZERO)>0?$V{SUM_VARIAZIONI_POS}:BigDecimal.ZERO]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="460" y="0" width="150" height="19" uuid="b2254f9c-3b53-4c6c-9af4-358688ea21bb"/>
 				<box>
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -336,12 +336,12 @@ ORDER BY ESERCIZIO_RES]]>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$V{SUM_VARIAZIONI_NEG}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{SUM_VARIAZIONI_NEG}.compareTo(BigDecimal.ZERO)<0?$V{SUM_VARIAZIONI_NEG}:BigDecimal.ZERO]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="610" y="0" width="150" height="19" uuid="6d30d1d2-8607-4d77-a5a7-53d36cb819d1"/>
 				<box>
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
