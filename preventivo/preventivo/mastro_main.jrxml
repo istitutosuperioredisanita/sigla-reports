@@ -346,7 +346,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupExpression><![CDATA[$F{CD_LIVELLO6}]]></groupExpression>
 	</group>
 	<detail>
-		<band height="50" splitType="Stretch">
+		<band height="51" splitType="Stretch">
 			<line>
 				<reportElement x="-2" y="1" width="800" height="1" uuid="ca610f7d-a44f-4183-9960-0fbffdfc7c44"/>
 			</line>
@@ -453,6 +453,9 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "mastro_residui.jasper"]]></subreportExpression>
 			</subreport>
+			<break>
+				<reportElement x="0" y="50" width="99" height="1" uuid="4d08d0db-1b08-4a4b-9d03-f392e0d93b4c"/>
+			</break>
 		</band>
 	</detail>
 </jasperReport>
