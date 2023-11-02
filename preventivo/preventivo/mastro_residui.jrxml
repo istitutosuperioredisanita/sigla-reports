@@ -214,11 +214,11 @@ ORDER BY ESERCIZIO_RES]]>
 		</band>
 	</detail>
 	<summary>
-		<band height="118">
+		<band height="28">
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="0" width="160" height="29" forecolor="#000000" uuid="3a1ce7c7-0183-435b-aa6e-7ea78fe0c834"/>
+				<reportElement mode="Opaque" x="0" y="0" width="160" height="18" forecolor="#000000" uuid="3a1ce7c7-0183-435b-aa6e-7ea78fe0c834"/>
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -229,9 +229,9 @@ ORDER BY ESERCIZIO_RES]]>
 				<text><![CDATA[TOTALE RESIDUI]]></text>
 			</staticText>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement isPrintRepeatedValues="false" x="160" y="1" width="150" height="29" uuid="a5a655ef-aa47-4a6a-a375-58f4231cbc1a"/>
+				<reportElement isPrintRepeatedValues="false" x="160" y="0" width="150" height="18" uuid="a5a655ef-aa47-4a6a-a375-58f4231cbc1a"/>
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -242,7 +242,7 @@ ORDER BY ESERCIZIO_RES]]>
 				<textFieldExpression><![CDATA[$P{SUM_RES_INI_ES_LIV6}]]></textFieldExpression>
 			</textField>
 			<subreport>
-				<reportElement x="-20" y="80" width="40" height="10" uuid="49ccc512-5995-46ab-a9fe-b6d3012ee5c8"/>
+				<reportElement x="-22" y="18" width="40" height="10" uuid="49ccc512-5995-46ab-a9fe-b6d3012ee5c8"/>
 				<subreportParameter name="SUB_P_CD_VOCE">
 					<subreportParameterExpression><![CDATA[$F{CD_VOCE}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -313,23 +313,40 @@ ORDER BY ESERCIZIO_RES]]>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "mastro_residui_detail.jasper"]]></subreportExpression>
 			</subreport>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="310" y="0" width="150" height="30" uuid="14aa5ced-1100-46c1-a406-8814336d4c60"/>
-				<box padding="0"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<reportElement x="310" y="0" width="150" height="19" uuid="14aa5ced-1100-46c1-a406-8814336d4c60"/>
+				<box padding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{SUM_VARIAZIONI_POS}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="460" y="0" width="150" height="30" uuid="b2254f9c-3b53-4c6c-9af4-358688ea21bb"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<reportElement x="460" y="0" width="150" height="19" uuid="b2254f9c-3b53-4c6c-9af4-358688ea21bb"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{SUM_VARIAZIONI_NEG}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="610" y="0" width="150" height="30" uuid="6d30d1d2-8607-4d77-a5a7-53d36cb819d1"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<reportElement x="610" y="0" width="150" height="19" uuid="6d30d1d2-8607-4d77-a5a7-53d36cb819d1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{SUM_ASSESTATO}]]></textFieldExpression>
