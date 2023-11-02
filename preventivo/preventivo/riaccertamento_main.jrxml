@@ -356,7 +356,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 	<detail>
 		<band height="15" splitType="Stretch">
 			<subreport>
-				<reportElement x="0" y="0" width="29" height="15" uuid="bd4d9f10-69e3-4098-acfa-89ec6ddf247f"/>
+				<reportElement x="-20" y="0" width="29" height="15" uuid="bd4d9f10-69e3-4098-acfa-89ec6ddf247f"/>
 				<subreportParameter name="P_ESERCIZIO">
 					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
 				</subreportParameter>
