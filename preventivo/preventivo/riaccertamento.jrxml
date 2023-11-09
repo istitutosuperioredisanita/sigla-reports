@@ -169,7 +169,7 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 					<font fontName="Times New Roman" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Riaccertamento residui passivi al 31.12."+ $V{ESERCIZIO_PRECEDENTE}  + " - " + 
+				<textFieldExpression><![CDATA["Riaccertamento residui " + $P{P_TIPO}.equals("E") ? "attivi" : "passivi" + " al 31.12."+ $V{ESERCIZIO_PRECEDENTE}  + " - " + 
 "esercizio finanziario " + $P{P_ESERCIZIO}]]></textFieldExpression>
 			</textField>
 		</band>
