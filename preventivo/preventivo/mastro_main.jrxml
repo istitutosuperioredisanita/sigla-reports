@@ -346,7 +346,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupExpression><![CDATA[$F{CD_LIVELLO6}]]></groupExpression>
 	</group>
 	<detail>
-		<band height="156" splitType="Stretch">
+		<band height="51" splitType="Stretch">
 			<line>
 				<reportElement x="-2" y="1" width="800" height="1" uuid="ca610f7d-a44f-4183-9960-0fbffdfc7c44"/>
 			</line>
@@ -456,77 +456,6 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 			<break>
 				<reportElement x="0" y="50" width="99" height="1" uuid="4d08d0db-1b08-4a4b-9d03-f392e0d93b4c"/>
 			</break>
-			<subreport>
-				<reportElement x="0" y="60" width="40" height="10" uuid="1037cd70-a33e-4b25-a303-e9f585c30c01"/>
-				<subreportParameter name="SUB_P_CD_VOCE">
-					<subreportParameterExpression><![CDATA[$F{CD_VOCE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_CASSA_PREV_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_CASSA_PREV_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_CASSA_RIS_PAG_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_CASSA_RIS_PAG_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_CASSA_DIFF_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_CASSA_DIFF_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_RES_TOTALI_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_RES_TOTALI_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_RES_RIS_PAG_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_RES_RIS_PAG_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_RES_RIM_RIS_PAG_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_RES_RIM_RIS_PAG_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_ASSESTATO_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_ASSESTATO_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_TOT_ACC_IMP_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_TOT_ACC_IMP_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_DIFF_COMP_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_DIFF_COMP_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_RIS_PAG_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_RIS_PAG_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_RIM_RIS_PAG_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_RIM_RIS_PAG_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_TIPO">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_RES_INI_ES_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_RES_INI_ES_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_RES_VAR_PIU_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_RES_VAR_PIU_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_RES_VAR_MENO_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_RES_VAR_MENO_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_PREV_INI_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_PREV_INI_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_VAR_PIU_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_VAR_PIU_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_VAR_MENO_LIV6">
-					<subreportParameterExpression><![CDATA[$P{SUM_VAR_MENO_LIV6}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUBREPORT_DIR">
-					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_F_INIZIALE">
-					<subreportParameterExpression><![CDATA[$V{SUM_F_INIZIALE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUM_ASSESTATO">
-					<subreportParameterExpression><![CDATA[$V{SUM_ASSESTATO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "mastro_residui_detail.jasper"]]></subreportExpression>
-			</subreport>
 		</band>
 	</detail>
 </jasperReport>
