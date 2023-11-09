@@ -167,7 +167,7 @@ ORDER BY ESERCIZIO_RES]]>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["RESIDUO" + $F{ESERCIZIO_RES}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["RESIDUO: " + $F{ESERCIZIO_RES}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="160" y="0" width="120" height="10" uuid="0d0455f4-7e33-42af-8f61-46692c28749a"/>
