@@ -37,6 +37,7 @@
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
 	<parameter name="P_ESERCIZIO" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="SUM_ASSESTATO" class="java.math.BigDecimal" isForPrompting="false"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT 
 	ESERCIZIO,
@@ -86,6 +87,7 @@ ORDER BY ESERCIZIO_RES]]>
 	<variable name="SUM_ASSESTATO" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{DISPONIBILE}]]></variableExpression>
 	</variable>
+	<variable name="SUM_CASSA" class="java.math.BigDecimal"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
