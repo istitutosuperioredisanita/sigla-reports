@@ -154,6 +154,9 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 	<variable name="ESERCIZIO_PRECEDENTE" class="java.lang.Integer">
 		<initialValueExpression><![CDATA[$P{P_ESERCIZIO} - 1]]></initialValueExpression>
 	</variable>
+	<variable name="TITLE_ATTIVI_PASSIVI" class="java.lang.String">
+		<variableExpression><![CDATA[$P{P_TIPO}.equals("E") ? "attivi" : "passivi"]]></variableExpression>
+	</variable>
 	<group name="CD_VOCE"/>
 	<title>
 		<band height="70" splitType="Stretch">
@@ -169,7 +172,7 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 					<font fontName="Times New Roman" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Riaccertamento residui " + $P{P_TIPO}.equals("E") ? "attivi" : "passivi" + " al 31.12."+ $V{ESERCIZIO_PRECEDENTE}  + " - " + 
+				<textFieldExpression><![CDATA["Riaccertamento residui " + $V{TITLE_ATTIVI_PASSIVI} + " al 31.12."+ $V{ESERCIZIO_PRECEDENTE}  + " - " + 
 "esercizio finanziario " + $P{P_ESERCIZIO}]]></textFieldExpression>
 			</textField>
 		</band>
