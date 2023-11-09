@@ -36,6 +36,7 @@
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
+	<parameter name="P_ESERCIZIO" class="java.lang.Integer" isForPrompting="false"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT 
 	ESERCIZIO,
@@ -310,7 +311,7 @@ ORDER BY ESERCIZIO_RES]]>
 					<subreportParameterExpression><![CDATA[$V{SUM_ASSESTATO}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="P_ESERCIZIO">
-					<subreportParameterExpression><![CDATA[$F{ESERCIZIO}]]></subreportParameterExpression>
+					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "mastro_residui_detail.jasper"]]></subreportExpression>
