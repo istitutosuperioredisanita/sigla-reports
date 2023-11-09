@@ -155,7 +155,7 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 		<initialValueExpression><![CDATA[$P{P_ESERCIZIO} - 1]]></initialValueExpression>
 	</variable>
 	<variable name="TITLE_ATTIVI_PASSIVI" class="java.lang.String">
-		<variableExpression><![CDATA[$P{P_TIPO}.equals("E") ? "attivi" : "passivi"]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{P_TIPO}.equals("E") ? "attivi" : "passivi"]]></initialValueExpression>
 	</variable>
 	<group name="CD_VOCE"/>
 	<title>
