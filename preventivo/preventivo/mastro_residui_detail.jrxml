@@ -81,7 +81,7 @@ ORDER BY ESERCIZIO_RES]]>
 		<property name="com.jaspersoft.studio.field.label" value="DISPON_RISCUOTERE"/>
 	</field>
 	<variable name="SUM_CASSA" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[$P{SUM_F_INIZIALE}.add($P{SUM_ASSESTATO_LIV6})]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{SUM_F_INIZIALE}.add($P{SUM_ASSESTATO_LIV6})]]></initialValueExpression>
 	</variable>
 	<group name="CD_VOCE">
 		<groupExpression><![CDATA[$F{CD_VOCE}]]></groupExpression>
