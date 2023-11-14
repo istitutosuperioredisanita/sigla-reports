@@ -77,7 +77,7 @@ ORDER BY ESERCIZIO_RES]]>
 	<field name="VARIAZIONI" class="java.math.BigDecimal"/>
 	<variable name="SUM_F_INIZIALE" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{INIZIALE}]]></variableExpression>
-		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(0)]]></initialValueExpression>
 	</variable>
 	<variable name="SUM_VARIAZIONI_POS" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{VARIAZIONI}]]></variableExpression>

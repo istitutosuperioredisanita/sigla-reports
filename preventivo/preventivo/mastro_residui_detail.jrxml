@@ -82,7 +82,7 @@ ORDER BY ESERCIZIO_RES]]>
 	</field>
 	<variable name="SUM_CASSA" class="java.math.BigDecimal" resetType="Group" resetGroup="CD_VOCE">
 		<variableExpression><![CDATA[$P{SUM_F_INIZIALE}.add($P{SUM_ASSESTATO_LIV6})]]></variableExpression>
-		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(0)]]></initialValueExpression>
 	</variable>
 	<group name="CD_VOCE">
 		<groupExpression><![CDATA[$F{CD_VOCE}]]></groupExpression>
