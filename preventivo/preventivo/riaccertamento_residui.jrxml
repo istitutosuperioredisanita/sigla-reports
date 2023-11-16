@@ -12,32 +12,12 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<parameter name="SUB_P_CD_VOCE" class="java.lang.String">
-		<defaultValueExpression><![CDATA[$F{CD_VOCE}]]></defaultValueExpression>
-	</parameter>
-	<parameter name="SUM_RES_INI_ES_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RES_VAR_PIU_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RES_VAR_MENO_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RES_TOTALI_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_PREV_INI_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_VAR_PIU_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_VAR_MENO_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_ASSESTATO_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_CASSA_PREV_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_CASSA_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_CASSA_DIFF_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RES_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RES_RIM_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_TOT_ACC_IMP_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_DIFF_COMP_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RIM_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
 	<parameter name="P_TIPO" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
-	<parameter name="P_CD_LIVELLO6" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="P_DS_LIVELLO6" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_CD_VOCE" class="java.lang.String"/>
+	<parameter name="P_DS_VOCE" class="java.lang.String" isForPrompting="false"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT 
 	ESERCIZIO,
@@ -48,7 +28,7 @@
 	SUM(IMPORTO_MANREV) AS RISCOSSO,
 	(SUM(IMPORTO_INI_RESIDUI_PROPRI) - SUM(IMPORTO_MANREV) + SUM(VARIAZIONI_RESIDUI_PROPRI)) AS DA_RISCUOTERE
 FROM V_ASSESTATO va
-WHERE va.CD_VOCE = $P{SUB_P_CD_VOCE}  AND ESERCIZIO <> ESERCIZIO_RES
+WHERE va.CD_VOCE = $P{P_CD_VOCE}  AND ESERCIZIO <> ESERCIZIO_RES
 GROUP BY
 	ESERCIZIO,
 	ESERCIZIO_RES,
@@ -98,14 +78,14 @@ ORDER BY ESERCIZIO_RES]]>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{P_CD_LIVELLO6}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{P_CD_VOCE}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="80" y="0" width="470" height="20" forecolor="#525659" uuid="e2fdf323-ca81-4b3e-8826-9bb8b4d3b26e"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{P_DS_LIVELLO6}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{P_DS_VOCE}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
@@ -152,14 +132,14 @@ ORDER BY ESERCIZIO_RES]]>
 			</staticText>
 			<textField>
 				<reportElement x="310" y="0" width="120" height="20" uuid="2958eb94-f84e-4d80-8d9d-6cb52a4b1097"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E") ? "riscossi per" : "pagati per"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="430" y="0" width="120" height="20" uuid="2c53a048-cc9d-4249-a7d3-38a78ac86944"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E") ? "da riscuotere" : "da pagare"]]></textFieldExpression>

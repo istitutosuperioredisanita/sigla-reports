@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.10.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mastro" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Stampa_mastroScriptlet" uuid="13ed6780-6848-4ebc-8ba3-e1810f8b6bd8">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mastro" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13ed6780-6848-4ebc-8ba3-e1810f8b6bd8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SiglaDbSvil"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -39,113 +39,25 @@
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select DS_LIVELLO1E, DS_LIVELLO2E, DS_LIVELLO3E, DS_LIVELLO4E, DS_LIVELLO5E, DS_LIVELLO6E, DS_LIVELLO7E, NULL DS_LIVELLO8E, NULL DS_LIVELLO9E,
-DS_LIVELLO1S, DS_LIVELLO2S, DS_LIVELLO3S, DS_LIVELLO4S, DS_LIVELLO5S, DS_LIVELLO6S, DS_LIVELLO7S, NULL DS_LIVELLO8S, NULL DS_LIVELLO9S,
-(Select IM01 FROM CONFIGURAZIONE_CNR
-WHERE ESERCIZIO=$P{P_ESERCIZIO}
-AND CD_CHIAVE_PRIMARIA='BILANCIO_ENTE'
-AND CD_CHIAVE_SECONDARIA='AVANZO') AVANZO_PREV,
-(Select IM01 FROM CONFIGURAZIONE_CNR
-WHERE ESERCIZIO=$P{P_ESERCIZIO}
-AND CD_CHIAVE_PRIMARIA='BILANCIO_ENTE'
-AND CD_CHIAVE_SECONDARIA='AVANZO_DEF') AVANZO_DEF
-from parametri_livelli
-where esercizio=$P{P_ESERCIZIO}
-AND   $P{P_TIPO_AGGREGAZIONE} != 'SCI'
-UNION ALL
-select DS_LIVELLO1E, DS_LIVELLO2E, DS_LIVELLO3E, DS_LIVELLO4E, DS_LIVELLO5E, DS_LIVELLO6E, DS_LIVELLO7E, NULL DS_LIVELLO8E, NULL DS_LIVELLO9E,
-'Missione' DS_LIVELLO1S, 'Programma' DS_LIVELLO2S, DS_LIVELLO1S DS_LIVELLO3S, DS_LIVELLO2S DS_LIVELLO4S, DS_LIVELLO3S DS_LIVELLO5S, DS_LIVELLO4S DS_LIVELLO6S, DS_LIVELLO5S DS_LIVELLO7S, DS_LIVELLO6S DS_LIVELLO8S, DS_LIVELLO7S DS_LIVELLO9S,
-(Select IM01 FROM CONFIGURAZIONE_CNR
-WHERE ESERCIZIO=$P{P_ESERCIZIO}
-AND CD_CHIAVE_PRIMARIA='BILANCIO_ENTE'
-AND CD_CHIAVE_SECONDARIA='AVANZO') AVANZO_PREV,
-(Select IM01 FROM CONFIGURAZIONE_CNR
-WHERE ESERCIZIO=$P{P_ESERCIZIO}
-AND CD_CHIAVE_PRIMARIA='BILANCIO_ENTE'
-AND CD_CHIAVE_SECONDARIA='AVANZO_DEF') AVANZO_DEF
-from parametri_livelli
-where esercizio=$P{P_ESERCIZIO}
-AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
+		<![CDATA[SELECT ESERCIZIO, TI_GESTIONE, CD_ELEMENTO_VOCE AS CD_VOCE, DS_ELEMENTO_VOCE AS DS_VOCE  FROM ELEMENTO_VOCE ev 
+WHERE TI_GESTIONE = $P{P_TIPO} AND ESERCIZIO = $P{P_ESERCIZIO} AND CD_ELEMENTO_VOCE >= $P{P_VOCE_DA} AND CD_ELEMENTO_VOCE <= $P{P_VOCE_A}
+ORDER BY CD_ELEMENTO_VOCE asc]]>
 	</queryString>
-	<field name="DS_LIVELLO1E" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO1E"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO1E"/>
+	<field name="ESERCIZIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ESERCIZIO"/>
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO"/>
 	</field>
-	<field name="DS_LIVELLO2E" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO2E"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO2E"/>
+	<field name="TI_GESTIONE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TI_GESTIONE"/>
+		<property name="com.jaspersoft.studio.field.label" value="TI_GESTIONE"/>
 	</field>
-	<field name="DS_LIVELLO3E" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO3E"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO3E"/>
+	<field name="CD_VOCE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CD_VOCE"/>
+		<property name="com.jaspersoft.studio.field.label" value="CD_VOCE"/>
 	</field>
-	<field name="DS_LIVELLO4E" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO4E"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO4E"/>
-	</field>
-	<field name="DS_LIVELLO5E" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO5E"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO5E"/>
-	</field>
-	<field name="DS_LIVELLO6E" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO6E"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO6E"/>
-	</field>
-	<field name="DS_LIVELLO7E" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO7E"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO7E"/>
-	</field>
-	<field name="DS_LIVELLO8E" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO8E"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO8E"/>
-	</field>
-	<field name="DS_LIVELLO9E" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO9E"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO9E"/>
-	</field>
-	<field name="DS_LIVELLO1S" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO1S"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO1S"/>
-	</field>
-	<field name="DS_LIVELLO2S" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO2S"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO2S"/>
-	</field>
-	<field name="DS_LIVELLO3S" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO3S"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO3S"/>
-	</field>
-	<field name="DS_LIVELLO4S" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO4S"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO4S"/>
-	</field>
-	<field name="DS_LIVELLO5S" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO5S"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO5S"/>
-	</field>
-	<field name="DS_LIVELLO6S" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO6S"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO6S"/>
-	</field>
-	<field name="DS_LIVELLO7S" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO7S"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO7S"/>
-	</field>
-	<field name="DS_LIVELLO8S" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO8S"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO8S"/>
-	</field>
-	<field name="DS_LIVELLO9S" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="DS_LIVELLO9S"/>
-		<property name="com.jaspersoft.studio.field.label" value="DS_LIVELLO9S"/>
-	</field>
-	<field name="AVANZO_PREV" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="AVANZO_PREV"/>
-		<property name="com.jaspersoft.studio.field.label" value="AVANZO_PREV"/>
-	</field>
-	<field name="AVANZO_DEF" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="AVANZO_DEF"/>
-		<property name="com.jaspersoft.studio.field.label" value="AVANZO_DEF"/>
+	<field name="DS_VOCE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DS_VOCE"/>
+		<property name="com.jaspersoft.studio.field.label" value="DS_VOCE"/>
 	</field>
 	<variable name="V_TIPO_DS" class="java.lang.String">
 		<variableExpression><![CDATA[$P{P_TIPO}]]></variableExpression>
@@ -183,35 +95,20 @@ AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
 				<reportElement x="-20" y="0" width="29" height="20" uuid="cbbb55a7-a70e-4531-9d2e-9c1597849ad7">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<subreportParameter name="P_ESERCIZIO">
-					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_TIPO_AGGREGAZIONE">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO_AGGREGAZIONE}]]></subreportParameterExpression>
-				</subreportParameter>
 				<subreportParameter name="P_TIPO">
 					<subreportParameterExpression><![CDATA[$P{P_TIPO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_NUM_LIV">
-					<subreportParameterExpression><![CDATA[$P{P_NUM_LIV}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_TIPO_RENDICONTO">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO_RENDICONTO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_ORIGINE">
-					<subreportParameterExpression><![CDATA[$P{P_ORIGINE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_VOCE_DA">
-					<subreportParameterExpression><![CDATA[$P{P_VOCE_DA}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_VOCE_A">
-					<subreportParameterExpression><![CDATA[$P{P_VOCE_A}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="SUBREPORT_DIR">
 					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="P_CD_VOCE">
+					<subreportParameterExpression><![CDATA[$F{CD_VOCE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_DS_VOCE">
+					<subreportParameterExpression><![CDATA[$F{DS_VOCE}]]></subreportParameterExpression>
+				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "riaccertamento_main.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "riaccertamento_residui.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
