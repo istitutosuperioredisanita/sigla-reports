@@ -681,7 +681,7 @@ order by progressivo_riga]]>
 			<staticText>
 				<reportElement key="staticText-2" style="TNR16" x="0" y="11" width="555" height="20" isRemoveLineWhenBlank="true" uuid="99a1e021-b4f7-42d1-9c1a-bb208eebf187"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[ISTITUTO SUPERIO DI SANITA']]></text>
+				<text><![CDATA[ISTITUTO SUPERIORE DI SANITA']]></text>
 			</staticText>
 		</band>
 	</title>
