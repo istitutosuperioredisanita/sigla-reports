@@ -6,7 +6,7 @@
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="220"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="772"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SiglaFormazione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_prod.xml"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
 	<style name="TNRG8" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
@@ -33,10 +33,10 @@
 		<defaultValueExpression><![CDATA[2023]]></defaultValueExpression>
 	</parameter>
 	<parameter name="pg_autofattura" class="java.lang.Long" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new Long(240)]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Long(89)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="cd_uo_origine" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["044.000"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["000.017"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[select distinct ter.denominazione_sede as ds_cd_terzo, 
@@ -152,10 +152,13 @@ order by progressivo_riga]]>
 	<field name="CODICEAOOIPA" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CODICEAOOIPA"/>
 	</field>
+	<field name="SIGLA_INT_ENTE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SIGLA_INT_ENTE"/>
+	</field>
 	<field name="CD_CDS" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_CDS"/>
 	</field>
-	<field name="COLUMN_29" class="java.lang.String">
+	<field name="COLUMN_30" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_UNITA_ORGANIZZATIVA"/>
 	</field>
 	<field name="ESERCIZIO" class="java.math.BigDecimal">
@@ -218,19 +221,19 @@ order by progressivo_riga]]>
 	<field name="PG_FATTURA_PASSIVA" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PG_FATTURA_PASSIVA"/>
 	</field>
-	<field name="COLUMN_50" class="java.lang.String">
+	<field name="COLUMN_51" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="UTCR"/>
 	</field>
-	<field name="COLUMN_51" class="java.sql.Timestamp">
+	<field name="COLUMN_52" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="DACR"/>
 	</field>
-	<field name="COLUMN_52" class="java.lang.String">
+	<field name="COLUMN_53" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="UTUV"/>
 	</field>
-	<field name="COLUMN_53" class="java.sql.Timestamp">
+	<field name="COLUMN_54" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="DUVA"/>
 	</field>
-	<field name="COLUMN_54" class="java.math.BigDecimal">
+	<field name="COLUMN_55" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PG_VER_REC"/>
 	</field>
 	<field name="FL_SPLIT_PAYMENT" class="java.lang.String">
@@ -278,22 +281,22 @@ order by progressivo_riga]]>
 	<field name="FL_TERZO_ENTE" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="FL_TERZO_ENTE"/>
 	</field>
-	<field name="COLUMN_70" class="java.lang.String">
+	<field name="COLUMN_71" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_CDS"/>
 	</field>
-	<field name="COLUMN_71" class="java.lang.String">
+	<field name="COLUMN_72" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_UNITA_ORGANIZZATIVA"/>
 	</field>
-	<field name="COLUMN_72" class="java.math.BigDecimal">
+	<field name="COLUMN_73" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO"/>
 	</field>
-	<field name="COLUMN_73" class="java.math.BigDecimal">
+	<field name="COLUMN_74" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PG_FATTURA_PASSIVA"/>
 	</field>
 	<field name="PROGRESSIVO_RIGA" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PROGRESSIVO_RIGA"/>
 	</field>
-	<field name="COLUMN_75" class="java.lang.String">
+	<field name="COLUMN_76" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="TI_ISTITUZ_COMMERC"/>
 	</field>
 	<field name="CD_BENE_SERVIZIO" class="java.lang.String">
@@ -326,7 +329,7 @@ order by progressivo_riga]]>
 	<field name="IM_DIPONIBILE_NC" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="IM_DIPONIBILE_NC"/>
 	</field>
-	<field name="COLUMN_86" class="java.lang.String">
+	<field name="COLUMN_87" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="STATO_COFI"/>
 	</field>
 	<field name="DT_DA_COMPETENZA_COGE" class="java.sql.Timestamp">
@@ -362,19 +365,19 @@ order by progressivo_riga]]>
 	<field name="PG_ACCERTAMENTO_SCADENZARIO" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PG_ACCERTAMENTO_SCADENZARIO"/>
 	</field>
-	<field name="COLUMN_98" class="java.sql.Timestamp">
+	<field name="COLUMN_99" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="DACR"/>
 	</field>
-	<field name="COLUMN_99" class="java.lang.String">
+	<field name="COLUMN_100" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="UTCR"/>
 	</field>
-	<field name="COLUMN_100" class="java.sql.Timestamp">
+	<field name="COLUMN_101" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="DUVA"/>
 	</field>
-	<field name="COLUMN_101" class="java.lang.String">
+	<field name="COLUMN_102" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="UTUV"/>
 	</field>
-	<field name="COLUMN_102" class="java.math.BigDecimal">
+	<field name="COLUMN_103" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PG_VER_REC"/>
 	</field>
 	<field name="CD_CDS_ASSNCNA_FIN" class="java.lang.String">
@@ -431,7 +434,7 @@ order by progressivo_riga]]>
 	<field name="CD_MODALITA_PAG" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_MODALITA_PAG"/>
 	</field>
-	<field name="COLUMN_121" class="java.sql.Timestamp">
+	<field name="COLUMN_122" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="DATA_ESIGIBILITA_IVA"/>
 	</field>
 	<field name="PG_TROVATO" class="java.math.BigDecimal">
@@ -443,7 +446,16 @@ order by progressivo_riga]]>
 	<field name="MOTIVO_ASSENZA_CIG" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="MOTIVO_ASSENZA_CIG"/>
 	</field>
-	<field name="COLUMN_125" class="java.lang.String">
+	<field name="FL_ATTESA_NOTA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FL_ATTESA_NOTA"/>
+	</field>
+	<field name="CODICE_IDENTIFICATIVO_ENTE_PAGOPA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CODICE_IDENTIFICATIVO_ENTE_PAGOPA"/>
+	</field>
+	<field name="NUMERO_AVVISO_PAGOPA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NUMERO_AVVISO_PAGOPA"/>
+	</field>
+	<field name="COLUMN_129" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_VOCE_IVA"/>
 	</field>
 	<field name="DS_VOCE_IVA" class="java.lang.String">
@@ -669,7 +681,7 @@ order by progressivo_riga]]>
 			<staticText>
 				<reportElement key="staticText-2" style="TNR16" x="0" y="11" width="555" height="20" isRemoveLineWhenBlank="true" uuid="99a1e021-b4f7-42d1-9c1a-bb208eebf187"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[CONSIGLIO NAZIONALE DELLE RICERCHE]]></text>
+				<text><![CDATA[ISTITUTO SUPERIORE DI SANITA']]></text>
 			</staticText>
 		</band>
 	</title>
