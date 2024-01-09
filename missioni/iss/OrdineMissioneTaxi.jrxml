@@ -13,11 +13,11 @@
 	</style>
 	<style name="bold" fontName="Times New Roman" fontSize="10" isBold="true" pdfFontName="Times-Bold"/>
 	<parameter name="DIR_IMAGE" class="java.lang.String">
-		<defaultValueExpression><![CDATA["C:/Users/mirra_davide/Desktop/JAVA/ISS/sigla-reports/img/ISS/CNR.JPG"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DIR_SUBREPORT" class="java.lang.String">
 		<parameterDescription><![CDATA[]]></parameterDescription>
-		<defaultValueExpression><![CDATA["C:/Users/mirra_davide/Desktop/JAVA/ISS/sigla-reports/missioni/iss/"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString language="json">
 		<![CDATA[]]>
@@ -148,7 +148,7 @@
 			</textField>
 			<image isUsingCache="true">
 				<reportElement x="176" y="-10" width="202" height="38" uuid="31f592d2-33e1-4e62-88ef-8840a03001b5"/>
-				<imageExpression><![CDATA[$P{DIR_IMAGE}]]></imageExpression>
+				<imageExpression><![CDATA[$P{DIR_IMAGE} + "CNR.JPG"]]></imageExpression>
 			</image>
 			<rectangle>
 				<reportElement x="0" y="72" width="554" height="129" uuid="36243807-5214-4328-91de-1684de820b5d"/>
