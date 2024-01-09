@@ -103,23 +103,18 @@
 		<fieldDescription><![CDATA[destinazione]]></fieldDescription>
 	</field>
 	<field name="mancanzaAssMezzi" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="mancanzaAssMezzi"/>
 		<fieldDescription><![CDATA[mancanzaAssMezzi]]></fieldDescription>
 	</field>
 	<field name="mancanzaMezzi" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="mancanzaMezzi"/>
 		<fieldDescription><![CDATA[mancanzaMezzi]]></fieldDescription>
 	</field>
 	<field name="motiviHandicap" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="motiviHandicap"/>
 		<fieldDescription><![CDATA[motiviHandicap]]></fieldDescription>
 	</field>
 	<field name="trasportoMateriali" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="trasportoMateriali"/>
 		<fieldDescription><![CDATA[trasportoMateriali]]></fieldDescription>
 	</field>
 	<field name="utilizzoAltriMotivi" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="utilizzoAltriMotivi"/>
 		<fieldDescription><![CDATA[utilizzoAltriMotivi]]></fieldDescription>
 	</field>
 	<field name="spostamenti" class="java.lang.String">
@@ -306,7 +301,7 @@
 			<subreport runToBottom="false">
 				<reportElement x="10" y="54" width="532" height="38" uuid="fec37bc5-13be-478f-b309-bee6a232b109"/>
 				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("spostamenti")]]></dataSourceExpression>
-				<subreportExpression><![CDATA[$P{DIR_SUBREPORT} + "ordine_missione_spostamenti_sub.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{DIR_SUBREPORT} +"ordine_missione_spostamenti_sub.jasper"]]></subreportExpression>
 			</subreport>
 			<staticText>
 				<reportElement x="13" y="29" width="367" height="20" uuid="62b94a39-969b-4b67-8405-cb15cebb1fa4"/>
@@ -333,7 +328,8 @@ Ai sensi di quanto disposto dall’art. 6 c. 12 del D.L. 78/2010, dalla circolar
 				<text><![CDATA[Nel rispetto delle disposizioni normative in materia (Art. 6 c. 12 del D.L. 78/2010, Circ. 36 del 22/10/2010 del M.E.F. – Dip.to della Ragioneria Generale dello Stato e delibera della Corte dei Conti a Sezioni riunite n. 8/CONTR/11 del 7 febbraio 2011)  e trattandosi di una circostanza eccezionale e non ricorrente, si autorizza l’uso del taxi per le seguenti motivazioni:]]></text>
 			</staticText>
 		</band>
-		<band height="30" splitType="Stretch">
+		<band height="20" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{mancanzaAssMezzi}.equals( "S" )]]></printWhenExpression>
 			<textField isBlankWhenNull="false">
 				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="20" isRemoveLineWhenBlank="true" uuid="64eb113b-9095-44eb-8543-4ec214f632c3"/>
 				<textElement verticalAlignment="Middle" markup="styled">
@@ -342,9 +338,10 @@ Ai sensi di quanto disposto dall’art. 6 c. 12 del D.L. 78/2010, dalla circolar
 				<textFieldExpression><![CDATA[" - Mancanza assoluta di mezzi pubblici;  "]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="40" splitType="Stretch">
+		<band height="20" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{mancanzaMezzi}.equals( "S" )]]></printWhenExpression>
 			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="-2" y="0" width="549" height="20" isRemoveLineWhenBlank="true" uuid="d299beae-b6d4-4d56-9baf-793ade76f772"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="20" isRemoveLineWhenBlank="true" uuid="d299beae-b6d4-4d56-9baf-793ade76f772"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
@@ -352,24 +349,26 @@ Ai sensi di quanto disposto dall’art. 6 c. 12 del D.L. 78/2010, dalla circolar
 			</textField>
 		</band>
 		<band height="30" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{trasportoMateriali}.equals( "S" )]]></printWhenExpression>
 			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="30" isRemoveLineWhenBlank="true" uuid="17739f9b-cfe9-4388-9e4f-82662502c52e"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="30" isRemoveLineWhenBlank="true" uuid="17739f9b-cfe9-4388-9e4f-82662502c52e"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Necessità di trasporto di materiale attinente al servizio avente dimensioni e peso rilevanti (solo se corredato da autorizzazione preventiva ed elenco dettagliato del materiale trasportato);  "]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="57" splitType="Stretch">
+		<band height="37" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{motiviHandicap}.equals( "S" )]]></printWhenExpression>
 			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="-2" y="0" width="549" height="20" isRemoveLineWhenBlank="true" uuid="bcdd4941-b944-49b4-99be-02ed2b211ccf"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="20" isRemoveLineWhenBlank="true" uuid="bcdd4941-b944-49b4-99be-02ed2b211ccf"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Personale con disabilità/portatore di handicap "]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="0" y="30" width="549" height="17" isRemoveLineWhenBlank="true" uuid="27e4463e-e73f-4839-a33d-a826e34a1452"/>
+				<reportElement x="0" y="20" width="549" height="17" isRemoveLineWhenBlank="true" uuid="27e4463e-e73f-4839-a33d-a826e34a1452"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
@@ -380,7 +379,9 @@ Ai sensi di quanto disposto dall’art. 6 c. 12 del D.L. 78/2010, dalla circolar
 	<pageFooter>
 		<band height="113" splitType="Stretch">
 			<rectangle radius="10">
-				<reportElement positionType="Float" x="-3" y="0" width="554" height="107" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29"/>
+				<reportElement positionType="Float" x="-3" y="0" width="554" height="107" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
 			</rectangle>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="77" y="42" width="472" height="16" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
