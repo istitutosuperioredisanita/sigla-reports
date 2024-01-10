@@ -17,7 +17,7 @@
 	</parameter>
 	<parameter name="DIR_SUBREPORT" class="java.lang.String">
 		<parameterDescription><![CDATA[]]></parameterDescription>
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[$P{DIR_SUBREPORT}]]></defaultValueExpression>
 	</parameter>
 	<queryString language="json">
 		<![CDATA[]]>
@@ -301,7 +301,7 @@
 			<subreport runToBottom="false">
 				<reportElement x="10" y="54" width="532" height="38" uuid="fec37bc5-13be-478f-b309-bee6a232b109"/>
 				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("spostamenti")]]></dataSourceExpression>
-				<subreportExpression><![CDATA[$P{DIR_SUBREPORT} +"ordine_missione_spostamenti_sub.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{DIR_SUBREPORT}]]></subreportExpression>
 			</subreport>
 			<staticText>
 				<reportElement x="13" y="29" width="367" height="20" uuid="62b94a39-969b-4b67-8405-cb15cebb1fa4"/>
