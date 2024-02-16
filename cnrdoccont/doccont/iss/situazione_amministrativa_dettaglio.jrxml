@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="situazione_amministrativa_main" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="812" leftMargin="15" rightMargin="15" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="49cb67f3-a952-44e2-bbe0-4bb8401c1eb4">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="situazione_amministrativa_spesa" pageWidth="812" pageHeight="555" orientation="Landscape" columnWidth="812" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Stampa_pdg_rendicontoScriptlet" uuid="49cb67f3-a952-44e2-bbe0-4bb8401c1eb4">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
@@ -77,82 +77,53 @@
 		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\img\\ISS\\"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select 1 Res from dual]]>
+		<![CDATA[select SUM(RES_RIS_PAG),SUM(RIS_PAG)
+from TMP_STAMPA_RENDICONTO]]>
 	</queryString>
-	<field name="RES" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="RES"/>
+	<field name="SUM(RES_RIS_PAG)" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="SUM(RES_RIS_PAG)"/>
+	</field>
+	<field name="SUM(RIS_PAG)" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="SUM(RIS_PAG)"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<title>
-		<band height="50" splitType="Stretch">
-			<image>
-				<reportElement key="image-1" x="1" y="1" width="789" height="40" uuid="85a5b87d-f573-411b-b66c-1fa8bf4a4f9d"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<imageExpression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
-			</image>
-		</band>
-	</title>
-	<pageHeader>
-		<band height="252" splitType="Stretch"/>
-	</pageHeader>
 	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band height="277" splitType="Stretch">
+		<band height="100" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<subreport>
-				<reportElement x="2" y="30" width="809" height="170" uuid="a1a60f57-3fee-4fe6-b407-a3df11ff6eea"/>
-				<subreportParameter name="P_ESERCIZIO">
-					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_NUM_LIV">
-					<subreportParameterExpression><![CDATA[$P{P_NUM_LIV}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_ORIGINE">
-					<subreportParameterExpression><![CDATA[$P{P_ORIGINE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_TIPO">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_TIPO_AGGREGAZIONE">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO_AGGREGAZIONE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_TIPO_RENDICONTO">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO_RENDICONTO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="RIEPILOGO">
-					<subreportParameterExpression><![CDATA[$P{RIEPILOGO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "situazione_amministrativa_spesa.jasper"]]></subreportExpression>
-			</subreport>
 			<textField>
-				<reportElement x="10" y="0" width="100" height="30" uuid="0a6d5d4f-9aa4-4203-819a-fbdc969bcf41"/>
-				<textFieldExpression><![CDATA[$F{RES}]]></textFieldExpression>
+				<reportElement x="190" y="50" width="100" height="30" uuid="06a75fe7-3538-46aa-be0f-c21d5504b73b"/>
+				<textFieldExpression><![CDATA[$F{SUM(RES_RIS_PAG)}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="120" y="0" width="100" height="30" uuid="db7d6f86-b173-4416-b873-dbe1231e1503"/>
-				<text><![CDATA[RES]]></text>
+				<reportElement x="320" y="50" width="100" height="30" uuid="70298a7b-e25f-4136-a6e7-7bb2e5407b6e"/>
+				<text><![CDATA[RIS_PAG]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="27" y="57" width="100" height="30" uuid="dfed9ae7-c946-43c1-8f46-e4a7696ddf4d"/>
+				<text><![CDATA[RES_RIS_PAG]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="470" y="50" width="100" height="30" uuid="1e6d5de4-c603-40f4-98fc-65f3336d5c14"/>
+				<textFieldExpression><![CDATA[$F{SUM(RIS_PAG)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="135" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="190" y="50" width="100" height="30" uuid="365206b3-ff00-4a21-a5fb-9e1a8812fed9"/>
+				<textFieldExpression><![CDATA[$F{SUM(RES_RIS_PAG)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="40" width="100" height="30" uuid="7729ab5d-576a-4b7a-9549-dd7ca49f25ce"/>
+				<textFieldExpression><![CDATA[$F{SUM(RIS_PAG)}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>
 		<band splitType="Stretch"/>
 	</columnFooter>
-	<pageFooter>
-		<band height="26" splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="98" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-		</band>
-	</summary>
 </jasperReport>

@@ -89,38 +89,37 @@ from TMP_STAMPA_RENDICONTO]]>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<columnHeader>
-		<band height="100" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField>
-				<reportElement x="190" y="50" width="100" height="30" uuid="06a75fe7-3538-46aa-be0f-c21d5504b73b"/>
-				<textFieldExpression><![CDATA[$F{SUM(RES_RIS_PAG)}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="320" y="50" width="100" height="30" uuid="70298a7b-e25f-4136-a6e7-7bb2e5407b6e"/>
-				<text><![CDATA[RIS_PAG]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="27" y="57" width="100" height="30" uuid="dfed9ae7-c946-43c1-8f46-e4a7696ddf4d"/>
-				<text><![CDATA[RES_RIS_PAG]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="470" y="50" width="100" height="30" uuid="1e6d5de4-c603-40f4-98fc-65f3336d5c14"/>
-				<textFieldExpression><![CDATA[$F{SUM(RIS_PAG)}]]></textFieldExpression>
-			</textField>
-		</band>
-	</columnHeader>
 	<detail>
-		<band height="135" splitType="Stretch">
+		<band height="170" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField>
-				<reportElement x="190" y="50" width="100" height="30" uuid="365206b3-ff00-4a21-a5fb-9e1a8812fed9"/>
-				<textFieldExpression><![CDATA[$F{SUM(RES_RIS_PAG)}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="440" y="40" width="100" height="30" uuid="7729ab5d-576a-4b7a-9549-dd7ca49f25ce"/>
-				<textFieldExpression><![CDATA[$F{SUM(RIS_PAG)}]]></textFieldExpression>
-			</textField>
+			<subreport>
+				<reportElement x="-20" y="0" width="809" height="150" uuid="d49e764f-438c-4fbd-b856-abe6167d4cd3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<subreportParameter name="P_ESERCIZIO">
+					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_NUM_LIV">
+					<subreportParameterExpression><![CDATA[$P{P_NUM_LIV}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ORIGINE">
+					<subreportParameterExpression><![CDATA[$P{P_ORIGINE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TIPO">
+					<subreportParameterExpression><![CDATA[$P{P_TIPO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TIPO_AGGREGAZIONE">
+					<subreportParameterExpression><![CDATA[$P{P_TIPO_AGGREGAZIONE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TIPO_RENDICONTO">
+					<subreportParameterExpression><![CDATA[$P{P_TIPO_RENDICONTO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RIEPILOGO">
+					<subreportParameterExpression><![CDATA[$P{RIEPILOGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "situazione_amministrativa_dettaglio.jasper"]]></subreportExpression>
+			</subreport>
 		</band>
 	</detail>
 	<columnFooter>
