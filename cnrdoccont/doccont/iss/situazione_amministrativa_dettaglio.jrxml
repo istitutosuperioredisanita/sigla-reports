@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="situazione_amministrativa_dettaglio" pageWidth="812" pageHeight="555" orientation="Landscape" columnWidth="812" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="49cb67f3-a952-44e2-bbe0-4bb8401c1eb4">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="situazione_amministrativa_dettaglio" pageWidth="812" pageHeight="555" orientation="Landscape" columnWidth="812" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isSummaryWithPageHeaderAndFooter="true" uuid="49cb67f3-a952-44e2-bbe0-4bb8401c1eb4">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="182"/>
 	<property name="ireport.y" value="0"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_coll.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLASVIL"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -77,49 +77,356 @@
 		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\img\\ISS\\"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select SUM(RES_RIS_PAG),SUM(RIS_PAG)
+		<![CDATA[select 
+NVL(sum(( select im01 from configurazione_cnr
+	where cd_chiave_primaria='BILANCIO_ENTE'
+	and cd_chiave_secondaria='FONDO_CASSA'
+	and esercizio=  $P{P_ESERCIZIO} 
+)),0) as "cassa_inizio_anno",
+SUM(DECODE(tipo,'S',RES_RIS_PAG,0)) as "residui_pagati",
+SUM(DECODE(tipo,'S',RIS_PAG,0)) as "pagati",
+SUM(DECODE(tipo,'E',RES_RIS_PAG,0)) as "residui_incassati",
+SUM(DECODE(tipo,'E',RIS_PAG,0))  as "incassati",
+SUM(DECODE(tipo,'S',RIM_RIS_PAG,0)) as "da_pagare",
+SUM(DECODE(tipo,'S',RES_RIM_RIS_PAG,0)) as "da_pagare_residuo",
+SUM(DECODE(tipo,'E',RIM_RIS_PAG,0)) as "da_indassare",
+SUM(DECODE(tipo,'E',RES_RIM_RIS_PAG,0)) as "da_incassare_residuo"
 from TMP_STAMPA_RENDICONTO]]>
 	</queryString>
-	<field name="SUM(RES_RIS_PAG)" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="SUM(RES_RIS_PAG)"/>
+	<field name="cassa_inizio_anno" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="cassa_inizio_anno"/>
 	</field>
-	<field name="SUM(RIS_PAG)" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="SUM(RIS_PAG)"/>
+	<field name="residui_pagati" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="residui_pagati"/>
 	</field>
+	<field name="pagati" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="pagati"/>
+	</field>
+	<field name="residui_incassati" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="residui_incassati"/>
+	</field>
+	<field name="incassati" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="incassati"/>
+	</field>
+	<field name="da_pagare" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="da_pagare"/>
+	</field>
+	<field name="da_pagare_residuo" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="da_pagare_residuo"/>
+	</field>
+	<field name="da_indassare" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="da_indassare"/>
+	</field>
+	<field name="da_incassare_residuo" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="da_incassare_residuo"/>
+	</field>
+	<variable name="v_riscossi" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{incassati}.add( $F{residui_incassati})]]></variableExpression>
+	</variable>
+	<variable name="v_pagati" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{pagati}.add( $F{residui_pagati})]]></variableExpression>
+	</variable>
+	<variable name="v_consistenza" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[($F{cassa_inizio_anno}.add($V{v_riscossi})).subtract($V{v_pagati})]]></variableExpression>
+	</variable>
+	<variable name="v_da_incassare" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{da_incassare_residuo}.add( $F{da_indassare})]]></variableExpression>
+	</variable>
+	<variable name="v_da_pagare" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{da_pagare_residuo}.add($F{da_pagare})]]></variableExpression>
+	</variable>
+	<variable name="v_avanzo" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[($V{v_consistenza}.add( $V{v_da_incassare})).subtract($V{v_da_pagare})]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<columnHeader>
-		<band height="100" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField>
-				<reportElement x="190" y="50" width="100" height="30" uuid="06a75fe7-3538-46aa-be0f-c21d5504b73b"/>
-				<textFieldExpression><![CDATA[$F{SUM(RES_RIS_PAG)}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="320" y="50" width="100" height="30" uuid="70298a7b-e25f-4136-a6e7-7bb2e5407b6e"/>
-				<text><![CDATA[222]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="27" y="57" width="100" height="30" uuid="dfed9ae7-c946-43c1-8f46-e4a7696ddf4d"/>
-				<text><![CDATA[Ciao]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="470" y="50" width="100" height="30" uuid="1e6d5de4-c603-40f4-98fc-65f3336d5c14"/>
-				<textFieldExpression><![CDATA[$F{SUM(RIS_PAG)}]]></textFieldExpression>
-			</textField>
-		</band>
-	</columnHeader>
 	<detail>
-		<band height="135" splitType="Stretch">
+		<band height="435" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement key="staticText-50" x="20" y="40" width="70" height="23" uuid="bdc002d2-7528-4b13-abba-3b98f890d7df"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[RISCOSSIONI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="100" y="40" width="150" height="23" uuid="004c0ac1-adb4-4444-a678-85807d7a19fd"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[IN C/COMPETENZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="100" y="70" width="150" height="23" uuid="c9c857ac-f458-425e-8530-1c2b03a7ba46"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[IN C/RESIDUI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="310" y="40" width="100" height="23" uuid="197932d3-f5cf-4b13-8f75-91b2529bad4a"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="310" y="70" width="100" height="23" uuid="9f2d413e-586e-4b6a-bdba-f7158943bca3"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
 			<textField>
-				<reportElement x="190" y="50" width="100" height="30" uuid="365206b3-ff00-4a21-a5fb-9e1a8812fed9"/>
-				<textFieldExpression><![CDATA[$F{SUM(RES_RIS_PAG)}]]></textFieldExpression>
+				<reportElement x="419" y="40" width="100" height="23" uuid="0ea5e693-17b6-4726-8cc0-1f43447e7b65"/>
+				<textFieldExpression><![CDATA[$F{incassati}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="440" y="40" width="100" height="30" uuid="7729ab5d-576a-4b7a-9549-dd7ca49f25ce"/>
-				<textFieldExpression><![CDATA[$F{SUM(RIS_PAG)}]]></textFieldExpression>
+				<reportElement x="424" y="70" width="100" height="23" uuid="b70eaee1-e914-4c75-9a57-e2fec73b12c8"/>
+				<textFieldExpression><![CDATA[$F{residui_incassati}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="310" y="150" width="100" height="23" uuid="060c3733-b01c-419e-83da-c37a2824d9f6"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="20" y="120" width="70" height="23" uuid="a1769d38-2e8d-40a0-a58a-7c08d45a357b"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[PAGAMENTI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="100" y="150" width="150" height="23" uuid="7e39f1e6-2d7b-4f52-a20a-c8bc1601066c"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[IN C/RESIDUI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="310" y="120" width="100" height="23" uuid="ef2beaef-1839-4127-baf8-f63bc4e77c7b"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="419" y="120" width="100" height="23" uuid="44504dec-d2ab-4d15-928c-9bc049b3003b"/>
+				<textFieldExpression><![CDATA[$F{pagati}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="100" y="120" width="150" height="23" uuid="fb7634ee-0a88-44e0-adea-13301719f2e5"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[IN C/COMPETENZA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="424" y="150" width="100" height="23" uuid="29d5073e-d85e-4529-b73a-33ecf556bbf7"/>
+				<textFieldExpression><![CDATA[$F{residui_pagati}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="20" y="200" width="505" height="23" uuid="27d13259-5a29-4370-b39f-be526bc1fe91"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CONSISTENZA DELLA CASSA ALLA FINE DELL'ESERCIZIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="540" y="70" width="100" height="23" uuid="a52d15a2-36c0-4ee5-92a2-fde3852f623d"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="540" y="150" width="100" height="23" uuid="b8383339-8611-451e-8aad-5d213c260985"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="654" y="60" width="100" height="30" uuid="682a8cb3-6745-4f49-b3df-9a08e89f43a5"/>
+				<textFieldExpression><![CDATA[$V{v_riscossi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="654" y="146" width="100" height="30" uuid="906d8011-be44-4337-9bcf-b242ae465983"/>
+				<textFieldExpression><![CDATA[$V{v_pagati}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="654" y="193" width="100" height="30" uuid="e96da82e-740d-4dfb-affe-5c9189d80c96"/>
+				<textFieldExpression><![CDATA[$V{v_consistenza}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="20" y="10" width="505" height="23" uuid="d586b93f-15f3-499a-92e0-1ddf144fe875"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CONSISTENZA DI CASSA ALL'INIZIO DELL'ESERCIZIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="551" y="10" width="100" height="23" uuid="d6f61095-d591-4ab1-b6b2-769e3e531a05"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="660" y="6" width="100" height="30" uuid="ea784105-51ac-446a-85c0-5d98fdaeb3a8"/>
+				<textFieldExpression><![CDATA[$F{cassa_inizio_anno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="24" y="250" width="110" height="23" uuid="cc5bd886-8ed5-4651-b28a-016286ff6be0"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[RESIDUI ATTIVI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="154" y="250" width="190" height="23" uuid="ac48a81d-e8d0-4fa5-8524-37a47f7ea278"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DEGLI ESERCIZI PRECEDENTI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="154" y="280" width="150" height="23" uuid="4c160ad3-ff63-4aa8-920d-0b7e598a8f94"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DELL'ESERCIZIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="369" y="247" width="50" height="23" uuid="673990ff-93cc-424e-974e-030a1ba3c842"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="314" y="280" width="100" height="23" uuid="2d3a8ef0-aba9-443d-918b-53d927af039c"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="423" y="250" width="117" height="23" uuid="a62371e2-f476-4c13-a7c9-f43030d2a205"/>
+				<textFieldExpression><![CDATA[$F{da_incassare_residuo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="280" width="100" height="23" uuid="aa175b07-ce65-4534-9344-b37adca96ed6"/>
+				<textFieldExpression><![CDATA[$F{da_indassare}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="314" y="360" width="100" height="23" uuid="e0f3e960-f2b0-4bb4-b134-8a5e8c453ad7"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="24" y="330" width="110" height="23" uuid="0039457c-6720-4747-a36e-b725e9fda14a"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[RESIDUI PASSIVI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="104" y="360" width="150" height="23" uuid="56e9eb3e-2d18-483e-81db-647b63e2cf25"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DELL'ESERCIZIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="314" y="330" width="100" height="23" uuid="a9a2256f-e4c6-4fe3-9564-29a83a4981cb"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="423" y="330" width="100" height="23" uuid="b6f5c60b-6039-43f1-be9c-a3fe578b0f2e"/>
+				<textFieldExpression><![CDATA[$F{da_pagare_residuo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="154" y="329" width="150" height="23" uuid="46c6a592-ab97-4541-88bc-24180c19df7a"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DEGLI ESERCIZI PRECEDENTI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="428" y="360" width="100" height="23" uuid="8b79b169-0975-4665-9797-8a5968b58683"/>
+				<textFieldExpression><![CDATA[$F{da_pagare}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="24" y="410" width="505" height="23" uuid="bd9125d2-e963-415e-8090-aa0c79bf4438"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[AVANZO DI AMMINISTRAZIONE ALLA FINE DELL'ESERCIZIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="544" y="280" width="100" height="23" uuid="ea8dd49a-bc5b-44d3-aa9c-0096724b7b10"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="544" y="360" width="100" height="23" uuid="d1617880-2252-41aa-b70d-b93f87c30545"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="658" y="270" width="100" height="30" uuid="fa573965-c805-42a9-a37d-a471ed7701d5"/>
+				<textFieldExpression><![CDATA[$V{v_riscossi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="658" y="356" width="100" height="30" uuid="88c0ab69-f7a9-480f-b746-3e8dc9d738af"/>
+				<textFieldExpression><![CDATA[$V{v_pagati}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="658" y="403" width="100" height="30" uuid="19abd0a0-095e-43e1-9053-f0ede6196abc"/>
+				<textFieldExpression><![CDATA[$V{v_avanzo}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
