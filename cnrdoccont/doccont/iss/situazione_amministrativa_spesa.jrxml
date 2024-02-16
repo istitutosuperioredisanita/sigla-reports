@@ -77,10 +77,14 @@
 		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\img\\ISS\\"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select 1 as rec from dual]]>
+		<![CDATA[select SUM(RES_RIS_PAG),SUM(RIS_PAG)
+from TMP_STAMPA_RENDICONTO]]>
 	</queryString>
-	<field name="REC" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="REC"/>
+	<field name="SUM(RES_RIS_PAG)" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="SUM(RES_RIS_PAG)"/>
+	</field>
+	<field name="SUM(RIS_PAG)" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="SUM(RIS_PAG)"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
