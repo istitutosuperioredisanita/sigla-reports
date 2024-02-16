@@ -79,6 +79,9 @@
 	<parameter name="P_TIPO_ENTRATA" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["E"]]></defaultValueExpression>
 	</parameter>
+	<parameter name="P_COMPLETA" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Y"]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[select 1 Res from dual]]>
 	</queryString>
@@ -138,7 +141,7 @@
 					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "situazione_amministrativa_spesa.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "situazione_amministrativa_dettaglio.jasper"]]></subreportExpression>
 			</subreport>
 			<textField>
 				<reportElement x="10" y="0" width="100" height="30" uuid="0a6d5d4f-9aa4-4203-819a-fbdc969bcf41"/>
@@ -149,37 +152,7 @@
 				<text><![CDATA[RES]]></text>
 			</staticText>
 		</band>
-		<band height="50">
-			<subreport>
-				<reportElement x="2" y="10" width="809" height="40" uuid="25885eb1-ab42-4d57-b044-da5eb601cfa2"/>
-				<subreportParameter name="P_ESERCIZIO">
-					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_NUM_LIV">
-					<subreportParameterExpression><![CDATA[$P{P_NUM_LIV}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_ORIGINE">
-					<subreportParameterExpression><![CDATA[$P{P_ORIGINE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_TIPO">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO_ENTRATA}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_TIPO_AGGREGAZIONE">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO_AGGREGAZIONE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_TIPO_RENDICONTO">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO_RENDICONTO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="RIEPILOGO">
-					<subreportParameterExpression><![CDATA[$P{RIEPILOGO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUBREPORT_DIR">
-					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
-				</subreportParameter>
-				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "situazione_amministrativa_spesa.jasper"]]></subreportExpression>
-			</subreport>
-		</band>
+		<band height="50"/>
 	</detail>
 	<columnFooter>
 		<band splitType="Stretch"/>
