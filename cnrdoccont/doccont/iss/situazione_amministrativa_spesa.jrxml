@@ -78,7 +78,8 @@
 	</parameter>
 	<queryString>
 		<![CDATA[select SUM(RES_RIS_PAG),SUM(RIS_PAG)
-from TMP_STAMPA_RENDICONTO]]>
+from TMP_STAMPA_RENDICONTO
+where tipo=$P{P_TIPO})]]>
 	</queryString>
 	<field name="SUM(RES_RIS_PAG)" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="SUM(RES_RIS_PAG)"/>
