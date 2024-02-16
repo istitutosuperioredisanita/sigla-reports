@@ -79,7 +79,7 @@
 	<queryString>
 		<![CDATA[select SUM(RES_RIS_PAG),SUM(RIS_PAG)
 from TMP_STAMPA_RENDICONTO
-where tipo='C']]>
+where tipo='S']]>
 	</queryString>
 	<field name="SUM(RES_RIS_PAG)" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="SUM(RES_RIS_PAG)"/>
@@ -99,7 +99,7 @@ where tipo='C']]>
 			</textField>
 			<staticText>
 				<reportElement x="320" y="50" width="100" height="30" uuid="f8d31146-6c0c-4d09-8990-06905251a542"/>
-				<text><![CDATA[222]]></text>
+				<text><![CDATA[TEST]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="27" y="57" width="100" height="30" uuid="e5cef63b-0509-4f19-a4d6-908acde849f4"/>
