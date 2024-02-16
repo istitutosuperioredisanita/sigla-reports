@@ -6,7 +6,7 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="182"/>
 	<property name="ireport.y" value="0"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_coll.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLASVIL"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -77,41 +77,219 @@
 		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\img\\ISS\\"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select SUM(RES_RIS_PAG),SUM(RIS_PAG)
-from TMP_STAMPA_RENDICONTO
-where tipo=$P{P_TIPO}]]>
+		<![CDATA[select SUM(DECODE(tipo,'S',RES_RIS_PAG,0)) as "residui_pagati",SUM(DECODE(tipo,'S',RIS_PAG,0)) as "pagati",SUM(DECODE(tipo,'E',RES_RIS_PAG,0)) as "residui_incassati",SUM(DECODE(tipo,'E',RIS_PAG,0)) as "incassati"
+from TMP_STAMPA_RENDICONTO]]>
 	</queryString>
-	<field name="SUM(RES_RIS_PAG)" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="SUM(RES_RIS_PAG)"/>
+	<field name="residui_pagati" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="residui_pagati"/>
 	</field>
-	<field name="SUM(RIS_PAG)" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="SUM(RIS_PAG)"/>
+	<field name="pagati" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="pagati"/>
 	</field>
+	<field name="residui_incassati" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="residui_incassati"/>
+	</field>
+	<field name="incassati" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="incassati"/>
+	</field>
+	<variable name="v_riscossi" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{incassati}.add( $F{residui_incassati})]]></variableExpression>
+	</variable>
+	<variable name="v_pagati" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{pagati}.add( $F{residui_pagati})]]></variableExpression>
+	</variable>
+	<variable name="v_consistenza" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{v_riscossi}.subtract($V{v_pagati})]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<detail>
-		<band height="170" splitType="Stretch">
+		<band height="329" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField>
-				<reportElement x="190" y="50" width="100" height="30" uuid="b2a7016d-9458-4f50-af70-b954006d8790"/>
-				<textFieldExpression><![CDATA[$F{SUM(RES_RIS_PAG)}]]></textFieldExpression>
-			</textField>
 			<staticText>
-				<reportElement x="320" y="50" width="100" height="30" uuid="f8d31146-6c0c-4d09-8990-06905251a542"/>
-				<text><![CDATA[TEST]]></text>
+				<reportElement key="staticText-50" x="40" y="40" width="70" height="23" uuid="bdc002d2-7528-4b13-abba-3b98f890d7df"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[RISCOSSIONI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="27" y="57" width="100" height="30" uuid="e5cef63b-0509-4f19-a4d6-908acde849f4"/>
-				<text><![CDATA[Ciao]]></text>
+				<reportElement key="staticText-50" x="120" y="40" width="150" height="23" uuid="004c0ac1-adb4-4444-a678-85807d7a19fd"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[IN C/COMPETENZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="120" y="70" width="150" height="23" uuid="c9c857ac-f458-425e-8530-1c2b03a7ba46"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[IN C/RESIDUI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="330" y="40" width="100" height="23" uuid="197932d3-f5cf-4b13-8f75-91b2529bad4a"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="330" y="70" width="100" height="23" uuid="9f2d413e-586e-4b6a-bdba-f7158943bca3"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="190" y="50" width="100" height="30" uuid="1ff60bbd-850c-4289-8835-ba92e39a5f17"/>
-				<textFieldExpression><![CDATA[$F{SUM(RES_RIS_PAG)}]]></textFieldExpression>
+				<reportElement x="439" y="40" width="100" height="23" uuid="0ea5e693-17b6-4726-8cc0-1f43447e7b65"/>
+				<textFieldExpression><![CDATA[$F{incassati}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="460" y="57" width="100" height="30" uuid="92943337-2190-4eca-b374-745d13bb92f0"/>
-				<textFieldExpression><![CDATA[$F{SUM(RIS_PAG)}]]></textFieldExpression>
+				<reportElement x="444" y="70" width="100" height="23" uuid="b70eaee1-e914-4c75-9a57-e2fec73b12c8"/>
+				<textFieldExpression><![CDATA[$F{residui_incassati}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="330" y="150" width="100" height="23" uuid="060c3733-b01c-419e-83da-c37a2824d9f6"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="40" y="120" width="70" height="23" uuid="a1769d38-2e8d-40a0-a58a-7c08d45a357b"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[PAGAMENTI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="120" y="150" width="150" height="23" uuid="7e39f1e6-2d7b-4f52-a20a-c8bc1601066c"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[IN C/RESIDUI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="330" y="120" width="100" height="23" uuid="ef2beaef-1839-4127-baf8-f63bc4e77c7b"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="439" y="120" width="100" height="23" uuid="44504dec-d2ab-4d15-928c-9bc049b3003b"/>
+				<textFieldExpression><![CDATA[$F{pagati}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="120" y="120" width="150" height="23" uuid="fb7634ee-0a88-44e0-adea-13301719f2e5"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[IN C/COMPETENZA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="444" y="150" width="100" height="23" uuid="29d5073e-d85e-4529-b73a-33ecf556bbf7"/>
+				<textFieldExpression><![CDATA[$F{residui_pagati}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-50" x="40" y="200" width="505" height="23" uuid="27d13259-5a29-4370-b39f-be526bc1fe91"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CONSISTENZA DELLA CASSA ALLA FINE DELL'ESERCIZIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="560" y="70" width="100" height="23" uuid="a52d15a2-36c0-4ee5-92a2-fde3852f623d"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" x="560" y="150" width="100" height="23" uuid="b8383339-8611-451e-8aad-5d213c260985"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="670" y="70" width="100" height="30" uuid="682a8cb3-6745-4f49-b3df-9a08e89f43a5"/>
+				<textFieldExpression><![CDATA[$V{v_riscossi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="680" y="143" width="100" height="30" uuid="906d8011-be44-4337-9bcf-b242ae465983"/>
+				<textFieldExpression><![CDATA[$V{v_pagati}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="680" y="200" width="100" height="30" uuid="e96da82e-740d-4dfb-affe-5c9189d80c96"/>
+				<textFieldExpression><![CDATA[$V{v_consistenza}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
