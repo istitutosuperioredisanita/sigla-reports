@@ -50,7 +50,7 @@
 	<parameter name="PATH_LOGO_FORNITORE" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
-	<parameter name="P_TIPO_SPESA" class="java.lang.String" isForPrompting="false">
+	<parameter name="P_TIPO" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["S"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="P_NUM_LIV" class="java.lang.Integer">
@@ -126,7 +126,7 @@
 					<subreportParameterExpression><![CDATA[$P{P_ORIGINE}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="P_TIPO">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO_SPESA}]]></subreportParameterExpression>
+					<subreportParameterExpression><![CDATA[$P{P_TIPO}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="P_TIPO_AGGREGAZIONE">
 					<subreportParameterExpression><![CDATA[$P{P_TIPO_AGGREGAZIONE}]]></subreportParameterExpression>
@@ -141,7 +141,7 @@
 					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "situazione_amministrativa_dettaglio.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "situazione_amministrativa_spesa.jasper"]]></subreportExpression>
 			</subreport>
 			<textField>
 				<reportElement x="10" y="0" width="100" height="30" uuid="0a6d5d4f-9aa4-4203-819a-fbdc969bcf41"/>
