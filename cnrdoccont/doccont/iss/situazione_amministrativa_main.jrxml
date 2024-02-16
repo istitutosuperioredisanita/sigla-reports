@@ -50,7 +50,7 @@
 	<parameter name="PATH_LOGO_FORNITORE" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
-	<parameter name="P_TIPO" class="java.lang.String">
+	<parameter name="P_TIPO_SPESA" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["S"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="P_NUM_LIV" class="java.lang.Integer">
@@ -75,6 +75,9 @@
 	</parameter>
 	<parameter name="DIR_IMAGE" class="java.lang.String">
 		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\img\\ISS\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_TIPO_ENTRATA" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["E"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[select 1 Res from dual]]>
@@ -106,10 +109,10 @@
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="277" splitType="Stretch">
+		<band height="77" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<subreport>
-				<reportElement x="2" y="30" width="809" height="170" uuid="a1a60f57-3fee-4fe6-b407-a3df11ff6eea"/>
+				<reportElement x="2" y="30" width="809" height="40" uuid="a1a60f57-3fee-4fe6-b407-a3df11ff6eea"/>
 				<subreportParameter name="P_ESERCIZIO">
 					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -120,7 +123,7 @@
 					<subreportParameterExpression><![CDATA[$P{P_ORIGINE}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="P_TIPO">
-					<subreportParameterExpression><![CDATA[$P{P_TIPO}]]></subreportParameterExpression>
+					<subreportParameterExpression><![CDATA[$P{P_TIPO_SPESA}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="P_TIPO_AGGREGAZIONE">
 					<subreportParameterExpression><![CDATA[$P{P_TIPO_AGGREGAZIONE}]]></subreportParameterExpression>
@@ -145,6 +148,37 @@
 				<reportElement x="120" y="0" width="100" height="30" uuid="db7d6f86-b173-4416-b873-dbe1231e1503"/>
 				<text><![CDATA[RES]]></text>
 			</staticText>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement x="2" y="10" width="809" height="40" uuid="25885eb1-ab42-4d57-b044-da5eb601cfa2"/>
+				<subreportParameter name="P_ESERCIZIO">
+					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_NUM_LIV">
+					<subreportParameterExpression><![CDATA[$P{P_NUM_LIV}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ORIGINE">
+					<subreportParameterExpression><![CDATA[$P{P_ORIGINE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TIPO">
+					<subreportParameterExpression><![CDATA[$P{P_TIPO_ENTRATA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TIPO_AGGREGAZIONE">
+					<subreportParameterExpression><![CDATA[$P{P_TIPO_AGGREGAZIONE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TIPO_RENDICONTO">
+					<subreportParameterExpression><![CDATA[$P{P_TIPO_RENDICONTO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RIEPILOGO">
+					<subreportParameterExpression><![CDATA[$P{RIEPILOGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "situazione_amministrativa_spesa.jasper"]]></subreportExpression>
+			</subreport>
 		</band>
 	</detail>
 	<columnFooter>
