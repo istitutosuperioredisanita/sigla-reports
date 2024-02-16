@@ -105,15 +105,11 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Ciao]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="470" y="50" width="100" height="30" uuid="ddbaffd5-2dc1-4faa-bc12-c9529cc935eb"/>
-				<textFieldExpression><![CDATA[$F{SUM(RIS_PAG)}]]></textFieldExpression>
-			</textField>
-			<textField>
 				<reportElement x="190" y="50" width="100" height="30" uuid="1ff60bbd-850c-4289-8835-ba92e39a5f17"/>
 				<textFieldExpression><![CDATA[$F{SUM(RES_RIS_PAG)}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="440" y="40" width="100" height="30" uuid="92943337-2190-4eca-b374-745d13bb92f0"/>
+				<reportElement x="460" y="57" width="100" height="30" uuid="92943337-2190-4eca-b374-745d13bb92f0"/>
 				<textFieldExpression><![CDATA[$F{SUM(RIS_PAG)}]]></textFieldExpression>
 			</textField>
 		</band>

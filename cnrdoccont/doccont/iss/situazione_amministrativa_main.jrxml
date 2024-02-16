@@ -152,7 +152,6 @@
 				<text><![CDATA[RES]]></text>
 			</staticText>
 		</band>
-		<band height="50"/>
 	</detail>
 	<columnFooter>
 		<band splitType="Stretch"/>
