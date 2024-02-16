@@ -77,14 +77,10 @@
 		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\img\\ISS\\"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select SUM(RES_RIS_PAG),SUM(RIS_PAG)
-from TMP_STAMPA_RENDICONTO]]>
+		<![CDATA[select 1 as rec from dual]]>
 	</queryString>
-	<field name="SUM(RES_RIS_PAG)" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="SUM(RES_RIS_PAG)"/>
-	</field>
-	<field name="SUM(RIS_PAG)" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="SUM(RIS_PAG)"/>
+	<field name="REC" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="REC"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -116,6 +112,9 @@ from TMP_STAMPA_RENDICONTO]]>
 				</subreportParameter>
 				<subreportParameter name="RIEPILOGO">
 					<subreportParameterExpression><![CDATA[$P{RIEPILOGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "situazione_amministrativa_dettaglio.jasper"]]></subreportExpression>

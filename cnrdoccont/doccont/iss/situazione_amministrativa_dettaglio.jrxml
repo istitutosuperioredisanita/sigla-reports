@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="situazione_amministrativa_spesa" pageWidth="812" pageHeight="555" orientation="Landscape" columnWidth="812" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Stampa_pdg_rendicontoScriptlet" uuid="49cb67f3-a952-44e2-bbe0-4bb8401c1eb4">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="situazione_amministrativa_dettaglio" pageWidth="812" pageHeight="555" orientation="Landscape" columnWidth="812" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Stampa_pdg_rendicontoScriptlet" uuid="49cb67f3-a952-44e2-bbe0-4bb8401c1eb4">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
@@ -98,11 +98,11 @@ from TMP_STAMPA_RENDICONTO]]>
 			</textField>
 			<staticText>
 				<reportElement x="320" y="50" width="100" height="30" uuid="70298a7b-e25f-4136-a6e7-7bb2e5407b6e"/>
-				<text><![CDATA[RIS_PAG]]></text>
+				<text><![CDATA[222]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="27" y="57" width="100" height="30" uuid="dfed9ae7-c946-43c1-8f46-e4a7696ddf4d"/>
-				<text><![CDATA[RES_RIS_PAG]]></text>
+				<text><![CDATA[Ciao]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="470" y="50" width="100" height="30" uuid="1e6d5de4-c603-40f4-98fc-65f3336d5c14"/>
