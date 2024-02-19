@@ -6,7 +6,7 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="182"/>
 	<property name="ireport.y" value="0"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLASVIL"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_coll.xml"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -78,6 +78,12 @@
 	</parameter>
 	<queryString>
 		<![CDATA[select 
+NVL(max((select im01 from configurazione_cnr
+	where cd_chiave_primaria='BILANCIO_ENTE'
+	and cd_chiave_secondaria='FONDO_CASSA'
+	and esercizio=   $P{P_ESERCIZIO} 
+    GROUP BY im01
+)),0)  as "cassa_inizio_anno",
 NVL(sum(( select im01 from configurazione_cnr
 	where cd_chiave_primaria='BILANCIO_ENTE'
 	and cd_chiave_secondaria='FONDO_CASSA'
@@ -433,12 +439,12 @@ from TMP_STAMPA_RENDICONTO]]>
 			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 				<reportElement style="TNR9" x="598" y="261" width="100" height="23" uuid="fa573965-c805-42a9-a37d-a471ed7701d5"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{v_riscossi}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{v_da_incassare}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 				<reportElement style="TNR9" x="598" y="341" width="100" height="23" uuid="88c0ab69-f7a9-480f-b746-3e8dc9d738af"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{v_pagati}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{v_da_pagare}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 				<reportElement style="TNR9" x="598" y="378" width="100" height="23" uuid="19abd0a0-095e-43e1-9053-f0ede6196abc"/>
