@@ -142,10 +142,10 @@ from TMP_STAMPA_RENDICONTO]]>
 		<band splitType="Stretch"/>
 	</background>
 	<detail>
-		<band height="435" splitType="Stretch">
+		<band height="405" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement key="staticText-50" x="20" y="40" width="70" height="23" uuid="bdc002d2-7528-4b13-abba-3b98f890d7df"/>
+				<reportElement key="staticText-50" style="TNR9" x="20" y="40" width="110" height="23" uuid="bdc002d2-7528-4b13-abba-3b98f890d7df"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -153,7 +153,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[RISCOSSIONI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="100" y="40" width="150" height="23" uuid="004c0ac1-adb4-4444-a678-85807d7a19fd"/>
+				<reportElement key="staticText-50" style="TNR9" x="134" y="40" width="235" height="23" uuid="004c0ac1-adb4-4444-a678-85807d7a19fd"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -161,7 +161,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[IN C/COMPETENZA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="100" y="70" width="150" height="23" uuid="c9c857ac-f458-425e-8530-1c2b03a7ba46"/>
+				<reportElement key="staticText-50" style="TNR9" x="134" y="70" width="235" height="23" uuid="c9c857ac-f458-425e-8530-1c2b03a7ba46"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -169,7 +169,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[IN C/RESIDUI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="310" y="40" width="100" height="23" uuid="197932d3-f5cf-4b13-8f75-91b2529bad4a"/>
+				<reportElement key="staticText-50" style="TNR9" x="373" y="40" width="41" height="23" uuid="197932d3-f5cf-4b13-8f75-91b2529bad4a"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -177,7 +177,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="310" y="70" width="100" height="23" uuid="9f2d413e-586e-4b6a-bdba-f7158943bca3"/>
+				<reportElement key="staticText-50" style="TNR9" x="373" y="70" width="41" height="23" uuid="9f2d413e-586e-4b6a-bdba-f7158943bca3"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -193,7 +193,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<textFieldExpression><![CDATA[$F{residui_incassati}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-50" x="310" y="150" width="100" height="23" uuid="060c3733-b01c-419e-83da-c37a2824d9f6"/>
+				<reportElement key="staticText-50" style="TNR9" x="373" y="137" width="41" height="23" uuid="060c3733-b01c-419e-83da-c37a2824d9f6"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -201,7 +201,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="20" y="120" width="70" height="23" uuid="a1769d38-2e8d-40a0-a58a-7c08d45a357b"/>
+				<reportElement key="staticText-50" style="TNR9" x="20" y="107" width="110" height="23" uuid="a1769d38-2e8d-40a0-a58a-7c08d45a357b"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -209,7 +209,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[PAGAMENTI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="100" y="150" width="150" height="23" uuid="7e39f1e6-2d7b-4f52-a20a-c8bc1601066c"/>
+				<reportElement key="staticText-50" style="TNR9" x="134" y="137" width="235" height="23" uuid="7e39f1e6-2d7b-4f52-a20a-c8bc1601066c"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -217,7 +217,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[IN C/RESIDUI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="310" y="120" width="100" height="23" uuid="ef2beaef-1839-4127-baf8-f63bc4e77c7b"/>
+				<reportElement key="staticText-50" style="TNR9" x="373" y="107" width="41" height="23" uuid="ef2beaef-1839-4127-baf8-f63bc4e77c7b"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -225,11 +225,11 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="419" y="120" width="100" height="23" uuid="44504dec-d2ab-4d15-928c-9bc049b3003b"/>
+				<reportElement x="419" y="107" width="100" height="23" uuid="44504dec-d2ab-4d15-928c-9bc049b3003b"/>
 				<textFieldExpression><![CDATA[$F{pagati}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-50" x="100" y="120" width="150" height="23" uuid="fb7634ee-0a88-44e0-adea-13301719f2e5"/>
+				<reportElement key="staticText-50" style="TNR9" x="134" y="107" width="235" height="23" uuid="fb7634ee-0a88-44e0-adea-13301719f2e5"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -237,11 +237,11 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[IN C/COMPETENZA]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="424" y="150" width="100" height="23" uuid="29d5073e-d85e-4529-b73a-33ecf556bbf7"/>
+				<reportElement x="424" y="137" width="100" height="23" uuid="29d5073e-d85e-4529-b73a-33ecf556bbf7"/>
 				<textFieldExpression><![CDATA[$F{residui_pagati}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-50" x="20" y="200" width="505" height="23" uuid="27d13259-5a29-4370-b39f-be526bc1fe91"/>
+				<reportElement key="staticText-50" style="TNR9" x="20" y="174" width="505" height="23" uuid="27d13259-5a29-4370-b39f-be526bc1fe91"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -249,7 +249,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[CONSISTENZA DELLA CASSA ALLA FINE DELL'ESERCIZIO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="540" y="70" width="100" height="23" uuid="a52d15a2-36c0-4ee5-92a2-fde3852f623d"/>
+				<reportElement key="staticText-50" style="TNR9" x="551" y="70" width="41" height="23" uuid="a52d15a2-36c0-4ee5-92a2-fde3852f623d"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -257,7 +257,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="540" y="150" width="100" height="23" uuid="b8383339-8611-451e-8aad-5d213c260985"/>
+				<reportElement key="staticText-50" style="TNR9" x="551" y="137" width="41" height="23" uuid="b8383339-8611-451e-8aad-5d213c260985"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -265,27 +265,27 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="654" y="60" width="100" height="30" uuid="682a8cb3-6745-4f49-b3df-9a08e89f43a5"/>
+				<reportElement x="598" y="70" width="100" height="23" uuid="682a8cb3-6745-4f49-b3df-9a08e89f43a5"/>
 				<textFieldExpression><![CDATA[$V{v_riscossi}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="654" y="146" width="100" height="30" uuid="906d8011-be44-4337-9bcf-b242ae465983"/>
+				<reportElement x="598" y="137" width="100" height="23" uuid="906d8011-be44-4337-9bcf-b242ae465983"/>
 				<textFieldExpression><![CDATA[$V{v_pagati}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="654" y="193" width="100" height="30" uuid="e96da82e-740d-4dfb-affe-5c9189d80c96"/>
+				<reportElement x="598" y="174" width="100" height="23" uuid="e96da82e-740d-4dfb-affe-5c9189d80c96"/>
 				<textFieldExpression><![CDATA[$V{v_consistenza}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-50" x="20" y="10" width="505" height="23" uuid="d586b93f-15f3-499a-92e0-1ddf144fe875"/>
+				<reportElement key="staticText-50" style="TNR9" x="20" y="10" width="505" height="23" uuid="d586b93f-15f3-499a-92e0-1ddf144fe875"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
 				<text><![CDATA[CONSISTENZA DI CASSA ALL'INIZIO DELL'ESERCIZIO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="551" y="10" width="100" height="23" uuid="d6f61095-d591-4ab1-b6b2-769e3e531a05"/>
+				<reportElement key="staticText-50" style="TNR9" x="551" y="10" width="41" height="23" uuid="d6f61095-d591-4ab1-b6b2-769e3e531a05"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -293,11 +293,11 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="660" y="6" width="100" height="30" uuid="ea784105-51ac-446a-85c0-5d98fdaeb3a8"/>
+				<reportElement x="598" y="10" width="100" height="23" uuid="ea784105-51ac-446a-85c0-5d98fdaeb3a8"/>
 				<textFieldExpression><![CDATA[$F{cassa_inizio_anno}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-50" x="24" y="250" width="110" height="23" uuid="cc5bd886-8ed5-4651-b28a-016286ff6be0"/>
+				<reportElement key="staticText-50" style="TNR9" x="20" y="231" width="110" height="23" uuid="cc5bd886-8ed5-4651-b28a-016286ff6be0"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -305,7 +305,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[RESIDUI ATTIVI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="154" y="250" width="190" height="23" uuid="ac48a81d-e8d0-4fa5-8524-37a47f7ea278"/>
+				<reportElement key="staticText-50" style="TNR9" x="134" y="231" width="235" height="23" uuid="ac48a81d-e8d0-4fa5-8524-37a47f7ea278"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -313,7 +313,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[DEGLI ESERCIZI PRECEDENTI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="154" y="280" width="150" height="23" uuid="4c160ad3-ff63-4aa8-920d-0b7e598a8f94"/>
+				<reportElement key="staticText-50" style="TNR9" x="134" y="261" width="235" height="23" uuid="4c160ad3-ff63-4aa8-920d-0b7e598a8f94"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -321,7 +321,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[DELL'ESERCIZIO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="369" y="247" width="50" height="23" uuid="673990ff-93cc-424e-974e-030a1ba3c842"/>
+				<reportElement key="staticText-50" style="TNR9" x="373" y="231" width="41" height="23" uuid="673990ff-93cc-424e-974e-030a1ba3c842"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -329,7 +329,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="314" y="280" width="100" height="23" uuid="2d3a8ef0-aba9-443d-918b-53d927af039c"/>
+				<reportElement key="staticText-50" style="TNR9" x="373" y="261" width="41" height="23" uuid="2d3a8ef0-aba9-443d-918b-53d927af039c"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -337,15 +337,15 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="423" y="250" width="117" height="23" uuid="a62371e2-f476-4c13-a7c9-f43030d2a205"/>
+				<reportElement x="423" y="231" width="100" height="23" uuid="a62371e2-f476-4c13-a7c9-f43030d2a205"/>
 				<textFieldExpression><![CDATA[$F{da_incassare_residuo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="428" y="280" width="100" height="23" uuid="aa175b07-ce65-4534-9344-b37adca96ed6"/>
+				<reportElement x="428" y="261" width="100" height="23" uuid="aa175b07-ce65-4534-9344-b37adca96ed6"/>
 				<textFieldExpression><![CDATA[$F{da_indassare}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-50" x="314" y="360" width="100" height="23" uuid="e0f3e960-f2b0-4bb4-b134-8a5e8c453ad7"/>
+				<reportElement key="staticText-50" style="TNR9" x="373" y="341" width="41" height="23" uuid="e0f3e960-f2b0-4bb4-b134-8a5e8c453ad7"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -353,7 +353,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="24" y="330" width="110" height="23" uuid="0039457c-6720-4747-a36e-b725e9fda14a"/>
+				<reportElement key="staticText-50" style="TNR9" x="24" y="311" width="110" height="23" uuid="0039457c-6720-4747-a36e-b725e9fda14a"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -361,7 +361,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[RESIDUI PASSIVI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="104" y="360" width="150" height="23" uuid="56e9eb3e-2d18-483e-81db-647b63e2cf25"/>
+				<reportElement key="staticText-50" style="TNR9" x="134" y="341" width="235" height="23" uuid="56e9eb3e-2d18-483e-81db-647b63e2cf25"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -369,7 +369,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[DELL'ESERCIZIO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="314" y="330" width="100" height="23" uuid="a9a2256f-e4c6-4fe3-9564-29a83a4981cb"/>
+				<reportElement key="staticText-50" style="TNR9" x="373" y="310" width="41" height="23" uuid="a9a2256f-e4c6-4fe3-9564-29a83a4981cb"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -377,11 +377,11 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="423" y="330" width="100" height="23" uuid="b6f5c60b-6039-43f1-be9c-a3fe578b0f2e"/>
+				<reportElement x="423" y="310" width="100" height="23" uuid="b6f5c60b-6039-43f1-be9c-a3fe578b0f2e"/>
 				<textFieldExpression><![CDATA[$F{da_pagare_residuo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-50" x="154" y="329" width="150" height="23" uuid="46c6a592-ab97-4541-88bc-24180c19df7a"/>
+				<reportElement key="staticText-50" style="TNR9" x="134" y="310" width="235" height="23" uuid="46c6a592-ab97-4541-88bc-24180c19df7a"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -389,19 +389,21 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[DEGLI ESERCIZI PRECEDENTI]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="428" y="360" width="100" height="23" uuid="8b79b169-0975-4665-9797-8a5968b58683"/>
+				<reportElement x="428" y="341" width="100" height="23" uuid="8b79b169-0975-4665-9797-8a5968b58683"/>
 				<textFieldExpression><![CDATA[$F{da_pagare}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-50" x="24" y="410" width="505" height="23" uuid="bd9125d2-e963-415e-8090-aa0c79bf4438"/>
+				<reportElement key="staticText-50" style="TNR9" x="24" y="378" width="505" height="23" uuid="bd9125d2-e963-415e-8090-aa0c79bf4438">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<text><![CDATA[AVANZO DI AMMINISTRAZIONE ALLA FINE DELL'ESERCIZIO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="544" y="280" width="100" height="23" uuid="ea8dd49a-bc5b-44d3-aa9c-0096724b7b10"/>
+				<reportElement key="staticText-50" style="TNR9" x="551" y="261" width="41" height="23" uuid="ea8dd49a-bc5b-44d3-aa9c-0096724b7b10"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -409,7 +411,7 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-50" x="544" y="360" width="100" height="23" uuid="d1617880-2252-41aa-b70d-b93f87c30545"/>
+				<reportElement key="staticText-50" style="TNR9" x="551" y="341" width="41" height="23" uuid="d1617880-2252-41aa-b70d-b93f87c30545"/>
 				<box>
 					<pen lineWidth="0.0"/>
 				</box>
@@ -417,17 +419,33 @@ from TMP_STAMPA_RENDICONTO]]>
 				<text><![CDATA[Euro]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="658" y="270" width="100" height="30" uuid="fa573965-c805-42a9-a37d-a471ed7701d5"/>
+				<reportElement x="598" y="261" width="100" height="23" uuid="fa573965-c805-42a9-a37d-a471ed7701d5"/>
 				<textFieldExpression><![CDATA[$V{v_riscossi}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="658" y="356" width="100" height="30" uuid="88c0ab69-f7a9-480f-b746-3e8dc9d738af"/>
+				<reportElement x="598" y="341" width="100" height="23" uuid="88c0ab69-f7a9-480f-b746-3e8dc9d738af"/>
 				<textFieldExpression><![CDATA[$V{v_pagati}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="658" y="403" width="100" height="30" uuid="19abd0a0-095e-43e1-9053-f0ede6196abc"/>
+				<reportElement x="598" y="378" width="100" height="23" uuid="19abd0a0-095e-43e1-9053-f0ede6196abc"/>
 				<textFieldExpression><![CDATA[$V{v_avanzo}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement key="staticText-50" style="TNR9" x="551" y="174" width="41" height="23" uuid="56d9e661-577b-458c-81b8-f03b1539be5e"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" style="TNR9" x="557" y="378" width="41" height="23" uuid="971f5890-ca72-45df-a33c-94fbd54334bc"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Euro]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<columnFooter>
