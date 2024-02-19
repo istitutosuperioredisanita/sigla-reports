@@ -380,7 +380,7 @@
 			<band height="55">
 				<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
 				<staticText>
-					<reportElement x="130" y="3" width="64" height="47" uuid="a6b0bdb5-408e-4cfd-831f-2fea303b2ce8">
+					<reportElement x="130" y="3" width="49" height="47" uuid="a6b0bdb5-408e-4cfd-831f-2fea303b2ce8">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -443,7 +443,7 @@
 					<text><![CDATA[Qta Inizio anno]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="194" y="3" width="68" height="47" uuid="4d8f9c42-b2c2-40fe-8f7c-0a7d755e8ae4">
+					<reportElement x="179" y="3" width="68" height="47" uuid="4d8f9c42-b2c2-40fe-8f7c-0a7d755e8ae4">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					</reportElement>
@@ -459,7 +459,7 @@
 					<text><![CDATA[Qta caricata nel corso dell'anno]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="405" y="3" width="75" height="47" uuid="11c09ad1-6eaf-4b5d-8980-6ad2f8b73090">
+					<reportElement x="390" y="3" width="75" height="47" uuid="11c09ad1-6eaf-4b5d-8980-6ad2f8b73090">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -475,7 +475,7 @@
 					<text><![CDATA[Valori Scarichi nel corso dell'anno]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="334" y="3" width="71" height="47" uuid="460ec218-768e-4ac8-b29f-066aeef1f95d">
+					<reportElement x="319" y="3" width="71" height="47" uuid="460ec218-768e-4ac8-b29f-066aeef1f95d">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -491,7 +491,7 @@
 					<text><![CDATA[Qta scaricata nel corso dell'anno]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="480" y="3" width="51" height="47" uuid="9d59e000-5cd2-4b82-ab5d-80b975f958c3">
+					<reportElement x="465" y="3" width="51" height="47" uuid="9d59e000-5cd2-4b82-ab5d-80b975f958c3">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -507,7 +507,7 @@
 					<text><![CDATA[Rimanenze (Qta)]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="262" y="3" width="72" height="47" uuid="700a475a-0d01-45ab-94d6-f98c217dbfcd">
+					<reportElement x="247" y="3" width="72" height="47" uuid="700a475a-0d01-45ab-94d6-f98c217dbfcd">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -523,7 +523,7 @@
 					<text><![CDATA[Valori Carichi nel corso dell'anno]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="531" y="3" width="57" height="47" uuid="41b70940-637f-4cc1-b835-d71d65da75f6">
+					<reportElement x="516" y="3" width="57" height="47" uuid="41b70940-637f-4cc1-b835-d71d65da75f6">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -566,17 +566,24 @@
 							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
-						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font size="8"/>
+						</textElement>
 						<textFieldExpression><![CDATA[$F{cod_articolo} +"<br/>"+ $F{descArticolo}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
-						<reportElement stretchType="ElementGroupHeight" x="58" y="-1" width="27" height="59" uuid="b748c039-e15f-479b-8e14-b76f60f7d917"/>
+						<reportElement stretchType="ElementGroupHeight" x="59" y="-1" width="27" height="59" uuid="b748c039-e15f-479b-8e14-b76f60f7d917">
+							<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						</reportElement>
 						<box padding="5">
 							<leftPen lineWidth="1.0"/>
 							<bottomPen lineWidth="1.0"/>
 							<rightPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
 						<textFieldExpression><![CDATA[$F{um}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
@@ -586,65 +593,81 @@
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
 						<textFieldExpression><![CDATA[$F{qtyInizioAnnoTotArt}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="130" y="-1" width="64" height="59" uuid="4e7684c9-7376-44a8-9bfa-3263338875e8">
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="130" y="-1" width="49" height="59" uuid="4e7684c9-7376-44a8-9bfa-3263338875e8">
 							<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						</reportElement>
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
 						<textFieldExpression><![CDATA[$F{valoreInizioAnnoTotArt}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="194" y="-1" width="68" height="59" uuid="6fa14b17-33d3-41c0-b6c5-ea828d631445"/>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="179" y="-1" width="68" height="59" uuid="6fa14b17-33d3-41c0-b6c5-ea828d631445"/>
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
 						<textFieldExpression><![CDATA[$F{qtyCaricataTotArt}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="262" y="-1" width="71" height="59" uuid="f40fc165-2ad5-4e4e-b533-66b11e5750a9"/>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="247" y="-1" width="71" height="59" uuid="f40fc165-2ad5-4e4e-b533-66b11e5750a9"/>
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
 						<textFieldExpression><![CDATA[$F{importoCaricoTotArt}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="334" y="-1" width="71" height="59" uuid="259b3da5-f400-4166-8192-eb2886a6a580"/>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="319" y="-1" width="71" height="59" uuid="259b3da5-f400-4166-8192-eb2886a6a580"/>
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
 						<textFieldExpression><![CDATA[$F{qtyScaricataTotArt}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="405" y="-1" width="76" height="59" uuid="990b820e-f218-426c-8ded-8a3985c0af1f"/>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="390" y="-1" width="76" height="59" uuid="990b820e-f218-426c-8ded-8a3985c0af1f"/>
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
 						<textFieldExpression><![CDATA[$F{importoScaricoTotArt}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="481" y="-1" width="51" height="59" uuid="820e4a22-4dc2-4fdc-96d8-fc14d869c326"/>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="466" y="-1" width="51" height="59" uuid="820e4a22-4dc2-4fdc-96d8-fc14d869c326"/>
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
 						<textFieldExpression><![CDATA[$F{giacenzaTotArt}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="532" y="-1" width="56" height="59" uuid="ddaa19b1-0098-4318-9074-3a22375c5954"/>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="517" y="-1" width="56" height="59" uuid="ddaa19b1-0098-4318-9074-3a22375c5954"/>
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
 						<textFieldExpression><![CDATA[$F{importoGiacenzaTotArt}]]></textFieldExpression>
 					</textField>
 				</frame>
