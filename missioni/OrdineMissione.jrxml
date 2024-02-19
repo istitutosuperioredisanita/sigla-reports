@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrdineMissione" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c3b805b-ea54-4163-b6ac-3dbd635f86f5">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
@@ -241,7 +240,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{comuneResidenzaRich} + "  "+$F{indirizzoResidenzaRich}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement x="211" y="132" width="344" height="20" isRemoveLineWhenBlank="true" uuid="46f1b5bf-d210-4fc0-8ce4-bc169cdcfd2a"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
@@ -343,7 +342,7 @@
 	</pageHeader>
 	<detail>
 		<band height="30" splitType="Stretch">
-			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
 				<reportElement x="118" y="6" width="436" height="19" uuid="ab6edefc-339a-4161-989a-1b243a126789"/>
 				<textElement textAlignment="Justified" markup="styled">
 					<font fontName="Times New Roman" isUnderline="false"/>
@@ -366,14 +365,14 @@
 			</line>
 		</band>
 		<band height="25">
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="72" y="1" width="374" height="18" uuid="c97b4f8e-655b-475c-99ba-c41b8f206bfb"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{destinazione} + "  " + $F{nazione}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
 				<reportElement positionType="Float" x="492" y="1" width="58" height="20" uuid="1e14b83a-9b0c-4018-9213-56362a80e73a"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
@@ -396,14 +395,14 @@
 			</line>
 		</band>
 		<band height="155">
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="516" y="0" width="34" height="19" uuid="692f31c1-c2bd-42f8-ae3d-6a3d9b631a62"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{distanzaDallaSede}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="125" y="54" width="417" height="19" uuid="d6a1c2a5-8a7f-4113-977d-ffa9da4b8e3e">
 					<printWhenExpression><![CDATA[$F{tipoMissione}.equalsIgnoreCase( "E" )]]></printWhenExpression>
 				</reportElement>
@@ -412,14 +411,14 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{trattamento}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="89" y="27" width="88" height="19" uuid="6688f5cd-6cd4-4b71-8a77-95aa536fb7b8"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataInizioMissione}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="516" y="27" width="26" height="20" uuid="ad43b814-69c5-4389-928b-955b383ff539">
 					<printWhenExpression><![CDATA[!$F{obbligoRientro}.equalsIgnoreCase( "" )]]></printWhenExpression>
 				</reportElement>
@@ -428,28 +427,28 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{obbligoRientro}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="224" y="79" width="30" height="19" uuid="cf3f3018-b718-4776-84df-d783ff0931fd"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{utilizzoAutoNoleggio}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="77" y="79" width="19" height="19" uuid="aa3b245e-1763-41d6-99b4-84ae08388358"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{utilizzoTaxi}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="448" y="105" width="81" height="19" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{importoPresunto}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" x="15" y="132" width="528" height="20" uuid="bca26aa9-64a8-40a2-bd6c-a50f3c189839">
 					<printWhenExpression><![CDATA[$F{utilizzoTaxi}.equalsIgnoreCase( "Sì" ) || $F{utilizzoAutoNoleggio}.equalsIgnoreCase( "Sì" )|| $F{personaleAlSeguito}.equalsIgnoreCase( "Sì" )|| $F{utilizzoAutoServizio}.equalsIgnoreCase( "Sì" )]]></printWhenExpression>
 				</reportElement>
@@ -459,21 +458,21 @@
 				</textElement>
 				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Motivazione per l'Utilizzo del Taxi/Auto a Noleggio-Servizio/Personale al Seguito  </style>"+ $F{noteUtilizzoTaxiNoleggio}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="368" y="79" width="31" height="19" uuid="124adcfe-f50b-41e5-bce7-8c82fb65ec84"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{utilizzoAutoServizio}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="151" y="105" width="32" height="19" uuid="8ebf9829-1ff1-4130-9bc7-8262fe4b35bc"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{personaleAlSeguito}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="201" y="0" width="237" height="19" uuid="35924cfc-bb30-49ef-9af8-1894f699bbb2">
 					<printWhenExpression><![CDATA[$F{partenzaDa}.equalsIgnoreCase( "A" )]]></printWhenExpression>
 				</reportElement>
@@ -482,14 +481,14 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{partenzaDaAltro}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="508" y="79" width="33" height="19" uuid="1932129c-9861-4a1d-b6cf-0fc52a589637"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{richiestaAutoPropria}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="304" y="105" width="20" height="19" uuid="b3713269-9eca-416f-9965-07da936ff800"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
@@ -518,7 +517,7 @@
 				<reportElement style="bold" x="184" y="27" width="72" height="19" uuid="eedc6f73-79a3-47d0-a6b4-5cbdd5e470dc"/>
 				<text><![CDATA[Fine Missione]]></text>
 			</staticText>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="258" y="27" width="88" height="20" uuid="4ca3e725-b297-44b2-9e2a-133713318f26"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
@@ -565,7 +564,7 @@
 				<reportElement style="bold" x="358" y="105" width="86" height="19" uuid="be9ee8d9-9304-4996-be86-0cf6dbfb706f"/>
 				<text><![CDATA[Importo Presunto €]]></text>
 			</staticText>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="72" y="0" width="129" height="19" uuid="530a5a12-f715-44d0-ba9b-f86e37bbbfbd"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
@@ -574,7 +573,7 @@
 			</textField>
 		</band>
 		<band height="25">
-			<textField textAdjust="StretchHeight">
+			<textField isStretchWithOverflow="true">
 				<reportElement x="77" y="3" width="466" height="20" uuid="38c47c71-b600-4496-ba44-5e6d1372a73c">
 					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )!=0]]></printWhenExpression>
 				</reportElement>
@@ -603,7 +602,7 @@
 				</reportElement>
 				<text><![CDATA[Motivo Annullamento]]></text>
 			</staticText>
-			<textField textAdjust="StretchHeight">
+			<textField isStretchWithOverflow="true">
 				<reportElement x="118" y="3" width="425" height="20" uuid="fb736664-6c3e-4eb9-948d-825a20ad550f">
 					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )==0]]></printWhenExpression>
 				</reportElement>
@@ -633,7 +632,7 @@
 					<printWhenExpression><![CDATA[!$F{missioneGratuita}.equals("Sì")]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[SI AUTORIZZA L’IMPEGNO DI SPESA:]]></text>
+				<text><![CDATA[LA SPESA GRAVERA':]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="bold" x="201" y="5" width="160" height="19" uuid="8b67d6e3-7380-436c-b0ea-c4b1ba5a482b">
@@ -714,7 +713,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{esercizioOriginaleObbligazione}+"  "+$F{pgObbligazione}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField isStretchWithOverflow="true">
 				<reportElement x="89" y="49" width="462" height="20" uuid="34068177-b43b-4907-94b5-8012953ee81d">
 					<printWhenExpression><![CDATA[!$F{missioneGratuita}.equals("Sì")]]></printWhenExpression>
 				</reportElement>
@@ -759,7 +758,7 @@
 				</textElement>
 				<text><![CDATA[CUP]]></text>
 			</staticText>
-			<textField textAdjust="StretchHeight">
+			<textField isStretchWithOverflow="true">
 				<reportElement x="36" y="28" width="515" height="20" uuid="111a6f31-732d-4030-8fd8-b5e567c268e2">
 					<printWhenExpression><![CDATA[!$F{missioneGratuita}.equals("Sì")]]></printWhenExpression>
 				</reportElement>
@@ -777,7 +776,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8" isBold="true" isUnderline="false" isStrikeThrough="false"/>
 				</textElement>
-				<text><![CDATA[NON SARANNO AMMESSE AL RIMBORSO LE SPESE NON DOCUMENTATE E NON RIENTRANTI NELLE FATTISPECIE PREVISTE DAL DISCIPLINARE PER LA GESTIONE DELLE MISSIONI.]]></text>
+				<text><![CDATA[LE SPESE NON DOCUMENTATE NON POSSONO VENIRE RIMBORSATE. PER SPESE EFFETTUATE IN VALUTA, OVE NON SIA ALLEGATA DISTINTA BANCARIA DI CAMBIO, IL RIMBORSO E' DISPOSTO AL CAMBIO VIGENTE ALLA DATA D'INIZIO MISSIONE]]></text>
 			</staticText>
 		</band>
 	</pageFooter>
