@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="riaccertamento_residui" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2739b6e1-c7ae-4834-8041-44743e0f00ba">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SiglaDbSvil"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_coll.xml"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -18,7 +18,7 @@
 	</parameter>
 	<parameter name="P_CD_VOCE" class="java.lang.String"/>
 	<parameter name="P_DS_VOCE" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="ESERCIZIO" class="java.lang.String"/>
+	<parameter name="P_ESERCIZIO" class="java.lang.Integer"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT 
 	ESERCIZIO,
@@ -30,7 +30,7 @@
 	(SUM(IMPORTO_INI_RESIDUI_PROPRI) - SUM(IMPORTO_MANREV) + SUM(VARIAZIONI_RESIDUI_PROPRI)) AS DA_RISCUOTERE
 FROM V_ASSESTATO va
 WHERE va.CD_VOCE = $P{P_CD_VOCE}  AND ESERCIZIO <> ESERCIZIO_RES
-and ESERCIZIO_RES< $P{ESERCIZIO} 
+and ESERCIZIO_RES< $P{P_ESERCIZIO} 
 GROUP BY
 	ESERCIZIO,
 	ESERCIZIO_RES,
@@ -74,7 +74,7 @@ ORDER BY ESERCIZIO_RES]]>
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="41">
+		<band height="22">
 			<textField>
 				<reportElement x="0" y="0" width="80" height="20" forecolor="#525659" uuid="5e229818-4315-45b7-8946-51f32c55587f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -88,10 +88,6 @@ ORDER BY ESERCIZIO_RES]]>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{P_DS_VOCE}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="320" y="11" width="100" height="30" uuid="1eba480d-3a1b-485e-b93d-e66ffd0997e5"/>
-				<textFieldExpression><![CDATA[$P{ESERCIZIO}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>

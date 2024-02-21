@@ -111,7 +111,7 @@ ORDER BY CD_ELEMENTO_VOCE asc]]>
 					<subreportParameterExpression><![CDATA[$F{DS_VOCE}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="P_ESERCIZIO">
-					<subreportParameterExpression><![CDATA[$F{ESERCIZIO}]]></subreportParameterExpression>
+					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "riaccertamento_residui.jasper"]]></subreportExpression>
