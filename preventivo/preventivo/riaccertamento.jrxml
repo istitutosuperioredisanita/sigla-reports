@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.10.0  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="riaccertamento" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13ed6780-6848-4ebc-8ba3-e1810f8b6bd8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SiglaDbSvil"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_coll.xml"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -41,7 +41,9 @@
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT ESERCIZIO, TI_GESTIONE, CD_ELEMENTO_VOCE AS CD_VOCE, DS_ELEMENTO_VOCE AS DS_VOCE  FROM ELEMENTO_VOCE ev 
-WHERE TI_GESTIONE = $P{P_TIPO} AND ESERCIZIO = $P{P_ESERCIZIO} AND ($P{P_VOCE_DA} IS NULL OR CD_ELEMENTO_VOCE >= $P{P_VOCE_DA}) AND ($P{P_VOCE_A} IS NULL OR CD_ELEMENTO_VOCE <= $P{P_VOCE_A})
+WHERE TI_GESTIONE = $P{P_TIPO} AND ESERCIZIO = $P{P_ESERCIZIO} 
+AND ($P{P_VOCE_DA} ='*' OR ( $P{P_VOCE_DA} !='*'  and CD_ELEMENTO_VOCE >= $P{P_VOCE_DA}) )
+AND ($P{P_VOCE_A} ='*' OR (  $P{P_VOCE_A} !='*'  and CD_ELEMENTO_VOCE <= $P{P_VOCE_A}))
 ORDER BY CD_ELEMENTO_VOCE asc]]>
 	</queryString>
 	<field name="ESERCIZIO" class="java.math.BigDecimal">
