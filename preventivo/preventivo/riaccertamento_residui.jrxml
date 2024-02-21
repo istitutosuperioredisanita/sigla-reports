@@ -74,7 +74,7 @@ ORDER BY ESERCIZIO_RES]]>
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="20">
+		<band height="41">
 			<textField>
 				<reportElement x="0" y="0" width="80" height="20" forecolor="#525659" uuid="5e229818-4315-45b7-8946-51f32c55587f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -88,6 +88,10 @@ ORDER BY ESERCIZIO_RES]]>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{P_DS_VOCE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="11" width="100" height="30" uuid="1eba480d-3a1b-485e-b93d-e66ffd0997e5"/>
+				<textFieldExpression><![CDATA[$P{ESERCIZIO}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
