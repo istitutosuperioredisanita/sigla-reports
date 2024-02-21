@@ -37,7 +37,7 @@
 	<parameter name="P_VOCE_DA" class="java.lang.String"/>
 	<parameter name="P_VOCE_A" class="java.lang.String"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\preventivo\\preventivo\\"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT ESERCIZIO, TI_GESTIONE, CD_ELEMENTO_VOCE AS CD_VOCE, DS_ELEMENTO_VOCE AS DS_VOCE  FROM ELEMENTO_VOCE ev 
@@ -109,6 +109,9 @@ ORDER BY CD_ELEMENTO_VOCE asc]]>
 				</subreportParameter>
 				<subreportParameter name="P_DS_VOCE">
 					<subreportParameterExpression><![CDATA[$F{DS_VOCE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ESERCIZIO">
+					<subreportParameterExpression><![CDATA[$F{ESERCIZIO}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "riaccertamento_residui.jasper"]]></subreportExpression>
