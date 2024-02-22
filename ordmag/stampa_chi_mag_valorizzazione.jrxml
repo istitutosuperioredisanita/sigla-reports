@@ -211,11 +211,10 @@
 		</groupFooter>
 	</group>
 	<group name="Categoria">
-		<groupExpression><![CDATA[$P{flRaggCatGruppo} ? $F{cod_categoria} : "1"]]></groupExpression>
+		<groupExpression><![CDATA[$F{cod_categoria}]]></groupExpression>
 		<groupHeader>
 			<band height="2">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -237,10 +236,9 @@
 		</groupFooter>
 	</group>
 	<group name="Gruppo1" isStartNewPage="true">
-		<groupExpression><![CDATA[$P{flDettaglioArticolo} ? $F{cod_gruppo} : "1"]]></groupExpression>
+		<groupExpression><![CDATA[$F{cod_gruppo}]]></groupExpression>
 		<groupHeader>
 			<band height="37">
-				<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
 				<frame>
 					<reportElement x="0" y="2" width="550" height="30" uuid="8396358e-8362-4d63-9ca3-3f80367507bc"/>
 					<textField textAdjust="StretchHeight">
