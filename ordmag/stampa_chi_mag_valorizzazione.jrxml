@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StampaInventario" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="11c15183-8e09-4419-b27d-a899adb1799d">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JsonChiusuraMag.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="301"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="689"/>
 	<parameter name="dataInventario" class="java.util.Date"/>
@@ -306,8 +306,7 @@
 				</frame>
 			</band>
 			<band height="42">
-				<printWhenExpression><![CDATA[$P{flDettaglioArticolo}
-]]></printWhenExpression>
+				<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
 				<staticText>
 					<reportElement x="420" y="3" width="130" height="31" uuid="f9c2ff37-e5ac-470e-bc93-8d5f8654e7ba">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -318,7 +317,7 @@
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
 					<text><![CDATA[C.M.P. Periodo]]></text>
 				</staticText>
 				<staticText>
@@ -329,7 +328,7 @@
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
 					<text><![CDATA[Quantità]]></text>
 				</staticText>
 				<staticText>
