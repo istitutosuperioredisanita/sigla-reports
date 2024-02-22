@@ -220,7 +220,7 @@
 		</groupHeader>
 		<groupFooter>
 			<band height="43">
-				<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
+				<printWhenExpression><![CDATA[$P{flRaggCatGruppo} ]]></printWhenExpression>
 				<textField textAdjust="StretchHeight">
 					<reportElement positionType="Float" x="420" y="8" width="125" height="30" uuid="c17006a7-6236-402c-8d1b-dc694fc6c7f8">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -387,7 +387,7 @@
 			<band height="30">
 				<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
 				<frame>
-					<reportElement x="0" y="-2" width="550" height="30" uuid="bc9980ac-49b6-4cfb-ab1a-e9d37d4722bb"/>
+					<reportElement positionType="Float" x="0" y="-2" width="550" height="30" uuid="bc9980ac-49b6-4cfb-ab1a-e9d37d4722bb"/>
 					<textField textAdjust="StretchHeight">
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="239" y="0" width="181" height="30" uuid="d17c53a7-5145-4af5-a324-7c5eacdf15a3"/>
 						<box padding="5">
