@@ -30,16 +30,16 @@
 	<style name="TNRG11" fontName="Times New Roman" fontSize="11" isBold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR12" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
 	<parameter name="Esercizio" class="java.lang.Integer" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new Integer(2024)]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Integer(2023)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="CDS" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["999"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DaData" class="java.util.Date" isForPrompting="false">
-		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2024/01/01")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/01/01")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="AData" class="java.util.Date" isForPrompting="false">
-		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2024/02/19")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2023/12/31")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DaNumero" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
@@ -277,7 +277,7 @@ ORDER BY NUM_MANDATO]]>
 		<variableExpression><![CDATA[$V{PAGATO_BT}]]></variableExpression>
 	</variable>
 	<variable name="Tot_Ritenute_Testata_Bt" class="java.math.BigDecimal" incrementType="Group" incrementGroup="NUM_MANDATO" calculation="Sum">
-		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{TI_PAGAMENTO}.equals("I")?$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}):new BigDecimal(0)))]]></variableExpression>
+		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( !$F{TI_PAGAMENTO}.equals("I")?$F{RITENUTE_TESTATA}.subtract($V{SUM_RITENUTE}):new BigDecimal(0)))]]></variableExpression>
 	</variable>
 	<variable name="TOT_RITENUTE_RESIDUI_BI" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[($F{STATOREALE}.equals("A")?new BigDecimal(0):( $F{COMPETENZA_RESIDUO}.equals("R")?
