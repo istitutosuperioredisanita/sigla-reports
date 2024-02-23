@@ -226,7 +226,7 @@
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Justified">
-							<font size="14" isBold="false" isItalic="true"/>
+							<font size="10" isBold="false" isItalic="true"/>
 						</textElement>
 						<text><![CDATA[Categoria]]></text>
 					</staticText>
@@ -239,7 +239,7 @@
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Justified">
-							<font size="14"/>
+							<font size="10"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{cod_categoria}]]></textFieldExpression>
 					</textField>
@@ -252,7 +252,7 @@
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Justified">
-							<font size="14"/>
+							<font size="10"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{descCatGrp}]]></textFieldExpression>
 					</textField>
