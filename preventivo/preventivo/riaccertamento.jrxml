@@ -39,6 +39,9 @@
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\preventivo\\preventivo\\"]]></defaultValueExpression>
 	</parameter>
+	<parameter name="DIR_IMAGE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\img\\ISS\\"]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[SELECT 
 	va.ESERCIZIO,
@@ -272,9 +275,9 @@ ORDER BY va.CD_VOCE,ESERCIZIO_RES]]>
 		</groupFooter>
 	</group>
 	<title>
-		<band height="70" splitType="Stretch">
+		<band height="102" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-184" x="0" y="0" width="550" height="60" backcolor="#525659" uuid="ed8f4d51-5288-4294-a1f2-c33eacded38a"/>
+				<reportElement key="textField-184" x="0" y="41" width="550" height="60" backcolor="#525659" uuid="ed8f4d51-5288-4294-a1f2-c33eacded38a"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -288,6 +291,16 @@ ORDER BY va.CD_VOCE,ESERCIZIO_RES]]>
 				<textFieldExpression><![CDATA["Riaccertamento residui " + $V{TITLE_ATTIVI_PASSIVI} + " al 31.12."+ $V{ESERCIZIO_PRECEDENTE}  + " - " + 
 "esercizio finanziario " + $P{P_ESERCIZIO}]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement key="image-1" x="0" y="0" width="140" height="40" uuid="54eb459b-0e8b-4b9c-a3ef-884cb754411b"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<detail>
