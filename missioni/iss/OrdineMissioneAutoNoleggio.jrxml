@@ -310,11 +310,11 @@
 		</band>
 		<band height="50">
 			<staticText>
-				<reportElement positionType="Float" x="0" y="11" width="552" height="39" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
+				<reportElement positionType="Float" x="0" y="11" width="552" height="28" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
 				</textElement>
-				<text><![CDATA[Considerata la circostanza eccezionale, si autorizza l’uso del mezzo proprio per le seguenti motivazioni: ]]></text>
+				<text><![CDATA[Considerata la circostanza eccezionale, si autorizza l’uso del mezzo a noleggio/car sharing per le seguenti motivazioni: ]]></text>
 			</staticText>
 		</band>
 		<band height="25" splitType="Stretch">

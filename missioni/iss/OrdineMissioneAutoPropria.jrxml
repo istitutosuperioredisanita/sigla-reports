@@ -477,9 +477,9 @@
 				<text><![CDATA[Rilasciata da]]></text>
 			</staticText>
 		</band>
-		<band height="47">
+		<band height="50">
 			<staticText>
-				<reportElement positionType="Float" x="0" y="20" width="552" height="19" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
+				<reportElement positionType="Float" x="0" y="11" width="552" height="28" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
 				</textElement>
