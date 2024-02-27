@@ -738,7 +738,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Anticipazioni Monetarie ricevute dal CNR:     Nessuna </style>"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Anticipo Missione:     Nessuna </style>"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="7" y="25" width="524" height="20" uuid="969331d2-d729-49e3-9754-f255045ba94a">

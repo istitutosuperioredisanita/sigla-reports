@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrdineMissioneAutoPropria" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c3b805b-ea54-4163-b6ac-3dbd635f86f5">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
@@ -194,7 +195,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{comuneResidenzaRich} + "  "+$F{indirizzoResidenzaRich}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement x="210" y="137" width="344" height="20" isRemoveLineWhenBlank="true" uuid="360a74e4-4a3b-4db1-a4cb-ac5248167e6c"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
@@ -320,14 +321,14 @@
 			</staticText>
 		</band>
 		<band height="51" splitType="Stretch">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="32" y="29" width="377" height="20" uuid="f6dcd297-2c20-4f09-9201-d101b4849acf"/>
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{marca} + " "+$F{modello}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="447" y="29" width="84" height="20" uuid="a8df0941-f2a5-4437-b760-4a9e66824537"/>
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
@@ -366,14 +367,14 @@
 			</staticText>
 		</band>
 		<band height="22">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="102" y="0" width="161" height="20" uuid="da037474-bd7c-410d-8801-e113016bf498"/>
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cartaCircolazione}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="371" y="0" width="160" height="20" uuid="24cef83c-46e8-4574-a42f-1ea684536e5b"/>
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
@@ -402,14 +403,14 @@
 			</staticText>
 		</band>
 		<band height="22">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="65" y="0" width="197" height="20" uuid="84170ccc-f552-465d-8c2b-84fb1a34228a"/>
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{numeroPatente}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="331" y="0" width="55" height="20" uuid="066039e4-af4f-46b1-bae8-55e938455ef4"/>
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
@@ -436,7 +437,7 @@
 				</textElement>
 				<text><![CDATA[Rilasciata il]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="476" y="0" width="55" height="20" uuid="7668f19f-5a79-4608-b5b9-06a4a0578613"/>
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
@@ -452,7 +453,7 @@
 			</staticText>
 		</band>
 		<band height="29">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="65" y="0" width="466" height="20" uuid="eb5f4ef1-a6ad-4c2b-9989-a345752ed486"/>
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
@@ -476,68 +477,49 @@
 				<text><![CDATA[Rilasciata da]]></text>
 			</staticText>
 		</band>
-		<band height="93">
+		<band height="47">
 			<staticText>
-				<reportElement positionType="Float" x="0" y="11" width="552" height="39" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
+				<reportElement positionType="Float" x="0" y="20" width="552" height="19" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false"/>
+					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
 				</textElement>
-				<text><![CDATA[Ai sensi di quanto disposto dall’art. 6 c. 12 del D.L. 78/2010, dalla circolare n. 36 del 22/10/2010 del Ministero dell’Economia e delle Finanze – Dipartimento della Ragioneria Generale dello Stato e della delibera della Corte dei Conti a Sezioni Riunite n. 8/CONTR/11 del 7 febbraio 2011, si allega alla  presente la copia dei tariffari forniti dagli esercenti dei trasporti pubblici per le tratte sopra indicate.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement positionType="Float" x="0" y="57" width="552" height="34" uuid="10d39fca-e610-4c42-9d3b-a7fd0a82673c"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false"/>
-				</textElement>
-				<text><![CDATA[Nel rispetto delle disposizioni normative in materia (Art. 6 c. 12 del D.L. 78/2010, Circ. 36 del 22/10/2010 del M.E.F. – Dip.to della Ragioneria Generale dello Stato e delibera della Corte dei Conti a Sezioni riunite n. 8/CONTR/11 del 7 febbraio 2011)  e trattandosi di una circostanza eccezionale e non ricorrente, si autorizza l’uso del mezzo proprio per le seguenti motivazioni:]]></text>
+				<text><![CDATA[Considerata la circostanza eccezionale, si autorizza l’uso del mezzo proprio per le seguenti motivazioni: ]]></text>
 			</staticText>
 		</band>
-		<band height="19">
+		<band height="28">
 			<printWhenExpression><![CDATA[$F{motiviIspettivi}.equals( "S" )]]></printWhenExpression>
 			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="14" isRemoveLineWhenBlank="true" uuid="00504e92-6afa-477f-8143-cd4b40e37c2b"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="16" isRemoveLineWhenBlank="true" uuid="00504e92-6afa-477f-8143-cd4b40e37c2b"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Per lo svolgimento di funzioni istituzionali relativi a compiti ispettivi, di verifica e di controllo"]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="23">
-			<printWhenExpression><![CDATA[$F{motiviUrgenza}.equals( "S" )]]></printWhenExpression>
-			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="17" isRemoveLineWhenBlank="true" uuid="33d90e21-a453-4b31-a291-09df3f29ed2f"/>
-				<textElement verticalAlignment="Middle" markup="styled">
-					<font fontName="Times New Roman" isBold="false"/>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="30" width="552" height="29" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[" - Per Attività caratterizzata da emergenza, urgenza, indifferibilità"]]></textFieldExpression>
-			</textField>
-		</band>
-		<band height="22">
-			<printWhenExpression><![CDATA[$F{motiviTrasporto}.equals( "S" )]]></printWhenExpression>
-			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="17" isRemoveLineWhenBlank="true" uuid="99c34b20-86a5-49f1-a21a-30c81021fc6b"/>
-				<textElement verticalAlignment="Middle" markup="styled">
-					<font fontName="Times New Roman" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[" - Per Attività che richiede necessariamente il trasporto di materiale, o attrezzature ingombranti, pesanti, o fragili in dotazione"]]></textFieldExpression>
-			</textField>
-		</band>
-		<band height="21" splitType="Stretch">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
-				<reportElement x="0" y="0" width="549" height="17" isRemoveLineWhenBlank="true" uuid="27e4463e-e73f-4839-a33d-a826e34a1452"/>
+				<text><![CDATA[Al riguardo il sottoscritto dichiara espressamente di sollevare l’Istituto Superiore di Sanità da ogni responsabilità correlata a danni che l’uso di detto mezzo possa eventualmente arrecare a persone e cose, con particolare riferimento ai terzi, ai trasportati o al mezzo stesso. ]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement x="0" y="-10" width="549" height="18" isRemoveLineWhenBlank="true" uuid="27e4463e-e73f-4839-a33d-a826e34a1452"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{altriMotivi}]]></textFieldExpression>
 			</textField>
 		</band>
+		<band height="45"/>
 	</detail>
 	<pageFooter>
 		<band height="113" splitType="Stretch">
 			<rectangle radius="10">
 				<reportElement positionType="Float" x="0" y="3" width="554" height="107" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29"/>
 			</rectangle>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="80" y="45" width="472" height="16" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
@@ -549,7 +531,7 @@
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[DATI ORDINE DI MISSIONE]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
 				<reportElement x="113" y="62" width="439" height="16" uuid="ab6edefc-339a-4161-989a-1b243a126789"/>
 				<textElement textAlignment="Justified" markup="styled">
 					<font fontName="Times New Roman" isUnderline="false"/>
@@ -557,7 +539,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{oggetto}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="193" y="29" width="82" height="16" uuid="6688f5cd-6cd4-4b71-8a77-95aa536fb7b8"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
@@ -575,7 +557,7 @@
 				</textElement>
 				<text><![CDATA[Inizio Missione]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="356" y="29" width="78" height="16" uuid="0869987e-9e75-4179-95e7-d8a7edf4f67b"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
