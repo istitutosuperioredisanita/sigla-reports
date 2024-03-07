@@ -135,7 +135,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["RICHIESTA AUTORIZZAZIONE ALL'USO DELL' AUTO NOLEGGIO/CAR SHARING "+
+				<textFieldExpression><![CDATA["RICHIESTA AUTORIZZAZIONE DELL' AUTO NOLEGGIO/CAR SHARING "+
 "PER L' ORDINE DI MISSIONE N. " + $F{numero} + "  DEL "+$F{dataInserimento}]]></textFieldExpression>
 			</textField>
 			<image isUsingCache="true">
