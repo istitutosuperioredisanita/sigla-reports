@@ -337,14 +337,23 @@
 				<textFieldExpression><![CDATA[" - In casi di motivata eccezionalità, attestate da apposita autodichiarazione del soggetto incaricato;  "]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="55" splitType="Stretch">
+		<band height="24" splitType="Stretch">
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="0" y="4" width="549" height="20" isRemoveLineWhenBlank="true" uuid="27e4463e-e73f-4839-a33d-a826e34a1452"/>
+				<reportElement x="0" y="-10" width="549" height="20" isRemoveLineWhenBlank="true" uuid="27e4463e-e73f-4839-a33d-a826e34a1452"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{note}]]></textFieldExpression>
 			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement positionType="Float" x="1" y="10" width="552" height="28" uuid="37d2a17d-a043-4bbd-83be-112405a30d5e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[IMPORTANTE: verificare la gestione del CNR delle indennità chilometriche. ]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<pageFooter>
