@@ -5,7 +5,7 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="783"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportAutoNoleggio.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportTaxi.xml"/>
 	<style name="table" mode="Transparent" isBold="true">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -186,13 +186,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{comuneResidenzaRich} + "  "+$F{indirizzoResidenzaRich}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement x="210" y="137" width="344" height="20" isRemoveLineWhenBlank="true" uuid="360a74e4-4a3b-4db1-a4cb-ac5248167e6c"/>
-				<textElement markup="styled">
-					<font fontName="Times New Roman"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{domicilioFiscaleRich}]]></textFieldExpression>
-			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="93" y="158" width="461" height="20" uuid="c346885b-b192-412c-98b5-2aa29f10e4f2"/>
 				<textElement markup="styled">
@@ -248,13 +241,6 @@
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Residenza]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="13" y="137" width="197" height="20" uuid="6cd83e62-67de-4978-a16c-b3530ae07173"/>
-				<textElement>
-					<font fontName="Times New Roman" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Domicilio Fiscale (se diverso da residenza)]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="13" y="158" width="80" height="20" uuid="43b87204-1a3d-4353-a92d-049c97733ee4"/>
