@@ -78,13 +78,13 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 		<variableExpression><![CDATA[$F{GIACENZA}]]></variableExpression>
 	</variable>
 	<variable name="CmpCategoria" class="java.math.BigDecimal" resetType="Group" resetGroup="Categoria" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
 	</variable>
 	<variable name="CmpRaggruppamento" class="java.math.BigDecimal" resetType="Group" resetGroup="RaggMagazzino" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
 	</variable>
 	<variable name="CmpTotale" class="java.math.BigDecimal" resetType="Master" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
 	</variable>
 	<variable name="orderby" class="java.lang.String">
 		<variableExpression><![CDATA[$P{ordinamento}.equals("C")?"c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRIO, c.CD_BENE_SERVIZIO " : " r.DS_RAGGR_MAGAZZINO,cg.DS_CATEGORIA_GRUPPO , b.DS_BENE_SERVIZIO "]]></variableExpression>
