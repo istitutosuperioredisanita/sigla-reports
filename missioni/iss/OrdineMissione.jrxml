@@ -241,13 +241,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{comuneResidenzaRich} + "  "+$F{indirizzoResidenzaRich}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement x="211" y="132" width="344" height="20" isRemoveLineWhenBlank="true" uuid="46f1b5bf-d210-4fc0-8ce4-bc169cdcfd2a"/>
-				<textElement markup="styled">
-					<font fontName="Times New Roman"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{domicilioFiscaleRich}]]></textFieldExpression>
-			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="94" y="153" width="461" height="20" uuid="bd927264-dba3-45b2-a569-5b0b32c53d3a"/>
 				<textElement markup="styled">
@@ -303,13 +296,6 @@
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Residenza]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="14" y="132" width="197" height="20" uuid="0f2d6dbc-871a-46bb-ab50-985594ce1f6b"/>
-				<textElement>
-					<font fontName="Times New Roman" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Domicilio Fiscale (se diverso da residenza)]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="14" y="153" width="80" height="20" uuid="769c254c-c608-4e3e-8575-2d1c17df54a4"/>
@@ -633,7 +619,7 @@
 					<printWhenExpression><![CDATA[!$F{missioneGratuita}.equals("Sì")]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[SI AUTORIZZA L’IMPEGNO DI SPESA:]]></text>
+				<text><![CDATA[LA SPESA GRAVERA':]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="bold" x="201" y="5" width="160" height="19" uuid="8b67d6e3-7380-436c-b0ea-c4b1ba5a482b">
@@ -777,7 +763,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8" isBold="true" isUnderline="false" isStrikeThrough="false"/>
 				</textElement>
-				<text><![CDATA[NON SARANNO AMMESSE AL RIMBORSO LE SPESE NON DOCUMENTATE E NON RIENTRANTI NELLE FATTISPECIE PREVISTE DAL DISCIPLINARE PER LA GESTIONE DELLE MISSIONI.]]></text>
+				<text><![CDATA[LE SPESE NON DOCUMENTATE NON POSSONO VENIRE RIMBORSATE. PER SPESE EFFETTUATE IN VALUTA, OVE NON SIA ALLEGATA DISTINTA BANCARIA DI CAMBIO, IL RIMBORSO E' DISPOSTO AL CAMBIO VIGENTE ALLA DATA D'INIZIO MISSIONE]]></text>
 			</staticText>
 		</band>
 	</pageFooter>

@@ -4,7 +4,6 @@
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="783"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportAutoNoleggio.xml"/>
 	<style name="table" mode="Transparent" isBold="true">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -196,13 +195,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{comuneResidenzaRich} + "  "+$F{indirizzoResidenzaRich}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement x="210" y="137" width="344" height="20" isRemoveLineWhenBlank="true" uuid="360a74e4-4a3b-4db1-a4cb-ac5248167e6c"/>
-				<textElement markup="styled">
-					<font fontName="Times New Roman"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{domicilioFiscaleRich}]]></textFieldExpression>
-			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="93" y="158" width="461" height="20" uuid="c346885b-b192-412c-98b5-2aa29f10e4f2"/>
 				<textElement markup="styled">
@@ -258,13 +250,6 @@
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Residenza]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="13" y="137" width="197" height="20" uuid="6cd83e62-67de-4978-a16c-b3530ae07173"/>
-				<textElement>
-					<font fontName="Times New Roman" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Domicilio Fiscale (se diverso da residenza)]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="13" y="158" width="80" height="20" uuid="43b87204-1a3d-4353-a92d-049c97733ee4"/>
@@ -478,42 +463,61 @@
 				<text><![CDATA[Rilasciata da]]></text>
 			</staticText>
 		</band>
-		<band height="50">
+		<band height="93">
 			<staticText>
-				<reportElement positionType="Float" x="0" y="11" width="552" height="28" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
+				<reportElement positionType="Float" x="0" y="11" width="552" height="39" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false"/>
 				</textElement>
-				<text><![CDATA[Considerata la circostanza eccezionale, si autorizza l’uso del mezzo proprio per le seguenti motivazioni: ]]></text>
+				<text><![CDATA[Ai sensi di quanto disposto dall’art. 6 c. 12 del D.L. 78/2010, dalla circolare n. 36 del 22/10/2010 del Ministero dell’Economia e delle Finanze – Dipartimento della Ragioneria Generale dello Stato e della delibera della Corte dei Conti a Sezioni Riunite n. 8/CONTR/11 del 7 febbraio 2011, si allega alla  presente la copia dei tariffari forniti dagli esercenti dei trasporti pubblici per le tratte sopra indicate.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="57" width="552" height="34" uuid="10d39fca-e610-4c42-9d3b-a7fd0a82673c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Nel rispetto delle disposizioni normative in materia (Art. 6 c. 12 del D.L. 78/2010, Circ. 36 del 22/10/2010 del M.E.F. – Dip.to della Ragioneria Generale dello Stato e delibera della Corte dei Conti a Sezioni riunite n. 8/CONTR/11 del 7 febbraio 2011)  e trattandosi di una circostanza eccezionale e non ricorrente, si autorizza l’uso del mezzo proprio per le seguenti motivazioni:]]></text>
 			</staticText>
 		</band>
-		<band height="28">
+		<band height="19">
 			<printWhenExpression><![CDATA[$F{motiviIspettivi}.equals( "S" )]]></printWhenExpression>
 			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="16" isRemoveLineWhenBlank="true" uuid="00504e92-6afa-477f-8143-cd4b40e37c2b"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="14" isRemoveLineWhenBlank="true" uuid="00504e92-6afa-477f-8143-cd4b40e37c2b"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Per lo svolgimento di funzioni istituzionali relativi a compiti ispettivi, di verifica e di controllo"]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="59" splitType="Stretch">
-			<staticText>
-				<reportElement positionType="Float" x="0" y="30" width="552" height="29" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
+		<band height="23">
+			<printWhenExpression><![CDATA[$F{motiviUrgenza}.equals( "S" )]]></printWhenExpression>
+			<textField isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="17" isRemoveLineWhenBlank="true" uuid="33d90e21-a453-4b31-a291-09df3f29ed2f"/>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Al riguardo il sottoscritto dichiara espressamente di sollevare l’Istituto Superiore di Sanità da ogni responsabilità correlata a danni che l’uso di detto mezzo possa eventualmente arrecare a persone e cose, con particolare riferimento ai terzi, ai trasportati o al mezzo stesso. ]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[" - Per Attività caratterizzata da emergenza, urgenza, indifferibilità"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22">
+			<printWhenExpression><![CDATA[$F{motiviTrasporto}.equals( "S" )]]></printWhenExpression>
+			<textField isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="17" isRemoveLineWhenBlank="true" uuid="99c34b20-86a5-49f1-a21a-30c81021fc6b"/>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" - Per Attività che richiede necessariamente il trasporto di materiale, o attrezzature ingombranti, pesanti, o fragili in dotazione"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="21" splitType="Stretch">
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="0" y="-10" width="549" height="18" isRemoveLineWhenBlank="true" uuid="27e4463e-e73f-4839-a33d-a826e34a1452"/>
+				<reportElement x="0" y="0" width="549" height="17" isRemoveLineWhenBlank="true" uuid="27e4463e-e73f-4839-a33d-a826e34a1452"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{altriMotivi}]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="45"/>
 	</detail>
 	<pageFooter>
 		<band height="113" splitType="Stretch">
