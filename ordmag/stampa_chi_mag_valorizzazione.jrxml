@@ -14,7 +14,7 @@
 		<defaultValueExpression><![CDATA["D:/iss/SIGLA_FORK_REPORT_ISS/sigla-reports/img/ISS/"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="ordinamento" class="java.lang.String"/>
-	<parameter name="esercizio" class="java.lang.String"/>
+	<parameter name="esercizio" class="java.lang.Integer"/>
 	<parameter name="tipoChiusura" class="java.lang.String"/>
 	<parameter name="cdRaggrMag" class="java.lang.String"/>
 	<parameter name="cdCatGrp" class="java.lang.String"/>
