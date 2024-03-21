@@ -33,7 +33,7 @@ c.CD_BENE_SERVIZIO = b.CD_BENE_SERVIZIO and
 c.ANNO=$P{esercizio} and
 c.TIPO_CHIUSURA=$P{tipoChiusura} and
 ((c.CD_RAGGR_MAG=$P{cdRaggrMag} or '%'=$P{cdRaggrMag}) and (c.CD_CDS_RAGGR_MAG=$P{cdCdsRaggrMag} or '%'=$P{cdCdsRaggrMag}) ) and
-(c.CD_CATEGORIA_GRUPPO=$P{cdCatGrp} or  '%'=$P{cdCatGrp})
+(cg.CD_CATEGORIA_PADRE=$P{cdCatGrp} or  '%'=$P{cdCatGrp})
 group by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG,c.CD_BENE_SERVIZIO,c.UNITA_MISURA , c.IMPORTO_CMPP_ART,c.GIACENZA,r.DS_RAGGR_MAGAZZINO, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRIO , cg.DS_CATEGORIA_GRUPPO, b.DS_BENE_SERVIZIO
 order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRIO, c.CD_BENE_SERVIZIO asc]]>
 	</queryString>
