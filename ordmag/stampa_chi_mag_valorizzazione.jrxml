@@ -88,6 +88,9 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 	<variable name="orderby" class="java.lang.String">
 		<variableExpression><![CDATA[$P{ordinamento}.equals("C")?"c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRIO, c.CD_BENE_SERVIZIO " : " r.DS_RAGGR_MAGAZZINO,cg.DS_CATEGORIA_GRUPPO , b.DS_BENE_SERVIZIO "]]></variableExpression>
 	</variable>
+	<variable name="CmpArticolo" class="java.math.BigDecimal" resetType="Group" resetGroup="Articolo" calculation="Sum">
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
+	</variable>
 	<group name="Totale">
 		<groupExpression><![CDATA[$V{MASTER_TOTAL_PAGES}]]></groupExpression>
 		<groupHeader>
@@ -353,7 +356,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 							<bottomPen lineWidth="1.0"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($F{IMPORTO_CMPP_ART})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{CmpArticolo})]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="2" width="60" height="28" uuid="996cf5ed-f080-46f9-848a-a7786540a753"/>
