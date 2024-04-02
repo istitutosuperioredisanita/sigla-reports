@@ -232,13 +232,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{comuneResidenzaRich} + "  "+$F{indirizzoResidenzaRich}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement x="207" y="147" width="344" height="20" isRemoveLineWhenBlank="true" uuid="f70c73b4-b4c9-44a9-b2ac-e2265abe511b"/>
-				<textElement markup="styled">
-					<font fontName="Times New Roman"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{domicilioFiscaleRich}]]></textFieldExpression>
-			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="90" y="168" width="461" height="20" uuid="9db2fc37-e0f2-4315-ab58-e03634cb5cbd"/>
 				<textElement markup="styled">
@@ -294,13 +287,6 @@
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Residenza]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="10" y="147" width="197" height="20" uuid="4e7d256e-6d2e-423c-98b6-fa395cec9a63"/>
-				<textElement>
-					<font fontName="Times New Roman" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Domicilio Fiscale (se diverso da residenza)]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="10" y="168" width="80" height="20" uuid="79e00dc2-1963-4e7f-86d9-e69bc46d8281"/>
@@ -738,7 +724,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Anticipazioni Monetarie ricevute dal CNR:     Nessuna </style>"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Anticipo Missione:     Nessuna </style>"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="7" y="25" width="524" height="20" uuid="969331d2-d729-49e3-9754-f255045ba94a">

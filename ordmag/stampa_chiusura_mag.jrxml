@@ -4,137 +4,25 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="301"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="689"/>
-	<property name="com.jaspersoft.studio.data.sql.tables" value="RFVBTCAsMTUsMTUsNzYxZDI2YjctYzFmMi00YTM2LWEzMWQtYTBlYmYxNGU0YmRjOw=="/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="dataInventario" class="java.util.Date"/>
 	<parameter name="flRaggCatGruppo" class="java.lang.Boolean"/>
 	<parameter name="flDettaglioArticolo" class="java.lang.Boolean"/>
 	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["D:/iss/SIGLA_FORK_REPORT_ISS/sigla-reports/img/ISS/"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="tipoOperazione" class="java.lang.String"/>
-	<parameter name="tipoValorizzazione" class="java.lang.String"/>
 	<parameter name="DIR_SUBREPORT" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
-	<queryString language="JSON">
-		<![CDATA[]]>
+	<parameter name="ordinamento" class="java.lang.String"/>
+	<parameter name="esercizio" class="java.lang.Integer"/>
+	<parameter name="tipoChiusura" class="java.lang.String"/>
+	<parameter name="cdRaggrMag" class="java.lang.String"/>
+	<parameter name="cdCatGrp" class="java.lang.String"/>
+	<parameter name="cdCdsRaggrMag" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT 1 FROM DUAL]]>
 	</queryString>
-	<field name="annoLotto" class="java.lang.Integer">
-		<property name="net.sf.jasperreports.json.field.expression" value="annoLotto"/>
-		<fieldDescription><![CDATA[annoLotto]]></fieldDescription>
-	</field>
-	<field name="numeroLotto" class="java.lang.Integer">
-		<property name="net.sf.jasperreports.json.field.expression" value="numeroLotto"/>
-		<fieldDescription><![CDATA[numeroLotto]]></fieldDescription>
-	</field>
-	<field name="tipoLotto" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="tipoLotto"/>
-		<fieldDescription><![CDATA[tipoLotto]]></fieldDescription>
-	</field>
-	<field name="cd_magazzino" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="cd_magazzino"/>
-		<fieldDescription><![CDATA[cd_magazzino]]></fieldDescription>
-	</field>
-	<field name="cdCds" class="java.lang.Integer">
-		<property name="net.sf.jasperreports.json.field.expression" value="cdCds"/>
-		<fieldDescription><![CDATA[cdCds]]></fieldDescription>
-	</field>
-	<field name="categoriaGruppo" class="java.math.BigDecimal">
-		<property name="net.sf.jasperreports.json.field.expression" value="categoriaGruppo"/>
-		<fieldDescription><![CDATA[categoriaGruppo]]></fieldDescription>
-	</field>
-	<field name="cod_articolo" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="cod_articolo"/>
-		<fieldDescription><![CDATA[cod_articolo]]></fieldDescription>
-	</field>
-	<field name="dataMovimentoChiusuraLotto" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="dataMovimentoChiusuraLotto"/>
-		<fieldDescription><![CDATA[dataMovimentoChiusuraLotto]]></fieldDescription>
-	</field>
-	<field name="dataCaricoLotto" class="java.lang.Long">
-		<property name="net.sf.jasperreports.json.field.expression" value="dataCaricoLotto"/>
-		<fieldDescription><![CDATA[dataCaricoLotto]]></fieldDescription>
-	</field>
-	<field name="desc_magazzino" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="desc_magazzino"/>
-		<fieldDescription><![CDATA[desc_magazzino]]></fieldDescription>
-	</field>
-	<field name="descArticolo" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="descArticolo"/>
-		<fieldDescription><![CDATA[descArticolo]]></fieldDescription>
-	</field>
-	<field name="descCatGrp" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="descCatGrp"/>
-		<fieldDescription><![CDATA[descCatGrp]]></fieldDescription>
-	</field>
-	<field name="cod_categoria" class="java.lang.Integer">
-		<property name="net.sf.jasperreports.json.field.expression" value="cod_categoria"/>
-		<fieldDescription><![CDATA[cod_categoria]]></fieldDescription>
-	</field>
-	<field name="cod_gruppo" class="java.lang.Integer">
-		<property name="net.sf.jasperreports.json.field.expression" value="cod_gruppo"/>
-		<fieldDescription><![CDATA[cod_gruppo]]></fieldDescription>
-	</field>
-	<field name="giacenza" class="java.lang.Integer">
-		<property name="net.sf.jasperreports.json.field.expression" value="giacenza"/>
-		<fieldDescription><![CDATA[giacenza]]></fieldDescription>
-	</field>
-	<field name="um" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="um"/>
-		<fieldDescription><![CDATA[um]]></fieldDescription>
-	</field>
-	<field name="importoUnitario" class="java.math.BigDecimal">
-		<property name="net.sf.jasperreports.json.field.expression" value="importoUnitario"/>
-		<fieldDescription><![CDATA[importoUnitario]]></fieldDescription>
-	</field>
-	<field name="cdMagRaggr" class="java.lang.Integer">
-		<property name="net.sf.jasperreports.json.field.expression" value="cdMagRaggr"/>
-		<fieldDescription><![CDATA[cdMagRaggr]]></fieldDescription>
-	</field>
-	<field name="descMagRaggr" class="java.lang.String">
-		<property name="net.sf.jasperreports.json.field.expression" value="descMagRaggr"/>
-		<fieldDescription><![CDATA[descMagRaggr]]></fieldDescription>
-	</field>
-	<field name="mediaPonderataArticolo" class="java.math.BigDecimal">
-		<property name="net.sf.jasperreports.json.field.expression" value="mediaPonderataArticolo"/>
-		<fieldDescription><![CDATA[mediaPonderataArticolo]]></fieldDescription>
-	</field>
-	<field name="mediaPonderataCatGruppo" class="java.math.BigDecimal">
-		<property name="net.sf.jasperreports.json.field.expression" value="mediaPonderataCatGruppo"/>
-		<fieldDescription><![CDATA[mediaPonderataCatGruppo]]></fieldDescription>
-	</field>
-	<field name="mediaPonderataRaggrMag" class="java.math.BigDecimal">
-		<property name="net.sf.jasperreports.json.field.expression" value="mediaPonderataRaggrMag"/>
-		<fieldDescription><![CDATA[mediaPonderataRaggrMag]]></fieldDescription>
-	</field>
-	<field name="mediaPonderataTotale" class="java.math.BigDecimal">
-		<property name="net.sf.jasperreports.json.field.expression" value="mediaPonderataTotale"/>
-		<fieldDescription><![CDATA[mediaPonderataTotale]]></fieldDescription>
-	</field>
-	<field name="qtyInizioAnno" class="java.lang.Integer">
-		<property name="net.sf.jasperreports.json.field.expression" value="qtyInizioAnno"/>
-		<fieldDescription><![CDATA[qtyInizioAnno]]></fieldDescription>
-	</field>
-	<field name="valoreInizioAnno" class="java.math.BigDecimal">
-		<property name="net.sf.jasperreports.json.field.expression" value="valoreInizioAnno"/>
-		<fieldDescription><![CDATA[valoreInizioAnno]]></fieldDescription>
-	</field>
-	<field name="qtyCaricata" class="java.lang.Integer">
-		<property name="net.sf.jasperreports.json.field.expression" value="qtyCaricata"/>
-		<fieldDescription><![CDATA[qtyCaricata]]></fieldDescription>
-	</field>
-	<field name="importoTotCarico" class="java.math.BigDecimal">
-		<property name="net.sf.jasperreports.json.field.expression" value="importoTotCarico"/>
-		<fieldDescription><![CDATA[importoTotCarico]]></fieldDescription>
-	</field>
-	<field name="qtyScaricata" class="java.lang.Integer">
-		<property name="net.sf.jasperreports.json.field.expression" value="qtyScaricata"/>
-		<fieldDescription><![CDATA[qtyScaricata]]></fieldDescription>
-	</field>
-	<field name="importoTotScarico" class="java.math.BigDecimal">
-		<property name="net.sf.jasperreports.json.field.expression" value="importoTotScarico"/>
-		<fieldDescription><![CDATA[importoTotScarico]]></fieldDescription>
-	</field>
 	<pageHeader>
 		<band height="90">
 			<image onErrorType="Blank">
@@ -156,7 +44,28 @@
 				<subreportParameter name="dataInventario">
 					<subreportParameterExpression><![CDATA[$P{dataInventario}]]></subreportParameterExpression>
 				</subreportParameter>
-				<dataSourceExpression><![CDATA[$P{REPORT_DATA_SOURCE}]]></dataSourceExpression>
+				<subreportParameter name="cdCatGrp">
+					<subreportParameterExpression><![CDATA[$P{cdCatGrp}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="cdCdsRaggrMag">
+					<subreportParameterExpression><![CDATA[$P{cdCdsRaggrMag}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="cdRaggrMag">
+					<subreportParameterExpression><![CDATA[$P{cdRaggrMag}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="esercizio">
+					<subreportParameterExpression><![CDATA[$P{esercizio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ordinamento">
+					<subreportParameterExpression><![CDATA[$P{ordinamento}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tipoChiusura">
+					<subreportParameterExpression><![CDATA[$P{tipoChiusura}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_CONNECTION">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CONNECTION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[1==1? $P{DIR_SUBREPORT} +"stampa_chi_mag_valorizzazione.jasper" : $P{DIR_SUBREPORT} +"stampa_chi_mag_rimanenze.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
