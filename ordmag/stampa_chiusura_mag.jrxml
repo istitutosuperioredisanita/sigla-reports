@@ -33,7 +33,7 @@
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="33">
+		<band height="64">
 			<subreport>
 				<reportElement x="5" y="0" width="556" height="29" uuid="8342c4c1-95da-4c13-ab1f-5230e90c001b"/>
 				<subreportParameter name="flRaggCatGruppo">
@@ -68,6 +68,20 @@
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{tipoReport}.equals("V")? $P{DIR_SUBREPORT} +"stampa_chi_mag_valorizzazione.jasper" : $P{DIR_SUBREPORT} +"stampa_chi_mag_rimanenze.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="1" y="29" width="524" height="29" uuid="e11c02fd-be7f-4e43-b70c-b76259e2dab3"/>
+				<subreportParameter name="esercizio">
+					<subreportParameterExpression><![CDATA[$P{esercizio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tipoChiusura">
+					<subreportParameterExpression><![CDATA[$P{tipoChiusura}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_CONNECTION">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CONNECTION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{DIR_SUBREPORT} +"stampa_chi_catgr_voce_ep.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
