@@ -60,7 +60,7 @@ group by c.cd_voce_ep,v.ds_voce_ep]]>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Justified"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($F{IMPORTOTOT})]]></textFieldExpression>
 				</textField>
 			</frame>
