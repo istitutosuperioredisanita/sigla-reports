@@ -32,7 +32,8 @@ c.CD_CATEGORIA_GRUPPO = cg.CD_CATEGORIA_GRUPPO and
 c.CD_BENE_SERVIZIO = b.CD_BENE_SERVIZIO and
 c.ANNO=$P{esercizio} and
 c.TIPO_CHIUSURA=$P{tipoChiusura} and
-((c.CD_RAGGR_MAG=$P{cdRaggrMag} or '%'=$P{cdRaggrMag}) and (c.CD_CDS_RAGGR_MAG=$P{cdCdsRaggrMag} or '%'=$P{cdCdsRaggrMag}) ) and
+( (c.CD_RAGGR_MAG=$P{cdRaggrMag} or ('%'=$P{cdRaggrMag} and c.CD_RAGGR_MAG in ('01','02','03','04','05'))) 
+	and (c.CD_CDS_RAGGR_MAG=$P{cdCdsRaggrMag} or '%'=$P{cdCdsRaggrMag}) ) and
 (cg.CD_CATEGORIA_PADRE=$P{cdCatGrp} or  '%'=$P{cdCatGrp})
 order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRIO, c.CD_BENE_SERVIZIO asc]]>
 	</queryString>

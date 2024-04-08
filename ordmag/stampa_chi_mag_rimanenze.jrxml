@@ -2,8 +2,8 @@
 <!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StampaRimanenzeMagazzinoDef" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="11c15183-8e09-4419-b27d-a899adb1799d">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="301"/>
-	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="689"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="577"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="413"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="dataInventario" class="java.util.Date"/>
 	<parameter name="flRaggCatGruppo" class="java.lang.Boolean"/>
@@ -31,7 +31,7 @@ c.CD_CATEGORIA_GRUPPO = cg.CD_CATEGORIA_GRUPPO and
 c.CD_BENE_SERVIZIO = b.CD_BENE_SERVIZIO and
 c.ANNO=$P{esercizio} and
 c.TIPO_CHIUSURA=$P{tipoChiusura} and
-((c.CD_RAGGR_MAG=$P{cdRaggrMag} or '%'=$P{cdRaggrMag}) and (c.CD_CDS_RAGGR_MAG=$P{cdCdsRaggrMag} or '%'=$P{cdCdsRaggrMag}) ) and
+((c.CD_RAGGR_MAG=$P{cdRaggrMag} or  ('%'=$P{cdRaggrMag} and c.CD_RAGGR_MAG in ('01','02','03','04','05'))) and (c.CD_CDS_RAGGR_MAG=$P{cdCdsRaggrMag} or '%'=$P{cdCdsRaggrMag}) ) and
 (cg.CD_CATEGORIA_PADRE=$P{cdCatGrp} or  '%'=$P{cdCatGrp})
 order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRIO, c.CD_BENE_SERVIZIO asc]]>
 	</queryString>
