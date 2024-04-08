@@ -26,7 +26,8 @@ inner join VOCE_EP v on c.cd_voce_ep=v.cd_voce_ep and c.anno=v.esercizio
 where c.anno=$P{esercizio} 
 and
 c.TIPO_CHIUSURA=$P{tipoChiusura}
-group by c.cd_voce_ep,v.ds_voce_ep]]>
+group by c.cd_voce_ep,v.ds_voce_ep
+order by c.cd_voce_ep]]>
 	</queryString>
 	<field name="CD_VOCE_EP" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_VOCE_EP"/>
