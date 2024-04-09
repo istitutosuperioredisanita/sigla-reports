@@ -102,7 +102,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 				<textField textAdjust="StretchHeight">
 					<reportElement positionType="Float" x="420" y="0" width="130" height="30" printWhenGroupChanges="Totale" uuid="a87db05d-4bf7-4b87-b1a7-30f85ca5842e"/>
 					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{CmpTotale} )]]></textFieldExpression>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpTotale} )]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement positionType="Float" x="0" y="0" width="420" height="30" printWhenGroupChanges="Totale" uuid="d84925d7-e9d9-492b-adff-78b01db310bf"/>
@@ -171,7 +171,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{CmpRaggruppamento})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpRaggruppamento})]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupFooter>
@@ -255,7 +255,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{CmpCategoria})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpCategoria})]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupFooter>
@@ -357,7 +357,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 							<bottomPen lineWidth="1.0"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{CmpArticolo})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpArticolo})]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="2" width="60" height="28" uuid="996cf5ed-f080-46f9-848a-a7786540a753"/>

@@ -81,7 +81,7 @@ order by c.cd_voce_ep]]>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($F{IMPORTOTOT})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{IMPORTOTOT})]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
 					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="150" y="0" width="180" height="30" uuid="45e6ac23-cc1e-4a4e-97f3-011edd262ff0"/>
