@@ -173,7 +173,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoCaricoInizialeTot})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeTot})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="490" y="0" width="90" height="40" uuid="03d972d1-a9a9-4d6b-886d-ed3bd3a54f2e">
@@ -183,7 +183,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{importoGiacenzaTot})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{importoGiacenzaTot})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="261" y="0" width="90" height="40" uuid="ee749ccd-b2df-4eaf-84dc-dec6881e7459">
@@ -193,7 +193,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoCaricoAnnoTot})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoTot})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="376" y="0" width="90" height="40" uuid="0072970a-b8f7-4f79-8dfd-afac939ad479">
@@ -203,7 +203,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoScaricoAnnoTot})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoTot})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
@@ -250,7 +250,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoCaricoInizialeRag})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeRag})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="265" y="0" width="85" height="40" uuid="67c97657-71e4-4fbd-9d6d-84254051a2a6">
@@ -261,7 +261,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoCaricoAnnoRag})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoRag})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="380" y="0" width="85" height="40" uuid="84560310-1716-4c57-8762-2c7eb95d7a69">
@@ -272,7 +272,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoScaricoAnnoRag})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoRag})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="495" y="0" width="85" height="40" uuid="46a0cc62-fc5a-4f96-a76c-2a1bf6da256a">
@@ -283,7 +283,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{importoGiacenzaRag})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{importoGiacenzaRag})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
@@ -459,7 +459,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoCaricoInizialeCat})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeCat})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="275" y="-1" width="75" height="40" uuid="3d970dcc-d3e0-4bcb-b86e-c3408d0d720d">
@@ -468,7 +468,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoCaricoAnnoCat})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoCat})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="390" y="-1" width="75" height="40" uuid="91a0a68e-3626-4345-8946-6533a0a38ea4">
@@ -477,7 +477,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoScaricoAnnoCat})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoCat})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="505" y="-1" width="75" height="40" uuid="3a8695b8-4049-47cd-8a13-91b3a0ee9e81">
@@ -486,7 +486,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{importoGiacenzaCat})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{importoGiacenzaCat})]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="160" height="39" uuid="4172a420-e8fd-4037-8780-d41aea21700b"/>
@@ -569,7 +569,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoCaricoInizialeArt})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeArt})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="235" y="0" width="40" height="44" uuid="24580dd8-2a54-484e-8df7-390956d7c464">
@@ -598,7 +598,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoCaricoAnnoArt})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoArt})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="350" y="0" width="40" height="44" uuid="6cba5148-0878-489d-bf79-956bd9759a52">
@@ -627,7 +627,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{ImportoScaricoAnnoArt})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoArt})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="465" y="0" width="40" height="44" uuid="08b94b1e-6e93-49fe-a42f-aa6579b5c963">
@@ -656,7 +656,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,######0.000000").format($V{importoGiacenzaArticolo})]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{importoGiacenzaArticolo})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
