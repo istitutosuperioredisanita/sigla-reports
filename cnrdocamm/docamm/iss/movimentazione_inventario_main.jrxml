@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="movimentazione Inventario" printOrder="Horizontal" pageWidth="842" pageHeight="595" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="6a68eb70-60bb-49b6-8773-3c8c1ff59e2b">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_prod.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
+	<style name="TNR10B" fontName="Times New Roman" fontSize="10" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR16B" fontName="Times New Roman" fontSize="16" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR8B" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
+	<style name="TNR12" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
+	<style name="TNR12B" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Bold"/>
+	<parameter name="DIR_IMAGE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["..\\..\\..\\img\\iss\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cd_tipo_ammortamento" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["*"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pg_chiusura" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="esercizio" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(2023)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\cnrdocamm\\docamm\\iss\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT distinct pg_chiusura FROM chiusura_anno
+WHERE pg_chiusura= $P{pg_chiusura}
+and anno=$P{esercizio}]]>
+	</queryString>
+	<field name="PG_CHIUSURA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_CHIUSURA"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image>
+				<reportElement key="image-1" x="5" y="3" width="565" height="40" uuid="1c64e202-bd1b-4d59-8188-4e576a5ef4fa"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="545" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<subreport>
+				<reportElement x="0" y="0" width="842" height="545" uuid="619f4d6a-3038-4723-912e-ed47414cb4d4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="cd_tipo_ammortamento">
+					<subreportParameterExpression><![CDATA[$P{cd_tipo_ammortamento}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="pg_chiusura">
+					<subreportParameterExpression><![CDATA[$P{pg_chiusura}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="esercizio">
+					<subreportParameterExpression><![CDATA[$P{esercizio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "movimentazione_inventario_valori.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="555">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport>
+				<reportElement x="0" y="0" width="842" height="555" uuid="dd5dae2b-818c-4698-8a4b-1eefce4dcd58"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="cd_tipo_ammortamento">
+					<subreportParameterExpression><![CDATA[$P{cd_tipo_ammortamento}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="pg_chiusura">
+					<subreportParameterExpression><![CDATA[$P{pg_chiusura}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="esercizio">
+					<subreportParameterExpression><![CDATA[$P{esercizio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "movimentazione_inventario_fondi.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="555">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport>
+				<reportElement x="0" y="0" width="842" height="555" uuid="18cc8638-189c-4d51-9f31-cf787d7c4b38"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="cd_tipo_ammortamento">
+					<subreportParameterExpression><![CDATA[$P{cd_tipo_ammortamento}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="pg_chiusura">
+					<subreportParameterExpression><![CDATA[$P{pg_chiusura}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="esercizio">
+					<subreportParameterExpression><![CDATA[$P{esercizio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "movimentazione_inventario_riepilogo.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

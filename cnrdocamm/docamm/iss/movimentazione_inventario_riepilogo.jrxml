@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="movimentazione Inventario Riepilogo" printOrder="Horizontal" pageWidth="842" pageHeight="595" columnWidth="822" leftMargin="10" rightMargin="10" topMargin="0" bottomMargin="0" uuid="6a68eb70-60bb-49b6-8773-3c8c1ff59e2b">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_prod.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
+	<style name="TNR10B" fontName="Times New Roman" fontSize="10" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR16B" fontName="Times New Roman" fontSize="16" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR8B" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman">
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="TNR12" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
+	<style name="TNR12B" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Bold"/>
+	<parameter name="cd_tipo_ammortamento" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["*"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pg_chiusura" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="esercizio" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new java.lang.Integer("2023")]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select anno esercizio,t.ds_tipo_ammortamento piano_ammortamento,
+sum( valore_anno_prec- quota_ammortamento_anno_prec) valori_anno_precedente,
+sum( valore_decremento - totale_ammortamento_alienati) decrementi,
+ sum( valore_anno_prec- quota_ammortamento_anno_prec) -
+ 	sum( valore_decremento - totale_ammortamento_alienati)
+ valori
+from CHIUSURA_ANNO_INVENTARIO c
+inner join tipo_ammortamento t on
+t.cd_tipo_ammortamento=c.cd_tipo_ammortamento
+and t.ti_ammortamento=c.ti_ammortamento
+where anno= $P{esercizio}
+and pg_chiusura= $P{pg_chiusura} 
+group by anno,t.cd_tipo_ammortamento,t.ti_ammortamento,t.ds_tipo_ammortamento
+order by t.cd_tipo_ammortamento]]>
+	</queryString>
+	<field name="ESERCIZIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO"/>
+	</field>
+	<field name="PIANO_AMMORTAMENTO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PIANO_AMMORTAMENTO"/>
+	</field>
+	<field name="VALORI_ANNO_PRECEDENTE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALORI_ANNO_PRECEDENTE"/>
+	</field>
+	<field name="DECREMENTI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="DECREMENTI"/>
+	</field>
+	<field name="VALORI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALORI"/>
+	</field>
+	<variable name="totali" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{VALORI_ANNO_PRECEDENTE}.subtract($F{DECREMENTI})]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal("0")]]></initialValueExpression>
+	</variable>
+	<variable name="esercizio_prec" class="java.lang.Integer">
+		<initialValueExpression><![CDATA[$P{esercizio}-1]]></initialValueExpression>
+	</variable>
+	<variable name="totaliValAttAnnoPrec" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{VALORI_ANNO_PRECEDENTE}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal("0")]]></initialValueExpression>
+	</variable>
+	<variable name="totaliDecrementi" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{DECREMENTI}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal("0")]]></initialValueExpression>
+	</variable>
+	<variable name="totaliValoreAttivo" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$V{totali}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal("0")]]></initialValueExpression>
+	</variable>
+	<group name="GruppoAnnoSel">
+		<groupHeader>
+			<band height="20">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<textField>
+					<reportElement style="TNR12B" x="0" y="0" width="260" height="20" uuid="a3f28435-ed79-4b20-91ca-800d5f2b1c9f">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box padding="1">
+						<pen lineWidth="1.5"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA["Valori dell'attivo"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="TNR12B" x="260" y="0" width="140" height="20" uuid="a8121793-2a8c-4529-9441-abb06611b36c">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box padding="1">
+						<pen lineWidth="1.5"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA["Valorial 31/12/"+$V{esercizio_prec}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="TNR12B" x="400" y="0" width="140" height="20" uuid="690232dc-bdca-470e-9c6d-956b62b8d1c3">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box padding="1">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center"/>
+				</textField>
+				<textField>
+					<reportElement style="TNR10B" x="540" y="0" width="140" height="20" uuid="34ff1743-a727-4029-8367-df2dc58b5ebc">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box padding="1">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA["Decrementi esercizio "+$P{esercizio}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="TNR12B" x="680" y="0" width="140" height="20" uuid="3dd379e2-9fad-4e5e-bc95-b6f0419423ff">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box padding="1">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA["Valori al 31/12/"+$P{esercizio}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="20">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement style="TNR12B" x="260" y="0" width="140" height="20" uuid="9b94394b-5d7b-42f1-bcc3-003d854fb0f9">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box padding="1">
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{totaliValAttAnnoPrec}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement style="TNR12B" x="400" y="0" width="140" height="20" uuid="45a0d7ba-b4e0-4058-99b6-7ed5a47881bb">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box padding="1">
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement style="TNR12B" x="540" y="0" width="140" height="20" uuid="2e632bce-50e8-4172-b0e3-25921e6c6a55">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box padding="1">
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{totaliDecrementi}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement style="TNR12B" x="680" y="0" width="140" height="20" uuid="fa890b9f-403c-4d1c-878c-44101e2a702b">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box padding="1">
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="4"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{totaliValoreAttivo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="TNR12B" x="0" y="0" width="260" height="20" uuid="99ebf99b-47e3-40f1-b215-cc853af1f511">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box padding="1">
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textFieldExpression><![CDATA["Totale"]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="820" height="1" uuid="cf266f6f-8f1d-43e8-b80e-c7b17a3dd669">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement style="TNR16B" x="0" y="1" width="565" height="30" uuid="e458c0be-fefe-4ba4-a151-b3ace2e777e3"/>
+				<textFieldExpression><![CDATA["Movimentazione Cespiti anno di Riferimento:"+$P{esercizio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="TNR12" x="0" y="33" width="270" height="15" uuid="b66c39d1-9512-4f63-987f-a6a224abe1b8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Elenco Completo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="TNR12" x="1" y="50" width="820" height="15" uuid="4d97de7f-290a-49d0-a9dc-7201d78fc26d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Numeratore di default                                                                               -Per Piano Ammortamento-]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement style="TNR10" x="0" y="0" width="260" height="20" uuid="49dfae50-a2de-4155-9660-57cf37c9af66">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PIANO_AMMORTAMENTO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement style="TNR10" x="260" y="0" width="140" height="20" uuid="76897cff-de6d-4062-817a-22274518cd26">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="96ec5db3-efa6-4797-85e0-90f8eeca2bf9"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{VALORI_ANNO_PRECEDENTE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement style="TNR10" x="400" y="0" width="140" height="20" uuid="66a84061-7be7-4943-a132-4619667353b9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cbec8d5c-2910-46f4-af87-3abc837a69d6"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement style="TNR10" x="540" y="0" width="140" height="20" uuid="0ecec8c7-4a87-4b87-84e3-9cfc107e87b8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="12e40be9-ed81-48fb-bc5c-d51975b874db"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{DECREMENTI}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement style="TNR10" x="680" y="0" width="140" height="20" uuid="51f428c0-5737-4852-82f1-5b70a9d4a08f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totali}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="1" height="20" uuid="2c27ce80-f34b-4dbb-856c-a2e4ba31eb93">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="820" y="0" width="1" height="20" uuid="6479aadc-b122-4c60-94a6-0f45b26db69d">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="50">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement style="TNR10" x="540" y="10" width="160" height="30" uuid="5dff7d73-59f1-4ab7-ac00-568c330012bd"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER} + "/"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="TNR10" x="702" y="10" width="110" height="30" uuid="3c59f690-fd47-407c-8a0d-a1adc6bbbe23"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="TNR10" x="0" y="10" width="300" height="30" uuid="3870cecb-df5b-4f91-a939-33382f2ab03b"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Movimentazione Inventario " +new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
