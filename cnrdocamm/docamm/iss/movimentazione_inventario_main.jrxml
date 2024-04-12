@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="movimentazione Inventario" printOrder="Horizontal" pageWidth="842" pageHeight="595" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="6a68eb70-60bb-49b6-8773-3c8c1ff59e2b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="movimentazione Inventario" pageWidth="842" pageHeight="595" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="6a68eb70-60bb-49b6-8773-3c8c1ff59e2b">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
@@ -68,11 +68,11 @@ and anno=$P{esercizio}]]>
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="545" splitType="Stretch">
+		<band height="40" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 			<subreport>
-				<reportElement x="0" y="0" width="842" height="545" uuid="619f4d6a-3038-4723-912e-ed47414cb4d4">
+				<reportElement x="0" y="0" width="842" height="40" uuid="619f4d6a-3038-4723-912e-ed47414cb4d4">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<subreportParameter name="SUBREPORT_DIR">
@@ -91,10 +91,12 @@ and anno=$P{esercizio}]]>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "movimentazione_inventario_valori.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
-		<band height="555">
+		<band height="40">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<subreport>
-				<reportElement x="0" y="0" width="842" height="555" uuid="dd5dae2b-818c-4698-8a4b-1eefce4dcd58"/>
+				<reportElement x="0" y="0" width="842" height="40" uuid="dd5dae2b-818c-4698-8a4b-1eefce4dcd58">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<subreportParameter name="SUBREPORT_DIR">
 					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -110,11 +112,19 @@ and anno=$P{esercizio}]]>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "movimentazione_inventario_fondi.jasper"]]></subreportExpression>
 			</subreport>
+			<break>
+				<reportElement x="0" y="-1" width="100" height="1" uuid="3d0f8bff-994e-4ba3-9c16-74fc4dac2b94"/>
+			</break>
+			<break>
+				<reportElement x="0" y="38" width="100" height="1" uuid="61b0f6c7-dc46-4210-9600-9c32b8df08df"/>
+			</break>
 		</band>
-		<band height="555">
+		<band height="40">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<subreport>
-				<reportElement x="0" y="0" width="842" height="555" uuid="18cc8638-189c-4d51-9f31-cf787d7c4b38"/>
+				<reportElement x="0" y="0" width="842" height="40" uuid="18cc8638-189c-4d51-9f31-cf787d7c4b38">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<subreportParameter name="SUBREPORT_DIR">
 					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -129,6 +139,31 @@ and anno=$P{esercizio}]]>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "movimentazione_inventario_riepilogo.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="38" width="100" height="1" uuid="45661426-70d5-4279-9ae7-e75c97f6d1ed"/>
+			</break>
+		</band>
+		<band height="40">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport>
+				<reportElement x="0" y="0" width="842" height="40" uuid="7fa1869f-9987-4828-a5b5-252cde27b554">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="cd_tipo_ammortamento">
+					<subreportParameterExpression><![CDATA[$P{cd_tipo_ammortamento}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="pg_chiusura">
+					<subreportParameterExpression><![CDATA[$P{pg_chiusura}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="esercizio">
+					<subreportParameterExpression><![CDATA[$P{esercizio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "movimentazione_inventario_economica.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="movimentazione Inventario Riepilogo" printOrder="Horizontal" pageWidth="842" pageHeight="595" columnWidth="822" leftMargin="10" rightMargin="10" topMargin="0" bottomMargin="0" uuid="6a68eb70-60bb-49b6-8773-3c8c1ff59e2b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="movimentazione Invenatrio Valori" printOrder="Horizontal" pageWidth="842" pageHeight="595" columnWidth="822" leftMargin="10" rightMargin="10" topMargin="0" bottomMargin="0" uuid="6a68eb70-60bb-49b6-8773-3c8c1ff59e2b">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
@@ -97,7 +97,7 @@ order by t.cd_tipo_ammortamento]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center"/>
-					<textFieldExpression><![CDATA["Valori dell'attivo"]]></textFieldExpression>
+					<textFieldExpression><![CDATA["Valore Netto Contabile"]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement style="TNR12B" x="260" y="0" width="140" height="20" uuid="a8121793-2a8c-4529-9441-abb06611b36c">
@@ -111,7 +111,7 @@ order by t.cd_tipo_ammortamento]]>
 						<rightPen lineWidth="0.0"/>
 					</box>
 					<textElement textAlignment="Center"/>
-					<textFieldExpression><![CDATA["Valorial 31/12/"+$V{esercizio_prec}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["Valori al 31/12/"+$V{esercizio_prec}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement style="TNR12B" x="400" y="0" width="140" height="20" uuid="690232dc-bdca-470e-9c6d-956b62b8d1c3">
@@ -133,7 +133,9 @@ order by t.cd_tipo_ammortamento]]>
 						<leftPen lineWidth="1.0"/>
 						<bottomPen lineWidth="1.0"/>
 					</box>
-					<textElement textAlignment="Center"/>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
 					<textFieldExpression><![CDATA["Decrementi esercizio "+$P{esercizio}]]></textFieldExpression>
 				</textField>
 				<textField>
@@ -244,7 +246,7 @@ order by t.cd_tipo_ammortamento]]>
 				<reportElement style="TNR12" x="1" y="50" width="820" height="15" uuid="4d97de7f-290a-49d0-a9dc-7201d78fc26d">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<text><![CDATA[Numeratore di default                                                                               -Per Piano Ammortamento-]]></text>
+				<text><![CDATA[Numeratore di default                                                                -Per Piano Ammortamento-]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -317,7 +319,7 @@ order by t.cd_tipo_ammortamento]]>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="20" splitType="Stretch">
+		<band splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<property name="com.jaspersoft.studio.layout"/>
 		</band>
@@ -336,9 +338,9 @@ order by t.cd_tipo_ammortamento]]>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="TNR10" x="0" y="10" width="300" height="30" uuid="3870cecb-df5b-4f91-a939-33382f2ab03b"/>
+				<reportElement style="TNR10" x="0" y="10" width="300" height="30" uuid="579333ff-d6a2-4075-8b7b-14e01c135cd5"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA["Movimentazione Inventario " +new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Movimentazione Inventario Riepilogo " +new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>

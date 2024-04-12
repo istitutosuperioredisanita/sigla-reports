@@ -117,7 +117,7 @@ order by t.cd_tipo_ammortamento]]>
 						<rightPen lineWidth="0.0"/>
 					</box>
 					<textElement textAlignment="Center"/>
-					<textFieldExpression><![CDATA["Valorial 31/12/"+$V{esercizio_prec}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["Valori al 31/12/"+$V{esercizio_prec}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement style="TNR12B" x="400" y="0" width="140" height="20" uuid="690232dc-bdca-470e-9c6d-956b62b8d1c3">
@@ -251,7 +251,7 @@ order by t.cd_tipo_ammortamento]]>
 				<reportElement style="TNR12" x="1" y="50" width="820" height="15" uuid="4d97de7f-290a-49d0-a9dc-7201d78fc26d">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<text><![CDATA[Numeratore di default                                                                               -Per Piano Ammortamento-]]></text>
+				<text><![CDATA[Numeratore di default                                                                -Per Piano Ammortamento-]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -336,7 +336,7 @@ order by t.cd_tipo_ammortamento]]>
 			<textField>
 				<reportElement style="TNR10" x="0" y="10" width="300" height="30" uuid="832cf85f-f0c0-479b-a076-8898edbd789c"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA["Movimentazione Inventario " +new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Movimentazione Inventario Valori " +new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement style="TNR10" x="540" y="10" width="160" height="30" uuid="e483043d-1eaa-4e46-86a9-43a794d64673"/>
