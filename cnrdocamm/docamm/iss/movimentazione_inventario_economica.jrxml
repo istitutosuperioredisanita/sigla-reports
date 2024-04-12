@@ -441,7 +441,7 @@ order by t.cd_tipo_ammortamento]]>
 			<textField>
 				<reportElement style="TNR10" x="0" y="10" width="300" height="30" uuid="e76c85b2-c00f-4a59-9bcd-604e380fa469"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA["Movimentazione Inventario " +new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Movimentazione Inventario Economica" +new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>
