@@ -231,7 +231,7 @@ order by t.cd_tipo_ammortamento]]>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
 				<reportElement style="TNR16B" x="0" y="1" width="565" height="30" uuid="e458c0be-fefe-4ba4-a151-b3ace2e777e3"/>
-				<textFieldExpression><![CDATA["Movimentazione Economiche Inventario:"+$P{esercizio}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Movimentazione Economica Inventario:"+$P{esercizio}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement style="TNR12" x="0" y="33" width="270" height="15" uuid="b66c39d1-9512-4f63-987f-a6a224abe1b8">
