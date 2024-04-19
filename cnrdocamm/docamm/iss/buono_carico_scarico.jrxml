@@ -354,10 +354,10 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 					</graphicElement>
 				</line>
 				<textField>
-					<reportElement key="staticText-1" style="TNR10" x="594" y="54" width="88" height="13" uuid="3e92cccc-f171-47d3-95ff-0ec3aa1bcca9">
+					<reportElement key="staticText-1" style="TNR10" x="565" y="54" width="146" height="13" uuid="3e92cccc-f171-47d3-95ff-0ec3aa1bcca9">
 						<printWhenExpression><![CDATA[$F{CONSEGNATARIO} != null]]></printWhenExpression>
 					</reportElement>
-					<textElement markup="none"/>
+					<textElement textAlignment="Center" markup="none"/>
 					<textFieldExpression><![CDATA["Il Consegnatario "]]></textFieldExpression>
 				</textField>
 				<textField>
@@ -384,6 +384,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 				</textField>
 				<textField>
 					<reportElement style="TNR10" x="565" y="70" width="146" height="20" uuid="c36b04bb-facf-44de-9e9d-fd231e0cea8e"/>
+					<textElement textAlignment="Center"/>
 					<textFieldExpression><![CDATA[$F{CONSEGNATARIO}]]></textFieldExpression>
 				</textField>
 			</band>
