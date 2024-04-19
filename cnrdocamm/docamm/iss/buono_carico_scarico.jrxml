@@ -50,8 +50,9 @@ INVENTARIO.CD_UNITA_ORGANIZZATIVA,
 UNITA_ORGANIZZATIVA.DS_UNITA_ORGANIZZATIVA,
 TIPO_CARICO_SCARICO.DS_TIPO_CARICO_SCARICO,
 TESTATA.DS_BUONO_CARICO_SCARICO,
-(SELECT DENOMINAZIONE_SEDE FROM TERZO
-  WHERE CD_TERZO = INVENTARIO_CONSEGNATARIO.CD_CONSEGNATARIO) CONSEGNATARIO,
+(SELECT a.nome||'  '||a.cognome FROM TERZO t inner join anagrafico a
+    on t.cd_anag=a.cd_anag
+  WHERE CD_TERZO = INVENTARIO_CONSEGNATARIO.CD_CONSEGNATARIO)  CONSEGNATARIO,
 (SELECT DENOMINAZIONE_SEDE FROM TERZO
   WHERE CD_TERZO = INVENTARIO_CONSEGNATARIO.CD_DELEGATO) DELEGATO,
 (SELECT CD_CATEGORIA_GRUPPO||' '||DS_CATEGORIA_GRUPPO FROM CATEGORIA_GRUPPO_INVENT
@@ -353,11 +354,11 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 					</graphicElement>
 				</line>
 				<textField>
-					<reportElement key="staticText-1" style="TNR10" x="590" y="24" width="88" height="13" uuid="3e92cccc-f171-47d3-95ff-0ec3aa1bcca9">
+					<reportElement key="staticText-1" style="TNR10" x="590" y="36" width="88" height="13" uuid="3e92cccc-f171-47d3-95ff-0ec3aa1bcca9">
 						<printWhenExpression><![CDATA[$F{CONSEGNATARIO} != null]]></printWhenExpression>
 					</reportElement>
 					<textElement markup="none"/>
-					<textFieldExpression><![CDATA["Il Consegnatario: "]]></textFieldExpression>
+					<textFieldExpression><![CDATA["Il Consegnatario "]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement key="staticText-1" style="TNR10" stretchType="ElementGroupBottom" x="1" y="20" width="389" height="13" uuid="c261d1d9-3367-4d66-9b19-a63517807fbf">
@@ -382,7 +383,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 					<textFieldExpression><![CDATA[new DecimalFormat("¤ #,##0.00").format($V{TOTALE_ALIENAZIONE})]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="TNR10" x="565" y="40" width="146" height="20" uuid="c36b04bb-facf-44de-9e9d-fd231e0cea8e"/>
+					<reportElement style="TNR10" x="565" y="52" width="146" height="20" uuid="c36b04bb-facf-44de-9e9d-fd231e0cea8e"/>
 					<textFieldExpression><![CDATA[$F{CONSEGNATARIO}]]></textFieldExpression>
 				</textField>
 			</band>
