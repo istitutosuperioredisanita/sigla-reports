@@ -85,7 +85,7 @@ and cr.NUMERO= $P{NUMERO}]]>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ESERCIZIO_OBB} == null ? "" : $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+"	EUR	"+$F{IM_SCADENZA} + "VOCE:" +$F{CD_ELEMENTO_VOCE}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ESERCIZIO_OBB} == null ? "" : $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+	+ " VOCE:" +$F{CD_ELEMENTO_VOCE} +" EUR	"+$F{IM_SCADENZA}  ]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
