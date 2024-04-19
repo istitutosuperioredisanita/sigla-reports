@@ -318,7 +318,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="77">
+			<band height="94">
 				<staticText>
 					<reportElement key="staticText-4" style="TNRG10" x="553" y="2" width="98" height="13" uuid="19cd133a-1700-4888-b8f8-f45c3b6383e6"/>
 					<box>
@@ -354,7 +354,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 					</graphicElement>
 				</line>
 				<textField>
-					<reportElement key="staticText-1" style="TNR10" x="590" y="36" width="88" height="13" uuid="3e92cccc-f171-47d3-95ff-0ec3aa1bcca9">
+					<reportElement key="staticText-1" style="TNR10" x="590" y="54" width="88" height="13" uuid="3e92cccc-f171-47d3-95ff-0ec3aa1bcca9">
 						<printWhenExpression><![CDATA[$F{CONSEGNATARIO} != null]]></printWhenExpression>
 					</reportElement>
 					<textElement markup="none"/>
@@ -383,7 +383,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 					<textFieldExpression><![CDATA[new DecimalFormat("¤ #,##0.00").format($V{TOTALE_ALIENAZIONE})]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="TNR10" x="565" y="52" width="146" height="20" uuid="c36b04bb-facf-44de-9e9d-fd231e0cea8e"/>
+					<reportElement style="TNR10" x="565" y="70" width="146" height="20" uuid="c36b04bb-facf-44de-9e9d-fd231e0cea8e"/>
 					<textFieldExpression><![CDATA[$F{CONSEGNATARIO}]]></textFieldExpression>
 				</textField>
 			</band>
