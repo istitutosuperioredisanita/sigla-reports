@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ordini_acq_obbligazioni" pageWidth="300" pageHeight="77" columnWidth="300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e8af5135-f4af-44fe-a407-7f60a3cf6368">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLACOLL"/>
 	<parameter name="CD_CDS" class="java.lang.String">
 		<defaultValueExpression><![CDATA["000"]]></defaultValueExpression>
 	</parameter>
@@ -22,14 +22,21 @@
 		<![CDATA[select  distinct
 obb.esercizio as esercizio_obb,
 obb.pg_obbligazione,
-obb.pg_obbligazione_scadenzario,
-obb.im_scadenza
+sca.pg_obbligazione_scadenzario,
+sca.im_scadenza,
+obb.cd_elemento_voce
 from  ordine_acq_consegna cr 
-left OUTER join OBBLIGAZIONE_SCADENZARIO obb on cr.CD_CDS_OBBL=obb.CD_CDS and
-cr.ESERCIZIO_OBBL=obb.ESERCIZIO and
-cr.ESERCIZIO_ORIG_OBBL=obb.ESERCIZIO_ORIGINALE and
-cr.PG_OBBLIGAZIONE=obb.PG_OBBLIGAZIONE and 
-cr.PG_OBBLIGAZIONE_SCAD=obb.PG_OBBLIGAZIONE_SCADENZARIO
+left OUTER join OBBLIGAZIONE_SCADENZARIO sca 
+on cr.CD_CDS_OBBL=sca.CD_CDS 
+and cr.ESERCIZIO_OBBL=sca.ESERCIZIO and
+cr.ESERCIZIO_ORIG_OBBL=sca.ESERCIZIO_ORIGINALE and
+cr.PG_OBBLIGAZIONE=sca.PG_OBBLIGAZIONE and 
+cr.PG_OBBLIGAZIONE_SCAD=sca.PG_OBBLIGAZIONE_SCADENZARIO
+left outer join obbligazione obb
+on obb.CD_CDS=sca.CD_CDS 
+and obb.ESERCIZIO=sca.ESERCIZIO and
+obb.ESERCIZIO_ORIGINALE=sca.ESERCIZIO_ORIGINALE and
+obb.PG_OBBLIGAZIONE=sca.PG_OBBLIGAZIONE
 where cr.CD_CDS=  $P{CD_CDS} 
 and cr.CD_UNITA_OPERATIVA=  $P{CD_UNITA_OPERATIVA}
 and cr.ESERCIZIO=  $P{ESERCIZIO}
@@ -47,6 +54,9 @@ and cr.NUMERO= $P{NUMERO}]]>
 	</field>
 	<field name="IM_SCADENZA" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="IM_SCADENZA"/>
+	</field>
+	<field name="CD_ELEMENTO_VOCE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_ELEMENTO_VOCE"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -75,7 +85,7 @@ and cr.NUMERO= $P{NUMERO}]]>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ESERCIZIO_OBB} == null ? "" : $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+"	EUR	"+$F{IM_SCADENZA}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ESERCIZIO_OBB} == null ? "" : $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+"	EUR	"+$F{IM_SCADENZA} + "VOCE:" +$F{CD_ELEMENTO_VOCE}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
