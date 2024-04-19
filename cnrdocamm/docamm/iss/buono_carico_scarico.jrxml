@@ -354,7 +354,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 					</graphicElement>
 				</line>
 				<textField>
-					<reportElement key="staticText-1" style="TNR10" x="590" y="54" width="88" height="13" uuid="3e92cccc-f171-47d3-95ff-0ec3aa1bcca9">
+					<reportElement key="staticText-1" style="TNR10" x="594" y="54" width="88" height="13" uuid="3e92cccc-f171-47d3-95ff-0ec3aa1bcca9">
 						<printWhenExpression><![CDATA[$F{CONSEGNATARIO} != null]]></printWhenExpression>
 					</reportElement>
 					<textElement markup="none"/>
