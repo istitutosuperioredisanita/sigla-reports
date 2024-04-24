@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LogoIss" pageWidth="300" pageHeight="100" whenNoDataType="AllSectionsNoDetail" columnWidth="300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="5ae622b7-8b50-4d53-94bf-082187ab5631">
 	<style name="LogoIss" markup="styled" fontSize="10" isBold="false"/>
 	<style name="NORMAL" isDefault="true" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
@@ -61,7 +61,7 @@
 				<textElement>
 					<font fontName="SansSerif"/>
 				</textElement>
-				<text><![CDATA[            PARTITA IVA N. 0365773100]]></text>
+				<text><![CDATA[            PARTITA IVA N. 03657731000]]></text>
 			</staticText>
 			<image>
 				<reportElement x="0" y="1" width="100" height="90" uuid="e8c8a221-d03b-4711-9dc4-49d792b6840d">
