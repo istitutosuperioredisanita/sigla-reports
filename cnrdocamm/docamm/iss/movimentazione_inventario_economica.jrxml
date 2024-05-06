@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="movimentazione Invenatrio Fondi" printOrder="Horizontal" pageWidth="842" pageHeight="555" columnWidth="822" leftMargin="10" rightMargin="10" topMargin="0" bottomMargin="0" uuid="6a68eb70-60bb-49b6-8773-3c8c1ff59e2b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invenatrio Economica" printOrder="Horizontal" pageWidth="842" pageHeight="555" columnWidth="822" leftMargin="10" rightMargin="10" topMargin="0" bottomMargin="0" uuid="6a68eb70-60bb-49b6-8773-3c8c1ff59e2b">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_prod.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_coll.xml"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -41,7 +41,8 @@ contoMinus.ds_voce_ep ds_conto_minus,
 sum( c.imp_minusvalenze) imp_minusvalenze,
 contoPlus.cd_voce_ep cd_conto_plus,
 contoPlus.ds_voce_ep ds_conto_plus,
-sum( c.imp_plusvalenze) imp_plusvalenze
+sum( c.imp_plusvalenze) imp_plusvalenze,
+sum( c.imp_decrementi) imp_decrementi
 from chiusura_anno_catgrp_voce_ep c 
 inner join ass_tipo_amm_cat_grup_inv a
     on c.cd_categoria_gruppo=a.cd_categoria_gruppo
@@ -116,6 +117,9 @@ order by t.cd_tipo_ammortamento]]>
 	</field>
 	<field name="IMP_PLUSVALENZE" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="IMP_PLUSVALENZE"/>
+	</field>
+	<field name="IMP_DECREMENTI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMP_DECREMENTI"/>
 	</field>
 	<variable name="totale" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[$F{IMP_TOTALE}]]></variableExpression>
@@ -248,7 +252,7 @@ order by t.cd_tipo_ammortamento]]>
 		</band>
 	</title>
 	<detail>
-		<band height="144">
+		<band height="182">
 			<textField>
 				<reportElement style="TNR12B" x="10" y="8" width="746" height="20" uuid="49dfae50-a2de-4155-9660-57cf37c9af66">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -297,7 +301,7 @@ order by t.cd_tipo_ammortamento]]>
 				<textFieldExpression><![CDATA[$F{CONTROCONTO} +"-"+$F{DS_CONTROCONTO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement style="TNR10" x="732" y="55" width="90" height="20" uuid="0ecec8c7-4a87-4b87-84e3-9cfc107e87b8">
+				<reportElement style="TNR10" x="731" y="78" width="90" height="20" uuid="0ecec8c7-4a87-4b87-84e3-9cfc107e87b8">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="12e40be9-ed81-48fb-bc5c-d51975b874db"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -313,7 +317,7 @@ order by t.cd_tipo_ammortamento]]>
 				<textFieldExpression><![CDATA[$F{IMP_TOTALE}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement style="TNR10" x="160" y="78" width="570" height="20" uuid="51f428c0-5737-4852-82f1-5b70a9d4a08f">
+				<reportElement style="TNR10" x="160" y="129" width="570" height="20" uuid="51f428c0-5737-4852-82f1-5b70a9d4a08f">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -331,7 +335,7 @@ order by t.cd_tipo_ammortamento]]>
 				<textFieldExpression><![CDATA[$F{CD_CONTO_MINUS}+"-"+$F{DS_CONTO_MINUS}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement style="TNR10" x="160" y="101" width="570" height="20" uuid="40596937-22fe-4165-8e4b-41f0298a6dff">
+				<reportElement style="TNR10" x="160" y="152" width="570" height="20" uuid="40596937-22fe-4165-8e4b-41f0298a6dff">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -349,7 +353,7 @@ order by t.cd_tipo_ammortamento]]>
 				<textFieldExpression><![CDATA[$F{CD_CONTO_PLUS}+" "+$F{DS_CONTO_PLUS}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="TNR10" x="70" y="101" width="90" height="20" uuid="12af87fe-862a-497d-8a73-f6e72bd6ae02">
+				<reportElement style="TNR10" x="70" y="152" width="90" height="20" uuid="12af87fe-862a-497d-8a73-f6e72bd6ae02">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
@@ -366,7 +370,7 @@ order by t.cd_tipo_ammortamento]]>
 				<textFieldExpression><![CDATA["PlusValenze"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="TNR10" x="70" y="78" width="90" height="20" uuid="3dd379e2-9fad-4e5e-bc95-b6f0419423ff">
+				<reportElement style="TNR10" x="70" y="129" width="90" height="20" uuid="3dd379e2-9fad-4e5e-bc95-b6f0419423ff">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
@@ -382,7 +386,7 @@ order by t.cd_tipo_ammortamento]]>
 				<textFieldExpression><![CDATA["MinusValenze"]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement style="TNR10" x="732" y="78" width="90" height="20" uuid="29ec4250-7cf0-4a14-aa4f-d0111ce2871f">
+				<reportElement style="TNR10" x="732" y="129" width="90" height="20" uuid="29ec4250-7cf0-4a14-aa4f-d0111ce2871f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="12e40be9-ed81-48fb-bc5c-d51975b874db"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -396,7 +400,7 @@ order by t.cd_tipo_ammortamento]]>
 				<textFieldExpression><![CDATA[$F{IMP_MINUSVALENZE}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement style="TNR10" x="732" y="101" width="90" height="20" uuid="53fe0a45-38ac-4995-92bf-703f9fd28331">
+				<reportElement style="TNR10" x="732" y="152" width="90" height="20" uuid="53fe0a45-38ac-4995-92bf-703f9fd28331">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="12e40be9-ed81-48fb-bc5c-d51975b874db"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -410,13 +414,61 @@ order by t.cd_tipo_ammortamento]]>
 				<textFieldExpression><![CDATA[$F{IMP_PLUSVALENZE}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="142" width="822" height="1" uuid="e38cd1ff-af1e-4e1c-b6a8-b0636d1e36e0">
+				<reportElement x="0" y="179" width="822" height="1" uuid="e38cd1ff-af1e-4e1c-b6a8-b0636d1e36e0">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 			</line>
+			<textField>
+				<reportElement style="TNR10" x="638" y="78" width="90" height="20" uuid="6d11d920-d39d-4931-a0c0-712a041c3483">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Incrementi"]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement style="TNR10" x="733" y="102" width="90" height="20" uuid="07c68d58-6007-47e7-90e0-b53928a9cf19">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="12e40be9-ed81-48fb-bc5c-d51975b874db"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{IMP_DECREMENTI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="TNR10" x="640" y="102" width="90" height="20" uuid="2132351d-88f7-4a3c-878b-940cfa1f49d2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Decrementi"]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>
