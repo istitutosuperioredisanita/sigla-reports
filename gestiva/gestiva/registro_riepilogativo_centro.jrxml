@@ -35,7 +35,7 @@
                                              And VP_STM_RIEPILOGATIVO_CENTRO.CD_CDS = D.CD_CDS
                                              And VP_STM_RIEPILOGATIVO_CENTRO.CD_UO = D.CD_UO
 					     					 And SOTTOGRUPPO = 'B'
-                                             And TIPOLOGIA_RIGA = 'D'),'Y') STAMPA_INTESTAZIONESTAMPA_INTESTAZIONE
+                                             And TIPOLOGIA_RIGA = 'D'),'Y') STAMPA_INTESTAZIONE
 FROM VP_STM_RIEPILOGATIVO_CENTRO
 WHERE ID_REPORT = $P{idReport}
 ORDER BY ACQUISTI_VENDITE ASC,
@@ -108,8 +108,8 @@ ORDER BY ACQUISTI_VENDITE ASC,
 	<field name="ACQUISTI_VENDITE" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="ACQUISTI_VENDITE"/>
 	</field>
-	<field name="STAMPA_INTESTAZIONESTAMPA_INTESTAZIONE" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="STAMPA_INTESTAZIONESTAMPA_INTESTAZIONE"/>
+	<field name="STAMPA_INTESTAZIONE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STAMPA_INTESTAZIONE"/>
 	</field>
 	<variable name="INTESTAZIONE" class="java.lang.String">
 		<variableExpression><![CDATA[$F{RAGIONE_SOCIALE_ENTE}]]></variableExpression>
