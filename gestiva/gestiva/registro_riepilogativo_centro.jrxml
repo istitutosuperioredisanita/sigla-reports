@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="registro_riepilogativo_centro" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="782" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="0f63b6df-202f-410c-b4e9-0a2b5a9dfc26">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
@@ -6,6 +7,8 @@
 	<property name="ireport.zoom" value="1.4641000000000006"/>
 	<property name="ireport.x" value="498"/>
 	<property name="ireport.y" value="285"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_prod.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -26,42 +29,88 @@
                 DESCRIZIONE_RIGA, IMPONIBILE, IVA, IVA_INDETRAIBILE, IMPONIBILE_SPLIT_PAYMENT, IVA_SPLIT_PAYMENT,
                 IVA_ESIGIBILE, TOTALE, PROGRESSIVO_UO, ESERCIZIO_RIF,
                 RAGIONE_SOCIALE_ENTE, PARTITA_IVA_ENTE, ACQUISTI_VENDITE,
-                DECODE(TIPOLOGIA_RIGA,'I',(Select Decode(TOTALE,0,'N','Y')
+                DECODE(TIPOLOGIA_RIGA,'I',(Select Decode(COUNT(0),0,'N','Y')
                                            From VP_STM_RIEPILOGATIVO_CENTRO D
                                            Where VP_STM_RIEPILOGATIVO_CENTRO.ID_REPORT = D.ID_REPORT
                                              And VP_STM_RIEPILOGATIVO_CENTRO.CD_CDS = D.CD_CDS
                                              And VP_STM_RIEPILOGATIVO_CENTRO.CD_UO = D.CD_UO
-					     And SOTTOGRUPPO = 'B'
-                                             And TIPOLOGIA_RIGA = 'T'),'Y') STAMPA_INTESTAZIONE
+					     					 And SOTTOGRUPPO = 'B'
+                                             And TIPOLOGIA_RIGA = 'D'),'Y') STAMPA_INTESTAZIONESTAMPA_INTESTAZIONE
 FROM VP_STM_RIEPILOGATIVO_CENTRO
 WHERE ID_REPORT = $P{idReport}
 ORDER BY ACQUISTI_VENDITE ASC,
          GRUPPO ASC,
          SEQUENZA ASC]]>
 	</queryString>
-	<field name="ID_REPORT" class="java.math.BigDecimal"/>
-	<field name="GRUPPO" class="java.lang.String"/>
-	<field name="TIPOLOGIA_RIGA" class="java.lang.String"/>
-	<field name="SEQUENZA" class="java.math.BigDecimal"/>
-	<field name="CD_CDS" class="java.lang.String"/>
-	<field name="CD_UO" class="java.lang.String"/>
-	<field name="DS_UO" class="java.lang.String"/>
-	<field name="STATO_REGISTRO" class="java.lang.String"/>
-	<field name="CD_IVA" class="java.lang.String"/>
-	<field name="DESCRIZIONE_RIGA" class="java.lang.String"/>
-	<field name="IMPONIBILE" class="java.math.BigDecimal"/>
-	<field name="IVA" class="java.math.BigDecimal"/>
-	<field name="IVA_INDETRAIBILE" class="java.math.BigDecimal"/>
-	<field name="IMPONIBILE_SPLIT_PAYMENT" class="java.math.BigDecimal"/>
-	<field name="IVA_SPLIT_PAYMENT" class="java.math.BigDecimal"/>
-	<field name="IVA_ESIGIBILE" class="java.math.BigDecimal"/>
-	<field name="TOTALE" class="java.math.BigDecimal"/>
-	<field name="PROGRESSIVO_UO" class="java.lang.String"/>
-	<field name="ESERCIZIO_RIF" class="java.math.BigDecimal"/>
-	<field name="RAGIONE_SOCIALE_ENTE" class="java.lang.String"/>
-	<field name="PARTITA_IVA_ENTE" class="java.lang.String"/>
-	<field name="ACQUISTI_VENDITE" class="java.lang.String"/>
-	<field name="STAMPA_INTESTAZIONE" class="java.lang.String"/>
+	<field name="ID_REPORT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ID_REPORT"/>
+	</field>
+	<field name="GRUPPO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="GRUPPO"/>
+	</field>
+	<field name="TIPOLOGIA_RIGA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TIPOLOGIA_RIGA"/>
+	</field>
+	<field name="SEQUENZA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="SEQUENZA"/>
+	</field>
+	<field name="CD_CDS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_CDS"/>
+	</field>
+	<field name="CD_UO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_UO"/>
+	</field>
+	<field name="DS_UO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_UO"/>
+	</field>
+	<field name="STATO_REGISTRO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STATO_REGISTRO"/>
+	</field>
+	<field name="CD_IVA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_IVA"/>
+	</field>
+	<field name="DESCRIZIONE_RIGA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DESCRIZIONE_RIGA"/>
+	</field>
+	<field name="IMPONIBILE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMPONIBILE"/>
+	</field>
+	<field name="IVA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IVA"/>
+	</field>
+	<field name="IVA_INDETRAIBILE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IVA_INDETRAIBILE"/>
+	</field>
+	<field name="IMPONIBILE_SPLIT_PAYMENT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMPONIBILE_SPLIT_PAYMENT"/>
+	</field>
+	<field name="IVA_SPLIT_PAYMENT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IVA_SPLIT_PAYMENT"/>
+	</field>
+	<field name="IVA_ESIGIBILE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IVA_ESIGIBILE"/>
+	</field>
+	<field name="TOTALE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="TOTALE"/>
+	</field>
+	<field name="PROGRESSIVO_UO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PROGRESSIVO_UO"/>
+	</field>
+	<field name="ESERCIZIO_RIF" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_RIF"/>
+	</field>
+	<field name="RAGIONE_SOCIALE_ENTE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RAGIONE_SOCIALE_ENTE"/>
+	</field>
+	<field name="PARTITA_IVA_ENTE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PARTITA_IVA_ENTE"/>
+	</field>
+	<field name="ACQUISTI_VENDITE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ACQUISTI_VENDITE"/>
+	</field>
+	<field name="STAMPA_INTESTAZIONESTAMPA_INTESTAZIONE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STAMPA_INTESTAZIONESTAMPA_INTESTAZIONE"/>
+	</field>
 	<variable name="INTESTAZIONE" class="java.lang.String">
 		<variableExpression><![CDATA[$F{RAGIONE_SOCIALE_ENTE}]]></variableExpression>
 	</variable>
