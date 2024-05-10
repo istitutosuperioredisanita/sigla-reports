@@ -314,7 +314,8 @@
 				<textFieldExpression><![CDATA[$F{note}]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="40">
+		<band height="40" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
 				<reportElement positionType="Float" x="1" y="10" width="552" height="28" uuid="37d2a17d-a043-4bbd-83be-112405a30d5e"/>
 				<textElement textAlignment="Justified">
@@ -327,7 +328,10 @@
 	<pageFooter>
 		<band height="113" splitType="Stretch">
 			<rectangle radius="10">
-				<reportElement positionType="Float" x="-3" y="0" width="554" height="107" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29"/>
+				<reportElement positionType="Float" x="-3" y="0" width="554" height="107" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
 			</rectangle>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="77" y="42" width="472" height="16" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>

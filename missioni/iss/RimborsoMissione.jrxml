@@ -4,6 +4,7 @@
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="970"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportRimborso.xml"/>
 	<style name="table" mode="Transparent" isBold="true">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -710,7 +711,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Anticipazioni Monetarie ricevute dall' ISS: </style>"+$F{importoMandato}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Anticipazioni Monetarie ricevute dall' ISS: </style>"+$F{importoMandato}+" €"]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement key="line-184" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="50" uuid="67483ac4-bd8d-48e4-bd05-f88c43773e1d"/>
@@ -755,7 +756,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Dichiaro di aver ricevuto rimborso o concorso spese da terzi per un importo di €        </style>"+$F{speseTerziImporto}+"<style pdfFontName='Times-Bold' isBold='true'>.</style>"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Dichiaro di aver ricevuto rimborso o concorso spese da terzi per un importo di € </style>"+$F{speseTerziImporto}+"<style pdfFontName='Times-Bold' isBold='true'>.</style>"]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement key="line-188" positionType="Float" x="554" y="0" width="1" height="25" uuid="91f1c871-0aa7-49fa-bd13-e2a4ce45d034"/>
