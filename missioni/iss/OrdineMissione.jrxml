@@ -198,45 +198,38 @@
 				<imageExpression><![CDATA[$P{DIR_IMAGE} + "CNR.JPG"]]></imageExpression>
 			</image>
 			<rectangle>
-				<reportElement mode="Transparent" x="1" y="67" width="554" height="129" uuid="a5479289-cd2b-4a86-b1bb-a2b5108e6789"/>
+				<reportElement mode="Transparent" x="1" y="80" width="554" height="115" uuid="a5479289-cd2b-4a86-b1bb-a2b5108e6789"/>
 				<graphicElement>
 					<pen lineStyle="Solid"/>
 				</graphicElement>
 			</rectangle>
 			<textField isBlankWhenNull="false">
-				<reportElement x="153" y="71" width="309" height="20" uuid="e8a769c1-3cce-44f7-ab5e-7ab86d18bf14"/>
+				<reportElement x="152" y="90" width="309" height="20" uuid="e8a769c1-3cce-44f7-ab5e-7ab86d18bf14"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cognomeRich} + " "+$F{nomeRich}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="518" y="71" width="37" height="20" uuid="3b6c25fc-710e-4b43-8a21-8b97fdccd177"/>
+				<reportElement x="517" y="90" width="37" height="20" uuid="3b6c25fc-710e-4b43-8a21-8b97fdccd177"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{matricolaRich}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="125" y="91" width="53" height="20" uuid="1c5c4b17-276e-4560-a501-4c60721993b1"/>
+				<reportElement x="124" y="110" width="53" height="20" uuid="1c5c4b17-276e-4560-a501-4c60721993b1"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataDiNascitaRich}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement x="448" y="91" width="107" height="20" uuid="57b91390-1ab0-4ac8-bff8-6ec7665ed07a"/>
+				<reportElement x="447" y="110" width="107" height="20" uuid="57b91390-1ab0-4ac8-bff8-6ec7665ed07a"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{codiceFiscaleRich}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="74" y="112" width="481" height="20" uuid="d86b8585-c7a0-43fb-b9f6-981b933810de"/>
-				<textElement markup="styled">
-					<font fontName="Times New Roman"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{comuneResidenzaRich}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="94" y="153" width="461" height="20" uuid="bd927264-dba3-45b2-a569-5b0b32c53d3a"/>
@@ -253,46 +246,39 @@
 				<textFieldExpression><![CDATA[$F{qualificaRich}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="14" y="71" width="139" height="20" uuid="f4e9ed36-ab2e-4a36-98cc-36c8c1686fd4"/>
+				<reportElement x="13" y="90" width="139" height="20" uuid="f4e9ed36-ab2e-4a36-98cc-36c8c1686fd4"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Richiedente (cognome e nome)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="473" y="71" width="45" height="20" uuid="24293f02-3887-4a23-8d12-c825c44bdc2e"/>
+				<reportElement x="472" y="90" width="45" height="20" uuid="24293f02-3887-4a23-8d12-c825c44bdc2e"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Matricola]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="14" y="91" width="111" height="20" uuid="78efd1a6-89a6-4d3c-9144-aa6a7067c94a"/>
+				<reportElement x="13" y="110" width="111" height="20" uuid="78efd1a6-89a6-4d3c-9144-aa6a7067c94a"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Data e Luogo di Nascita]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="178" y="91" width="195" height="20" uuid="a430a35a-5ee3-4a0d-978b-9a6f0ebcef5a"/>
+				<reportElement x="177" y="110" width="195" height="20" uuid="a430a35a-5ee3-4a0d-978b-9a6f0ebcef5a"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{luogoDiNascitaRich}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="373" y="91" width="65" height="20" uuid="1548ac71-7c35-469d-b776-8988c8109ec8"/>
+				<reportElement x="372" y="110" width="65" height="20" uuid="1548ac71-7c35-469d-b776-8988c8109ec8"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Codice Fiscale]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="14" y="112" width="60" height="20" uuid="50c3d560-3dff-43c8-b62e-4206b7d28848"/>
-				<textElement>
-					<font fontName="Times New Roman" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Residenza]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="14" y="153" width="80" height="20" uuid="769c254c-c608-4e3e-8575-2d1c17df54a4"/>
@@ -760,7 +746,8 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8" isBold="true" isUnderline="false" isStrikeThrough="false"/>
 				</textElement>
-				<text><![CDATA[NON SARANNO AMMESSE AL RIMBORSO LE SPESE NON DOCUMENTATE E NON RIENTRANTI NELLE FATTISPECIE PREVISTE DAL DISCIPLINARE PER LA GESTIONE DELLE MISSIONI.]]></text>			</staticText>
+				<text><![CDATA[NON SARANNO AMMESSE AL RIMBORSO LE SPESE NON DOCUMENTATE E NON RIENTRANTI NELLE FATTISPECIE PREVISTE DAL DISCIPLINARE PER LA GESTIONE DELLE MISSIONI.]]></text>
+			</staticText>
 		</band>
 	</pageFooter>
 	<summary>

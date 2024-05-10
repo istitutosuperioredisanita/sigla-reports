@@ -146,13 +146,6 @@
 				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Codice Fiscale  </style>"+$F{codiceFiscaleRich}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="12" y="46" width="542" height="20" uuid="893e8e38-c0a8-474e-a94d-ff3cd6f3ad94"/>
-				<textElement markup="styled">
-					<font fontName="Times New Roman"/>
-				</textElement>
-				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Residenza  </style>"+$F{comuneResidenzaRich}]]></textFieldExpression>
-			</textField>
-			<textField>
 				<reportElement x="12" y="87" width="542" height="20" uuid="c346885b-b192-412c-98b5-2aa29f10e4f2"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
