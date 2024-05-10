@@ -141,12 +141,6 @@
 	<field name="cup" class="java.lang.String">
 		<fieldDescription><![CDATA[cup]]></fieldDescription>
 	</field>
-	<field name="utilizzoAutoServizio" class="java.lang.String">
-		<fieldDescription><![CDATA[utilizzoAutoServizio]]></fieldDescription>
-	</field>
-	<field name="personaleAlSeguito" class="java.lang.String">
-		<fieldDescription><![CDATA[personaleAlSeguito]]></fieldDescription>
-	</field>
 	<field name="missioneGratuita" class="java.lang.String">
 		<fieldDescription><![CDATA[missioneGratuita]]></fieldDescription>
 	</field>
@@ -516,16 +510,8 @@
 				<text><![CDATA[Utilizzo Auto a Noleggio]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="bold" x="258" y="79" width="110" height="19" uuid="51c0b17d-dd97-4dac-951c-e7ee4d280e7e"/>
-				<text><![CDATA[Utilizzo Auto di Servizio]]></text>
-			</staticText>
-			<staticText>
 				<reportElement style="bold" x="399" y="79" width="110" height="19" uuid="fb51551d-f870-4b40-be7a-745e85ec60cc"/>
 				<text><![CDATA[Richiesta Auto Propria]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="bold" x="56" y="105" width="95" height="19" uuid="e0770cec-d832-480f-8d4e-a6adc23ada12"/>
-				<text><![CDATA[Personale al Seguito]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="bold" x="219" y="105" width="81" height="19" uuid="958c358c-3237-4189-8651-265bebde2a15"/>

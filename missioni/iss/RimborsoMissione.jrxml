@@ -168,12 +168,6 @@
 	<field name="noteUtilizzoTaxiNoleggio" class="java.lang.String">
 		<fieldDescription><![CDATA[noteUtilizzoTaxiNoleggio]]></fieldDescription>
 	</field>
-	<field name="utilizzoAutoServizio" class="java.lang.String">
-		<fieldDescription><![CDATA[utilizzoAutoServizio]]></fieldDescription>
-	</field>
-	<field name="personaleAlSeguito" class="java.lang.String">
-		<fieldDescription><![CDATA[personaleAlSeguito]]></fieldDescription>
-	</field>
 	<field name="importo0" class="java.lang.String">
 		<fieldDescription><![CDATA[importo0]]></fieldDescription>
 	</field>
