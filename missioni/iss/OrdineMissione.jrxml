@@ -46,9 +46,6 @@
 	<field name="comuneResidenzaRich" class="java.lang.String">
 		<fieldDescription><![CDATA[comuneResidenzaRich]]></fieldDescription>
 	</field>
-	<field name="indirizzoResidenzaRich" class="java.lang.String">
-		<fieldDescription><![CDATA[indirizzoResidenzaRich]]></fieldDescription>
-	</field>
 	<field name="domicilioFiscaleRich" class="java.lang.String"/>
 	<field name="datoreLavoroRich" class="java.lang.String">
 		<fieldDescription><![CDATA[datoreLavoroRich]]></fieldDescription>
@@ -239,7 +236,7 @@
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{comuneResidenzaRich} + "  "+$F{indirizzoResidenzaRich}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{comuneResidenzaRich}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="94" y="153" width="461" height="20" uuid="bd927264-dba3-45b2-a569-5b0b32c53d3a"/>
