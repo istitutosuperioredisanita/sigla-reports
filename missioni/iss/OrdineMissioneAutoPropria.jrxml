@@ -127,9 +127,6 @@
 	<field name="altriMotivi" class="java.lang.String">
 		<fieldDescription><![CDATA[altriMotivi]]></fieldDescription>
 	</field>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
 	<pageHeader>
 		<band height="204" splitType="Stretch">
 			<textField isBlankWhenNull="false">
@@ -152,111 +149,111 @@
 				<imageExpression><![CDATA[$P{DIR_IMAGE} + "CNR.JPG"]]></imageExpression>
 			</image>
 			<rectangle>
-				<reportElement x="1" y="80" width="554" height="123" uuid="36243807-5214-4328-91de-1684de820b5d"/>
+				<reportElement x="1" y="81" width="554" height="99" uuid="36243807-5214-4328-91de-1684de820b5d"/>
 				<graphicElement>
 					<pen lineStyle="Solid"/>
 				</graphicElement>
 			</rectangle>
 			<textField isBlankWhenNull="false">
-				<reportElement x="152" y="92" width="309" height="20" uuid="e8951b51-1e9e-4770-a242-d48813a2f6a1"/>
+				<reportElement x="147" y="92" width="309" height="20" uuid="e8951b51-1e9e-4770-a242-d48813a2f6a1"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cognomeRich} + " "+$F{nomeRich}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="517" y="92" width="37" height="20" uuid="fe4dc609-8651-443f-a3ff-ab1bbb971cc2"/>
+				<reportElement x="512" y="92" width="37" height="20" uuid="fe4dc609-8651-443f-a3ff-ab1bbb971cc2"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{matricolaRich}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="124" y="112" width="53" height="20" uuid="e5521656-fe6b-481e-bd2f-1d3ec9c3296d"/>
+				<reportElement x="119" y="112" width="53" height="20" uuid="e5521656-fe6b-481e-bd2f-1d3ec9c3296d"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataDiNascitaRich}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement x="447" y="112" width="107" height="20" uuid="0c32ab10-e6f1-4ff8-badf-e893fd8ae509"/>
+				<reportElement x="442" y="112" width="107" height="20" uuid="0c32ab10-e6f1-4ff8-badf-e893fd8ae509"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{codiceFiscaleRich}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="92" y="160" width="461" height="20" uuid="c346885b-b192-412c-98b5-2aa29f10e4f2"/>
+				<reportElement x="88" y="132" width="461" height="20" uuid="c346885b-b192-412c-98b5-2aa29f10e4f2"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{datoreLavoroRich}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="72" y="180" width="364" height="20" uuid="e0b05bd9-8294-49d6-a45b-8593bc65b808"/>
+				<reportElement x="68" y="152" width="364" height="20" uuid="e0b05bd9-8294-49d6-a45b-8593bc65b808"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{qualificaRich}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="13" y="92" width="139" height="20" uuid="809ffb66-e8f4-4999-9787-8fce972f5eeb"/>
+				<reportElement x="8" y="92" width="139" height="20" uuid="809ffb66-e8f4-4999-9787-8fce972f5eeb"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Richiedente (cognome e nome)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="472" y="92" width="45" height="20" uuid="633005d7-ab96-4a9b-8014-3793332ebf65"/>
+				<reportElement x="467" y="92" width="45" height="20" uuid="633005d7-ab96-4a9b-8014-3793332ebf65"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Matricola]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="13" y="112" width="111" height="20" uuid="271d303a-44fe-4e4a-b0d2-5ac3b5a64445"/>
+				<reportElement x="8" y="112" width="111" height="20" uuid="271d303a-44fe-4e4a-b0d2-5ac3b5a64445"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Data e Luogo di Nascita]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="177" y="112" width="195" height="20" uuid="0ebdaafa-9ce5-4106-9d8b-b7f01dcf3820"/>
+				<reportElement x="172" y="112" width="195" height="20" uuid="0ebdaafa-9ce5-4106-9d8b-b7f01dcf3820"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{luogoDiNascitaRich}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="372" y="112" width="65" height="20" uuid="04167617-2f01-4b05-bfce-32a9bb56bdcd"/>
+				<reportElement x="367" y="112" width="65" height="20" uuid="04167617-2f01-4b05-bfce-32a9bb56bdcd"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Codice Fiscale]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="12" y="160" width="80" height="20" uuid="43b87204-1a3d-4353-a92d-049c97733ee4"/>
+				<reportElement x="8" y="132" width="80" height="20" uuid="43b87204-1a3d-4353-a92d-049c97733ee4"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Datore di Lavoro]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="12" y="180" width="60" height="20" uuid="ff9b3a76-c201-4000-bee8-0cdb74f2cbc2"/>
+				<reportElement x="8" y="152" width="60" height="20" uuid="ff9b3a76-c201-4000-bee8-0cdb74f2cbc2"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Qualifica]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="523" y="180" width="32" height="20" uuid="d67bfabd-7cfd-402f-88bb-27ffdf9e968f"/>
+				<reportElement x="517" y="152" width="32" height="20" uuid="d67bfabd-7cfd-402f-88bb-27ffdf9e968f"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{livelloRich}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="461" y="180" width="45" height="20" uuid="17fc3eb1-3c4a-498b-9a6e-d0f98c62ccd1"/>
+				<reportElement x="456" y="152" width="45" height="20" uuid="17fc3eb1-3c4a-498b-9a6e-d0f98c62ccd1"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
@@ -267,22 +264,22 @@
 	<detail>
 		<band height="104">
 			<rectangle>
-				<reportElement stretchType="RelativeToBandHeight" x="0" y="4" width="554" height="98" uuid="a77eb553-d3ff-4e04-bf9d-0ba5e1b34d92"/>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="-10" width="554" height="98" uuid="a77eb553-d3ff-4e04-bf9d-0ba5e1b34d92"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="222" y="9" width="100" height="20" uuid="f8d618c2-dd11-488e-8b22-756324211cb2"/>
+				<reportElement x="222" y="-5" width="100" height="20" uuid="f8d618c2-dd11-488e-8b22-756324211cb2"/>
 				<textElement textAlignment="Center">
 					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[C H I E D E]]></text>
 			</staticText>
 			<subreport runToBottom="false">
-				<reportElement x="10" y="54" width="532" height="38" uuid="fec37bc5-13be-478f-b309-bee6a232b109"/>
+				<reportElement x="10" y="40" width="532" height="38" uuid="fec37bc5-13be-478f-b309-bee6a232b109"/>
 				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("spostamenti")]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{DIR_SUBREPORT} + "ordine_missione_spostamenti_sub.jasper"]]></subreportExpression>
 			</subreport>
 			<staticText>
-				<reportElement x="13" y="29" width="367" height="20" uuid="62b94a39-969b-4b67-8405-cb15cebb1fa4"/>
+				<reportElement x="13" y="15" width="367" height="20" uuid="62b94a39-969b-4b67-8405-cb15cebb1fa4"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
 				</textElement>
@@ -448,21 +445,31 @@
 		</band>
 		<band height="50">
 			<staticText>
-				<reportElement positionType="Float" x="0" y="11" width="552" height="18" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
+				<reportElement positionType="Float" x="0" y="16" width="552" height="18" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
 				</textElement>
 				<text><![CDATA[Considerata la circostanza eccezionale, si autorizza l’uso del mezzo proprio per le seguenti motivazioni: ]]></text>
 			</staticText>
 		</band>
-		<band height="28">
+		<band height="65">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[$F{motiviIspettivi}.equals( "S" )]]></printWhenExpression>
 			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="16" isRemoveLineWhenBlank="true" uuid="00504e92-6afa-477f-8143-cd4b40e37c2b"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="16" isRemoveLineWhenBlank="true" uuid="00504e92-6afa-477f-8143-cd4b40e37c2b"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Per lo svolgimento di funzioni istituzionali relativi a compiti ispettivi, di verifica e di controllo"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement x="0" y="6" width="549" height="54" isRemoveLineWhenBlank="true" uuid="d0f6fd90-ab71-4185-98db-b1981544d0ce">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{altriMotivi}]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="80" splitType="Stretch">
@@ -473,35 +480,25 @@
 				</textElement>
 				<text><![CDATA[Al riguardo il sottoscritto dichiara espressamente di sollevare l’Istituto Superiore di Sanità da ogni responsabilità correlata a danni che l’uso di detto mezzo possa eventualmente arrecare a persone e cose, con particolare riferimento ai terzi, ai trasportati o al mezzo stesso. ]]></text>
 			</staticText>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="0" y="-10" width="549" height="18" isRemoveLineWhenBlank="true" uuid="27e4463e-e73f-4839-a33d-a826e34a1452"/>
-				<textElement verticalAlignment="Middle" markup="styled">
-					<font fontName="Times New Roman" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{altriMotivi}]]></textFieldExpression>
-			</textField>
 		</band>
-		<band height="45"/>
-	</detail>
-	<pageFooter>
-		<band height="113" splitType="Stretch">
+		<band height="115">
 			<rectangle radius="10">
-				<reportElement positionType="Float" x="0" y="3" width="554" height="107" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29"/>
+				<reportElement positionType="Float" x="-1" y="8" width="554" height="107" uuid="bcc3ad30-8bc0-43e5-8ecb-b07ed74730b3"/>
 			</rectangle>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="80" y="45" width="472" height="16" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
+				<reportElement positionType="Float" x="79" y="50" width="472" height="16" uuid="2d500349-c52c-48bd-9ab7-f4340861af90"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{destinazione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="199" y="8" width="161" height="17" uuid="0f1c2a64-f520-4bc7-8282-edbdd34c9233"/>
+				<reportElement style="bold" x="198" y="13" width="161" height="17" uuid="e8e9c1c9-f7e1-4413-9ee4-1c5d722937ba"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[DATI ORDINE DI MISSIONE]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="113" y="62" width="439" height="16" uuid="ab6edefc-339a-4161-989a-1b243a126789"/>
+				<reportElement x="112" y="67" width="439" height="16" uuid="55be4adb-7705-4636-9c1d-d4e0725230db"/>
 				<textElement textAlignment="Justified" markup="styled">
 					<font fontName="Times New Roman" isUnderline="false"/>
 					<paragraph lineSpacing="1_1_2"/>
@@ -509,47 +506,44 @@
 				<textFieldExpression><![CDATA[$F{oggetto}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="193" y="29" width="82" height="16" uuid="6688f5cd-6cd4-4b71-8a77-95aa536fb7b8"/>
+				<reportElement positionType="Float" x="192" y="34" width="82" height="16" uuid="d2c97760-5d30-4740-a9b8-130c138aaf9d"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataInizioMissione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="9" y="62" width="104" height="16" uuid="d2cccd12-9a16-4946-ba4e-1e1364e0608d"/>
+				<reportElement style="bold" x="8" y="67" width="104" height="16" uuid="ccf59619-e08c-4e45-9659-b51c1ee99405"/>
 				<text><![CDATA[Oggetto della Missione	]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="123" y="29" width="70" height="16" uuid="02d04a4c-a690-4a5c-8474-3403e71b46ed"/>
+				<reportElement x="122" y="34" width="70" height="16" uuid="5a2a09bd-34e7-459c-b2d4-4e60af13c9d8"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Inizio Missione]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="356" y="29" width="78" height="16" uuid="0869987e-9e75-4179-95e7-d8a7edf4f67b"/>
+				<reportElement positionType="Float" x="355" y="34" width="78" height="16" uuid="939c51d4-f192-4883-8e38-11e07fb82645"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataFineMissione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="290" y="29" width="66" height="16" uuid="1de9d89e-9e5f-4e03-a47e-002ee742abcd"/>
+				<reportElement x="289" y="34" width="66" height="16" uuid="5806e120-7255-4d0b-bb20-8e8ae81917c4"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Fine Missione]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="45" width="70" height="16" uuid="78dbbfa3-93da-4322-a8a6-c5f4c4d85a33"/>
+				<reportElement x="9" y="50" width="70" height="16" uuid="06dc792f-acda-4308-88b2-5a2fa5c4ee4e"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Destinazione]]></text>
 			</staticText>
 		</band>
-	</pageFooter>
-	<summary>
-		<band height="7" splitType="Stretch"/>
-	</summary>
+	</detail>
 </jasperReport>
