@@ -113,9 +113,6 @@
 		<property name="net.sf.jasperreports.json.field.expression" value="spostamenti"/>
 		<fieldDescription><![CDATA[spostamenti]]></fieldDescription>
 	</field>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
 	<pageHeader>
 		<band height="201" splitType="Stretch">
 			<textField isBlankWhenNull="false">
@@ -275,85 +272,88 @@
 				<text><![CDATA[di essere autorizzato ad utilizzare il taxi per effettuare i percorsi:]]></text>
 			</staticText>
 		</band>
-		<band height="50">
+		<band height="35">
 			<staticText>
-				<reportElement positionType="Float" x="0" y="5" width="552" height="28" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
+				<reportElement positionType="Float" x="0" y="5" width="552" height="14" uuid="652342d0-aafd-4859-8f3f-cf140fa43b98"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
 				</textElement>
 				<text><![CDATA[Considerata la circostanza eccezionale, si autorizza l’uso del taxi per le seguenti motivazioni: ]]></text>
 			</staticText>
 		</band>
-		<band height="25" splitType="Stretch">
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[$F{mancanzaAssMezzi}.equals( "S" )]]></printWhenExpression>
-			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-6" width="549" height="20" isRemoveLineWhenBlank="true" uuid="64eb113b-9095-44eb-8543-4ec214f632c3"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="20" isRemoveLineWhenBlank="true" uuid="64eb113b-9095-44eb-8543-4ec214f632c3"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Mancanza assoluta di mezzi pubblici;  "]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="35" splitType="Stretch">
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[$F{mancanzaMezzi}.equals( "S" )]]></printWhenExpression>
-			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-6" width="549" height="20" isRemoveLineWhenBlank="true" uuid="d299beae-b6d4-4d56-9baf-793ade76f772"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="20" isRemoveLineWhenBlank="true" uuid="d299beae-b6d4-4d56-9baf-793ade76f772"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Mancanza di mezzi pubblici per sospensione del servizio per sciopero, per eventi eccezionali opportunamente documentati;  "]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="25" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<printWhenExpression><![CDATA[$F{trasportoMateriali}.equals( "S" )]]></printWhenExpression>
-			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-16" width="549" height="30" isRemoveLineWhenBlank="true" uuid="17739f9b-cfe9-4388-9e4f-82662502c52e"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="30" isRemoveLineWhenBlank="true" uuid="17739f9b-cfe9-4388-9e4f-82662502c52e"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Necessità di trasporto di materiale attinente al servizio avente dimensioni e peso rilevanti (solo se corredato da autorizzazione preventiva ed elenco dettagliato del materiale trasportato);  "]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="20" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<printWhenExpression><![CDATA[$F{motiviHandicap}.equals( "S" )]]></printWhenExpression>
-			<textField isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-6" width="549" height="20" isRemoveLineWhenBlank="true" uuid="bcdd4941-b944-49b4-99be-02ed2b211ccf"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="20" isRemoveLineWhenBlank="true" uuid="bcdd4941-b944-49b4-99be-02ed2b211ccf"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Personale con disabilità/portatore di handicap "]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="55" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		<band height="60" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="0" y="-2" width="549" height="20" isRemoveLineWhenBlank="true" uuid="27e4463e-e73f-4839-a33d-a826e34a1452"/>
+				<reportElement x="0" y="0" width="549" height="50" isRemoveLineWhenBlank="true" uuid="d0f6fd90-ab71-4185-98db-b1981544d0ce">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{utilizzoAltriMotivi}]]></textFieldExpression>
 			</textField>
 		</band>
-	</detail>
-	<pageFooter>
-		<band height="113" splitType="Stretch">
+		<band height="147" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<rectangle radius="10">
-				<reportElement positionType="Float" x="-3" y="0" width="554" height="107" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29"/>
+				<reportElement positionType="Float" x="0" y="40" width="554" height="107" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29"/>
 			</rectangle>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="77" y="42" width="472" height="16" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
+				<reportElement positionType="Float" x="80" y="82" width="472" height="16" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{destinazione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="196" y="5" width="161" height="17" uuid="0f1c2a64-f520-4bc7-8282-edbdd34c9233"/>
+				<reportElement style="bold" x="199" y="45" width="161" height="17" uuid="0f1c2a64-f520-4bc7-8282-edbdd34c9233"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[DATI ORDINE DI MISSIONE]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="110" y="59" width="439" height="16" uuid="ab6edefc-339a-4161-989a-1b243a126789"/>
+				<reportElement x="113" y="99" width="439" height="16" uuid="ab6edefc-339a-4161-989a-1b243a126789"/>
 				<textElement textAlignment="Justified" markup="styled">
 					<font fontName="Times New Roman" isUnderline="false"/>
 					<paragraph lineSpacing="1_1_2"/>
@@ -361,47 +361,44 @@
 				<textFieldExpression><![CDATA[$F{oggetto}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="190" y="26" width="82" height="16" uuid="6688f5cd-6cd4-4b71-8a77-95aa536fb7b8"/>
+				<reportElement positionType="Float" x="193" y="66" width="82" height="16" uuid="6688f5cd-6cd4-4b71-8a77-95aa536fb7b8"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataInizioMissione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="6" y="59" width="104" height="16" uuid="d2cccd12-9a16-4946-ba4e-1e1364e0608d"/>
+				<reportElement style="bold" x="9" y="99" width="104" height="16" uuid="d2cccd12-9a16-4946-ba4e-1e1364e0608d"/>
 				<text><![CDATA[Oggetto della Missione	]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="120" y="26" width="70" height="16" uuid="02d04a4c-a690-4a5c-8474-3403e71b46ed"/>
+				<reportElement x="123" y="66" width="70" height="16" uuid="02d04a4c-a690-4a5c-8474-3403e71b46ed"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Inizio Missione]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="353" y="26" width="78" height="16" uuid="0869987e-9e75-4179-95e7-d8a7edf4f67b"/>
+				<reportElement positionType="Float" x="356" y="66" width="78" height="16" uuid="0869987e-9e75-4179-95e7-d8a7edf4f67b"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataFineMissione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="287" y="26" width="66" height="16" uuid="1de9d89e-9e5f-4e03-a47e-002ee742abcd"/>
+				<reportElement x="290" y="66" width="66" height="16" uuid="1de9d89e-9e5f-4e03-a47e-002ee742abcd"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Fine Missione]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="7" y="42" width="70" height="16" uuid="78dbbfa3-93da-4322-a8a6-c5f4c4d85a33"/>
+				<reportElement x="10" y="82" width="70" height="16" uuid="78dbbfa3-93da-4322-a8a6-c5f4c4d85a33"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Destinazione]]></text>
 			</staticText>
 		</band>
-	</pageFooter>
-	<summary>
-		<band height="7" splitType="Stretch"/>
-	</summary>
+	</detail>
 </jasperReport>
