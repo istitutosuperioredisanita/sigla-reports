@@ -338,22 +338,22 @@
 		<band height="147" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<rectangle radius="10">
-				<reportElement positionType="Float" x="0" y="40" width="554" height="107" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29"/>
+				<reportElement positionType="Float" x="0" y="30" width="554" height="107" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29"/>
 			</rectangle>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="80" y="82" width="472" height="16" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
+				<reportElement positionType="Float" x="80" y="72" width="472" height="16" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{destinazione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="199" y="45" width="161" height="17" uuid="0f1c2a64-f520-4bc7-8282-edbdd34c9233"/>
+				<reportElement style="bold" x="199" y="35" width="161" height="17" uuid="0f1c2a64-f520-4bc7-8282-edbdd34c9233"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[DATI ORDINE DI MISSIONE]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="113" y="99" width="439" height="16" uuid="ab6edefc-339a-4161-989a-1b243a126789"/>
+				<reportElement x="113" y="89" width="439" height="16" uuid="ab6edefc-339a-4161-989a-1b243a126789"/>
 				<textElement textAlignment="Justified" markup="styled">
 					<font fontName="Times New Roman" isUnderline="false"/>
 					<paragraph lineSpacing="1_1_2"/>
@@ -361,39 +361,39 @@
 				<textFieldExpression><![CDATA[$F{oggetto}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="193" y="66" width="82" height="16" uuid="6688f5cd-6cd4-4b71-8a77-95aa536fb7b8"/>
+				<reportElement positionType="Float" x="193" y="56" width="82" height="16" uuid="6688f5cd-6cd4-4b71-8a77-95aa536fb7b8"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataInizioMissione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="9" y="99" width="104" height="16" uuid="d2cccd12-9a16-4946-ba4e-1e1364e0608d"/>
+				<reportElement style="bold" x="9" y="89" width="104" height="16" uuid="d2cccd12-9a16-4946-ba4e-1e1364e0608d"/>
 				<text><![CDATA[Oggetto della Missione	]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="123" y="66" width="70" height="16" uuid="02d04a4c-a690-4a5c-8474-3403e71b46ed"/>
+				<reportElement x="123" y="56" width="70" height="16" uuid="02d04a4c-a690-4a5c-8474-3403e71b46ed"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Inizio Missione]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="356" y="66" width="78" height="16" uuid="0869987e-9e75-4179-95e7-d8a7edf4f67b"/>
+				<reportElement positionType="Float" x="356" y="56" width="78" height="16" uuid="0869987e-9e75-4179-95e7-d8a7edf4f67b"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataFineMissione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="290" y="66" width="66" height="16" uuid="1de9d89e-9e5f-4e03-a47e-002ee742abcd"/>
+				<reportElement x="290" y="56" width="66" height="16" uuid="1de9d89e-9e5f-4e03-a47e-002ee742abcd"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Fine Missione]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="82" width="70" height="16" uuid="78dbbfa3-93da-4322-a8a6-c5f4c4d85a33"/>
+				<reportElement x="10" y="72" width="70" height="16" uuid="78dbbfa3-93da-4322-a8a6-c5f4c4d85a33"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
