@@ -447,7 +447,7 @@
 				<reportElement key="line-184" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="-33" width="1" height="155" uuid="83dff191-c611-4f26-88ef-d423873ab1b8"/>
 			</line>
 			<line>
-				<reportElement key="line-188" positionType="Float" stretchType="RelativeToBandHeight" x="556" y="-33" width="1" height="162" uuid="085b9a59-f76b-4fe2-af04-c878e92c59f6"/>
+				<reportElement key="line-188" positionType="Float" stretchType="RelativeToBandHeight" x="556" y="-33" width="1" height="155" uuid="085b9a59-f76b-4fe2-af04-c878e92c59f6"/>
 			</line>
 			<staticText>
 				<reportElement style="bold" x="15" y="-33" width="54" height="19" uuid="a67080d7-767e-4711-93cd-c66830a4c7bb"/>
@@ -511,14 +511,10 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{partenzaDa}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement style="bold" x="16" y="95" width="59" height="19" uuid="3fd99cd8-15f3-487e-8721-ce46c1c8042c">
-					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )!=0]]></printWhenExpression>
-				</reportElement>
-				<text><![CDATA[Annotazioni: ]]></text>
-			</staticText>
+		</band>
+		<band height="25">
 			<textField textAdjust="StretchHeight">
-				<reportElement x="78" y="95" width="466" height="20" uuid="38c47c71-b600-4496-ba44-5e6d1372a73c">
+				<reportElement x="78" y="-59" width="466" height="20" uuid="38c47c71-b600-4496-ba44-5e6d1372a73c">
 					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )!=0]]></printWhenExpression>
 				</reportElement>
 				<textElement markup="styled">
@@ -526,16 +522,48 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{note}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement style="bold" x="16" y="-59" width="59" height="19" uuid="3fd99cd8-15f3-487e-8721-ce46c1c8042c">
+					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )!=0]]></printWhenExpression>
+				</reportElement>
+				<text><![CDATA[Annotazioni: ]]></text>
+			</staticText>
 			<line>
-				<reportElement key="line-182" positionType="FixRelativeToBottom" x="1" y="129" width="556" height="1" uuid="7f544594-1681-4381-ba41-58f1c7f75bfd"/>
+				<reportElement key="line-184" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="-62" width="1" height="25" uuid="3347e711-3e0e-4ca6-adbe-4daeb2506d72"/>
+			</line>
+			<line>
+				<reportElement key="line-188" positionType="Float" stretchType="RelativeToBandHeight" x="556" y="-62" width="1" height="25" uuid="3a2a0e53-8aad-4be4-9a68-579a00dfb979"/>
 			</line>
 		</band>
-		<band height="25" splitType="Stretch">
+		<band height="25">
+			<staticText>
+				<reportElement style="bold" x="16" y="-59" width="99" height="19" uuid="6b65f281-de9a-426b-9ba6-a9f4b6012d37">
+					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )==0]]></printWhenExpression>
+				</reportElement>
+				<text><![CDATA[Motivo Annullamento]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="119" y="-59" width="425" height="20" uuid="fb736664-6c3e-4eb9-948d-825a20ad550f">
+					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )==0]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="styled">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{motivoAnnullamento}]]></textFieldExpression>
+			</textField>
 			<line>
-				<reportElement key="line-184" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="-33" width="1" height="7" uuid="3347e711-3e0e-4ca6-adbe-4daeb2506d72"/>
+				<reportElement key="line-184" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="-62" width="1" height="37" uuid="ff990cae-6173-4892-b5e8-0196dd66eed6"/>
+			</line>
+			<line>
+				<reportElement key="line-188" positionType="Float" stretchType="RelativeToBandHeight" x="556" y="-62" width="1" height="38" uuid="f930da43-6ee9-4929-9eba-3856508a6da8">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-182" positionType="FixRelativeToBottom" x="1" y="-25" width="555" height="1" uuid="7f544594-1681-4381-ba41-58f1c7f75bfd"/>
 			</line>
 		</band>
-		<band height="25" splitType="Stretch"/>
 	</detail>
 	<columnFooter>
 		<band height="156" splitType="Stretch">
