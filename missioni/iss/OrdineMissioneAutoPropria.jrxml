@@ -21,111 +21,145 @@
 	<queryString language="json">
 		<![CDATA[]]>
 	</queryString>
-	<field name="numero" class="java.lang.String">
+	<field name="anno" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="anno"/>
+		<fieldDescription><![CDATA[anno]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="numero"/>
 		<fieldDescription><![CDATA[numero]]></fieldDescription>
 	</field>
 	<field name="dataInserimento" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="dataInserimento"/>
 		<fieldDescription><![CDATA[dataInserimento]]></fieldDescription>
 	</field>
 	<field name="cognomeRich" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="cognomeRich"/>
 		<fieldDescription><![CDATA[cognomeRich]]></fieldDescription>
 	</field>
 	<field name="nomeRich" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="nomeRich"/>
 		<fieldDescription><![CDATA[nomeRich]]></fieldDescription>
 	</field>
-	<field name="codiceFiscaleRich" class="java.lang.String">
-		<fieldDescription><![CDATA[codiceFiscaleRich]]></fieldDescription>
-	</field>
-	<field name="matricolaRich" class="java.lang.String">
+	<field name="matricolaRich" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="matricolaRich"/>
 		<fieldDescription><![CDATA[matricolaRich]]></fieldDescription>
 	</field>
+	<field name="codiceFiscaleRich" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="codiceFiscaleRich"/>
+		<fieldDescription><![CDATA[codiceFiscaleRich]]></fieldDescription>
+	</field>
 	<field name="luogoDiNascitaRich" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="luogoDiNascitaRich"/>
 		<fieldDescription><![CDATA[luogoDiNascitaRich]]></fieldDescription>
 	</field>
 	<field name="dataDiNascitaRich" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="dataDiNascitaRich"/>
 		<fieldDescription><![CDATA[dataDiNascitaRich]]></fieldDescription>
 	</field>
 	<field name="comuneResidenzaRich" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="comuneResidenzaRich"/>
 		<fieldDescription><![CDATA[comuneResidenzaRich]]></fieldDescription>
 	</field>
-	<field name="datoreLavoroRich" class="java.lang.String">
+	<field name="indirizzoResidenzaRich" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="indirizzoResidenzaRich"/>
+		<fieldDescription><![CDATA[indirizzoResidenzaRich]]></fieldDescription>
+	</field>
+	<field name="domicilioFiscaleRich" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="domicilioFiscaleRich"/>
+		<fieldDescription><![CDATA[domicilioFiscaleRich]]></fieldDescription>
+	</field>
+	<field name="datoreLavoroRich" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="datoreLavoroRich"/>
 		<fieldDescription><![CDATA[datoreLavoroRich]]></fieldDescription>
 	</field>
 	<field name="qualificaRich" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="qualificaRich"/>
 		<fieldDescription><![CDATA[qualificaRich]]></fieldDescription>
 	</field>
 	<field name="livelloRich" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="livelloRich"/>
 		<fieldDescription><![CDATA[livelloRich]]></fieldDescription>
 	</field>
 	<field name="oggetto" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="oggetto"/>
 		<fieldDescription><![CDATA[oggetto]]></fieldDescription>
 	</field>
 	<field name="dataInizioMissione" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="dataInizioMissione"/>
 		<fieldDescription><![CDATA[dataInizioMissione]]></fieldDescription>
 	</field>
 	<field name="dataFineMissione" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="dataFineMissione"/>
 		<fieldDescription><![CDATA[dataFineMissione]]></fieldDescription>
 	</field>
-	<field name="note" class="java.lang.String">
-		<fieldDescription><![CDATA[note]]></fieldDescription>
-	</field>
-	<field name="cdrRich" class="java.lang.String">
-		<fieldDescription><![CDATA[cdrRich]]></fieldDescription>
-	</field>
-	<field name="uoRich" class="java.lang.String">
-		<fieldDescription><![CDATA[uoRich]]></fieldDescription>
-	</field>
-	<field name="cdsRich" class="java.lang.String">
-		<fieldDescription><![CDATA[cdsRich]]></fieldDescription>
-	</field>
 	<field name="destinazione" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="destinazione"/>
 		<fieldDescription><![CDATA[destinazione]]></fieldDescription>
 	</field>
-	<field name="spostamenti" class="java.lang.Object">
-		<fieldDescription><![CDATA[spostamenti]]></fieldDescription>
-	</field>
-	<field name="dataAnticipo" class="java.lang.String"/>
-	<field name="stato" class="java.lang.String">
-		<fieldDescription><![CDATA[stato]]></fieldDescription>
-	</field>
-	<field name="marca" class="java.lang.String">
-		<fieldDescription><![CDATA[marca]]></fieldDescription>
-	</field>
 	<field name="targa" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="targa"/>
 		<fieldDescription><![CDATA[targa]]></fieldDescription>
 	</field>
 	<field name="cartaCircolazione" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="cartaCircolazione"/>
 		<fieldDescription><![CDATA[cartaCircolazione]]></fieldDescription>
 	</field>
 	<field name="polizzaAssicurativa" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="polizzaAssicurativa"/>
 		<fieldDescription><![CDATA[polizzaAssicurativa]]></fieldDescription>
 	</field>
+	<field name="marca" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="marca"/>
+		<fieldDescription><![CDATA[marca]]></fieldDescription>
+	</field>
 	<field name="modello" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="modello"/>
 		<fieldDescription><![CDATA[modello]]></fieldDescription>
 	</field>
 	<field name="numeroPatente" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="numeroPatente"/>
 		<fieldDescription><![CDATA[numeroPatente]]></fieldDescription>
 	</field>
 	<field name="dataRilascioPatente" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="dataRilascioPatente"/>
 		<fieldDescription><![CDATA[dataRilascioPatente]]></fieldDescription>
 	</field>
 	<field name="dataScadenzaPatente" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="dataScadenzaPatente"/>
 		<fieldDescription><![CDATA[dataScadenzaPatente]]></fieldDescription>
 	</field>
 	<field name="entePatente" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="entePatente"/>
 		<fieldDescription><![CDATA[entePatente]]></fieldDescription>
 	</field>
+	<field name="stato" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="stato"/>
+		<fieldDescription><![CDATA[stato]]></fieldDescription>
+	</field>
 	<field name="motiviIspettivi" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="motiviIspettivi"/>
 		<fieldDescription><![CDATA[motiviIspettivi]]></fieldDescription>
 	</field>
+	<field name="motiviSediDisagiate" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="motiviSediDisagiate"/>
+		<fieldDescription><![CDATA[motiviSediDisagiate]]></fieldDescription>
+	</field>
 	<field name="motiviUrgenza" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="motiviUrgenza"/>
 		<fieldDescription><![CDATA[motiviUrgenza]]></fieldDescription>
 	</field>
 	<field name="motiviTrasporto" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="motiviTrasporto"/>
 		<fieldDescription><![CDATA[motiviTrasporto]]></fieldDescription>
 	</field>
 	<field name="altriMotivi" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="altriMotivi"/>
 		<fieldDescription><![CDATA[altriMotivi]]></fieldDescription>
+	</field>
+	<field name="spostamenti" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="spostamenti"/>
+		<fieldDescription><![CDATA[spostamenti]]></fieldDescription>
 	</field>
 	<pageHeader>
 		<band height="204" splitType="Stretch">
@@ -464,10 +498,21 @@
 				<textFieldExpression><![CDATA[" - Per lo svolgimento di funzioni istituzionali relativi a compiti ispettivi, di verifica e di controllo"]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="55" splitType="Stretch">
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[$F{motiviSediDisagiate}.equals( "S" )]]></printWhenExpression>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-7" width="549" height="30" isRemoveLineWhenBlank="true" uuid="3b95e761-db8e-407f-a261-b3c20a7c5c7c"/>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" - Nei casi di oggettive situazioni di disagio, quali sedi geografiche particolarmente disagiate o di difficoltà all’uso dei mezzi di trasporto ordinari"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="129" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="0" y="5" width="549" height="50" isRemoveLineWhenBlank="true" uuid="d0f6fd90-ab71-4185-98db-b1981544d0ce">
+				<reportElement x="0" y="-7" width="549" height="50" isRemoveLineWhenBlank="true" uuid="d0f6fd90-ab71-4185-98db-b1981544d0ce">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle" markup="styled">
@@ -475,33 +520,33 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{altriMotivi}]]></textFieldExpression>
 			</textField>
-		</band>
-		<band height="207">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement positionType="Float" x="0" y="20" width="552" height="39" uuid="1221914b-b662-4b82-83ae-07dd55ef255f"/>
+				<reportElement positionType="Float" x="0" y="50" width="552" height="39" uuid="1221914b-b662-4b82-83ae-07dd55ef255f"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
 				</textElement>
 				<text><![CDATA[Al riguardo il sottoscritto dichiara espressamente di sollevare l’Istituto Superiore di Sanità da ogni responsabilità correlata a danni che l’uso di detto mezzo possa eventualmente arrecare a persone e cose, con particolare riferimento ai terzi, ai trasportati o al mezzo stesso. ]]></text>
 			</staticText>
+		</band>
+		<band height="207">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<rectangle radius="10">
-				<reportElement positionType="Float" x="0" y="100" width="554" height="107" uuid="bcc3ad30-8bc0-43e5-8ecb-b07ed74730b3"/>
+				<reportElement positionType="Float" x="1" y="20" width="554" height="93" uuid="bcc3ad30-8bc0-43e5-8ecb-b07ed74730b3"/>
 			</rectangle>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="80" y="142" width="472" height="16" uuid="2d500349-c52c-48bd-9ab7-f4340861af90"/>
+				<reportElement positionType="Float" x="81" y="62" width="472" height="16" uuid="2d500349-c52c-48bd-9ab7-f4340861af90"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{destinazione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="199" y="105" width="161" height="17" uuid="e8e9c1c9-f7e1-4413-9ee4-1c5d722937ba"/>
+				<reportElement style="bold" x="200" y="25" width="161" height="17" uuid="e8e9c1c9-f7e1-4413-9ee4-1c5d722937ba"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[DATI ORDINE DI MISSIONE]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="113" y="159" width="439" height="16" uuid="55be4adb-7705-4636-9c1d-d4e0725230db"/>
+				<reportElement x="114" y="79" width="439" height="16" uuid="55be4adb-7705-4636-9c1d-d4e0725230db"/>
 				<textElement textAlignment="Justified" markup="styled">
 					<font fontName="Times New Roman" isUnderline="false"/>
 					<paragraph lineSpacing="1_1_2"/>
@@ -509,39 +554,39 @@
 				<textFieldExpression><![CDATA[$F{oggetto}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="193" y="126" width="82" height="16" uuid="d2c97760-5d30-4740-a9b8-130c138aaf9d"/>
+				<reportElement positionType="Float" x="194" y="46" width="82" height="16" uuid="d2c97760-5d30-4740-a9b8-130c138aaf9d"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataInizioMissione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="9" y="159" width="104" height="16" uuid="ccf59619-e08c-4e45-9659-b51c1ee99405"/>
+				<reportElement style="bold" x="10" y="79" width="104" height="16" uuid="ccf59619-e08c-4e45-9659-b51c1ee99405"/>
 				<text><![CDATA[Oggetto della Missione	]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="123" y="126" width="70" height="16" uuid="5a2a09bd-34e7-459c-b2d4-4e60af13c9d8"/>
+				<reportElement x="124" y="46" width="70" height="16" uuid="5a2a09bd-34e7-459c-b2d4-4e60af13c9d8"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Inizio Missione]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="356" y="126" width="78" height="16" uuid="939c51d4-f192-4883-8e38-11e07fb82645"/>
+				<reportElement positionType="Float" x="357" y="46" width="78" height="16" uuid="939c51d4-f192-4883-8e38-11e07fb82645"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataFineMissione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="290" y="126" width="66" height="16" uuid="5806e120-7255-4d0b-bb20-8e8ae81917c4"/>
+				<reportElement x="291" y="46" width="66" height="16" uuid="5806e120-7255-4d0b-bb20-8e8ae81917c4"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Fine Missione]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="142" width="70" height="16" uuid="06dc792f-acda-4308-88b2-5a2fa5c4ee4e"/>
+				<reportElement x="11" y="62" width="70" height="16" uuid="06dc792f-acda-4308-88b2-5a2fa5c4ee4e"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
