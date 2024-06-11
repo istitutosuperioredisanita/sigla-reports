@@ -69,7 +69,7 @@
 		<property name="net.sf.jasperreports.json.field.expression" value="domicilioFiscaleRich"/>
 		<fieldDescription><![CDATA[domicilioFiscaleRich]]></fieldDescription>
 	</field>
-	<field name="datoreLavoroRich" class="java.math.BigDecimal">
+	<field name="datoreLavoroRich" class="java.lang.String">
 		<property name="net.sf.jasperreports.json.field.expression" value="datoreLavoroRich"/>
 		<fieldDescription><![CDATA[datoreLavoroRich]]></fieldDescription>
 	</field>
