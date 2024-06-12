@@ -296,7 +296,7 @@
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[$F{mancanzaMezzi}.equals( "S" )]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="20" isRemoveLineWhenBlank="true" uuid="d299beae-b6d4-4d56-9baf-793ade76f772"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="20" isRemoveLineWhenBlank="true" uuid="d299beae-b6d4-4d56-9baf-793ade76f772"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
@@ -306,7 +306,7 @@
 		<band height="30" splitType="Stretch">
 			<printWhenExpression><![CDATA[$F{trasportoMateriali}.equals( "S" )]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="30" isRemoveLineWhenBlank="true" uuid="17739f9b-cfe9-4388-9e4f-82662502c52e"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="30" isRemoveLineWhenBlank="true" uuid="17739f9b-cfe9-4388-9e4f-82662502c52e"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
@@ -316,17 +316,17 @@
 		<band height="30" splitType="Stretch">
 			<printWhenExpression><![CDATA[$F{motiviHandicap}.equals( "S" )]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="20" isRemoveLineWhenBlank="true" uuid="bcdd4941-b944-49b4-99be-02ed2b211ccf"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="10" width="549" height="20" isRemoveLineWhenBlank="true" uuid="bcdd4941-b944-49b4-99be-02ed2b211ccf"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Personale con disabilità/portatore di handicap "]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="60" splitType="Stretch">
+		<band height="70" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="0" y="0" width="549" height="50" isRemoveLineWhenBlank="true" uuid="d0f6fd90-ab71-4185-98db-b1981544d0ce">
+				<reportElement x="0" y="20" width="549" height="50" isRemoveLineWhenBlank="true" uuid="d0f6fd90-ab71-4185-98db-b1981544d0ce">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle" markup="styled">
