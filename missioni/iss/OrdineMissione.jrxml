@@ -334,6 +334,10 @@
 			<line>
 				<reportElement key="line-188" positionType="Float" stretchType="RelativeToBandHeight" x="556" y="-33" width="1" height="30" uuid="5672187b-e153-451d-a8a7-14fea2e0101b"/>
 			</line>
+			<staticText>
+				<reportElement style="bold" x="450" y="-3" width="46" height="19" uuid="27f06064-0e99-4fb4-b50b-f634c8ee3f8b"/>
+				<text><![CDATA[Missione]]></text>
+			</staticText>
 		</band>
 		<band height="25">
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
@@ -354,10 +358,6 @@
 				<reportElement style="bold" x="15" y="-32" width="49" height="19" uuid="5d8b1452-d959-48a5-a3b7-5388b58495ab"/>
 				<text><![CDATA[Località]]></text>
 			</staticText>
-			<staticText>
-				<reportElement style="bold" x="447" y="-32" width="46" height="19" uuid="27f06064-0e99-4fb4-b50b-f634c8ee3f8b"/>
-				<text><![CDATA[Missione]]></text>
-			</staticText>
 			<line>
 				<reportElement key="line-184" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="-33" width="1" height="25" uuid="1eff66e2-dc40-4e77-a52f-d2e5e7f2ad4d"/>
 			</line>
@@ -375,6 +375,7 @@
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="126" y="21" width="417" height="19" uuid="d6a1c2a5-8a7f-4113-977d-ffa9da4b8e3e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<printWhenExpression><![CDATA[$F{tipoMissione}.equalsIgnoreCase( "E" )]]></printWhenExpression>
 				</reportElement>
 				<textElement markup="styled">
@@ -399,7 +400,7 @@
 				<textFieldExpression><![CDATA[$F{obbligoRientro}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="305" y="46" width="30" height="19" uuid="cf3f3018-b718-4776-84df-d783ff0931fd"/>
+				<reportElement positionType="Float" x="236" y="46" width="30" height="19" uuid="cf3f3018-b718-4776-84df-d783ff0931fd"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
@@ -413,21 +414,11 @@
 				<textFieldExpression><![CDATA[$F{utilizzoTaxi}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="449" y="72" width="81" height="19" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
+				<reportElement positionType="Float" x="239" y="70" width="81" height="19" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{importoPresunto}]]></textFieldExpression>
-			</textField>
-			<textField textAdjust="StretchHeight">
-				<reportElement positionType="Float" x="16" y="99" width="528" height="20" uuid="bca26aa9-64a8-40a2-bd6c-a50f3c189839">
-					<printWhenExpression><![CDATA[$F{utilizzoTaxi}.equalsIgnoreCase( "Sì" ) || $F{utilizzoAutoNoleggio}.equalsIgnoreCase( "Sì" )|| $F{personaleAlSeguito}.equalsIgnoreCase( "Sì" )|| $F{utilizzoAutoServizio}.equalsIgnoreCase( "Sì" )]]></printWhenExpression>
-				</reportElement>
-				<textElement markup="styled">
-					<font fontName="Times New Roman"/>
-					<paragraph lineSpacing="1_1_2"/>
-				</textElement>
-				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Motivazione per l'Utilizzo dell'Auto Propria/Taxi/Auto a Noleggio</style>"+ $F{noteUtilizzoTaxiNoleggio}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="202" y="-33" width="237" height="19" uuid="35924cfc-bb30-49ef-9af8-1894f699bbb2">
@@ -439,14 +430,14 @@
 				<textFieldExpression><![CDATA[$F{partenzaDaAltro}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="486" y="46" width="33" height="19" uuid="1932129c-9861-4a1d-b6cf-0fc52a589637"/>
+				<reportElement positionType="Float" x="409" y="46" width="33" height="19" uuid="1932129c-9861-4a1d-b6cf-0fc52a589637"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{richiestaAutoPropria}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="197" y="72" width="20" height="19" uuid="b3713269-9eca-416f-9965-07da936ff800"/>
+				<reportElement positionType="Float" x="101" y="70" width="20" height="19" uuid="b3713269-9eca-416f-9965-07da936ff800"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
@@ -498,19 +489,19 @@
 				<text><![CDATA[Utilizzo Taxi]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="bold" x="195" y="46" width="110" height="19" uuid="31e485a1-7023-476e-8bb9-01b665e2166f"/>
+				<reportElement style="bold" x="126" y="46" width="110" height="19" uuid="31e485a1-7023-476e-8bb9-01b665e2166f"/>
 				<text><![CDATA[Utilizzo Auto a Noleggio]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="bold" x="377" y="46" width="110" height="19" uuid="fb51551d-f870-4b40-be7a-745e85ec60cc"/>
+				<reportElement style="bold" x="300" y="46" width="110" height="19" uuid="fb51551d-f870-4b40-be7a-745e85ec60cc"/>
 				<text><![CDATA[Utilizzo Auto Propria]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="bold" x="112" y="72" width="81" height="19" uuid="958c358c-3237-4189-8651-265bebde2a15"/>
+				<reportElement style="bold" x="16" y="70" width="81" height="19" uuid="958c358c-3237-4189-8651-265bebde2a15"/>
 				<text><![CDATA[Richiesta Anticipo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="bold" x="359" y="72" width="86" height="19" uuid="be9ee8d9-9304-4996-be86-0cf6dbfb706f"/>
+				<reportElement style="bold" x="149" y="70" width="86" height="19" uuid="be9ee8d9-9304-4996-be86-0cf6dbfb706f"/>
 				<text><![CDATA[Importo Presunto €]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
@@ -523,7 +514,7 @@
 		</band>
 		<band height="25">
 			<textField textAdjust="StretchHeight">
-				<reportElement x="78" y="-30" width="466" height="20" uuid="38c47c71-b600-4496-ba44-5e6d1372a73c">
+				<reportElement x="78" y="-59" width="466" height="20" uuid="38c47c71-b600-4496-ba44-5e6d1372a73c">
 					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )!=0]]></printWhenExpression>
 				</reportElement>
 				<textElement markup="styled">
@@ -532,27 +523,27 @@
 				<textFieldExpression><![CDATA[$F{note}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="16" y="-30" width="59" height="19" uuid="3fd99cd8-15f3-487e-8721-ce46c1c8042c">
+				<reportElement style="bold" x="16" y="-59" width="59" height="19" uuid="3fd99cd8-15f3-487e-8721-ce46c1c8042c">
 					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )!=0]]></printWhenExpression>
 				</reportElement>
-				<text><![CDATA[Annotazioni]]></text>
+				<text><![CDATA[Annotazioni: ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-184" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="-33" width="1" height="25" uuid="3347e711-3e0e-4ca6-adbe-4daeb2506d72"/>
+				<reportElement key="line-184" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="-62" width="1" height="25" uuid="3347e711-3e0e-4ca6-adbe-4daeb2506d72"/>
 			</line>
 			<line>
-				<reportElement key="line-188" positionType="Float" stretchType="RelativeToBandHeight" x="556" y="-33" width="1" height="25" uuid="3a2a0e53-8aad-4be4-9a68-579a00dfb979"/>
+				<reportElement key="line-188" positionType="Float" stretchType="RelativeToBandHeight" x="556" y="-62" width="1" height="25" uuid="3a2a0e53-8aad-4be4-9a68-579a00dfb979"/>
 			</line>
 		</band>
 		<band height="25">
 			<staticText>
-				<reportElement style="bold" x="16" y="-30" width="99" height="19" uuid="6b65f281-de9a-426b-9ba6-a9f4b6012d37">
+				<reportElement style="bold" x="16" y="-59" width="99" height="19" uuid="6b65f281-de9a-426b-9ba6-a9f4b6012d37">
 					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )==0]]></printWhenExpression>
 				</reportElement>
 				<text><![CDATA[Motivo Annullamento]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="119" y="-30" width="425" height="20" uuid="fb736664-6c3e-4eb9-948d-825a20ad550f">
+				<reportElement x="119" y="-59" width="425" height="20" uuid="fb736664-6c3e-4eb9-948d-825a20ad550f">
 					<printWhenExpression><![CDATA[$F{tipo}.compareTo( "A" )==0]]></printWhenExpression>
 				</reportElement>
 				<textElement markup="styled">
@@ -561,13 +552,16 @@
 				<textFieldExpression><![CDATA[$F{motivoAnnullamento}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement key="line-184" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="-33" width="1" height="25" uuid="ff990cae-6173-4892-b5e8-0196dd66eed6"/>
+				<reportElement key="line-184" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="-62" width="1" height="37" uuid="ff990cae-6173-4892-b5e8-0196dd66eed6"/>
 			</line>
 			<line>
-				<reportElement key="line-188" positionType="Float" stretchType="RelativeToBandHeight" x="556" y="-33" width="1" height="25" uuid="f930da43-6ee9-4929-9eba-3856508a6da8"/>
+				<reportElement key="line-188" positionType="Float" stretchType="RelativeToBandHeight" x="556" y="-62" width="1" height="38" uuid="f930da43-6ee9-4929-9eba-3856508a6da8">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 			</line>
 			<line>
-				<reportElement key="line-182" positionType="FixRelativeToBottom" x="1" y="-9" width="555" height="1" uuid="7f544594-1681-4381-ba41-58f1c7f75bfd"/>
+				<reportElement key="line-182" positionType="FixRelativeToBottom" x="1" y="-25" width="555" height="1" uuid="7f544594-1681-4381-ba41-58f1c7f75bfd"/>
 			</line>
 		</band>
 	</detail>

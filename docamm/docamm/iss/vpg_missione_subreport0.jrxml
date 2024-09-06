@@ -6,6 +6,7 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="89"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportNoteLiquidazione.xml"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -1849,18 +1850,6 @@ $F{TI_RECORD_L2}.equals("A")
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement key="textField-8" style="TNR8" x="286" y="2" width="288" height="12" uuid="fb2fdbb8-f642-40ca-aa5d-d469409893b9"/>
-					<box>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.0" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA[($F{VIA_SEDE}!=null?$F{VIA_SEDE}:"")+
-($F{NUMERO_CIVICO_SEDE}!=null?(","+$F{NUMERO_CIVICO_SEDE}):"")]]></textFieldExpression>
-				</textField>
 				<line>
 					<reportElement key="line-118" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="576" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="0f6f249f-1f3f-4d60-89c0-d3ef29837369"/>
 					<graphicElement>
@@ -1888,7 +1877,7 @@ $F{TI_RECORD_L2}.equals("A")
 					</graphicElement>
 				</line>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement key="textField-9" style="TNR8" x="286" y="2" width="288" height="12" uuid="29a42ba9-2bf9-4afa-b4f9-0a413ee9858a"/>
+					<reportElement key="textField-9" style="TNR8" x="286" y="-14" width="288" height="12" uuid="29a42ba9-2bf9-4afa-b4f9-0a413ee9858a"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1921,7 +1910,7 @@ $F{TI_RECORD_L1}.equals("A") &&
 $F{TI_RECORD_L2}.equals("A")
 )]]></printWhenExpression>
 				<line>
-					<reportElement key="line-121" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="284" y="0" width="1" height="33" isRemoveLineWhenBlank="true" uuid="20ab50c7-6263-4d32-89e3-0072474e6bd4"/>
+					<reportElement key="line-121" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="284" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="20ab50c7-6263-4d32-89e3-0072474e6bd4"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -1933,13 +1922,13 @@ $F{TI_RECORD_L2}.equals("A")
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-123" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="576" y="0" width="1" height="33" isRemoveLineWhenBlank="true" uuid="4f8abe50-97ec-46cf-905d-fcde0f19d7d5"/>
+					<reportElement key="line-123" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="576" y="0" width="1" height="16" isRemoveLineWhenBlank="true" uuid="4f8abe50-97ec-46cf-905d-fcde0f19d7d5"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement key="textField-10" style="TNR8BOLD" x="286" y="2" width="61" height="12" uuid="9d9e4f83-ada9-4ce3-8294-cee38518bc61"/>
+					<reportElement key="textField-10" style="TNR8BOLD" x="286" y="-14" width="61" height="12" uuid="9d9e4f83-ada9-4ce3-8294-cee38518bc61"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1950,13 +1939,13 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[($F{TI_ANAGRAFICO}.equals("D")?"MATRICOLA":"CODICE")]]></textFieldExpression>
 				</textField>
 				<line>
-					<reportElement key="line-124" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="349" y="0" width="1" height="33" isRemoveLineWhenBlank="true" uuid="d5d91776-83b3-4ece-a968-184fb544aa89"/>
+					<reportElement key="line-124" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="351" y="0" width="1" height="16" isRemoveLineWhenBlank="true" uuid="d5d91776-83b3-4ece-a968-184fb544aa89"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement key="textField-11" style="TNR8BOLD" x="351" y="2" width="222" height="12" uuid="56302322-1d6a-4033-a343-8f718a20da8d"/>
+					<reportElement key="textField-11" style="TNR8BOLD" x="351" y="-14" width="222" height="12" uuid="56302322-1d6a-4033-a343-8f718a20da8d"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1973,7 +1962,7 @@ $F{TI_RECORD_L2}.equals("A")
 					</graphicElement>
 				</line>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement key="textField-12" style="TNR8BOLD" x="286" y="17" width="61" height="12" uuid="ff441667-16cb-4317-ba8a-9e44c25fd558"/>
+					<reportElement key="textField-12" style="TNR8BOLD" x="286" y="1" width="61" height="12" uuid="ff441667-16cb-4317-ba8a-9e44c25fd558"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1983,14 +1972,8 @@ $F{TI_RECORD_L2}.equals("A")
 					<textElement textAlignment="Left" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA["QUALIFICA"]]></textFieldExpression>
 				</textField>
-				<line>
-					<reportElement key="line-126" x="284" y="32" width="292" height="1" uuid="1aa4f68a-ea6a-479b-bb9d-1a6eb2fc178e"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement key="textField-13" style="TNR8" x="352" y="17" width="222" height="12" uuid="65533eac-69d4-48af-9419-26b3cc9e43c1"/>
+					<reportElement key="textField-13" style="TNR8" x="352" y="1" width="222" height="12" uuid="65533eac-69d4-48af-9419-26b3cc9e43c1"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
