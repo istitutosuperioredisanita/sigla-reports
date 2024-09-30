@@ -6,7 +6,7 @@
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="220"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="772"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_prod.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NewSIGLACOLL"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
 	<style name="TNRG8" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
@@ -30,13 +30,13 @@
 	<style name="TNRGC16" fontName="Times New Roman" fontSize="16" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
 	<style name="TNRGC10" forecolor="#FFFFFF" fontName="Times New Roman" pdfFontName="Times-BoldItalic"/>
 	<parameter name="esercizio" class="java.lang.Integer" isForPrompting="false">
-		<defaultValueExpression><![CDATA[2023]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[2024]]></defaultValueExpression>
 	</parameter>
 	<parameter name="pg_autofattura" class="java.lang.Long" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new Long(89)]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Long(68)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="cd_uo_origine" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["000.017"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["000.000"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[select distinct ter.denominazione_sede as ds_cd_terzo, 
@@ -281,22 +281,28 @@ order by progressivo_riga]]>
 	<field name="FL_TERZO_ENTE" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="FL_TERZO_ENTE"/>
 	</field>
-	<field name="COLUMN_71" class="java.lang.String">
+	<field name="FL_EXTRA_UE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FL_EXTRA_UE"/>
+	</field>
+	<field name="FL_SAN_MARINO_CON_IVA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FL_SAN_MARINO_CON_IVA"/>
+	</field>
+	<field name="COLUMN_73" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_CDS"/>
 	</field>
-	<field name="COLUMN_72" class="java.lang.String">
+	<field name="COLUMN_74" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_UNITA_ORGANIZZATIVA"/>
 	</field>
-	<field name="COLUMN_73" class="java.math.BigDecimal">
+	<field name="COLUMN_75" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO"/>
 	</field>
-	<field name="COLUMN_74" class="java.math.BigDecimal">
+	<field name="COLUMN_76" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PG_FATTURA_PASSIVA"/>
 	</field>
 	<field name="PROGRESSIVO_RIGA" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PROGRESSIVO_RIGA"/>
 	</field>
-	<field name="COLUMN_76" class="java.lang.String">
+	<field name="COLUMN_78" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="TI_ISTITUZ_COMMERC"/>
 	</field>
 	<field name="CD_BENE_SERVIZIO" class="java.lang.String">
@@ -329,7 +335,7 @@ order by progressivo_riga]]>
 	<field name="IM_DIPONIBILE_NC" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="IM_DIPONIBILE_NC"/>
 	</field>
-	<field name="COLUMN_87" class="java.lang.String">
+	<field name="COLUMN_89" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="STATO_COFI"/>
 	</field>
 	<field name="DT_DA_COMPETENZA_COGE" class="java.sql.Timestamp">
@@ -365,19 +371,19 @@ order by progressivo_riga]]>
 	<field name="PG_ACCERTAMENTO_SCADENZARIO" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PG_ACCERTAMENTO_SCADENZARIO"/>
 	</field>
-	<field name="COLUMN_99" class="java.sql.Timestamp">
+	<field name="COLUMN_101" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="DACR"/>
 	</field>
-	<field name="COLUMN_100" class="java.lang.String">
+	<field name="COLUMN_102" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="UTCR"/>
 	</field>
-	<field name="COLUMN_101" class="java.sql.Timestamp">
+	<field name="COLUMN_103" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="DUVA"/>
 	</field>
-	<field name="COLUMN_102" class="java.lang.String">
+	<field name="COLUMN_104" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="UTUV"/>
 	</field>
-	<field name="COLUMN_103" class="java.math.BigDecimal">
+	<field name="COLUMN_105" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PG_VER_REC"/>
 	</field>
 	<field name="CD_CDS_ASSNCNA_FIN" class="java.lang.String">
@@ -434,7 +440,7 @@ order by progressivo_riga]]>
 	<field name="CD_MODALITA_PAG" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_MODALITA_PAG"/>
 	</field>
-	<field name="COLUMN_122" class="java.sql.Timestamp">
+	<field name="COLUMN_124" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="DATA_ESIGIBILITA_IVA"/>
 	</field>
 	<field name="PG_TROVATO" class="java.math.BigDecimal">
@@ -455,7 +461,7 @@ order by progressivo_riga]]>
 	<field name="NUMERO_AVVISO_PAGOPA" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="NUMERO_AVVISO_PAGOPA"/>
 	</field>
-	<field name="COLUMN_129" class="java.lang.String">
+	<field name="COLUMN_131" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_VOCE_IVA"/>
 	</field>
 	<field name="DS_VOCE_IVA" class="java.lang.String">
