@@ -491,7 +491,7 @@
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[$F{motiviIspettivi}.equals( "S" )]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="7" width="549" height="16" isRemoveLineWhenBlank="true" uuid="00504e92-6afa-477f-8143-cd4b40e37c2b"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="14" width="549" height="16" isRemoveLineWhenBlank="true" uuid="00504e92-6afa-477f-8143-cd4b40e37c2b"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
@@ -502,7 +502,7 @@
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[$F{motiviSediDisagiate}.equals( "S" )]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-7" width="549" height="30" isRemoveLineWhenBlank="true" uuid="3b95e761-db8e-407f-a261-b3c20a7c5c7c"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="30" isRemoveLineWhenBlank="true" uuid="3b95e761-db8e-407f-a261-b3c20a7c5c7c"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
@@ -512,7 +512,7 @@
 		<band height="60" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="0" y="-7" width="549" height="50" isRemoveLineWhenBlank="true" uuid="d0f6fd90-ab71-4185-98db-b1981544d0ce">
+				<reportElement x="0" y="5" width="549" height="50" isRemoveLineWhenBlank="true" uuid="d0f6fd90-ab71-4185-98db-b1981544d0ce">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle" markup="styled">

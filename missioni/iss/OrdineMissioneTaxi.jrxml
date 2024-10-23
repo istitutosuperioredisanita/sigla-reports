@@ -285,7 +285,7 @@
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[$F{mancanzaAssMezzi}.equals( "S" )]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="10" width="549" height="20" isRemoveLineWhenBlank="true" uuid="64eb113b-9095-44eb-8543-4ec214f632c3"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="20" isRemoveLineWhenBlank="true" uuid="64eb113b-9095-44eb-8543-4ec214f632c3"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
@@ -296,36 +296,39 @@
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[$F{mancanzaMezzi}.equals( "S" )]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="549" height="20" isRemoveLineWhenBlank="true" uuid="d299beae-b6d4-4d56-9baf-793ade76f772"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="20" isRemoveLineWhenBlank="true" uuid="d299beae-b6d4-4d56-9baf-793ade76f772"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Mancanza di mezzi pubblici per sospensione del servizio per sciopero, per eventi eccezionali opportunamente documentati;  "]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="45" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[$F{trasportoMateriali}.equals( "S" )]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="30" isRemoveLineWhenBlank="true" uuid="9f48d80d-22b2-4562-baf3-db0afd0d92df"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="20" isRemoveLineWhenBlank="true" uuid="d299beae-b6d4-4d56-9baf-793ade76f772"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Necessità di trasporto di materiale attinente al servizio avente dimensioni e peso rilevanti (solo se corredato da autorizzazione preventiva ed elenco dettagliato del materiale trasportato);  "]]></textFieldExpression>
 			</textField>
+		</band>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[$F{motiviHandicap}.equals( "S" )]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="20" width="549" height="20" isRemoveLineWhenBlank="true" uuid="b2ddc914-b7c4-4699-9157-9e3ae9e30653"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-10" width="549" height="20" isRemoveLineWhenBlank="true" uuid="d299beae-b6d4-4d56-9baf-793ade76f772"/>
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" - Personale con disabilità/portatore di handicap "]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="70" splitType="Stretch">
+		<band height="60" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<printWhenExpression><![CDATA[$F{motiviHandicap}.equals( "S" )]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="0" y="10" width="549" height="50" isRemoveLineWhenBlank="true" uuid="3f8668cc-8488-45bc-97e2-3fcc77fc433d">
+				<reportElement x="0" y="0" width="549" height="50" isRemoveLineWhenBlank="true" uuid="d0f6fd90-ab71-4185-98db-b1981544d0ce">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle" markup="styled">
