@@ -289,7 +289,7 @@
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[" - Mancanza assoluta di mezzi pubblici;  "]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" - Inadeguatezza dei mezzi ordinari di linea per raggiungere il luogo della missione nei tempi necessari;  "]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="30" splitType="Stretch">
@@ -300,7 +300,7 @@
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[" - Mancanza di mezzi pubblici per sospensione del servizio per sciopero, per eventi eccezionali opportunamente documentati;  "]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" - Mancanza assoluta di mezzi pubblici nel luogo di missione, anche per sospensione del servizio per sciopero e/o per eventi eccezionali opportunamente documentati;  "]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="30" splitType="Stretch">
