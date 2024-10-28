@@ -506,7 +506,7 @@
 				<textElement verticalAlignment="Middle" markup="styled">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[" - Nei casi di oggettive situazioni di disagio, quali sedi geografiche particolarmente disagiate o di difficoltà all’uso dei mezzi di trasporto ordinari"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" - Nei casi di accertata la convenienza economica per l’ISS, anche per lo svolgimento di funzioni diverse da quelle istituzionali relative a compiti ispettivi, di verifica e controllo, in caso di oggettive situazioni di disagio o di difficoltà all’uso dei mezzi di trasporto ordinari"]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="60" splitType="Stretch">
