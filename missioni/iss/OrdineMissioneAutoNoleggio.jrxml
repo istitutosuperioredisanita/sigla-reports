@@ -314,33 +314,26 @@
 		</band>
 		<band height="30">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<staticText>
-				<reportElement positionType="Float" x="1" y="0" width="552" height="28" uuid="37d2a17d-a043-4bbd-83be-112405a30d5e"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
-				</textElement>
-				<text><![CDATA[IMPORTANTE: verificare la gestione dell' ISS delle indennità chilometriche. ]]></text>
-			</staticText>
 		</band>
 		<band height="120" splitType="Prevent">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<rectangle radius="10">
-				<reportElement positionType="Float" x="0" y="14" width="554" height="93" uuid="5b5067b4-529c-4d27-8c67-6554ea194b5c"/>
+				<reportElement positionType="Float" x="0" y="-10" width="554" height="93" uuid="5b5067b4-529c-4d27-8c67-6554ea194b5c"/>
 			</rectangle>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="80" y="56" width="472" height="16" uuid="b346793f-9e29-46c9-ae69-7419936489dd"/>
+				<reportElement positionType="Float" x="80" y="32" width="472" height="16" uuid="b346793f-9e29-46c9-ae69-7419936489dd"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{destinazione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="199" y="19" width="161" height="17" uuid="8b2e7371-2f4a-49c8-bd94-068811cc7b2f"/>
+				<reportElement style="bold" x="199" y="-5" width="161" height="17" uuid="8b2e7371-2f4a-49c8-bd94-068811cc7b2f"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[DATI ORDINE DI MISSIONE]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="113" y="73" width="439" height="16" uuid="228c28d4-3699-44aa-82b9-e1be8cb6f2c3"/>
+				<reportElement x="113" y="49" width="439" height="16" uuid="228c28d4-3699-44aa-82b9-e1be8cb6f2c3"/>
 				<textElement textAlignment="Justified" markup="styled">
 					<font fontName="Times New Roman" isUnderline="false"/>
 					<paragraph lineSpacing="1_1_2"/>
@@ -348,39 +341,39 @@
 				<textFieldExpression><![CDATA[$F{oggetto}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="193" y="40" width="82" height="16" uuid="590bc4d5-985c-4b84-93b5-d4291c7140fe"/>
+				<reportElement positionType="Float" x="193" y="16" width="82" height="16" uuid="590bc4d5-985c-4b84-93b5-d4291c7140fe"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataInizioMissione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="bold" x="9" y="73" width="104" height="16" uuid="7da686be-a7dd-4326-932f-76ff17bedeed"/>
+				<reportElement style="bold" x="9" y="49" width="104" height="16" uuid="7da686be-a7dd-4326-932f-76ff17bedeed"/>
 				<text><![CDATA[Oggetto della Missione	]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="123" y="40" width="70" height="16" uuid="0b666a82-424c-4d64-ac50-ec5b0d628f95"/>
+				<reportElement x="123" y="16" width="70" height="16" uuid="0b666a82-424c-4d64-ac50-ec5b0d628f95"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Inizio Missione]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="356" y="40" width="78" height="16" uuid="888d5115-1735-4fd7-b668-f27304390651"/>
+				<reportElement positionType="Float" x="356" y="16" width="78" height="16" uuid="888d5115-1735-4fd7-b668-f27304390651"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataFineMissione}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="290" y="40" width="66" height="16" uuid="da5f50c5-68cc-4be1-bd44-93e1e83e4192"/>
+				<reportElement x="290" y="16" width="66" height="16" uuid="da5f50c5-68cc-4be1-bd44-93e1e83e4192"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Fine Missione]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="56" width="70" height="16" uuid="2925f1bc-1e54-4383-aa04-28ea4100472e"/>
+				<reportElement x="10" y="32" width="70" height="16" uuid="2925f1bc-1e54-4383-aa04-28ea4100472e"/>
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
