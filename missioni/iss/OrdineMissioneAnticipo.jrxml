@@ -168,7 +168,7 @@
 	<columnHeader>
 		<band height="402" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="-30" width="554" height="70" uuid="e5584a27-bedc-4ba1-87ae-9b7c6cf73a51"/>
+				<reportElement x="0" y="-30" width="554" height="110" uuid="e5584a27-bedc-4ba1-87ae-9b7c6cf73a51"/>
 			</rectangle>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement style="bold" positionType="Float" x="180" y="-19" width="182" height="20" uuid="620474b6-1aa0-43ec-81d8-31d33c24b565"/>
@@ -178,7 +178,10 @@
 				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Importo Anticipo €  </style>"+ $F{importoAnticipo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="11" y="13" width="542" height="20" uuid="38c47c71-b600-4496-ba44-5e6d1372a73c"/>
+				<reportElement x="6" y="10" width="542" height="50" uuid="38c47c71-b600-4496-ba44-5e6d1372a73c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
@@ -188,12 +191,16 @@
 				<reportElement x="1" y="90" width="554" height="79" uuid="47bb9ae0-dd67-413c-a2fb-fdaf2195bd29"/>
 			</rectangle>
 			<staticText>
-				<reportElement style="bold" x="200" y="98" width="161" height="17" uuid="0f1c2a64-f520-4bc7-8282-edbdd34c9233"/>
+				<reportElement style="bold" x="200" y="98" width="161" height="13" uuid="0f1c2a64-f520-4bc7-8282-edbdd34c9233">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[DATI ORDINE DI MISSIONE]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement x="10" y="115" width="543" height="20" uuid="ab6edefc-339a-4161-989a-1b243a126789"/>
+				<reportElement x="10" y="115" width="543" height="15" uuid="ab6edefc-339a-4161-989a-1b243a126789">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Justified" markup="styled">
 					<font fontName="Times New Roman" isUnderline="false"/>
 					<paragraph lineSpacing="1_1_2"/>
@@ -201,14 +208,14 @@
 				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Oggetto della Missione   </style>"+ $F{oggetto}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="11" y="139" width="350" height="20" uuid="6688f5cd-6cd4-4b71-8a77-95aa536fb7b8"/>
+				<reportElement positionType="Float" x="10" y="130" width="350" height="20" uuid="6688f5cd-6cd4-4b71-8a77-95aa536fb7b8"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Inizio Missione  </style>"+ $F{dataInizioMissione} + "       <style pdfFontName='Times-Bold' isBold='true'>Fine Missione  </style>"+  $F{dataFineMissione}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="371" y="139" width="182" height="20" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
+				<reportElement positionType="Float" x="370" y="130" width="182" height="20" uuid="1b50070c-cf85-43ca-bcfc-6af1290a4cf0"/>
 				<textElement markup="styled">
 					<font fontName="Times New Roman"/>
 				</textElement>
