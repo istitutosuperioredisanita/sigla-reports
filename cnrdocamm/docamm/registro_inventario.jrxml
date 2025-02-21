@@ -70,7 +70,7 @@ order by esercizio_amm ASC]]>
 		<defaultValueExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse("1970/01/01")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="data_a" class="java.util.Date" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse("2005/12/31")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse("2025/12/31")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="categoria" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[new String("*")]]></defaultValueExpression>
@@ -79,22 +79,22 @@ order by esercizio_amm ASC]]>
 		<defaultValueExpression><![CDATA[new String("*")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="da_codice_bene" class="java.lang.Long" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new Long("0")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Long("121738")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="a_codice_bene" class="java.lang.Long" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new Long("9999999999")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Long("121738")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="ds_tipo_carico_scarico" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[new String("*")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="fl_solo_totali" class="java.lang.Boolean" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new Boolean(true)]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Boolean(false)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="tipo" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new String("C")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new String("*")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\img\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DIR_SUBREPORT" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
@@ -193,7 +193,7 @@ order by cd_cds,cd_unita_organizzativa,categoria,cd_categoria_gruppo,nr_inventar
 	<field name="PERC_SUCCESSIVI" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="PERC_SUCCESSIVI"/>
 	</field>
-	<field name="NR_INVENTARIO" class="java.math.BigDecimal">
+	<field name="NR_INVENTARIO" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.label" value="NR_INVENTARIO"/>
 	</field>
 	<field name="TIPO" class="java.lang.String">
@@ -540,7 +540,7 @@ order by cd_cds,cd_unita_organizzativa,categoria,cd_categoria_gruppo,nr_inventar
 	<group name="ETICHETTA">
 		<groupExpression><![CDATA[$F{ETICHETTA}]]></groupExpression>
 		<groupHeader>
-			<band height="18" splitType="Stretch">
+			<band height="19" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!($P{fl_solo_totali}.booleanValue()||
 (($F{VALORE_INIZIALE}.add($F{VARIAZIONE_PIU}).subtract($F{VARIAZIONE_MENO})).compareTo(new BigDecimal(0)) == 0 &&
  $P{tipo}.equals("C"))
@@ -573,6 +573,32 @@ order by cd_cds,cd_unita_organizzativa,categoria,cd_categoria_gruppo,nr_inventar
 						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
 					</textElement>
 					<text><![CDATA[Etichetta]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement key="textField-1" x="454" y="4" width="169" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="5f7ba635-d967-497f-a4af-e1e2f034ae83"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Times New Roman" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{RIF_FATTURA}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-2" x="350" y="4" width="104" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="aab1a540-a3c7-4eff-bac7-be1a425d8f3b"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA[Estremi Fattura]]></text>
 				</staticText>
 			</band>
 		</groupHeader>
