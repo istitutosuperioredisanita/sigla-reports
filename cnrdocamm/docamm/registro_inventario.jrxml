@@ -598,6 +598,7 @@ order by cd_cds,cd_unita_organizzativa,categoria,cd_categoria_gruppo,nr_inventar
 					<textElement>
 						<font fontName="Times New Roman" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
 					</textElement>
+					<textFieldExpression><![CDATA[$F{RIF_FATTURA}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
