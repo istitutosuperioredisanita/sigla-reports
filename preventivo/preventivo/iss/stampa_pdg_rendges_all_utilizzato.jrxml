@@ -318,10 +318,7 @@ $F{TOT_ACC_IMP}.abs():BigDecimal.ZERO))]]></variableExpression>
 			</textField>
 		</band>
 		<band height="15">
-			<printWhenExpression><![CDATA["N".equals($F{ISCNR}) &&
-(($P{P_TIPO}.equals("E")&&$F{TOT_ACC_IMP}.compareTo(BigDecimal.ZERO)>0)||
- ($P{P_TIPO}.equals("S")&&$F{TOT_ACC_IMP}.compareTo(BigDecimal.ZERO)<0)
-    ? Boolean.FALSE:Boolean.FALSE)]]></printWhenExpression>
+			<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VERBI6" stretchType="RelativeToBandHeight" x="3" y="0" width="208" height="15" uuid="590eaccb-1aee-4ac6-be5f-42daf4742367"/>
 				<box leftPadding="4">
