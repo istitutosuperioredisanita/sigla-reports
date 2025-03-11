@@ -81,7 +81,7 @@ ORDER BY TIPO]]>
 		<variableExpression><![CDATA[$F{AVANZO_DEF}]]></variableExpression>
 	</variable>
 	<variable name="TOT_ACC_IMP" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{AVANZO_PREV}]]></variableExpression>
+		<variableExpression><![CDATA[$F{AVA_DIS_ANNO_PREC}]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
