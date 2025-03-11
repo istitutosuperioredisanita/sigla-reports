@@ -8351,7 +8351,7 @@ $V{SUM_CASSA_PREV_REPORT}.subtract($V{SUM_CASSA_RIS_PAG_REPORT}).abs():BigDecima
 			</textField>
 			<textField>
 				<reportElement x="420" y="22" width="100" height="18" uuid="4595ede7-91bf-4c03-86eb-21abadbc9075"/>
-				<textFieldExpression><![CDATA[$V{AVANZO_PREV}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{AVANZO_PREV}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
