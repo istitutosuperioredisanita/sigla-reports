@@ -956,7 +956,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 						<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
 					</subreportParameter>
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-					<returnValue subreportVariable="TOT_ACC_IMP" toVariable="TOT_ACC_IMP"/>
+					<returnValue subreportVariable="TOT_ACC__IMP" toVariable="TOT_ACC_IMP"/>
 					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "stampa_pdg_rendges_all_presunto.jasper"]]></subreportExpression>
 				</subreport>
 			</band>
