@@ -317,7 +317,7 @@ $F{TOT_ACC_IMP}.abs():BigDecimal.ZERO))]]></variableExpression>
 				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="15">
+		<band height="15" splitType="Stretch">
 			<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VERBI6" stretchType="RelativeToBandHeight" x="3" y="0" width="208" height="15" uuid="590eaccb-1aee-4ac6-be5f-42daf4742367"/>
