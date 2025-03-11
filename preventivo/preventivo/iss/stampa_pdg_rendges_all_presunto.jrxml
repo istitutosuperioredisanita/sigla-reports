@@ -43,7 +43,7 @@ WHERE ESERCIZIO=$P{P_ESERCIZIO}
 AND CD_CHIAVE_PRIMARIA='BILANCIO_ENTE'
 AND CD_CHIAVE_SECONDARIA='AVANZO_DEF'
 UNION ALL
-Select 'CAS', 0 AVANZO_PREV, 0 AVANZO_DEF, IM01 FONDO_CASSA_DEF, 'Y' ISCNR,0 AVA_DIS_ANNO_PREC
+Select 'CAS', 0 AVANZO_PREV, 0 AVANZO_DEF, IM01 FONDO_CASSA_DEF, 'Y' ISCNR,0 TOT_ACC_IMP
 FROM CONFIGURAZIONE_CNR
 WHERE ESERCIZIO= $P{P_ESERCIZIO}
 AND CD_CHIAVE_PRIMARIA='BILANCIO_ENTE'
@@ -81,7 +81,7 @@ ORDER BY TIPO]]>
 		<variableExpression><![CDATA[$F{AVANZO_DEF}]]></variableExpression>
 	</variable>
 	<variable name="TOT_ACC_IMP" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{AVA_DIS_ANNO_PREC}]]></variableExpression>
+		<variableExpression><![CDATA[$F{TOT_ACC_IMP}]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
@@ -362,7 +362,7 @@ $F{AVANZO_PREV}.subtract($F{AVANZO_DEF}):
 		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="2" splitType="Stretch">
+		<band height="1" splitType="Stretch">
 			<line>
 				<reportElement key="line-4" x="3" y="0" width="1168" height="1" uuid="919ff6f5-74de-48ca-a332-aaed18db51ca"/>
 			</line>
