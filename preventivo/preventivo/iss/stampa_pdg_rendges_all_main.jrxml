@@ -86,6 +86,9 @@
 	<parameter name="AVANZO_DEF" class="java.math.BigDecimal" isForPrompting="false">
 		<defaultValueExpression><![CDATA[new BigDecimal(0)]]></defaultValueExpression>
 	</parameter>
+	<parameter name="TOT_ACC_IMP" class="java.math.BigDecimal" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new BigDecimal(0)]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[SELECT tipo, peso_livello1, peso_livello2,
 cd_livello1, cd_livello2, cd_livello3, cd_livello4,
@@ -8342,7 +8345,7 @@ $V{SUM_CASSA_PREV_REPORT}.subtract($V{SUM_CASSA_RIS_PAG_REPORT}).abs():BigDecima
 				<textFieldExpression><![CDATA[$V{SUM_TOT_RES_TER_REPORT}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="219" y="22" width="88" height="18" uuid="05dfc3ca-ce9b-48ad-aa61-880c553f70d3"/>
+				<reportElement x="140" y="20" width="88" height="18" uuid="05dfc3ca-ce9b-48ad-aa61-880c553f70d3"/>
 				<textFieldExpression><![CDATA[$V{TOT_ACC_IMP}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -8352,6 +8355,10 @@ $V{SUM_CASSA_PREV_REPORT}.subtract($V{SUM_CASSA_RIS_PAG_REPORT}).abs():BigDecima
 			<textField>
 				<reportElement x="420" y="22" width="100" height="18" uuid="4595ede7-91bf-4c03-86eb-21abadbc9075"/>
 				<textFieldExpression><![CDATA[$P{AVANZO_PREV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="219" y="22" width="88" height="18" uuid="ff00e0d6-a8b4-44fb-be48-c43c4beda432"/>
+				<textFieldExpression><![CDATA[$P{TOT_ACC_IMP}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
