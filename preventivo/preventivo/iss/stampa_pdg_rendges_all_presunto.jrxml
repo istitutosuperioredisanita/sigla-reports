@@ -82,7 +82,6 @@ ORDER BY TIPO]]>
 	</variable>
 	<variable name="TOT_ACC_IMP" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{AVA_DIS_ANNO_PREC}]]></variableExpression>
-		<initialValueExpression><![CDATA[0]]></initialValueExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
@@ -363,14 +362,10 @@ $F{AVANZO_PREV}.subtract($F{AVANZO_DEF}):
 		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="30" splitType="Stretch">
+		<band height="2" splitType="Stretch">
 			<line>
 				<reportElement key="line-4" x="3" y="0" width="1168" height="1" uuid="919ff6f5-74de-48ca-a332-aaed18db51ca"/>
 			</line>
-			<textField>
-				<reportElement x="110" y="3" width="100" height="20" uuid="394b5a78-b82d-45d3-839a-c4c28fd3ec84"/>
-				<textFieldExpression><![CDATA[$V{TOT_ACC_IMP}]]></textFieldExpression>
-			</textField>
 		</band>
 	</pageFooter>
 	<summary>
