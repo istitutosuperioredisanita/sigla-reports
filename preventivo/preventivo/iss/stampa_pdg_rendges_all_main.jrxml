@@ -898,7 +898,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 			<band splitType="Stretch">
 				<subreport isUsingCache="true">
 					<reportElement x="0" y="0" width="1175" height="0" uuid="d24b12f1-137c-452f-afbf-ad5a3531c10a">
-						<printWhenExpression><![CDATA[new String("Stampa").equals("NO")]]></printWhenExpression>
+						<printWhenExpression><![CDATA["Stampa".equals("NO")]]></printWhenExpression>
 					</reportElement>
 					<subreportParameter name="ROTTURA">
 						<subreportParameterExpression><![CDATA[$P{ROTTURA}]]></subreportParameterExpression>
