@@ -118,7 +118,7 @@ ORDER BY TIPO]]>
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA["AVA".equals($F{TIPO}) ? "Avanzo di amministrazione" : "Fondo iniziale di cassa"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["AVA".equals($F{TIPO}) ? "Avanzo di amministrazione utilizzato" : "Fondo iniziale di cassa"]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField-3" style="VER6" positionType="Float" stretchType="RelativeToBandHeight" x="211" y="0" width="48" height="13" uuid="cb4a7c09-1914-489c-801a-71488a012b51"/>
