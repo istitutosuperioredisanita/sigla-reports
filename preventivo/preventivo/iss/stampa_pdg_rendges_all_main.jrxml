@@ -634,7 +634,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<variableExpression><![CDATA[$F{RIM_RIS_PAG}]]></variableExpression>
 	</variable>
 	<variable name="SUM_TOT_ACC_IMP_REPORT" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{TOT_ACC_IMP}==null?BigDecimal.ZERO:$F{TOT_ACC_IMP}]]></variableExpression>
+		<variableExpression><![CDATA[$F{TOT_ACC_IMP}]]></variableExpression>
 	</variable>
 	<variable name="SUM_DIFF_COMP_REPORT" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{DIFF_COMP}]]></variableExpression>
@@ -956,6 +956,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 						<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
 					</subreportParameter>
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<returnValue subreportVariable="TOT_ACC_IMP" toVariable="TOT_ACC_IMP"/>
 					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "stampa_pdg_rendges_all_presunto.jasper"]]></subreportExpression>
 				</subreport>
 			</band>
