@@ -8095,7 +8095,7 @@ $F{CD_LIVELLO9}]]></textFieldExpression>
 		<band/>
 	</pageFooter>
 	<summary>
-		<band height="15">
+		<band height="43">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField-163" style="VERB6" x="3" y="0" width="208" height="15" uuid="cc56273e-8ba9-40e4-a1fe-0683ac64b80e"/>
 				<box rightPadding="4">
@@ -8340,6 +8340,10 @@ $V{SUM_CASSA_PREV_REPORT}.subtract($V{SUM_CASSA_RIS_PAG_REPORT}).abs():BigDecima
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{SUM_TOT_RES_TER_REPORT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="219" y="22" width="88" height="18" uuid="05dfc3ca-ce9b-48ad-aa61-880c553f70d3"/>
+				<textFieldExpression><![CDATA[$V{TOT_ACC_IMP}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
