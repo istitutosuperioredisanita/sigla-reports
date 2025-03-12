@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="stampa_pdg_rendges_all_main" pageWidth="1190" pageHeight="842" orientation="Landscape" columnWidth="1190" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d4347ecd-098e-4dfb-8874-83201d295146">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="ISO-8859-1"/>
@@ -688,7 +688,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupExpression><![CDATA["SOMMARIO"]]></groupExpression>
 		<groupFooter>
 			<band height="15">
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-163" style="VERB6" x="3" y="0" width="208" height="15" uuid="06c4d692-5848-400f-8907-55469c049e78"/>
 					<box rightPadding="4">
 						<leftPen lineWidth="0.5"/>
@@ -1013,14 +1013,14 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupHeader>
 			<band height="11">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(1)) > 0 && $F{CD_LIVELLO1} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="11" uuid="200498b3-c8f9-46e6-a98d-ad4047043e67"/>
 					<box>
 						<leftPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB8" x="56" y="0" width="155" height="11" uuid="e3c65d6a-8fa2-4dc1-abbd-c2d0161083cd">
 						<printWhenExpression><![CDATA["SCI".equals( $P{P_TIPO_AGGREGAZIONE} )]]></printWhenExpression>
 					</reportElement>
@@ -1037,7 +1037,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 ("FIN".equals( $P{P_TIPO_AGGREGAZIONE} )?$F{CD_LIVELLO1}+" - ":"")
 +$F{DS_LIVELLO1}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" x="56" y="0" width="155" height="11" uuid="41295d00-e1c6-4986-b3b0-9618ab4e42d6">
 						<printWhenExpression><![CDATA[!"SCI".equals( $P{P_TIPO_AGGREGAZIONE} )]]></printWhenExpression>
 					</reportElement>
@@ -1259,7 +1259,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupFooter>
 			<band height="15">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(1)) > 0 && $F{CD_LIVELLO1} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-36" style="VERB6" x="3" y="0" width="207" height="15" uuid="1d53c48b-b784-4dd3-88f1-570bf5751413"/>
 					<box rightPadding="4">
 						<leftPen lineWidth="0.5"/>
@@ -1758,14 +1758,14 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupHeader>
 			<band height="11">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(2)) > 0 && $F{CD_LIVELLO2} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="11" uuid="8266b55c-6c65-47ee-82cc-816aff529030"/>
 					<box>
 						<leftPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB7" x="56" y="0" width="155" height="11" uuid="178255da-99e0-4f46-9833-092c44abfa93">
 						<printWhenExpression><![CDATA["SCI".equals( $P{P_TIPO_AGGREGAZIONE} )]]></printWhenExpression>
 					</reportElement>
@@ -1782,7 +1782,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 ("FIN".equals( $P{P_TIPO_AGGREGAZIONE} )?$F{CD_LIVELLO1}+"."+$F{CD_LIVELLO2}+" - ":"")
 +$F{DS_LIVELLO2}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" x="56" y="0" width="155" height="11" uuid="9b8241ff-2123-46e2-9149-ce44a53da719">
 						<printWhenExpression><![CDATA[!"SCI".equals( $P{P_TIPO_AGGREGAZIONE} )]]></printWhenExpression>
 					</reportElement>
@@ -2004,7 +2004,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupFooter>
 			<band height="15">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(2)) > 0 && $F{CD_LIVELLO2} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-36" style="VERB6" x="3" y="0" width="207" height="15" uuid="3d15a4ab-6be5-489d-a710-c97ea0ce46b2"/>
 					<box rightPadding="4">
 						<leftPen lineWidth="0.5"/>
@@ -2503,14 +2503,14 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupHeader>
 			<band height="11">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(3)) > 0 && $F{CD_LIVELLO3} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="11" uuid="15f64230-1d81-4412-bc9c-87d9dcc05a20"/>
 					<box>
 						<leftPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" x="56" y="0" width="155" height="11" uuid="682d1bbc-8f49-4bcd-9bdb-aa4905e46856"/>
 					<box topPadding="2" bottomPadding="2">
 						<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -2729,7 +2729,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupFooter>
 			<band height="15">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(3)) > 0 && $F{CD_LIVELLO3} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-36" style="VERB6" x="3" y="0" width="207" height="15" uuid="803f83e1-0c27-4c7e-a398-7950154888af"/>
 					<box rightPadding="4">
 						<leftPen lineWidth="0.5"/>
@@ -2948,14 +2948,14 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupHeader>
 			<band height="11">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(4)) > 0 && $F{CD_LIVELLO4} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="11" uuid="04819aa2-e424-4c9f-8fc7-0c91a18f3e71"/>
 					<box>
 						<leftPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" x="56" y="0" width="155" height="11" uuid="afac48c9-78f3-47ff-8596-c7624cddb28e"/>
 					<box topPadding="2" bottomPadding="2">
 						<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -3174,7 +3174,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupFooter>
 			<band height="15">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(4)) > 0 && $F{CD_LIVELLO4} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-36" style="VERB6" x="3" y="0" width="207" height="15" uuid="9cd6d51b-554f-4e35-a741-0f075b923f8c"/>
 					<box rightPadding="4">
 						<leftPen lineWidth="0.5"/>
@@ -3394,14 +3394,14 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupHeader>
 			<band height="11">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(5)) > 0 && $F{CD_LIVELLO5} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="11" uuid="666ae43e-07bb-44d9-a1ac-5a7dd1ec4fb2"/>
 					<box>
 						<leftPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" x="56" y="0" width="155" height="11" uuid="bf4a54e1-1f80-4db7-af03-7ecf5a22b857"/>
 					<box topPadding="2" bottomPadding="2">
 						<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -3620,7 +3620,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupFooter>
 			<band height="15">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(5)) > 0 && $F{CD_LIVELLO5} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-36" style="VERB6" x="3" y="0" width="207" height="15" uuid="7df2d805-e6f6-4b59-aa46-fd80a3311210"/>
 					<box rightPadding="4">
 						<leftPen lineWidth="0.5"/>
@@ -3840,14 +3840,14 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupHeader>
 			<band height="11">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(6)) > 0 && $F{CD_LIVELLO6} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="11" uuid="8efbaa00-ba49-4773-8540-a92cb0fa15c5"/>
 					<box>
 						<leftPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" x="56" y="0" width="155" height="11" uuid="f855b5a3-c84f-4f1c-a94c-58a87eb9e2dc"/>
 					<box topPadding="2" bottomPadding="2">
 						<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -4066,7 +4066,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupFooter>
 			<band height="15">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(6)) > 0 && $F{CD_LIVELLO6} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-36" style="VERB6" x="3" y="0" width="207" height="15" uuid="49271cd0-2be1-4231-b560-827b9fb0bc47"/>
 					<box rightPadding="4">
 						<leftPen lineWidth="0.5"/>
@@ -4286,14 +4286,14 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupHeader>
 			<band height="11">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(7)) > 0 && $F{CD_LIVELLO7} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="11" uuid="6567db05-dc6a-40e7-bd5a-e3074be2bd18"/>
 					<box>
 						<leftPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" x="56" y="0" width="155" height="11" uuid="24a84e19-39e8-4213-8a1c-6cd5d71c75e2"/>
 					<box topPadding="2" bottomPadding="2">
 						<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -4513,7 +4513,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupFooter>
 			<band height="15">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(7)) > 0 && $F{CD_LIVELLO7} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-36" style="VERB6" x="3" y="0" width="207" height="15" uuid="bd4caaeb-104c-41fe-95b7-0314e849e11d"/>
 					<box rightPadding="4">
 						<leftPen lineWidth="0.5"/>
@@ -4734,14 +4734,14 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupHeader>
 			<band height="11">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(8)) > 0 && $F{CD_LIVELLO8} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="11" uuid="87108e17-c01d-45b7-8292-db170a869cbd"/>
 					<box>
 						<leftPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VERB6" x="56" y="0" width="155" height="11" uuid="545a9c29-2887-484e-a39f-80c581fba331"/>
 					<box topPadding="2" bottomPadding="2">
 						<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -4961,7 +4961,7 @@ ORDER BY peso_livello1, peso_livello2, CD_LIVELLO1, CD_LIVELLO2, CD_LIVELLO3, CD
 		<groupFooter>
 			<band height="15">
 				<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(8)) > 0 && $F{CD_LIVELLO8} != null)]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-36" style="VERB6" x="3" y="0" width="207" height="15" uuid="92cbcd56-2930-443b-9fa0-51adc3ebbc47"/>
 					<box rightPadding="4">
 						<leftPen lineWidth="0.5"/>
@@ -5900,7 +5900,7 @@ definitiva]]></text>
 		<band height="13" splitType="Stretch">
 			<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(1)) == 0
     && $F{CD_LIVELLO1} != null && $F{CD_LIVELLO2} == null)]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-8" style="VER6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="13" uuid="4f2e8920-19e1-4fea-b146-c4efbc35e833"/>
 				<box>
 					<leftPen lineWidth="0.5"/>
@@ -5908,7 +5908,7 @@ definitiva]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{CD_LIVELLO1}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VER6" x="55" y="0" width="156" height="13" uuid="d2482754-d334-4dea-a9b3-3194848122a5"/>
 				<box topPadding="2" bottomPadding="2">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -6144,7 +6144,7 @@ definitiva]]></text>
 			<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(2)) == 0
     && $F{CD_LIVELLO2} != null && $F{CD_LIVELLO3} == null
 )]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-8" style="VER6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="13" uuid="703ee67c-b258-4ba8-86e3-c02d8118159e"/>
 				<box>
 					<leftPen lineWidth="0.5"/>
@@ -6153,7 +6153,7 @@ definitiva]]></text>
 				<textFieldExpression><![CDATA[("FIN".equals( $P{P_TIPO_AGGREGAZIONE} )?$F{CD_LIVELLO1}+".":"")+
 $F{CD_LIVELLO2}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VER6" x="55" y="0" width="156" height="13" uuid="3dd2de33-1765-4189-be67-d8a68298d357"/>
 				<box topPadding="2" bottomPadding="2">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -6388,7 +6388,7 @@ $F{CD_LIVELLO2}]]></textFieldExpression>
 		<band height="13">
 			<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(3)) == 0 &&
     $F{CD_LIVELLO3} != null && $F{CD_LIVELLO4} == null)]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-8" style="VER6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="13" uuid="d622d539-6477-4709-88d2-ec8e7338073c"/>
 				<box>
 					<leftPen lineWidth="0.5"/>
@@ -6397,7 +6397,7 @@ $F{CD_LIVELLO2}]]></textFieldExpression>
 				<textFieldExpression><![CDATA[("FIN".equals( $P{P_TIPO_AGGREGAZIONE} )?$F{CD_LIVELLO1}+"."+$F{CD_LIVELLO2}+".":"")+
 $F{CD_LIVELLO3}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VER6" x="55" y="0" width="156" height="13" uuid="c66f4842-38e3-4285-8ef3-8c9d78177e3f"/>
 				<box topPadding="2" bottomPadding="2">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -6632,7 +6632,7 @@ $F{CD_LIVELLO3}]]></textFieldExpression>
 		<band height="13">
 			<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(4)) == 0
     && $F{CD_LIVELLO4} != null && $F{CD_LIVELLO5} == null)]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-8" style="VER6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="13" uuid="2f0d1b17-4671-4386-b3fa-5df39ee94dec"/>
 				<box>
 					<leftPen lineWidth="0.5"/>
@@ -6641,7 +6641,7 @@ $F{CD_LIVELLO3}]]></textFieldExpression>
 				<textFieldExpression><![CDATA[("FIN".equals( $P{P_TIPO_AGGREGAZIONE} )?$F{CD_LIVELLO1}+"."+$F{CD_LIVELLO2}+"."+$F{CD_LIVELLO3}+".":"")+
 $F{CD_LIVELLO4}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VER6" x="55" y="0" width="156" height="13" uuid="06990514-7681-4e35-9a51-7d2335cf0dcc"/>
 				<box topPadding="2" bottomPadding="2">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -6876,7 +6876,7 @@ $F{CD_LIVELLO4}]]></textFieldExpression>
 		<band height="13">
 			<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(5)) == 0
     && $F{CD_LIVELLO5} != null && $F{CD_LIVELLO6} == null)]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-8" style="VER6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="13" uuid="c917bb08-983e-4867-bbee-eac996cb47b1"/>
 				<box>
 					<leftPen lineWidth="0.5"/>
@@ -6885,7 +6885,7 @@ $F{CD_LIVELLO4}]]></textFieldExpression>
 				<textFieldExpression><![CDATA[("FIN".equals( $P{P_TIPO_AGGREGAZIONE} )?$F{CD_LIVELLO1}+"."+$F{CD_LIVELLO2}+"."+$F{CD_LIVELLO3}+"."+$F{CD_LIVELLO4}+".":"")+
 $F{CD_LIVELLO5}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VER6" x="55" y="0" width="156" height="13" uuid="4c50c689-e471-4f5d-af0b-962eff500565"/>
 				<box topPadding="2" bottomPadding="2">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -7120,7 +7120,7 @@ $F{CD_LIVELLO5}]]></textFieldExpression>
 		<band height="13">
 			<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(6)) == 0
     && $F{CD_LIVELLO6} != null && $F{CD_LIVELLO7} == null)]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-8" style="VER6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="13" uuid="b13d7b0e-8677-46a9-acb7-2bd87a628fc5"/>
 				<box>
 					<leftPen lineWidth="0.5"/>
@@ -7129,7 +7129,7 @@ $F{CD_LIVELLO5}]]></textFieldExpression>
 				<textFieldExpression><![CDATA[("FIN".equals( $P{P_TIPO_AGGREGAZIONE} )?$F{CD_LIVELLO1}+"."+$F{CD_LIVELLO2}+"."+$F{CD_LIVELLO3}+"."+$F{CD_LIVELLO4}+"."+$F{CD_LIVELLO5}+".":"")+
 $F{CD_LIVELLO6}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VER6" x="55" y="0" width="156" height="13" uuid="c33eb060-377f-4830-ab48-d8e3fe046881"/>
 				<box topPadding="2" bottomPadding="2">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -7363,7 +7363,7 @@ $F{CD_LIVELLO6}]]></textFieldExpression>
 		</band>
 		<band height="13">
 			<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(7)) == 0 && $F{CD_LIVELLO7} != null)]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-8" style="VER6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="13" uuid="f3d0e020-3bca-42a8-843a-f21990aceea8"/>
 				<box>
 					<leftPen lineWidth="0.5"/>
@@ -7372,7 +7372,7 @@ $F{CD_LIVELLO6}]]></textFieldExpression>
 				<textFieldExpression><![CDATA[("FIN".equals( $P{P_TIPO_AGGREGAZIONE} )?$F{CD_LIVELLO1}+"."+$F{CD_LIVELLO2}+"."+$F{CD_LIVELLO3}+"."+$F{CD_LIVELLO4}+"."+$F{CD_LIVELLO5}+"."+$F{CD_LIVELLO6}+".":"")+
 $F{CD_LIVELLO7}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VER6" x="55" y="0" width="156" height="13" uuid="938fdff5-d044-4dc3-acd6-d687ac934122"/>
 				<box topPadding="2" bottomPadding="2">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -7606,7 +7606,7 @@ $F{CD_LIVELLO7}]]></textFieldExpression>
 		</band>
 		<band height="13">
 			<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(8)) == 0 && $F{CD_LIVELLO8} != null)]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-8" style="VER6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="13" uuid="e1dfc0d0-dc05-4202-afba-84621bc79699"/>
 				<box>
 					<leftPen lineWidth="0.5"/>
@@ -7615,7 +7615,7 @@ $F{CD_LIVELLO7}]]></textFieldExpression>
 				<textFieldExpression><![CDATA[("FIN".equals( $P{P_TIPO_AGGREGAZIONE} )?$F{CD_LIVELLO1}+"."+$F{CD_LIVELLO2}+"."+$F{CD_LIVELLO3}+"."+$F{CD_LIVELLO4}+"."+$F{CD_LIVELLO5}+"."+$F{CD_LIVELLO6}+"."+$F{CD_LIVELLO7}+".":"")+
 $F{CD_LIVELLO8}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VER6" x="55" y="0" width="156" height="13" uuid="f78efd9e-4e63-460d-a2e5-0a1c0175891b"/>
 				<box topPadding="2" bottomPadding="2">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -7849,7 +7849,7 @@ $F{CD_LIVELLO8}]]></textFieldExpression>
 		</band>
 		<band height="13">
 			<printWhenExpression><![CDATA[Boolean.valueOf($P{P_NUM_LIV}.compareTo(new Integer(9)) == 0 && $F{CD_LIVELLO9} != null)]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-8" style="VER6" stretchType="RelativeToBandHeight" x="3" y="0" width="52" height="13" uuid="b2ba9bba-4821-497c-b819-15b1f8e6517d"/>
 				<box>
 					<leftPen lineWidth="0.5"/>
@@ -7858,7 +7858,7 @@ $F{CD_LIVELLO8}]]></textFieldExpression>
 				<textFieldExpression><![CDATA[("FIN".equals( $P{P_TIPO_AGGREGAZIONE} )?$F{CD_LIVELLO1}+"."+$F{CD_LIVELLO2}+"."+$F{CD_LIVELLO3}+"."+$F{CD_LIVELLO4}+"."+$F{CD_LIVELLO5}+"."+$F{CD_LIVELLO6}+"."+$F{CD_LIVELLO7}+"."+$F{CD_LIVELLO8}+".":"")+
 $F{CD_LIVELLO9}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VER6" x="55" y="0" width="156" height="13" uuid="b0566ecc-126f-4ec9-8da5-22cce4bf65d1"/>
 				<box topPadding="2" bottomPadding="2">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -8095,8 +8095,8 @@ $F{CD_LIVELLO9}]]></textFieldExpression>
 		<band/>
 	</pageFooter>
 	<summary>
-		<band height="21">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+		<band height="70">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-163" style="VERB6" x="3" y="0" width="208" height="15" uuid="cc56273e-8ba9-40e4-a1fe-0683ac64b80e"/>
 				<box rightPadding="4">
 					<leftPen lineWidth="0.5"/>
@@ -8340,6 +8340,18 @@ $V{SUM_CASSA_PREV_REPORT}.subtract($V{SUM_CASSA_RIS_PAG_REPORT}).abs():BigDecima
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{SUM_TOT_RES_TER_REPORT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="30" width="100" height="30" uuid="8f6a949c-ceec-4a94-b6a8-93af58525d4e"/>
+				<textFieldExpression><![CDATA[$V{SUM_DIFF_COMP_REPORT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="30" width="100" height="30" uuid="89b16581-7f87-44e5-a384-96842739302d"/>
+				<textFieldExpression><![CDATA[$V{SUM_TOT_ACC_IMP_REPORT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="377" y="30" width="100" height="30" uuid="1ad7ba2f-2967-43ef-aab8-ba2522f90d76"/>
+				<textFieldExpression><![CDATA[$V{TOT_ACC_IMP}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
