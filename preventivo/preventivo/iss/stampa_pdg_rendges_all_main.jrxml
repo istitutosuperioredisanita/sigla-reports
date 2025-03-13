@@ -8203,7 +8203,7 @@ $F{CD_LIVELLO9}]]></textFieldExpression>
 					<rightPen lineWidth="0.5" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E")?$V{SUM_ASSESTATO_REPORT}.add($P{AVANZO_DEF}):$V{SUM_ASSESTATO_REPORT}.subtract( $V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP}))compareTo(BigDecimal.ZERO)<0?$V{SUM_ASSESTATO_REPORT}.subtract($V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP})).abs():BigDecimal.ZERO.abs()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E")?$V{SUM_ASSESTATO_REPORT}.add($P{AVANZO_DEF}):$V{SUM_ASSESTATO_REPORT}.subtract( $V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP})).compareTo(BigDecimal.ZERO)<0?$V{SUM_ASSESTATO_REPORT}.subtract($V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP})).abs():BigDecimal.ZERO.abs()]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="false">
 				<reportElement key="textField-169" style="VERB6" positionType="Float" stretchType="RelativeToBandHeight" x="595" y="0" width="48" height="15" uuid="980bc0de-b0d0-477f-b177-6b2a22314699"/>
