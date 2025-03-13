@@ -8095,7 +8095,7 @@ $F{CD_LIVELLO9}]]></textFieldExpression>
 		<band/>
 	</pageFooter>
 	<summary>
-		<band height="25">
+		<band height="81">
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-163" style="VERB6" x="3" y="0" width="208" height="15" uuid="cc56273e-8ba9-40e4-a1fe-0683ac64b80e"/>
 				<box rightPadding="4">
@@ -8205,7 +8205,7 @@ $F{CD_LIVELLO9}]]></textFieldExpression>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP}).subtract($P{P_TIPO}.equals("E")
 ?$V{SUM_ASSESTATO_REPORT}.add($P{AVANZO_DEF})
-:$V{SUM_ASSESTATO_REPORT}).compareTo(BigDecimal.ZERO)<0?
+:$V{SUM_ASSESTATO_REPORT}).compareTo(BigDecimal.ZERO)>0?
 $V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP}).subtract($P{P_TIPO}.equals("E")?$V{SUM_ASSESTATO_REPORT}.add($P{AVANZO_DEF})
 :$V{SUM_ASSESTATO_REPORT}).abs():BigDecimal.ZERO.abs()]]></textFieldExpression>
 			</textField>
@@ -8343,6 +8343,19 @@ $V{SUM_CASSA_PREV_REPORT}.subtract($V{SUM_CASSA_RIS_PAG_REPORT}).abs():BigDecima
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{SUM_TOT_RES_TER_REPORT}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement key="textField-169" style="VERB6" positionType="Float" stretchType="RelativeToBandHeight" x="307" y="40" width="48" height="15" uuid="06ce1f94-7e13-46a3-a16c-c141a1a205fd"/>
+				<box topPadding="0" rightPadding="4">
+					<topPen lineWidth="0.5" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP}).subtract($P{P_TIPO}.equals("E")
+?$V{SUM_ASSESTATO_REPORT}.add($P{AVANZO_DEF})
+:$V{SUM_ASSESTATO_REPORT})]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
