@@ -8218,8 +8218,11 @@ $V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP}).subtract($P{P_TIPO}.equals("E")?
 					<rightPen lineWidth="0.5" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{SUM_DIFF_COMP_REPORT}.subtract($V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP})).compareTo(BigDecimal.ZERO)>0?
-$V{SUM_DIFF_COMP_REPORT}.subtract($V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP})).abs():BigDecimal.ZERO.abs()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP}).subtract($P{P_TIPO}.equals("E")
+?$V{SUM_ASSESTATO_REPORT}.add($P{AVANZO_DEF})
+:$V{SUM_ASSESTATO_REPORT}).compareTo(BigDecimal.ZERO)<0?
+$V{SUM_TOT_ACC_IMP_REPORT}.add($V{TOT_ACC_IMP}).subtract($P{P_TIPO}.equals("E")?$V{SUM_ASSESTATO_REPORT}.add($P{AVANZO_DEF})
+:$V{SUM_ASSESTATO_REPORT}).abs():BigDecimal.ZERO.abs()]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="false">
 				<reportElement key="textField-164" style="VERB6" positionType="Float" stretchType="RelativeToBandHeight" x="643" y="0" width="48" height="15" uuid="f57515fc-783c-4ccb-9865-737244e2c47e"/>
