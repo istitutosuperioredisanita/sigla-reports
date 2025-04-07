@@ -32,6 +32,9 @@
 	<parameter name="dettaglioConti" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Y"]]></defaultValueExpression>
 	</parameter>
+	<parameter name="CD_TIPO_BILANCIO" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["CIVILISTICO"]]></defaultValueExpression>
+	</parameter>		
 	<queryString>
 		<![CDATA[Select 1 from dual]]>
 	</queryString>
