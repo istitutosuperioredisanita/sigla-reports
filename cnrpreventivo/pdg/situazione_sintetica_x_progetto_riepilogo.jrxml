@@ -169,7 +169,7 @@ AND   TIPO_RECORD = 'PRINC']]>
 					<rightPen lineWidth="0.0" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA["Area Progettuale: "+$P{P_CD_PROGLIV1}+" - "+$P{P_DS_PROGLIV1}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Ciao Area Progettuale: "+$P{P_CD_PROGLIV1}+" - "+$P{P_DS_PROGLIV1}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-5" style="VERB8" x="10" y="40" width="810" height="15" uuid="6b34fb36-e604-4565-98d5-a71012730bac"/>
