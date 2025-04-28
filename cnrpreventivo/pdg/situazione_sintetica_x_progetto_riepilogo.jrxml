@@ -125,7 +125,7 @@ AND   TIPO_RECORD = 'PRINC']]>
  $P{P_DS_RESPONSABILE_GAE}:"")]]></textFieldExpression>
 			</textField>
 			<rectangle>
-				<reportElement stretchType="ElementGroupHeight" x="4" y="21" width="828" height="110" uuid="87d0b5f6-0c29-40f3-bf08-7fd29c13690f"/>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="4" y="21" width="828" height="110" uuid="87d0b5f6-0c29-40f3-bf08-7fd29c13690f"/>
 			</rectangle>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-36" style="VERB8" x="163" y="77" width="65" height="30" uuid="d75b7398-1065-4b75-95d3-19489caf53b7"/>
