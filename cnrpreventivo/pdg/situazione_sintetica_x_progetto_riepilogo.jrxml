@@ -191,7 +191,7 @@ FROM TMP_STAMPA_SITUAZIONE_PROGETTI]]>
 				<textElement textAlignment="Center" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA["ENTRATA"]]></textFieldExpression>
 			</textField>
-			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="false">
+			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField-64" style="VERB8" x="163" y="107" width="65" height="16" uuid="cd8ff332-da48-4bc3-af39-8fd875c54127"/>
 				<box topPadding="4" rightPadding="4">
 					<topPen lineWidth="0.5" lineColor="#000000"/>
@@ -202,7 +202,7 @@ FROM TMP_STAMPA_SITUAZIONE_PROGETTI]]>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{STANZIAMENTO_ETR}.add( $F{VARIAZIONI_ETR})]]></textFieldExpression>
 			</textField>
-			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="false">
+			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField-65" style="VERB8" x="228" y="107" width="65" height="16" uuid="d7d99d48-6eef-444f-bade-b3996b5cf7af"/>
 				<box topPadding="4" rightPadding="4">
 					<topPen lineWidth="0.5" lineColor="#000000"/>
@@ -213,7 +213,7 @@ FROM TMP_STAMPA_SITUAZIONE_PROGETTI]]>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{ACCERTAMENTI}]]></textFieldExpression>
 			</textField>
-			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="false">
+			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField-66" style="VERB8" x="293" y="107" width="65" height="16" uuid="f8e0cc88-d8fa-448a-aa08-1463bb3a8975"/>
 				<box topPadding="4" rightPadding="4">
 					<topPen lineWidth="0.5" lineColor="#000000"/>
@@ -250,7 +250,7 @@ FROM TMP_STAMPA_SITUAZIONE_PROGETTI]]>
 				<textElement textAlignment="Center" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA["SPESA"]]></textFieldExpression>
 			</textField>
-			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="false">
+			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField-65" style="VERB8" x="596" y="107" width="65" height="15" uuid="59e2599f-795d-4476-a786-b53ce9bbacbd"/>
 				<box topPadding="4" rightPadding="4">
 					<topPen lineWidth="0.5" lineColor="#000000"/>
@@ -261,7 +261,7 @@ FROM TMP_STAMPA_SITUAZIONE_PROGETTI]]>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{IMPEGNI}]]></textFieldExpression>
 			</textField>
-			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="false">
+			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField-64" style="VERB8" x="531" y="107" width="65" height="15" uuid="334ac308-3043-436a-8b95-d98b65022167"/>
 				<box topPadding="4" rightPadding="4">
 					<topPen lineWidth="0.5" lineColor="#000000"/>
@@ -272,7 +272,7 @@ FROM TMP_STAMPA_SITUAZIONE_PROGETTI]]>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{STANZIAMENTO_SPE}.add( $F{VARIAZIONI_SPE})]]></textFieldExpression>
 			</textField>
-			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="false">
+			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField-66" style="VERB8" x="661" y="107" width="65" height="15" uuid="58439fad-a1cf-4b0a-b98a-4cd8ccfc926f"/>
 				<box topPadding="4" rightPadding="4">
 					<topPen lineWidth="0.5" lineColor="#000000"/>
@@ -294,7 +294,7 @@ FROM TMP_STAMPA_SITUAZIONE_PROGETTI]]>
 				<textElement textAlignment="Center" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA["Decentrate"]]></textFieldExpression>
 			</textField>
-			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="false">
+			<textField evaluationTime="Report" pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField-64" style="VERB8" x="466" y="107" width="65" height="15" uuid="7b727a71-91d7-433e-a8e4-edaa32a92c63">
 					<printWhenExpression><![CDATA[$P{P_PRINT_PIANO_ECO}.equals( true )]]></printWhenExpression>
 				</reportElement>
