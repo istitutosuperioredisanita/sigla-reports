@@ -120,9 +120,9 @@ AND   TIPO_RECORD = 'PRINC']]>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA["PROSPETTO RIEPILOGATIVO PROGETTO "+$P{P_CD_PROGLIV2}+
-($P{P_GAE}!=null&&!"*".equals($P{P_GAE})?" - GAE: "+$P{P_GAE}:
- $P{P_RESPONSABILE_GAE}!=null?" - RESPONSABILE: "+$P{P_RESPONSABILE_GAE}+" - "+
- $P{P_DS_RESPONSABILE_GAE}:"")]]></textFieldExpression>
+				($P{P_GAE}!=null&&!"*".equals($P{P_GAE})?" - GAE: "+$P{P_GAE}:
+				 $P{P_RESPONSABILE_GAE}!=null && !$P{P_RESPONSABILE_GAE}.equals(-1)?" - RESPONSABILE: "+$P{P_RESPONSABILE_GAE}+" - "+
+				 $P{P_DS_RESPONSABILE_GAE}:"")]]></textFieldExpression>
 			</textField>
 			<rectangle>
 				<reportElement stretchType="ElementGroupHeight" x="4" y="21" width="828" height="110" uuid="87d0b5f6-0c29-40f3-bf08-7fd29c13690f"/>

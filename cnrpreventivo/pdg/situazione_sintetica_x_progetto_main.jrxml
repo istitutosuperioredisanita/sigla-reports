@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="situazione_sintetica_x_progetto_main" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e2b12cdf-7e2e-475f-8db5-046d497e7fd2">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="ISO-8859-1"/>
@@ -124,10 +125,9 @@ AND TIPO_FASE='X']]>
 				<reportElement x="6" y="106" width="830" height="20" uuid="f720df77-d4e6-480d-ab89-f1f10e5d4cf7"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[("".equals($P{P_GAE}) || "*".equals($P{P_GAE}))?"TUTTE LE GAE"+
-($P{P_RESPONSABILE_GAE}!=null?" DEL RESPONSABILE: "+$P{P_RESPONSABILE_GAE}+" - "+
- $P{P_DS_RESPONSABILE_GAE}:"")
-:"GAE: "+$P{P_GAE}
-]]></textFieldExpression>
+				($P{P_RESPONSABILE_GAE}!=null && !$P{P_RESPONSABILE_GAE}.equals(-1)?" DEL RESPONSABILE: "+$P{P_RESPONSABILE_GAE}+" - "+
+				 $P{P_DS_RESPONSABILE_GAE}:"")
+				:"GAE: "+$P{P_GAE}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="6" y="128" width="830" height="20" uuid="26d9f49c-7ed1-4f43-873c-e2665aaaa956"/>
@@ -162,9 +162,9 @@ AND TIPO_FASE='X']]>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA["SITUAZIONE CONTABILE PROGETTO: "+$F{CD_PROGLIV2}+
-($P{P_GAE}!=null&&!"*".equals($P{P_GAE})?" - GAE: "+$P{P_GAE}:
- $P{P_RESPONSABILE_GAE}!=null?" - RESPONSABILE: "+$P{P_RESPONSABILE_GAE}+" - "+
- $P{P_DS_RESPONSABILE_GAE}:"")]]></textFieldExpression>
+				($P{P_GAE}!=null&&!"*".equals($P{P_GAE})?" - GAE: "+$P{P_GAE}:
+				 $P{P_RESPONSABILE_GAE}!=null && !$P{P_RESPONSABILE_GAE}.equals(-1)?" - RESPONSABILE: "+$P{P_RESPONSABILE_GAE}+" - "+
+				 $P{P_DS_RESPONSABILE_GAE}:"")]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField-184" style="VERB8" x="54" y="22" width="768" height="15" uuid="3f0ca22e-d402-4bc6-9130-cc0e9bba9170"/>
