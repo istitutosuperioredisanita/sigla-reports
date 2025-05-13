@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="stampa_pdg_rendges_all_presunto" pageWidth="1190" pageHeight="842" orientation="Landscape" columnWidth="1190" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f86d11ee-c14c-4bcc-9921-6d60cb6e7308">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -97,7 +97,7 @@ ORDER BY TIPO]]>
 	</columnHeader>
 	<detail>
 		<band height="13" splitType="Stretch">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-7" style="VER6" stretchType="RelativeToBandHeight" x="3" y="0" width="53" height="13" uuid="b3fd1c2b-2c89-46c3-8f65-400d199c85e8"/>
 				<box leftPadding="4">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -109,7 +109,7 @@ ORDER BY TIPO]]>
 					<font isItalic="true"/>
 				</textElement>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-2" style="VERB6" x="56" y="0" width="155" height="13" uuid="3943bc60-ff4e-4027-ab1f-80937ea27391"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -158,7 +158,7 @@ $F{AVANZO_DEF}.subtract($F{AVANZO_PREV}):
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA["AVA".equals($F{TIPO}) ?
-($F{AVANZO_DEF}.compareTo($F{AVANZO_PREV})<=0?
+($F{AVANZO_DEF}.compareTo($F{AVANZO_PREV})<0?
 $F{AVANZO_PREV}.subtract($F{AVANZO_DEF}):
 "---"):
 "---"]]></textFieldExpression>
