@@ -575,7 +575,7 @@
 					<printWhenExpression><![CDATA[!$F{missioneGratuita}.equals("Sì")]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[SI AUTORIZZA L’IMPEGNO DI SPESA:]]></text>
+				<text><![CDATA[VISTA L’AUTORIZZAZIONE SI PROCEDE ALL’IMPEGNO DI SPESA:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="bold" x="203" y="-28" width="160" height="19" uuid="8b67d6e3-7380-436c-b0ea-c4b1ba5a482b">
