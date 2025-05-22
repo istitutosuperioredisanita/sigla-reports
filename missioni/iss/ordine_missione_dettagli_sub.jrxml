@@ -23,9 +23,9 @@
 		<band splitType="Stretch"/>
 	</background>
 	<detail>
-		<band height="33">
+		<band height="22">
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="395" height="33" backcolor="#FFFFFF" uuid="1092c234-69f7-4b43-9837-f9926fd6defa"/>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="395" height="22" backcolor="#FFFFFF" uuid="1092c234-69f7-4b43-9837-f9926fd6defa"/>
 				<box>
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -40,7 +40,7 @@
 				<textFieldExpression><![CDATA[$F{dsSpesa}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement mode="Opaque" x="395" y="0" width="129" height="33" backcolor="#FFFFFF" uuid="a07362ba-ef03-469b-a1b1-7853e8310265"/>
+				<reportElement mode="Opaque" x="395" y="0" width="129" height="22" backcolor="#FFFFFF" uuid="a07362ba-ef03-469b-a1b1-7853e8310265"/>
 				<box>
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>

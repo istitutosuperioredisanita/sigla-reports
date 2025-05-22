@@ -563,7 +563,7 @@
 		<band height="86" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<frame>
-				<reportElement stretchType="RelativeToBandHeight" x="16" y="0" width="524" height="57" uuid="72a1d452-0a74-4a47-9aeb-7d8c207e229e"/>
+				<reportElement stretchType="RelativeToBandHeight" x="16" y="0" width="524" height="69" uuid="72a1d452-0a74-4a47-9aeb-7d8c207e229e"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -606,7 +606,7 @@
 				<subreportExpression><![CDATA[$P{DIR_SUBREPORT} + "ordine_missione_dettagli_sub.jasper"]]></subreportExpression>
 			</subreport>
 			<staticText>
-				<reportElement style="bold" positionType="Float" mode="Transparent" x="294" y="38" width="117" height="19" uuid="d1630ffb-e811-4a53-9688-f185a55d02cc"/>
+				<reportElement style="bold" positionType="Float" mode="Transparent" x="294" y="50" width="117" height="19" uuid="d1630ffb-e811-4a53-9688-f185a55d02cc"/>
 				<box>
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -620,7 +620,7 @@
 				<text><![CDATA[Totale Missione]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="411" y="38" width="129" height="19" uuid="ace2e811-e5af-4de0-a1d1-ee9dc0398572"/>
+				<reportElement positionType="Float" x="411" y="50" width="129" height="19" uuid="ace2e811-e5af-4de0-a1d1-ee9dc0398572"/>
 				<box>
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
