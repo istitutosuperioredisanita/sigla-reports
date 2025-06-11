@@ -6,7 +6,6 @@
 	<property name="ireport.zoom" value="1.5394743546921235"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -224,15 +223,6 @@ WHERE
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "rendiconto_progetto_detail.jasper"]]></subreportExpression>
 			</subreport>
-			<line>
-				<reportElement x="0" y="23" width="842" height="1" forecolor="#000000" uuid="6d03df67-a172-42e7-a12b-c5250feeadb3">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineStyle="Solid"/>
-				</graphicElement>
-			</line>
 		</band>
 	</detail>
 	<pageFooter>
