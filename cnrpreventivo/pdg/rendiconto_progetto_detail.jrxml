@@ -283,10 +283,10 @@ ORDER BY
 	<variable name="DISP_IMPEGNO_FIN" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[$V{ASSESTATO_FIN}.subtract($F{IMPACC_FIN})]]></variableExpression>
 	</variable>
-	<variable name="SUM_DISP_IMPEGNO_FIN_VOCE_ECONOMICA" class="java.math.BigDecimal" calculation="Sum">
+	<variable name="SUM_DISP_IMPEGNO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$V{DISP_IMPEGNO_FIN}]]></variableExpression>
 	</variable>
-	<variable name="SUM_DISP_IMPEGNO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
+	<variable name="SUM_DISP_IMPEGNO_FIN_VOCE_ECONOMICA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
 		<variableExpression><![CDATA[$V{DISP_IMPEGNO_FIN}]]></variableExpression>
 	</variable>
 	<variable name="DISPONIBILITA" class="java.math.BigDecimal">
@@ -295,14 +295,14 @@ ORDER BY
 	<variable name="SUM_DISPONIBILITA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$V{DISPONIBILITA}]]></variableExpression>
 	</variable>
-	<variable name="DISP_EFFETTIVA_RECORD" class="java.math.BigDecimal">
+	<variable name="DISP_EFFETTIVA" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[($F{IMPORTO_FIN} != null ? $F{IMPORTO_FIN} : BigDecimal.ZERO).subtract($F{IMP_SCAD} != null ? $F{IMP_SCAD} : BigDecimal.ZERO)]]></variableExpression>
 	</variable>
 	<variable name="SUM_DISP_EFFETTIVA_GRUPPO" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISP_EFFETTIVA_RECORD}]]></variableExpression>
+		<variableExpression><![CDATA[$V{DISP_EFFETTIVA}]]></variableExpression>
 	</variable>
 	<variable name="SUM_DISP_EFFETTIVA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISP_EFFETTIVA_RECORD}]]></variableExpression>
+		<variableExpression><![CDATA[$V{DISP_EFFETTIVA}]]></variableExpression>
 	</variable>
 	<group name="VocePianoGroup" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{CD_VOCE_PIANO}]]></groupExpression>
@@ -331,51 +331,92 @@ ORDER BY
 	<group name="ImpegnoGroup">
 		<groupExpression><![CDATA[$F{PG_OBBL}]]></groupExpression>
 		<groupHeader>
-			<band height="16">
+			<band height="18">
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="225" y="2" width="45" height="12" uuid="d6e53066-e3d8-4f18-97c7-248e354070a9"/>
-					<textElement textAlignment="Center" verticalAlignment="Top"/>
+					<reportElement style="HeaderText" x="225" y="6" width="45" height="12" uuid="d6e53066-e3d8-4f18-97c7-248e354070a9">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{PG_OBBL}]]></textFieldExpression>
 				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="270" y="2" width="70" height="12" uuid="9422a16d-3e5f-410a-8149-16e789f280a9"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<reportElement style="HeaderText" x="270" y="6" width="70" height="12" uuid="9422a16d-3e5f-410a-8149-16e789f280a9">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{IMPORTO_FIN}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="726" y="2" width="70" height="12" uuid="f0d2c94a-81e5-4a57-b08e-5b1b11f3d64c"/>
-					<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeaderText" x="739" y="6" width="56" height="12" uuid="f0d2c94a-81e5-4a57-b08e-5b1b11f3d64c">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></textFieldExpression>
 				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="340" y="2" width="70" height="12" uuid="1c841499-5683-4a1d-a2f0-9af65b217154"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<reportElement style="HeaderText" x="340" y="6" width="70" height="12" uuid="1c841499-5683-4a1d-a2f0-9af65b217154">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$V{DISPONIBILITA}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="410" y="2" width="30" height="12" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd"/>
-					<textElement textAlignment="Center" verticalAlignment="Top"/>
+					<reportElement style="HeaderText" x="410" y="6" width="30" height="12" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{NUM_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="440" y="2" width="60" height="12" uuid="88219c6e-1d54-4462-8566-267922d51174"/>
-					<textElement textAlignment="Center" verticalAlignment="Top"/>
+					<reportElement style="HeaderText" x="440" y="6" width="60" height="12" uuid="88219c6e-1d54-4462-8566-267922d51174">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{DATA_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="500" y="2" width="155" height="12" uuid="37d7a46f-e3c3-42e7-9a8c-283152a5c43d"/>
-					<textElement textAlignment="Center" verticalAlignment="Top"/>
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="500" y="6" width="155" height="12" uuid="37d7a46f-e3c3-42e7-9a8c-283152a5c43d">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{DS_OBBL}]]></textFieldExpression>
 				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="655" y="2" width="70" height="12" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a"/>
-					<textElement textAlignment="Center" verticalAlignment="Top"/>
+					<reportElement style="HeaderText" x="655" y="6" width="84" height="12" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{IMP_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="180" y="2" width="45" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c"/>
-					<textElement textAlignment="Center" verticalAlignment="Top"/>
+					<reportElement style="HeaderText" x="180" y="6" width="45" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{ESERCIZIO}]]></textFieldExpression>
+				</textField>
+				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
+					<reportElement style="HeaderText" x="100" y="6" width="80" height="12" uuid="8a4e4405-73ec-4e74-ba67-79fed0c5bf09"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{DISP_EFFETTIVA}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -384,125 +425,128 @@ ORDER BY
 		<band height="40" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<staticText>
-				<reportElement style="HeaderLabel" x="10" y="0" width="78" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Progetto]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="10" y="12" width="78" height="12" uuid="071597a7-59b4-47fe-8c10-863e49e2956c"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_CD_PROGETTO}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="93" y="0" width="1" height="24" uuid="08994a4c-5895-47d0-8f96-3c5e8072120e"/>
-			</line>
-			<staticText>
-				<reportElement style="HeaderLabel" x="100" y="0" width="90" height="12" uuid="93f54245-8167-4315-a22a-1c66280ca51a"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Responsabile]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="100" y="12" width="90" height="12" uuid="45465e52-f472-4680-9286-9a2500057863"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_RESPONSABILE}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="195" y="0" width="1" height="24" uuid="d939c4d9-93e1-45bd-96a8-2081971d5337"/>
-			</line>
-			<staticText>
-				<reportElement style="HeaderLabel" x="202" y="0" width="68" height="12" uuid="09d3b361-9d22-4933-8228-54c311655075"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Data Inizio:]]></text>
-			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="202" y="12" width="68" height="12" uuid="e7b233a7-e034-443e-a19f-14194098ec2c"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_DT_INIZIO}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="275" y="0" width="1" height="24" uuid="1c3a7267-3316-433b-871d-f8f2e20d5924"/>
-			</line>
-			<staticText>
-				<reportElement style="HeaderLabel" x="282" y="0" width="58" height="12" uuid="dd9914c6-2c67-4934-8b64-07d0d0f5e128"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Data scad.]]></text>
-			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="282" y="12" width="58" height="12" uuid="f98e6f1f-d748-4796-b333-d9d10e6a8e52"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_DT_FINE}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="345" y="0" width="1" height="24" uuid="b19c2896-1c21-4d39-a99f-3e74be121855"/>
-			</line>
-			<staticText>
-				<reportElement style="HeaderLabel" x="352" y="0" width="78" height="12" uuid="40a7cb5d-c622-4c6e-81f1-b9b56f5a34e8"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Data Proroga]]></text>
-			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="352" y="12" width="78" height="12" uuid="e05de83a-493d-4c03-b0e6-51d020d52a44"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_DT_PROROGA}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="435" y="0" width="1" height="24" uuid="d6152a5c-7431-4829-9e79-5e76a165f12e"/>
-			</line>
-			<staticText>
-				<reportElement style="HeaderLabel" x="442" y="0" width="88" height="12" uuid="9891848f-9a4f-4ee0-85f2-4f30a4b0e5c5"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Importo Finanziato]]></text>
-			</staticText>
-			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="442" y="12" width="88" height="12" uuid="625b066f-87d2-4e35-a185-c1e6268e6f66"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_IM_FINANZIATO}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="535" y="0" width="1" height="24" uuid="70b02f83-d965-4d1a-ad68-fc62198031e4"/>
-			</line>
-			<staticText>
-				<reportElement style="HeaderLabel" x="542" y="0" width="50" height="12" uuid="8851f50a-47ec-449e-a0e4-f37478d10b06"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[CUP]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="542" y="12" width="50" height="12" uuid="cc79e7f8-348f-43d9-9e8c-55c325f6063b"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_CUP}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="597" y="0" width="1" height="24" uuid="30303c72-9694-47ef-a0f1-0d3550e58836"/>
-			</line>
-			<staticText>
-				<reportElement style="HeaderLabel" x="604" y="0" width="166" height="12" uuid="329c2948-e815-4687-9588-e921d431057e"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Descrizione]]></text>
-			</staticText>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="604" y="12" width="166" height="23" uuid="2a5da54f-1701-443b-8a8b-302388c64483">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_DS_PROGETTO}]]></textFieldExpression>
-			</textField>
 			<line>
 				<reportElement x="0" y="39" width="802" height="1" uuid="898e1f57-881c-468b-9e45-e63d41ef71cb"/>
 			</line>
-			<staticText>
-				<reportElement style="HeaderLabel" x="780" y="0" width="30" height="12" uuid="9fcd11c9-d703-4d8d-adb3-e7f6d28779c1"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Ente]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="780" y="12" width="30" height="12" uuid="a75b0d63-9c80-4479-a69d-05dc68cd4f10"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_UO_ENTE}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="775" y="0" width="1" height="24" uuid="f77a44ac-259b-4a85-aa3f-5e7a0ee60030"/>
-			</line>
+			<frame>
+				<reportElement stretchType="ElementGroupHeight" x="8" y="8" width="800" height="24" uuid="839d0f85-fcfe-4f1a-8be9-5d09b0f56210"/>
+				<staticText>
+					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="0" y="0" width="78" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Progetto]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="0" y="12" width="78" height="12" uuid="071597a7-59b4-47fe-8c10-863e49e2956c"/>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[$P{P_CD_PROGETTO}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement stretchType="ElementGroupHeight" x="83" y="0" width="1" height="24" uuid="08994a4c-5895-47d0-8f96-3c5e8072120e"/>
+				</line>
+				<staticText>
+					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="90" y="0" width="90" height="12" uuid="93f54245-8167-4315-a22a-1c66280ca51a"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Responsabile]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="90" y="12" width="90" height="12" uuid="45465e52-f472-4680-9286-9a2500057863"/>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[$P{P_RESPONSABILE}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement stretchType="ElementGroupHeight" x="185" y="0" width="1" height="24" uuid="d939c4d9-93e1-45bd-96a8-2081971d5337"/>
+				</line>
+				<staticText>
+					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="192" y="0" width="68" height="12" uuid="09d3b361-9d22-4933-8228-54c311655075"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Data Inizio:]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="192" y="12" width="68" height="12" uuid="e7b233a7-e034-443e-a19f-14194098ec2c"/>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[$P{P_DT_INIZIO}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement stretchType="ElementGroupHeight" x="265" y="0" width="1" height="24" uuid="1c3a7267-3316-433b-871d-f8f2e20d5924"/>
+				</line>
+				<staticText>
+					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="272" y="0" width="58" height="12" uuid="dd9914c6-2c67-4934-8b64-07d0d0f5e128"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Data scad.]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="272" y="12" width="58" height="12" uuid="f98e6f1f-d748-4796-b333-d9d10e6a8e52"/>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[$P{P_DT_FINE}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement stretchType="ElementGroupHeight" x="335" y="0" width="1" height="24" uuid="b19c2896-1c21-4d39-a99f-3e74be121855"/>
+				</line>
+				<staticText>
+					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="342" y="0" width="78" height="12" uuid="40a7cb5d-c622-4c6e-81f1-b9b56f5a34e8"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Data Proroga]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="342" y="12" width="78" height="12" uuid="e05de83a-493d-4c03-b0e6-51d020d52a44"/>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[$P{P_DT_PROROGA}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement stretchType="ElementGroupHeight" x="425" y="0" width="1" height="24" uuid="d6152a5c-7431-4829-9e79-5e76a165f12e"/>
+				</line>
+				<staticText>
+					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="432" y="0" width="88" height="12" uuid="9891848f-9a4f-4ee0-85f2-4f30a4b0e5c5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Importo Finanziato]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" pattern="€ #,##0.00" isBlankWhenNull="true">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="432" y="12" width="88" height="12" uuid="625b066f-87d2-4e35-a185-c1e6268e6f66"/>
+					<textElement textAlignment="Left" verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[$P{P_IM_FINANZIATO}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement stretchType="ElementGroupHeight" x="525" y="0" width="1" height="24" uuid="70b02f83-d965-4d1a-ad68-fc62198031e4"/>
+				</line>
+				<staticText>
+					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="532" y="0" width="50" height="12" uuid="8851f50a-47ec-449e-a0e4-f37478d10b06"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[CUP]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="532" y="12" width="50" height="12" uuid="cc79e7f8-348f-43d9-9e8c-55c325f6063b"/>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[$P{P_CUP}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement stretchType="ElementGroupHeight" x="587" y="0" width="1" height="24" uuid="30303c72-9694-47ef-a0f1-0d3550e58836"/>
+				</line>
+				<staticText>
+					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="594" y="0" width="166" height="12" uuid="329c2948-e815-4687-9588-e921d431057e"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Descrizione]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="594" y="12" width="166" height="12" uuid="2a5da54f-1701-443b-8a8b-302388c64483">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{P_DS_PROGETTO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="770" y="0" width="30" height="12" uuid="9fcd11c9-d703-4d8d-adb3-e7f6d28779c1"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Ente]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="770" y="12" width="30" height="12" uuid="a75b0d63-9c80-4479-a69d-05dc68cd4f10"/>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[$P{P_UO_ENTE}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement stretchType="ElementGroupHeight" x="765" y="0" width="1" height="24" uuid="f77a44ac-259b-4a85-aa3f-5e7a0ee60030"/>
+				</line>
+			</frame>
 		</band>
 	</title>
 	<columnHeader>
@@ -553,12 +597,12 @@ ORDER BY
 				<text><![CDATA[Descrizione]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="655" y="0" width="70" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f"/>
+				<reportElement style="HeaderLabel" x="655" y="0" width="84" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Importo Scad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="725" y="0" width="71" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000022"/>
+				<reportElement style="HeaderLabel" x="739" y="0" width="57" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000022"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Voce di bil.]]></text>
 			</staticText>
@@ -597,12 +641,12 @@ ORDER BY
 				<textFieldExpression><![CDATA[$V{SUM_IMP_SCAD_GEN}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="HeaderLabel" x="100" y="8" width="70" height="12" uuid="98dedf38-8d2a-447e-a11b-b6c9487a7f07"/>
+				<reportElement style="HeaderLabel" x="100" y="8" width="80" height="12" uuid="98dedf38-8d2a-447e-a11b-b6c9487a7f07"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tot. disp. eff.]]></text>
 			</staticText>
 			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="100" y="20" width="70" height="12" uuid="c504b52d-7e6d-439a-a377-c9782ffbb685"/>
+				<reportElement style="HeaderText" x="100" y="20" width="80" height="12" uuid="c504b52d-7e6d-439a-a377-c9782ffbb685"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{SUM_DISP_EFFETTIVA_TOTALE}]]></textFieldExpression>
 			</textField>
