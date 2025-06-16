@@ -73,6 +73,7 @@
     b.im_finanziato,
     b.im_cofinanziato,
     resp_t.DENOMINAZIONE_SEDE AS NOME_RESPONSABILE,
+    a.note,
     (SELECT MAX(con_cup.CD_CUP)
      FROM CONTRATTO con_cup
      WHERE con_cup.PG_PROGETTO = a.PG_PROGETTO) AS CODICE_CUP_PROGETTO,
@@ -125,6 +126,7 @@ WHERE
 	<field name="TOTALE_REVERSALI" class="java.math.BigDecimal"/>
 	<field name="CODICE_CUP_PROGETTO" class="java.lang.String"/>
 	<field name="NOME_RESPONSABILE" class="java.lang.String"/>
+	<field name="NOTE" class="java.lang.String"/>
 	<pageHeader>
 		<band height="83">
 			<image isUsingCache="true">
@@ -219,6 +221,9 @@ WHERE
 				</subreportParameter>
 				<subreportParameter name="P_IMPORTO_TOTALE_PROGETTO">
 					<subreportParameterExpression><![CDATA[$F{IM_FINANZIATO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_NOTE">
+					<subreportParameterExpression><![CDATA[$F{NOTE}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "rendiconto_progetto_detail.jasper"]]></subreportExpression>

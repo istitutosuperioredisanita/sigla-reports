@@ -5,12 +5,14 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLATEST-CONN.xml"/>
 	<style name="HeaderLabel" fontName="Times New Roman" fontSize="8" isBold="true"/>
 	<style name="HeaderText" fontName="Times New Roman" fontSize="8"/>
 	<style name="ProjectTitleText" fontName="Times New Roman" fontSize="9" isBold="true"/>
 	<parameter name="P_CD_PROGETTO" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="P_DS_PROGETTO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_DS_PROGETTO" class="java.lang.String"/>
 	<parameter name="P_RESPONSABILE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_NOTE" class="java.lang.String"/>
 	<parameter name="P_CUP" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="P_IMPORTO_TOTALE_PROGETTO" class="java.math.BigDecimal" isForPrompting="false"/>
 	<parameter name="P_DT_INIZIO" class="java.sql.Timestamp" isForPrompting="false"/>
@@ -70,7 +72,15 @@
     a.imp_scad,
     a.PG_OBBL_SCAD AS NUM_SCAD,
     a.DATA_SCAD,
-    a.IM_ASS_DOC_AMM
+    a.IM_ASS_DOC_AMM,
+    a.IMP_ASS_DOC_CONT,
+    a.ds_scad,
+    a.creditore,
+    a.ESERCIZIO_OBBL,
+    a.ESERCIZIO_ORIGINALE_OBBL,
+    a.CDS_OBBL,
+    obl.CD_TIPO_DOCUMENTO_CONT,
+    obl.RIPORTATO
 FROM (
     SELECT
         CASE
@@ -92,6 +102,12 @@ FROM (
         x.pg_obbl_scad,
         x.DATA_SCAD,
         x.IM_ASS_DOC_AMM,
+        x.IMP_ASS_DOC_CONT,     
+        x.ds_scad,
+        x.creditore,
+        x.ESERCIZIO_OBBL ,
+        x.ESERCIZIO_ORIGINALE_OBBL ,
+        x.CDS_OBBL ,
         SUM(x.importo_fin) AS importo_fin,
         SUM(x.stanziamento_fin) AS stanziamento_fin,
         SUM(x.variapiu_fin) AS variapiu_fin,
@@ -142,11 +158,16 @@ FROM (
             NULL AS pg_obbl_scad,
             0 AS imp_scad,
             NULL AS DATA_SCAD,
-            0 AS IM_ASS_DOC_AMM
+            0 AS IM_ASS_DOC_AMM,
+            0 AS IMP_ASS_DOC_CONT,           
+            NULL AS ds_scad,
+            NULL AS creditore,
+            0 AS ESERCIZIO_OBBL ,
+            0 AS ESERCIZIO_ORIGINALE_OBBL ,
+            NULL AS CDS_OBBL 
         FROM progetto_piano_economico a
-
+        WHERE a.pg_progetto = $P{P_PG_PROGETTO}
         UNION ALL
-
         SELECT
             a.pg_progetto,
             a.esercizio_piano,
@@ -179,7 +200,13 @@ FROM (
             f.pg_obbl_scad,
             f.im_voce AS imp_scad,
             TO_CHAR(f.DATA_SCAD, 'DD-MM-YYYY') AS DATA_SCAD,
-            f.IM_ASS_DOC_AMM
+            f.IM_ASS_DOC_AMM,
+            f.IMP_ASS_DOC_CONT,
+            f.ds_scad,
+            f.creditore,
+            f.ESERCIZIO AS ESERCIZIO_OBBL,
+            f.ESERCIZIO_ORIGINALE AS ESERCIZIO_ORIGINALE_OBBL,
+            f.CDS AS CDS_OBBL
         FROM ass_progetto_piaeco_voce a
         JOIN V_SALDI_GAE_VOCE_PROGETTO b ON
             a.pg_progetto = b.pg_progetto AND
@@ -195,7 +222,6 @@ FROM (
             f.ESERCIZIO_ORIGINALE = a.esercizio_voce
         WHERE a.pg_progetto = $P{P_PG_PROGETTO}
     ) x
-    WHERE x.pg_progetto = $P{P_PG_PROGETTO}
     GROUP BY
         x.pg_progetto,
         x.esercizio,
@@ -211,7 +237,13 @@ FROM (
         x.DS_OBBL,
         x.pg_obbl_scad,
         x.DATA_SCAD,
-        x.IM_ASS_DOC_AMM
+        x.IM_ASS_DOC_AMM,
+        x.IMP_ASS_DOC_CONT,     
+        x.ds_scad,
+        x.creditore,
+        x.ESERCIZIO_OBBL,
+        x.ESERCIZIO_ORIGINALE_OBBL,
+        x.CDS_OBBL
 ) a
 JOIN voce_piano_economico_prg b ON
     b.cd_unita_organizzativa = a.cd_unita_piano AND
@@ -225,49 +257,174 @@ LEFT JOIN elemento_voce e ON
     a.ti_appartenenza = e.ti_appartenenza AND
     a.ti_gestione = e.ti_gestione AND
     a.cd_elemento_voce = e.cd_elemento_voce
+LEFT JOIN OBBLIGAZIONE obl ON
+    a.ESERCIZIO_OBBL = obl.ESERCIZIO AND
+    a.ESERCIZIO_ORIGINALE_OBBL = obl.ESERCIZIO_ORIGINALE AND
+    a.CDS_OBBL = obl.CD_CDS AND
+    a.PG_OBBL = obl.PG_OBBLIGAZIONE
+LEFT JOIN OBBLIGAZIONE_SCADENZARIO os ON
+    obl.ESERCIZIO = os.ESERCIZIO AND
+    obl.ESERCIZIO_ORIGINALE = os.ESERCIZIO_ORIGINALE AND
+    obl.CD_CDS = os.CD_CDS AND
+    obl.PG_OBBLIGAZIONE = os.PG_OBBLIGAZIONE AND
+    a.PG_OBBL_SCAD = os.PG_OBBLIGAZIONE_SCADENZARIO
+LEFT JOIN OBBLIGAZIONE_SCAD_VOCE osv ON
+    os.CD_CDS = osv.CD_CDS AND
+    os.ESERCIZIO = osv.ESERCIZIO AND
+    os.ESERCIZIO_ORIGINALE = osv.ESERCIZIO_ORIGINALE AND
+    os.PG_OBBLIGAZIONE = osv.PG_OBBLIGAZIONE AND
+    os.PG_OBBLIGAZIONE_SCADENZARIO = osv.PG_OBBLIGAZIONE_SCADENZARIO
+WHERE
+   (a.IMP_ASS_DOC_CONT > 0 AND obl.RIPORTATO = 'N')
+   OR a.importo_fin > 0
 ORDER BY
     a.cd_voce_piano,
     a.esercizio,
-    a.pg_obbl,
+    a.ESERCIZIO_OBBL,
+    a.ESERCIZIO_ORIGINALE_OBBL,
+    a.CDS_OBBL,
+    a.PG_OBBL,
     a.PG_OBBL_SCAD]]>
 	</queryString>
-	<field name="ORDINE_ESERCIZIO" class="java.math.BigDecimal"/>
-	<field name="PG_PROGETTO" class="java.math.BigDecimal"/>
-	<field name="ESERCIZIO" class="java.lang.Integer"/>
-	<field name="CD_UNITA_PIANO" class="java.lang.String"/>
-	<field name="CD_VOCE_PIANO" class="java.lang.String"/>
-	<field name="DS_VOCE_PIANO" class="java.lang.String"/>
-	<field name="CD_CENTRO_RESPONSABILITA" class="java.lang.String"/>
-	<field name="CD_LINEA_ATTIVITA" class="java.lang.String"/>
-	<field name="DS_CDR" class="java.lang.String"/>
-	<field name="CD_NATURA" class="java.lang.String"/>
-	<field name="ESERCIZIO_VOCE" class="java.math.BigDecimal"/>
-	<field name="TI_APPARTENENZA" class="java.lang.String"/>
-	<field name="TI_GESTIONE" class="java.lang.String"/>
-	<field name="CD_ELEMENTO_VOCE" class="java.lang.String"/>
-	<field name="DS_ELEMENTO_VOCE" class="java.lang.String"/>
-	<field name="IMPORTO_FIN" class="java.math.BigDecimal"/>
-	<field name="STANZIAMENTO_FIN" class="java.math.BigDecimal"/>
-	<field name="VARIAPIU_FIN" class="java.math.BigDecimal"/>
-	<field name="VARIAMENO_FIN" class="java.math.BigDecimal"/>
-	<field name="TRASFPIU_FIN" class="java.math.BigDecimal"/>
-	<field name="TRASFMENO_FIN" class="java.math.BigDecimal"/>
-	<field name="IMPORTO_COFIN" class="java.math.BigDecimal"/>
-	<field name="STANZIAMENTO_COFIN" class="java.math.BigDecimal"/>
-	<field name="VARIAPIU_COFIN" class="java.math.BigDecimal"/>
-	<field name="VARIAMENO_COFIN" class="java.math.BigDecimal"/>
-	<field name="TRASFPIU_COFIN" class="java.math.BigDecimal"/>
-	<field name="TRASFMENO_COFIN" class="java.math.BigDecimal"/>
-	<field name="IMPACC_FIN" class="java.math.BigDecimal"/>
-	<field name="IMPACC_COFIN" class="java.math.BigDecimal"/>
-	<field name="MANRIS_FIN" class="java.math.BigDecimal"/>
-	<field name="MANRIS_COFIN" class="java.math.BigDecimal"/>
-	<field name="PG_OBBL" class="java.math.BigDecimal"/>
-	<field name="DATA_SCAD" class="java.lang.String"/>
-	<field name="DS_OBBL" class="java.lang.String"/>
-	<field name="IMP_SCAD" class="java.math.BigDecimal"/>
-	<field name="NUM_SCAD" class="java.math.BigDecimal"/>
-	<field name="IM_ASS_DOC_AMM" class="java.math.BigDecimal"/>
+	<field name="ORDINE_ESERCIZIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ORDINE_ESERCIZIO"/>
+	</field>
+	<field name="PG_PROGETTO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_PROGETTO"/>
+	</field>
+	<field name="ESERCIZIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO"/>
+	</field>
+	<field name="CD_UNITA_PIANO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_UNITA_PIANO"/>
+	</field>
+	<field name="CD_VOCE_PIANO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_VOCE_PIANO"/>
+	</field>
+	<field name="DS_VOCE_PIANO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_VOCE_PIANO"/>
+	</field>
+	<field name="CD_CENTRO_RESPONSABILITA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_CENTRO_RESPONSABILITA"/>
+	</field>
+	<field name="CD_LINEA_ATTIVITA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_LINEA_ATTIVITA"/>
+	</field>
+	<field name="DS_CDR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_CDR"/>
+	</field>
+	<field name="CD_NATURA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_NATURA"/>
+	</field>
+	<field name="ESERCIZIO_VOCE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_VOCE"/>
+	</field>
+	<field name="TI_APPARTENENZA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TI_APPARTENENZA"/>
+	</field>
+	<field name="TI_GESTIONE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TI_GESTIONE"/>
+	</field>
+	<field name="CD_ELEMENTO_VOCE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_ELEMENTO_VOCE"/>
+	</field>
+	<field name="DS_ELEMENTO_VOCE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_ELEMENTO_VOCE"/>
+	</field>
+	<field name="IMPORTO_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMPORTO_FIN"/>
+	</field>
+	<field name="STANZIAMENTO_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="STANZIAMENTO_FIN"/>
+	</field>
+	<field name="VARIAPIU_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VARIAPIU_FIN"/>
+	</field>
+	<field name="VARIAMENO_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VARIAMENO_FIN"/>
+	</field>
+	<field name="TRASFPIU_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="TRASFPIU_FIN"/>
+	</field>
+	<field name="TRASFMENO_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="TRASFMENO_FIN"/>
+	</field>
+	<field name="IMPORTO_COFIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMPORTO_COFIN"/>
+	</field>
+	<field name="STANZIAMENTO_COFIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="STANZIAMENTO_COFIN"/>
+	</field>
+	<field name="VARIAPIU_COFIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VARIAPIU_COFIN"/>
+	</field>
+	<field name="VARIAMENO_COFIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VARIAMENO_COFIN"/>
+	</field>
+	<field name="TRASFPIU_COFIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="TRASFPIU_COFIN"/>
+	</field>
+	<field name="TRASFMENO_COFIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="TRASFMENO_COFIN"/>
+	</field>
+	<field name="IMPACC_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMPACC_FIN"/>
+	</field>
+	<field name="IMPACC_COFIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMPACC_COFIN"/>
+	</field>
+	<field name="MANRIS_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="MANRIS_FIN"/>
+	</field>
+	<field name="MANRIS_COFIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="MANRIS_COFIN"/>
+	</field>
+	<field name="PG_OBBL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_OBBL"/>
+	</field>
+	<field name="DS_OBBL" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_OBBL"/>
+	</field>
+	<field name="IMP_SCAD" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMP_SCAD"/>
+	</field>
+	<field name="NUM_SCAD" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="NUM_SCAD"/>
+	</field>
+	<field name="DATA_SCAD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DATA_SCAD"/>
+	</field>
+	<field name="IM_ASS_DOC_AMM" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IM_ASS_DOC_AMM"/>
+	</field>
+	<field name="IMP_ASS_DOC_CONT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMP_ASS_DOC_CONT"/>
+	</field>
+	<field name="DS_SCAD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_SCAD"/>
+	</field>
+	<field name="CREDITORE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CREDITORE"/>
+	</field>
+	<field name="ESERCIZIO_OBBL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_OBBL"/>
+	</field>
+	<field name="ESERCIZIO_ORIGINALE_OBBL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_ORIGINALE_OBBL"/>
+	</field>
+	<field name="CDS_OBBL" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CDS_OBBL"/>
+	</field>
+	<field name="CD_TIPO_DOCUMENTO_CONT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_TIPO_DOCUMENTO_CONT"/>
+	</field>
+	<field name="RIPORTATO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RIPORTATO"/>
+	</field>
+	<variable name="TRASFERITO_FIN" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).compareTo(BigDecimal.ZERO)<0?
+$F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableExpression>
+	</variable>
 	<variable name="SUM_IMPORTO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{IMPORTO_FIN}]]></variableExpression>
 	</variable>
@@ -280,47 +437,54 @@ ORDER BY
 	<variable name="ASSESTATO_FIN" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[($F{STANZIAMENTO_FIN} != null ? $F{STANZIAMENTO_FIN} : BigDecimal.ZERO).add($F{VARIAPIU_FIN} != null ? $F{VARIAPIU_FIN} : BigDecimal.ZERO).subtract($F{VARIAMENO_FIN} != null ? $F{VARIAMENO_FIN} : BigDecimal.ZERO)]]></variableExpression>
 	</variable>
+	<variable name="SUM_ASSESTATO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$V{ASSESTATO_FIN}]]></variableExpression>
+	</variable>
+	<variable name="SUM_TRASFERITO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$V{TRASFERITO_FIN}]]></variableExpression>
+	</variable>
 	<variable name="DISP_IMPEGNO_FIN" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[$V{ASSESTATO_FIN}.subtract($F{IMPACC_FIN})]]></variableExpression>
 	</variable>
-	<variable name="SUM_DISP_IMPEGNO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
+	<variable name="DISPONIBILITA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
 		<variableExpression><![CDATA[$V{DISP_IMPEGNO_FIN}]]></variableExpression>
-	</variable>
-	<variable name="SUM_DISP_IMPEGNO_FIN_VOCE_ECONOMICA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISP_IMPEGNO_FIN}]]></variableExpression>
-	</variable>
-	<variable name="DISPONIBILITA" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[($F{IMP_SCAD} != null ? $F{IMP_SCAD} : BigDecimal.ZERO).subtract($F{IM_ASS_DOC_AMM} != null ? $F{IM_ASS_DOC_AMM} : BigDecimal.ZERO)]]></variableExpression>
 	</variable>
 	<variable name="SUM_DISPONIBILITA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISPONIBILITA}]]></variableExpression>
+		<variableExpression><![CDATA[$V{DISP_IMPEGNO_FIN}]]></variableExpression>
 	</variable>
-	<variable name="DISP_EFFETTIVA" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[($F{IMPORTO_FIN} != null ? $F{IMPORTO_FIN} : BigDecimal.ZERO).subtract($F{IMP_SCAD} != null ? $F{IMP_SCAD} : BigDecimal.ZERO)]]></variableExpression>
+	<variable name="DISP_EFFETTIVA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{IMPORTO_FIN}]]></variableExpression>
 	</variable>
-	<variable name="SUM_DISP_EFFETTIVA_GRUPPO" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISP_EFFETTIVA}]]></variableExpression>
+	<variable name="DISP_EFFETTIVA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{IMPORTO_FIN}]]></variableExpression>
 	</variable>
-	<variable name="SUM_DISP_EFFETTIVA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISP_EFFETTIVA}]]></variableExpression>
-	</variable>
-	<group name="VocePianoGroup" isReprintHeaderOnEachPage="true">
+	<group name="VocePianoGroup" isReprintHeaderOnEachPage="true" preventOrphanFooter="true">
 		<groupExpression><![CDATA[$F{CD_VOCE_PIANO}]]></groupExpression>
 		<groupHeader>
-			<band height="15">
+			<band height="27" splitType="Prevent">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderLabel" mode="Opaque" x="10" y="2" width="90" height="12" backcolor="#FFFFFF" uuid="9e25d203-34ac-4838-bfa9-45550a221f7e"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
+					<reportElement style="HeaderText" mode="Opaque" x="10" y="10" width="60" height="12" backcolor="#FFFFFF" uuid="9e25d203-34ac-4838-bfa9-45550a221f7e"/>
+					<textElement verticalAlignment="Top">
 						<font isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{DS_VOCE_PIANO}]]></textFieldExpression>
 				</textField>
+				<textField textAdjust="StretchHeight" pattern="€ #,##0.00" isBlankWhenNull="true">
+					<reportElement style="HeaderText" x="70" y="10" width="60" height="12" uuid="8a4e4405-73ec-4e74-ba67-79fed0c5bf09"/>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[$V{DISP_EFFETTIVA}]]></textFieldExpression>
+				</textField>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="10">
+			<band height="15">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<line>
-					<reportElement x="9" y="6" width="786" height="1" forecolor="#EBEBEB" uuid="d2836267-338c-4a1e-9273-03e3906a59e9"/>
+					<reportElement x="0" y="7" width="842" height="1" forecolor="#EBEBEB" uuid="d2836267-338c-4a1e-9273-03e3906a59e9">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 				</line>
 			</band>
 		</groupFooter>
@@ -328,66 +492,67 @@ ORDER BY
 	<group name="EsercizioGroup">
 		<groupExpression><![CDATA[$F{ESERCIZIO}]]></groupExpression>
 	</group>
-	<group name="ImpegnoGroup">
-		<groupExpression><![CDATA[$F{PG_OBBL}]]></groupExpression>
+	<group name="ImpegnoGroup" isReprintHeaderOnEachPage="true" preventOrphanFooter="true">
+		<groupExpression><![CDATA[$F{CDS_OBBL}+$F{ESERCIZIO_OBBL}+$F{ESERCIZIO_ORIGINALE_OBBL}+$F{PG_OBBL}+$F{NUM_SCAD}]]></groupExpression>
 		<groupHeader>
-			<band height="18">
+			<band height="31" splitType="Prevent">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="225" y="6" width="45" height="12" uuid="d6e53066-e3d8-4f18-97c7-248e354070a9">
+					<reportElement style="HeaderText" x="255" y="14" width="45" height="12" printWhenGroupChanges="VocePianoGroup" uuid="d6e53066-e3d8-4f18-97c7-248e354070a9">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Top">
+					<textElement verticalAlignment="Top">
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{PG_OBBL}]]></textFieldExpression>
 				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="270" y="6" width="70" height="12" uuid="9422a16d-3e5f-410a-8149-16e789f280a9">
+					<reportElement style="HeaderText" x="300" y="14" width="60" height="12" printWhenGroupChanges="VocePianoGroup" uuid="9422a16d-3e5f-410a-8149-16e789f280a9">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
+					<textElement verticalAlignment="Top">
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{IMPORTO_FIN}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="739" y="6" width="56" height="12" uuid="f0d2c94a-81e5-4a57-b08e-5b1b11f3d64c">
+					<reportElement style="HeaderText" x="802" y="14" width="39" height="12" printWhenGroupChanges="VocePianoGroup" uuid="f0d2c94a-81e5-4a57-b08e-5b1b11f3d64c">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Top">
+					<textElement verticalAlignment="Top">
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></textFieldExpression>
 				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="340" y="6" width="70" height="12" uuid="1c841499-5683-4a1d-a2f0-9af65b217154">
+					<reportElement style="HeaderText" x="360" y="14" width="56" height="12" uuid="1c841499-5683-4a1d-a2f0-9af65b217154">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
+					<textElement verticalAlignment="Top">
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{DISPONIBILITA}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="410" y="6" width="30" height="12" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd">
+					<reportElement style="HeaderText" x="416" y="14" width="30" height="12" printWhenGroupChanges="VocePianoGroup" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Top">
+					<textElement verticalAlignment="Top">
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{NUM_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="440" y="6" width="60" height="12" uuid="88219c6e-1d54-4462-8566-267922d51174">
+					<reportElement style="HeaderText" x="446" y="14" width="50" height="12" printWhenGroupChanges="VocePianoGroup" uuid="88219c6e-1d54-4462-8566-267922d51174">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Top">
+					<textElement verticalAlignment="Top">
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{DATA_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="500" y="6" width="155" height="12" uuid="37d7a46f-e3c3-42e7-9a8c-283152a5c43d">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="496" y="14" width="104" height="12" printWhenGroupChanges="VocePianoGroup" uuid="37d7a46f-e3c3-42e7-9a8c-283152a5c43d">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -396,27 +561,45 @@ ORDER BY
 					<textFieldExpression><![CDATA[$F{DS_OBBL}]]></textFieldExpression>
 				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="655" y="6" width="84" height="12" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a">
+					<reportElement style="HeaderText" x="748" y="14" width="53" height="12" printWhenGroupChanges="VocePianoGroup" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Top">
+					<textElement verticalAlignment="Top">
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{IMP_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="180" y="6" width="45" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c">
+					<reportElement style="HeaderText" x="210" y="14" width="45" height="12" printWhenGroupChanges="EsercizioGroup" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Top">
+					<textElement verticalAlignment="Top">
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ESERCIZIO}]]></textFieldExpression>
 				</textField>
-				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="100" y="6" width="80" height="12" uuid="8a4e4405-73ec-4e74-ba67-79fed0c5bf09"/>
+				<textField textAdjust="StretchHeight" pattern="€ #,##0.00" isBlankWhenNull="true">
+					<reportElement style="HeaderText" x="130" y="14" width="80" height="12" printWhenGroupChanges="VocePianoGroup" uuid="0a833482-4e6c-44b8-a45b-8b6f084916eb"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA[$V{DISP_EFFETTIVA}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$P{P_NOTE}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement style="HeaderText" x="601" y="14" width="94" height="12" printWhenGroupChanges="VocePianoGroup" uuid="179a3755-b5f6-4b08-a09e-c0dab971d3f4">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DS_SCAD}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement style="HeaderText" x="697" y="14" width="48" height="12" printWhenGroupChanges="VocePianoGroup" uuid="cb6972ae-ea1f-4d54-9572-d35f3d06c649">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{CREDITORE}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -425,240 +608,276 @@ ORDER BY
 		<band height="40" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<line>
-				<reportElement x="0" y="39" width="802" height="1" uuid="898e1f57-881c-468b-9e45-e63d41ef71cb"/>
-			</line>
-			<frame>
-				<reportElement stretchType="ElementGroupHeight" x="8" y="8" width="800" height="24" uuid="839d0f85-fcfe-4f1a-8be9-5d09b0f56210"/>
-				<staticText>
-					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="0" y="0" width="78" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c"/>
-					<textElement verticalAlignment="Middle"/>
-					<text><![CDATA[Progetto]]></text>
-				</staticText>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="0" y="12" width="78" height="12" uuid="071597a7-59b4-47fe-8c10-863e49e2956c"/>
-					<textElement verticalAlignment="Top"/>
-					<textFieldExpression><![CDATA[$P{P_CD_PROGETTO}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement stretchType="ElementGroupHeight" x="83" y="0" width="1" height="24" uuid="08994a4c-5895-47d0-8f96-3c5e8072120e"/>
-				</line>
-				<staticText>
-					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="90" y="0" width="90" height="12" uuid="93f54245-8167-4315-a22a-1c66280ca51a"/>
-					<textElement verticalAlignment="Middle"/>
-					<text><![CDATA[Responsabile]]></text>
-				</staticText>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="90" y="12" width="90" height="12" uuid="45465e52-f472-4680-9286-9a2500057863"/>
-					<textElement verticalAlignment="Top"/>
-					<textFieldExpression><![CDATA[$P{P_RESPONSABILE}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement stretchType="ElementGroupHeight" x="185" y="0" width="1" height="24" uuid="d939c4d9-93e1-45bd-96a8-2081971d5337"/>
-				</line>
-				<staticText>
-					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="192" y="0" width="68" height="12" uuid="09d3b361-9d22-4933-8228-54c311655075"/>
-					<textElement verticalAlignment="Middle"/>
-					<text><![CDATA[Data Inizio:]]></text>
-				</staticText>
-				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="192" y="12" width="68" height="12" uuid="e7b233a7-e034-443e-a19f-14194098ec2c"/>
-					<textElement verticalAlignment="Top"/>
-					<textFieldExpression><![CDATA[$P{P_DT_INIZIO}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement stretchType="ElementGroupHeight" x="265" y="0" width="1" height="24" uuid="1c3a7267-3316-433b-871d-f8f2e20d5924"/>
-				</line>
-				<staticText>
-					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="272" y="0" width="58" height="12" uuid="dd9914c6-2c67-4934-8b64-07d0d0f5e128"/>
-					<textElement verticalAlignment="Middle"/>
-					<text><![CDATA[Data scad.]]></text>
-				</staticText>
-				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="272" y="12" width="58" height="12" uuid="f98e6f1f-d748-4796-b333-d9d10e6a8e52"/>
-					<textElement verticalAlignment="Top"/>
-					<textFieldExpression><![CDATA[$P{P_DT_FINE}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement stretchType="ElementGroupHeight" x="335" y="0" width="1" height="24" uuid="b19c2896-1c21-4d39-a99f-3e74be121855"/>
-				</line>
-				<staticText>
-					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="342" y="0" width="78" height="12" uuid="40a7cb5d-c622-4c6e-81f1-b9b56f5a34e8"/>
-					<textElement verticalAlignment="Middle"/>
-					<text><![CDATA[Data Proroga]]></text>
-				</staticText>
-				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="342" y="12" width="78" height="12" uuid="e05de83a-493d-4c03-b0e6-51d020d52a44"/>
-					<textElement verticalAlignment="Top"/>
-					<textFieldExpression><![CDATA[$P{P_DT_PROROGA}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement stretchType="ElementGroupHeight" x="425" y="0" width="1" height="24" uuid="d6152a5c-7431-4829-9e79-5e76a165f12e"/>
-				</line>
-				<staticText>
-					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="432" y="0" width="88" height="12" uuid="9891848f-9a4f-4ee0-85f2-4f30a4b0e5c5"/>
-					<textElement verticalAlignment="Middle"/>
-					<text><![CDATA[Importo Finanziato]]></text>
-				</staticText>
-				<textField textAdjust="StretchHeight" pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="432" y="12" width="88" height="12" uuid="625b066f-87d2-4e35-a185-c1e6268e6f66"/>
-					<textElement textAlignment="Left" verticalAlignment="Top"/>
-					<textFieldExpression><![CDATA[$P{P_IM_FINANZIATO}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement stretchType="ElementGroupHeight" x="525" y="0" width="1" height="24" uuid="70b02f83-d965-4d1a-ad68-fc62198031e4"/>
-				</line>
-				<staticText>
-					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="532" y="0" width="50" height="12" uuid="8851f50a-47ec-449e-a0e4-f37478d10b06"/>
-					<textElement verticalAlignment="Middle"/>
-					<text><![CDATA[CUP]]></text>
-				</staticText>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="532" y="12" width="50" height="12" uuid="cc79e7f8-348f-43d9-9e8c-55c325f6063b"/>
-					<textElement verticalAlignment="Top"/>
-					<textFieldExpression><![CDATA[$P{P_CUP}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement stretchType="ElementGroupHeight" x="587" y="0" width="1" height="24" uuid="30303c72-9694-47ef-a0f1-0d3550e58836"/>
-				</line>
-				<staticText>
-					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="594" y="0" width="166" height="12" uuid="329c2948-e815-4687-9588-e921d431057e"/>
-					<textElement verticalAlignment="Middle"/>
-					<text><![CDATA[Descrizione]]></text>
-				</staticText>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="594" y="12" width="166" height="12" uuid="2a5da54f-1701-443b-8a8b-302388c64483">
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA[$P{P_DS_PROGETTO}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement style="HeaderLabel" stretchType="ElementGroupHeight" x="770" y="0" width="30" height="12" uuid="9fcd11c9-d703-4d8d-adb3-e7f6d28779c1"/>
-					<textElement verticalAlignment="Middle"/>
-					<text><![CDATA[Ente]]></text>
-				</staticText>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="770" y="12" width="30" height="12" uuid="a75b0d63-9c80-4479-a69d-05dc68cd4f10"/>
-					<textElement verticalAlignment="Top"/>
-					<textFieldExpression><![CDATA[$P{P_UO_ENTE}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement stretchType="ElementGroupHeight" x="765" y="0" width="1" height="24" uuid="f77a44ac-259b-4a85-aa3f-5e7a0ee60030"/>
-				</line>
-			</frame>
+			<staticText>
+				<reportElement style="HeaderLabel" x="5" y="5" width="78" height="12" uuid="629eaaa9-adb6-464a-b57d-51212a80d792">
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[Progetto]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="HeaderText" positionType="Float" stretchType="ElementGroupHeight" x="5" y="17" width="78" height="12" uuid="62ade0b9-3970-4135-9cdd-bc4f2344cc20"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{P_CD_PROGETTO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="HeaderLabel" x="100" y="5" width="90" height="12" uuid="d6b62fb9-689a-47a5-a843-c7b91b8ad096">
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[Responsabile]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="HeaderText" positionType="Float" stretchType="ElementGroupHeight" x="100" y="17" width="90" height="12" uuid="592c017f-db96-4bb8-95f6-ffbd33b366d9"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{P_RESPONSABILE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="HeaderLabel" x="200" y="5" width="68" height="12" uuid="2163a081-fa62-40fd-9a10-ce8a0f070852">
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[Data Inizio]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement style="HeaderText" positionType="Float" stretchType="ElementGroupHeight" x="200" y="17" width="68" height="12" uuid="9067f96a-422e-4145-9361-ffd59724e7ff"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{P_DT_INIZIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="HeaderLabel" x="280" y="5" width="58" height="12" uuid="15c49a1c-8863-425b-8a39-d747cce919d7">
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[Data scad.]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement style="HeaderText" positionType="Float" stretchType="ElementGroupHeight" x="280" y="17" width="58" height="12" uuid="b1dd9504-9fb0-4980-87fe-28957e2a03cd"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{P_DT_FINE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="HeaderLabel" x="353" y="5" width="78" height="12" uuid="f9373b7d-239e-437d-930b-2565d8e51228">
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[Data Proroga]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement style="HeaderText" positionType="Float" stretchType="ElementGroupHeight" x="353" y="17" width="78" height="12" uuid="ea9174ac-7f97-4eeb-b51c-fbe593ab555c"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{P_DT_PROROGA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="HeaderLabel" x="450" y="5" width="88" height="12" uuid="6b1e0330-ad69-49b2-bbd3-25185c02881e">
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[Importo Finanziato]]></text>
+			</staticText>
+			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
+				<reportElement style="HeaderText" positionType="Float" stretchType="ElementGroupHeight" x="450" y="17" width="88" height="12" uuid="7525a0a1-12c0-4f50-a4ca-f16388eed9f8"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{P_IM_FINANZIATO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="HeaderLabel" x="551" y="5" width="50" height="12" uuid="eccc9367-77b1-45be-a514-903e505c643c">
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[CUP]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="HeaderText" positionType="Float" stretchType="ElementGroupHeight" x="551" y="17" width="50" height="12" uuid="cc523882-7f4b-4eac-ba99-d15b6e4d03e4"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{P_CUP}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="HeaderLabel" x="610" y="5" width="180" height="12" uuid="baa28360-5be4-4937-9139-9c365d0d308e">
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[Descrizione]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="610" y="17" width="180" height="12" uuid="4a725496-1a66-4a3a-9592-ceae08159875">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{P_DS_PROGETTO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="HeaderLabel" x="806" y="5" width="30" height="12" uuid="b3ec683c-9110-4139-96e0-ffa6c6df7115">
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[Ente]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="HeaderText" positionType="Float" stretchType="ElementGroupHeight" x="806" y="17" width="30" height="12" uuid="94ace4c8-d1fe-4ea5-8f2f-44de02b2a1ee"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{P_UO_ENTE}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<columnHeader>
-		<band height="20" splitType="Stretch">
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement style="HeaderLabel" x="10" y="0" width="90" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000001"/>
+				<reportElement style="HeaderLabel" x="10" y="8" width="60" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000001"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
 				<text><![CDATA[Tipologia]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="100" y="0" width="80" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000004"/>
+				<reportElement style="HeaderLabel" x="70" y="8" width="60" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000004"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Disp. effettiva]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="180" y="0" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000a"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Anno Bil.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="HeaderLabel" x="225" y="0" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000d"/>
+				<reportElement style="HeaderLabel" x="254" y="8" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Impegno]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="270" y="0" width="70" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000010"/>
+				<reportElement style="HeaderLabel" x="209" y="8" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Anno Bil.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="HeaderLabel" x="299" y="8" width="60" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000010"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Importo Imp.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="340" y="0" width="70" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000013"/>
+				<reportElement style="HeaderLabel" x="359" y="8" width="56" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000013"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Disponibilità]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="410" y="0" width="30" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000016"/>
+				<reportElement style="HeaderLabel" x="415" y="8" width="30" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000016"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[# Scad.]]></text>
+				<text><![CDATA[N. Scad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="440" y="0" width="60" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000019"/>
+				<reportElement style="HeaderLabel" x="445" y="8" width="50" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000019"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Data Scad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="500" y="0" width="155" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001c"/>
+				<reportElement style="HeaderLabel" x="495" y="8" width="104" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Descrizione]]></text>
+				<text><![CDATA[Descrizione Imp.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="655" y="0" width="84" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f"/>
+				<reportElement style="HeaderLabel" x="748" y="8" width="53" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Importo Scad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="739" y="0" width="57" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000022"/>
+				<reportElement style="HeaderLabel" x="801" y="8" width="40" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000022"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Voce di bil.]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="15" width="802" height="1" uuid="c4d23b21-82a3-4b21-9c11-30ab22abc002"/>
+				<reportElement x="0" y="23" width="842" height="1" uuid="c4d23b21-82a3-4b21-9c11-30ab22abc002">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 			</line>
+			<line>
+				<reportElement x="0" y="5" width="842" height="1" uuid="349d9720-5420-41f8-8ad9-fef3369824fc">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement style="HeaderLabel" x="130" y="8" width="79" height="12" uuid="c83306e3-ae8e-4139-b05e-adf0164106af"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="HeaderLabel" x="600" y="8" width="94" height="12" uuid="00b27d0f-6076-468e-8b0e-61e1f1edba4a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Descrizione scad.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="HeaderLabel" x="696" y="8" width="50" height="12" uuid="b16e3198-a910-4ad4-aed1-3cc28796a7eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Creditore]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band/>
+		<band>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+		</band>
 	</detail>
 	<summary>
-		<band height="37" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		<band height="47" splitType="Prevent">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<line>
-				<reportElement x="0" y="4" width="802" height="1" uuid="43a259c6-070a-42a9-86c2-19e35520a216"/>
+				<reportElement x="0" y="12" width="842" height="1" uuid="43a259c6-070a-42a9-86c2-19e35520a216">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 			</line>
 			<staticText>
-				<reportElement style="HeaderLabel" x="270" y="8" width="70" height="12" uuid="4a6a57e3-ff39-4a37-b2e1-45a706f363c4"/>
+				<reportElement style="HeaderLabel" x="292" y="16" width="67" height="12" uuid="4a6a57e3-ff39-4a37-b2e1-45a706f363c4"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tot. Impegnato]]></text>
 			</staticText>
 			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="270" y="20" width="70" height="12" uuid="b5a86d26-78c6-4d10-914b-2f22b8344177"/>
+				<reportElement style="HeaderText" x="292" y="28" width="67" height="12" uuid="b5a86d26-78c6-4d10-914b-2f22b8344177"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{SUM_IMPORTO_FIN_GEN}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="HeaderLabel" x="655" y="8" width="85" height="12" uuid="c082725e-3151-4091-a53c-134ac8566299"/>
+				<reportElement style="HeaderLabel" x="724" y="17" width="85" height="12" uuid="c082725e-3151-4091-a53c-134ac8566299"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tot. sub/ordini/fatture]]></text>
 			</staticText>
 			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="655" y="20" width="85" height="12" uuid="8a619280-5a3d-4780-b2df-12d8a5996f26"/>
+				<reportElement style="HeaderText" x="724" y="29" width="85" height="12" uuid="8a619280-5a3d-4780-b2df-12d8a5996f26"/>
 				<textElement textAlignment="Center" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$V{SUM_IMP_SCAD_GEN}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="HeaderLabel" x="100" y="8" width="80" height="12" uuid="98dedf38-8d2a-447e-a11b-b6c9487a7f07"/>
+				<reportElement style="HeaderLabel" x="70" y="16" width="60" height="12" uuid="98dedf38-8d2a-447e-a11b-b6c9487a7f07"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tot. disp. eff.]]></text>
 			</staticText>
-			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="100" y="20" width="80" height="12" uuid="c504b52d-7e6d-439a-a377-c9782ffbb685"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{SUM_DISP_EFFETTIVA_TOTALE}]]></textFieldExpression>
-			</textField>
 			<staticText>
-				<reportElement style="HeaderLabel" x="340" y="8" width="70" height="12" uuid="aff1d763-e096-48ff-8f3f-8a2136711493"/>
+				<reportElement style="HeaderLabel" x="364" y="17" width="67" height="12" uuid="aff1d763-e096-48ff-8f3f-8a2136711493"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tot. Disponibile]]></text>
 			</staticText>
 			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="340" y="20" width="70" height="12" uuid="5fed6b69-bd62-4590-94f9-c9b4c46be40c"/>
+				<reportElement style="HeaderText" x="364" y="29" width="67" height="12" uuid="5fed6b69-bd62-4590-94f9-c9b4c46be40c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{SUM_DISPONIBILITA_TOTALE}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="€ #,##0.00" isBlankWhenNull="true">
+				<reportElement style="HeaderText" x="70" y="28" width="60" height="12" uuid="26b757e9-0b3e-4239-8233-88024f85aeb2"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$V{SUM_IMPORTO_FIN_GEN}
+.subtract($V{SUM_ASSESTATO_FIN_GEN})
+.subtract($V{SUM_TRASFERITO_FIN_GEN})]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
