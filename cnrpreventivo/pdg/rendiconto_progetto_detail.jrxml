@@ -458,10 +458,10 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 	<variable name="DISP_EFFETTIVA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{IMPORTO_FIN}]]></variableExpression>
 	</variable>
-	<group name="VocePianoGroup" isReprintHeaderOnEachPage="true" preventOrphanFooter="true">
+	<group name="VocePianoGroup" keepTogether="true">
 		<groupExpression><![CDATA[$F{CD_VOCE_PIANO}]]></groupExpression>
 		<groupHeader>
-			<band height="27" splitType="Prevent">
+			<band height="27" splitType="Stretch">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement style="HeaderText" mode="Opaque" x="10" y="10" width="62" height="12" backcolor="#FFFFFF" uuid="9e25d203-34ac-4838-bfa9-45550a221f7e"/>
@@ -478,10 +478,10 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="15">
+			<band height="15" splitType="Prevent">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<line>
-					<reportElement x="0" y="7" width="842" height="1" forecolor="#EBEBEB" uuid="d2836267-338c-4a1e-9273-03e3906a59e9">
+					<reportElement style="HeaderLabel" mode="Transparent" x="0" y="7" width="842" height="1" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" printWhenGroupChanges="VocePianoGroup" forecolor="#EBEBEB" uuid="d2836267-338c-4a1e-9273-03e3906a59e9">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
@@ -492,10 +492,10 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 	<group name="EsercizioGroup">
 		<groupExpression><![CDATA[$F{ESERCIZIO}]]></groupExpression>
 	</group>
-	<group name="ImpegnoGroup" isReprintHeaderOnEachPage="true" preventOrphanFooter="true">
+	<group name="ImpegnoGroup" keepTogether="true">
 		<groupExpression><![CDATA[$F{CDS_OBBL}+$F{ESERCIZIO_OBBL}+$F{ESERCIZIO_ORIGINALE_OBBL}+$F{PG_OBBL}+$F{NUM_SCAD}]]></groupExpression>
 		<groupHeader>
-			<band height="31" splitType="Prevent">
+			<band height="31" splitType="Stretch">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField isBlankWhenNull="true">
 					<reportElement style="HeaderText" x="249" y="14" width="31" height="12" printWhenGroupChanges="VocePianoGroup" uuid="d6e53066-e3d8-4f18-97c7-248e354070a9">
