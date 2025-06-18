@@ -5,7 +5,6 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLATEST-CONN.xml"/>
 	<style name="HeaderLabel" fontName="Times New Roman" fontSize="8" isBold="true"/>
 	<style name="HeaderText" fontName="Times New Roman" fontSize="8"/>
 	<style name="ProjectTitleText" fontName="Times New Roman" fontSize="9" isBold="true"/>
@@ -454,6 +453,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 	</variable>
 	<variable name="DISP_EFFETTIVA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
 		<variableExpression><![CDATA[$F{IMPORTO_FIN}]]></variableExpression>
+		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="DISP_EFFETTIVA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{IMPORTO_FIN}]]></variableExpression>
@@ -470,8 +470,8 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{DS_VOCE_PIANO}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight" pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="65" y="10" width="86" height="12" uuid="8a4e4405-73ec-4e74-ba67-79fed0c5bf09"/>
+				<textField evaluationTime="Auto" pattern="€ #,##0.00" isBlankWhenNull="true">
+					<reportElement style="HeaderText" x="65" y="10" width="74" height="12" printWhenGroupChanges="VocePianoGroup" uuid="94a81260-3dc8-47cc-9469-b44d7a6d72e9"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$V{DISP_EFFETTIVA}]]></textFieldExpression>
 				</textField>
@@ -495,10 +495,11 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 	<group name="ImpegnoGroup" keepTogether="true">
 		<groupExpression><![CDATA[$F{CDS_OBBL}+$F{ESERCIZIO_OBBL}+$F{ESERCIZIO_ORIGINALE_OBBL}+$F{PG_OBBL}+$F{NUM_SCAD}]]></groupExpression>
 		<groupHeader>
-			<band height="31" splitType="Stretch">
+			<band height="38" splitType="Stretch">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<printWhenExpression><![CDATA[$F{PG_OBBL}!=null]]></printWhenExpression>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="192" y="14" width="31" height="12" printWhenGroupChanges="VocePianoGroup" uuid="d6e53066-e3d8-4f18-97c7-248e354070a9">
+					<reportElement style="HeaderText" x="178" y="13" width="31" height="12" printWhenGroupChanges="VocePianoGroup" uuid="d6e53066-e3d8-4f18-97c7-248e354070a9">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -507,7 +508,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$F{PG_OBBL}]]></textFieldExpression>
 				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="225" y="14" width="67" height="12" printWhenGroupChanges="VocePianoGroup" uuid="9422a16d-3e5f-410a-8149-16e789f280a9">
+					<reportElement style="HeaderText" x="211" y="13" width="67" height="12" printWhenGroupChanges="VocePianoGroup" uuid="9422a16d-3e5f-410a-8149-16e789f280a9">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -516,7 +517,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$F{IMPORTO_FIN}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="801" y="14" width="40" height="12" printWhenGroupChanges="VocePianoGroup" uuid="f0d2c94a-81e5-4a57-b08e-5b1b11f3d64c">
+					<reportElement style="HeaderText" x="793" y="13" width="45" height="12" printWhenGroupChanges="VocePianoGroup" uuid="f0d2c94a-81e5-4a57-b08e-5b1b11f3d64c">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -525,7 +526,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></textFieldExpression>
 				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="294" y="14" width="59" height="12" uuid="1c841499-5683-4a1d-a2f0-9af65b217154">
+					<reportElement style="HeaderText" x="280" y="13" width="59" height="12" uuid="1c841499-5683-4a1d-a2f0-9af65b217154">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -534,7 +535,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$V{DISPONIBILITA}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="356" y="14" width="30" height="12" printWhenGroupChanges="VocePianoGroup" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd">
+					<reportElement style="HeaderText" x="342" y="13" width="30" height="12" printWhenGroupChanges="VocePianoGroup" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -543,7 +544,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$F{NUM_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="389" y="14" width="43" height="12" printWhenGroupChanges="VocePianoGroup" uuid="88219c6e-1d54-4462-8566-267922d51174">
+					<reportElement style="HeaderText" x="375" y="13" width="42" height="12" printWhenGroupChanges="VocePianoGroup" uuid="88219c6e-1d54-4462-8566-267922d51174">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -552,7 +553,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$F{DATA_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="433" y="14" width="137" height="12" printWhenGroupChanges="VocePianoGroup" uuid="37d7a46f-e3c3-42e7-9a8c-283152a5c43d">
+					<reportElement style="HeaderText" stretchType="ElementGroupHeight" x="420" y="13" width="131" height="12" printWhenGroupChanges="VocePianoGroup" uuid="37d7a46f-e3c3-42e7-9a8c-283152a5c43d">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -561,7 +562,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$F{DS_OBBL}]]></textFieldExpression>
 				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="755" y="14" width="45" height="12" printWhenGroupChanges="VocePianoGroup" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a">
+					<reportElement style="HeaderText" x="747" y="13" width="45" height="12" printWhenGroupChanges="VocePianoGroup" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -570,7 +571,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$F{IMP_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="157" y="14" width="33" height="12" printWhenGroupChanges="EsercizioGroup" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c">
+					<reportElement style="HeaderText" x="143" y="13" width="33" height="12" printWhenGroupChanges="EsercizioGroup" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -579,7 +580,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$F{ESERCIZIO}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="572" y="14" width="123" height="12" printWhenGroupChanges="VocePianoGroup" uuid="179a3755-b5f6-4b08-a09e-c0dab971d3f4">
+					<reportElement style="HeaderText" x="557" y="13" width="130" height="12" printWhenGroupChanges="VocePianoGroup" uuid="179a3755-b5f6-4b08-a09e-c0dab971d3f4">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -588,7 +589,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$F{DS_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="HeaderText" x="696" y="14" width="58" height="12" printWhenGroupChanges="VocePianoGroup" uuid="cb6972ae-ea1f-4d54-9572-d35f3d06c649">
+					<reportElement style="HeaderText" x="687" y="13" width="58" height="12" printWhenGroupChanges="VocePianoGroup" uuid="cb6972ae-ea1f-4d54-9572-d35f3d06c649">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -742,52 +743,52 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 				<text><![CDATA[Tipologia]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="65" y="8" width="86" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000004"/>
+				<reportElement style="HeaderLabel" x="65" y="8" width="75" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000004"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Disp. effettiva]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="192" y="8" width="31" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000d"/>
+				<reportElement style="HeaderLabel" x="178" y="8" width="31" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Impegno]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="156" y="8" width="34" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000a"/>
+				<reportElement style="HeaderLabel" x="142" y="8" width="34" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Anno Bil.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="225" y="8" width="67" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000010"/>
+				<reportElement style="HeaderLabel" x="211" y="8" width="67" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000010"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Importo Imp.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="294" y="8" width="59" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000013"/>
+				<reportElement style="HeaderLabel" x="280" y="8" width="59" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000013"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Disponibilità]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="356" y="8" width="29" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000016"/>
+				<reportElement style="HeaderLabel" x="342" y="8" width="29" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000016"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[N. Scad]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="388" y="8" width="43" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000019"/>
+				<reportElement style="HeaderLabel" x="374" y="8" width="43" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000019"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Data Scad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="440" y="8" width="130" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001c"/>
+				<reportElement style="HeaderLabel" x="420" y="8" width="131" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Descrizione Imp.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="755" y="8" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f"/>
+				<reportElement style="HeaderLabel" x="747" y="8" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Imp. Scad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="801" y="8" width="40" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000022"/>
+				<reportElement style="HeaderLabel" x="793" y="8" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000022"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Voce di bil.]]></text>
 			</staticText>
@@ -803,12 +804,12 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 				</reportElement>
 			</line>
 			<staticText>
-				<reportElement style="HeaderLabel" x="572" y="8" width="123" height="12" uuid="00b27d0f-6076-468e-8b0e-61e1f1edba4a"/>
+				<reportElement style="HeaderLabel" x="557" y="8" width="130" height="12" uuid="00b27d0f-6076-468e-8b0e-61e1f1edba4a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Descrizione scad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="696" y="8" width="58" height="12" uuid="b16e3198-a910-4ad4-aed1-3cc28796a7eb"/>
+				<reportElement style="HeaderLabel" x="687" y="8" width="58" height="12" uuid="b16e3198-a910-4ad4-aed1-3cc28796a7eb"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Creditore]]></text>
 			</staticText>
@@ -820,7 +821,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 		</band>
 	</detail>
 	<summary>
-		<band height="47" splitType="Stretch">
+		<band height="60" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<line>
 				<reportElement x="0" y="12" width="842" height="1" uuid="43a259c6-070a-42a9-86c2-19e35520a216">
@@ -828,12 +829,12 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 				</reportElement>
 			</line>
 			<staticText>
-				<reportElement style="HeaderLabel" x="225" y="16" width="67" height="12" uuid="4a6a57e3-ff39-4a37-b2e1-45a706f363c4"/>
+				<reportElement style="HeaderLabel" x="210" y="16" width="67" height="12" uuid="4a6a57e3-ff39-4a37-b2e1-45a706f363c4"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tot. Impegnato]]></text>
 			</staticText>
 			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="225" y="28" width="67" height="12" uuid="b5a86d26-78c6-4d10-914b-2f22b8344177"/>
+				<reportElement style="HeaderText" x="210" y="28" width="67" height="12" uuid="b5a86d26-78c6-4d10-914b-2f22b8344177"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{SUM_IMPORTO_FIN_GEN}]]></textFieldExpression>
 			</textField>
@@ -848,25 +849,24 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 				<textFieldExpression><![CDATA[$V{SUM_IMP_SCAD_GEN}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="HeaderLabel" x="62" y="16" width="88" height="12" uuid="98dedf38-8d2a-447e-a11b-b6c9487a7f07"/>
+				<reportElement style="HeaderLabel" x="62" y="16" width="76" height="12" uuid="98dedf38-8d2a-447e-a11b-b6c9487a7f07"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tot. disp. eff.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="HeaderLabel" x="294" y="16" width="67" height="12" uuid="aff1d763-e096-48ff-8f3f-8a2136711493"/>
+				<reportElement style="HeaderLabel" x="280" y="16" width="67" height="12" uuid="aff1d763-e096-48ff-8f3f-8a2136711493"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tot. Disponibile]]></text>
 			</staticText>
 			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="294" y="28" width="67" height="12" uuid="5fed6b69-bd62-4590-94f9-c9b4c46be40c"/>
+				<reportElement style="HeaderText" x="280" y="28" width="67" height="12" uuid="5fed6b69-bd62-4590-94f9-c9b4c46be40c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{SUM_DISPONIBILITA_TOTALE}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="HeaderText" x="62" y="28" width="88" height="12" uuid="26b757e9-0b3e-4239-8233-88024f85aeb2"/>
+				<reportElement style="HeaderText" x="62" y="28" width="76" height="12" uuid="26b757e9-0b3e-4239-8233-88024f85aeb2"/>
 				<textElement textAlignment="Center" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$V{SUM_IMPORTO_FIN_GEN}
-.subtract($V{SUM_ASSESTATO_FIN_GEN})
+				<textFieldExpression><![CDATA[$V{SUM_IMPORTO_FIN_GEN}.subtract($V{SUM_ASSESTATO_FIN_GEN})
 .subtract($V{SUM_TRASFERITO_FIN_GEN})]]></textFieldExpression>
 			</textField>
 		</band>
