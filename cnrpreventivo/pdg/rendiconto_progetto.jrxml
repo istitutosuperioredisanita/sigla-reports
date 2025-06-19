@@ -71,7 +71,6 @@
     a.cd_unita_organizzativa,
     d.ds_unita_organizzativa,
     b.im_finanziato,
-    b.im_cofinanziato,
     resp_t.DENOMINAZIONE_SEDE AS NOME_RESPONSABILE,
     a.note,
     (SELECT MAX(con_cup.CD_CUP)
@@ -121,7 +120,6 @@ WHERE
 	<field name="CD_UNITA_ORGANIZZATIVA" class="java.lang.String"/>
 	<field name="DS_UNITA_ORGANIZZATIVA" class="java.lang.String"/>
 	<field name="IM_FINANZIATO" class="java.math.BigDecimal"/>
-	<field name="IM_COFINANZIATO" class="java.math.BigDecimal"/>
 	<field name="TOTALE_ENTRATE" class="java.math.BigDecimal"/>
 	<field name="TOTALE_REVERSALI" class="java.math.BigDecimal"/>
 	<field name="CODICE_CUP_PROGETTO" class="java.lang.String"/>
@@ -182,9 +180,6 @@ WHERE
 				</subreportParameter>
 				<subreportParameter name="P_IM_FINANZIATO">
 					<subreportParameterExpression><![CDATA[$F{IM_FINANZIATO}==null?BigDecimal.ZERO:$F{IM_FINANZIATO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_IM_COFINANZIATO">
-					<subreportParameterExpression><![CDATA[$F{IM_COFINANZIATO}==null?BigDecimal.ZERO:$F{IM_COFINANZIATO}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="P_TOTALE_ENTRATE">
 					<subreportParameterExpression><![CDATA[$F{TOTALE_ENTRATE}==null?BigDecimal.ZERO:$F{TOTALE_ENTRATE}]]></subreportParameterExpression>
