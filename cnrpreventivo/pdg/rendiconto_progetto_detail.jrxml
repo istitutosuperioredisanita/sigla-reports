@@ -303,7 +303,7 @@ ORDER BY
 	<field name="CDS_OBBL" class="java.lang.String"/>
 	<field name="CD_TIPO_DOCUMENTO_CONT" class="java.lang.String"/>
 	<field name="RIPORTATO" class="java.lang.String"/>
-	<variable name="TRASFERITO_FIN" class="java.math.BigDecimal" resetType="None">
+	<variable name="TRASFERITO_FIN" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[$F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).compareTo(BigDecimal.ZERO)<0?
 $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableExpression>
 	</variable>
@@ -313,7 +313,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 	<variable name="SUM_IMP_SCAD_GEN" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{IMP_SCAD}]]></variableExpression>
 	</variable>
-	<variable name="ASSESTATO_FIN" class="java.math.BigDecimal" resetType="None">
+	<variable name="ASSESTATO_FIN" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[($F{STANZIAMENTO_FIN} != null ? $F{STANZIAMENTO_FIN} : BigDecimal.ZERO).add($F{VARIAPIU_FIN} != null ? $F{VARIAPIU_FIN} : BigDecimal.ZERO).subtract($F{VARIAMENO_FIN} != null ? $F{VARIAMENO_FIN} : BigDecimal.ZERO)]]></variableExpression>
 	</variable>
 	<variable name="SUM_ASSESTATO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
@@ -322,22 +322,21 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 	<variable name="SUM_TRASFERITO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$V{TRASFERITO_FIN}]]></variableExpression>
 	</variable>
-	<variable name="DISP_IMPEGNO_FIN" class="java.math.BigDecimal" resetType="Group" resetGroup="ImpegnoGroup">
+	<variable name="DISP_IMPEGNO_FIN" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[$V{ASSESTATO_FIN}.subtract($F{IMPACC_FIN})]]></variableExpression>
 	</variable>
-	<variable name="DISPONIBILITA" class="java.math.BigDecimal" calculation="Sum">
+	<variable name="DISPONIBILITA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
 		<variableExpression><![CDATA[$V{DISP_IMPEGNO_FIN}]]></variableExpression>
 	</variable>
 	<variable name="SUM_DISPONIBILITA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISPONIBILITA}]]></variableExpression>
+		<variableExpression><![CDATA[$V{DISP_IMPEGNO_FIN}]]></variableExpression>
 	</variable>
 	<variable name="DISP_EFFETTIVA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
 		<variableExpression><![CDATA[$F{IMPORTO_FIN}]]></variableExpression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
-	<variable name="DISP_EFFETTIVA_TOTALE" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[$V{DISP_EFFETTIVA}.subtract($V{SUM_ASSESTATO_FIN_GEN})
-.subtract($V{SUM_TRASFERITO_FIN_GEN})]]></variableExpression>
+	<variable name="DISP_EFFETTIVA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{IMPORTO_FIN}]]></variableExpression>
 	</variable>
 	<group name="VocePianoGroup">
 		<groupExpression><![CDATA[$F{CD_VOCE_PIANO}]]></groupExpression>
@@ -755,8 +754,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 			<textField textAdjust="StretchHeight" pattern="€ #,##0.00" isBlankWhenNull="true">
 				<reportElement style="VERB10" x="62" y="28" width="76" height="12" uuid="26b757e9-0b3e-4239-8233-88024f85aeb2"/>
 				<textElement textAlignment="Center" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$V{SUM_IMPORTO_FIN_GEN}
-.subtract($V{SUM_ASSESTATO_FIN_GEN})
+				<textFieldExpression><![CDATA[$V{SUM_IMPORTO_FIN_GEN}.subtract($V{SUM_ASSESTATO_FIN_GEN})
 .subtract($V{SUM_TRASFERITO_FIN_GEN})]]></textFieldExpression>
 			</textField>
 		</band>
