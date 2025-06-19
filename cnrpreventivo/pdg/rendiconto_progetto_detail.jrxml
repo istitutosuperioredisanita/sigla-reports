@@ -344,7 +344,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 	<group name="VocePianoGroup">
 		<groupExpression><![CDATA[$F{CD_VOCE_PIANO}]]></groupExpression>
 		<groupHeader>
-			<band height="35" splitType="Prevent">
+			<band height="35" splitType="Stretch">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement style="VERB8" mode="Opaque" x="5" y="10" width="58" height="12" backcolor="#FFFFFF" uuid="9e25d203-34ac-4838-bfa9-45550a221f7e"/>
