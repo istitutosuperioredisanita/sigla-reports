@@ -1249,7 +1249,7 @@ CARICO ENTE
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="5" splitType="Stretch">
+			<band height="9" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD_L1}.equals("B") && $F{TI_RECORD_L2}.equals("A"))]]></printWhenExpression>
 				<line>
 					<reportElement key="line-166" x="7" y="0" width="1" height="5" uuid="2614e532-02f0-478c-b7b5-8d576d9123ab"/>
@@ -1258,7 +1258,9 @@ CARICO ENTE
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-167" x="7" y="4" width="575" height="1" uuid="ebb386a8-6d21-43ba-a767-75e97738ad7e"/>
+					<reportElement key="line-167" x="7" y="4" width="620" height="1" uuid="ebb386a8-6d21-43ba-a767-75e97738ad7e">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -1282,13 +1284,17 @@ CARICO ENTE
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-171" x="239" y="0" width="1" height="4" uuid="6137e0a6-ca8c-403f-bd78-c131660c9f69"/>
+					<reportElement key="line-171" x="284" y="0" width="1" height="4" uuid="6137e0a6-ca8c-403f-bd78-c131660c9f69">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-172" x="312" y="0" width="1" height="4" uuid="f9acb641-c1c3-4377-b110-bf8822f8cc30"/>
+					<reportElement key="line-172" x="357" y="0" width="1" height="4" uuid="f9acb641-c1c3-4377-b110-bf8822f8cc30">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -1300,31 +1306,50 @@ CARICO ENTE
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-174" x="400" y="0" width="1" height="4" uuid="82717156-d7a6-42b0-ae34-a055365f2902"/>
+					<reportElement key="line-174" x="445" y="0" width="1" height="4" uuid="82717156-d7a6-42b0-ae34-a055365f2902">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-175" x="427" y="0" width="1" height="4" uuid="ea7134f7-6ad9-4714-b0f2-e7c9c2012a94"/>
+					<reportElement key="line-175" x="472" y="0" width="1" height="4" uuid="ea7134f7-6ad9-4714-b0f2-e7c9c2012a94">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-176" x="484" y="0" width="1" height="4" uuid="a938cb53-447e-42c3-b4e2-32a36b370e42"/>
+					<reportElement key="line-176" x="529" y="0" width="1" height="4" uuid="a938cb53-447e-42c3-b4e2-32a36b370e42">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-177" x="532" y="0" width="1" height="4" uuid="b33b7e1f-a7bb-46ce-9085-dfd13e7d8992"/>
+					<reportElement key="line-177" x="577" y="0" width="1" height="4" uuid="b33b7e1f-a7bb-46ce-9085-dfd13e7d8992">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-178" x="581" y="0" width="1" height="5" uuid="4313bee2-4f55-4fcb-ab98-43efa9b4ec50"/>
+					<reportElement key="line-178" x="626" y="0" width="1" height="5" uuid="4313bee2-4f55-4fcb-ab98-43efa9b4ec50">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement key="line-170" x="244" y="0" width="1" height="4" uuid="2d6b5b1b-9d55-40c2-bc35-3cfaa9f77ecd">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>

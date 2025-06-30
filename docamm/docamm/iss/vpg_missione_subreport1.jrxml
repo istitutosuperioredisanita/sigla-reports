@@ -70,7 +70,7 @@ Where CD_CDS = $P{CD_CDS}
 					<text><![CDATA[ANTICIPO]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-1" x="2" y="6" width="540" height="1" uuid="f5c22508-319b-438c-a1bb-81a53ee59812"/>
+					<reportElement key="line-1" x="2" y="6" width="493" height="1" uuid="f5c22508-319b-438c-a1bb-81a53ee59812"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
