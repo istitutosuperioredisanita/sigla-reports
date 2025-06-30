@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vpg_missione_subreport1" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="403a6ce6-4719-4e81-b306-c33eb182393e">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vpg_missione_subreport1" pageWidth="633" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="403a6ce6-4719-4e81-b306-c33eb182393e">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.2100000000000009"/>
@@ -39,18 +39,18 @@
 		<![CDATA[SELECT COUNT(1) CONTA_SPESE
 FROM VPG_MISSIONE
 Where CD_CDS = $P{CD_CDS}
-  And CD_UNITA_ORGANIZZATIVA = $P{CD_UNITA_ORGANIZZATIVA}
-  And ESERCIZIO = $P{ESERCIZIO}
-  And PG_MISSIONE = $P{PG_MISSIONE}
-  And TI_RECORD_L1 = 'B'
-  And TI_RECORD_L2 = 'B'
-  And not exists(SELECT 1 FROM VPG_MISSIONE
+  And CD_UNITA_ORGANIZZATIVA = $P{CD_UNITA_ORGANIZZATIVA}
+  And ESERCIZIO = $P{ESERCIZIO}
+  And PG_MISSIONE = $P{PG_MISSIONE}
+  And TI_RECORD_L1 = 'B'
+  And TI_RECORD_L2 = 'B'
+  And not exists(SELECT 1 FROM VPG_MISSIONE
 		Where CD_CDS = $P{CD_CDS}
-  		And CD_UNITA_ORGANIZZATIVA = $P{CD_UNITA_ORGANIZZATIVA}
-  		And ESERCIZIO = $P{ESERCIZIO}
-  		And PG_MISSIONE = $P{PG_MISSIONE}
-                And TI_RECORD_L1 = 'B'
-  		And TI_RECORD_L2 = 'A')]]>
+  		And CD_UNITA_ORGANIZZATIVA = $P{CD_UNITA_ORGANIZZATIVA}
+  		And ESERCIZIO = $P{ESERCIZIO}
+  		And PG_MISSIONE = $P{PG_MISSIONE}
+                And TI_RECORD_L1 = 'B'
+  		And TI_RECORD_L2 = 'A')]]>
 	</queryString>
 	<field name="CONTA_SPESE" class="java.math.BigDecimal"/>
 	<group name="TI_RECORD_L2b">
@@ -70,7 +70,7 @@ Where CD_CDS = $P{CD_CDS}
 					<text><![CDATA[ANTICIPO]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-1" x="2" y="6" width="492" height="1" uuid="f5c22508-319b-438c-a1bb-81a53ee59812"/>
+					<reportElement key="line-1" x="2" y="6" width="540" height="1" uuid="f5c22508-319b-438c-a1bb-81a53ee59812"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -82,7 +82,7 @@ Where CD_CDS = $P{CD_CDS}
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-3" x="2" y="22" width="492" height="1" uuid="0eb65664-6148-4a52-8b3d-124a392dc67c"/>
+					<reportElement key="line-3" x="2" y="22" width="540" height="1" uuid="0eb65664-6148-4a52-8b3d-124a392dc67c"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -460,7 +460,7 @@ $F{CONTA_SPESE}.equals(new java.math.BigDecimal(1) )
 )
 )]]></printWhenExpression>
 				<staticText>
-					<reportElement key="staticText-15" style="TNR12BOLD" x="5" y="8" width="569" height="16" uuid="1c73dd73-585c-4028-88a4-c3a1f6b27624"/>
+					<reportElement key="staticText-15" style="TNR12BOLD" x="5" y="8" width="624" height="16" uuid="1c73dd73-585c-4028-88a4-c3a1f6b27624"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -471,7 +471,7 @@ $F{CONTA_SPESE}.equals(new java.math.BigDecimal(1) )
 					<text><![CDATA[SPESE]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-27" x="2" y="6" width="574" height="1" uuid="b1503dd9-f720-4040-b9dd-809503b83f56"/>
+					<reportElement key="line-27" x="2" y="6" width="627" height="1" uuid="b1503dd9-f720-4040-b9dd-809503b83f56"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -483,13 +483,17 @@ $F{CONTA_SPESE}.equals(new java.math.BigDecimal(1) )
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-29" x="2" y="26" width="574" height="1" uuid="b664183e-9ad1-490e-9df8-a330947a0762"/>
+					<reportElement key="line-29" x="2" y="26" width="627" height="1" uuid="b664183e-9ad1-490e-9df8-a330947a0762">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-30" x="576" y="6" width="1" height="24" uuid="2789071f-765e-4228-9964-c76d8729f06f"/>
+					<reportElement key="line-30" x="629" y="6" width="1" height="24" uuid="2789071f-765e-4228-9964-c76d8729f06f">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -503,16 +507,18 @@ $F{CONTA_SPESE}.equals(new java.math.BigDecimal(1) )
 	<group name="TI_RECORD_L2f">
 		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
 		<groupHeader>
-			<band height="42" splitType="Stretch">
+			<band height="47" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{TI_RECORD_L1}.equals("B") && $P{TI_RECORD_L2}.equals("A"))]]></printWhenExpression>
 				<line>
-					<reportElement key="line-31" x="2" y="6" width="574" height="1" uuid="50eb06cb-a622-4b7a-83d8-c7973c85f169"/>
+					<reportElement key="line-31" x="2" y="6" width="627" height="1" uuid="50eb06cb-a622-4b7a-83d8-c7973c85f169">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-16" style="TNR8BOLD" x="354" y="8" width="123" height="12" uuid="0a14e3e8-0f36-4210-8ec2-80ae65f5b6b3"/>
+					<reportElement key="staticText-16" style="TNR8BOLD" x="408" y="7" width="123" height="12" uuid="0a14e3e8-0f36-4210-8ec2-80ae65f5b6b3"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -529,19 +535,21 @@ $F{CONTA_SPESE}.equals(new java.math.BigDecimal(1) )
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-33" x="576" y="0" width="1" height="42" uuid="9bd0c9e4-adc1-4ccf-b0a6-83c3b3418b11"/>
+					<reportElement key="line-33" x="576" y="6" width="1" height="36" uuid="9bd0c9e4-adc1-4ccf-b0a6-83c3b3418b11"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-34" x="352" y="22" width="128" height="1" uuid="c41c790c-f3d4-4c4b-9032-dfb301b9e033"/>
+					<reportElement key="line-34" x="409" y="21" width="128" height="1" uuid="c41c790c-f3d4-4c4b-9032-dfb301b9e033"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-35" x="2" y="38" width="574" height="1" uuid="d120867f-7314-4e2c-910b-65cc270797c7"/>
+					<reportElement key="line-35" x="2" y="38" width="627" height="1" uuid="d120867f-7314-4e2c-910b-65cc270797c7">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -564,14 +572,8 @@ SPESA]]></text>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
-				<line>
-					<reportElement key="line-37" x="395" y="22" width="1" height="20" uuid="e8c3a939-0477-4f74-aee2-d711dbc2e233"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
 				<staticText>
-					<reportElement key="staticText-18" style="TNR8BOLD" x="45" y="9" width="97" height="27" uuid="94d68db9-dc3c-4417-93fa-7d15b5f709fd"/>
+					<reportElement key="staticText-18" style="TNR8BOLD" x="45" y="9" width="105" height="27" uuid="94d68db9-dc3c-4417-93fa-7d15b5f709fd"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -582,13 +584,13 @@ SPESA]]></text>
 					<text><![CDATA[DESCRIZIONE]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-38" x="144" y="6" width="1" height="36" uuid="338ec27c-c968-420c-92eb-a0c5c0ac0544"/>
+					<reportElement key="line-38" x="152" y="6" width="1" height="36" uuid="338ec27c-c968-420c-92eb-a0c5c0ac0544"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-19" style="TNR8BOLD" x="146" y="9" width="41" height="27" uuid="92afcb2f-c468-441e-b928-0e12b20686bd"/>
+					<reportElement key="staticText-19" style="TNR8BOLD" x="155" y="9" width="41" height="27" uuid="92afcb2f-c468-441e-b928-0e12b20686bd"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -599,14 +601,26 @@ SPESA]]></text>
 					<text><![CDATA[ANTICI-
 PATA]]></text>
 				</staticText>
+				<staticText>
+					<reportElement style="TNR8BOLD" x="200" y="9" width="41" height="27" uuid="92afcb2f-c468-441e-b928-0e12b20686aa"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[TRAC-
+CIATA]]></text>
+				</staticText>
 				<line>
-					<reportElement key="line-39" x="189" y="6" width="1" height="36" uuid="2212d655-5a09-4cc8-b55e-2ee5ef38de4c"/>
+					<reportElement key="line-39" x="244" y="6" width="1" height="36" uuid="2212d655-5a09-4cc8-b55e-2ee5ef38de4c"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-20" style="TNR8BOLD" x="191" y="9" width="41" height="27" uuid="566a6b44-bf8e-4449-bfb4-c679b45459c8"/>
+					<reportElement key="staticText-20" style="TNR8BOLD" x="246" y="9" width="41" height="27" uuid="566a6b44-bf8e-4449-bfb4-c679b45459c8"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -617,13 +631,13 @@ PATA]]></text>
 					<text><![CDATA[DIVISA]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-40" x="234" y="6" width="1" height="36" uuid="a45001a3-e5bd-4461-a714-e81287208a38"/>
+					<reportElement key="line-40" x="289" y="6" width="1" height="36" uuid="a45001a3-e5bd-4461-a714-e81287208a38"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-21" style="TNR8BOLD" x="236" y="9" width="69" height="27" uuid="a0b0446c-042c-4ba0-bfc8-2092257dc717"/>
+					<reportElement key="staticText-21" style="TNR8BOLD" x="291" y="9" width="69" height="27" uuid="a0b0446c-042c-4ba0-bfc8-2092257dc717"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -635,30 +649,19 @@ PATA]]></text>
 IN VALUTA]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-41" x="307" y="6" width="1" height="36" uuid="f800a064-851d-4e1d-9b2d-e049b35d0974"/>
+					<reportElement key="line-41" x="362" y="6" width="1" height="36" uuid="f800a064-851d-4e1d-9b2d-e049b35d0974"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
-				<staticText>
-					<reportElement key="staticText-22" style="TNR8BOLD" x="309" y="9" width="42" height="27" uuid="4c55f0d4-f3a1-49e3-af63-dcce1d9627fe"/>
-					<box>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.0" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<text><![CDATA[CAMBIO]]></text>
-				</staticText>
 				<line>
-					<reportElement key="line-42" x="352" y="6" width="1" height="36" uuid="67501fbf-35a0-43ff-b439-dfa81f76a1fb"/>
+					<reportElement key="line-42" x="407" y="6" width="1" height="36" uuid="67501fbf-35a0-43ff-b439-dfa81f76a1fb"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-23" style="TNR8BOLD" x="354" y="24" width="39" height="12" uuid="84fb64ad-423a-4e7f-b6a8-7f61a16af7d8"/>
+					<reportElement key="staticText-23" style="TNR8BOLD" x="409" y="24" width="39" height="12" uuid="84fb64ad-423a-4e7f-b6a8-7f61a16af7d8"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -669,7 +672,7 @@ IN VALUTA]]></text>
 					<text><![CDATA[BASE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-24" style="TNR8BOLD" x="396" y="24" width="25" height="12" uuid="dc4be8fa-78bb-4d00-996a-5c0c4b7c9190"/>
+					<reportElement key="staticText-24" style="TNR8BOLD" x="451" y="24" width="25" height="12" uuid="dc4be8fa-78bb-4d00-996a-5c0c4b7c9190"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -680,13 +683,13 @@ IN VALUTA]]></text>
 					<text><![CDATA[%]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-43" x="422" y="22" width="1" height="20" uuid="99cb0c52-d666-44f8-878d-1448dae581e8"/>
+					<reportElement key="line-43" x="477" y="22" width="1" height="20" uuid="99cb0c52-d666-44f8-878d-1448dae581e8"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-25" style="TNR8BOLD" x="424" y="24" width="53" height="12" uuid="e953654f-d63e-4d6e-86ae-88959e5ca0b3"/>
+					<reportElement key="staticText-25" style="TNR8BOLD" x="479" y="24" width="53" height="12" uuid="e953654f-d63e-4d6e-86ae-88959e5ca0b3"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -697,13 +700,13 @@ IN VALUTA]]></text>
 					<text><![CDATA[IMPORTO]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-44" x="479" y="6" width="1" height="36" uuid="2560e3dd-4721-4aee-9708-e3e21942a015"/>
+					<reportElement key="line-44" x="534" y="6" width="1" height="36" uuid="2560e3dd-4721-4aee-9708-e3e21942a015"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-26" style="TNR8BOLD" x="480" y="9" width="46" height="27" uuid="251d0772-b690-4578-849d-4a264b3e28d3"/>
+					<reportElement key="staticText-26" style="TNR8BOLD" x="535" y="9" width="46" height="27" uuid="251d0772-b690-4578-849d-4a264b3e28d3"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -714,7 +717,7 @@ IN VALUTA]]></text>
 					<text><![CDATA[SPESA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-27" style="TNR8BOLD" x="528" y="9" width="46" height="27" uuid="1377daf0-74d7-44c2-a8eb-93af8918f93d"/>
+					<reportElement key="staticText-27" style="TNR8BOLD" x="583" y="9" width="44" height="27" uuid="1377daf0-74d7-44c2-a8eb-93af8918f93d"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -726,7 +729,24 @@ IN VALUTA]]></text>
 SPESA]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-45" x="527" y="6" width="1" height="36" uuid="afaaaaea-2587-4843-87b0-9f3d3e39c3cb"/>
+					<reportElement key="line-39" x="198" y="6" width="1" height="36" uuid="2212d655-5a09-4cc8-b55e-2ee5ef38de4c"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-22" style="TNR8BOLD" x="363" y="9" width="42" height="27" uuid="4c55f0d4-f3a1-49e3-af63-dcce1d9627fe"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[CAMBIO]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-45" x="629" y="0" width="1" height="42" uuid="1c9f2a08-a981-446d-94bb-8d4bafc6475a"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
