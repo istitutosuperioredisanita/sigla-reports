@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vpg_missione_subreport0" pageWidth="655" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="24da6c44-b0c6-4155-ae28-148ae11bac7a">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vpg_missione_subreport0" pageWidth="695" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="24da6c44-b0c6-4155-ae28-148ae11bac7a">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
@@ -1266,31 +1266,7 @@ CARICO ENTE
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-168" x="62" y="0" width="1" height="4" uuid="8cc047dc-334d-40dd-9418-7eae667483f1"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-169" x="163" y="0" width="1" height="4" uuid="ebdd7fc4-d2a2-413c-ab36-bc9f721ae119"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-170" x="208" y="0" width="1" height="4" uuid="4f0a8bb0-152b-45bc-9ca8-155f37fd4c95"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-171" x="253" y="0" width="1" height="4" uuid="6137e0a6-ca8c-403f-bd78-c131660c9f69"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-172" x="371" y="0" width="1" height="4" uuid="f9acb641-c1c3-4377-b110-bf8822f8cc30">
+					<reportElement key="line-168" x="60" y="0" width="1" height="4" uuid="8cc047dc-334d-40dd-9418-7eae667483f1">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
 					<graphicElement>
@@ -1298,19 +1274,7 @@ CARICO ENTE
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-173" x="417" y="0" width="1" height="4" uuid="283e5370-d6a7-4c1d-815b-5a5a6fc92be8"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-174" x="460" y="0" width="1" height="4" uuid="82717156-d7a6-42b0-ae34-a055365f2902"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-175" x="510" y="0" width="1" height="4" uuid="ea7134f7-6ad9-4714-b0f2-e7c9c2012a94">
+					<reportElement key="line-169" x="169" y="0" width="1" height="4" uuid="ebdd7fc4-d2a2-413c-ab36-bc9f721ae119">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
 					<graphicElement>
@@ -1318,7 +1282,7 @@ CARICO ENTE
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-176" x="564" y="0" width="1" height="4" uuid="a938cb53-447e-42c3-b4e2-32a36b370e42">
+					<reportElement key="line-170" x="215" y="0" width="1" height="4" uuid="4f0a8bb0-152b-45bc-9ca8-155f37fd4c95">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
 					<graphicElement>
@@ -1326,7 +1290,7 @@ CARICO ENTE
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-177" x="610" y="0" width="1" height="4" uuid="b33b7e1f-a7bb-46ce-9085-dfd13e7d8992">
+					<reportElement key="line-171" x="261" y="0" width="1" height="4" uuid="6137e0a6-ca8c-403f-bd78-c131660c9f69">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
 					<graphicElement>
@@ -1334,13 +1298,63 @@ CARICO ENTE
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-178" x="641" y="0" width="1" height="5" uuid="4313bee2-4f55-4fcb-ab98-43efa9b4ec50"/>
+					<reportElement key="line-172" x="352" y="0" width="1" height="4" uuid="f9acb641-c1c3-4377-b110-bf8822f8cc30">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement key="line-171" x="298" y="0" width="1" height="5" uuid="0e09d2ff-4668-4385-87ae-359e65b5b2b1">
+					<reportElement key="line-173" x="425" y="0" width="1" height="4" uuid="283e5370-d6a7-4c1d-815b-5a5a6fc92be8">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement key="line-174" x="470" y="0" width="1" height="4" uuid="82717156-d7a6-42b0-ae34-a055365f2902">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement key="line-175" x="540" y="0" width="1" height="4" uuid="ea7134f7-6ad9-4714-b0f2-e7c9c2012a94">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement key="line-176" x="597" y="0" width="1" height="4" uuid="a938cb53-447e-42c3-b4e2-32a36b370e42">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement key="line-177" x="639" y="0" width="1" height="4" uuid="b33b7e1f-a7bb-46ce-9085-dfd13e7d8992">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement key="line-178" x="692" y="0" width="1" height="5" uuid="4313bee2-4f55-4fcb-ab98-43efa9b4ec50">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement key="line-171" x="307" y="0" width="1" height="5" uuid="0e09d2ff-4668-4385-87ae-359e65b5b2b1">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
 					<graphicElement>
