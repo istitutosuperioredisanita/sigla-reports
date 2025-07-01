@@ -2471,7 +2471,7 @@ $F{TI_RECORD_L1}.equals("B") &&
 $F{TI_RECORD_L2}.equals("A")
 )]]></printWhenExpression>
 				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
-					<reportElement key="textField-29" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="7" y="0" width="41" height="12" uuid="27a229dd-82ac-4535-9b64-f2232eabf2c1"/>
+					<reportElement key="textField-29" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="8" y="0" width="42" height="12" uuid="27a229dd-82ac-4535-9b64-f2232eabf2c1"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2482,7 +2482,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{DT_INIZIO_TAPPA}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-30" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="48" y="0" width="105" height="12" uuid="5679cbbb-276c-4a44-b368-e51d5b399129"/>
+					<reportElement key="textField-30" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="49" y="0" width="109" height="12" uuid="5679cbbb-276c-4a44-b368-e51d5b399129"/>
 					<box leftPadding="4">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2493,7 +2493,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{DS_SPESA}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-31" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="153" y="0" width="49" height="12" uuid="e75c7180-4e69-4158-a465-892aa1cfbe79"/>
+					<reportElement key="textField-31" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="157" y="0" width="51" height="12" uuid="e75c7180-4e69-4158-a465-892aa1cfbe79"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2504,7 +2504,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{FL_SPESA_ANTICIPATA}.equals("Y")?"Si":"No"]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-31" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="202" y="0" width="49" height="12" uuid="e75c7180-4e69-4158-a465-892aa1cfbe80"/>
+					<reportElement key="textField-31" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="204" y="0" width="47" height="12" uuid="e75c7180-4e69-4158-a465-892aa1cfbe80"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2515,7 +2515,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{FL_SPESA_TRACCIATA}.equals("Y")?"Si":"No"]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-32" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="251" y="0" width="49" height="12" uuid="cf7d59ad-4cdc-4a38-ba39-a605d73a8c2f"/>
+					<reportElement key="textField-32" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="249" y="0" width="44" height="12" uuid="cf7d59ad-4cdc-4a38-ba39-a605d73a8c2f"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2526,7 +2526,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{CD_DIVISA_SPESA}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-33" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="300" y="0" width="77" height="12" uuid="f9b1d540-f1dc-40a4-882b-e1bfc9c74f67"/>
+					<reportElement key="textField-33" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="295" y="0" width="70" height="12" uuid="f9b1d540-f1dc-40a4-882b-e1bfc9c74f67"/>
 					<box rightPadding="4">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2537,7 +2537,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{IM_SPESA_DIVISA}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-34" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="377" y="0" width="49" height="12" uuid="188d92da-7ba9-4413-8852-54b4ec4eeeca"/>
+					<reportElement key="textField-34" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="370" y="0" width="40" height="12" uuid="188d92da-7ba9-4413-8852-54b4ec4eeeca"/>
 					<box rightPadding="4">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2548,7 +2548,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{CAMBIO_SPESA}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="¤ #,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-35" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="426" y="0" width="47" height="12" uuid="f4086991-7b87-4dac-bfb7-caa021019f98"/>
+					<reportElement key="textField-35" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="417" y="0" width="13" height="12" uuid="f4086991-7b87-4dac-bfb7-caa021019f98"/>
 					<box rightPadding="4">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2559,7 +2559,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{IM_BASE_MAGGIORAZIONE}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-36" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="473" y="0" width="31" height="12" uuid="d0844e73-771f-4b97-9387-2f04c0f5f169"/>
+					<reportElement key="textField-36" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="464" y="0" width="16" height="12" uuid="d0844e73-771f-4b97-9387-2f04c0f5f169"/>
 					<box rightPadding="4">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2570,7 +2570,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{PERCENTUALE_MAGGIORAZIONE}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="¤ #,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-37" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="504" y="0" width="59" height="12" uuid="f5898bc8-b4b3-4ee6-a189-299de3841f2c"/>
+					<reportElement key="textField-37" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="488" y="0" width="43" height="12" uuid="f5898bc8-b4b3-4ee6-a189-299de3841f2c"/>
 					<box rightPadding="4">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2581,7 +2581,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{IM_MAGGIORAZIONE}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="¤ #,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-38" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="563" y="0" width="52" height="12" uuid="7d9ec941-9f85-4cdb-bff5-815e015290b8"/>
+					<reportElement key="textField-38" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="548" y="0" width="47" height="12" uuid="7d9ec941-9f85-4cdb-bff5-815e015290b8"/>
 					<box rightPadding="4">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2592,7 +2592,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{IM_SPESA_EURO}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="¤ #,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-39" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="615" y="0" width="53" height="12" uuid="8022d0bf-545d-4758-8d54-36e5bcbf5837"/>
+					<reportElement key="textField-39" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="600" y="0" width="53" height="12" uuid="8022d0bf-545d-4758-8d54-36e5bcbf5837"/>
 					<box rightPadding="4">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
