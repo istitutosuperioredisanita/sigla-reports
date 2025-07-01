@@ -2592,7 +2592,7 @@ $F{TI_RECORD_L2}.equals("A")
 					<textFieldExpression><![CDATA[$F{IM_SPESA_EURO}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" pattern="¤ #,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-39" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="684" y="0" width="53" height="12" uuid="8022d0bf-545d-4758-8d54-36e5bcbf5837"/>
+					<reportElement key="textField-39" style="TNR8" positionType="Float" stretchType="RelativeToBandHeight" x="584" y="0" width="53" height="12" uuid="8022d0bf-545d-4758-8d54-36e5bcbf5837"/>
 					<box rightPadding="4">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
