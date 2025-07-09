@@ -5,6 +5,8 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLATEST-CONN.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<style name="VER6" fontName="Times New Roman" fontSize="6" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
 	<style name="VERBI6" fontName="Times New Roman" fontSize="6" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
 	<style name="VERB6" fontName="Times New Roman" fontSize="6" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
@@ -47,51 +49,60 @@
 	<parameter name="P_PRINT_DETAIL" class="java.lang.String" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[SELECT
-    a.ORDINE_ESERCIZIO,
-    a.pg_progetto,
-    a.esercizio,
-    a.cd_unita_piano,
-    a.cd_voce_piano,
+    q.ORDINE_ESERCIZIO,
+    q.pg_progetto,
+    q.esercizio_voce_piano,
+    q.ESERCIZIO_OBBL,
+    q.ESERCIZIO_ORIGINALE_OBBL,
+    q.cd_unita_piano,
+    q.cd_voce_piano,
     b.ds_voce_piano,
-    a.cd_centro_responsabilita,
-    a.cd_linea_attivita,
+    q.cd_centro_responsabilita,
+    q.cd_linea_attivita,
     c.ds_cdr,
     d.cd_natura,
-    a.esercizio_voce,
-    a.ti_appartenenza,
-    a.ti_gestione,
-    a.cd_elemento_voce,
+    q.esercizio_voce,
+    q.ti_appartenenza,
+    q.ti_gestione,
+    q.cd_elemento_voce,
     e.ds_elemento_voce,
-    a.importo_fin,
-    a.stanziamento_fin,
-    a.variapiu_fin,
-    a.variameno_fin,
-    a.trasfpiu_fin,
-    a.trasfmeno_fin,
-    a.impacc_fin,
-    a.manris_fin,
-    a.PG_OBBL,
-    a.DS_OBBL,
-    a.imp_scad,
-    a.PG_OBBL_SCAD AS NUM_SCAD,
-    a.DATA_SCAD,
-    a.IM_ASS_DOC_AMM,
-    a.IMP_ASS_DOC_CONT,
-    a.ds_scad,
-    a.creditore,
-    a.ESERCIZIO_OBBL,
-    a.ESERCIZIO_ORIGINALE_OBBL,
-    a.CDS_OBBL,
+    CASE
+        WHEN q.importo_fin > 0 THEN q.importo_fin
+        ELSE NULL
+    END AS importo_fin,
+    q.stanziamento_fin,
+    q.variapiu_fin,
+    q.variameno_fin,
+    q.trasfpiu_fin,
+    q.trasfmeno_fin,
+    q.impacc_fin,
+    q.manris_fin,
+    q.PG_OBBL,
+    CASE
+        WHEN q.importo_fin > 0 THEN NULL
+        ELSE q.imp_scad
+    END AS imp_scad,
+    q.PG_OBBL_SCAD AS NUM_SCAD,
+    q.DATA_SCAD,
+    q.IM_ASS_DOC_AMM,
+    q.IMP_ASS_DOC_CONT,
+    q.ds_scad,
+    q.creditore,
+    q.CDS_OBBL,
     obl.CD_TIPO_DOCUMENTO_CONT,
-    obl.RIPORTATO
+    obl.RIPORTATO,
+    mr.PG_MANDATO,
+    mr.PG_DOC_AMM,
+    mr.STATO
 FROM (
+    -- La tua subquery 'q' rimane INALTERATA
     SELECT
         CASE
-            WHEN x.esercizio = $P{P_ESERCIZIO} THEN -10000
-            ELSE x.esercizio - $P{P_ESERCIZIO}
+            WHEN x.esercizio_voce_piano = $P{P_ESERCIZIO} THEN -10000
+            ELSE x.esercizio_voce_piano - $P{P_ESERCIZIO}
         END AS ORDINE_ESERCIZIO,
         x.pg_progetto,
-        x.esercizio,
+        x.esercizio_voce_piano,
         x.cd_unita_piano,
         x.cd_voce_piano,
         x.cd_centro_responsabilita,
@@ -101,16 +112,15 @@ FROM (
         x.ti_gestione,
         x.cd_elemento_voce,
         x.PG_OBBL,
-        x.DS_OBBL,
         x.pg_obbl_scad,
         x.DATA_SCAD,
         x.IM_ASS_DOC_AMM,
         x.IMP_ASS_DOC_CONT,
         x.ds_scad,
         x.creditore,
-        x.ESERCIZIO_OBBL ,
-        x.ESERCIZIO_ORIGINALE_OBBL ,
-        x.CDS_OBBL ,
+        x.ESERCIZIO_OBBL,
+        x.ESERCIZIO_ORIGINALE_OBBL,
+        x.CDS_OBBL,
         SUM(x.importo_fin) AS importo_fin,
         SUM(x.stanziamento_fin) AS stanziamento_fin,
         SUM(x.variapiu_fin) AS variapiu_fin,
@@ -123,7 +133,7 @@ FROM (
     FROM (
         SELECT
             a.pg_progetto,
-            a.esercizio_piano AS esercizio,
+            a.esercizio_piano AS esercizio_voce_piano,
             a.cd_unita_organizzativa AS cd_unita_piano,
             a.cd_voce_piano,
             NULL AS cd_centro_responsabilita,
@@ -141,7 +151,6 @@ FROM (
             0 AS impacc_fin,
             0 AS manris_fin,
             NULL AS PG_OBBL,
-            NULL AS DS_OBBL,
             NULL AS pg_obbl_scad,
             0 AS imp_scad,
             NULL AS DATA_SCAD,
@@ -149,8 +158,8 @@ FROM (
             0 AS IMP_ASS_DOC_CONT,
             NULL AS ds_scad,
             NULL AS creditore,
-            0 AS ESERCIZIO_OBBL ,
-            0 AS ESERCIZIO_ORIGINALE_OBBL ,
+            0 AS ESERCIZIO_OBBL,
+            0 AS ESERCIZIO_ORIGINALE_OBBL,
             NULL AS CDS_OBBL
         FROM progetto_piano_economico a
         WHERE a.pg_progetto = $P{P_PG_PROGETTO}
@@ -175,7 +184,6 @@ FROM (
             b.impacc_fin,
             b.manris_fin,
             f.PG_OBBL,
-            f.DS_OBBL,
             f.pg_obbl_scad,
             f.im_voce AS imp_scad,
             TO_CHAR(f.DATA_SCAD, 'DD-MM-YYYY') AS DATA_SCAD,
@@ -196,14 +204,12 @@ FROM (
             a.cd_elemento_voce = b.cd_elemento_voce
         JOIN V_CONS_SCAD_OBBL_VOCE f ON
             f.pg_progetto = a.pg_progetto AND
-            f.esercizio = a.esercizio_voce AND
-            f.voce_bilancio = a.cd_elemento_voce AND
-            f.ESERCIZIO_ORIGINALE = a.esercizio_voce
+            f.voce_bilancio = a.cd_elemento_voce
         WHERE a.pg_progetto = $P{P_PG_PROGETTO}
     ) x
     GROUP BY
         x.pg_progetto,
-        x.esercizio,
+        x.esercizio_voce_piano,
         x.cd_unita_piano,
         x.cd_voce_piano,
         x.cd_centro_responsabilita,
@@ -213,7 +219,6 @@ FROM (
         x.ti_gestione,
         x.cd_elemento_voce,
         x.PG_OBBL,
-        x.DS_OBBL,
         x.pg_obbl_scad,
         x.DATA_SCAD,
         x.IM_ASS_DOC_AMM,
@@ -224,85 +229,182 @@ FROM (
         x.ESERCIZIO_ORIGINALE_OBBL,
         x.CDS_OBBL,
         x.impacc_fin
-) a
+) q
 JOIN voce_piano_economico_prg b ON
-    b.cd_unita_organizzativa = a.cd_unita_piano AND
-    b.cd_voce_piano = a.cd_voce_piano
-LEFT JOIN cdr c ON a.cd_centro_responsabilita = c.cd_centro_responsabilita
+    b.cd_unita_organizzativa = q.cd_unita_piano AND
+    b.cd_voce_piano = q.cd_voce_piano
+LEFT JOIN cdr c ON q.cd_centro_responsabilita = c.cd_centro_responsabilita
 LEFT JOIN linea_attivita d ON
-    a.cd_centro_responsabilita = d.cd_centro_responsabilita AND
-    a.cd_linea_attivita = d.cd_linea_attivita
+    q.cd_centro_responsabilita = d.cd_centro_responsabilita AND
+    q.cd_linea_attivita = d.cd_linea_attivita
 LEFT JOIN elemento_voce e ON
-    a.esercizio_voce = e.esercizio AND
-    a.ti_appartenenza = e.ti_appartenenza AND
-    a.ti_gestione = e.ti_gestione AND
-    a.cd_elemento_voce = e.cd_elemento_voce
+    q.esercizio_voce = e.esercizio AND
+    q.ti_appartenenza = e.ti_appartenenza AND
+    q.ti_gestione = e.ti_gestione AND
+    q.cd_elemento_voce = e.cd_elemento_voce
 LEFT JOIN OBBLIGAZIONE obl ON
-    a.ESERCIZIO_OBBL = obl.ESERCIZIO AND
-    a.ESERCIZIO_ORIGINALE_OBBL = obl.ESERCIZIO_ORIGINALE AND
-    a.CDS_OBBL = obl.CD_CDS AND
-    a.PG_OBBL = obl.PG_OBBLIGAZIONE
+    q.ESERCIZIO_OBBL = obl.ESERCIZIO AND
+    q.ESERCIZIO_ORIGINALE_OBBL = obl.ESERCIZIO_ORIGINALE AND
+    q.CDS_OBBL = obl.CD_CDS AND
+    q.PG_OBBL = obl.PG_OBBLIGAZIONE
 LEFT JOIN OBBLIGAZIONE_SCADENZARIO os ON
     obl.ESERCIZIO = os.ESERCIZIO AND
     obl.ESERCIZIO_ORIGINALE = os.ESERCIZIO_ORIGINALE AND
     obl.CD_CDS = os.CD_CDS AND
     obl.PG_OBBLIGAZIONE = os.PG_OBBLIGAZIONE AND
-    a.PG_OBBL_SCAD = os.PG_OBBLIGAZIONE_SCADENZARIO
+    q.PG_OBBL_SCAD = os.PG_OBBLIGAZIONE_SCADENZARIO
 LEFT JOIN OBBLIGAZIONE_SCAD_VOCE osv ON
     os.CD_CDS = osv.CD_CDS AND
     os.ESERCIZIO = osv.ESERCIZIO AND
     os.ESERCIZIO_ORIGINALE = osv.ESERCIZIO_ORIGINALE AND
     os.PG_OBBLIGAZIONE = osv.PG_OBBLIGAZIONE AND
     os.PG_OBBLIGAZIONE_SCADENZARIO = osv.PG_OBBLIGAZIONE_SCADENZARIO
+LEFT JOIN MANDATO_RIGA mr ON
+    os.CD_CDS = mr.CD_CDS AND
+    os.ESERCIZIO = mr.ESERCIZIO_OBBLIGAZIONE AND
+    os.ESERCIZIO_ORIGINALE = mr.ESERCIZIO_ORI_OBBLIGAZIONE AND
+    os.PG_OBBLIGAZIONE = mr.PG_OBBLIGAZIONE AND
+    os.PG_OBBLIGAZIONE_SCADENZARIO = mr.PG_OBBLIGAZIONE_SCADENZARIO
 WHERE
-    (a.IMP_ASS_DOC_CONT > 0 AND obl.RIPORTATO = 'N')
-    OR a.importo_fin > 0
+    q.importo_fin > 0
+    OR
+    (
+        q.importo_fin = 0
+        AND (q.IMP_ASS_DOC_CONT = q.IMP_SCAD)
+        AND obl.RIPORTATO = 'N'
+        AND (
+            q.ESERCIZIO_OBBL = q.ESERCIZIO_ORIGINALE_OBBL
+            OR
+            q.ESERCIZIO_OBBL <> q.ESERCIZIO_ORIGINALE_OBBL
+        )
+    )
+    OR (q.importo_fin = 0 AND q.IMP_SCAD = 0)
 ORDER BY
-    a.cd_voce_piano,
-    a.esercizio,
-    a.ESERCIZIO_OBBL,
-    a.ESERCIZIO_ORIGINALE_OBBL,
-    a.CDS_OBBL,
-    a.PG_OBBL,
-    a.PG_OBBL_SCAD]]>
+    q.cd_voce_piano,
+    q.esercizio_voce_piano,
+    q.ESERCIZIO_OBBL,
+    q.ESERCIZIO_ORIGINALE_OBBL,
+    q.CDS_OBBL,
+    q.PG_OBBL,
+    q.PG_OBBL_SCAD]]>
 	</queryString>
-	<field name="ORDINE_ESERCIZIO" class="java.math.BigDecimal"/>
-	<field name="PG_PROGETTO" class="java.math.BigDecimal"/>
-	<field name="ESERCIZIO" class="java.math.BigDecimal"/>
-	<field name="CD_UNITA_PIANO" class="java.lang.String"/>
-	<field name="CD_VOCE_PIANO" class="java.lang.String"/>
-	<field name="DS_VOCE_PIANO" class="java.lang.String"/>
-	<field name="CD_CENTRO_RESPONSABILITA" class="java.lang.String"/>
-	<field name="CD_LINEA_ATTIVITA" class="java.lang.String"/>
-	<field name="DS_CDR" class="java.lang.String"/>
-	<field name="CD_NATURA" class="java.lang.String"/>
-	<field name="ESERCIZIO_VOCE" class="java.math.BigDecimal"/>
-	<field name="TI_APPARTENENZA" class="java.lang.String"/>
-	<field name="TI_GESTIONE" class="java.lang.String"/>
-	<field name="CD_ELEMENTO_VOCE" class="java.lang.String"/>
-	<field name="DS_ELEMENTO_VOCE" class="java.lang.String"/>
-	<field name="IMPORTO_FIN" class="java.math.BigDecimal"/>
-	<field name="STANZIAMENTO_FIN" class="java.math.BigDecimal"/>
-	<field name="VARIAPIU_FIN" class="java.math.BigDecimal"/>
-	<field name="VARIAMENO_FIN" class="java.math.BigDecimal"/>
-	<field name="TRASFPIU_FIN" class="java.math.BigDecimal"/>
-	<field name="TRASFMENO_FIN" class="java.math.BigDecimal"/>
-	<field name="IMPACC_FIN" class="java.math.BigDecimal"/>
-	<field name="MANRIS_FIN" class="java.math.BigDecimal"/>
-	<field name="PG_OBBL" class="java.math.BigDecimal"/>
-	<field name="DS_OBBL" class="java.lang.String"/>
-	<field name="IMP_SCAD" class="java.math.BigDecimal"/>
-	<field name="NUM_SCAD" class="java.math.BigDecimal"/>
-	<field name="DATA_SCAD" class="java.lang.String"/>
-	<field name="IM_ASS_DOC_AMM" class="java.math.BigDecimal"/>
-	<field name="IMP_ASS_DOC_CONT" class="java.math.BigDecimal"/>
-	<field name="DS_SCAD" class="java.lang.String"/>
-	<field name="CREDITORE" class="java.lang.String"/>
-	<field name="ESERCIZIO_OBBL" class="java.math.BigDecimal"/>
-	<field name="ESERCIZIO_ORIGINALE_OBBL" class="java.math.BigDecimal"/>
-	<field name="CDS_OBBL" class="java.lang.String"/>
-	<field name="CD_TIPO_DOCUMENTO_CONT" class="java.lang.String"/>
-	<field name="RIPORTATO" class="java.lang.String"/>
+	<field name="ORDINE_ESERCIZIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ORDINE_ESERCIZIO"/>
+	</field>
+	<field name="PG_PROGETTO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_PROGETTO"/>
+	</field>
+	<field name="ESERCIZIO_VOCE_PIANO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_VOCE_PIANO"/>
+	</field>
+	<field name="ESERCIZIO_OBBL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_OBBL"/>
+	</field>
+	<field name="ESERCIZIO_ORIGINALE_OBBL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_ORIGINALE_OBBL"/>
+	</field>
+	<field name="CD_UNITA_PIANO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_UNITA_PIANO"/>
+	</field>
+	<field name="CD_VOCE_PIANO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_VOCE_PIANO"/>
+	</field>
+	<field name="DS_VOCE_PIANO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_VOCE_PIANO"/>
+	</field>
+	<field name="CD_CENTRO_RESPONSABILITA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_CENTRO_RESPONSABILITA"/>
+	</field>
+	<field name="CD_LINEA_ATTIVITA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_LINEA_ATTIVITA"/>
+	</field>
+	<field name="DS_CDR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_CDR"/>
+	</field>
+	<field name="CD_NATURA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_NATURA"/>
+	</field>
+	<field name="ESERCIZIO_VOCE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_VOCE"/>
+	</field>
+	<field name="TI_APPARTENENZA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TI_APPARTENENZA"/>
+	</field>
+	<field name="TI_GESTIONE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TI_GESTIONE"/>
+	</field>
+	<field name="CD_ELEMENTO_VOCE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_ELEMENTO_VOCE"/>
+	</field>
+	<field name="DS_ELEMENTO_VOCE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_ELEMENTO_VOCE"/>
+	</field>
+	<field name="IMPORTO_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMPORTO_FIN"/>
+	</field>
+	<field name="STANZIAMENTO_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="STANZIAMENTO_FIN"/>
+	</field>
+	<field name="VARIAPIU_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VARIAPIU_FIN"/>
+	</field>
+	<field name="VARIAMENO_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VARIAMENO_FIN"/>
+	</field>
+	<field name="TRASFPIU_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="TRASFPIU_FIN"/>
+	</field>
+	<field name="TRASFMENO_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="TRASFMENO_FIN"/>
+	</field>
+	<field name="IMPACC_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMPACC_FIN"/>
+	</field>
+	<field name="MANRIS_FIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="MANRIS_FIN"/>
+	</field>
+	<field name="PG_OBBL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_OBBL"/>
+	</field>
+	<field name="IMP_SCAD" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMP_SCAD"/>
+	</field>
+	<field name="NUM_SCAD" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="NUM_SCAD"/>
+	</field>
+	<field name="DATA_SCAD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DATA_SCAD"/>
+	</field>
+	<field name="IM_ASS_DOC_AMM" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IM_ASS_DOC_AMM"/>
+	</field>
+	<field name="IMP_ASS_DOC_CONT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="IMP_ASS_DOC_CONT"/>
+	</field>
+	<field name="DS_SCAD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_SCAD"/>
+	</field>
+	<field name="CREDITORE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CREDITORE"/>
+	</field>
+	<field name="CDS_OBBL" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CDS_OBBL"/>
+	</field>
+	<field name="CD_TIPO_DOCUMENTO_CONT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_TIPO_DOCUMENTO_CONT"/>
+	</field>
+	<field name="RIPORTATO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RIPORTATO"/>
+	</field>
+	<field name="PG_MANDATO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_MANDATO"/>
+	</field>
+	<field name="PG_DOC_AMM" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_DOC_AMM"/>
+	</field>
+	<field name="STATO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STATO"/>
+	</field>
 	<variable name="TRASFERITO_FIN" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[$F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).compareTo(BigDecimal.ZERO)<0?
 $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableExpression>
@@ -313,10 +415,16 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 	<variable name="SUM_IMP_SCAD_GEN" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{IMP_SCAD}]]></variableExpression>
 	</variable>
-	<variable name="ASSESTATO_FIN" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[($F{STANZIAMENTO_FIN} != null ? $F{STANZIAMENTO_FIN} : BigDecimal.ZERO).add($F{VARIAPIU_FIN} != null ? $F{VARIAPIU_FIN} : BigDecimal.ZERO).subtract($F{VARIAMENO_FIN} != null ? $F{VARIAMENO_FIN} : BigDecimal.ZERO)]]></variableExpression>
+	<variable name="VAR_SUM_DISP_EFF_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$V{DISP_EFF_FIN}]]></variableExpression>
 	</variable>
-	<variable name="SUM_ASSESTATO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
+	<variable name="VAR_SUM_IMP_SCAD_DOC_CONT_POS" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[($F{IMP_ASS_DOC_CONT} != null && $F{IMP_ASS_DOC_CONT}.compareTo(java.math.BigDecimal.ZERO) > 0 && $F{IMPORTO_FIN} != null && $F{IMPORTO_FIN}.compareTo(java.math.BigDecimal.ZERO) == 0 && "N".equals($F{RIPORTATO}) && ($F{ESERCIZIO_OBBL}.equals($F{ESERCIZIO_ORIGINALE_OBBL}) || !$F{ESERCIZIO_OBBL}.equals($F{ESERCIZIO_ORIGINALE_OBBL}))) ? $F{IMP_SCAD} : java.math.BigDecimal.ZERO]]></variableExpression>
+	</variable>
+	<variable name="VAR_SUM_IMP_SCAD_DOC_CONT_NEG_NULL" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[($F{IMP_ASS_DOC_CONT} == null || $F{IMP_ASS_DOC_CONT}.compareTo(java.math.BigDecimal.ZERO) <= 0) ? $F{IMP_SCAD} : java.math.BigDecimal.ZERO]]></variableExpression>
+	</variable>
+	<variable name="SUM_ASSESTATO_FIN_VOCE_ECONOMICA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
 		<variableExpression><![CDATA[$V{ASSESTATO_FIN}]]></variableExpression>
 	</variable>
 	<variable name="SUM_TRASFERITO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
@@ -325,18 +433,39 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 	<variable name="DISP_IMPEGNO_FIN" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[$V{ASSESTATO_FIN}.subtract($F{IMPACC_FIN})]]></variableExpression>
 	</variable>
-	<variable name="DISPONIBILITA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISP_IMPEGNO_FIN}]]></variableExpression>
-	</variable>
-	<variable name="SUM_DISPONIBILITA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISP_IMPEGNO_FIN}]]></variableExpression>
-	</variable>
-	<variable name="DISP_EFFETTIVA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_FIN}]]></variableExpression>
+	<variable name="DISPONIBILITA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup">
+		<variableExpression><![CDATA[$F{IMPORTO_FIN}.subtract($V{ASSESTATO_FIN})]]></variableExpression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
-	<variable name="DISP_EFFETTIVA_TOTALE" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_FIN}]]></variableExpression>
+	<variable name="SUM_DISPONIBILITA_TOTALE" class="java.math.BigDecimal" incrementType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$V{DISPONIBILITA}]]></variableExpression>
+	</variable>
+	<variable name="DISP_EFFETTIVA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup">
+		<variableExpression><![CDATA[$F{IMPORTO_FIN}.subtract($F{MANRIS_FIN})]]></variableExpression>
+		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
+	</variable>
+	<variable name="DISP_EFFETTIVA_TOTALE" class="java.math.BigDecimal" incrementType="Group" incrementGroup="VocePianoGroup" calculation="Sum">
+		<variableExpression><![CDATA[$V{DISP_EFFETTIVA}]]></variableExpression>
+	</variable>
+	<variable name="SUM_DISP_FIN" class="java.math.BigDecimal" resetType="Group" resetGroup="ImpegnoGroup" calculation="Sum">
+		<variableExpression><![CDATA[$V{DISP_IMPEGNO_FIN}]]></variableExpression>
+		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
+	</variable>
+	<variable name="SUM_DISP_EFF_FIN_VOCE_ECONOMICA" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
+		<variableExpression><![CDATA[$V{DISP_EFF_FIN}]]></variableExpression>
+		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
+	</variable>
+	<variable name="SUM_DISP_FIN_GEN" class="java.math.BigDecimal" incrementType="Group" incrementGroup="ImpegnoGroup" calculation="Sum">
+		<variableExpression><![CDATA[$V{SUM_DISP_FIN}]]></variableExpression>
+	</variable>
+	<variable name="DISP_EFF_FIN" class="java.math.BigDecimal" resetType="None">
+		<variableExpression><![CDATA[$V{ASSESTATO_FIN}.subtract($F{MANRIS_FIN})]]></variableExpression>
+	</variable>
+	<variable name="ASSESTATO_FIN" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{STANZIAMENTO_FIN}.add($F{VARIAPIU_FIN}).subtract($F{VARIAMENO_FIN})]]></variableExpression>
+	</variable>
+	<variable name="SUM_DISP_EFF_FIN_GEN" class="java.math.BigDecimal" incrementType="Group" incrementGroup="VocePianoGroup" calculation="Sum">
+		<variableExpression><![CDATA[$V{SUM_DISP_EFF_FIN_VOCE_ECONOMICA}]]></variableExpression>
 	</variable>
 	<group name="VocePianoGroup">
 		<groupExpression><![CDATA[$F{CD_VOCE_PIANO}]]></groupExpression>
@@ -348,10 +477,10 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textElement verticalAlignment="Top"/>
 					<textFieldExpression><![CDATA[$F{DS_VOCE_PIANO}]]></textFieldExpression>
 				</textField>
-				<textField evaluationTime="Auto" pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="65" y="10" width="74" height="12" printWhenGroupChanges="VocePianoGroup" uuid="94a81260-3dc8-47cc-9469-b44d7a6d72e9"/>
+				<textField evaluationTime="Auto" pattern="€ #,##0.00">
+					<reportElement style="VERB8" x="65" y="10" width="72" height="12" printWhenGroupChanges="VocePianoGroup" uuid="94a81260-3dc8-47cc-9469-b44d7a6d72e9"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA[$V{DISP_EFFETTIVA}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{SUM_DISP_EFF_FIN_VOCE_ECONOMICA}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -368,7 +497,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 		</groupFooter>
 	</group>
 	<group name="EsercizioGroup">
-		<groupExpression><![CDATA[$F{ESERCIZIO}]]></groupExpression>
+		<groupExpression><![CDATA[$F{ESERCIZIO_VOCE_PIANO}]]></groupExpression>
 	</group>
 	<group name="ImpegnoGroup" keepTogether="true">
 		<groupExpression><![CDATA[$F{CDS_OBBL}+$F{ESERCIZIO_OBBL}+$F{ESERCIZIO_ORIGINALE_OBBL}+$F{PG_OBBL}+$F{NUM_SCAD}]]></groupExpression>
@@ -405,16 +534,6 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></textFieldExpression>
 				</textField>
-				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="280" y="13" width="59" height="12" uuid="1c841499-5683-4a1d-a2f0-9af65b217154">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$V{DISPONIBILITA}]]></textFieldExpression>
-				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement style="VERB8" x="342" y="13" width="30" height="12" printWhenGroupChanges="VocePianoGroup" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
@@ -435,18 +554,8 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{DATA_SCAD}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="VERB8" stretchType="ElementGroupHeight" x="420" y="13" width="131" height="12" printWhenGroupChanges="VocePianoGroup" uuid="37d7a46f-e3c3-42e7-9a8c-283152a5c43d">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{DS_OBBL}]]></textFieldExpression>
-				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="747" y="13" width="45" height="12" printWhenGroupChanges="VocePianoGroup" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a">
+					<reportElement style="VERB8" x="743" y="13" width="49" height="12" printWhenGroupChanges="VocePianoGroup" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -463,10 +572,10 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 						<font isBold="false"/>
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{ESERCIZIO}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{ESERCIZIO_VOCE_PIANO}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="557" y="13" width="130" height="12" printWhenGroupChanges="VocePianoGroup" uuid="179a3755-b5f6-4b08-a09e-c0dab971d3f4">
+					<reportElement style="VERB8" x="534" y="13" width="136" height="12" printWhenGroupChanges="VocePianoGroup" uuid="179a3755-b5f6-4b08-a09e-c0dab971d3f4">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -476,7 +585,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 					<textFieldExpression><![CDATA[$F{DS_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="687" y="13" width="58" height="12" printWhenGroupChanges="VocePianoGroup" uuid="cb6972ae-ea1f-4d54-9572-d35f3d06c649">
+					<reportElement style="VERB8" x="673" y="13" width="67" height="12" printWhenGroupChanges="VocePianoGroup" uuid="cb6972ae-ea1f-4d54-9572-d35f3d06c649">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -484,6 +593,36 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{CREDITORE}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="VERB8" x="420" y="13" width="50" height="12" printWhenGroupChanges="VocePianoGroup" uuid="006d5564-3cb8-4e26-b3b1-639398e5afd2">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="false"/>
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PG_MANDATO}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="VERB8" x="473" y="13" width="57" height="12" printWhenGroupChanges="VocePianoGroup" uuid="f44a427e-b4e7-4588-bcfe-a78431633051">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="false"/>
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PG_DOC_AMM}]]></textFieldExpression>
+				</textField>
+				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
+					<reportElement style="VERB7" x="280" y="13" width="59" height="12" uuid="1c841499-5683-4a1d-a2f0-9af65b217154">
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="false"/>
+						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{SUM_DISP_FIN}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -591,7 +730,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 				<textFieldExpression><![CDATA[$P{P_CUP}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="VERB8" x="610" y="5" width="180" height="12" uuid="baa28360-5be4-4937-9139-9c365d0d308e">
+				<reportElement style="VERB8" x="610" y="5" width="220" height="12" uuid="baa28360-5be4-4937-9139-9c365d0d308e">
 					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -600,25 +739,11 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 				<text><![CDATA[Descrizione]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement style="VER9" stretchType="ElementGroupHeight" x="610" y="17" width="180" height="12" uuid="4a725496-1a66-4a3a-9592-ceae08159875">
+				<reportElement style="VER9" stretchType="ElementGroupHeight" x="610" y="17" width="220" height="12" uuid="4a725496-1a66-4a3a-9592-ceae08159875">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$P{P_DS_PROGETTO}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="VERB8" x="806" y="5" width="30" height="12" uuid="b3ec683c-9110-4139-96e0-ffa6c6df7115">
-					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<paragraph tabStopWidth="40"/>
-				</textElement>
-				<text><![CDATA[Ente]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="806" y="17" width="30" height="12" uuid="94ace4c8-d1fe-4ea5-8f2f-44de02b2a1ee"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA["Y".equals($P{P_UO_ENTE}) ? "ISS" : null]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -666,12 +791,7 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 				<text><![CDATA[Data Scad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="420" y="8" width="131" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001c"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Descrizione Imp.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="747" y="8" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f"/>
+				<reportElement style="VERB8" x="743" y="8" width="48" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Imp. Scad.]]></text>
 			</staticText>
@@ -692,24 +812,34 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 				</reportElement>
 			</line>
 			<staticText>
-				<reportElement style="VERB8" x="557" y="8" width="130" height="12" uuid="00b27d0f-6076-468e-8b0e-61e1f1edba4a"/>
+				<reportElement style="VERB8" x="534" y="8" width="136" height="12" uuid="00b27d0f-6076-468e-8b0e-61e1f1edba4a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Descrizione scad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="687" y="8" width="58" height="12" uuid="b16e3198-a910-4ad4-aed1-3cc28796a7eb"/>
+				<reportElement style="VERB8" x="673" y="8" width="67" height="12" uuid="b16e3198-a910-4ad4-aed1-3cc28796a7eb"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Creditore]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="VERB8" x="420" y="8" width="50" height="12" uuid="63e89492-d9d0-4fe7-91c8-17942330a787"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[N. Mandato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="VERB8" x="473" y="8" width="57" height="12" uuid="ec2062fb-0376-4b22-8996-e933d3981250"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[N. Doc. Amm.]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band>
+		<band splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 		</band>
 	</detail>
 	<summary>
-		<band height="60" splitType="Stretch">
+		<band height="70" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<line>
 				<reportElement x="0" y="12" width="842" height="1" uuid="43a259c6-070a-42a9-86c2-19e35520a216">
@@ -737,25 +867,24 @@ $F{TRASFPIU_FIN}.subtract($F{TRASFMENO_FIN}).abs():BigDecimal.ZERO]]></variableE
 				<textFieldExpression><![CDATA[$V{SUM_IMP_SCAD_GEN}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="VERB8" x="62" y="16" width="76" height="12" uuid="98dedf38-8d2a-447e-a11b-b6c9487a7f07"/>
+				<reportElement style="VERB8" x="62" y="16" width="88" height="12" uuid="98dedf38-8d2a-447e-a11b-b6c9487a7f07"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tot. disp. eff.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="280" y="16" width="67" height="12" uuid="aff1d763-e096-48ff-8f3f-8a2136711493"/>
+				<reportElement style="VERB8" x="280" y="16" width="80" height="12" uuid="aff1d763-e096-48ff-8f3f-8a2136711493"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tot. Disponibile]]></text>
 			</staticText>
 			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="VERB10" x="280" y="28" width="67" height="12" uuid="5fed6b69-bd62-4590-94f9-c9b4c46be40c"/>
+				<reportElement style="VERB10" x="280" y="28" width="80" height="12" uuid="5fed6b69-bd62-4590-94f9-c9b4c46be40c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{SUM_DISPONIBILITA_TOTALE}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{SUM_DISP_FIN_GEN}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="VERB10" x="62" y="28" width="76" height="12" uuid="26b757e9-0b3e-4239-8233-88024f85aeb2"/>
+				<reportElement style="VERB10" x="62" y="28" width="88" height="12" uuid="26b757e9-0b3e-4239-8233-88024f85aeb2"/>
 				<textElement textAlignment="Center" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$V{SUM_IMPORTO_FIN_GEN}.subtract($V{SUM_ASSESTATO_FIN_GEN})
-.subtract($V{SUM_TRASFERITO_FIN_GEN})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{SUM_DISP_EFF_FIN_GEN}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
