@@ -421,7 +421,7 @@
 				<textElement>
 					<font size="18" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Inventario al : "+new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{dataInventario})]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Valorizzazione al : "+new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{dataInventario})]]></textFieldExpression>
 			</textField>
 			<image onErrorType="Blank">
 				<reportElement x="0" y="0" width="340" height="50" uuid="050e130b-48dd-4845-9597-a21471a2795e"/>
@@ -452,7 +452,7 @@
 				<textElement>
 					<font size="18" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Inventario al : "+new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{dataInventario})]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Valorizzazione al : "+new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{dataInventario})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="180" y="40" width="218" height="30" uuid="19b4422e-f150-4939-8a7e-5ff5174044fb"/>
