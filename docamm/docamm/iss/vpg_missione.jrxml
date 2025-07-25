@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vpg_missione" pageWidth="595" pageHeight="842" columnWidth="573" leftMargin="11" rightMargin="11" topMargin="11" bottomMargin="11" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Vpg_missioneScriptlet">
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vpg_missione" pageWidth="750" pageHeight="842" columnWidth="573" leftMargin="11" rightMargin="11" topMargin="11" bottomMargin="11" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Vpg_missioneScriptlet" uuid="71389263-1ae3-4063-aa04-2ae5b2a7a2b4">
 	<property name="ireport.scriptlethandling" value="2"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
@@ -51,7 +52,7 @@
 	<detail>
 		<band height="16" splitType="Stretch">
 			<subreport isUsingCache="true">
-				<reportElement key="subreport-1" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="572" height="16" isRemoveLineWhenBlank="true"/>
+				<reportElement key="subreport-1" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="572" height="16" isRemoveLineWhenBlank="true" uuid="d27a6688-6186-4f7f-a0a3-4fd973baf927"/>
 				<subreportParameter name="aEs">
 					<subreportParameterExpression><![CDATA[$P{aEs}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -77,7 +78,7 @@
 					<subreportParameterExpression><![CDATA[$P{DIR_SUBREPORT}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_SUBREPORT}+"vpg_missione_subreport0.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{DIR_SUBREPORT}+"vpg_missione_subreport0.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
