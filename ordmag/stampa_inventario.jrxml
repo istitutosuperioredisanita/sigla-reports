@@ -11,6 +11,7 @@
 	<queryString language="JSON">
 		<![CDATA[]]>
 	</queryString>
+
 	<field name="cd_magazzino" class="java.lang.String">
 		<property name="net.sf.jasperreports.json.field.expression" value="cd_magazzino"/>
 		<fieldDescription><![CDATA[cd_magazzino]]></fieldDescription>
