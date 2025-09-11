@@ -133,7 +133,7 @@ new SimpleDateFormat("dd/MM/yyyy").format( $P{data_ricezione}) +
 				<reportElement style="TNR10" stretchType="ElementGroupHeight" x="0" y="5" width="552" height="14" uuid="7d942931-f8cf-459d-b221-20a34d0f4f6e">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<textFieldExpression><![CDATA["Si resta in attesa di ricevere Nota Credito a storno totale del documento"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Si resta in attesa di ricevere Nota di Credito"]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="63">
