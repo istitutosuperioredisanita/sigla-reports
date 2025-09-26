@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="liquidazione_iva" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="787fedc5-c840-4dc7-b550-97c02f46fccb">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="ISO-8859-1"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLATEST-CONN.xml"/>
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -28,7 +25,7 @@
 	<parameter name="cd_cds" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["031"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="cd_unita_organizzativa" class="java.lang.String">
+	<parameter name="cd_unita_organizzativa" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["031.001"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="esercizio" class="java.lang.Integer" isForPrompting="false">
@@ -46,35 +43,18 @@
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
-	<parameter name="DIR_IMAGE" class="java.lang.String">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
-	</parameter>
 	<queryString>
-		<![CDATA[SELECT 1 as PAGINA, uo.CD_UNITA_ORGANIZZATIVA, uo.DS_UNITA_ORGANIZZATIVA, a.PARTITA_IVA, a.RAGIONE_SOCIALE
-FROM UNITA_ORGANIZZATIVA uo, ANAGRAFICO a
-WHERE uo.CD_UNITA_ORGANIZZATIVA = $P{cd_unita_organizzativa}
-AND a.CD_ANAG = 1
+		<![CDATA[select 1 PAGINA, CD_UNITA_ORGANIZZATIVA, DS_UNITA_ORGANIZZATIVA
+FROM UNITA_ORGANIZZATIVA
+WHERE CD_UNITA_ORGANIZZATIVA = $P{cd_unita_organizzativa}
 UNION
-SELECT 2 as PAGINA, uo.CD_UNITA_ORGANIZZATIVA, uo.DS_UNITA_ORGANIZZATIVA, a.PARTITA_IVA, a.RAGIONE_SOCIALE
-FROM UNITA_ORGANIZZATIVA uo, ANAGRAFICO a
-WHERE uo.CD_UNITA_ORGANIZZATIVA = $P{cd_unita_organizzativa}
-AND a.CD_ANAG = 1]]>
+select 2 PAGINA, CD_UNITA_ORGANIZZATIVA, DS_UNITA_ORGANIZZATIVA
+FROM UNITA_ORGANIZZATIVA
+WHERE CD_UNITA_ORGANIZZATIVA = $P{cd_unita_organizzativa}]]>
 	</queryString>
-	<field name="PAGINA" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="PAGINA"/>
-	</field>
-	<field name="CD_UNITA_ORGANIZZATIVA" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="CD_UNITA_ORGANIZZATIVA"/>
-	</field>
-	<field name="DS_UNITA_ORGANIZZATIVA" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="DS_UNITA_ORGANIZZATIVA"/>
-	</field>
-	<field name="PARTITA_IVA" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="PARTITA_IVA"/>
-	</field>
-	<field name="RAGIONE_SOCIALE" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="RAGIONE_SOCIALE"/>
-	</field>
+	<field name="PAGINA" class="java.lang.Integer"/>
+	<field name="CD_UNITA_ORGANIZZATIVA" class="java.lang.String"/>
+	<field name="DS_UNITA_ORGANIZZATIVA" class="java.lang.String"/>
 	<group name="PAGINA" isStartNewPage="true">
 		<groupExpression><![CDATA[$F{PAGINA}]]></groupExpression>
 		<groupHeader>
@@ -157,10 +137,9 @@ AND a.CD_ANAG = 1]]>
 		<band splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="113" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		<band height="92" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR12" x="2" y="62" width="532" height="18" uuid="56b36e47-9024-40bd-b2d5-8d85cd0e04b1"/>
+				<reportElement key="textField" style="TNR12" x="2" y="44" width="532" height="18" uuid="56b36e47-9024-40bd-b2d5-8d85cd0e04b1"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -176,8 +155,8 @@ AND a.CD_ANAG = 1]]>
  $P{ti_liquidazione}.equals("P")? "LIQUIDAZIONE PERIODICA ISTITUZIONALE SPLIT PAYMENT" :
  "LIQUIDAZIONE PERIODICA COMMERCIALE")]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR12BOLD" x="20" y="92" width="126" height="18" uuid="cffce965-2a4c-4397-846f-8ba5d4c29149">
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" style="TNR12BOLD" x="20" y="74" width="126" height="18" uuid="cffce965-2a4c-4397-846f-8ba5d4c29149">
 					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(1)))]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -210,7 +189,7 @@ AND a.CD_ANAG = 1]]>
 )]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-6" style="TNR12BOLD" x="158" y="92" width="100" height="18" uuid="f85e0725-b68f-4e9c-b272-054f8cdce923">
+				<reportElement key="textField-6" style="TNR12BOLD" x="158" y="74" width="100" height="18" uuid="f85e0725-b68f-4e9c-b272-054f8cdce923">
 					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(1)))]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -225,7 +204,7 @@ AND a.CD_ANAG = 1]]>
 				<textFieldExpression><![CDATA["Anno: " + new SimpleDateFormat("yyyy").format($P{dataInizio})]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-7" x="429" y="22" width="89" height="18" uuid="abf8c40f-d37b-4d5d-8d96-a4d496674448"/>
+				<reportElement key="textField-7" x="429" y="4" width="89" height="18" uuid="abf8c40f-d37b-4d5d-8d96-a4d496674448"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -238,8 +217,8 @@ AND a.CD_ANAG = 1]]>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("yyyy").format($P{dataInizio}) +
 "/Pagina " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR10" x="20" y="42" width="505" height="18" uuid="d0210cb8-c8d0-423f-a0b6-5169d5a9fae7">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField" style="TNR10" x="20" y="24" width="505" height="18" uuid="d0210cb8-c8d0-423f-a0b6-5169d5a9fae7">
 					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(1)))]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -249,19 +228,6 @@ AND a.CD_ANAG = 1]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textFieldExpression><![CDATA["U.O. "+$F{CD_UNITA_ORGANIZZATIVA}+" - "+$F{DS_UNITA_ORGANIZZATIVA}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField-1" style="TNR10BOLD" x="2" y="2" width="534" height="13" uuid="e45a4d15-35c4-46d7-a8f7-6f21fe007e36"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textFieldExpression><![CDATA[($F{RAGIONE_SOCIALE}!= null && $F{PARTITA_IVA}!= null ?
-	$F{RAGIONE_SOCIALE}+ " " + $F{PARTITA_IVA}:
-  $F{RAGIONE_SOCIALE}!= null ? $F{RAGIONE_SOCIALE}:
-  $F{PARTITA_IVA}!= null ? $F{PARTITA_IVA}:null)]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
