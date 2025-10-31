@@ -6,7 +6,7 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLATEST-CONN.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLA-COLL-CONN.xml"/>
 	<style name="VER6" fontName="Times New Roman" fontSize="6" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
 	<style name="VERBI6" fontName="Times New Roman" fontSize="6" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
 	<style name="VERB6" fontName="Times New Roman" fontSize="6" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
@@ -295,8 +295,8 @@ ORDER BY
 	<field name="NUM_SCAD" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="NUM_SCAD"/>
 	</field>
-	<field name="DATA_SCAD" class="java.sql.Timestamp">
-		<property name="com.jaspersoft.studio.field.label" value="DATA_SCAD"/>
+	<field name="DATA_MANDATO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DATA_MANDATO"/>
 	</field>
 	<field name="IM_ASS_DOC_AMM" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="IM_ASS_DOC_AMM"/>
@@ -391,14 +391,14 @@ ORDER BY
 					<textFieldExpression><![CDATA[$F{DS_VOCE_PIANO}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" evaluationTime="Group" evaluationGroup="VocePianoGroup" pattern="€ #,##0.00" isBlankWhenNull="false">
-					<reportElement style="VERB9" positionType="Float" mode="Transparent" x="66" y="10" width="84" height="12" isPrintInFirstWholeBand="true" printWhenGroupChanges="VocePianoGroup" backcolor="#EBEBEB" uuid="2e1afb79-f0ad-4021-8c5a-fa83cab53fde"/>
+					<reportElement style="VERB9" positionType="Float" mode="Transparent" x="63" y="10" width="80" height="12" isPrintInFirstWholeBand="true" printWhenGroupChanges="VocePianoGroup" backcolor="#EBEBEB" uuid="2e1afb79-f0ad-4021-8c5a-fa83cab53fde"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font isBold="true" isItalic="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{DISP_EFF_PIANO_ECO}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" evaluationTime="Group" evaluationGroup="VocePianoGroup" pattern="€ #,##0.00">
-					<reportElement style="VERB9" positionType="Float" mode="Transparent" x="280" y="10" width="90" height="12" isPrintInFirstWholeBand="true" printWhenGroupChanges="VocePianoGroup" backcolor="#EBEBEB" uuid="80672dd9-3df4-43bf-9ca3-73eed12627ca"/>
+					<reportElement style="VERB9" positionType="Float" mode="Transparent" x="270" y="10" width="80" height="12" isPrintInFirstWholeBand="true" printWhenGroupChanges="VocePianoGroup" backcolor="#EBEBEB" uuid="80672dd9-3df4-43bf-9ca3-73eed12627ca"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font isBold="true"/>
 					</textElement>
@@ -437,7 +437,7 @@ ORDER BY
 					<textFieldExpression><![CDATA[$F{PG_OBBL}]]></textFieldExpression>
 				</textField>
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="211" y="13" width="67" height="12" uuid="9422a16d-3e5f-410a-8149-16e789f280a9">
+					<reportElement style="VERB8" x="209" y="13" width="59" height="12" uuid="9422a16d-3e5f-410a-8149-16e789f280a9">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 						<printWhenExpression><![CDATA[$F{IMPORTO_FIN}!=java.math.BigDecimal.ZERO]]></printWhenExpression>
 					</reportElement>
@@ -458,7 +458,7 @@ ORDER BY
 					<textFieldExpression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="358" y="13" width="30" height="12" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd">
+					<reportElement style="VERB8" x="349" y="13" width="30" height="12" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -468,14 +468,14 @@ ORDER BY
 					<textFieldExpression><![CDATA[$F{NUM_SCAD}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="388" y="13" width="42" height="12" uuid="88219c6e-1d54-4462-8566-267922d51174">
+					<reportElement style="VERB8" x="382" y="13" width="54" height="12" uuid="88219c6e-1d54-4462-8566-267922d51174">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font isBold="false"/>
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{DATA_SCAD}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{DATA_MANDATO}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="ImpegnoGroup" pattern="€ #,##0.00" isBlankWhenNull="true">
 					<reportElement style="VERB8" x="743" y="13" width="49" height="12" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a">
@@ -489,7 +489,7 @@ ORDER BY
 					<textFieldExpression><![CDATA[$F{IMP_SCAD} != null ? $F{IMP_SCAD} : java.math.BigDecimal.ZERO]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="143" y="13" width="33" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c">
+					<reportElement style="VERB8" x="140" y="13" width="33" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -499,7 +499,7 @@ ORDER BY
 					<textFieldExpression><![CDATA[$F{ESERCIZIO_VOCE_PIANO}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="538" y="13" width="132" height="12" uuid="179a3755-b5f6-4b08-a09e-c0dab971d3f4">
+					<reportElement style="VERB8" x="548" y="13" width="122" height="12" uuid="179a3755-b5f6-4b08-a09e-c0dab971d3f4">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -519,7 +519,7 @@ ORDER BY
 					<textFieldExpression><![CDATA[$F{CREDITORE}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="430" y="13" width="50" height="12" uuid="006d5564-3cb8-4e26-b3b1-639398e5afd2">
+					<reportElement style="VERB8" x="438" y="13" width="46" height="12" uuid="006d5564-3cb8-4e26-b3b1-639398e5afd2">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -529,7 +529,7 @@ ORDER BY
 					<textFieldExpression><![CDATA[$F{PG_MANDATO}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="480" y="13" width="57" height="12" uuid="f44a427e-b4e7-4588-bcfe-a78431633051">
+					<reportElement style="VERB8" x="490" y="13" width="56" height="12" uuid="f44a427e-b4e7-4588-bcfe-a78431633051">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -675,39 +675,39 @@ ORDER BY
 				<text><![CDATA[Disp. effettiva]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="178" y="8" width="31" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000d"/>
+				<reportElement style="VERB8" x="176" y="8" width="31" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Impegno]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="142" y="8" width="34" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000a"/>
+				<reportElement style="VERB8" x="139" y="8" width="34" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Anno Bil.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="211" y="8" width="67" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000010"/>
+				<reportElement style="VERB8" x="207" y="8" width="61" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000010"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Importo Imp.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="280" y="8" width="77" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000013"/>
+				<reportElement style="VERB8" x="270" y="8" width="79" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000013"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Disponibilità]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="358" y="8" width="29" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000016"/>
+				<reportElement style="VERB8" x="350" y="8" width="29" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000016"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[N. Scad]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="387" y="8" width="43" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000019"/>
+				<reportElement style="VERB8" x="382" y="8" width="54" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000019"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Data Scad.]]></text>
+				<text><![CDATA[Data Mandato]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="VERB8" x="743" y="8" width="48" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Imp. Scad.]]></text>
+				<text><![CDATA[Importo]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="VERB8" x="793" y="8" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000022"/>
@@ -726,7 +726,7 @@ ORDER BY
 				</reportElement>
 			</line>
 			<staticText>
-				<reportElement style="VERB8" x="538" y="8" width="132" height="12" uuid="00b27d0f-6076-468e-8b0e-61e1f1edba4a"/>
+				<reportElement style="VERB8" x="548" y="8" width="122" height="12" uuid="00b27d0f-6076-468e-8b0e-61e1f1edba4a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Descrizione scad.]]></text>
 			</staticText>
@@ -736,12 +736,12 @@ ORDER BY
 				<text><![CDATA[Creditore]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="430" y="8" width="50" height="12" uuid="63e89492-d9d0-4fe7-91c8-17942330a787"/>
+				<reportElement style="VERB8" x="438" y="8" width="46" height="12" uuid="63e89492-d9d0-4fe7-91c8-17942330a787"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[N. Mandato]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="VERB8" x="480" y="8" width="57" height="12" uuid="ec2062fb-0376-4b22-8996-e933d3981250"/>
+				<reportElement style="VERB8" x="490" y="8" width="56" height="12" uuid="ec2062fb-0376-4b22-8996-e933d3981250"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[N. Doc. Amm.]]></text>
 			</staticText>
