@@ -57,70 +57,7 @@
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[WITH dati_base AS (
-    SELECT
-        a.pg_progetto,
-        a.esercizio_piano AS esercizio_voce_piano,
-        a.cd_unita_organizzativa AS cd_unita_piano,
-        a.cd_voce_piano,
-        NULL AS cd_centro_responsabilita,
-        NULL AS cd_linea_attivita,
-        NULL AS esercizio_voce,
-        NULL AS ti_appartenenza,
-        NULL AS ti_gestione,
-        NULL AS cd_elemento_voce,
-        NVL(a.im_spesa_finanziato, 0) AS importo_fin,
-        0 AS stanziamento_fin, 0 AS variapiu_fin, 0 AS variameno_fin,
-        0 AS trasfpiu_fin, 0 AS trasfmeno_fin, 0 AS impacc_fin, 0 AS manris_fin,
-        NULL AS PG_OBBL, NULL AS pg_obbl_scad, 0 AS imp_scad, CAST(NULL AS DATE) AS DATA_SCAD,
-        0 AS IM_ASS_DOC_AMM, 0 AS IMP_ASS_DOC_CONT, NULL AS ds_scad,
-        NULL AS creditore, 0 AS ESERCIZIO_OBBL, 0 AS ESERCIZIO_ORIGINALE_OBBL, NULL AS CDS_OBBL
-    FROM progetto_piano_economico a
-    WHERE a.pg_progetto = $P{P_PG_PROGETTO}
-
-    UNION ALL
-
-    SELECT
-        a.pg_progetto,
-        a.esercizio_piano AS esercizio_voce_piano,
-        a.cd_unita_organizzativa AS cd_unita_piano,
-        a.cd_voce_piano,
-        b.cd_centro_responsabilita, b.cd_linea_attivita, b.esercizio_voce,
-        b.ti_appartenenza, b.ti_gestione, b.cd_elemento_voce,
-        0 AS importo_fin,
-        b.stanziamento_fin, b.variapiu_fin, b.variameno_fin,
-        b.trasfpiu_fin, b.trasfmeno_fin, b.impacc_fin, b.manris_fin,
-        f.PG_OBBL, f.pg_obbl_scad, f.im_voce AS imp_scad, f.DATA_SCAD,
-        f.IM_ASS_DOC_AMM, f.IMP_ASS_DOC_CONT, f.ds_scad, f.creditore,
-        f.ESERCIZIO AS ESERCIZIO_OBBL, f.ESERCIZIO_ORIGINALE AS ESERCIZIO_ORIGINALE_OBBL, f.CDS AS CDS_OBBL
-    FROM ass_progetto_piaeco_voce a
-    JOIN V_SALDI_GAE_VOCE_PROGETTO b ON
-        a.pg_progetto = b.pg_progetto AND
-        a.esercizio_piano = b.esercizio AND
-        a.esercizio_voce = b.esercizio AND
-        a.ti_appartenenza = b.ti_appartenenza AND
-        a.ti_gestione = b.ti_gestione AND
-        a.cd_elemento_voce = b.cd_elemento_voce
-    JOIN V_CONS_SCAD_OBBL_VOCE f ON
-        f.pg_progetto = a.pg_progetto AND
-        f.voce_bilancio = a.cd_elemento_voce
-    WHERE a.pg_progetto = $P{P_PG_PROGETTO}
-),
-dati_numerati AS (
-    SELECT
-        CASE
-            WHEN x.esercizio_voce_piano = $P{P_ESERCIZIO} THEN -10000
-            ELSE x.esercizio_voce_piano - $P{P_ESERCIZIO}
-        END AS ORDINE_ESERCIZIO,
-        x.*,
-        ROW_NUMBER() OVER (
-            PARTITION BY x.esercizio_voce_piano, x.cd_unita_piano, x.cd_voce_piano
-            ORDER BY x.pg_progetto, x.cd_centro_responsabilita, x.cd_linea_attivita,
-                     x.ti_appartenenza, x.ti_gestione
-        ) AS rn_vspep_fin
-    FROM dati_base x
-)
-SELECT
+		<![CDATA[SELECT
     q.ORDINE_ESERCIZIO,
     q.pg_progetto,
     q.esercizio_voce_piano,
@@ -138,18 +75,24 @@ SELECT
     q.ti_gestione,
     q.cd_elemento_voce,
     e.ds_elemento_voce,
-    NVL(q.importo_fin, 0) AS importo_fin,
-    CASE WHEN q.rn_vspep_fin = 1 THEN NVL(vspep.stanziamento_fin, 0) ELSE 0 END AS stanziamento_fin,
-    CASE WHEN q.rn_vspep_fin = 1 THEN NVL(vspep.variapiu_fin, 0) ELSE 0 END AS variapiu_fin,
-    CASE WHEN q.rn_vspep_fin = 1 THEN NVL(vspep.variameno_fin, 0) ELSE 0 END AS variameno_fin,
-    CASE WHEN q.rn_vspep_fin = 1 THEN NVL(vspep.trasfpiu_fin, 0) ELSE 0 END AS trasfpiu_fin,
-    CASE WHEN q.rn_vspep_fin = 1 THEN NVL(vspep.trasfmeno_fin, 0) ELSE 0 END AS trasfmeno_fin,
-    CASE WHEN q.rn_vspep_fin = 1 THEN NVL(vspep.impacc_fin, 0) ELSE 0 END AS impacc_fin,
-    CASE WHEN q.rn_vspep_fin = 1 THEN NVL(vspep.manris_fin, 0) ELSE 0 END AS manris_fin,
+    CASE
+        WHEN q.importo_fin > 0 THEN q.importo_fin
+        ELSE NULL
+    END AS importo_fin,
+    q.stanziamento_fin,
+    q.variapiu_fin,
+    q.variameno_fin,
+    q.trasfpiu_fin,
+    q.trasfmeno_fin,
+    q.impacc_fin,
+    q.manris_fin,
     q.PG_OBBL,
-    q.imp_scad,
-    q.pg_obbl_scad AS NUM_SCAD,
-    q.DATA_SCAD,
+    CASE
+        WHEN q.importo_fin > 0 THEN NULL
+        ELSE q.imp_scad
+    END AS imp_scad,
+    q.PG_OBBL_SCAD AS NUM_SCAD,
+    TO_CHAR(mr.DACR, 'DD-MM-YYYY') AS DATA_MANDATO,
     q.IM_ASS_DOC_AMM,
     q.IMP_ASS_DOC_CONT,
     q.ds_scad,
@@ -160,48 +103,191 @@ SELECT
     mr.PG_MANDATO,
     mr.PG_DOC_AMM,
     mr.STATO
-FROM dati_numerati q
+FROM (
+    -- La tua subquery 'q' rimane INALTERATA
+    SELECT
+        CASE
+            WHEN x.esercizio_voce_piano = $P{P_ESERCIZIO} THEN -10000
+            ELSE x.esercizio_voce_piano - $P{P_ESERCIZIO}
+        END AS ORDINE_ESERCIZIO,
+        x.pg_progetto,
+        x.esercizio_voce_piano,
+        x.cd_unita_piano,
+        x.cd_voce_piano,
+        x.cd_centro_responsabilita,
+        x.cd_linea_attivita,
+        x.esercizio_voce,
+        x.ti_appartenenza,
+        x.ti_gestione,
+        x.cd_elemento_voce,
+        x.PG_OBBL,
+        x.pg_obbl_scad,
+        x.DATA_SCAD,
+        x.IM_ASS_DOC_AMM,
+        x.IMP_ASS_DOC_CONT,
+        x.ds_scad,
+        x.creditore,
+        x.ESERCIZIO_OBBL,
+        x.ESERCIZIO_ORIGINALE_OBBL,
+        x.CDS_OBBL,
+        SUM(x.importo_fin) AS importo_fin,
+        SUM(x.stanziamento_fin) AS stanziamento_fin,
+        SUM(x.variapiu_fin) AS variapiu_fin,
+        SUM(x.variameno_fin) AS variameno_fin,
+        SUM(x.trasfpiu_fin) AS trasfpiu_fin,
+        SUM(x.trasfmeno_fin) AS trasfmeno_fin,
+        SUM(x.impacc_fin) AS impacc_fin,
+        SUM(x.manris_fin) AS manris_fin,
+        SUM(x.imp_scad) AS imp_scad
+    FROM (
+        SELECT
+            a.pg_progetto,
+            a.esercizio_piano AS esercizio_voce_piano,
+            a.cd_unita_organizzativa AS cd_unita_piano,
+            a.cd_voce_piano,
+            NULL AS cd_centro_responsabilita,
+            NULL AS cd_linea_attivita,
+            NULL AS esercizio_voce,
+            NULL AS ti_appartenenza,
+            NULL AS ti_gestione,
+            NULL AS cd_elemento_voce,
+            NVL(a.im_spesa_finanziato, 0) AS importo_fin,
+            0 AS stanziamento_fin,
+            0 AS variapiu_fin,
+            0 AS variameno_fin,
+            0 AS trasfpiu_fin,
+            0 AS trasfmeno_fin,
+            0 AS impacc_fin,
+            0 AS manris_fin,
+            NULL AS PG_OBBL,
+            NULL AS pg_obbl_scad,
+            0 AS imp_scad,
+            NULL AS DATA_SCAD,
+            0 AS IM_ASS_DOC_AMM,
+            0 AS IMP_ASS_DOC_CONT,
+            NULL AS ds_scad,
+            NULL AS creditore,
+            0 AS ESERCIZIO_OBBL,
+            0 AS ESERCIZIO_ORIGINALE_OBBL,
+            NULL AS CDS_OBBL
+        FROM progetto_piano_economico a
+        WHERE a.pg_progetto = $P{P_PG_PROGETTO}
+        UNION ALL
+        SELECT
+            a.pg_progetto,
+            a.esercizio_piano,
+            a.cd_unita_organizzativa,
+            a.cd_voce_piano,
+            b.cd_centro_responsabilita,
+            b.cd_linea_attivita,
+            b.esercizio_voce,
+            b.ti_appartenenza,
+            b.ti_gestione,
+            b.cd_elemento_voce,
+            0 AS importo_fin,
+            b.stanziamento_fin,
+            b.variapiu_fin,
+            b.variameno_fin,
+            b.trasfpiu_fin,
+            b.trasfmeno_fin,
+            b.impacc_fin,
+            b.manris_fin,
+            f.PG_OBBL,
+            f.pg_obbl_scad,
+            f.im_voce AS imp_scad,
+            TO_CHAR(f.DATA_SCAD, 'DD-MM-YYYY') AS DATA_SCAD,
+            f.IM_ASS_DOC_AMM,
+            f.IMP_ASS_DOC_CONT,
+            f.ds_scad,
+            f.creditore,
+            f.ESERCIZIO AS ESERCIZIO_OBBL,
+            f.ESERCIZIO_ORIGINALE AS ESERCIZIO_ORIGINALE_OBBL,
+            f.CDS AS CDS_OBBL
+        FROM ass_progetto_piaeco_voce a
+        JOIN V_SALDI_GAE_VOCE_PROGETTO b ON
+            a.pg_progetto = b.pg_progetto AND
+            a.esercizio_piano = b.esercizio AND
+            a.esercizio_voce = b.esercizio AND
+            a.ti_appartenenza = b.ti_appartenenza AND
+            a.ti_gestione = b.ti_gestione AND
+            a.cd_elemento_voce = b.cd_elemento_voce
+        JOIN V_CONS_SCAD_OBBL_VOCE f ON
+            f.pg_progetto = a.pg_progetto AND
+            f.voce_bilancio = a.cd_elemento_voce
+        WHERE a.pg_progetto = $P{P_PG_PROGETTO}
+    ) x
+    GROUP BY
+        x.pg_progetto,
+        x.esercizio_voce_piano,
+        x.cd_unita_piano,
+        x.cd_voce_piano,
+        x.cd_centro_responsabilita,
+        x.cd_linea_attivita,
+        x.esercizio_voce,
+        x.ti_appartenenza,
+        x.ti_gestione,
+        x.cd_elemento_voce,
+        x.PG_OBBL,
+        x.pg_obbl_scad,
+        x.DATA_SCAD,
+        x.IM_ASS_DOC_AMM,
+        x.IMP_ASS_DOC_CONT,
+        x.ds_scad,
+        x.creditore,
+        x.ESERCIZIO_OBBL,
+        x.ESERCIZIO_ORIGINALE_OBBL,
+        x.CDS_OBBL,
+        x.impacc_fin
+) q
 JOIN voce_piano_economico_prg b ON
-    b.cd_unita_organizzativa = q.cd_unita_piano AND b.cd_voce_piano = q.cd_voce_piano
+    b.cd_unita_organizzativa = q.cd_unita_piano AND
+    b.cd_voce_piano = q.cd_voce_piano
 LEFT JOIN cdr c ON q.cd_centro_responsabilita = c.cd_centro_responsabilita
 LEFT JOIN linea_attivita d ON
-    q.cd_centro_responsabilita = d.cd_centro_responsabilita AND q.cd_linea_attivita = d.cd_linea_attivita
+    q.cd_centro_responsabilita = d.cd_centro_responsabilita AND
+    q.cd_linea_attivita = d.cd_linea_attivita
 LEFT JOIN elemento_voce e ON
-    q.esercizio_voce = e.esercizio AND q.ti_appartenenza = e.ti_appartenenza AND
-    q.ti_gestione = e.ti_gestione AND q.cd_elemento_voce = e.cd_elemento_voce
-LEFT JOIN obbligazione obl ON
+    q.esercizio_voce = e.esercizio AND
+    q.ti_appartenenza = e.ti_appartenenza AND
+    q.ti_gestione = e.ti_gestione AND
+    q.cd_elemento_voce = e.cd_elemento_voce
+LEFT JOIN OBBLIGAZIONE obl ON
     q.ESERCIZIO_OBBL = obl.ESERCIZIO AND
     q.ESERCIZIO_ORIGINALE_OBBL = obl.ESERCIZIO_ORIGINALE AND
-    q.CDS_OBBL = obl.CD_CDS AND q.PG_OBBL = obl.PG_OBBLIGAZIONE
-LEFT JOIN obbligazione_scadenzario os ON
+    q.CDS_OBBL = obl.CD_CDS AND
+    q.PG_OBBL = obl.PG_OBBLIGAZIONE
+LEFT JOIN OBBLIGAZIONE_SCADENZARIO os ON
     obl.ESERCIZIO = os.ESERCIZIO AND
     obl.ESERCIZIO_ORIGINALE = os.ESERCIZIO_ORIGINALE AND
     obl.CD_CDS = os.CD_CDS AND
     obl.PG_OBBLIGAZIONE = os.PG_OBBLIGAZIONE AND
-    q.pg_obbl_scad = os.PG_OBBLIGAZIONE_SCADENZARIO
-LEFT JOIN mandato_riga mr ON
+    q.PG_OBBL_SCAD = os.PG_OBBLIGAZIONE_SCADENZARIO
+LEFT JOIN OBBLIGAZIONE_SCAD_VOCE osv ON
+    os.CD_CDS = osv.CD_CDS AND
+    os.ESERCIZIO = osv.ESERCIZIO AND
+    os.ESERCIZIO_ORIGINALE = osv.ESERCIZIO_ORIGINALE AND
+    os.PG_OBBLIGAZIONE = osv.PG_OBBLIGAZIONE AND
+    os.PG_OBBLIGAZIONE_SCADENZARIO = osv.PG_OBBLIGAZIONE_SCADENZARIO
+LEFT JOIN MANDATO_RIGA mr ON
     os.CD_CDS = mr.CD_CDS AND
     os.ESERCIZIO = mr.ESERCIZIO_OBBLIGAZIONE AND
     os.ESERCIZIO_ORIGINALE = mr.ESERCIZIO_ORI_OBBLIGAZIONE AND
     os.PG_OBBLIGAZIONE = mr.PG_OBBLIGAZIONE AND
     os.PG_OBBLIGAZIONE_SCADENZARIO = mr.PG_OBBLIGAZIONE_SCADENZARIO
-LEFT JOIN V_SALDI_PIANO_ECONOM_PROGETTO vspep ON
-    q.pg_progetto = vspep.PG_PROGETTO AND
-    q.esercizio_voce_piano = vspep.ESERCIZIO AND
-    q.cd_unita_piano = vspep.CD_UNITA_PIANO AND
-    q.cd_voce_piano = vspep.CD_VOCE_PIANO AND
-    q.ti_gestione = vspep.TI_GESTIONE
- WHERE
-
- q.importo_fin > 0
-    OR (
+WHERE
+    q.importo_fin > 0
+    OR
+    (
         q.importo_fin = 0
+        AND (q.IMP_ASS_DOC_CONT = q.IMP_SCAD)
         AND obl.RIPORTATO = 'N'
         AND (
-            q.IMP_ASS_DOC_CONT = q.IMP_SCAD
-            AND mr.stato = 'P'
+            q.ESERCIZIO_OBBL = q.ESERCIZIO_ORIGINALE_OBBL
+            OR
+            q.ESERCIZIO_OBBL <> q.ESERCIZIO_ORIGINALE_OBBL
         )
     )
+    OR (q.importo_fin = 0 AND q.IMP_SCAD = 0)
 ORDER BY
     q.cd_voce_piano,
     q.esercizio_voce_piano,
@@ -209,7 +295,7 @@ ORDER BY
     q.ESERCIZIO_ORIGINALE_OBBL,
     q.CDS_OBBL,
     q.PG_OBBL,
-    q.pg_obbl_scad]]>
+    q.PG_OBBL_SCAD]]>
 	</queryString>
 	<field name="ORDINE_ESERCIZIO" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="ORDINE_ESERCIZIO"/>
