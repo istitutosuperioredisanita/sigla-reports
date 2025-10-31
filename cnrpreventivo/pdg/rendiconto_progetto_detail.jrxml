@@ -435,22 +435,22 @@ ORDER BY
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="STANZIAMENTO_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{STANZIAMENTO_FIN} != null ? $F{STANZIAMENTO_FIN} : java.math.BigDecimal.ZERO]]></variableExpression>
+		<variableExpression><![CDATA[$F{STANZIAMENTO_FIN} != null ? $F{STANZIAMENTO_FIN} : new java.math.BigDecimal("0")]]></variableExpression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="VARIAPIU_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{VARIAPIU_FIN} != null ? $F{VARIAPIU_FIN} : java.math.BigDecimal.ZERO]]></variableExpression>
+		<variableExpression><![CDATA[$F{VARIAPIU_FIN} != null ? $F{VARIAPIU_FIN} : new java.math.BigDecimal("0")]]></variableExpression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="VARIAMENO_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{VARIAMENO_FIN} != null ? $F{VARIAMENO_FIN} : java.math.BigDecimal.ZERO]]></variableExpression>
+		<variableExpression><![CDATA[$F{VARIAMENO_FIN} != null ? $F{VARIAMENO_FIN} : new java.math.BigDecimal("0")]]></variableExpression>
 	</variable>
 	<variable name="IMPACC_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPACC_FIN} != null ? $F{IMPACC_FIN}  : java.math.BigDecimal.ZERO]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPACC_FIN} != null ? $F{IMPACC_FIN}  : new java.math.BigDecimal("0")]]></variableExpression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="MANRIS_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{MANRIS_FIN} != null ? $F{MANRIS_FIN} : java.math.BigDecimal.ZERO]]></variableExpression>
+		<variableExpression><![CDATA[$F{MANRIS_FIN} != null ? $F{MANRIS_FIN} : new java.math.BigDecimal("0")]]></variableExpression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="ASSESTATO_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup">
@@ -525,13 +525,13 @@ ORDER BY
 				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
 					<reportElement style="VERB8" x="209" y="13" width="59" height="12" uuid="9422a16d-3e5f-410a-8149-16e789f280a9">
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-						<printWhenExpression><![CDATA[$F{IMPORTO_FIN}!=java.math.BigDecimal.ZERO]]></printWhenExpression>
+						<printWhenExpression><![CDATA[$F{IMPORTO_FIN}!=new java.math.BigDecimal("0")]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font isBold="false"/>
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{IMPORTO_FIN} != null ? $F{IMPORTO_FIN} : java.math.BigDecimal.ZERO]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{IMPORTO_FIN} != null ? $F{IMPORTO_FIN} : new java.math.BigDecimal("0")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement style="VERB8" x="793" y="13" width="45" height="12" uuid="f0d2c94a-81e5-4a57-b08e-5b1b11f3d64c">
@@ -572,7 +572,7 @@ ORDER BY
 						<font isBold="false"/>
 						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{IMP_SCAD} != null ? $F{IMP_SCAD} : java.math.BigDecimal.ZERO]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{IMP_SCAD} != null ? $F{IMP_SCAD} : new java.math.BigDecimal("0")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement style="VERB8" x="140" y="13" width="33" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c">
