@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_trasporto_rientro" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ada9059e-7dc7-48d5-9818-a9bf934b6390">
+	<property name="ireport.zoom" value="2.1435888100000016"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="35"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLA-COLL-CONN.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="TNRGC14" fontName="Times New Roman" fontSize="14" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRC10" fontName="Times New Roman" isItalic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRGC12" fontName="Times New Roman" fontSize="12" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNR10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
+	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
+	<style name="TNRG10" fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG12" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG8" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR9" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman"/>
+	<style name="TNRG9" fontName="Times New Roman" fontSize="9" isBold="true" pdfFontName="Times-Bold"/>
+	<parameter name="esercizio" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2018]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pg_inventario" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[277]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ti_documento" class="java.lang.String">
+		<defaultValueExpression><![CDATA["T"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pg_doc_trasporto_rientro" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_IMAGE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT DISTINCT
+    TESTATA.PG_INVENTARIO,
+    TESTATA.TI_DOCUMENTO,
+    TESTATA.ESERCIZIO,
+    TESTATA.PG_DOC_TRASPORTO_RIENTRO,
+    TESTATA.DS_DOC_TRASPORTO_RIENTRO,
+    TESTATA.DATA_REGISTRAZIONE,
+    TESTATA.CD_TIPO_TRASPORTO_RIENTRO,
+    TESTATA.STATO,
+    TESTATA.DESTINAZIONE,
+    TESTATA.INDIRIZZO,
+    TESTATA.FL_INCARICATO,
+    TESTATA.FL_VETTORE,
+    TESTATA.CD_TERZO_ASSEGNATARIO,
+    TESTATA.NOTE_RITIRO,
+    TESTATA.NOTE,
+    TESTATA.TI_DOCUMENTO_RIF,
+    TESTATA.ESERCIZIO_RIF,
+    TESTATA.PG_DOC_TRASPORTO_RIENTRO_RIF,
+    DETTAGLIO.NR_INVENTARIO,
+    DETTAGLIO.PROGRESSIVO,
+    DETTAGLIO.INTERVALLO,
+    DETTAGLIO.QUANTITA,
+    DETTAGLIO.DATA_EFFETTIVA_MOVIMENTAZIONE,
+    DETTAGLIO.TI_DOCUMENTO_RIF AS DETT_TI_DOCUMENTO_RIF,
+    DETTAGLIO.ESERCIZIO_RIF AS DETT_ESERCIZIO_RIF,
+    DETTAGLIO.PG_DOC_TRASPORTO_RIENTRO_RIF AS DETT_PG_DOC_TRASPORTO_RIENTRO_RIF,
+    INVENTARIO.DS_BENE,
+    INVENTARIO.CD_UNITA_ORGANIZZATIVA,
+    INVENTARIO.CD_ASSEGNATARIO,
+    UNITA_ORGANIZZATIVA.DS_UNITA_ORGANIZZATIVA,
+    TIPO_TRASPORTO_RIENTRO.DS_TIPO_TRASPORTO_RIENTRO,
+    TIPO_TRASPORTO_RIENTRO.FL_ABILITA_NOTE,
+    (SELECT CD_TERZO||' - '||DENOMINAZIONE_SEDE 
+       FROM TERZO
+       WHERE CD_TERZO = INVENTARIO_CONSEGNATARIO.CD_CONSEGNATARIO) CONSEGNATARIO,
+    (SELECT DENOMINAZIONE_SEDE 
+       FROM TERZO
+       WHERE CD_TERZO = INVENTARIO_CONSEGNATARIO.CD_DELEGATO) DELEGATO,
+    (SELECT CD_CATEGORIA_GRUPPO||' '||DS_CATEGORIA_GRUPPO 
+       FROM CATEGORIA_GRUPPO_INVENT
+       WHERE CD_CATEGORIA_GRUPPO = INVENTARIO.CD_CATEGORIA_GRUPPO) CATEGORIA_GRUPPO,
+    INVENTARIO.TI_COMMERCIALE_ISTITUZIONALE,
+    INVENTARIO.ETICHETTA,
+    (SELECT DENOMINAZIONE_SEDE 
+       FROM TERZO
+       WHERE CD_TERZO = TESTATA.CD_TERZO_ASSEGNATARIO) NOME_INCARICATO,
+    CASE
+        WHEN TESTATA.FL_VETTORE = 'Y' THEN
+            SUBSTR(
+                (SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                 FROM TERZO T
+                 JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                 JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                 WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO),
+                1,
+                CASE 
+                    WHEN INSTR((SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                                FROM TERZO T
+                                JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                                JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                                WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO), '-') > 0
+                    THEN INSTR((SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                                FROM TERZO T
+                                JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                                JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                                WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO), '-') - 1
+                    ELSE LENGTH((SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                                 FROM TERZO T
+                                 JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                                 JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                                 WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO))
+                END
+            )
+        WHEN TESTATA.FL_INCARICATO = 'Y' THEN
+            SUBSTR(
+                (SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                 FROM TERZO T
+                 JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                 JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                 WHERE T.CD_TERZO = TESTATA.CD_TERZO_ASSEGNATARIO),
+                1,
+                CASE 
+                    WHEN INSTR((SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                                FROM TERZO T
+                                JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                                JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                                WHERE T.CD_TERZO = TESTATA.CD_TERZO_ASSEGNATARIO), '-') > 0
+                    THEN INSTR((SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                                FROM TERZO T
+                                JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                                JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                                WHERE T.CD_TERZO = TESTATA.CD_TERZO_ASSEGNATARIO), '-') - 1
+                    ELSE LENGTH((SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                                 FROM TERZO T
+                                 JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                                 JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                                 WHERE T.CD_TERZO = TESTATA.CD_TERZO_ASSEGNATARIO))
+                END
+            )
+    END AS DS_UO_INC_VETT,
+    (SELECT LISTAGG(TTR.DS_TIPO_TRASPORTO_RIENTRO, '|') WITHIN GROUP (ORDER BY TTR.DS_TIPO_TRASPORTO_RIENTRO)
+     FROM TIPO_TRASPORTO_RIENTRO TTR
+     WHERE TTR.DT_CANCELLAZIONE IS NULL
+       AND TTR.TI_DOCUMENTO = TESTATA.TI_DOCUMENTO) LISTA_TIPOLOGIE
+FROM DOC_TRASPORTO_RIENTRO TESTATA
+JOIN DOC_TRASPORTO_RIENTRO_DETT DETTAGLIO
+    ON DETTAGLIO.PG_INVENTARIO = TESTATA.PG_INVENTARIO
+   AND DETTAGLIO.TI_DOCUMENTO = TESTATA.TI_DOCUMENTO
+   AND DETTAGLIO.ESERCIZIO = TESTATA.ESERCIZIO
+   AND DETTAGLIO.PG_DOC_TRASPORTO_RIENTRO = TESTATA.PG_DOC_TRASPORTO_RIENTRO
+JOIN INVENTARIO_BENI INVENTARIO
+    ON DETTAGLIO.NR_INVENTARIO = INVENTARIO.NR_INVENTARIO
+   AND DETTAGLIO.PG_INVENTARIO = INVENTARIO.PG_INVENTARIO
+   AND DETTAGLIO.PROGRESSIVO = INVENTARIO.PROGRESSIVO
+JOIN UNITA_ORGANIZZATIVA
+    ON INVENTARIO.CD_UNITA_ORGANIZZATIVA = UNITA_ORGANIZZATIVA.CD_UNITA_ORGANIZZATIVA
+JOIN TIPO_TRASPORTO_RIENTRO
+    ON TESTATA.CD_TIPO_TRASPORTO_RIENTRO = TIPO_TRASPORTO_RIENTRO.CD_TIPO_TRASPORTO_RIENTRO
+JOIN INVENTARIO_CONSEGNATARIO
+    ON TESTATA.PG_INVENTARIO = INVENTARIO_CONSEGNATARIO.PG_INVENTARIO
+   AND INVENTARIO_CONSEGNATARIO.DT_INIZIO_VALIDITA < SYSDATE
+   AND (INVENTARIO_CONSEGNATARIO.DT_FINE_VALIDITA > SYSDATE OR INVENTARIO_CONSEGNATARIO.DT_FINE_VALIDITA IS NULL)
+WHERE TESTATA.ESERCIZIO = $P{esercizio}
+  AND TESTATA.PG_INVENTARIO = $P{pg_inventario}
+  AND TESTATA.TI_DOCUMENTO = $P{ti_documento}
+  AND TESTATA.PG_DOC_TRASPORTO_RIENTRO = $P{pg_doc_trasporto_rientro}]]>
+	</queryString>
+	<field name="PG_INVENTARIO" class="java.math.BigDecimal"/>
+	<field name="TI_DOCUMENTO" class="java.lang.String"/>
+	<field name="ESERCIZIO" class="java.math.BigDecimal"/>
+	<field name="PG_DOC_TRASPORTO_RIENTRO" class="java.math.BigDecimal"/>
+	<field name="DS_DOC_TRASPORTO_RIENTRO" class="java.lang.String"/>
+	<field name="DATA_REGISTRAZIONE" class="java.sql.Timestamp"/>
+	<field name="CD_TIPO_TRASPORTO_RIENTRO" class="java.lang.String"/>
+	<field name="STATO" class="java.lang.String"/>
+	<field name="DESTINAZIONE" class="java.lang.String"/>
+	<field name="INDIRIZZO" class="java.lang.String"/>
+	<field name="FL_INCARICATO" class="java.lang.String"/>
+	<field name="FL_VETTORE" class="java.lang.String"/>
+	<field name="CD_TERZO_ASSEGNATARIO" class="java.math.BigDecimal"/>
+	<field name="NOTE_RITIRO" class="java.lang.String"/>
+	<field name="NOTE" class="java.lang.String"/>
+	<field name="TI_DOCUMENTO_RIF" class="java.lang.String"/>
+	<field name="ESERCIZIO_RIF" class="java.math.BigDecimal"/>
+	<field name="PG_DOC_TRASPORTO_RIENTRO_RIF" class="java.math.BigDecimal"/>
+	<field name="NR_INVENTARIO" class="java.math.BigDecimal"/>
+	<field name="PROGRESSIVO" class="java.math.BigDecimal"/>
+	<field name="INTERVALLO" class="java.lang.String"/>
+	<field name="QUANTITA" class="java.math.BigDecimal"/>
+	<field name="DATA_EFFETTIVA_MOVIMENTAZIONE" class="java.sql.Timestamp"/>
+	<field name="DETT_TI_DOCUMENTO_RIF" class="java.lang.String"/>
+	<field name="DETT_ESERCIZIO_RIF" class="java.math.BigDecimal"/>
+	<field name="DETT_PG_DOC_TRASPORTO_RIENTRO_RIF" class="java.math.BigDecimal"/>
+	<field name="DS_BENE" class="java.lang.String"/>
+	<field name="CD_UNITA_ORGANIZZATIVA" class="java.lang.String"/>
+	<field name="CD_ASSEGNATARIO" class="java.math.BigDecimal"/>
+	<field name="DS_UNITA_ORGANIZZATIVA" class="java.lang.String"/>
+	<field name="DS_TIPO_TRASPORTO_RIENTRO" class="java.lang.String"/>
+	<field name="FL_ABILITA_NOTE" class="java.lang.String"/>
+	<field name="CONSEGNATARIO" class="java.lang.String"/>
+	<field name="DELEGATO" class="java.lang.String"/>
+	<field name="CATEGORIA_GRUPPO" class="java.lang.String"/>
+	<field name="TI_COMMERCIALE_ISTITUZIONALE" class="java.lang.String"/>
+	<field name="ETICHETTA" class="java.lang.String"/>
+	<field name="NOME_INCARICATO" class="java.lang.String"/>
+	<field name="DS_UO_INC_VETT" class="java.lang.String"/>
+	<field name="LISTA_TIPOLOGIE" class="java.lang.String"/>
+	<variable name="TOTALE_QUANTITA" class="java.math.BigDecimal" resetType="Group" resetGroup="TESTATA" calculation="Sum">
+		<variableExpression><![CDATA[$F{QUANTITA}]]></variableExpression>
+	</variable>
+	<group name="TESTATA">
+		<groupExpression><![CDATA[$F{PG_INVENTARIO}]]></groupExpression>
+		<groupHeader>
+			<band height="90">
+				<rectangle>
+					<reportElement x="550" y="5" width="250" height="50" uuid="a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"/>
+					<graphicElement>
+						<pen lineWidth="1.0"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement style="TNRG10" x="555" y="8" width="240" height="12" uuid="b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e"/>
+					<textElement textAlignment="Center">
+						<font size="9" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Riservato all'Ufficio del Consegnatario]]></text>
+				</staticText>
+				<textField>
+					<reportElement style="TNRG10" x="555" y="22" width="240" height="15" uuid="c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Documento di " + ($F{TI_DOCUMENTO}.equals("T") ? "Trasporto" : "Rientro")]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="TNR10" x="555" y="38" width="240" height="15" uuid="d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA["N° " + $F{PG_DOC_TRASPORTO_RIENTRO} + " del " + new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{DATA_REGISTRAZIONE})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="TNR10" x="550" y="65" width="250" height="12" uuid="e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b"/>
+					<textElement textAlignment="Right">
+						<font isItalic="true"/>
+					</textElement>
+					<text><![CDATA[All'Ufficio del Consegnatario]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="TNRG10" x="550" y="77" width="250" height="12" uuid="f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c"/>
+					<textElement textAlignment="Right">
+						<font size="9" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[S E D E]]></text>
+				</staticText>
+			</band>
+			<band height="50">
+				<staticText>
+					<reportElement style="TNR10" x="9" y="20" width="500" height="20" uuid="a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d"/>
+					<textElement textAlignment="Justified">
+						<font size="11"/>
+					</textElement>
+					<text><![CDATA[Si richiede l'autorizzazione per l'uscita del seguente materiale, attualmente presso il DIP/CENTRO/SERV/UFF:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement style="TNRG10" x="510" y="20" width="282" height="20" uuid="557ed2fb-685e-4e53-b320-734cd0dfb916"/>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DS_UO_INC_VETT}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="246" splitType="Immediate">
+				<staticText>
+					<reportElement style="TNR10" x="9" y="10" width="150" height="15" uuid="c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f"/>
+					<text><![CDATA[che sarà ritirato da:]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="170" y="10" width="10" height="10" uuid="d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a"/>
+					<graphicElement>
+						<pen lineWidth="1.0"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement style="TNRG10" x="172" y="10" width="6" height="10" uuid="d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a">
+						<printWhenExpression><![CDATA[$F{FL_INCARICATO}.equals("Y")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="TNR10" x="185" y="10" width="100" height="15" uuid="e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b"/>
+					<text><![CDATA[un incaricato]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement style="TNR10" x="290" y="10" width="300" height="15" uuid="f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c"/>
+					<textFieldExpression><![CDATA[$F{NOME_INCARICATO} != null ? $F{NOME_INCARICATO} : ""]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="170" y="27" width="10" height="10" uuid="a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d"/>
+					<graphicElement>
+						<pen lineWidth="1.0"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement style="TNRG10" x="172" y="27" width="6" height="10" uuid="a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d">
+						<printWhenExpression><![CDATA[$F{FL_VETTORE}.equals("Y")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="TNR10" x="185" y="27" width="100" height="15" uuid="b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e"/>
+					<text><![CDATA[tramite vettore]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="TNR10" x="8" y="53" width="60" height="15" uuid="c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f"/>
+					<text><![CDATA[indirizzo]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement style="TNR10" x="73" y="53" width="715" height="15" uuid="d6e7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a"/>
+					<textFieldExpression><![CDATA[$F{INDIRIZZO} != null ? $F{INDIRIZZO} : ""]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="TNR10" x="8" y="70" width="80" height="15" uuid="e7f8a9b0-c1d2-4e3f-4a5b-6c7d8e9f0a1b"/>
+					<text><![CDATA[destinazione]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement style="TNR10" x="93" y="70" width="695" height="15" uuid="f8a9b0c1-d2e3-4f4a-5b6c-7d8e9f0a1b2c"/>
+					<textFieldExpression><![CDATA[$F{DESTINAZIONE} != null ? $F{DESTINAZIONE} : ""]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="TNR10" x="11" y="100" width="30" height="15" uuid="a9b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d"/>
+					<textElement>
+						<font isItalic="true"/>
+					</textElement>
+					<text><![CDATA[per:]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="102" width="10" height="10" uuid="aa1bb2cc-dd3e-4e4f-5a5a-6b6b7c7c8d8d"/>
+					<graphicElement>
+						<pen lineWidth="1.0"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement style="TNRG10" x="53" y="102" width="6" height="10" uuid="bb2cc3dd-ee4f-4f5a-6a6a-7b7b8c8c9d9d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement style="TNRG10" x="66" y="100" width="725" height="15" uuid="cc3dd4ee-ff5a-4a6a-7b7b-8c8c9d9d0e0e"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DS_TIPO_TRASPORTO_RIENTRO}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="51" y="118" width="740" height="1" uuid="dd4ee5ff-aa6b-4b7b-8c8c-9d9d0e0e1f1f"/>
+					<graphicElement>
+						<pen lineWidth="0.5" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement style="TNR10" x="11" y="130" width="35" height="15" uuid="c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f">
+						<printWhenExpression><![CDATA[$F{FL_ABILITA_NOTE}.equals("Y")]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Note:]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement style="TNR10" x="51" y="130" width="740" height="25" uuid="b0c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e">
+						<printWhenExpression><![CDATA[$F{FL_ABILITA_NOTE}.equals("Y")]]></printWhenExpression>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{NOTE} != null ? $F{NOTE} : ""]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="TNR10" x="50" y="200" width="200" height="15" uuid="c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f"/>
+					<textElement>
+						<font isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Il Responsabile del trasporto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="TNR10" x="300" y="200" width="250" height="15" uuid="e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b"/>
+					<textElement textAlignment="Center">
+						<font isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Il Direttore]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="TNR9" x="300" y="212" width="250" height="15" uuid="f4a5b6c7-d8e9-4f0a-1b2c-3d4e5f6a7b8c"/>
+					<textElement textAlignment="Center">
+						<font isItalic="true"/>
+					</textElement>
+					<text><![CDATA[del Dipartimento/Centro/Servizio/Ufficio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="TNR10" x="590" y="200" width="150" height="15" uuid="b6c7d8e9-f0a1-4b2c-3d4e-5f6a7b8c9d0e"/>
+					<textElement textAlignment="Center">
+						<font isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Visto:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="TNR10" x="590" y="212" width="150" height="15" uuid="c7d8e9f0-a1b2-4c3d-4e5f-6a7b8c9d0e1f"/>
+					<textElement textAlignment="Center">
+						<font isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Il Consegnatario]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<image onErrorType="Blank">
+				<reportElement key="image-1" x="0" y="0" width="802" height="41" uuid="fc584efd-e1bd-4b99-b160-de23e440a320"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="TNR10" x="12" y="5" width="777" height="13" uuid="e9f0a1b2-c3d4-4e5f-6a7b-8c9d0e1f2a3b"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA["N° Inv. (QR-code): " + $F{NR_INVENTARIO} + "-" + String.format("%03d", $F{PROGRESSIVO}.intValue()) + 
+" - " + $F{DS_BENE} + 
+($F{ETICHETTA} != null ? " (" + $F{ETICHETTA} + ")" : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="TNR10" x="12" y="18" width="777" height="11" uuid="aa7bb8cc-dd9e-4e0e-1f1f-2a2a3b3b4c4c"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="9"/>
+					<paragraph lineSpacingSize="1.0"/>
+				</textElement>
+				<text><![CDATA[..............................................................................................................................................................................................................................................................................................................................................................................................]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="433" y="20" width="80" height="20" uuid="470de593-d664-4c1f-9aa6-6a40cf355cf9"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" di"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="513" y="20" width="40" height="20" uuid="581306bb-5afb-4ca2-ab69-25b1e76d90fc"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="20" width="197" height="20" uuid="c8b2c202-b6e3-428a-b7ea-e58e4eb3e7f8"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="20" width="802" height="1" uuid="198750be-9ef7-4204-9d4a-437c10f0a4b4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
