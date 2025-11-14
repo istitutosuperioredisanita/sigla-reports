@@ -19,17 +19,14 @@
 	<parameter name="esercizio" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[2018]]></defaultValueExpression>
 	</parameter>
-	<parameter name="pg_inventario" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[277]]></defaultValueExpression>
+	<parameter name="pg_inventario" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[277L]]></defaultValueExpression>
 	</parameter>
 	<parameter name="ti_documento" class="java.lang.String">
 		<defaultValueExpression><![CDATA["T"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="pg_doc_trasporto_rientro" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
-	</parameter>
-	<parameter name="DIR_IMAGE" class="java.lang.String">
-		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	<parameter name="pg_doc_trasporto_rientro" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[1L]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT DISTINCT
