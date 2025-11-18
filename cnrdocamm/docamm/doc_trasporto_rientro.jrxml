@@ -265,7 +265,7 @@ WHERE TESTATA.ESERCIZIO = $P{esercizio}
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="246" splitType="Immediate">
+			<band height="246" splitType="Prevent">
 				<staticText>
 					<reportElement style="TNR10" x="9" y="10" width="150" height="15" uuid="c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f"/>
 					<text><![CDATA[che sarà ritirato da:]]></text>
@@ -377,35 +377,35 @@ WHERE TESTATA.ESERCIZIO = $P{esercizio}
 					<textFieldExpression><![CDATA[$F{NOTE} != null ? $F{NOTE} : ""]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement style="TNR10" x="50" y="200" width="200" height="15" uuid="c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f"/>
+					<reportElement style="TNR10" x="51" y="190" width="200" height="15" uuid="c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f"/>
 					<textElement>
 						<font isItalic="true"/>
 					</textElement>
 					<text><![CDATA[Il Responsabile del trasporto]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="TNR10" x="300" y="200" width="250" height="15" uuid="e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b"/>
+					<reportElement style="TNR10" x="301" y="190" width="250" height="15" uuid="e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b"/>
 					<textElement textAlignment="Center">
 						<font isItalic="true"/>
 					</textElement>
 					<text><![CDATA[Il Direttore]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="TNR9" x="300" y="212" width="250" height="15" uuid="f4a5b6c7-d8e9-4f0a-1b2c-3d4e5f6a7b8c"/>
+					<reportElement style="TNR9" x="301" y="202" width="250" height="15" uuid="f4a5b6c7-d8e9-4f0a-1b2c-3d4e5f6a7b8c"/>
 					<textElement textAlignment="Center">
 						<font isItalic="true"/>
 					</textElement>
 					<text><![CDATA[del Dipartimento/Centro/Servizio/Ufficio]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="TNR10" x="590" y="200" width="150" height="15" uuid="b6c7d8e9-f0a1-4b2c-3d4e-5f6a7b8c9d0e"/>
+					<reportElement style="TNR10" x="591" y="190" width="150" height="15" uuid="b6c7d8e9-f0a1-4b2c-3d4e-5f6a7b8c9d0e"/>
 					<textElement textAlignment="Center">
 						<font isItalic="true"/>
 					</textElement>
 					<text><![CDATA[Visto:]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="TNR10" x="590" y="212" width="150" height="15" uuid="c7d8e9f0-a1b2-4c3d-4e5f-6a7b8c9d0e1f"/>
+					<reportElement style="TNR10" x="591" y="202" width="150" height="15" uuid="c7d8e9f0-a1b2-4c3d-4e5f-6a7b8c9d0e1f"/>
 					<textElement textAlignment="Center">
 						<font isItalic="true"/>
 					</textElement>
