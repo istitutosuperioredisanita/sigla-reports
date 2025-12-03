@@ -48,14 +48,14 @@
     TESTATA.CD_TERZO_ASSEGNATARIO,
     TESTATA.NOTE_RITIRO,
     TESTATA.NOTE,
-    TESTATA.TI_DOCUMENTO_RIF,
-    TESTATA.ESERCIZIO_RIF,
-    TESTATA.PG_DOC_TRASPORTO_RIENTRO_RIF,
     DETTAGLIO.NR_INVENTARIO,
     DETTAGLIO.PROGRESSIVO,
     DETTAGLIO.INTERVALLO,
     DETTAGLIO.QUANTITA,
     DETTAGLIO.DATA_EFFETTIVA_MOVIMENTAZIONE,
+    DETTAGLIO.TI_DOCUMENTO_RIF AS TI_DOCUMENTO_RIF,
+    DETTAGLIO.ESERCIZIO_RIF AS ESERCIZIO_RIF,
+    DETTAGLIO.PG_DOC_TRASPORTO_RIENTRO_RIF AS PG_DOC_TRASPORTO_RIENTRO_RIF,
     DETTAGLIO.TI_DOCUMENTO_RIF AS DETT_TI_DOCUMENTO_RIF,
     DETTAGLIO.ESERCIZIO_RIF AS DETT_ESERCIZIO_RIF,
     DETTAGLIO.PG_DOC_TRASPORTO_RIENTRO_RIF AS DETT_PG_DOC_TRASPORTO_RIENTRO_RIF,
@@ -79,60 +79,31 @@
     (SELECT DENOMINAZIONE_SEDE 
        FROM TERZO
        WHERE CD_TERZO = TESTATA.CD_TERZO_ASSEGNATARIO) NOME_INCARICATO,
-    CASE
-        WHEN TESTATA.FL_VETTORE = 'Y' THEN
-            SUBSTR(
-                (SELECT UO.DS_UNITA_ORGANIZZATIVA 
-                 FROM TERZO T
-                 JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
-                 JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
-                 WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO),
-                1,
-                CASE 
-                    WHEN INSTR((SELECT UO.DS_UNITA_ORGANIZZATIVA 
-                                FROM TERZO T
-                                JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
-                                JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
-                                WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO), '-') > 0
-                    THEN INSTR((SELECT UO.DS_UNITA_ORGANIZZATIVA 
-                                FROM TERZO T
-                                JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
-                                JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
-                                WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO), '-') - 1
-                    ELSE LENGTH((SELECT UO.DS_UNITA_ORGANIZZATIVA 
-                                 FROM TERZO T
-                                 JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
-                                 JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
-                                 WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO))
-                END
-            )
-        WHEN TESTATA.FL_INCARICATO = 'Y' THEN
-            SUBSTR(
-                (SELECT UO.DS_UNITA_ORGANIZZATIVA 
-                 FROM TERZO T
-                 JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
-                 JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
-                 WHERE T.CD_TERZO = TESTATA.CD_TERZO_ASSEGNATARIO),
-                1,
-                CASE 
-                    WHEN INSTR((SELECT UO.DS_UNITA_ORGANIZZATIVA 
-                                FROM TERZO T
-                                JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
-                                JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
-                                WHERE T.CD_TERZO = TESTATA.CD_TERZO_ASSEGNATARIO), '-') > 0
-                    THEN INSTR((SELECT UO.DS_UNITA_ORGANIZZATIVA 
-                                FROM TERZO T
-                                JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
-                                JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
-                                WHERE T.CD_TERZO = TESTATA.CD_TERZO_ASSEGNATARIO), '-') - 1
-                    ELSE LENGTH((SELECT UO.DS_UNITA_ORGANIZZATIVA 
-                                 FROM TERZO T
-                                 JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
-                                 JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
-                                 WHERE T.CD_TERZO = TESTATA.CD_TERZO_ASSEGNATARIO))
-                END
-            )
-    END AS DS_UO_INC_VETT,
+    SUBSTR(
+        (SELECT UO.DS_UNITA_ORGANIZZATIVA 
+         FROM TERZO T
+         JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+         JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+         WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO),
+        1,
+        CASE 
+            WHEN INSTR((SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                        FROM TERZO T
+                        JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                        JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                        WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO), '-') > 0
+            THEN INSTR((SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                        FROM TERZO T
+                        JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                        JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                        WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO), '-') - 1
+            ELSE LENGTH((SELECT UO.DS_UNITA_ORGANIZZATIVA 
+                         FROM TERZO T
+                         JOIN ANAGRAFICO A ON T.CD_ANAG = A.CD_ANAG
+                         JOIN UNITA_ORGANIZZATIVA UO ON A.CD_UNITA_ORGANIZZATIVA = UO.CD_UNITA_ORGANIZZATIVA
+                         WHERE T.CD_TERZO = INVENTARIO.CD_ASSEGNATARIO))
+        END
+    ) AS DS_UO_ASSEGNATARIO,
     (SELECT LISTAGG(TTR.DS_TIPO_TRASPORTO_RIENTRO, '|') WITHIN GROUP (ORDER BY TTR.DS_TIPO_TRASPORTO_RIENTRO)
      FROM TIPO_TRASPORTO_RIENTRO TTR
      WHERE TTR.DT_CANCELLAZIONE IS NULL
@@ -160,46 +131,126 @@ WHERE TESTATA.ESERCIZIO = $P{esercizio}
   AND TESTATA.TI_DOCUMENTO = $P{ti_documento}
   AND TESTATA.PG_DOC_TRASPORTO_RIENTRO = $P{pg_doc_trasporto_rientro}]]>
 	</queryString>
-	<field name="PG_INVENTARIO" class="java.math.BigDecimal"/>
-	<field name="TI_DOCUMENTO" class="java.lang.String"/>
-	<field name="ESERCIZIO" class="java.math.BigDecimal"/>
-	<field name="PG_DOC_TRASPORTO_RIENTRO" class="java.math.BigDecimal"/>
-	<field name="DS_DOC_TRASPORTO_RIENTRO" class="java.lang.String"/>
-	<field name="DATA_REGISTRAZIONE" class="java.sql.Timestamp"/>
-	<field name="CD_TIPO_TRASPORTO_RIENTRO" class="java.lang.String"/>
-	<field name="STATO" class="java.lang.String"/>
-	<field name="DESTINAZIONE" class="java.lang.String"/>
-	<field name="INDIRIZZO" class="java.lang.String"/>
-	<field name="FL_INCARICATO" class="java.lang.String"/>
-	<field name="FL_VETTORE" class="java.lang.String"/>
-	<field name="CD_TERZO_ASSEGNATARIO" class="java.math.BigDecimal"/>
-	<field name="NOTE_RITIRO" class="java.lang.String"/>
-	<field name="NOTE" class="java.lang.String"/>
-	<field name="TI_DOCUMENTO_RIF" class="java.lang.String"/>
-	<field name="ESERCIZIO_RIF" class="java.math.BigDecimal"/>
-	<field name="PG_DOC_TRASPORTO_RIENTRO_RIF" class="java.math.BigDecimal"/>
-	<field name="NR_INVENTARIO" class="java.math.BigDecimal"/>
-	<field name="PROGRESSIVO" class="java.math.BigDecimal"/>
-	<field name="INTERVALLO" class="java.lang.String"/>
-	<field name="QUANTITA" class="java.math.BigDecimal"/>
-	<field name="DATA_EFFETTIVA_MOVIMENTAZIONE" class="java.sql.Timestamp"/>
-	<field name="DETT_TI_DOCUMENTO_RIF" class="java.lang.String"/>
-	<field name="DETT_ESERCIZIO_RIF" class="java.math.BigDecimal"/>
-	<field name="DETT_PG_DOC_TRASPORTO_RIENTRO_RIF" class="java.math.BigDecimal"/>
-	<field name="DS_BENE" class="java.lang.String"/>
-	<field name="CD_UNITA_ORGANIZZATIVA" class="java.lang.String"/>
-	<field name="CD_ASSEGNATARIO" class="java.math.BigDecimal"/>
-	<field name="DS_UNITA_ORGANIZZATIVA" class="java.lang.String"/>
-	<field name="DS_TIPO_TRASPORTO_RIENTRO" class="java.lang.String"/>
-	<field name="FL_ABILITA_NOTE" class="java.lang.String"/>
-	<field name="CONSEGNATARIO" class="java.lang.String"/>
-	<field name="DELEGATO" class="java.lang.String"/>
-	<field name="CATEGORIA_GRUPPO" class="java.lang.String"/>
-	<field name="TI_COMMERCIALE_ISTITUZIONALE" class="java.lang.String"/>
-	<field name="ETICHETTA" class="java.lang.String"/>
-	<field name="NOME_INCARICATO" class="java.lang.String"/>
-	<field name="DS_UO_INC_VETT" class="java.lang.String"/>
-	<field name="LISTA_TIPOLOGIE" class="java.lang.String"/>
+	<field name="PG_INVENTARIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_INVENTARIO"/>
+	</field>
+	<field name="TI_DOCUMENTO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TI_DOCUMENTO"/>
+	</field>
+	<field name="ESERCIZIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO"/>
+	</field>
+	<field name="PG_DOC_TRASPORTO_RIENTRO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_DOC_TRASPORTO_RIENTRO"/>
+	</field>
+	<field name="DS_DOC_TRASPORTO_RIENTRO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_DOC_TRASPORTO_RIENTRO"/>
+	</field>
+	<field name="DATA_REGISTRAZIONE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="DATA_REGISTRAZIONE"/>
+	</field>
+	<field name="CD_TIPO_TRASPORTO_RIENTRO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_TIPO_TRASPORTO_RIENTRO"/>
+	</field>
+	<field name="STATO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STATO"/>
+	</field>
+	<field name="DESTINAZIONE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DESTINAZIONE"/>
+	</field>
+	<field name="INDIRIZZO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="INDIRIZZO"/>
+	</field>
+	<field name="FL_INCARICATO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FL_INCARICATO"/>
+	</field>
+	<field name="FL_VETTORE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FL_VETTORE"/>
+	</field>
+	<field name="CD_TERZO_ASSEGNATARIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="CD_TERZO_ASSEGNATARIO"/>
+	</field>
+	<field name="NOTE_RITIRO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOTE_RITIRO"/>
+	</field>
+	<field name="NOTE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOTE"/>
+	</field>
+	<field name="NR_INVENTARIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="NR_INVENTARIO"/>
+	</field>
+	<field name="PROGRESSIVO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PROGRESSIVO"/>
+	</field>
+	<field name="INTERVALLO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="INTERVALLO"/>
+	</field>
+	<field name="QUANTITA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="QUANTITA"/>
+	</field>
+	<field name="DATA_EFFETTIVA_MOVIMENTAZIONE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="DATA_EFFETTIVA_MOVIMENTAZIONE"/>
+	</field>
+	<field name="TI_DOCUMENTO_RIF" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TI_DOCUMENTO_RIF"/>
+	</field>
+	<field name="ESERCIZIO_RIF" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_RIF"/>
+	</field>
+	<field name="PG_DOC_TRASPORTO_RIENTRO_RIF" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PG_DOC_TRASPORTO_RIENTRO_RIF"/>
+	</field>
+	<field name="DETT_TI_DOCUMENTO_RIF" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DETT_TI_DOCUMENTO_RIF"/>
+	</field>
+	<field name="DETT_ESERCIZIO_RIF" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="DETT_ESERCIZIO_RIF"/>
+	</field>
+	<field name="DETT_PG_DOC_TRASPORTO_RIENTRO_RIF" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="DETT_PG_DOC_TRASPORTO_RIENTRO_RIF"/>
+	</field>
+	<field name="DS_BENE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_BENE"/>
+	</field>
+	<field name="CD_UNITA_ORGANIZZATIVA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CD_UNITA_ORGANIZZATIVA"/>
+	</field>
+	<field name="CD_ASSEGNATARIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="CD_ASSEGNATARIO"/>
+	</field>
+	<field name="DS_UNITA_ORGANIZZATIVA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_UNITA_ORGANIZZATIVA"/>
+	</field>
+	<field name="DS_TIPO_TRASPORTO_RIENTRO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_TIPO_TRASPORTO_RIENTRO"/>
+	</field>
+	<field name="FL_ABILITA_NOTE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FL_ABILITA_NOTE"/>
+	</field>
+	<field name="CONSEGNATARIO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CONSEGNATARIO"/>
+	</field>
+	<field name="DELEGATO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DELEGATO"/>
+	</field>
+	<field name="CATEGORIA_GRUPPO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CATEGORIA_GRUPPO"/>
+	</field>
+	<field name="TI_COMMERCIALE_ISTITUZIONALE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TI_COMMERCIALE_ISTITUZIONALE"/>
+	</field>
+	<field name="ETICHETTA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ETICHETTA"/>
+	</field>
+	<field name="NOME_INCARICATO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOME_INCARICATO"/>
+	</field>
+	<field name="DS_UO_ASSEGNATARIO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_UO_ASSEGNATARIO"/>
+	</field>
+	<field name="LISTA_TIPOLOGIE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="LISTA_TIPOLOGIE"/>
+	</field>
 	<variable name="TOTALE_QUANTITA" class="java.math.BigDecimal" resetType="Group" resetGroup="TESTATA" calculation="Sum">
 		<variableExpression><![CDATA[$F{QUANTITA}]]></variableExpression>
 	</variable>
@@ -260,7 +311,7 @@ WHERE TESTATA.ESERCIZIO = $P{esercizio}
 					<textElement>
 						<font size="11"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{DS_UO_INC_VETT}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{DS_UO_ASSEGNATARIO}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -329,49 +380,49 @@ WHERE TESTATA.ESERCIZIO = $P{esercizio}
 					<textFieldExpression><![CDATA[$F{DESTINAZIONE} != null ? $F{DESTINAZIONE} : ""]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement style="TNR10" x="11" y="100" width="30" height="15" uuid="a9b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d"/>
+					<reportElement style="TNR10" x="9" y="90" width="30" height="15" uuid="a9b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d"/>
 					<textElement>
-						<font isItalic="true"/>
+						<font isItalic="false"/>
 					</textElement>
 					<text><![CDATA[per:]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="51" y="102" width="10" height="10" uuid="aa1bb2cc-dd3e-4e4f-5a5a-6b6b7c7c8d8d"/>
+					<reportElement x="47" y="92" width="10" height="10" uuid="aa1bb2cc-dd3e-4e4f-5a5a-6b6b7c7c8d8d"/>
 					<graphicElement>
 						<pen lineWidth="1.0"/>
 					</graphicElement>
 				</rectangle>
 				<staticText>
-					<reportElement style="TNRG10" x="53" y="102" width="6" height="10" uuid="bb2cc3dd-ee4f-4f5a-6a6a-7b7b8c8c9d9d"/>
+					<reportElement style="TNRG10" x="49" y="92" width="6" height="10" uuid="bb2cc3dd-ee4f-4f5a-6a6a-7b7b8c8c9d9d"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
 					<text><![CDATA[X]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement style="TNRG10" x="66" y="100" width="725" height="15" uuid="cc3dd4ee-ff5a-4a6a-7b7b-8c8c9d9d0e0e"/>
+					<reportElement style="TNRG10" x="64" y="90" width="725" height="15" uuid="cc3dd4ee-ff5a-4a6a-7b7b-8c8c9d9d0e0e"/>
 					<textElement>
 						<font size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{DS_TIPO_TRASPORTO_RIENTRO}]]></textFieldExpression>
 				</textField>
 				<line>
-					<reportElement x="51" y="118" width="740" height="1" uuid="dd4ee5ff-aa6b-4b7b-8c8c-9d9d0e0e1f1f"/>
+					<reportElement x="0" y="170" width="802" height="1" uuid="dd4ee5ff-aa6b-4b7b-8c8c-9d9d0e0e1f1f"/>
 					<graphicElement>
 						<pen lineWidth="0.5" lineStyle="Solid"/>
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement style="TNR10" x="11" y="130" width="35" height="15" uuid="c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f">
+					<reportElement style="TNR10" x="9" y="120" width="35" height="15" uuid="c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f">
 						<printWhenExpression><![CDATA[$F{FL_ABILITA_NOTE}.equals("Y")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
-						<font isItalic="true"/>
+						<font isItalic="false"/>
 					</textElement>
 					<text><![CDATA[Note:]]></text>
 				</staticText>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="TNR10" x="51" y="130" width="740" height="25" uuid="b0c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e">
+					<reportElement style="TNR10" x="49" y="120" width="740" height="40" uuid="b0c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e">
 						<printWhenExpression><![CDATA[$F{FL_ABILITA_NOTE}.equals("Y")]]></printWhenExpression>
 					</reportElement>
 					<textFieldExpression><![CDATA[$F{NOTE} != null ? $F{NOTE} : ""]]></textFieldExpression>
