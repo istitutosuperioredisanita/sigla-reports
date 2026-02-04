@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="stampa_pdg_rendges_all_riepilogo" pageWidth="1190" pageHeight="842" orientation="Landscape" columnWidth="1190" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2c11c712-8c5d-453d-b64e-dc8e01196a0c">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="ISO-8859-1"/>
@@ -178,7 +179,7 @@ Where TIPO = $P{P_TIPO}]]>
 		<groupExpression><![CDATA[$F{CD_LIVELLO1}]]></groupExpression>
 		<groupHeader>
 			<band height="15">
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement key="textField-5" style="VER6" x="3" y="0" width="207" height="15" uuid="347185fe-55f6-417f-a696-80df92444bc4"/>
 					<box leftPadding="4">
 						<topPen lineWidth="0.0" lineColor="#000000"/>
@@ -189,7 +190,7 @@ Where TIPO = $P{P_TIPO}]]>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font isBold="false" isItalic="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{LIVELLO1_DS}+" "+ $F{CD_LIVELLO1}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{LIVELLO1_DS}+" "+ $F{CD_LIVELLO1}+"-"+$F{DS_LIVELLO1}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="LIVELLO1" pattern="#,##0.00" isBlankWhenNull="false">
 					<reportElement key="textField-63" style="VER6" positionType="Float" stretchType="RelativeToBandHeight" x="211" y="0" width="48" height="15" uuid="50f0d55a-67b5-4ffc-99ec-885d8aa9ba38"/>
@@ -382,7 +383,7 @@ Where TIPO = $P{P_TIPO}]]>
 	</title>
 	<pageHeader>
 		<band height="15">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-5" style="VER6" x="3" y="0" width="173" height="15" uuid="e6b32f52-50d4-497d-887a-5db1282776dc"/>
 				<box leftPadding="4">
 					<topPen lineWidth="0.0" lineColor="#000000"/>
