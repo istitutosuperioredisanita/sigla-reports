@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="registro_iva_acquisti" pageWidth="842" pageHeight="595" columnWidth="782" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="a3318d3a-0e52-4f25-8487-9fb8c68e6a48">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -13,7 +14,7 @@
 	<style name="TNR8BOLD" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
 	<parameter name="idReport" class="java.lang.Integer" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new Integer(10)]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Integer(161)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="aPagIniziale" class="java.lang.Integer" isForPrompting="false">
 		<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
@@ -723,7 +724,7 @@ dog]]></text>
 					</box>
 					<text><![CDATA[a Esercizio]]></text>
 				</staticText>
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField-32" style="TNR8BOLD" x="143" y="2" width="164" height="12" isRemoveLineWhenBlank="true" uuid="e62c2f8d-2d57-4749-bf82-8aefa5ef497c"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -736,7 +737,7 @@ dog]]></text>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{CD_TIPO_SEZIONALE}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField-33" style="TNR8" x="312" y="2" width="74" height="12" isRemoveLineWhenBlank="true" uuid="75f2abc9-3b81-4202-bf3a-b840b850e103"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -749,7 +750,7 @@ dog]]></text>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{NUMERO_PROGRESSIVO}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField-34" style="TNR8" x="390" y="2" width="184" height="12" isRemoveLineWhenBlank="true" uuid="a64f4e63-9e2c-4077-8d6f-ec94f9463792"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -905,7 +906,7 @@ $F{PROTOCOLLO_IVA_GENERALE}]]></textFieldExpression>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{CODICE_ANAGRAFICO}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField-24" style="TNR10" x="265" y="2" width="103" height="12" isRemoveLineWhenBlank="true" uuid="31024258-a930-4327-b52c-db57ee082406"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
