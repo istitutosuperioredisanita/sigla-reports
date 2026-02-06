@@ -298,7 +298,7 @@ ORDER BY va.CD_VOCE,ESERCIZIO_RES]]>
 					<font fontName="Times New Roman" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-Elimi				<textFieldExpression><![CDATA["Riaccertamento residui " + $V{TITLE_ATTIVI_PASSIVI} + " - esercizio finanziario " + $P{P_ESERCIZIO}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Riaccertamento residui " + $V{TITLE_ATTIVI_PASSIVI} + " - esercizio finanziario " + $P{P_ESERCIZIO}]]></textFieldExpression>
 			</textField>
 			<image>
 				<reportElement key="image-1" x="0" y="0" width="140" height="40" uuid="54eb459b-0e8b-4b9c-a3ef-884cb754411b"/>
