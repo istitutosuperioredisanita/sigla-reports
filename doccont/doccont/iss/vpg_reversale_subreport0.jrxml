@@ -237,11 +237,7 @@ ORDER BY ESERCIZIO, CD_CDS, PG_REVERSALE, Decode(TI_RECORD,'A',1,'D',2,'E',3,'C'
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center"/>
-					<textFieldExpression><![CDATA[$F{TI_REVERSALE}.equals("A")?"Reversale di Accreditamento"
-:$F{TI_REVERSALE}.equals("I")?"Reversale per Ritenute"
-:$F{TI_REVERSALE}.equals("R")?"Reversale di Regolarizzazione"
-:$F{TI_REVERSALE}.equals("S")?"Reversale a Regolamento di Sospeso"
-:"Reversale"]]></textFieldExpression>
+					<textFieldExpression><![CDATA["Reversale"]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
