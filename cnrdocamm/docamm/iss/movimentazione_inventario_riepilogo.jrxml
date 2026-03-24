@@ -31,7 +31,8 @@
 	</parameter>
 	<queryString>
 		<![CDATA[select anno esercizio,t.ds_tipo_ammortamento piano_ammortamento,
-sum( VALORE_NETTO_ANNO_PREC) valori_anno_precedente,
+--sum( VALORE_NETTO_ANNO_PREC) valori_anno_precedente,
+sum( valore_anno_prec - quota_ammortamento_anno_prec)valori_anno_precedente,
 sum( valore_decremento - totale_ammortamento_alienati) decrementi,
  sum( VALORE_NETTO_ANNO_PREC) -
  	sum( valore_decremento - totale_ammortamento_alienati)
