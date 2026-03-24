@@ -34,7 +34,7 @@
 --sum( VALORE_NETTO_ANNO_PREC) valori_anno_precedente,
 sum( valore_anno_prec - quota_ammortamento_anno_prec)valori_anno_precedente,
 sum( valore_decremento - totale_ammortamento_alienati) decrementi,
- sum( VALORE_NETTO_ANNO_PREC) -
+ sum( valore_anno_prec - quota_ammortamento_anno_prec) -
  	sum( valore_decremento - totale_ammortamento_alienati)
  valori
 from CHIUSURA_ANNO_INVENTARIO c
