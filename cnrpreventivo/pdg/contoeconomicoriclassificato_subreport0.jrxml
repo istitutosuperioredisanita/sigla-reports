@@ -92,7 +92,7 @@ ORDER BY SEQUENZA]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement markup="styled"/>
-				<textFieldExpression><![CDATA["Tipo Bilancio: " + $P{CD_TIPO_BILANCIO} + " "
+				<textFieldExpression><![CDATA["Tipo Bilancio: " + $P{CD_TIPO_BILANCIO} + " " + 
 ($P{IST_COMM}.equals("C")?"Tipo: Commerciale": ($P{IST_COMM}.equals("I")?"Tipo: Istituzionale":"Tipo: Ente"))]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
