@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contoeconomicoriclassificato" pageWidth="595" pageHeight="842" columnWidth="573" leftMargin="11" rightMargin="11" topMargin="11" bottomMargin="11" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.ContoeconomicoriclassificatoScriptlet">
+<!-- Created with Jaspersoft Studio version 6.21.3.final utlizzo versione della libreria JasperReports6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contoeconomicoriclassificato" pageWidth="595" pageHeight="842" columnWidth="573" leftMargin="11" rightMargin="11" topMargin="11" bottomMargin="11" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.ContoeconomicoriclassificatoScriptlet" uuid="27bb1137-db59-4afd-9cf5-7ab3d58e29d8">
 	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
-    <property name="ireport.scriptlethandling" value="2"/>
+	<property name="ireport.scriptlethandling" value="2"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
@@ -32,9 +33,9 @@
 	<parameter name="dettaglioConti" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Y"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="CD_TIPO_BILANCIO" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["CIVILISTICO"]]></defaultValueExpression>
-	</parameter>		
+	<parameter name="CD_TIPO_BILANCIO" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["CIVILISTICO"]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[Select 1 from dual]]>
 	</queryString>
@@ -54,7 +55,7 @@
 	<detail>
 		<band height="16" splitType="Stretch">
 			<subreport isUsingCache="true">
-				<reportElement key="subreport-1" positionType="Float" x="0" y="0" width="572" height="16"/>
+				<reportElement key="subreport-1" positionType="Float" x="0" y="0" width="572" height="16" uuid="ef297501-0be4-4757-9f22-24ccddcc2ef5"/>
 				<subreportParameter name="inEs">
 					<subreportParameterExpression><![CDATA[$P{inEs}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -70,8 +71,11 @@
 				<subreportParameter name="DIR_IMAGE">
 					<subreportParameterExpression><![CDATA[$P{DIR_IMAGE}]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="CD_TIPO_BILANCIO">
+					<subreportParameterExpression><![CDATA[$P{CD_TIPO_BILANCIO}]]></subreportParameterExpression>
+				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_SUBREPORT}+"contoeconomicoriclassificato_subreport0.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{DIR_SUBREPORT}+"contoeconomicoriclassificato_subreport0.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
@@ -81,7 +85,7 @@
 	<pageFooter>
 		<band height="15" splitType="Stretch">
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" x="245" y="0" width="294" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField-1" x="245" y="0" width="294" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="0732eda2-17c2-469d-815e-f6e365446862"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -91,10 +95,10 @@
 				<textElement textAlignment="Right">
 					<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report" isBlankWhenNull="false">
-				<reportElement key="textField-2" x="542" y="0" width="27" height="15"/>
+				<reportElement key="textField-2" x="542" y="0" width="27" height="15" uuid="beb16311-a443-4200-8c88-92ca98539a0c"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -104,10 +108,10 @@
 				<textElement>
 					<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report" pattern="dd/MM/yyyy HH.mm.ss" isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR10BOLD" x="6" y="0" width="143" height="15"/>
+				<reportElement key="textField" style="TNR10BOLD" x="6" y="0" width="143" height="15" uuid="180b114d-159f-4545-82b6-a098862ef2db"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -115,7 +119,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement markup="styled"/>
-				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>
