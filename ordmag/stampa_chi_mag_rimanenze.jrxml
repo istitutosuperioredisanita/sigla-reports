@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StampaRimanenzeMagazzinoDef" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="11c15183-8e09-4419-b27d-a899adb1799d">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLA_SVIL.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="577"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="413"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -84,16 +84,16 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 		<variableExpression><![CDATA[$F{GIACENZA}]]></variableExpression>
 	</variable>
 	<variable name="importoGiacenzaArticolo" class="java.math.BigDecimal" resetType="Group" resetGroup="Articolo" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoCaricoInizialeArt" class="java.math.BigDecimal" resetType="Group" resetGroup="Articolo" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_INIZIALE})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_INIZIALE}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoCaricoAnnoArt" class="java.math.BigDecimal" resetType="Group" resetGroup="Articolo" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_ANNO})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_ANNO}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoScaricoAnnoArt" class="java.math.BigDecimal" resetType="Group" resetGroup="Articolo" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{SCARICO_ANNO})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{SCARICO_ANNO}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="caricoInizialeArticolo" class="java.math.BigDecimal" resetType="Group" resetGroup="Articolo" calculation="Sum">
 		<variableExpression><![CDATA[$F{CARICO_INIZIALE}]]></variableExpression>
@@ -105,40 +105,52 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 		<variableExpression><![CDATA[$F{SCARICO_ANNO}]]></variableExpression>
 	</variable>
 	<variable name="importoGiacenzaCat" class="java.math.BigDecimal" resetType="Group" resetGroup="Categoria Gruppo" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoCaricoInizialeCat" class="java.math.BigDecimal" resetType="Group" resetGroup="Categoria Gruppo" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_INIZIALE})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_INIZIALE}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoCaricoAnnoCat" class="java.math.BigDecimal" resetType="Group" resetGroup="Categoria Gruppo" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_ANNO})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_ANNO}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoScaricoAnnoCat" class="java.math.BigDecimal" resetType="Group" resetGroup="Categoria Gruppo" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{SCARICO_ANNO})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{SCARICO_ANNO}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="importoGiacenzaRag" class="java.math.BigDecimal" resetType="Group" resetGroup="Raggruppamento Magazzino" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoCaricoInizialeRag" class="java.math.BigDecimal" resetType="Group" resetGroup="Raggruppamento Magazzino" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_INIZIALE})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_INIZIALE}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoCaricoAnnoRag" class="java.math.BigDecimal" resetType="Group" resetGroup="Raggruppamento Magazzino" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_ANNO})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_ANNO}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoScaricoAnnoRag" class="java.math.BigDecimal" resetType="Group" resetGroup="Raggruppamento Magazzino" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{SCARICO_ANNO})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{SCARICO_ANNO}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="importoGiacenzaTot" class="java.math.BigDecimal" resetType="Master" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoCaricoInizialeTot" class="java.math.BigDecimal" resetType="Master" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_INIZIALE})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_INIZIALE}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoCaricoAnnoTot" class="java.math.BigDecimal" resetType="Master" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_ANNO})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{CARICO_ANNO}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="ImportoScaricoAnnoTot" class="java.math.BigDecimal" resetType="Master" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{SCARICO_ANNO})]]></variableExpression>
+		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{SCARICO_ANNO}).setScale(2, RoundingMode.HALF_UP)]]></variableExpression>
+	</variable>
+	<variable name="QtyInizialeTot" class="java.math.BigDecimal" resetType="Group" resetGroup="Categoria Gruppo" calculation="Sum">
+		<variableExpression><![CDATA[$F{CARICO_INIZIALE}]]></variableExpression>
+	</variable>
+	<variable name="QtyCarichiTot" class="java.math.BigDecimal" resetType="Group" resetGroup="Categoria Gruppo" calculation="Sum">
+		<variableExpression><![CDATA[$F{CARICO_ANNO}]]></variableExpression>
+	</variable>
+	<variable name="QtyScarichiTot" class="java.math.BigDecimal" resetType="Group" resetGroup="Categoria Gruppo" calculation="Sum">
+		<variableExpression><![CDATA[$F{SCARICO_ANNO}]]></variableExpression>
+	</variable>
+	<variable name="QtyGiacenzaTot" class="java.math.BigDecimal" resetType="Group" resetGroup="Categoria Gruppo" calculation="Sum">
+		<variableExpression><![CDATA[$F{GIACENZA}]]></variableExpression>
 	</variable>
 	<group name="Totale">
 		<groupExpression><![CDATA[$V{MASTER_TOTAL_PAGES}]]></groupExpression>
@@ -173,7 +185,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeTot}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeTot})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="490" y="0" width="90" height="40" uuid="03d972d1-a9a9-4d6b-886d-ed3bd3a54f2e">
@@ -183,7 +195,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{importoGiacenzaTot}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{importoGiacenzaTot})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="261" y="0" width="90" height="40" uuid="ee749ccd-b2df-4eaf-84dc-dec6881e7459">
@@ -193,7 +205,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoTot}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoTot})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="376" y="0" width="90" height="40" uuid="0072970a-b8f7-4f79-8dfd-afac939ad479">
@@ -203,7 +215,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoTot}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoTot})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
@@ -250,7 +262,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeRag}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeRag})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="265" y="0" width="85" height="40" uuid="67c97657-71e4-4fbd-9d6d-84254051a2a6">
@@ -261,7 +273,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoRag}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoRag})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="380" y="0" width="85" height="40" uuid="84560310-1716-4c57-8762-2c7eb95d7a69">
@@ -272,7 +284,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoRag}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoRag})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="495" y="0" width="85" height="40" uuid="46a0cc62-fc5a-4f96-a76c-2a1bf6da256a">
@@ -283,7 +295,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{importoGiacenzaRag}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{importoGiacenzaRag})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
@@ -445,54 +457,114 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 		<groupFooter>
 			<band height="52">
 				<frame>
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="4" width="580" height="40" uuid="f161ddd0-2738-4eb1-9985-a9ca297f8d9b">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="580" height="50" uuid="f161ddd0-2738-4eb1-9985-a9ca297f8d9b">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<box>
 						<bottomPen lineWidth="1.0"/>
 					</box>
 					<textField>
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="160" y="-1" width="75" height="40" uuid="59717e91-2d90-4fa3-8fed-5f477865155a">
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="160" y="14" width="75" height="34" uuid="59717e91-2d90-4fa3-8fed-5f477865155a">
 							<property name="com.jaspersoft.studio.unit.width" value="px"/>
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeCat}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeCat})]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="275" y="-1" width="75" height="40" uuid="3d970dcc-d3e0-4bcb-b86e-c3408d0d720d">
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="275" y="14" width="75" height="34" uuid="3d970dcc-d3e0-4bcb-b86e-c3408d0d720d">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoCat}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoCat})]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="390" y="-1" width="75" height="40" uuid="91a0a68e-3626-4345-8946-6533a0a38ea4">
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="390" y="14" width="75" height="34" uuid="91a0a68e-3626-4345-8946-6533a0a38ea4">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoCat}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoCat})]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="505" y="-1" width="75" height="40" uuid="3a8695b8-4049-47cd-8a13-91b3a0ee9e81">
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="505" y="8" width="75" height="40" uuid="3a8695b8-4049-47cd-8a13-91b3a0ee9e81">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						</reportElement>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format( $V{importoGiacenzaCat}.setScale(2, RoundingMode.HALF_UP) )]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format( $V{importoGiacenzaCat})]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="160" height="39" uuid="4172a420-e8fd-4037-8780-d41aea21700b"/>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="14" width="100" height="33" uuid="4172a420-e8fd-4037-8780-d41aea21700b"/>
 						<box leftPadding="2"/>
 						<textElement textAlignment="Left" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[$P{flDettaglioArticolo}?"Tot. Categoria/Gruppo "+$F{CD_CATEGORIA_GRUPPO}: "Categoria/Gruppo "+$F{CD_CATEGORIA_GRUPPO}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$P{flDettaglioArticolo}?"Tot. Cat/Gruppo "+$F{CD_CATEGORIA_GRUPPO}: "Categoria/Gruppo "+$F{CD_CATEGORIA_GRUPPO}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="100" y="1" width="60" height="13" uuid="a2779f1e-7df0-4f76-8787-6cb33b05e836">
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+						</reportElement>
+						<box rightPadding="2">
+							<bottomPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Right" verticalAlignment="Top"/>
+						<textFieldExpression><![CDATA[$V{QtyInizialeTot}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="200" y="1" width="75" height="13" uuid="d0f08ad2-a0e7-48ec-9453-6b0721744414">
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+						</reportElement>
+						<box rightPadding="2">
+							<bottomPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Right" verticalAlignment="Top"/>
+						<textFieldExpression><![CDATA[$V{QtyCarichiTot}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="320" y="1" width="70" height="13" uuid="296f29a3-d480-4ad2-8eb1-6602f9771292">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+						</reportElement>
+						<box rightPadding="2">
+							<bottomPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Right" verticalAlignment="Top"/>
+						<textFieldExpression><![CDATA[$V{QtyScarichiTot}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="430" y="1" width="75" height="13" printWhenGroupChanges="Totale" uuid="f0172417-36ab-4d8d-8f70-1ef4c595d9c4">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+						</reportElement>
+						<box rightPadding="2">
+							<bottomPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Right" verticalAlignment="Top"/>
+						<textFieldExpression><![CDATA[$V{QtyGiacenzaTot}]]></textFieldExpression>
+					</textField>
+					<textField textAdjust="StretchHeight">
+						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="1" width="100" height="13" uuid="70d495b8-4231-473d-8787-9edeab275ba5">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
+						</reportElement>
+						<box leftPadding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA["Tot. Qta"]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
@@ -569,7 +641,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeArt}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoInizialeArt})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="235" y="0" width="40" height="44" uuid="24580dd8-2a54-484e-8df7-390956d7c464">
@@ -598,7 +670,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoArt}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoCaricoAnnoArt})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="350" y="0" width="40" height="44" uuid="6cba5148-0878-489d-bf79-956bd9759a52">
@@ -627,7 +699,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoArt}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{ImportoScaricoAnnoArt})]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="465" y="0" width="40" height="44" uuid="08b94b1e-6e93-49fe-a42f-aa6579b5c963">
@@ -656,7 +728,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{importoGiacenzaArticolo}.setScale(2, RoundingMode.HALF_UP))]]></textFieldExpression>
+						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{importoGiacenzaArticolo})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
