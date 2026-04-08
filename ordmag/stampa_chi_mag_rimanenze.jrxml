@@ -509,7 +509,7 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="14" width="100" height="33" uuid="4172a420-e8fd-4037-8780-d41aea21700b"/>
 						<box leftPadding="2"/>
 						<textElement textAlignment="Left" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[$P{flDettaglioArticolo} ? "Tot. Cat/Gruppo "+$F{CD_CATEGORIA_GRUPPO} :  "Categoria/Gruppo "+$F{CD_CATEGORIA_GRUPPO}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$P{flDettaglioArticolo} ? "Tot. Cat/Gruppo "+$F{CD_CATEGORIA_GRUPPO} : "Categoria/Gruppo "+$F{CD_CATEGORIA_GRUPPO}]]></textFieldExpression>
 					</textField>
 					<textField>
 						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="100" y="1" width="60" height="13" uuid="a2779f1e-7df0-4f76-8787-6cb33b05e836">
