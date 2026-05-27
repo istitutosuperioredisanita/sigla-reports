@@ -74,9 +74,9 @@
 		<band splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="96" splitType="Stretch">
+		<band height="78" splitType="Stretch">
 			<image onErrorType="Blank">
-				<reportElement key="image-1" x="0" y="0" width="497" height="40" uuid="a2768c8f-120c-46cf-a891-2f84bd330d0c"/>
+				<reportElement key="image-1" x="0" y="0" width="497" height="40" uuid="35739f83-5e38-4916-b267-02a4ae4beb20"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -86,7 +86,7 @@
 				<imageExpression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
 			</image>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-2" style="TNR10BOLD" x="3" y="44" width="349" height="15" uuid="149a322b-0412-465a-b07f-aa0e513a93c8"/>
+				<reportElement key="textField-2" style="TNR10BOLD" x="3" y="44" width="494" height="15" uuid="61d903ac-4100-44ae-be1e-5438aa2920a4"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -94,10 +94,11 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement markup="styled"/>
-				<textFieldExpression><![CDATA[($P{CDS}.equals("*")?"CdS: Tutti":"CdS: "+$P{CDS})]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Tipo Bilancio: " + $P{CD_TIPO_BILANCIO} + " - " + 
+($P{IST_COMM}.equals("C")?"Tipo: Commerciale": ($P{IST_COMM}.equals("I")?"Tipo: Istituzionale":"Tipo: Ente"))]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-3" style="TNR10BOLD" x="3" y="60" width="349" height="15" uuid="51526aaa-925b-48e1-9caa-1bb50bcf921f"/>
+				<reportElement key="textField-3" style="TNR10BOLD" x="3" y="60" width="494" height="15" uuid="e72a4e38-7895-4ed4-930b-092d441b6cad"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -105,20 +106,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement markup="styled"/>
-				<textFieldExpression><![CDATA[($P{uo}.equals("*")?"Unità Organizzativa: Tutte":"Unità Organizzativa: "+$P{uo})]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField-4" style="TNR10BOLD" x="3" y="76" width="349" height="15" uuid="743f6962-a8a7-4ac5-b8c3-19fa3bbe63e7"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement markup="styled"/>
-				<textFieldExpression><![CDATA[($P{IST_COMM}.equals("C")?"Tipo: Commerciale":
-  ($P{IST_COMM}.equals("I")?"Tipo: Istituzionale":
-  "Tipo: Ente"))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($P{CDS}.equals("*")?"CdS: Tutti":"CdS: "+$P{CDS}) + " - " + ($P{uo}.equals("*")?"Unità Organizzativa: Tutte":"Unità Organizzativa: "+$P{uo})]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
