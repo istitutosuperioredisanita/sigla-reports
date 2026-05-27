@@ -48,6 +48,7 @@
 		<defaultValueExpression><![CDATA["..\\.."]]></defaultValueExpression>
 	</parameter>
 	<parameter name="ATTPAS" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CD_TIPO_BILANCIO" class="java.lang.String"/>	
 	<queryString>
 		<![CDATA[select * from PRT_VPG_BIL_RICLASSIFICATO]]>
 	</queryString>

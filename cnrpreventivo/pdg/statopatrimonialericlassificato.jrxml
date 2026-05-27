@@ -74,6 +74,9 @@
 				<subreportParameter name="ATTPAS">
 					<subreportParameterExpression><![CDATA[$P{ATTPAS}]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="CD_TIPO_BILANCIO">
+					<subreportParameterExpression><![CDATA[$P{CD_TIPO_BILANCIO}]]></subreportParameterExpression>
+				</subreportParameter>				
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{DIR_SUBREPORT}+"statopatrimonialericlassificato_subreport0.jasper"]]></subreportExpression>
 			</subreport>
