@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ada9059e-7dc7-48d5-9818-a9bf934b6390">
 	<property name="ireport.zoom" value="2.1435888100000016"/>
 	<property name="ireport.x" value="0"/>
@@ -93,7 +93,8 @@ AND (INVENTARIO_CONSEGNATARIO.DT_FINE_VALIDITA > SYSDATE OR INVENTARIO_CONSEGNAT
 AND TESTATA.ESERCIZIO = $P{esercizio}
 AND TESTATA.PG_INVENTARIO = $P{pg_inventario}
 AND TESTATA.TI_DOCUMENTO = $P{ti_documento}
-AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
+AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}
+order by nr_inventario , progressivo]]>
 	</queryString>
 	<field name="PG_INVENTARIO" class="java.math.BigDecimal"/>
 	<field name="TI_DOCUMENTO" class="java.lang.String"/>
@@ -415,7 +416,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 	</columnHeader>
 	<detail>
 		<band height="32" splitType="Stretch">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-11" style="TNR10" x="102" y="2" width="79" height="13" isRemoveLineWhenBlank="true" uuid="6754687c-56fd-4c03-a917-441500033bc8"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -443,7 +444,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 				</textElement>
 				<textFieldExpression><![CDATA[new DecimalFormat("¤ #,##0.00").format($F{VALORE_FINALE})]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-11" style="TNR10" x="429" y="2" width="115" height="13" isRemoveLineWhenBlank="true" uuid="b642a7f5-82e3-4039-8f03-9df516e48ed6"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -456,7 +457,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{CATEGORIA_GRUPPO}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-11" style="TNR10" x="547" y="2" width="20" height="13" isRemoveLineWhenBlank="true" uuid="222b2c85-d6e7-42b0-8711-873216d8e92d"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -469,7 +470,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{TI_COMMERCIALE_ISTITUZIONALE}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-11" style="TNR10" x="578" y="2" width="100" height="13" isRemoveLineWhenBlank="true" uuid="4dec8e8a-c750-4efe-b927-75a1c25b773f">
 					<printWhenExpression><![CDATA[$F{DOCUMENTO} != null]]></printWhenExpression>
 				</reportElement>
@@ -484,7 +485,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{DOCUMENTO}+' '+$F{ESERCIZIO_DOCUMENTO}+'-'+$F{PG_DOCUMENTO}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-11" style="TNR10" x="1" y="2" width="99" height="13" isRemoveLineWhenBlank="true" uuid="0a7a2acc-d998-480f-bd56-8124920b4a52"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -512,7 +513,7 @@ AND TESTATA.PG_BUONO_C_S = $P{pg_buono_c_s}]]>
 				</textElement>
 				<textFieldExpression><![CDATA[new DecimalFormat("¤ #,##0.00").format($F{VALORE_ALIENAZIONE}.multiply($F{QUANTITA}))]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement key="textField-11" style="TNR10" x="181" y="2" width="242" height="13" isRemoveLineWhenBlank="true" uuid="e8a8b6c4-2fb5-4b8d-9c83-a143c056b3ef"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
