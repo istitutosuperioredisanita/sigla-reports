@@ -6,7 +6,7 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="178"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sigla_coll.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLASVIL"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -25,13 +25,13 @@
 		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="aEs" class="java.lang.Integer" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new Integer("2007")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Integer("2026")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="aCd_cds" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["999"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["000"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="aPg_da" class="java.lang.Long" isForPrompting="false">
-		<defaultValueExpression><![CDATA[new Long("72")]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Long("447")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="pg_reversale" class="java.math.BigDecimal" isForPrompting="false">
 		<defaultValueExpression><![CDATA[new java.math.BigDecimal("1")]]></defaultValueExpression>
@@ -650,9 +650,8 @@ $F{CD_UO_ORIGINE}!= null)]]></printWhenExpression>
 		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
 		<groupHeader>
 			<band height="50" splitType="Stretch">
-				<printWhenExpression><![CDATA[new Boolean(!($F{TI_REVERSALE}.equals("I") ||
-$F{DENOMINAZIONE_SEDE} == null ||
-!$V{PAGE_NUMBER}.equals(new Integer(1))))]]></printWhenExpression>
+				<printWhenExpression><![CDATA[new Boolean($F{DENOMINAZIONE_SEDE} != null ||	
+$V{PAGE_NUMBER}.equals(new Integer(1)))]]></printWhenExpression>
 				<line>
 					<reportElement key="line-1" x="4" y="3" width="562" height="1" uuid="38c190b7-bb51-4663-a0cb-226277e85334"/>
 					<graphicElement>
