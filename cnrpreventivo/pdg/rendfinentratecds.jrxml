@@ -96,7 +96,7 @@ ORDER BY TITOLO,CAPITOLO]]></query>
 	<group name="TITOLO">
 		<expression><![CDATA[$F{TITOLO}]]></expression>
 		<groupHeader>
-			<band height="18" splitAllowed="true">
+			<band height="18" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="2" y="2" width="280" height="14" key="textField-7" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["TITOLO "+$F{TITOLO}+" - "+$F{DS_TITOLO}]]></expression>
@@ -107,7 +107,7 @@ ORDER BY TITOLO,CAPITOLO]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="2" y="2" width="280" height="14" key="textField-34" stretchType="ContainerHeight" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["Totale Titolo "+$F{TITOLO}]]></expression>
@@ -153,9 +153,9 @@ ORDER BY TITOLO,CAPITOLO]]></query>
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="153" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="153" splitType="Stretch">
 		<element kind="image" x="1" y="2" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -258,9 +258,9 @@ in +          in -]]></text>
 		<element kind="line" x="780" y="135" width="0" height="18" key="line-97" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 		<element kind="line" x="0" y="152" width="780" height="0" key="line-98" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="20" splitAllowed="true">
+		<band height="20" splitType="Stretch">
 			<element kind="line" x="0" y="0" width="0" height="20" key="line-29" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
 			<element kind="line" x="285" y="0" width="0" height="20" key="line-31" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
 			<element kind="line" x="349" y="0" width="0" height="20" key="line-32" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
@@ -308,8 +308,8 @@ in +          in -]]></text>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="21" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="21" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="4" y="3" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -323,7 +323,7 @@ in +          in -]]></text>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="21" splitAllowed="true">
+	<summary height="21" splitType="Stretch">
 		<element kind="line" x="0" y="0" width="0" height="20" key="line-84" stretchType="ContainerHeight" direction="TopDown"/>
 		<element kind="line" x="780" y="0" width="0" height="18" key="line-85" stretchType="ContainerHeight" direction="TopDown"/>
 		<element kind="line" x="285" y="0" width="0" height="20" key="line-86" stretchType="ContainerHeight" direction="BottomUp"/>

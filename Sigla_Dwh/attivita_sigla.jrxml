@@ -150,8 +150,8 @@ or (a.tipo_attivita='G' and $P{Tipo_att_supporto_gestione}='true'))]]></query>
 	<field name="DS6" class="java.lang.String"/>
 	<sortField name="ESERCIZIO"/>
 	<sortField name="PG_ATTIVITA"/>
-	<background height="0" splitAllowed="true"/>
-	<title height="78" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="78" splitType="Stretch">
 		<element kind="staticText" style="TNRGC14" x="0" y="0" width="802" height="18" key="staticText-1" hTextAlign="Center" pdfFontName="Helvetica-BoldOblique" bold="true" italic="true">
 			<box/>
 			<text><![CDATA[Attività Sigla]]></text>
@@ -189,8 +189,8 @@ or (a.tipo_attivita='G' and $P{Tipo_att_supporto_gestione}='true'))]]></query>
 		</element>
 		<element kind="line" x="0" y="71" width="802" height="0" key="line-1" direction="TopDown"/>
 	</title>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="30" splitAllowed="true">
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
 		<element kind="staticText" style="TNR9" x="0" y="0" width="32" height="17" key="staticText-2" hTextAlign="Justified">
 			<box/>
 			<text><![CDATA[N.]]></text>
@@ -249,7 +249,7 @@ or (a.tipo_attivita='G' and $P{Tipo_att_supporto_gestione}='true'))]]></query>
 		</element>
 	</columnHeader>
 	<detail>
-		<band height="21" splitAllowed="false">
+		<band height="21" splitType="Prevent">
 			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="0" y="6" width="27" height="11" key="textField" pattern="###0" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 				<box/>
 				<expression><![CDATA[$F{PG_ATTIVITA}+"/"+$F{ESERCIZIO}]]></expression>
@@ -322,8 +322,8 @@ or (a.tipo_attivita='G' and $P{Tipo_att_supporto_gestione}='true'))]]></query>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="22" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="22" splitType="Stretch">
 		<element kind="textField" style="TNRG9" x="740" y="9" width="55" height="12" key="textField-2" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -352,5 +352,5 @@ or (a.tipo_attivita='G' and $P{Tipo_att_supporto_gestione}='true'))]]></query>
 			<expression><![CDATA["Data di stampa "+ new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

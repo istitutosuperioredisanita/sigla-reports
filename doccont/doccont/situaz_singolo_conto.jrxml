@@ -18,12 +18,12 @@
 	</parameter>
 	<query language="sql"><![CDATA[SELECT 1 FROM DUAL]]></query>
 	<field name="1" class="java.math.BigDecimal"/>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="16" splitAllowed="true">
+		<band height="16" splitType="Stretch">
 			<element kind="subreport" x="0" y="0" width="572" height="16" key="subreport-1" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" usingCache="true">
 				<parameter name="DIR_IMAGE">
 					<expression><![CDATA[$P{DIR_IMAGE}]]></expression>
@@ -39,8 +39,8 @@
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="18" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="18" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="470" y="1" width="73" height="17" key="textField-1" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -69,5 +69,5 @@
 			<expression><![CDATA[new java.util.Date()]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

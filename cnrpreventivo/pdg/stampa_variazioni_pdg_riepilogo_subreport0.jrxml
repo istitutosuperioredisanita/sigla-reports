@@ -52,18 +52,18 @@ categoria]]></query>
 	<group name="Tipo">
 		<expression><![CDATA[$F{TIPO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true">
+			<band height="0" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean ($F{TI_GESTIONE}!=null&&$F{TIPO}.equals("A"))]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="Gestione" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TI_GESTIONE}]]></expression>
 		<groupHeader>
-			<band height="32" splitAllowed="true">
+			<band height="32" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean ($F{TI_GESTIONE}!=null&&$F{TIPO}.equals("A"))]]></printWhenExpression>
 				<element kind="staticText" style="TNRC10" x="465" y="13" width="107" height="13" key="staticText-8" stretchType="ContainerHeight" positionType="Float" printRepeatedValues="false" removeLineWhenBlank="true" printInFirstWholeBand="true" printWhenGroupChanges="Gestione" hTextAlign="Right">
 					<printWhenExpression><![CDATA[new Boolean (!$F{TI_GESTIONE}.equals(null)&$F{TIPO}.equals("A"))]]></printWhenExpression>
@@ -96,13 +96,13 @@ null))]]></expression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="details1">
 		<expression><![CDATA[$V{REPORT_COUNT}]]></expression>
 		<groupHeader>
-			<band height="20" splitAllowed="false">
+			<band height="20" splitType="Prevent">
 				<printWhenExpression><![CDATA[new Boolean ($F{CHIAVE}.equals("I"))]]></printWhenExpression>
 				<element kind="textField" style="TNR10" x="15" y="1" width="39" height="13" key="textField" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<printWhenExpression><![CDATA[new Boolean ($F{CHIAVE}.equals("I"))]]></printWhenExpression>
@@ -138,7 +138,7 @@ $F{STATO}.equals("APF")?"Approvata formale":null))))))]]></expression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="26" splitAllowed="true">
+			<band height="26" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean ($F{CHIAVE}.equals("TOT"))]]></printWhenExpression>
 				<element kind="textField" style="TNRG10" x="4" y="2" width="104" height="14" key="textField-10" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<printWhenExpression><![CDATA[new Boolean ($F{CHIAVE}.equals("TOT"))]]></printWhenExpression>
@@ -172,10 +172,10 @@ new BigDecimal(0)))]]></expression>
 	<group name="details2">
 		<expression><![CDATA[$V{REPORT_COUNT}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="26" splitAllowed="true">
+			<band height="26" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean ($F{CHIAVE}.equals("DIP"))]]></printWhenExpression>
 				<element kind="textField" style="TNRG10" x="4" y="2" width="363" height="13" key="textField-15" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" vTextAlign="Top" rotation="None" fontName="Times New Roman" pdfFontName="Times-Bold" fontSize="10" bold="true" italic="false" underline="false" pdfEncoding="Cp1252" strikeThrough="false">
 					<paragraph lineSpacing="Single"/>
@@ -208,10 +208,10 @@ new BigDecimal(0)))]]></expression>
 	<group name="details3">
 		<expression><![CDATA[$V{REPORT_COUNT}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="19" splitAllowed="true">
+			<band height="19" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean ($F{CHIAVE}.equals("TIT"))]]></printWhenExpression>
 				<element kind="textField" style="TNRG10" x="19" y="3" width="347" height="13" key="textField-14" stretchType="ContainerHeight" positionType="Float" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" vTextAlign="Top" rotation="None" fontName="Times New Roman" pdfFontName="Times-Bold" fontSize="10" bold="true" italic="false" underline="false" pdfEncoding="Cp1252" strikeThrough="false">
 					<paragraph lineSpacing="Single"/>
@@ -244,8 +244,8 @@ new BigDecimal(0)))]]></expression>
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="85" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="85" splitType="Stretch">
 		<element kind="image" x="8" y="11" width="531" height="41" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -255,8 +255,8 @@ new BigDecimal(0)))]]></expression>
 			<text><![CDATA[Stampa Riepilogo Variazioni]]></text>
 		</element>
 	</title>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="22" splitAllowed="true">
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="22" splitType="Stretch">
 		<printWhenExpression><![CDATA[new Boolean($F{CHIAVE}.equals("I"))]]></printWhenExpression>
 		<element kind="staticText" style="TNRC10" x="15" y="3" width="39" height="12" key="staticText-1" stretchType="ContainerHeight" removeLineWhenBlank="true">
 			<printWhenExpression><![CDATA[new Boolean($F{CHIAVE}.equals("I"))]]></printWhenExpression>
@@ -286,7 +286,7 @@ new BigDecimal(0)))]]></expression>
 		</element>
 	</columnHeader>
 	<detail>
-		<band height="56" splitAllowed="true">
+		<band height="56" splitType="Stretch">
 			<printWhenExpression><![CDATA[new Boolean ($F{CHIAVE}.equals("Dettagli"))]]></printWhenExpression>
 			<element kind="textField" style="TNR10" x="477" y="40" width="95" height="13" key="textField" stretchType="ContainerHeight" positionType="Float" printWhenDetailOverflows="true" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 				<printWhenExpression><![CDATA[new Boolean ($F{CHIAVE}.equals("Dettagli"))]]></printWhenExpression>
@@ -339,7 +339,7 @@ new BigDecimal(0)))]]></expression>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

@@ -52,7 +52,7 @@ order by cd_centro_Responsabilita,cd_linea_attivita]]></query>
 	<group name="cdr" startNewPage="true" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CD_CENTRO_RESPONSABILITA}]]></expression>
 		<groupHeader>
-			<band height="41" splitAllowed="true">
+			<band height="41" splitType="Stretch">
 				<element kind="rectangle" x="0" y="0" width="782" height="41" key="rectangle-1" stretchType="ContainerHeight"/>
 				<element kind="line" x="0" y="20" width="782" height="0" key="line-1" direction="TopDown"/>
 				<element kind="staticText" style="TNR10B" x="5" y="4" width="73" height="14" key="staticText-3" hTextAlign="Left">
@@ -102,13 +102,13 @@ order by cd_centro_Responsabilita,cd_linea_attivita]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="13" splitAllowed="true"/>
+			<band height="13" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="GAE" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CD_LINEA_ATTIVITA}]]></expression>
 		<groupHeader>
-			<band height="33" splitAllowed="true">
+			<band height="33" splitType="Stretch">
 				<element kind="staticText" style="TNR10B" x="0" y="9" width="73" height="14" key="staticText-8" hTextAlign="Left">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[RISULTATO]]></text>
@@ -116,12 +116,12 @@ order by cd_centro_Responsabilita,cd_linea_attivita]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="13" splitAllowed="true"/>
+			<band height="13" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="151" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="151" splitType="Stretch">
 		<element kind="image" x="7" y="0" width="501" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -143,9 +143,9 @@ order by cd_centro_Responsabilita,cd_linea_attivita]]></query>
 			<expression><![CDATA[$P{cdr}+($F{DS_CDR}==null?"":" - "+$F{DS_CDR})]]></expression>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="18" splitAllowed="true">
+		<band height="18" splitType="Stretch">
 			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="1" y="4" width="100" height="14" key="textField" stretchType="ContainerHeight" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[$F{CD_TIPO_RISULTATO}]]></expression>
@@ -160,8 +160,8 @@ order by cd_centro_Responsabilita,cd_linea_attivita]]></query>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="21" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="21" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="2" y="4" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -175,5 +175,5 @@ order by cd_centro_Responsabilita,cd_linea_attivita]]></query>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

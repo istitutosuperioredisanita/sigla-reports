@@ -152,10 +152,10 @@ order by cds,uo,cdr,lda]]></query>
 	<group name="uo" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{UO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{uo}.compareTo("*")==0 || $P{cdr}.compareTo("*")==0 )]]></printWhenExpression>
 				<element kind="textField" style="TNR8B" x="5" y="1" width="303" height="17" key="textField-22" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" underline="false">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -197,7 +197,7 @@ order by cds,uo,cdr,lda]]></query>
 	<group name="CDR" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CDR}]]></expression>
 		<groupHeader>
-			<band height="16" splitAllowed="true">
+			<band height="16" splitType="Stretch">
 				<element kind="textField" style="TNR8B" x="2" y="2" width="500" height="14" key="textField" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{CDR}+" - "+$F{DS_CDR}]]></expression>
@@ -205,7 +205,7 @@ order by cds,uo,cdr,lda]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="21" splitAllowed="true">
+			<band height="21" splitType="Stretch">
 				<element kind="textField" style="TNR8B" x="15" y="2" width="291" height="17" key="textField-15" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" underline="false">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["Totale CDR "+$F{CDR}]]></expression>
@@ -243,9 +243,9 @@ order by cds,uo,cdr,lda]]></query>
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="113" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="113" splitType="Stretch">
 		<element kind="image" x="2" y="0" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -322,9 +322,9 @@ Previste]]></text>
 			<text><![CDATA[Reversali]]></text>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="17" splitAllowed="true">
+		<band height="17" splitType="Stretch">
 			<element kind="textField" textAdjust="StretchHeight" style="TNR8B" x="18" y="3" width="330" height="14" key="textField-5" stretchType="ContainerHeight" positionType="Float" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[$F{LDA}+($F{DESCR}==null?"":" - "+$F{DESCR})]]></expression>
@@ -367,8 +367,8 @@ Previste]]></text>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="19" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="19" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="3" y="1" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -382,7 +382,7 @@ Previste]]></text>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="21" splitAllowed="true">
+	<summary height="21" splitType="Stretch">
 		<printWhenExpression><![CDATA[new Boolean($P{uo}.compareTo("*")==0 || $P{cdr}.compareTo("*")==0 )
 ]]></printWhenExpression>
 		<element kind="textField" style="TNR10B" x="5" y="0" width="191" height="17" key="textField-29" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" underline="false">

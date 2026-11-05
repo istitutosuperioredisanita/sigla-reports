@@ -74,14 +74,14 @@ order by sequenza]]></query>
 	<field name="PROVVISORIO_DEFINITIVO" class="java.lang.String"/>
 	<field name="ACQUISTO_VENDITA" class="java.lang.String"/>
 	<field name="DESCRIZIONE_GRUPPO" class="java.lang.String"/>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch">
 		<printWhenExpression><![CDATA[new Boolean($F{SEZIONE}.equals("T"))]]></printWhenExpression>
 	</columnHeader>
 	<detail>
-		<band height="14" splitAllowed="true">
+		<band height="14" splitType="Stretch">
 			<printWhenExpression><![CDATA[new Boolean(!$F{TIPOLOGIA_RIGA}.equals("R"))]]></printWhenExpression>
 			<element kind="rectangle" x="123" y="1" width="586" height="13" key="rectangle-1"/>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR7" x="126" y="4" width="417" height="10" key="textField-11" removeLineWhenBlank="true" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
@@ -125,7 +125,7 @@ order by sequenza]]></query>
 			<element kind="line" x="544" y="1" width="0" height="13" key="line-3" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

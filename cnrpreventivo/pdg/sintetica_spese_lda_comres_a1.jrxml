@@ -157,7 +157,7 @@ order by cds,commessa,cdr,modulo,lda]]></query>
 	<group name="commessa" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{COMMESSA}]]></expression>
 		<groupHeader>
-			<band height="16" splitAllowed="true">
+			<band height="16" splitType="Stretch">
 				<element kind="textField" style="TNR10B" x="3" y="2" width="500" height="14" key="textField-36" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[($F{COMMESSA}.compareTo("ZZZZZZZZZZ")==0?"Commessa n. d.":$F{COMMESSA}+" - "+$F{DS_COMMESSA})]]></expression>
@@ -173,7 +173,7 @@ order by cds,commessa,cdr,modulo,lda]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="21" splitAllowed="true">
+			<band height="21" splitType="Stretch">
 				<element kind="line" style="TNR10B" x="2" y="20" width="775" height="0" key="line-10" direction="BottomUp"/>
 				<element kind="textField" style="TNR10" x="303" y="3" width="58" height="14" key="textField-61" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -217,7 +217,7 @@ order by cds,commessa,cdr,modulo,lda]]></query>
 	<group name="CDR" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CDR}]]></expression>
 		<groupHeader>
-			<band height="16" splitAllowed="true">
+			<band height="16" splitType="Stretch">
 				<element kind="textField" style="TNR10B" x="24" y="2" width="500" height="14" key="textField" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{CDR}+" - "+$F{DS_CDR}]]></expression>
@@ -225,7 +225,7 @@ order by cds,commessa,cdr,modulo,lda]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="21" splitAllowed="true">
+			<band height="21" splitType="Stretch">
 				<element kind="textField" style="TNR10B" x="24" y="1" width="191" height="17" key="textField-69" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" underline="false">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["Totale CDR "+$F{CDR}]]></expression>
@@ -269,7 +269,7 @@ order by cds,commessa,cdr,modulo,lda]]></query>
 	<group name="modulo" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{MODULO}]]></expression>
 		<groupHeader>
-			<band height="17" splitAllowed="true">
+			<band height="17" splitType="Stretch">
 				<element kind="textField" style="TNR10B" x="48" y="3" width="714" height="14" key="textField-37" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[($F{MODULO}.compareTo("ZZZZZZZZZZ")==0?"Modulo n. d.":$F{MODULO}+" - "+$F{DS_MODULO})]]></expression>
@@ -277,7 +277,7 @@ order by cds,commessa,cdr,modulo,lda]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="21" splitAllowed="true">
+			<band height="21" splitType="Stretch">
 				<element kind="textField" style="TNR10B" x="48" y="1" width="191" height="17" key="textField-51" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" underline="false">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["Totale Modulo "+($F{MODULO}.compareTo("ZZZZZZZZZZ")==0?"Modulo n. d.":$F{MODULO})]]></expression>
@@ -318,9 +318,9 @@ order by cds,commessa,cdr,modulo,lda]]></query>
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="151" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="151" splitType="Stretch">
 		<element kind="staticText" style="TNR10B" x="252" y="124" width="25" height="14" key="staticText-27" hTextAlign="Center">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<text><![CDATA[Funz.]]></text>
@@ -429,9 +429,9 @@ d=(a+b+c) ]]></text>
 		<element kind="line" x="307" y="80" width="0" height="70" key="line-7" direction="TopDown"/>
 		<element kind="line" x="546" y="79" width="0" height="70" key="line-8" direction="TopDown"/>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="17" splitAllowed="true">
+		<band height="17" splitType="Stretch">
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="55" y="3" width="200" height="14" key="textField-5" stretchType="ContainerHeight" positionType="Float" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[$F{LDA}+($F{DS_LDA}==null?"":" - "+$F{DS_LDA})]]></expression>
@@ -478,8 +478,8 @@ d=(a+b+c) ]]></text>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="19" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="19" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="3" y="1" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -493,7 +493,7 @@ d=(a+b+c) ]]></text>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="21" splitAllowed="true">
+	<summary height="21" splitType="Stretch">
 		<printWhenExpression><![CDATA[new Boolean($P{uo}.compareTo("*")==0 || $P{cdr}.compareTo("*")==0 )]]></printWhenExpression>
 		<element kind="textField" style="TNR12B" x="6" y="1" width="191" height="17" key="textField-78" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" underline="false">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>

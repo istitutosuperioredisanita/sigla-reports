@@ -39,12 +39,12 @@ Order By cd_chiave_secondaria]]></query>
 	<field name="DUVA" class="java.sql.Timestamp"/>
 	<field name="UTUV" class="java.lang.String"/>
 	<field name="PG_VER_REC" class="java.math.BigDecimal"/>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="21" splitAllowed="true">
+		<band height="21" splitType="Stretch">
 			<element kind="textField" textAdjust="StretchHeight" style="TNRG8" x="52" y="2" width="156" height="9" key="textField-2" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Middle">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[( $F{CD_CHIAVE_SECONDARIA}.equals("AVANZO_AMMINISTRAZIONE") ? "Avanzo di amministrazione" : "Fondo iniziale di cassa" )]]></expression>
@@ -214,8 +214,8 @@ Order By cd_chiave_secondaria]]></query>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="7" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="7" splitType="Stretch">
 		<element kind="line" x="0" y="0" width="1171" height="0" key="line-4" direction="TopDown"/>
 		<element kind="line" x="1170" y="0" width="0" height="7" key="line-5" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 		<element kind="line" x="208" y="0" width="0" height="7" key="line-25" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -297,5 +297,5 @@ Order By cd_chiave_secondaria]]></query>
 			<text/>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

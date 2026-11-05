@@ -149,25 +149,25 @@ order by dt_elaborazione, pg_elaborazione,cd_centro_responsabilita, esercizio, e
 	<group name="Data_elab">
 		<expression><![CDATA[$F{DT_ELABORAZIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="Prog_elab">
 		<expression><![CDATA[$F{PG_ELABORAZIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="Esercizio">
 		<expression><![CDATA[$F{ESERCIZIO}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ESERCIZIO}.equals($F{ESERCIZIO_RES}))]]></printWhenExpression>
 				<element kind="staticText" style="TNR9" x="2" y="10" width="44" height="12" key="staticText-3">
 					<box>
@@ -190,7 +190,7 @@ order by dt_elaborazione, pg_elaborazione,cd_centro_responsabilita, esercizio, e
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true">
+			<band height="0" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{ESERCIZIO}.equals($F{ESERCIZIO_RES}))]]></printWhenExpression>
 			</band>
 		</groupFooter>
@@ -198,7 +198,7 @@ order by dt_elaborazione, pg_elaborazione,cd_centro_responsabilita, esercizio, e
 	<group name="CDR">
 		<expression><![CDATA[$F{CD_CENTRO_RESPONSABILITA}]]></expression>
 		<groupHeader>
-			<band height="14" splitAllowed="true">
+			<band height="14" splitType="Stretch">
 				<element kind="textField" style="TNRGC9" x="2" y="2" width="288" height="12" key="textField-196" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -211,13 +211,13 @@ order by dt_elaborazione, pg_elaborazione,cd_centro_responsabilita, esercizio, e
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="Cdr">
 		<expression><![CDATA[$F{CD_CENTRO_RESPONSABILITA}]]></expression>
 		<groupHeader>
-			<band height="43" splitAllowed="true">
+			<band height="43" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ESERCIZIO}.equals($F{ESERCIZIO_RES}))]]></printWhenExpression>
 				<element kind="staticText" style="TNR9" x="2" y="2" width="44" height="12" key="staticText-64">
 					<box>
@@ -411,13 +411,13 @@ order by dt_elaborazione, pg_elaborazione,cd_centro_responsabilita, esercizio, e
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="Esercizio_Res">
 		<expression><![CDATA[$F{ESERCIZIO_RES}]]></expression>
 		<groupHeader>
-			<band height="30" splitAllowed="true">
+			<band height="30" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{ESERCIZIO}.equals($F{ESERCIZIO_RES}))]]></printWhenExpression>
 				<element kind="staticText" style="TNRG9" x="2" y="3" width="44" height="12" key="staticText-44" printRepeatedValues="false" removeLineWhenBlank="true" printWhenGroupChanges="Cdr">
 					<box>
@@ -575,7 +575,7 @@ order by dt_elaborazione, pg_elaborazione,cd_centro_responsabilita, esercizio, e
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true">
+			<band height="0" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{ESERCIZIO}.equals($F{ESERCIZIO_RES}))]]></printWhenExpression>
 			</band>
 		</groupFooter>
@@ -583,7 +583,7 @@ order by dt_elaborazione, pg_elaborazione,cd_centro_responsabilita, esercizio, e
 	<group name="Detail_Es" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{ESERCIZIO}]]></expression>
 		<groupHeader>
-			<band height="18" splitAllowed="false">
+			<band height="18" splitType="Prevent">
 				<printWhenExpression><![CDATA[new Boolean($F{ESERCIZIO}.equals($F{ESERCIZIO_RES}))]]></printWhenExpression>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="49" y="3" width="59" height="11" key="textField-154" printWhenDetailOverflows="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" evaluationTime="Group" evaluationGroup="Cdr" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 					<box>
@@ -705,7 +705,7 @@ order by dt_elaborazione, pg_elaborazione,cd_centro_responsabilita, esercizio, e
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="15" splitAllowed="true">
+			<band height="15" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ESERCIZIO}.equals($F{ESERCIZIO_RES}))]]></printWhenExpression>
 				<element kind="staticText" style="TNRG8" x="0" y="0" width="826" height="13" key="staticText-84" removeLineWhenBlank="true" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($V{Stanz_Sigla}.compareTo($V{Stanz_Dwh})!=0||
@@ -728,7 +728,7 @@ $V{Riscosso_Sigla}.compareTo($V{Riscosso_Dwh})!=0)]]></printWhenExpression>
 	<group name="Detail_Es_Res">
 		<expression><![CDATA[$F{ESERCIZIO_RES}]]></expression>
 		<groupHeader>
-			<band height="18" splitAllowed="true">
+			<band height="18" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{ESERCIZIO}.equals($F{ESERCIZIO_RES}))]]></printWhenExpression>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="93" y="5" width="59" height="11" key="textField-185" printRepeatedValues="false" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" evaluationTime="Group" evaluationGroup="Esercizio_Res" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 					<box>
@@ -832,7 +832,7 @@ $V{Riscosso_Sigla}.compareTo($V{Riscosso_Dwh})!=0)]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="15" splitAllowed="true">
+			<band height="15" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{ESERCIZIO}.equals($F{ESERCIZIO_RES}))]]></printWhenExpression>
 				<element kind="staticText" style="TNRG8" x="0" y="0" width="826" height="13" key="staticText-85" removeLineWhenBlank="true" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($V{Residui_Iniziali_Sigla}.compareTo($V{Residui_Iniziali_Dwh})!=0||
@@ -854,14 +854,14 @@ $V{Riscosso_Residuo_Sigla}.compareTo($V{Riscosso_Residuo_Dwh})!=0)]]></printWhen
 	<group name="prova">
 		<expression><![CDATA[$F{ESERCIZIO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="75" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="75" splitType="Stretch">
 		<element kind="staticText" style="TNRG9" x="2" y="63" width="59" height="12" key="staticText-2">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -890,13 +890,13 @@ $V{Riscosso_Residuo_Sigla}.compareTo($V{Riscosso_Residuo_Dwh})!=0)]]></printWhen
 			<text><![CDATA[Stampa di confronto valori contabili SIGLA - DataWarehouse]]></text>
 		</element>
 	</title>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="0" splitAllowed="false"/>
+		<band height="0" splitType="Prevent"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="19" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="19" splitType="Stretch">
 		<element kind="textField" style="TNRG9" x="750" y="5" width="55" height="12" key="textField-180" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -925,5 +925,5 @@ $V{Riscosso_Residuo_Sigla}.compareTo($V{Riscosso_Residuo_Dwh})!=0)]]></printWhen
 			<expression><![CDATA["Data di stampa "+ new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

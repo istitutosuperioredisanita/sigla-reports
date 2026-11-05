@@ -41,15 +41,15 @@ order by uo]]></query>
 	<group name="uo" startNewPage="true" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{UO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="133" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="133" splitType="Stretch">
 		<element kind="image" x="7" y="0" width="501" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -106,9 +106,9 @@ CPDEL/CPS ]]></text>
  F.S ]]></text>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="17" splitAllowed="true">
+		<band height="17" splitType="Stretch">
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="0" y="3" width="45" height="14" key="textField-4" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[$F{MATRICOLA}]]></expression>
@@ -147,8 +147,8 @@ CPDEL/CPS ]]></text>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="42" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="42" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="2" y="25" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -166,5 +166,5 @@ CPDEL/CPS ]]></text>
 			<text><![CDATA[ I valori degli imponibili rappresentano il percepito ANNUALIZZATO fino alla data del presente Stampa]]></text>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

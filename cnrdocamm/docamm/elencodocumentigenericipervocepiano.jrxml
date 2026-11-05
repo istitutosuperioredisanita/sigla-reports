@@ -53,7 +53,7 @@ order by cd_elemento_voce,CD_UNITA_ORGANIZZATIVA,pg_documento_generico,progressi
 	<group name="voce" startNewPage="true" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></expression>
 		<groupHeader>
-			<band height="34" splitAllowed="true">
+			<band height="34" splitType="Stretch">
 				<element kind="staticText" style="TNR10B" x="4" y="2" width="49" height="14" key="staticText-2">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Esercizio]]></text>
@@ -73,7 +73,7 @@ order by cd_elemento_voce,CD_UNITA_ORGANIZZATIVA,pg_documento_generico,progressi
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="22" splitAllowed="true">
+			<band height="22" splitType="Stretch">
 				<element kind="textField" style="TNR10B" x="297" y="5" width="80" height="16" key="textField" pattern="#,##0.00" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" underline="true">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$V{TOT_CAPITOLO}]]></expression>
@@ -88,7 +88,7 @@ order by cd_elemento_voce,CD_UNITA_ORGANIZZATIVA,pg_documento_generico,progressi
 	<group name="uo" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></expression>
 		<groupHeader>
-			<band height="65" splitAllowed="false">
+			<band height="65" splitType="Prevent">
 				<element kind="staticText" style="TNR10B" x="4" y="4" width="49" height="14" key="staticText-3">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[CdS]]></text>
@@ -160,7 +160,7 @@ Impegno]]></text>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="18" splitAllowed="true">
+			<band height="18" splitType="Stretch">
 				<element kind="textField" style="TNR10B" x="297" y="2" width="80" height="16" key="textField-18" pattern="#,##0.00" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" underline="true">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$V{TOT_UO}]]></expression>
@@ -172,9 +172,9 @@ Impegno]]></text>
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="74" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="74" splitType="Stretch">
 		<element kind="image" x="13" y="10" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -184,9 +184,9 @@ Impegno]]></text>
 			<text><![CDATA[Elenco Documenti Generici Passivi per voce del Piano]]></text>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="18" splitAllowed="false">
+		<band height="18" splitType="Prevent">
 			<element kind="textField" style="TNR10" x="2" y="4" width="48" height="14" key="textField-4" pattern="##0" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[$F{PG_DOCUMENTO_GENERICO}]]></expression>
@@ -229,8 +229,8 @@ Impegno]]></text>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="21" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="21" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="2" y="3" width="103" height="17" key="textField-14" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -245,5 +245,5 @@ Impegno]]></text>
 		</element>
 		<element kind="line" style="TNR10" x="2" y="2" width="775" height="0" key="line-2" direction="BottomUp"/>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

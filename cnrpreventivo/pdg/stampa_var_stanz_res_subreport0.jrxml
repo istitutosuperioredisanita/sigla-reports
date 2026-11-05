@@ -61,7 +61,7 @@ order by PG_VARIAZIONE ,CD_CDR_ASSEGNATARIO]]></query>
 	<group name="Pg_Variazione">
 		<expression><![CDATA[$F{PG_VARIAZIONE}]]></expression>
 		<groupHeader>
-			<band height="55" splitAllowed="true">
+			<band height="55" splitType="Stretch">
 				<element kind="staticText" style="TNR10" x="12" y="4" width="41" height="12" key="staticText-1" positionType="Float">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -165,7 +165,7 @@ order by PG_VARIAZIONE ,CD_CDR_ASSEGNATARIO]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="26" splitAllowed="true">
+			<band height="26" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG10" x="478" y="3" width="76" height="18" key="textField-10" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -208,7 +208,7 @@ order by PG_VARIAZIONE ,CD_CDR_ASSEGNATARIO]]></query>
 	<group name="Pg_Variazione2">
 		<expression><![CDATA[$F{PG_VARIAZIONE}]]></expression>
 		<groupHeader>
-			<band height="52" splitAllowed="true">
+			<band height="52" splitType="Stretch">
 				<element kind="rectangle" x="11" y="1" width="750" height="49" key="rectangle-1" stretchType="ContainerHeight" positionType="Float"/>
 				<element kind="staticText" style="TNRG10" x="13" y="7" width="141" height="13" key="staticText-5" stretchType="ContainerHeight" positionType="Float" hTextAlign="Center">
 					<box>
@@ -279,11 +279,11 @@ order by PG_VARIAZIONE ,CD_CDR_ASSEGNATARIO]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="84" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="84" splitType="Stretch">
 		<element kind="image" x="0" y="0" width="542" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -303,10 +303,10 @@ order by PG_VARIAZIONE ,CD_CDR_ASSEGNATARIO]]></query>
 			<expression><![CDATA["Variazione allo Stanziamento Residuo N° "+$F{PG_VARIAZIONE}+" "]]></expression>
 		</element>
 	</title>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="26" splitAllowed="true">
+		<band height="26" splitType="Stretch">
 			<element kind="textField" style="TNR10" x="13" y="5" width="428" height="18" key="textField-6" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -345,7 +345,7 @@ order by PG_VARIAZIONE ,CD_CDR_ASSEGNATARIO]]></query>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

@@ -139,16 +139,16 @@ add($F{DETRAZIONE_ALTRI_NETTO})):new BigDecimal(0))
 	<group name="TIPO_R1_A" startNewPage="true" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TI_RECORD_L1}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="TIPO_R1_B" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TI_RECORD_L1}]]></expression>
 		<groupHeader>
-			<band height="30" splitAllowed="true">
+			<band height="30" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD_L1}.compareTo("B")==0)
 ]]></printWhenExpression>
 				<element kind="rectangle" x="0" y="0" width="532" height="30" key="rectangle-1"/>
@@ -198,16 +198,16 @@ Pagare
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="TIPO_R2" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TI_RECORD_L2}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD_L1}.compareTo("B")==0)]]></printWhenExpression>
 				<element kind="rectangle" x="0" y="0" width="532" height="20" key="rectangle-2"/>
 				<element kind="staticText" style="TNR10B" x="4" y="2" width="53" height="14" key="staticText-35" hTextAlign="Center">
@@ -246,19 +246,19 @@ Pagare
 	<group name="compenso">
 		<expression><![CDATA[$F{PG_COMPENSO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="PG_RATA_A" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{MAX_PG_RATA}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean((
 $F{TI_RECORD_L1}.compareTo("B")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 )&&
@@ -284,10 +284,10 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 	<group name="PG_RATA_B" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{PG_RATA}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="1" splitAllowed="true">
+			<band height="1" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(
 $F{TI_RECORD_L1}.compareTo("A")==0 &&
 $F{TI_RECORD_L2}.compareTo("B")==0 &&
@@ -299,10 +299,10 @@ $F{TI_RECORD_L3}.compareTo("B")==0 )]]></printWhenExpression>
 	<group name="TIPO_R3" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TI_RECORD_L1}+$F{TI_RECORD_L2}+$F{PG_RATA}+$F{TI_RECORD_L3}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true">
+			<band height="0" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean((
 $F{TI_RECORD_L1}.compareTo("B")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -317,7 +317,7 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 	<group name="DETa" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="71" splitAllowed="true">
+			<band height="71" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(
 $F{TI_RECORD_L1}.compareTo("A")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -382,13 +382,13 @@ $F{STATO}.compareTo("P")==0?"Rinnovata":
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DETb" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="130" splitAllowed="true">
+			<band height="130" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(
 $F{TI_RECORD_L1}.compareTo("A")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -481,13 +481,13 @@ $F{TI_ANTICIPO_POSTICIPO}.compareTo("P")==0?"Posticipo":
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DETc" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="83" splitAllowed="true">
+			<band height="83" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(
 $F{TI_RECORD_L1}.compareTo("A")==0 &&
 $F{TI_RECORD_L2}.compareTo("B")==0 &&
@@ -533,13 +533,13 @@ $F{TI_RECORD_L3}.compareTo("A")==0 )
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DETd" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="15" splitAllowed="true">
+			<band height="15" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(
 $F{TI_RECORD_L1}.compareTo("A")==0 &&
 $F{TI_RECORD_L2}.compareTo("B")==0 &&
@@ -552,13 +552,13 @@ $F{TI_RECORD_L3}.compareTo("B")==0 )
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DETe" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="18" splitAllowed="true">
+			<band height="18" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(
 $F{TI_RECORD_L1}.compareTo("B")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -585,13 +585,13 @@ $F{TI_RECORD_L3}.compareTo("A")==0 )
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DETf" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CD_CONTRIBUTO_RITENUTA}]]></expression>
 		<groupHeader>
-			<band height="30" splitAllowed="false">
+			<band height="30" splitType="Prevent">
 				<printWhenExpression><![CDATA[new Boolean((
 ($F{TI_RECORD_L1}.compareTo("B")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -617,7 +617,7 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0 ) )
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true">
+			<band height="0" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean((
 $F{TI_RECORD_L1}.compareTo("B")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -630,7 +630,7 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 	<group name="DETg" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="30" splitAllowed="true">
+			<band height="30" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean((
 $F{TI_RECORD_L1}.compareTo("B")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -666,13 +666,13 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DETh" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="30" splitAllowed="true">
+			<band height="30" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean((
 $F{TI_RECORD_L1}.compareTo("B")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -708,13 +708,13 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DETi" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="30" splitAllowed="true">
+			<band height="30" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean((
 $F{TI_RECORD_L1}.compareTo("B")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -750,13 +750,13 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DETj" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="30" splitAllowed="true">
+			<band height="30" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean((
 $F{TI_RECORD_L1}.compareTo("B")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -792,13 +792,13 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DETk" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="30" splitAllowed="true">
+			<band height="30" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean((
 $F{TI_RECORD_L1}.compareTo("B")==0 &&
 $F{TI_RECORD_L2}.compareTo("A")==0 &&
@@ -834,12 +834,12 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="92" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="92" splitType="Stretch">
 		<element kind="image" x="4" y="4" width="469" height="47" key="image-1" stretchType="ContainerHeight" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -853,12 +853,12 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 			<text><![CDATA[STAMPA RIEPILOGATIVA DELLA BORSA]]></text>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="19" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="19" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="2" y="1" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -872,5 +872,5 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

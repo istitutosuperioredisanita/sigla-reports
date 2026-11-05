@@ -55,7 +55,7 @@ ORDER BY VP_UTENTE.CD_UTENTE,VP_UTENTE_GRANTS.CD_UNITA_ORGANIZZATIVA,VP_UTENTE_G
 	<group name="utente" startNewPage="true">
 		<expression><![CDATA[$F{CD_UTENTE}]]></expression>
 		<groupHeader>
-			<band height="197" splitAllowed="true">
+			<band height="197" splitType="Stretch">
 				<element kind="staticText" style="TNR10B" x="2" y="4" width="59" height="14" key="staticText-4">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Tipo utente:]]></text>
@@ -183,13 +183,13 @@ ORDER BY VP_UTENTE.CD_UTENTE,VP_UTENTE_GRANTS.CD_UNITA_ORGANIZZATIVA,VP_UTENTE_G
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="UO_1" startNewPage="true">
 		<expression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></expression>
 		<groupHeader>
-			<band height="22" splitAllowed="true">
+			<band height="22" splitType="Stretch">
 				<element kind="staticText" style="TNR16B" x="4" y="2" width="138" height="20" key="staticText-9">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[ACCESSI/RUOLI]]></text>
@@ -197,13 +197,13 @@ ORDER BY VP_UTENTE.CD_UTENTE,VP_UTENTE_GRANTS.CD_UNITA_ORGANIZZATIVA,VP_UTENTE_G
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="UO_2">
 		<expression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></expression>
 		<groupHeader>
-			<band height="19" splitAllowed="true">
+			<band height="19" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="3" y="2" width="62" height="14" key="textField" stretchType="ContainerHeight" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></expression>
@@ -216,13 +216,13 @@ ORDER BY VP_UTENTE.CD_UTENTE,VP_UTENTE_GRANTS.CD_UNITA_ORGANIZZATIVA,VP_UTENTE_G
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="GRANTS_1" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TI_GRANT}]]></expression>
 		<groupHeader>
-			<band height="19" splitAllowed="true">
+			<band height="19" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR12B" x="4" y="3" width="89" height="16" key="textField-11" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[($F{TI_GRANT}.compareTo("R")==0?"RUOLI":"ACCESSI")]]></expression>
@@ -230,13 +230,13 @@ ORDER BY VP_UTENTE.CD_UTENTE,VP_UTENTE_GRANTS.CD_UNITA_ORGANIZZATIVA,VP_UTENTE_G
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="1" splitAllowed="true"/>
+			<band height="1" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="GRANTS_2" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TI_GRANT}]]></expression>
 		<groupHeader>
-			<band height="23" splitAllowed="true">
+			<band height="23" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="4" y="6" width="89" height="14" key="textField-18" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[($F{TI_GRANT}.compareTo("R")==0?"Codice ruolo":"Codice accesso")]]></expression>
@@ -263,13 +263,13 @@ ORDER BY VP_UTENTE.CD_UTENTE,VP_UTENTE_GRANTS.CD_UNITA_ORGANIZZATIVA,VP_UTENTE_G
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="ACCESSO" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CD_ACCESSO}]]></expression>
 		<groupHeader>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<element kind="line" x="1" y="0" width="0" height="20" key="line-13" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
 				<element kind="line" x="96" y="0" width="0" height="20" key="line-14" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
 				<element kind="line" x="331" y="0" width="0" height="20" key="line-15" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
@@ -296,12 +296,12 @@ ORDER BY VP_UTENTE.CD_UTENTE,VP_UTENTE_GRANTS.CD_UNITA_ORGANIZZATIVA,VP_UTENTE_G
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="99" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="99" splitType="Stretch">
 		<element kind="image" x="3" y="1" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -329,12 +329,12 @@ ORDER BY VP_UTENTE.CD_UTENTE,VP_UTENTE_GRANTS.CD_UNITA_ORGANIZZATIVA,VP_UTENTE_G
 			<expression><![CDATA[$F{DS_UTENTE}]]></expression>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="20" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="20" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="2" y="2" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -348,5 +348,5 @@ ORDER BY VP_UTENTE.CD_UTENTE,VP_UTENTE_GRANTS.CD_UNITA_ORGANIZZATIVA,VP_UTENTE_G
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

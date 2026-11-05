@@ -337,7 +337,7 @@ ORDER BY
 	<group name="Parte">
 		<expression><![CDATA[$F{PARTE}]]></expression>
 		<groupHeader>
-			<band height="34" splitAllowed="true">
+			<band height="34" splitType="Stretch">
 				<element kind="textField" style="TNRG7" x="0" y="0" width="162" height="10" key="textField-2" stretchType="ContainerHeight" positionType="Float" printRepeatedValues="false" printWhenGroupChanges="Parte" printWhenDetailOverflows="true" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Bold" fontSize="7" bold="true">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -449,7 +449,7 @@ ORDER BY
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="22" splitAllowed="true">
+			<band height="22" splitType="Stretch">
 				<element kind="textField" style="TNR6" x="720" y="0" width="62" height="22" key="textField-87" stretchType="ContainerHeight" pattern="#,##0.00" blankWhenNull="false" evaluationTime="Group" evaluationGroup="Parte" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Roman" fontSize="6">
 					<box rightPadding="4">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -555,7 +555,7 @@ ORDER BY
 	<group name="Titolo">
 		<expression><![CDATA[$F{TITOLO}]]></expression>
 		<groupHeader>
-			<band height="34" splitAllowed="true">
+			<band height="34" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PARTE}.equals( "2" ))]]></printWhenExpression>
 				<element kind="textField" style="TNRG7" x="0" y="0" width="162" height="10" key="textField-8" stretchType="ContainerHeight" positionType="Float" printRepeatedValues="false" printWhenGroupChanges="Titolo" printWhenDetailOverflows="true" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Bold" fontSize="7" bold="true">
 					<box>
@@ -668,7 +668,7 @@ ORDER BY
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="22" splitAllowed="true">
+			<band height="22" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PARTE}.equals( "2" ))]]></printWhenExpression>
 				<element kind="textField" style="TNR6" x="720" y="0" width="62" height="22" key="textField-77" stretchType="ContainerHeight" pattern="#,##0.00" blankWhenNull="false" evaluationTime="Group" evaluationGroup="Titolo" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Roman" fontSize="6">
 					<box rightPadding="4">
@@ -775,7 +775,7 @@ ORDER BY
 	<group name="Categoria">
 		<expression><![CDATA[$F{CATEGORIA}]]></expression>
 		<groupHeader>
-			<band height="34" splitAllowed="true">
+			<band height="34" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PARTE}.equals( "2" ))]]></printWhenExpression>
 				<element kind="textField" style="TNRG7" x="0" y="0" width="162" height="10" key="textField-10" stretchType="ContainerHeight" positionType="Float" printRepeatedValues="false" printWhenGroupChanges="Categoria" printWhenDetailOverflows="true" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Bold" fontSize="7" bold="true">
 					<box>
@@ -888,7 +888,7 @@ ORDER BY
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="22" splitAllowed="true">
+			<band height="22" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PARTE}.equals( "2" ))]]></printWhenExpression>
 				<element kind="textField" style="TNR6" x="720" y="0" width="62" height="22" key="textField-67" stretchType="ContainerHeight" pattern="#,##0.00" blankWhenNull="false" evaluationTime="Group" evaluationGroup="Categoria" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Roman" fontSize="6">
 					<box rightPadding="4">
@@ -1005,7 +1005,7 @@ ORDER BY
 	<group name="Sezione">
 		<expression><![CDATA[$F{SEZIONE}]]></expression>
 		<groupHeader>
-			<band height="34" splitAllowed="true">
+			<band height="34" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PARTE}.equals( "2" ))]]></printWhenExpression>
 				<element kind="textField" style="TNRG7" x="0" y="0" width="162" height="10" key="textField-12" stretchType="ContainerHeight" positionType="Float" printRepeatedValues="false" printWhenGroupChanges="Sezione" printWhenDetailOverflows="true" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Bold" fontSize="7" bold="true">
 					<box>
@@ -1118,7 +1118,7 @@ ORDER BY
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="22" splitAllowed="true">
+			<band height="22" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PARTE}.equals( "2" ))
 ]]></printWhenExpression>
 				<element kind="textField" style="TNR6" x="720" y="0" width="62" height="22" key="textField-57" stretchType="ContainerHeight" pattern="#,##0.00" blankWhenNull="false" evaluationTime="Group" evaluationGroup="Sezione" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Roman" fontSize="6">
@@ -1226,7 +1226,7 @@ ORDER BY
 	<group name="Capitolo">
 		<expression><![CDATA[$F{CAPITOLO}]]></expression>
 		<groupHeader>
-			<band height="34" splitAllowed="true">
+			<band height="34" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{stampaArticolo}.booleanValue()&&!$F{PARTE}.equals( "2" ))
 ]]></printWhenExpression>
 				<element kind="textField" style="TNRG7" x="0" y="0" width="162" height="10" key="textField-14" stretchType="ContainerHeight" positionType="Float" printRepeatedValues="false" printWhenGroupChanges="Capitolo" printWhenDetailOverflows="true" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Bold" fontSize="7" bold="true">
@@ -1340,7 +1340,7 @@ ORDER BY
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="22" splitAllowed="true">
+			<band height="22" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{stampaArticolo}.booleanValue()&&!$F{PARTE}.equals( "2" ))
 ]]></printWhenExpression>
 				<element kind="textField" style="TNR6" x="720" y="0" width="62" height="22" key="textField-47" stretchType="ContainerHeight" pattern="#,##0.00" blankWhenNull="false" evaluationTime="Group" evaluationGroup="Capitolo2" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Roman" fontSize="6">
@@ -1448,10 +1448,10 @@ ORDER BY
 	<group name="Capitolo2">
 		<expression><![CDATA[$F{CAPITOLO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="22" splitAllowed="true">
+			<band height="22" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$P{stampaArticolo}.booleanValue()||$F{PARTE}.equals( "2" ))
 ]]></printWhenExpression>
 				<element kind="textField" style="TNR6" x="720" y="0" width="62" height="22" key="textField-97" stretchType="ContainerHeight" pattern="#,##0.00" blankWhenNull="false" evaluationTime="Group" evaluationGroup="Capitolo2" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Roman" fontSize="6">
@@ -1566,8 +1566,8 @@ ORDER BY
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="63" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="63" splitType="Stretch">
 		<element kind="textField" style="TNR16" x="126" y="0" width="530" height="40" key="textField-1" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Roman" fontSize="16">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1587,8 +1587,8 @@ ORDER BY
 			<text><![CDATA[Parte Spese]]></text>
 		</element>
 	</title>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="87" splitAllowed="true">
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="87" splitType="Stretch">
 		<element kind="staticText" x="40" y="17" width="122" height="39" key="staticText-4" stretchType="ContainerHeight" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Roman" fontSize="6">
 			<box>
 				<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
@@ -1974,7 +1974,7 @@ ORDER BY
 		</element>
 	</columnHeader>
 	<detail>
-		<band height="22" splitAllowed="true">
+		<band height="22" splitType="Stretch">
 			<printWhenExpression><![CDATA[new Boolean($P{stampaArticolo}.booleanValue()&&!$F{PARTE}.equals( "2" ))
 ]]></printWhenExpression>
 			<element kind="textField" style="TNR6" x="720" y="0" width="62" height="22" key="textField-37" stretchType="ContainerHeight" pattern="#,##0.00" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Roman" fontSize="6" bold="false" italic="false">
@@ -2087,8 +2087,8 @@ ORDER BY
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="22" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="22" splitType="Stretch">
 		<printWhenExpression><![CDATA[new Boolean($P{stampadataepagina}.equals(new String("Y")))]]></printWhenExpression>
 		<element kind="textField" style="TNRG8" x="627" y="6" width="100" height="13" key="textField-116" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 			<box>
@@ -2118,7 +2118,7 @@ ORDER BY
 			<expression><![CDATA["Data di stampa "+ new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="22" splitAllowed="true">
+	<summary height="22" splitType="Stretch">
 		<element kind="textField" style="TNRG6" mode="Opaque" x="720" y="0" width="62" height="22" backcolor="#CCCCCC" key="textField-108" stretchType="ContainerHeight" pattern="#,##0.00" blankWhenNull="false" evaluationTime="Group" evaluationGroup="Parte" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" pdfFontName="Times-Bold" fontSize="6" bold="true">
 			<box rightPadding="4">
 				<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>

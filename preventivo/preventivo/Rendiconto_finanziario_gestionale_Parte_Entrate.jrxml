@@ -597,10 +597,10 @@ DECODE($P{raggrCAPString},'Y',CD_LIVELLO3,'')]]></query>
 	<group name="ST_DIP_YN">
 		<expression><![CDATA[($P{raggrDIP}.booleanValue() ? $F{ST_DIP_YN} : "" )]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="23" splitAllowed="true">
+			<band height="23" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ST_DIP_YN}.equals("Y"))]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="0" height="23" key="line-39" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG8" x="3" y="0" width="208" height="23" key="textField-142" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Top">
@@ -707,10 +707,10 @@ $V{SUM_CASSA_MENO_ST_DIP}]]></expression>
 	<group name="SCIENT_YN">
 		<expression><![CDATA[($P{raggrDIP}.booleanValue()? $F{SCIENT_YN} : "" )]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="23" splitAllowed="true">
+			<band height="23" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{SCIENT_YN}.equals("Y")&&$P{raggrDIP}.booleanValue())]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="0" height="23" key="line-36" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG8" x="55" y="0" width="156" height="23" key="textField-121" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Top">
@@ -817,7 +817,7 @@ $V{SUM_CASSA_MENO_SCIENT}]]></expression>
 	<group name="PESO_DIP">
 		<expression><![CDATA[($P{raggrDIP}.booleanValue() ? $F{PESO_DIP} : "" )]]></expression>
 		<groupHeader>
-			<band height="21" splitAllowed="true">
+			<band height="21" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ST_DIP_YN}.equals("Y")&&
             $P{raggrDIP}.booleanValue()&&
 	   ( $P{raggrCDS}.booleanValue()||
@@ -919,7 +919,7 @@ $V{SUM_CASSA_MENO_SCIENT}]]></expression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="23" splitAllowed="true">
+			<band height="23" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ST_DIP_YN}.equals("Y")&&$P{raggrDIP}.booleanValue())]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="0" height="23" key="line-30" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG8" x="55" y="0" width="156" height="23" key="textField-40" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Top">
@@ -1030,7 +1030,7 @@ $V{SUM_CASSA_MENO_PESO_DIP}]]></expression>
 	<group name="CDS">
 		<expression><![CDATA[( $P{raggrCDS}.booleanValue() ? $F{CDS} : "" )]]></expression>
 		<groupHeader>
-			<band height="19" splitAllowed="true">
+			<band height="19" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ST_DIP_YN}.equals("Y")&&
             $P{raggrCDS}.booleanValue()&&
 	   ($P{raggrTIT}.booleanValue()||
@@ -1131,7 +1131,7 @@ $V{SUM_CASSA_MENO_PESO_DIP}]]></expression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="21" splitAllowed="true">
+			<band height="21" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ST_DIP_YN}.equals("Y")&& $P{raggrCDS}.booleanValue())]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="0" height="21" key="line-28" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG7ITALIC" x="55" y="0" width="156" height="21" key="textField-38" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Top">
@@ -1240,7 +1240,7 @@ $V{SUM_CASSA_MENO_CDS}]]></expression>
 	<group name="TITOLO">
 		<expression><![CDATA[( $P{raggrTIT}.booleanValue() ? $F{CD_LIVELLO1} : "" )]]></expression>
 		<groupHeader>
-			<band height="17" splitAllowed="true">
+			<band height="17" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{raggrTIT}.booleanValue()&&
            ($P{raggrCAT}.booleanValue()||
              $P{raggrCAP}.booleanValue())
@@ -1341,7 +1341,7 @@ $F{CD_LIVELLO1}]]></expression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="19" splitAllowed="true">
+			<band height="19" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{raggrTIT}.booleanValue())]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="0" height="19" key="line-26" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG7" x="55" y="0" width="156" height="19" key="textField-36" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Top">
@@ -1450,7 +1450,7 @@ $V{SUM_CASSA_MENO_LIVELLO1}]]></expression>
 	<group name="CATEGORIA">
 		<expression><![CDATA[( $P{raggrCAT}.booleanValue() ? $F{CD_LIVELLO2} : "" )]]></expression>
 		<groupHeader>
-			<band height="15" splitAllowed="true">
+			<band height="15" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{raggrCAT}.booleanValue()&&
            ($P{raggrCAP}.booleanValue())
 )]]></printWhenExpression>
@@ -1551,7 +1551,7 @@ $F{CD_LIVELLO2}]]></expression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="17" splitAllowed="true">
+			<band height="17" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{raggrCAT}.booleanValue())]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="0" height="17" key="line-24" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG6" x="55" y="0" width="156" height="17" key="textField-34" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Top">
@@ -1661,10 +1661,10 @@ $V{SUM_CASSA_MENO_LIVELLO2}]]></expression>
 	<group name="CAPITOLO">
 		<expression><![CDATA[( $P{raggrCAP}.booleanValue() ? $F{CD_LIVELLO3} : "" )]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="13" splitAllowed="true">
+			<band height="13" splitType="Stretch">
 				<printWhenExpression><![CDATA[$P{raggrCAP}]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="0" height="13" key="line-19" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR6" x="5" y="2" width="50" height="9" key="textField-9" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Middle">
@@ -1776,9 +1776,9 @@ $V{SUM_CASSA_MENO_LIVELLO4}]]></expression>
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="123" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="123" splitType="Stretch">
 		<element kind="textField" x="3" y="46" width="1170" height="11" key="textField-184" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center" vTextAlign="Middle" rotation="None" fontName="Times New Roman" pdfFontName="Times-Bold" fontSize="8" bold="true" italic="false" underline="false" pdfEncoding="Cp1252" strikeThrough="false">
 			<paragraph lineSpacing="Single"/>
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -2020,7 +2020,7 @@ in diminuzione]]></text>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
 		</element>
 	</pageHeader>
-	<columnHeader height="6" splitAllowed="true">
+	<columnHeader height="6" splitType="Stretch">
 		<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals( new Integer(1) ))]]></printWhenExpression>
 		<element kind="subreport" x="3" y="0" width="1170" height="6" key="subreport-1" stretchType="ContainerHeight" positionType="Float" usingCache="true">
 			<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals( new Integer(1) ))]]></printWhenExpression>
@@ -2032,10 +2032,10 @@ in diminuzione]]></text>
 		</element>
 	</columnHeader>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="21" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="21" splitType="Stretch">
 		<element kind="textField" style="TNRG8" x="1016" y="4" width="100" height="13" key="textField-11" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
@@ -2049,7 +2049,7 @@ in diminuzione]]></text>
 			<expression><![CDATA["Data di stampa "+ new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="23" splitAllowed="true">
+	<summary height="23" splitType="Stretch">
 		<element kind="textField" textAdjust="StretchHeight" style="TNRG8" x="3" y="0" width="208" height="23" key="textField-163" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Top">
 			<box topBorder="Thin" topBorderColor="#000000" topPadding="4" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" rightPadding="4" bottomBorder="Thin" bottomBorderColor="#000000"/>
 			<expression><![CDATA["TOTALE GENERALE DELLE ENTRATE"]]></expression>

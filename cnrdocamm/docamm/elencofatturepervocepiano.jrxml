@@ -91,7 +91,7 @@ order by CD_UNITA_ORGANIZZATIVA,CD_ELEMENTO_VOCE, TI_ISTITUZ_COMMERC,pg_fattura_
 	<group name="UO" startNewPage="true" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></expression>
 		<groupHeader>
-			<band height="76" splitAllowed="true">
+			<band height="76" splitType="Stretch">
 				<element kind="staticText" style="TNR10B" x="2" y="0" width="49" height="14" key="staticText-2">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Esercizio]]></text>
@@ -136,13 +136,13 @@ order by CD_UNITA_ORGANIZZATIVA,CD_ELEMENTO_VOCE, TI_ISTITUZ_COMMERC,pg_fattura_
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="VOCE" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></expression>
 		<groupHeader>
-			<band height="50" splitAllowed="true">
+			<band height="50" splitType="Stretch">
 				<element kind="staticText" style="TNR10B" x="3" y="0" width="49" height="14" key="staticText-7">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Capitolo]]></text>
@@ -229,7 +229,7 @@ Fattura]]></text>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<element kind="staticText" style="TNR12B" x="278" y="4" width="89" height="16" key="staticText-23" hTextAlign="Right" underline="true">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Totale Capitolo]]></text>
@@ -252,7 +252,7 @@ Fattura]]></text>
 	<group name="TIPO_I_C" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TI_ISTITUZ_COMMERC}]]></expression>
 		<groupHeader>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<element kind="textField" style="TNR10B" x="3" y="2" width="110" height="14" key="textField-7" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[($F{TI_ISTITUZ_COMMERC}.compareTo("I")==0?"Istituzionale":"Commerciale")]]></expression>
@@ -260,7 +260,7 @@ Fattura]]></text>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="16" splitAllowed="true">
+			<band height="16" splitType="Stretch">
 				<element kind="textField" style="TNR12B" x="262" y="2" width="105" height="14" key="textField-26" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" pdfFontName="Times-Bold" underline="true">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["Totale "+($F{TI_ISTITUZ_COMMERC}.compareTo("I")==0?"Istituzionale":"Commerciale")]]></expression>
@@ -280,9 +280,9 @@ Fattura]]></text>
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="71" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="71" splitType="Stretch">
 		<element kind="image" x="5" y="3" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -292,9 +292,9 @@ Fattura]]></text>
 			<text><![CDATA[Elenco Fatture per Voce del Piano]]></text>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="14" splitAllowed="false">
+		<band height="14" splitType="Prevent">
 			<element kind="textField" style="TNR10" x="2" y="0" width="48" height="14" key="textField-11" pattern="##0" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[$F{PG_FATTURA_PASSIVA}]]></expression>
@@ -357,8 +357,8 @@ Fattura]]></text>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="19" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="19" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="5" y="1" width="103" height="17" key="textField-8" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -372,5 +372,5 @@ Fattura]]></text>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

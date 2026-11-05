@@ -76,7 +76,7 @@
 	<group name="CD_PROGETTO" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CD_PROGETTO}]]></expression>
 		<groupHeader>
-			<band height="8" splitAllowed="true">
+			<band height="8" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{LIVELLO}.compareTo(new BigDecimal(1))==0)]]></printWhenExpression>
 				<element kind="line" x="0" y="7" width="782" height="0" key="line-2" direction="TopDown">
 					<printWhenExpression><![CDATA[new Boolean($F{LIVELLO}.compareTo(new BigDecimal(1))==0)]]></printWhenExpression>
@@ -84,11 +84,11 @@
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="147" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="147" splitType="Stretch">
 		<element kind="image" x="2" y="2" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -135,7 +135,7 @@ $P{livello}.compareTo(new Integer(2))==0?"Commessa":
 			<text><![CDATA[Anagrafica dei Progetti]]></text>
 		</element>
 	</title>
-	<pageHeader height="19" splitAllowed="true">
+	<pageHeader height="19" splitType="Stretch">
 		<element kind="staticText" style="TNRG10" x="3" y="5" width="37" height="14" key="staticText-6" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<text><![CDATA[Livello]]></text>
@@ -165,9 +165,9 @@ $P{livello}.compareTo(new Integer(2))==0?"Commessa":
 			<text><![CDATA[Fase]]></text>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="20" splitAllowed="false">
+		<band height="20" splitType="Prevent">
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="158" y="3" width="186" height="14" key="textField-8" stretchType="ContainerHeight" positionType="Float" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[$F{DS_PROGETTO}]]></expression>
@@ -204,7 +204,7 @@ $F{CD_PROGETTO}+"   ")]]></expression>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

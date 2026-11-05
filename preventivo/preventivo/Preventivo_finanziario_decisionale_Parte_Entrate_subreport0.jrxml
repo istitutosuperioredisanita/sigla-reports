@@ -202,10 +202,10 @@ where chiave = 'chiave']]></query>
 	<group name="ST_DIP_YN">
 		<expression><![CDATA[$F{ST_DIP_YN}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="23" splitAllowed="true">
+			<band height="23" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ST_DIP_YN}.equals("Y"))]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="0" height="23" key="line-39" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG8" x="3" y="0" width="284" height="23" key="textField-142" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Top">
@@ -244,10 +244,10 @@ where chiave = 'chiave']]></query>
 	<group name="SCIENT_YN">
 		<expression><![CDATA[$F{SCIENT_YN}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="23" splitAllowed="true">
+			<band height="23" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{SCIENT_YN}.equals("Y"))]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="0" height="23" key="line-36" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG8" x="55" y="0" width="229" height="23" key="textField-121" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Top">
@@ -286,7 +286,7 @@ where chiave = 'chiave']]></query>
 	<group name="PESO_DIP">
 		<expression><![CDATA[$F{PESO_DIP}]]></expression>
 		<groupHeader>
-			<band height="21" splitAllowed="true">
+			<band height="21" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ST_DIP_YN}.equalsIgnoreCase( "Y" ))]]></printWhenExpression>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG8BOLD" x="3" y="2" width="52" height="9" key="textField-1" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center" vTextAlign="Middle">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -326,7 +326,7 @@ where chiave = 'chiave']]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="23" splitAllowed="true">
+			<band height="23" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{ST_DIP_YN}.equals("Y"))]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="0" height="23" key="line-30" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG8" x="55" y="0" width="229" height="23" key="textField-40" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Top">
@@ -365,7 +365,7 @@ where chiave = 'chiave']]></query>
 	<group name="TITOLO">
 		<expression><![CDATA[$F{CD_LIVELLO1}]]></expression>
 		<groupHeader>
-			<band height="17" splitAllowed="true">
+			<band height="17" splitType="Stretch">
 				<element kind="line" x="287" y="0" width="0" height="17" key="line-15" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG7" x="55" y="2" width="229" height="9" key="textField-5" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Middle">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -404,7 +404,7 @@ where chiave = 'chiave']]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="19" splitAllowed="true">
+			<band height="19" splitType="Stretch">
 				<element kind="line" x="3" y="0" width="0" height="19" key="line-26" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG7ITALIC" x="55" y="0" width="229" height="19" key="textField-36" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Top">
 					<box topBorder="None" topBorderColor="#000000" topPadding="4" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -442,7 +442,7 @@ where chiave = 'chiave']]></query>
 	<group name="CATEGORIA">
 		<expression><![CDATA[$F{CD_LIVELLO2}]]></expression>
 		<groupHeader>
-			<band height="13" splitAllowed="true">
+			<band height="13" splitType="Stretch">
 				<element kind="line" x="287" y="0" width="0" height="13" key="line-17" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRG6" x="55" y="2" width="229" height="9" key="textField-7" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Middle">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -481,12 +481,12 @@ where chiave = 'chiave']]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="123" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="123" splitType="Stretch">
 		<element kind="textField" style="TNRG8" x="3" y="46" width="574" height="11" key="textField-184" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center" vTextAlign="Middle" rotation="None" fontName="Times New Roman" pdfFontName="Times-Bold" fontSize="8" bold="true" italic="false" underline="false" pdfEncoding="Cp1252" strikeThrough="false">
 			<paragraph lineSpacing="Single"/>
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -559,7 +559,7 @@ dell'anno in corso]]></text>
 		</element>
 		<element kind="line" x="3" y="122" width="574" height="0" key="line-69" direction="TopDown"/>
 	</pageHeader>
-	<columnHeader height="6" splitAllowed="true">
+	<columnHeader height="6" splitType="Stretch">
 		<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals( new Integer(1) ))]]></printWhenExpression>
 		<element kind="subreport" x="0" y="0" width="576" height="6" key="subreport-1" stretchType="ContainerHeight" positionType="Float" usingCache="true">
 			<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals( new Integer(1) ))]]></printWhenExpression>
@@ -577,11 +577,11 @@ dell'anno in corso]]></text>
 		</element>
 	</columnHeader>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="24" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="24" splitType="Stretch">
 		<element kind="textField" textAdjust="StretchHeight" style="TNRG8" x="3" y="0" width="284" height="23" key="textField-163" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" vTextAlign="Top">
 			<box topBorder="Thin" topBorderColor="#000000" topPadding="4" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" rightPadding="4" bottomBorder="Thin" bottomBorderColor="#000000"/>
 			<expression><![CDATA["TOTALE GENERALE DELLE ENTRATE"]]></expression>

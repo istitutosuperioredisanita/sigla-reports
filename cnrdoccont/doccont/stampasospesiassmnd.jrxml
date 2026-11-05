@@ -54,7 +54,7 @@ and cd_cds_origine like decode($P{CDS},'*','%',$P{CDS})]]></query>
 	<group name="CD_CDS_ORIGINE">
 		<expression><![CDATA[$F{CD_CDS_ORIGINE}]]></expression>
 		<groupHeader>
-			<band height="18" splitAllowed="true">
+			<band height="18" splitType="Stretch">
 				<element kind="textField" style="TNRG10" x="0" y="2" width="45" height="13" key="textField" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{CD_CDS_ORIGINE}]]></expression>
@@ -62,12 +62,12 @@ and cd_cds_origine like decode($P{CDS},'*','%',$P{CDS})]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="108" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="108" splitType="Stretch">
 		<element kind="image" x="1" y="2" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -115,9 +115,9 @@ and cd_cds_origine like decode($P{CDS},'*','%',$P{CDS})]]></query>
 			<text><![CDATA[Importo Disponibile]]></text>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="18" splitAllowed="false">
+		<band height="18" splitType="Prevent">
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="38" y="2" width="111" height="13" key="textField" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[$F{CD_SOSPESO}]]></expression>
@@ -152,8 +152,8 @@ and cd_cds_origine like decode($P{CDS},'*','%',$P{CDS})]]></query>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="50" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="50" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="579" y="32" width="100" height="18" key="textField" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
@@ -163,5 +163,5 @@ and cd_cds_origine like decode($P{CDS},'*','%',$P{CDS})]]></query>
 			<expression><![CDATA["" + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

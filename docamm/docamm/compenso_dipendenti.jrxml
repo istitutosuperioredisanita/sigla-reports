@@ -131,16 +131,16 @@ order by cd_unita_organizzativa,pg_compenso,ordinamento,classificazione]]></quer
 	<group name="UO">
 		<expression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="PG_COMPENSO" startNewPage="true">
 		<expression><![CDATA[$F{PG_COMPENSO}]]></expression>
 		<groupHeader>
-			<band height="46" splitAllowed="true">
+			<band height="46" splitType="Stretch">
 				<element kind="staticText" style="TNRG9" x="14" y="11" width="247" height="16" key="staticText-1" hTextAlign="Center" underline="true">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Dati anagrafici del percipiente:]]></text>
@@ -159,7 +159,7 @@ order by cd_unita_organizzativa,pg_compenso,ordinamento,classificazione]]></quer
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="88" splitAllowed="true">
+			<band height="88" splitType="Stretch">
 				<element kind="staticText" style="TNRG9" x="316" y="0" width="121" height="18" key="staticText-30" stretchType="ContainerHeight" positionType="Float" hTextAlign="Right" vTextAlign="Middle">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[NETTO A PAGARE]]></text>
@@ -194,7 +194,7 @@ order by cd_unita_organizzativa,pg_compenso,ordinamento,classificazione]]></quer
 	<group name="COMPENSO_DATA_LUOGO_NASCITA">
 		<expression><![CDATA[$F{PG_COMPENSO}]]></expression>
 		<groupHeader>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<element kind="staticText" style="TNRG9" x="14" y="5" width="96" height="15" key="staticText-5">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Data e luogo di nascita]]></text>
@@ -210,13 +210,13 @@ $F{DS_COMUNE_NASCITA}+
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="COMPENSO_RESIDENZA">
 		<expression><![CDATA[$F{PG_COMPENSO}]]></expression>
 		<groupHeader>
-			<band height="31" splitAllowed="true">
+			<band height="31" splitType="Stretch">
 				<element kind="staticText" style="TNRG9" x="14" y="5" width="96" height="15" key="staticText-6" vTextAlign="Middle">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Residenza]]></text>
@@ -240,13 +240,13 @@ $F{DS_COMUNE_NASCITA}+
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="COMPENSO_DOMICILIO_FISCALE">
 		<expression><![CDATA[$F{PG_COMPENSO}]]></expression>
 		<groupHeader>
-			<band height="31" splitAllowed="true">
+			<band height="31" splitType="Stretch">
 				<element kind="staticText" style="TNRG9" x="14" y="5" width="96" height="15" key="staticText-7" vTextAlign="Middle">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Domicilio Fiscale]]></text>
@@ -276,13 +276,13 @@ $F{DS_COMUNE_NASCITA}+
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DS_COMPENSO">
 		<expression><![CDATA[$F{PG_COMPENSO}]]></expression>
 		<groupHeader>
-			<band height="83" splitAllowed="true">
+			<band height="83" splitType="Stretch">
 				<element kind="textField" style="TNR9" x="112" y="3" width="149" height="15" key="textField" stretchType="RelativeToTallestObject" printRepeatedValues="false" printWhenGroupChanges="PG_COMPENSO" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{CODICE_FISCALE}]]></expression>
@@ -317,13 +317,13 @@ $F{DS_COMUNE_NASCITA}+
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="PG_COMPENSO2">
 		<expression><![CDATA[$F{PG_COMPENSO}]]></expression>
 		<groupHeader>
-			<band height="64" splitAllowed="true">
+			<band height="64" splitType="Stretch">
 				<element kind="staticText" style="TNRG9" x="14" y="2" width="98" height="14" key="staticText-15">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Periodo Retribuito:]]></text>
@@ -368,7 +368,7 @@ $F{DS_COMUNE_NASCITA}+
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="17" splitAllowed="true">
+			<band height="17" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{IM_NETTO_DA_TRATTENERE}.equals(new BigDecimal(0))&&$F{IM_NETTO_DA_TRATTENERE}!=null)]]></printWhenExpression>
 				<element kind="textField" style="TNR9" mode="Transparent" x="446" y="1" width="83" height="15" key="textField-39" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 					<printWhenExpression><![CDATA[new Boolean(!$F{DETRAZIONE_ALTRI_NETTO}.equals(new BigDecimal(0)))]]></printWhenExpression>
@@ -388,19 +388,19 @@ $F{DS_COMUNE_NASCITA}+
 	<group name="ORDINAMENTO">
 		<expression><![CDATA[$F{ORDINAMENTO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="SubTOTALE">
 		<expression><![CDATA["SubTOTALE"]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="17" splitAllowed="true">
+			<band height="17" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CLASSIFICAZIONE}.equals("PR")||$F{CLASSIFICAZIONE}.equals("IP")
 ||$F{CLASSIFICAZIONE}.equals("IL")||$F{CLASSIFICAZIONE}.equals("ST"))]]></printWhenExpression>
 				<element kind="staticText" style="TNRG9" x="357" y="2" width="80" height="15" key="staticText-29" vTextAlign="Middle">
@@ -419,10 +419,10 @@ $F{DS_COMUNE_NASCITA}+
 	<group name="CLASSIFICAZIONE2">
 		<expression><![CDATA[$F{CLASSIFICAZIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="49" splitAllowed="true">
+			<band height="49" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CLASSIFICAZIONE}.equals("FI")&&
 (!(($F{DETRAZIONE_CONIUGE_NETTO}.add($F{DETRAZIONE_FIGLI_NETTO})).add($F{DETRAZIONE_ALTRI_NETTO})).equals(new BigDecimal(0))))]]></printWhenExpression>
 				<element kind="staticText" style="TNR9" mode="Transparent" x="2" y="1" width="223" height="15" key="staticText-34" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true">
@@ -474,10 +474,10 @@ $F{DS_COMUNE_NASCITA}+
 	<group name="CLASSIFICAZIONE5">
 		<expression><![CDATA[$F{CLASSIFICAZIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="16" splitAllowed="true">
+			<band height="16" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CLASSIFICAZIONE}.equals("FI")&&(
 !($F{DETRAZIONI_LA_NETTO}.add($F{DETRAZIONI_PERSONALI_NETTO})).equals(new BigDecimal(0))))]]></printWhenExpression>
 				<element kind="staticText" style="TNR9" mode="Transparent" x="2" y="1" width="147" height="15" key="staticText-33" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true">
@@ -500,10 +500,10 @@ $F{DS_COMUNE_NASCITA}+
 	<group name="CLASSIFICAZIONE1">
 		<expression><![CDATA[$F{CLASSIFICAZIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="33" splitAllowed="true">
+			<band height="33" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CLASSIFICAZIONE}.equals("FI"))]]></printWhenExpression>
 				<element kind="staticText" style="TNR9" x="2" y="1" width="147" height="15" key="staticText-28" stretchType="ContainerHeight" positionType="Float">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -533,12 +533,12 @@ $F{DS_COMUNE_NASCITA}+
 	<group name="CLASSIFICAZIONE">
 		<expression><![CDATA[$F{CLASSIFICAZIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true">
+			<band height="0" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CLASSIFICAZIONE}.equals("FI"))]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="15" splitAllowed="true">
+			<band height="15" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CLASSIFICAZIONE}.equals("FI")&&(!$F{IM_DEDUZIONE_FAMILY}.equals(new BigDecimal(0))))]]></printWhenExpression>
 				<element kind="staticText" style="TNR9" mode="Transparent" x="2" y="0" width="147" height="15" key="staticText-27" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -556,10 +556,10 @@ $F{DS_COMUNE_NASCITA}+
 	<group name="CLASSIFICAZIONE4">
 		<expression><![CDATA[$F{CLASSIFICAZIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="16" splitAllowed="true">
+			<band height="16" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CLASSIFICAZIONE}.equals("FI")&&((!$F{IM_DEDUZIONE_IRPEF}.equals(new BigDecimal(0)))))]]></printWhenExpression>
 				<element kind="staticText" style="TNR9" mode="Transparent" x="2" y="1" width="147" height="15" key="staticText-26" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -577,10 +577,10 @@ $F{DS_COMUNE_NASCITA}+
 	<group name="CLASSIFICAZIONE3">
 		<expression><![CDATA[$F{CLASSIFICAZIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="17" splitAllowed="true">
+			<band height="17" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CLASSIFICAZIONE}.equals("FI"))]]></printWhenExpression>
 				<element kind="textField" style="TNR9" x="268" y="1" width="86" height="15" key="textField" stretchType="ContainerHeight" positionType="Float" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -598,7 +598,7 @@ $F{DS_COMUNE_NASCITA}+
 	<group name="Dett">
 		<expression><![CDATA[$V{REPORT_COUNT}]]></expression>
 		<groupHeader>
-			<band height="16" splitAllowed="true">
+			<band height="16" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CLASSIFICAZIONE}.equals("PR")||$F{CLASSIFICAZIONE}.equals("IP")
 ||$F{CLASSIFICAZIONE}.equals("IL")
 ||$F{CLASSIFICAZIONE}.equals("ST"))]]></printWhenExpression>
@@ -627,7 +627,7 @@ $F{DS_COMUNE_NASCITA}+
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="16" splitAllowed="true">
+			<band height="16" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean((($F{CLASSIFICAZIONE}.equals("RV"))&($F{AMMONTARE_LORDO}.compareTo(new BigDecimal(0)))>0)||
 ($F{CLASSIFICAZIONE}.equals("IV"))&($F{AMMONTARE_LORDO}.compareTo(new BigDecimal(0)))>0)]]></printWhenExpression>
 				<element kind="textField" style="TNR9" x="2" y="0" width="100" height="15" key="textField" stretchType="ContainerHeight" positionType="Float" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
@@ -647,17 +647,17 @@ $F{DS_COMUNE_NASCITA}+
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="44" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="44" splitType="Stretch">
 		<element kind="image" x="3" y="2" width="529" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="15" splitAllowed="true">
+		<band height="15" splitType="Stretch">
 			<printWhenExpression><![CDATA[new Boolean(
 ($F{CLASSIFICAZIONE}.equals("R9")&($F{AMMONTARE_LORDO}.compareTo(new BigDecimal(0)))>0)
 ||($F{CLASSIFICAZIONE}.equals("P9")&($F{AMMONTARE_LORDO}.compareTo(new BigDecimal(0)))>0)
@@ -691,8 +691,8 @@ $F{DS_COMUNE_NASCITA}+
 			<element kind="line" x="533" y="0" width="0" height="15" key="line-7" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="13" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="13" splitType="Stretch">
 		<element kind="textField" style="TNR9" x="1" y="0" width="103" height="11" key="textField" pattern="dd/MM/yyyy HH.mm.ss" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -706,5 +706,5 @@ $F{DS_COMUNE_NASCITA}+
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

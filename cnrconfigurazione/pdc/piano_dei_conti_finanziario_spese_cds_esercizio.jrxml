@@ -37,16 +37,16 @@ order by esercizio,tipo_cds,funzione,categoria,voce]]></query>
 	<group name="TIPO_CDS" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TIPO_CDS}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="FUNZIONE" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{FUNZIONE}]]></expression>
 		<groupHeader>
-			<band height="26" splitAllowed="true">
+			<band height="26" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR12B" x="4" y="12" width="772" height="14" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{FUNZIONE}+"   "+$F{DESCRIZIONE_FUNZIONE}]]></expression>
@@ -54,13 +54,13 @@ order by esercizio,tipo_cds,funzione,categoria,voce]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="CATEGORIA" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CATEGORIA}]]></expression>
 		<groupHeader>
-			<band height="29" splitAllowed="true">
+			<band height="29" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="18" y="15" width="750" height="14" key="textField-6" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{CATEGORIA}+"   "+$F{DESCRIZIONE_CATEGORIA}]]></expression>
@@ -68,13 +68,13 @@ order by esercizio,tipo_cds,funzione,categoria,voce]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="VOCE" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{VOCE}]]></expression>
 		<groupHeader>
-			<band height="18" splitAllowed="true">
+			<band height="18" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="22" y="4" width="750" height="14" key="textField-7" stretchType="RelativeToTallestObject" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{VOCE}+"   "+$F{DESCRIZIONE_VOCE}]]></expression>
@@ -82,12 +82,12 @@ order by esercizio,tipo_cds,funzione,categoria,voce]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="123" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="123" splitType="Stretch">
 		<element kind="image" x="3" y="1" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -111,12 +111,12 @@ order by esercizio,tipo_cds,funzione,categoria,voce]]></query>
 		</element>
 		<element kind="line" x="0" y="122" width="780" height="0" key="line-2" direction="BottomUp"/>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="25" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="25" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="4" y="5" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -131,5 +131,5 @@ order by esercizio,tipo_cds,funzione,categoria,voce]]></query>
 		</element>
 		<element kind="line" x="1" y="1" width="775" height="0" key="line-3" direction="BottomUp"/>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

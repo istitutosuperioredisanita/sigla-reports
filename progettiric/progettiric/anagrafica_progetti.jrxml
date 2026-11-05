@@ -38,12 +38,12 @@
 	</parameter>
 	<query language="sql"><![CDATA[select 1 from dual]]></query>
 	<field name="1" class="java.math.BigDecimal"/>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="20" splitAllowed="true">
+		<band height="20" splitType="Stretch">
 			<element kind="subreport" x="0" y="0" width="814" height="20" key="subreport-1" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" usingCache="true">
 				<parameter name="DIR_IMAGE">
 					<expression><![CDATA[$P{DIR_IMAGE}]]></expression>
@@ -74,8 +74,8 @@
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="38" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="38" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="2" y="0" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -117,5 +117,5 @@ RTL = Ricerca spontanea a tema libero
 ]]></text>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

@@ -70,8 +70,8 @@ AND DATA between $P{DaData} AND $P{AData}]]></query>
 	<variable name="SUM_IMPORTO" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
 		<expression><![CDATA[$F{IMPORTO}]]></expression>
 	</variable>
-	<background height="0" splitAllowed="true"/>
-	<title height="50" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="50" splitType="Stretch">
 		<element kind="staticText" style="TNRG16" x="0" y="6" width="782" height="20" key="staticText-1" hTextAlign="Center">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<text><![CDATA[Registro Annotazioni di Entrata su Partita di Giro - CDS]]></text>
@@ -81,7 +81,7 @@ AND DATA between $P{DaData} AND $P{AData}]]></query>
 			<expression><![CDATA["ESERCIZIO "+$P{Esercizio}]]></expression>
 		</element>
 	</title>
-	<pageHeader height="77" splitAllowed="true">
+	<pageHeader height="77" splitType="Stretch">
 		<element kind="textField" style="TNRG12" x="0" y="6" width="782" height="15" key="textField-2" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA["CDS: "+$P{CDS}+"  "+$F{DS_CDS}]]></expression>
@@ -141,9 +141,9 @@ AND DATA between $P{DaData} AND $P{AData}]]></query>
 		</element>
 		<element kind="line" x="0" y="75" width="782" height="0" key="line-2" direction="TopDown"/>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="17" splitAllowed="true">
+		<band height="17" splitType="Stretch">
 			<element kind="textField" textAdjust="StretchHeight" style="TNR9" x="1" y="2" width="65" height="13" key="textField" pattern="###0;-###0" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[$F{PROGRESSIVO}]]></expression>
@@ -179,11 +179,11 @@ AND DATA between $P{DaData} AND $P{AData}]]></query>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="4" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="4" splitType="Stretch">
 		<element kind="line" x="0" y="3" width="782" height="0" key="line-3" direction="TopDown"/>
 	</pageFooter>
-	<summary height="25" splitAllowed="true">
+	<summary height="25" splitType="Stretch">
 		<element kind="textField" style="TNRG10" x="523" y="6" width="86" height="13" key="textField" pattern="€,##0.00;-#,##0.00" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 			<box topBorder="Thin" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="2Point" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$V{SUM_IMPORTO}]]></expression>

@@ -61,9 +61,9 @@ where id = $P{id_rep}]]></query>
 	<field name="PARZIALE_II_ANNO" class="java.math.BigDecimal"/>
 	<field name="TOTALE_II_ANNO" class="java.math.BigDecimal"/>
 	<field name="SN_TOTALE" class="java.lang.String"/>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="96" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="96" splitType="Stretch">
 		<element kind="image" x="0" y="0" width="497" height="40" key="image-1" onErrorType="Blank" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -83,7 +83,7 @@ where id = $P{id_rep}]]></query>
   "Tipo: Ente"))]]></expression>
 		</element>
 	</pageHeader>
-	<columnHeader height="30" splitAllowed="true">
+	<columnHeader height="30" splitType="Stretch">
 		<element kind="rectangle" style="TNR10BOLD" x="1" y="0" width="581" height="30" key="rectangle-1"/>
 		<element kind="line" style="TNR10BOLD" x="305" y="15" width="277" height="1" key="line-5" direction="TopDown"/>
 		<element kind="line" style="TNR10BOLD" x="512" y="15" width="0" height="15" key="line-6" direction="TopDown"/>
@@ -120,7 +120,7 @@ where id = $P{id_rep}]]></query>
 		<element kind="line" x="373" y="15" width="0" height="15" key="line-11" direction="TopDown"/>
 	</columnHeader>
 	<detail>
-		<band height="15" splitAllowed="true">
+		<band height="15" splitType="Stretch">
 			<element kind="textField" textAdjust="StretchHeight" style="TNR9BOLD" x="3" y="1" width="15" height="13" key="textField" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" markup="styled" fontName="Times New Roman" fontSize="9">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[$F{I_LIVELLO}]]></expression>
@@ -167,9 +167,9 @@ where id = $P{id_rep}]]></query>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="7" splitAllowed="true">
+	<columnFooter height="7" splitType="Stretch">
 		<element kind="line" style="TNR10BOLD" x="1" y="0" width="581" height="1" key="line-3" direction="TopDown"/>
 	</columnFooter>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

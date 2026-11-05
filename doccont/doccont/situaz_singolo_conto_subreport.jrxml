@@ -61,7 +61,7 @@ order by chiave,tipo,sequenza]]></query>
 	<group name="G1_CHIAVE" startNewPage="true">
 		<expression><![CDATA[$F{CHIAVE}]]></expression>
 		<groupHeader>
-			<band height="56" splitAllowed="true">
+			<band height="56" splitType="Stretch">
 				<element kind="staticText" style="TNR10B" x="3" y="18" width="48" height="16" key="staticText-4">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -110,16 +110,16 @@ order by chiave,tipo,sequenza]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="G2_TIPO_A" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TIPO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="1" splitAllowed="true">
+			<band height="1" splitType="Stretch">
 				<element kind="line" x="3" y="0" width="525" height="0" key="line-65" direction="TopDown"/>
 			</band>
 		</groupFooter>
@@ -127,7 +127,7 @@ order by chiave,tipo,sequenza]]></query>
 	<group name="G2_TIPO_B" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TIPO}]]></expression>
 		<groupHeader>
-			<band height="54" splitAllowed="true">
+			<band height="54" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("B")==0)]]></printWhenExpression>
 				<element kind="textField" style="TNR10B" x="3" y="4" width="522" height="14" key="textField-6" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box>
@@ -176,7 +176,7 @@ variazione]]></text>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="1" splitAllowed="true">
+			<band height="1" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("B")==0)]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="525" height="0" key="line-66" direction="TopDown"/>
 			</band>
@@ -185,7 +185,7 @@ variazione]]></text>
 	<group name="G2_TIPO_C" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TIPO}]]></expression>
 		<groupHeader>
-			<band height="40" splitAllowed="true">
+			<band height="40" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("C")==0)]]></printWhenExpression>
 				<element kind="textField" style="TNR10B" x="3" y="4" width="522" height="14" key="textField-7" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box>
@@ -274,7 +274,7 @@ variazione]]></text>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="1" splitAllowed="true">
+			<band height="1" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("C")==0)]]></printWhenExpression>
 				<element kind="line" x="3" y="0" width="525" height="0" key="line-67" direction="TopDown"/>
 			</band>
@@ -283,7 +283,7 @@ variazione]]></text>
 	<group name="G2_TIPO_D" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{TIPO}]]></expression>
 		<groupHeader>
-			<band height="41" splitAllowed="true">
+			<band height="41" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("D")==0)]]></printWhenExpression>
 				<element kind="textField" style="TNR10B" x="3" y="4" width="522" height="14" key="textField-8" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box>
@@ -372,7 +372,7 @@ variazione]]></text>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="1" splitAllowed="true">
+			<band height="1" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("D")==0)]]></printWhenExpression>
 			</band>
 		</groupFooter>
@@ -380,16 +380,16 @@ variazione]]></text>
 	<group name="G3_MAN_REV" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[($F{TIPO}=="C"?$F{PG_OBB_ACR}:$F{TIPO}=="D"?$F{PG_MAN_REV}:$F{SEQUENZA})]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="D1_Entrate" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="101" splitAllowed="true">
+			<band height="101" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("A")==0 && 
 $F{TI_GESTIONE}.compareTo("E")==0 &&
 $F{TI_APPARTENENZA}.compareTo("C")==0)]]></printWhenExpression>
@@ -698,13 +698,13 @@ $F{TI_APPARTENENZA}.compareTo("C")==0)]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="D1_Spese">
 		<expression/>
 		<groupHeader>
-			<band height="123" splitAllowed="true">
+			<band height="123" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("A")==0 
 && $F{TI_GESTIONE}.compareTo("S")==0
 && $F{TI_APPARTENENZA}.compareTo("D")==0)]]></printWhenExpression>
@@ -1150,13 +1150,13 @@ $F{TI_APPARTENENZA}.compareTo("C")==0)]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="D1_Spese_Ente">
 		<expression/>
 		<groupHeader>
-			<band height="72" splitAllowed="true">
+			<band height="72" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("A")==0 
 && $F{TI_GESTIONE}.compareTo("S")==0
 && $F{TI_APPARTENENZA}.compareTo("C")==0)]]></printWhenExpression>
@@ -1443,13 +1443,13 @@ $F{TI_APPARTENENZA}.compareTo("C")==0)]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="D2" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="19" splitAllowed="false">
+			<band height="19" splitType="Prevent">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("B")==0)]]></printWhenExpression>
 				<element kind="textField" style="TNR10" x="7" y="1" width="67" height="14" key="textField" pattern="" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<box>
@@ -1485,13 +1485,13 @@ $F{TI_APPARTENENZA}.compareTo("C")==0)]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="D3" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="20" splitAllowed="false">
+			<band height="20" splitType="Prevent">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("C")==0)]]></printWhenExpression>
 				<element kind="line" x="2" y="0" width="0" height="20" key="line-44" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="51" y="0" width="0" height="20" key="line-46" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -1567,13 +1567,13 @@ $F{TI_APPARTENENZA}.compareTo("C")==0)]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="D4" reprintHeaderOnEachPage="true">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="20" splitAllowed="false">
+			<band height="20" splitType="Prevent">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPO}.compareTo("D")==0)]]></printWhenExpression>
 				<element kind="line" x="2" y="0" width="0" height="20" key="line-55" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="51" y="0" width="0" height="20" key="line-57" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -1649,12 +1649,12 @@ $F{TI_APPARTENENZA}.compareTo("C")==0)]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="79" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="79" splitType="Stretch">
 		<element kind="image" x="1" y="1" width="501" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1701,11 +1701,11 @@ $F{TI_APPARTENENZA}.compareTo("C")==0)]]></printWhenExpression>
 			<text><![CDATA[Situazione Singolo Conto]]></text>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

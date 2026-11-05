@@ -74,10 +74,10 @@ Order By Categoria ASC]]></query>
 	<group name="CATEGORIA">
 		<expression><![CDATA[$F{CATEGORIA}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="18" splitAllowed="true">
+			<band height="18" splitType="Stretch">
 				<element kind="textField" style="TNR10BOLD" x="0" y="0" width="105" height="15" key="textField" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$V{SUM_TOT_QUOTE}]]></expression>
@@ -85,19 +85,19 @@ Order By Categoria ASC]]></query>
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="16" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="16" splitType="Stretch">
 		<element kind="staticText" style="TNR10BOLD" x="0" y="0" width="105" height="15" key="staticText-2" hTextAlign="Right">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<text><![CDATA[Fondo per Categoria]]></text>
 		</element>
 	</title>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

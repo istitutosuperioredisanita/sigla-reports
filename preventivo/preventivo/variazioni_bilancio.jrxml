@@ -62,7 +62,7 @@ PG_VARIAZIONE =  $P{pg_variazione}]]></query>
 	<group name="HEADER1">
 		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
-			<band height="53" splitAllowed="true">
+			<band height="53" splitType="Stretch">
 				<element kind="textField" style="TNR10" x="446" y="3" width="85" height="14" key="textField-4" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" underline="false">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["Esercizio: "+$F{ESERCIZIO}]]></expression>
@@ -78,13 +78,13 @@ PG_VARIAZIONE =  $P{pg_variazione}]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="HEADER2">
 		<expression/>
 		<groupHeader>
-			<band height="51" splitAllowed="true">
+			<band height="51" splitType="Stretch">
 				<element kind="rectangle" x="0" y="0" width="535" height="51" key="rectangle-2"/>
 				<element kind="staticText" style="TNR10B" x="2" y="3" width="70" height="14" key="staticText-2">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -113,13 +113,13 @@ PG_VARIAZIONE =  $P{pg_variazione}]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="HEADER3">
 		<expression/>
 		<groupHeader>
-			<band height="45" splitAllowed="true">
+			<band height="45" splitType="Stretch">
 				<element kind="rectangle" x="0" y="0" width="535" height="45" key="rectangle-3"/>
 				<element kind="staticText" style="TNR10B" x="3" y="6" width="208" height="37" key="staticText-5" hTextAlign="Center">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -154,22 +154,22 @@ di bilancio]]></text>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="1" splitAllowed="true">
+			<band height="1" splitType="Stretch">
 				<element kind="line" x="0" y="0" width="535" height="0" key="line-11" direction="TopDown"/>
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="43" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="43" splitType="Stretch">
 		<element kind="image" x="2" y="3" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="25" splitAllowed="true">
+		<band height="25" splitType="Stretch">
 			<element kind="line" x="216" y="0" width="0" height="25" key="line-5" stretchType="ContainerHeight" direction="TopDown"/>
 			<element kind="line" x="257" y="0" width="0" height="25" key="line-6" stretchType="ContainerHeight" direction="TopDown"/>
 			<element kind="line" x="350" y="0" width="0" height="25" key="line-7" stretchType="ContainerHeight" direction="TopDown"/>
@@ -198,8 +198,8 @@ di bilancio]]></text>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="17" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="17" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="2" y="0" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -213,7 +213,7 @@ di bilancio]]></text>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="93" splitAllowed="true">
+	<summary height="93" splitType="Stretch">
 		<element kind="line" x="0" y="7" width="535" height="0" key="line-12" direction="TopDown"/>
 		<element kind="staticText" style="TNR10B" x="180" y="11" width="165" height="14" key="staticText-10" hTextAlign="Right">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>

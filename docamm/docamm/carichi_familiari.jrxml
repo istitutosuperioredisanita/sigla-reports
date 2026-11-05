@@ -46,8 +46,8 @@ and to_char(dt_fin_validita,'yyyy')>= $P{Esercizio}]]></query>
 	<field name="PG_VER_REC" class="java.math.BigDecimal"/>
 	<field name="DT_NASCITA_FIGLIO" class="java.sql.Timestamp"/>
 	<field name="FL_PRIMO_FIGLIO_MANCA_CON" class="java.lang.String"/>
-	<background height="0" splitAllowed="true"/>
-	<title height="19" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="19" splitType="Stretch">
 		<element kind="staticText" style="TNRG9" x="0" y="5" width="154" height="14" key="staticText-1">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -58,8 +58,8 @@ and to_char(dt_fin_validita,'yyyy')>= $P{Esercizio}]]></query>
 			<text><![CDATA[Carichi familiari dichiarati]]></text>
 		</element>
 	</title>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="22" splitAllowed="true">
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="22" splitType="Stretch">
 		<element kind="staticText" style="TNRG8" x="0" y="5" width="65" height="12" key="staticText-2" hTextAlign="Center">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -125,7 +125,7 @@ and to_char(dt_fin_validita,'yyyy')>= $P{Esercizio}]]></query>
 		</element>
 	</columnHeader>
 	<detail>
-		<band height="12" splitAllowed="true">
+		<band height="12" splitType="Stretch">
 			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="0" y="2" width="65" height="10" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -193,7 +193,7 @@ and to_char(dt_fin_validita,'yyyy')>= $P{Esercizio}]]></query>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

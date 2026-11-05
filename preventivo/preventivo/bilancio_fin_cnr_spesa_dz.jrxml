@@ -196,19 +196,19 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 	<group name="esercizio">
 		<expression><![CDATA[$F{ESERCIZIO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="TI_GESTIONE">
 		<expression><![CDATA[$F{TI_GESTIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<element kind="line" x="0" y="0" width="780" height="0" key="line-29" stretchType="ContainerHeight" direction="TopDown"/>
 				<element kind="line" x="0" y="24" width="780" height="0" key="line-30" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="staticText" style="TNR10B" x="137" y="5" width="150" height="14" key="staticText-8" hTextAlign="Right">
@@ -253,7 +253,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 	<group name="parte">
 		<expression><![CDATA[$F{CD_PARTE}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-130" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="288" y="0" width="0" height="25" key="line-131" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="374" y="0" width="0" height="25" key="line-132" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -277,7 +277,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-153" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="288" y="0" width="0" height="25" key="line-154" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="374" y="0" width="0" height="25" key="line-155" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -328,7 +328,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 	<group name="TITOLO" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CDC_TITOLO}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-7" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="288" y="0" width="0" height="25" key="line-8" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -352,7 +352,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="0" y="23" width="780" height="0" key="line-28" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-97" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -404,7 +404,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 	<group name="CATEGORIA">
 		<expression><![CDATA[$F{CDC_CATEGORIA}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-41" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="288" y="0" width="0" height="25" key="line-42" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -428,7 +428,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-88" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-89" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -479,7 +479,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 	<group name="sezione">
 		<expression><![CDATA[$F{CDC_SEZIONE}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-142" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="288" y="0" width="0" height="25" key="line-143" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -503,7 +503,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-165" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="288" y="0" width="0" height="25" key="line-166" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -554,7 +554,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 	<group name="CAPITOLO" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CDC_CAPITOLO}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{controllo}.compareTo("C")!=0 && ($F{CD_PARTE}.compareTo("2")!=0))]]></printWhenExpression>
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-50" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="288" y="0" width="0" height="25" key="line-51" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -578,7 +578,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-79" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-80" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="288" y="0" width="0" height="25" key="line-81" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -628,7 +628,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 	<group name="ARTICOLO" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CDC_ARTICOLO}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{controllo}.compareTo("C")!=0 && ($P{controllo}.compareTo("A")!=0) && ($F{CD_PARTE}.compareTo("2")!=0))]]></printWhenExpression>
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-59" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="288" y="0" width="0" height="25" key="line-60" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -652,7 +652,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($P{controllo}.compareTo("C")!=0 && ($F{CD_PARTE}.compareTo("2")!=0))]]></printWhenExpression>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-70" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="80" y="0" width="0" height="25" key="line-71" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -700,8 +700,8 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="109" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="109" splitType="Stretch">
 		<element kind="image" x="2" y="3" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -720,7 +720,7 @@ order by esercizio,ti_gestione,CDC_TITOLO,CDC_CATEGORIA,CDC_Capitolo,cd_cds]]></
 		</element>
 		<element kind="line" x="0" y="104" width="120" height="0" key="line-1" direction="TopDown"/>
 	</title>
-	<pageHeader height="45" splitAllowed="true">
+	<pageHeader height="45" splitType="Stretch">
 		<element kind="rectangle" x="0" y="0" width="781" height="45" key="rectangle-1"/>
 		<element kind="staticText" style="TNR10B" x="2" y="6" width="80" height="19" key="staticText-2" hTextAlign="Center">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -772,9 +772,9 @@ $F{ESERCIZIO}.add(new BigDecimal(1))]]></expression>
 $F{ESERCIZIO}.add(new BigDecimal(2))]]></expression>
 		</element>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="25" splitAllowed="true">
+		<band height="25" splitType="Stretch">
 			<printWhenExpression><![CDATA[new Boolean($P{controllo}.compareTo("C")!=0 && ($P{controllo}.compareTo("A")!=0) && ($F{CD_PARTE}.compareTo("2")!=0))]]></printWhenExpression>
 			<element kind="line" x="0" y="0" width="0" height="25" key="line-14" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 			<element kind="line" x="80" y="0" width="0" height="25" key="line-15" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -821,8 +821,8 @@ $F{ESERCIZIO}.add(new BigDecimal(2))]]></expression>
 			<element kind="line" x="0" y="24" width="780" height="0" key="line-125" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="19" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="19" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="2" y="2" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -836,5 +836,5 @@ $F{ESERCIZIO}.add(new BigDecimal(2))]]></expression>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

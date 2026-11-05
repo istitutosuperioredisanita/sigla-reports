@@ -106,7 +106,7 @@ WHERE LIQUIDAZIONE_IVA.ESERCIZIO = $P{esercizio}
 	<group name="PAGINA" startNewPage="true">
 		<expression><![CDATA[$F{PAGINA}]]></expression>
 		<groupHeader>
-			<band height="674" splitAllowed="false">
+			<band height="674" splitType="Prevent">
 				<element kind="rectangle" x="2" y="15" width="498" height="353" key="rectangle-2" positionType="Float" removeLineWhenBlank="true">
 					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 				</element>
@@ -333,17 +333,17 @@ art.33 DPR.633/1972]]></text>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

@@ -68,16 +68,16 @@ pg_obbligazione,pg_obbligazione_scadenzario]]></query>
 	<group name="CDR">
 		<expression><![CDATA[$F{CDR}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="RESPONSABILE">
 		<expression><![CDATA[$F{CD_RESPONSABILE_TERZO}]]></expression>
 		<groupHeader>
-			<band height="36" splitAllowed="true">
+			<band height="36" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PG_OBBLIGAZIONE}.equals( null ))]]></printWhenExpression>
 				<element kind="textField" textAdjust="StretchHeight" style="TNRGC12" x="90" y="11" width="546" height="22" key="textField-1" pattern="##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<box>
@@ -100,13 +100,13 @@ pg_obbligazione,pg_obbligazione_scadenzario]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="GAE">
 		<expression><![CDATA[$F{LDA}]]></expression>
 		<groupHeader>
-			<band height="23" splitAllowed="true">
+			<band height="23" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PG_OBBLIGAZIONE}.equals( null ))]]></printWhenExpression>
 				<element kind="staticText" style="TNRGC10" x="7" y="6" width="74" height="13" key="staticText-3">
 					<box>
@@ -132,7 +132,7 @@ pg_obbligazione,pg_obbligazione_scadenzario]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="2" splitAllowed="true">
+			<band height="2" splitType="Stretch">
 				<element kind="line" mode="Transparent" x="4" y="0" width="776" height="0" key="line-9" direction="TopDown"/>
 			</band>
 		</groupFooter>
@@ -140,7 +140,7 @@ pg_obbligazione,pg_obbligazione_scadenzario]]></query>
 	<group name="CAPITOLO">
 		<expression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></expression>
 		<groupHeader>
-			<band height="26" splitAllowed="true">
+			<band height="26" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PG_OBBLIGAZIONE}.equals( null ))]]></printWhenExpression>
 				<element kind="staticText" style="TNRGC10" x="16" y="7" width="74" height="13" key="staticText-4" hTextAlign="Left">
 					<box>
@@ -165,24 +165,24 @@ pg_obbligazione,pg_obbligazione_scadenzario]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="IMPEGNO">
 		<expression><![CDATA[$F{PG_OBBLIGAZIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="false">
+			<band height="0" splitType="Prevent">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PG_OBBLIGAZIONE}.equals( null ))]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DettImpegno">
 		<expression><![CDATA[$F{PG_OBBLIGAZIONE_SCADENZARIO}]]></expression>
 		<groupHeader>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PG_OBBLIGAZIONE}.equals(null))]]></printWhenExpression>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="146" y="4" width="559" height="13" key="textField-31" pattern="###0;-###0" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box>
@@ -227,24 +227,24 @@ pg_obbligazione,pg_obbligazione_scadenzario]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="MANDATO">
 		<expression><![CDATA[$F{PG_MANDATO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="false">
+			<band height="0" splitType="Prevent">
 				<printWhenExpression><![CDATA[new Boolean($F{ESERCIZIO}.equals( null ))]]></printWhenExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DettMandato">
 		<expression><![CDATA[$F{PG_MANDATO}]]></expression>
 		<groupHeader>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{PG_MANDATO}.equals( null ))]]></printWhenExpression>
 				<element kind="staticText" style="TNRGC10" x="54" y="4" width="51" height="13" key="staticText-12" printWhenGroupChanges="DettMandato" hTextAlign="Left">
 					<box>
@@ -292,11 +292,11 @@ pg_obbligazione,pg_obbligazione_scadenzario]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="83" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="83" splitType="Stretch">
 		<element kind="image" x="0" y="0" width="546" height="39" key="image-1" onErrorType="Blank" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -316,13 +316,13 @@ pg_obbligazione,pg_obbligazione_scadenzario]]></query>
 			<text><![CDATA[ Situazione Sintetica Rendicontazione GAE]]></text>
 		</element>
 	</title>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="24" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="24" splitType="Stretch">
 		<element kind="textField" style="TNRG10" x="0" y="10" width="161" height="13" key="textField-4" pattern="dd/MM/yyyy HH.mm.ss" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -351,5 +351,5 @@ pg_obbligazione,pg_obbligazione_scadenzario]]></query>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

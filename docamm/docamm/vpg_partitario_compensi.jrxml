@@ -35,12 +35,12 @@
 		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
 	</parameter>
 	<query language="sql"><![CDATA[select 1 From dual]]></query>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="28" splitAllowed="true">
+		<band height="28" splitType="Stretch">
 			<element kind="subreport" x="0" y="0" width="798" height="28" key="subreport-1" usingCache="true">
 				<parameter name="Esercizio">
 					<expression><![CDATA[$P{Esercizio}]]></expression>
@@ -62,8 +62,8 @@
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="23" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="23" splitType="Stretch">
 		<element kind="textField" style="TNR9" x="591" y="3" width="100" height="18" key="textField" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -83,6 +83,6 @@
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<lastPageFooter height="1" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<lastPageFooter height="1" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

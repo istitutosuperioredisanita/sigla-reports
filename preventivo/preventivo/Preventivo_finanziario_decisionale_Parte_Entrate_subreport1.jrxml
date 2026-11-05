@@ -42,12 +42,12 @@ Order By cd_chiave_secondaria]]></query>
 	<field name="RISCOSS_AC" class="java.math.BigDecimal"/>
 	<field name="SOMME_ACC_AP" class="java.math.BigDecimal"/>
 	<field name="RISCOSS_AP" class="java.math.BigDecimal"/>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="22" splitAllowed="true">
+		<band height="22" splitType="Stretch">
 			<element kind="textField" textAdjust="StretchHeight" style="TNRG8" x="55" y="2" width="230" height="9" key="textField-2" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left" vTextAlign="Middle">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 				<expression><![CDATA[( $F{CD_CHIAVE_SECONDARIA}.equals("AVANZO_AMMINISTRAZIONE") ? "Avanzo di amministrazione" : "Fondo iniziale di cassa" )]]></expression>
@@ -113,8 +113,8 @@ new DecimalFormat("#,##0.00").format($F{RISCOSS_AP}))]]></expression>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="7" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="7" splitType="Stretch">
 		<element kind="line" x="3" y="6" width="574" height="0" key="line-4" direction="TopDown"/>
 		<element kind="line" x="287" y="0" width="0" height="7" key="line-25" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 		<element kind="line" x="3" y="0" width="0" height="7" key="line-26" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -144,5 +144,5 @@ new DecimalFormat("#,##0.00").format($F{RISCOSS_AP}))]]></expression>
 		</element>
 		<element kind="line" x="576" y="0" width="0" height="7" key="line-28" direction="TopDown"/>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

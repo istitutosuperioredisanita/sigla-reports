@@ -30,14 +30,14 @@ ORDER BY
 	<group name="CD_UNITA_ORGANIZZATIVA">
 		<expression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></expression>
 		<groupHeader>
-			<band height="50" splitAllowed="true"/>
+			<band height="50" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="96" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="96" splitType="Stretch">
 		<element kind="line" x="0" y="48" width="781" height="0" forecolor="#000000" backcolor="#FFFFFF" key="line" direction="TopDown"/>
 		<element kind="line" x="0" y="3" width="781" height="0" forecolor="#000000" backcolor="#FFFFFF" key="line" direction="TopDown"/>
 		<element kind="staticText" x="163" y="52" width="465" height="40" key="staticText-1" fontSize="30">
@@ -45,8 +45,8 @@ ORDER BY
 			<text><![CDATA[Elenco Compensi per Voce del Piano]]></text>
 		</element>
 	</title>
-	<pageHeader height="9" splitAllowed="true"/>
-	<columnHeader height="17" splitAllowed="true">
+	<pageHeader height="9" splitType="Stretch"/>
+	<columnHeader height="17" splitType="Stretch">
 		<element kind="rectangle" mode="Opaque" x="1" y="0" width="782" height="17" forecolor="#000000" backcolor="#808080" key="rectangle"/>
 		<element kind="line" x="0" y="0" width="782" height="0" forecolor="#000000" backcolor="#FFFFFF" key="line" direction="BottomUp"/>
 		<element kind="line" x="0" y="15" width="782" height="0" forecolor="#000000" backcolor="#FFFFFF" key="line" direction="BottomUp"/>
@@ -84,7 +84,7 @@ ORDER BY
 		</element>
 	</columnHeader>
 	<detail>
-		<band height="25" splitAllowed="true">
+		<band height="25" splitType="Stretch">
 			<element kind="line" x="0" y="16" width="782" height="0" forecolor="#808080" backcolor="#FFFFFF" key="line" direction="TopDown"/>
 			<element kind="textField" x="0" y="0" width="67" height="17" forecolor="#000000" key="textField" pattern="" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" fontSize="10" bold="false" italic="false" underline="false" pdfEmbedded="false" strikeThrough="false">
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -120,8 +120,8 @@ ORDER BY
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="27" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="27" splitType="Stretch">
 		<element kind="textField" x="573" y="4" width="170" height="19" forecolor="#000000" key="textField" pattern="" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></expression>
@@ -136,5 +136,5 @@ ORDER BY
 			<expression><![CDATA[new Date()]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

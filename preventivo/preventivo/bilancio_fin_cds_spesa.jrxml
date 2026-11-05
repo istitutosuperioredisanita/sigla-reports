@@ -118,19 +118,19 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 	<group name="esercizio">
 		<expression><![CDATA[$F{ESERCIZIO}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="TI_GESTIONE">
 		<expression><![CDATA[$F{TI_GESTIONE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<element kind="line" x="0" y="1" width="780" height="0" key="line-29" direction="TopDown"/>
 				<element kind="line" x="0" y="19" width="780" height="0" key="line-30" direction="TopDown"/>
 				<element kind="staticText" style="TNR10B" x="258" y="4" width="150" height="14" key="staticText-8" hTextAlign="Right">
@@ -165,16 +165,16 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 	<group name="PARTE" reprintHeaderOnEachPage="true">
 		<expression><![CDATA[$F{CD_PARTE}]]></expression>
 		<groupHeader>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="TITOLO">
 		<expression><![CDATA[$F{CDC_TITOLO}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="135" y="0" width="0" height="25" key="line-7" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="412" y="0" width="0" height="25" key="line-8" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -194,7 +194,7 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="135" y="0" width="0" height="25" key="line-21" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="412" y="0" width="0" height="25" key="line-22" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -234,7 +234,7 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 	<group name="SEZIONE">
 		<expression><![CDATA[$F{CDC_SEZIONE}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-37" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="16" y="7" width="116" height="14" key="textField-24" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
@@ -252,7 +252,7 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-86" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="16" y="7" width="116" height="14" key="textField-41" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
@@ -289,7 +289,7 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 	<group name="RUBRICA">
 		<expression><![CDATA[$F{CDC_RUBRICA}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-44" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="28" y="7" width="104" height="14" key="textField-25" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
@@ -307,7 +307,7 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0)]]></printWhenExpression>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-79" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="28" y="7" width="104" height="14" key="textField-40" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
@@ -344,7 +344,7 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 	<group name="CAPITOLO">
 		<expression><![CDATA[$F{CDC_CAPITOLO}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0 && $F{CD_TIPO_UNITA}.compareTo("SAC")==0)]]></printWhenExpression>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-51" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="45" y="7" width="87" height="14" key="textField-26" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
@@ -362,7 +362,7 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("2")!=0 && $F{CD_TIPO_UNITA}.compareTo("SAC")==0)]]></printWhenExpression>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-72" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="45" y="7" width="87" height="14" key="textField-39" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
@@ -399,7 +399,7 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 	<group name="DET1">
 		<expression><![CDATA[$F{CDC_CAPITOLO}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{CD_PARTE}.compareTo("1")!=0 || $F{CD_TIPO_UNITA}.compareTo("SAC")!=0)]]></printWhenExpression>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-58" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="135" y="0" width="0" height="25" key="line-59" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -437,13 +437,13 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
 	<group name="DET2">
 		<expression><![CDATA[$F{CDC_ARTICOLO}]]></expression>
 		<groupHeader>
-			<band height="25" splitAllowed="true">
+			<band height="25" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(($F{CD_PARTE}.compareTo("2")!=0 || $F{CD_TIPO_UNITA}.compareTo("SAC")!=0)&& $F{CD_TIPO_UNITA}.compareTo("SAC")==0 )]]></printWhenExpression>
 				<element kind="line" x="0" y="0" width="0" height="25" key="line-65" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 				<element kind="line" x="135" y="0" width="0" height="25" key="line-66" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -481,11 +481,11 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="120" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="120" splitType="Stretch">
 		<element kind="image" x="2" y="3" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -508,7 +508,7 @@ $F{IM_STANZ_INIZIALE_AP}.subtract($F{IM_STANZ_INIZIALE}):new BigDecimal(0))]]></
 		</element>
 		<element kind="line" x="0" y="116" width="120" height="0" key="line-1" direction="TopDown"/>
 	</title>
-	<pageHeader height="30" splitAllowed="true">
+	<pageHeader height="30" splitType="Stretch">
 		<element kind="rectangle" x="0" y="0" width="781" height="30" key="rectangle-1"/>
 		<element kind="staticText" style="TNR10B" x="3" y="4" width="129" height="24" key="staticText-2" hTextAlign="Center">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -545,12 +545,12 @@ esercizio di rif.]]></text>
 		<element kind="line" x="598" y="0" width="0" height="30" key="line-5" direction="TopDown"/>
 		<element kind="line" x="689" y="0" width="0" height="30" key="line-6" direction="TopDown"/>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="19" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="19" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="2" y="2" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -564,5 +564,5 @@ esercizio di rif.]]></text>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

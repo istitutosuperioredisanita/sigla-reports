@@ -77,7 +77,7 @@ order by sequenza]]></query>
 	<group name="Dettagli">
 		<expression><![CDATA[$V{REPORT_COUNT}]]></expression>
 		<groupHeader>
-			<band height="14" splitAllowed="true">
+			<band height="14" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPOLOGIA_RIGA}.equals("D")||$F{TIPOLOGIA_RIGA}.equals("I"))]]></printWhenExpression>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR7" x="0" y="2" width="34" height="10" key="textField-4" removeLineWhenBlank="true" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<box>
@@ -205,7 +205,7 @@ order by sequenza]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="16" splitAllowed="true">
+			<band height="16" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TIPOLOGIA_RIGA}.equals("P"))]]></printWhenExpression>
 				<element kind="rectangle" x="285" y="4" width="423" height="12" key="rectangle-3"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR7" x="287" y="6" width="256" height="10" key="textField-23" removeLineWhenBlank="true" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
@@ -254,9 +254,9 @@ order by sequenza]]></query>
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="37" splitAllowed="false">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="37" splitType="Prevent">
 		<element kind="rectangle" x="0" y="15" width="750" height="22" key="rectangle-1"/>
 		<element kind="staticText" style="TNR9" x="0" y="1" width="842" height="13" key="staticText-1" hTextAlign="Center" fontSize="10">
 			<box>
@@ -395,9 +395,9 @@ Iva]]></text>
 		<element kind="line" x="76" y="15" width="0" height="22" key="line-24" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 		<element kind="line" x="35" y="15" width="0" height="22" key="line-25" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="16" splitAllowed="true">
+		<band height="16" splitType="Stretch">
 			<printWhenExpression><![CDATA[new Boolean($F{TIPOLOGIA_RIGA}.equals("C"))]]></printWhenExpression>
 			<element kind="rectangle" x="285" y="4" width="423" height="12" key="rectangle-2"/>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR7" x="287" y="6" width="256" height="10" key="textField-19" removeLineWhenBlank="true" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
@@ -445,7 +445,7 @@ Iva]]></text>
 			<element kind="line" x="652" y="4" width="0" height="12" key="line-30" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

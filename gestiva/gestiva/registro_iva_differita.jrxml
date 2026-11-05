@@ -76,7 +76,7 @@ order by sequenza]]></query>
 	<group name="SEZIONE">
 		<expression><![CDATA[$F{SEZIONE}]]></expression>
 		<groupHeader>
-			<band height="40" splitAllowed="true">
+			<band height="40" splitType="Stretch">
 				<element kind="subreport" x="0" y="0" width="782" height="24" key="subreport-1" stretchType="ContainerHeight" positionType="Float" printWhenGroupChanges="SEZIONE" usingCache="true">
 					<printWhenExpression><![CDATA[new Boolean($F{SEZIONE}.equals("A"))]]></printWhenExpression>
 					<parameter name="DIR_IMAGE">
@@ -262,11 +262,11 @@ order by sequenza]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="0" splitAllowed="true"/>
+			<band height="0" splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="50" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="50" splitType="Stretch">
 		<element kind="textField" textAdjust="StretchHeight" style="TNRG12" x="3" y="0" width="446" height="15" key="textField-1" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -314,13 +314,13 @@ order by sequenza]]></query>
 			<expression><![CDATA[($F{ESERCIZIO_RIF}==null?"":$F{ESERCIZIO_RIF}.toString())]]></expression>
 		</element>
 	</title>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="0" splitAllowed="true"/>
+		<band height="0" splitType="Stretch"/>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="15" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="15" splitType="Stretch">
 		<element kind="textField" textAdjust="StretchHeight" style="TNRG10" x="630" y="0" width="76" height="15" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -349,7 +349,7 @@ order by sequenza]]></query>
 			<expression><![CDATA[new java.util.Date()]]></expression>
 		</element>
 	</pageFooter>
-	<lastPageFooter height="15" splitAllowed="true">
+	<lastPageFooter height="15" splitType="Stretch">
 		<element kind="staticText" x="0" y="0" width="782" height="15" key="staticText-1" hTextAlign="Center" fontSize="9">
 			<box>
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -387,5 +387,5 @@ order by sequenza]]></query>
 			<expression><![CDATA[new java.util.Date()]]></expression>
 		</element>
 	</lastPageFooter>
-	<summary height="0" splitAllowed="true"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

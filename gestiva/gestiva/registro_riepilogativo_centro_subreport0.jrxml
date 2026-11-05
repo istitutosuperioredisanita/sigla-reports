@@ -40,12 +40,12 @@ AND TIPOLOGIA_RIGA = 'R']]></query>
 	<field name="RAGIONE_SOCIALE_ENTE" class="java.lang.String"/>
 	<field name="PARTITA_IVA_ENTE" class="java.lang.String"/>
 	<field name="ACQUISTI_VENDITE" class="java.lang.String"/>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="0" splitAllowed="true"/>
-	<columnHeader height="0" splitAllowed="true"/>
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="0" splitType="Stretch"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="104" splitAllowed="true">
+		<band height="104" splitType="Stretch">
 			<element kind="textField" style="TNR10BOLD" x="4" y="13" width="358" height="17" key="textField-1" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 				<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A"))]]></printWhenExpression>
 				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
@@ -73,7 +73,7 @@ AND TIPOLOGIA_RIGA = 'R']]></query>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="0" splitAllowed="true"/>
-	<summary height="0" splitAllowed="true"/>
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="0" splitType="Stretch"/>
+	<summary height="0" splitType="Stretch"/>
 </jasperReport>

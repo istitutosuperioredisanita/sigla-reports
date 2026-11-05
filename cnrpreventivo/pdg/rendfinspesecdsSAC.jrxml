@@ -110,7 +110,7 @@ ORDER BY RUBRICA,ARTICOLO]]></query>
 	<group name="RUBRICA">
 		<expression><![CDATA[$F{RUBRICA}]]></expression>
 		<groupHeader>
-			<band height="18" splitAllowed="true">
+			<band height="18" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="2" y="2" width="280" height="14" key="textField-9" stretchType="ContainerHeight" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["Rubrica "+$F{RUBRICA}.substring(($F{RUBRICA}.length())-7,$F{RUBRICA}.length())+" - "+$F{DS_RUBRICA}]]></expression>
@@ -121,7 +121,7 @@ ORDER BY RUBRICA,ARTICOLO]]></query>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="2" y="3" width="280" height="14" key="textField-18" stretchType="ContainerHeight" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["Totale Rubrica "+$F{RUBRICA}.substring(($F{RUBRICA}.length())-7,$F{RUBRICA}.length())+" "]]></expression>
@@ -170,7 +170,7 @@ ORDER BY RUBRICA,ARTICOLO]]></query>
 	<group name="ARTICOLO">
 		<expression><![CDATA[$F{ARTICOLO}]]></expression>
 		<groupHeader>
-			<band height="18" splitAllowed="true">
+			<band height="18" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="2" y="2" width="280" height="14" key="textField-8" stretchType="ContainerHeight" positionType="Float" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[($F{CAPITOLO}.substring(0,1).compareTo("2")==0?"Parte 2":
@@ -183,7 +183,7 @@ $F{ARTICOLO}.substring($F{ARTICOLO}.length()-3,$F{ARTICOLO}.length()))+($F{DS_AR
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="20" splitAllowed="true">
+			<band height="20" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="2" y="2" width="280" height="14" key="textField-26" stretchType="ContainerHeight" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["Totale "+($F{CAPITOLO}.substring(0,1).compareTo("2")==0?"Parte 2":
@@ -230,9 +230,9 @@ $F{ARTICOLO}.substring($F{ARTICOLO}.length()-3,$F{ARTICOLO}.length()))+($F{DS_AR
 			</band>
 		</groupFooter>
 	</group>
-	<background height="0" splitAllowed="true"/>
-	<title height="0" splitAllowed="true"/>
-	<pageHeader height="137" splitAllowed="true">
+	<background height="0" splitType="Stretch"/>
+	<title height="0" splitType="Stretch"/>
+	<pageHeader height="137" splitType="Stretch">
 		<element kind="image" x="1" y="2" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
@@ -300,9 +300,9 @@ in +          in -]]></text>
 		<element kind="line" x="640" y="118" width="140" height="0" key="line-15" direction="TopDown"/>
 		<element kind="line" x="711" y="119" width="0" height="18" key="line-16" direction="TopDown"/>
 	</pageHeader>
-	<columnHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitType="Stretch"/>
 	<detail>
-		<band height="20" splitAllowed="false">
+		<band height="20" splitType="Prevent">
 			<element kind="line" x="0" y="0" width="0" height="20" key="line-29" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
 			<element kind="line" x="112" y="0" width="0" height="20" key="line-30" stretchType="ContainerHeight" direction="BottomUp"/>
 			<element kind="line" x="289" y="0" width="0" height="20" key="line-31" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
@@ -352,8 +352,8 @@ in +          in -]]></text>
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="0" splitAllowed="true"/>
-	<pageFooter height="21" splitAllowed="true">
+	<columnFooter height="0" splitType="Stretch"/>
+	<pageFooter height="21" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="4" y="3" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
 			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 			<expression><![CDATA[new java.util.Date()]]></expression>
@@ -367,7 +367,7 @@ in +          in -]]></text>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
-	<summary height="40" splitAllowed="true">
+	<summary height="40" splitType="Stretch">
 		<element kind="line" x="0" y="0" width="0" height="37" key="line-84" stretchType="ContainerHeight" direction="TopDown"/>
 		<element kind="line" x="780" y="0" width="0" height="18" key="line-85" stretchType="ContainerHeight" direction="TopDown"/>
 		<element kind="line" x="289" y="0" width="0" height="37" key="line-86" stretchType="ContainerHeight" direction="BottomUp"/>
