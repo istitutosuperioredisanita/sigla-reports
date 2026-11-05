@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="liquidazione_iva" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="787fedc5-c840-4dc7-b550-97c02f46fccb">
+<jasperReport name="liquidazione_iva" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="787fedc5-c840-4dc7-b550-97c02f46fccb" language="java">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="ISO-8859-1"/>
 	<property name="ireport.zoom" value="1.0"/>
@@ -8,21 +7,21 @@
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLACOLL"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
 	<style name="TNR10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
-	<style name="TNR10BOLD" fontName="Times New Roman" fontSize="10" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR10BOLD" fontName="Times New Roman" fontSize="10" bold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR12" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
-	<style name="TNR10ITALIC" fontName="Times New Roman" fontSize="10" isItalic="true" pdfFontName="Times-Italic" isPdfEmbedded="true"/>
-	<style name="TNR10BI" fontName="Times New Roman" fontSize="10" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
-	<style name="TNR12BOLD" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
-	<style name="TNR12ITALIC" fontName="Times New Roman" fontSize="12" isItalic="true" pdfFontName="Times-Italic" isPdfEmbedded="true"/>
-	<style name="TNR12BI" fontName="Times New Roman" fontSize="12" isBold="true" isItalic="false" pdfFontName="Times-BoldItalic"/>
+	<style name="TNR10ITALIC" fontName="Times New Roman" fontSize="10" italic="true" pdfFontName="Times-Italic" pdfEmbedded="true"/>
+	<style name="TNR10BI" fontName="Times New Roman" fontSize="10" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNR12BOLD" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Roman" pdfEmbedded="false"/>
+	<style name="TNR12ITALIC" fontName="Times New Roman" fontSize="12" italic="true" pdfFontName="Times-Italic" pdfEmbedded="true"/>
+	<style name="TNR12BI" fontName="Times New Roman" fontSize="12" bold="true" italic="false" pdfFontName="Times-BoldItalic"/>
 	<parameter name="idReport" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[new Integer(26597)]]></defaultValueExpression>
 	</parameter>
-	<parameter name="aPagIniziale" class="java.lang.String" isForPrompting="false">
+	<parameter name="aPagIniziale" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="cd_cds" class="java.lang.String">
@@ -34,7 +33,7 @@
 	<parameter name="esercizio" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[new Integer("2025")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="ti_liquidazione" class="java.lang.String" isForPrompting="false">
+	<parameter name="ti_liquidazione" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["C"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="dataInizio" class="java.util.Date">
@@ -43,19 +42,19 @@
 	<parameter name="dataFine" class="java.util.Date">
 		<defaultValueExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse("2025/09/30")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["E:/iss/SIGLA_FORK_REPORT_ISS/sigla-reports/gestiva/gestiva/"]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[SELECT uo.CD_UNITA_ORGANIZZATIVA, uo.DS_UNITA_ORGANIZZATIVA, a.PARTITA_IVA as PARTITA_IVA_ENTE, a.RAGIONE_SOCIALE as RAGIONE_SOCIALE_ENTE
+	<query language="sql"><![CDATA[
+		SELECT uo.CD_UNITA_ORGANIZZATIVA, uo.DS_UNITA_ORGANIZZATIVA, a.PARTITA_IVA as PARTITA_IVA_ENTE, a.RAGIONE_SOCIALE as RAGIONE_SOCIALE_ENTE
 FROM UNITA_ORGANIZZATIVA uo,
 configurazione_cnr c ,
 ANAGRAFICO a
 WHERE uo.CD_UNITA_ORGANIZZATIVA =  $P{cd_unita_organizzativa} 
 and c.cd_chiave_secondaria(+)='CODICE_ANAG_ENTE'
 and c.cd_chiave_primaria(+)='COSTANTI'
-AND a.CD_ANAG(+) = c.im01]]>
-	</queryString>
+AND a.CD_ANAG(+) = c.im01
+	]]></query>
 	<field name="CD_UNITA_ORGANIZZATIVA" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_UNITA_ORGANIZZATIVA"/>
 	</field>
@@ -68,41 +67,30 @@ AND a.CD_ANAG(+) = c.im01]]>
 	<field name="RAGIONE_SOCIALE_ENTE" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="RAGIONE_SOCIALE_ENTE"/>
 	</field>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band height="97" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR12" x="2" y="47" width="532" height="18" uuid="56b36e47-9024-40bd-b2d5-8d85cd0e04b1"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center">
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[($P{ti_liquidazione}.equals("S") ? "LIQUIDAZIONE PERIODICA ISTITUZIONALE SAN MARINO SENZA IVA" :
+	<background splitType="Stretch"/>
+	<title height="97" splitType="Stretch">
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		<element kind="textField" key="textField" style="TNR12" x="2" y="47" width="532" height="18" uuid="56b36e47-9024-40bd-b2d5-8d85cd0e04b1" blankWhenNull="false" hTextAlign="Center" fontSize="12">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[($P{ti_liquidazione}.equals("S") ? "LIQUIDAZIONE PERIODICA ISTITUZIONALE SAN MARINO SENZA IVA" :
  $P{ti_liquidazione}.equals("X")? "LIQUIDAZIONE PERIODICA ISTITUZIONALE SERVIZI NON RESIDENTI" :
  $P{ti_liquidazione}.equals("I")? "LIQUIDAZIONE PERIODICA ISTITUZIONALE INTRA UE" :
  $P{ti_liquidazione}.equals("P")? "LIQUIDAZIONE PERIODICA ISTITUZIONALE SPLIT PAYMENT" :
- "LIQUIDAZIONE PERIODICA COMMERCIALE")]]></textFieldExpression>
-			</textField>
-			<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR12BOLD" x="20" y="77" width="126" height="18" uuid="cffce965-2a4c-4397-846f-8ba5d4c29149"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement markup="styled">
-					<font pdfFontName="Times-Bold"/>
-				</textElement>
-				<textFieldExpression><![CDATA[(new SimpleDateFormat("MM").format($P{dataInizio}).equals(
+ "LIQUIDAZIONE PERIODICA COMMERCIALE")]]></expression>
+		</element>
+		<element kind="textField" key="textField" style="TNR12BOLD" x="20" y="77" width="126" height="18" uuid="cffce965-2a4c-4397-846f-8ba5d4c29149" textAdjust="StretchHeight" pattern="" blankWhenNull="false" markup="styled" pdfFontName="Times-Bold">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[(new SimpleDateFormat("MM").format($P{dataInizio}).equals(
  new SimpleDateFormat("MM").format($P{dataFine})) ?
 	"Periodo: " + new SimpleDateFormat("MMMMM").format($P{dataInizio}) :
 	(
@@ -120,160 +108,135 @@ AND a.CD_ANAG(+) = c.im01]]>
              )
 	     :""
 	)
-)]]></textFieldExpression>
-			</textField>
-			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-6" style="TNR12BOLD" x="158" y="77" width="100" height="18" uuid="f85e0725-b68f-4e9c-b272-054f8cdce923"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement markup="styled">
-					<font pdfFontName="Times-Bold"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Anno: " + new SimpleDateFormat("yyyy").format($P{dataInizio})]]></textFieldExpression>
-			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
-				<reportElement key="textField" style="TNR10" x="20" y="27" width="505" height="18" uuid="d0210cb8-c8d0-423f-a0b6-5169d5a9fae7"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textFieldExpression><![CDATA["U.O. "+$F{CD_UNITA_ORGANIZZATIVA}+" - "+$F{DS_UNITA_ORGANIZZATIVA}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField-1" style="TNR10BOLD" x="0" y="0" width="531" height="14" uuid="09e7d5eb-8ac2-48fa-a1a5-e38ae1e13400"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textFieldExpression><![CDATA[($F{RAGIONE_SOCIALE_ENTE}!= null && $F{PARTITA_IVA_ENTE}!= null ?
+)]]></expression>
+		</element>
+		<element kind="textField" key="textField-6" style="TNR12BOLD" x="158" y="77" width="100" height="18" uuid="f85e0725-b68f-4e9c-b272-054f8cdce923" pattern="" blankWhenNull="false" markup="styled" pdfFontName="Times-Bold">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Anno: " + new SimpleDateFormat("yyyy").format($P{dataInizio})]]></expression>
+		</element>
+		<element kind="textField" key="textField" style="TNR10" x="20" y="27" width="505" height="18" uuid="d0210cb8-c8d0-423f-a0b6-5169d5a9fae7" textAdjust="StretchHeight" blankWhenNull="false">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["U.O. "+$F{CD_UNITA_ORGANIZZATIVA}+" - "+$F{DS_UNITA_ORGANIZZATIVA}]]></expression>
+		</element>
+		<element kind="textField" key="textField-1" style="TNR10BOLD" x="0" y="0" width="531" height="14" uuid="09e7d5eb-8ac2-48fa-a1a5-e38ae1e13400" blankWhenNull="true">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[($F{RAGIONE_SOCIALE_ENTE}!= null && $F{PARTITA_IVA_ENTE}!= null ?
 	$F{RAGIONE_SOCIALE_ENTE}+ " " + $F{PARTITA_IVA_ENTE}:
   $F{RAGIONE_SOCIALE_ENTE}!= null ? $F{RAGIONE_SOCIALE_ENTE}:
-  $F{PARTITA_IVA_ENTE}!= null ? $F{PARTITA_IVA_ENTE}:null)]]></textFieldExpression>
-			</textField>
-		</band>
+  $F{PARTITA_IVA_ENTE}!= null ? $F{PARTITA_IVA_ENTE}:null)]]></expression>
+		</element>
 	</title>
-	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
+	<columnHeader splitType="Stretch"/>
 	<detail>
 		<band height="23" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<subreport isUsingCache="true">
-				<reportElement key="subreport-2" x="20" y="16" width="511" height="5" uuid="553fe49f-e4ba-4693-a9f4-6eb2065b767d"/>
-				<subreportParameter name="idReport">
-					<subreportParameterExpression><![CDATA[$P{idReport}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="aPagIniziale">
-					<subreportParameterExpression><![CDATA[$P{aPagIniziale}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="cd_cds">
-					<subreportParameterExpression><![CDATA[$P{cd_cds}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="cd_unita_organizzativa">
-					<subreportParameterExpression><![CDATA[$P{cd_unita_organizzativa}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="esercizio">
-					<subreportParameterExpression><![CDATA[$P{esercizio}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="ti_liquidazione">
-					<subreportParameterExpression><![CDATA[$P{ti_liquidazione}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="dataInizio">
-					<subreportParameterExpression><![CDATA[$P{dataInizio}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="dataFine">
-					<subreportParameterExpression><![CDATA[$P{dataFine}]]></subreportParameterExpression>
-				</subreportParameter>
+			<element kind="subreport" key="subreport-2" x="20" y="16" width="511" height="5" uuid="553fe49f-e4ba-4693-a9f4-6eb2065b767d" usingCache="true">
+				<parameter name="idReport">
+					<expression><![CDATA[$P{idReport}]]></expression>
+				</parameter>
+				<parameter name="aPagIniziale">
+					<expression><![CDATA[$P{aPagIniziale}]]></expression>
+				</parameter>
+				<parameter name="cd_cds">
+					<expression><![CDATA[$P{cd_cds}]]></expression>
+				</parameter>
+				<parameter name="cd_unita_organizzativa">
+					<expression><![CDATA[$P{cd_unita_organizzativa}]]></expression>
+				</parameter>
+				<parameter name="esercizio">
+					<expression><![CDATA[$P{esercizio}]]></expression>
+				</parameter>
+				<parameter name="ti_liquidazione">
+					<expression><![CDATA[$P{ti_liquidazione}]]></expression>
+				</parameter>
+				<parameter name="dataInizio">
+					<expression><![CDATA[$P{dataInizio}]]></expression>
+				</parameter>
+				<parameter name="dataFine">
+					<expression><![CDATA[$P{dataFine}]]></expression>
+				</parameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "liquidazione_iva_pagina2.jasper"]]></subreportExpression>
-			</subreport>
-			<subreport isUsingCache="true">
-				<reportElement key="subreport-1" x="20" y="3" width="511" height="6" uuid="d69d2ed4-ee76-43e0-bdb2-94a4c9b9284d"/>
-				<subreportParameter name="idReport">
-					<subreportParameterExpression><![CDATA[$P{idReport}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="aPagIniziale">
-					<subreportParameterExpression><![CDATA[$P{aPagIniziale}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="cd_cds">
-					<subreportParameterExpression><![CDATA[$P{cd_cds}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="cd_unita_organizzativa">
-					<subreportParameterExpression><![CDATA[$P{cd_unita_organizzativa}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="esercizio">
-					<subreportParameterExpression><![CDATA[$P{esercizio}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="ti_liquidazione">
-					<subreportParameterExpression><![CDATA[$P{ti_liquidazione}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="dataInizio">
-					<subreportParameterExpression><![CDATA[$P{dataInizio}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="dataFine">
-					<subreportParameterExpression><![CDATA[$P{dataFine}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUBREPORT_DIR">
-					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
-				</subreportParameter>
+				<expression><![CDATA[$P{SUBREPORT_DIR} + "liquidazione_iva_pagina2.jasper"]]></expression>
+			</element>
+			<element kind="subreport" key="subreport-1" x="20" y="3" width="511" height="6" uuid="d69d2ed4-ee76-43e0-bdb2-94a4c9b9284d" usingCache="true">
+				<parameter name="idReport">
+					<expression><![CDATA[$P{idReport}]]></expression>
+				</parameter>
+				<parameter name="aPagIniziale">
+					<expression><![CDATA[$P{aPagIniziale}]]></expression>
+				</parameter>
+				<parameter name="cd_cds">
+					<expression><![CDATA[$P{cd_cds}]]></expression>
+				</parameter>
+				<parameter name="cd_unita_organizzativa">
+					<expression><![CDATA[$P{cd_unita_organizzativa}]]></expression>
+				</parameter>
+				<parameter name="esercizio">
+					<expression><![CDATA[$P{esercizio}]]></expression>
+				</parameter>
+				<parameter name="ti_liquidazione">
+					<expression><![CDATA[$P{ti_liquidazione}]]></expression>
+				</parameter>
+				<parameter name="dataInizio">
+					<expression><![CDATA[$P{dataInizio}]]></expression>
+				</parameter>
+				<parameter name="dataFine">
+					<expression><![CDATA[$P{dataFine}]]></expression>
+				</parameter>
+				<parameter name="SUBREPORT_DIR">
+					<expression><![CDATA[$P{SUBREPORT_DIR}]]></expression>
+				</parameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "liquidazione_iva_pagina1.jasper"]]></subreportExpression>
-			</subreport>
-			<break>
-				<reportElement x="0" y="13" width="100" height="1" uuid="51aa7f7a-5831-4a85-9a17-e82bfc29ba5a"/>
-			</break>
+				<expression><![CDATA[$P{SUBREPORT_DIR} + "liquidazione_iva_pagina1.jasper"]]></expression>
+			</element>
+			<element kind="break" x="0" y="13" width="100" height="1" uuid="51aa7f7a-5831-4a85-9a17-e82bfc29ba5a"/>
 		</band>
 	</detail>
-	<columnFooter>
-		<band splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="21" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="false">
-				<reportElement key="textField-1" style="TNR10" x="2" y="2" width="103" height="17" uuid="e692f986-42e9-4bd1-b586-ca12ff61511b"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField-2" style="TNR10" x="436" y="2" width="73" height="17" uuid="82c9cbb2-6807-44f1-b935-888db82bbd76"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report" isBlankWhenNull="false">
-				<reportElement key="textField-3" style="TNR10" x="509" y="2" width="25" height="17" uuid="991af212-75f8-4224-a121-e4d71e9334d5"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></textFieldExpression>
-			</textField>
-		</band>
+	<columnFooter splitType="Stretch"/>
+	<pageFooter height="21" splitType="Stretch">
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		<element kind="textField" key="textField-1" style="TNR10" x="2" y="2" width="103" height="17" uuid="e692f986-42e9-4bd1-b586-ca12ff61511b" evaluationTime="Report" pattern="dd/MM/yyyy" blankWhenNull="false" hTextAlign="Left">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="textField" key="textField-2" style="TNR10" x="436" y="2" width="73" height="17" uuid="82c9cbb2-6807-44f1-b935-888db82bbd76" blankWhenNull="false" hTextAlign="Right">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
+		</element>
+		<element kind="textField" key="textField-3" style="TNR10" x="509" y="2" width="25" height="17" uuid="991af212-75f8-4224-a121-e4d71e9334d5" evaluationTime="Report" blankWhenNull="false" hTextAlign="Left">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
+		</element>
 	</pageFooter>
-	<summary>
-		<band splitType="Stretch"/>
-	</summary>
+	<summary splitType="Stretch"/>
 </jasperReport>

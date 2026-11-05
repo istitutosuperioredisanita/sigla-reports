@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DocumentiCandidatura" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+<jasperReport name="DocumentiCandidatura" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" language="java">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
-	<import value="java.util.*"/>
-	<style name="TNR8" isDefault="false" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
-	<style name="TNRG8" isDefault="false" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRC8" isDefault="false" fontName="Times New Roman" fontSize="8" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNR9" isDefault="false" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman"/>
-	<style name="TNRG9" isDefault="false" fontName="Times New Roman" fontSize="9" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRC9" isDefault="false" fontName="Times New Roman" fontSize="9" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNR10" isDefault="false" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
-	<style name="TNRG10" isDefault="false" fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRC10" isDefault="false" fontName="Times New Roman" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNRG11" isDefault="false" fontName="Times New Roman" fontSize="11" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNR12" isDefault="false" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
-	<style name="TNRG12" isDefault="false" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRC12" isDefault="false" fontName="Times New Roman" fontSize="12" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNRGC12" isDefault="false" fontName="Times New Roman" fontSize="12" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
-	<style name="TNRGC14" isDefault="false" fontName="Times New Roman" fontSize="14" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
-	<style name="TNRG14" isDefault="false" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNR16" isDefault="false" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman"/>
-	<style name="TNRC16" isDefault="false" fontName="Times New Roman" fontSize="16" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNRG16" isDefault="false" fontName="Times New Roman" fontSize="16" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRGC16" isDefault="false" fontName="Times New Roman" fontSize="16" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
-	<style name="TNR11" isDefault="false" fontName="Times New Roman" fontSize="11" pdfFontName="Times-Roman"/>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<style name="TNR8" default="false" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
+	<style name="TNRG8" default="false" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC8" default="false" fontName="Times New Roman" fontSize="8" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNR9" default="false" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman"/>
+	<style name="TNRG9" default="false" fontName="Times New Roman" fontSize="9" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC9" default="false" fontName="Times New Roman" fontSize="9" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNR10" default="false" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
+	<style name="TNRG10" default="false" fontName="Times New Roman" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC10" default="false" fontName="Times New Roman" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRG11" default="false" fontName="Times New Roman" fontSize="11" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR12" default="false" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
+	<style name="TNRG12" default="false" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC12" default="false" fontName="Times New Roman" fontSize="12" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRGC12" default="false" fontName="Times New Roman" fontSize="12" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRGC14" default="false" fontName="Times New Roman" fontSize="14" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRG14" default="false" fontName="Times New Roman" fontSize="14" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR16" default="false" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman"/>
+	<style name="TNRC16" default="false" fontName="Times New Roman" fontSize="16" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRG16" default="false" fontName="Times New Roman" fontSize="16" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRGC16" default="false" fontName="Times New Roman" fontSize="16" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNR11" default="false" fontName="Times New Roman" fontSize="11" pdfFontName="Times-Roman"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
 	<parameter name="cd_accordo" class="java.lang.String">
@@ -42,12 +42,12 @@
 	<parameter name="pg_autorizzazione" class="java.lang.Long"/>
 	<parameter name="pg_visita" class="java.lang.Long"/>
 	<parameter name="pg_ver_rec" class="java.lang.Long"/>
-	<parameter name="flag_to_update" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
+	<parameter name="flag_to_update" class="java.lang.String" forPrompting="false"/>
+	<parameter name="DIR_IMAGE" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[select a.cd_accordo,  e.telef_respons_ita, e.fax_respons_ita, e.email_respons_ita
+	<query language="sql"><![CDATA[
+		select a.cd_accordo,  e.telef_respons_ita, e.fax_respons_ita, e.email_respons_ita
 from blt_visite a, blt_autorizzati h, terzo b, cdr c, blt_accordi e, nazione f, blt_progetti g
 where a.cd_accordo = $P{cd_accordo}
 and a.cd_progetto = $P{cd_progetto}
@@ -62,97 +62,86 @@ and h.cd_cdr_terzo = c.cd_centro_responsabilita
 and h.cd_accordo = e.cd_accordo
 and e.pg_nazione_str = f.pg_nazione
 and a.cd_accordo = g.cd_accordo
-and a.cd_progetto = g.cd_progetto]]>
-	</queryString>
+and a.cd_progetto = g.cd_progetto
+	]]></query>
 	<field name="CD_ACCORDO" class="java.lang.String"/>
 	<field name="TELEF_RESPONS_ITA" class="java.lang.String"/>
 	<field name="FAX_RESPONS_ITA" class="java.lang.String"/>
 	<field name="EMAIL_RESPONS_ITA" class="java.lang.String"/>
 	<detail>
 		<band height="2" splitType="Prevent">
-			<subreport isUsingCache="false">
-				<reportElement key="subreport-2" isPrintRepeatedValues="false" x="0" y="1" width="595" height="1"/>
-				<subreportParameter name="SUBREPORT_DIR">
-					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="pg_ver_rec">
-					<subreportParameterExpression><![CDATA[$P{pg_ver_rec}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="pg_visita">
-					<subreportParameterExpression><![CDATA[$P{pg_visita}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="cd_accordo">
-					<subreportParameterExpression><![CDATA[$P{cd_accordo}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="cd_progetto">
-					<subreportParameterExpression><![CDATA[$P{cd_progetto}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="flag_to_update">
-					<subreportParameterExpression><![CDATA[$P{flag_to_update}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="cd_terzo">
-					<subreportParameterExpression><![CDATA[$P{cd_terzo}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="pie_pagina">
-					<subreportParameterExpression><![CDATA[false]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="pg_autorizzazione">
-					<subreportParameterExpression><![CDATA[$P{pg_autorizzazione}]]></subreportParameterExpression>
-				</subreportParameter>
+			<element kind="subreport" key="subreport-2" printRepeatedValues="false" x="0" y="1" width="595" height="1" usingCache="false">
+				<parameter name="SUBREPORT_DIR">
+					<expression><![CDATA[$P{SUBREPORT_DIR}]]></expression>
+				</parameter>
+				<parameter name="pg_ver_rec">
+					<expression><![CDATA[$P{pg_ver_rec}]]></expression>
+				</parameter>
+				<parameter name="pg_visita">
+					<expression><![CDATA[$P{pg_visita}]]></expression>
+				</parameter>
+				<parameter name="cd_accordo">
+					<expression><![CDATA[$P{cd_accordo}]]></expression>
+				</parameter>
+				<parameter name="cd_progetto">
+					<expression><![CDATA[$P{cd_progetto}]]></expression>
+				</parameter>
+				<parameter name="flag_to_update">
+					<expression><![CDATA[$P{flag_to_update}]]></expression>
+				</parameter>
+				<parameter name="cd_terzo">
+					<expression><![CDATA[$P{cd_terzo}]]></expression>
+				</parameter>
+				<parameter name="pie_pagina">
+					<expression><![CDATA[false]]></expression>
+				</parameter>
+				<parameter name="pg_autorizzazione">
+					<expression><![CDATA[$P{pg_autorizzazione}]]></expression>
+				</parameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "blt_visite_disp_finanziarie_cnr.jasper"]]></subreportExpression>
-			</subreport>
+				<expression><![CDATA[$P{SUBREPORT_DIR} + "blt_visite_disp_finanziarie_cnr.jasper"]]></expression>
+			</element>
 		</band>
 		<band height="2" splitType="Prevent">
-			<subreport isUsingCache="false">
-				<reportElement key="subreport-2" isPrintRepeatedValues="false" x="0" y="1" width="595" height="1"/>
-				<subreportParameter name="SUBREPORT_DIR">
-					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="pg_ver_rec">
-					<subreportParameterExpression><![CDATA[$P{pg_ver_rec}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="pg_visita">
-					<subreportParameterExpression><![CDATA[$P{pg_visita}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="cd_accordo">
-					<subreportParameterExpression><![CDATA[$P{cd_accordo}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="cd_progetto">
-					<subreportParameterExpression><![CDATA[$P{cd_progetto}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="flag_to_update">
-					<subreportParameterExpression><![CDATA[$P{flag_to_update}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="cd_terzo">
-					<subreportParameterExpression><![CDATA[$P{cd_terzo}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="pie_pagina">
-					<subreportParameterExpression><![CDATA[false]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="pg_autorizzazione">
-					<subreportParameterExpression><![CDATA[$P{pg_autorizzazione}]]></subreportParameterExpression>
-				</subreportParameter>
+			<element kind="subreport" key="subreport-2" printRepeatedValues="false" x="0" y="1" width="595" height="1" usingCache="false">
+				<parameter name="SUBREPORT_DIR">
+					<expression><![CDATA[$P{SUBREPORT_DIR}]]></expression>
+				</parameter>
+				<parameter name="pg_ver_rec">
+					<expression><![CDATA[$P{pg_ver_rec}]]></expression>
+				</parameter>
+				<parameter name="pg_visita">
+					<expression><![CDATA[$P{pg_visita}]]></expression>
+				</parameter>
+				<parameter name="cd_accordo">
+					<expression><![CDATA[$P{cd_accordo}]]></expression>
+				</parameter>
+				<parameter name="cd_progetto">
+					<expression><![CDATA[$P{cd_progetto}]]></expression>
+				</parameter>
+				<parameter name="flag_to_update">
+					<expression><![CDATA[$P{flag_to_update}]]></expression>
+				</parameter>
+				<parameter name="cd_terzo">
+					<expression><![CDATA[$P{cd_terzo}]]></expression>
+				</parameter>
+				<parameter name="pie_pagina">
+					<expression><![CDATA[false]]></expression>
+				</parameter>
+				<parameter name="pg_autorizzazione">
+					<expression><![CDATA[$P{pg_autorizzazione}]]></expression>
+				</parameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "blt_visite_trasmissione_candidatura_cnr.jasper"]]></subreportExpression>
-			</subreport>
+				<expression><![CDATA[$P{SUBREPORT_DIR} + "blt_visite_trasmissione_candidatura_cnr.jasper"]]></expression>
+			</element>
 		</band>
 	</detail>
-	<pageFooter>
-		<band height="28" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="65" y="8" width="465" height="12"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="8"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Piazzale Aldo Moro, 7 - 00185 Roma - Tel. "+$F{TELEF_RESPONS_ITA}+" - Fax "+$F{FAX_RESPONS_ITA}+" - email "+$F{EMAIL_RESPONS_ITA}+""]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="65" y="3" width="465" height="1"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-		</band>
+	<pageFooter height="28" splitType="Prevent">
+		<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="65" y="8" width="465" height="12" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="8">
+			<expression><![CDATA["Piazzale Aldo Moro, 7 - 00185 Roma - Tel. "+$F{TELEF_RESPONS_ITA}+" - Fax "+$F{FAX_RESPONS_ITA}+" - email "+$F{EMAIL_RESPONS_ITA}+""]]></expression>
+		</element>
+		<element kind="line" x="65" y="3" width="465" height="1">
+			<pen lineWidth="0.25"/>
+		</element>
 	</pageFooter>
 </jasperReport>

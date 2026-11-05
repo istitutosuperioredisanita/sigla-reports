@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StampaRimanenzeMagazzinoPro" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="11c15183-8e09-4419-b27d-a899adb1799d">
+<jasperReport name="StampaRimanenzeMagazzinoPro" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="11c15183-8e09-4419-b27d-a899adb1799d" language="java">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="675"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="315"/>
@@ -10,7 +9,7 @@
 	<parameter name="dataInventario" class="java.util.Date"/>
 	<parameter name="flRaggCatGruppo" class="java.lang.Boolean"/>
 	<parameter name="flDettaglioArticolo" class="java.lang.Boolean"/>
-	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
+	<parameter name="DIR_IMAGE" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["D:/iss/SIGLA_FORK_REPORT_ISS/sigla-reports/img/ISS/"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="ordinamento" class="java.lang.String"/>
@@ -19,8 +18,8 @@
 	<parameter name="cdRaggrMag" class="java.lang.String"/>
 	<parameter name="cdCatGrp" class="java.lang.String"/>
 	<parameter name="cdCdsRaggrMag" class="java.lang.String"/>
-	<queryString>
-		<![CDATA[select  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG,c.CD_BENE_SERVIZIO,c.UNITA_MISURA , c.IMPORTO_CMPP_ART,c.GIACENZA,r.DS_RAGGR_MAGAZZINO, cg.CD_CATEGORIA_PADRE as CD_CATEGORIA, cg.CD_PROPRIO as CD_GRUPPO, cg.DS_CATEGORIA_GRUPPO, b.DS_BENE_SERVIZIO
+	<query language="sql"><![CDATA[
+		select  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG,c.CD_BENE_SERVIZIO,c.UNITA_MISURA , c.IMPORTO_CMPP_ART,c.GIACENZA,r.DS_RAGGR_MAGAZZINO, cg.CD_CATEGORIA_PADRE as CD_CATEGORIA, cg.CD_PROPRIO as CD_GRUPPO, cg.DS_CATEGORIA_GRUPPO, b.DS_BENE_SERVIZIO
 from 
 CHIUSURA_ANNO_MAG_RIM c, 
 RAGGR_MAGAZZINO r,
@@ -35,8 +34,8 @@ c.TIPO_CHIUSURA=$P{tipoChiusura} and
 ( (c.CD_RAGGR_MAG=$P{cdRaggrMag} or ('%'=$P{cdRaggrMag} and c.CD_RAGGR_MAG in ('01','02','03','04','05'))) 
 	and (c.CD_CDS_RAGGR_MAG=$P{cdCdsRaggrMag} or '%'=$P{cdCdsRaggrMag}) ) and
 (cg.CD_CATEGORIA_PADRE=$P{cdCatGrp} or  '%'=$P{cdCatGrp})
-order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRIO, c.CD_BENE_SERVIZIO asc]]>
-	</queryString>
+order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRIO, c.CD_BENE_SERVIZIO asc
+	]]></query>
 	<field name="CD_CDS_RAGGR_MAG" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_CDS_RAGGR_MAG"/>
 	</field>
@@ -75,263 +74,209 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 	<sortField name="CD_GRUPPO"/>
 	<sortField name="CD_BENE_SERVIZIO"/>
 	<variable name="giacenzaArticolo" class="java.math.BigDecimal" resetType="Group" resetGroup="Articolo" calculation="Sum">
-		<variableExpression><![CDATA[$F{GIACENZA}]]></variableExpression>
+		<expression><![CDATA[$F{GIACENZA}]]></expression>
 	</variable>
 	<variable name="CmpCategoria" class="java.math.BigDecimal" resetType="Group" resetGroup="Categoria" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
+		<expression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></expression>
 	</variable>
 	<variable name="CmpRaggruppamento" class="java.math.BigDecimal" resetType="Group" resetGroup="RaggMagazzino" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
+		<expression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></expression>
 	</variable>
 	<variable name="CmpTotale" class="java.math.BigDecimal" resetType="Master" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
+		<expression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></expression>
 	</variable>
 	<variable name="orderby" class="java.lang.String">
-		<variableExpression><![CDATA[$P{ordinamento}.equals("C")?"c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRIO, c.CD_BENE_SERVIZIO " : " r.DS_RAGGR_MAGAZZINO,cg.DS_CATEGORIA_GRUPPO , b.DS_BENE_SERVIZIO "]]></variableExpression>
+		<expression><![CDATA[$P{ordinamento}.equals("C")?"c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRIO, c.CD_BENE_SERVIZIO " : " r.DS_RAGGR_MAGAZZINO,cg.DS_CATEGORIA_GRUPPO , b.DS_BENE_SERVIZIO "]]></expression>
 	</variable>
 	<variable name="CmpArticolo" class="java.math.BigDecimal" resetType="Group" resetGroup="Articolo" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></variableExpression>
+		<expression><![CDATA[$F{IMPORTO_CMPP_ART}.multiply($F{GIACENZA})]]></expression>
 	</variable>
 	<group name="Totale">
-		<groupExpression><![CDATA[$V{MASTER_TOTAL_PAGES}]]></groupExpression>
+		<expression><![CDATA[$V{MASTER_TOTAL_PAGES}]]></expression>
 		<groupHeader>
 			<band height="6"/>
 		</groupHeader>
 		<groupFooter>
 			<band height="50">
 				<printWhenExpression><![CDATA[1!=1]]></printWhenExpression>
-				<textField textAdjust="StretchHeight">
-					<reportElement positionType="Float" x="420" y="0" width="130" height="30" printWhenGroupChanges="Totale" uuid="a87db05d-4bf7-4b87-b1a7-30f85ca5842e"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpTotale} )]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement positionType="Float" x="0" y="0" width="420" height="30" printWhenGroupChanges="Totale" uuid="d84925d7-e9d9-492b-adff-78b01db310bf"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA["Tot. Generale "+ "  "]]></textFieldExpression>
-				</textField>
+				<element kind="textField" positionType="Float" x="420" y="0" width="130" height="30" printWhenGroupChanges="Totale" uuid="a87db05d-4bf7-4b87-b1a7-30f85ca5842e" textAdjust="StretchHeight" hTextAlign="Right">
+					<expression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpTotale} )]]></expression>
+				</element>
+				<element kind="textField" positionType="Float" x="0" y="0" width="420" height="30" printWhenGroupChanges="Totale" uuid="d84925d7-e9d9-492b-adff-78b01db310bf" hTextAlign="Right">
+					<expression><![CDATA["Tot. Generale "+ "  "]]></expression>
+				</element>
 			</band>
 		</groupFooter>
 	</group>
 	<group name="RaggMagazzino" preventOrphanFooter="true">
-		<groupExpression><![CDATA[$F{CD_RAGGR_MAG}]]></groupExpression>
+		<expression><![CDATA[$F{CD_RAGGR_MAG}]]></expression>
 		<groupHeader>
 			<band height="59">
-				<frame>
-					<reportElement x="0" y="10" width="550" height="30" uuid="7a26e4f9-9a24-4049-b568-9160e68bc05a"/>
-					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="120" y="0" width="430" height="30" uuid="1dd49127-d2db-48ac-a378-4fd3b8f0485c"/>
+				<element kind="frame" x="0" y="10" width="550" height="30" uuid="7a26e4f9-9a24-4049-b568-9160e68bc05a">
+					<element kind="textField" positionType="Float" stretchType="ElementGroupHeight" x="120" y="0" width="430" height="30" uuid="1dd49127-d2db-48ac-a378-4fd3b8f0485c" textAdjust="StretchHeight" fontSize="16">
 						<box rightPadding="10">
 							<topPen lineWidth="1.0"/>
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement>
-							<font size="16"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{CD_RAGGR_MAG}+" - "+$F{DS_RAGGR_MAGAZZINO}]]></textFieldExpression>
-					</textField>
-					<staticText>
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="120" height="30" uuid="8bff5bd8-e191-4eeb-987d-9de9cd2172b8"/>
+						<expression><![CDATA[$F{CD_RAGGR_MAG}+" - "+$F{DS_RAGGR_MAGAZZINO}]]></expression>
+					</element>
+					<element kind="staticText" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="120" height="30" uuid="8bff5bd8-e191-4eeb-987d-9de9cd2172b8" fontSize="14" bold="true" italic="true">
 						<box>
 							<topPen lineWidth="1.0"/>
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement>
-							<font size="14" isBold="true" isItalic="true"/>
-						</textElement>
 						<text><![CDATA[Raggruppamento]]></text>
-					</staticText>
-					<staticText>
-						<reportElement positionType="Float" x="480" y="29" width="70" height="19" uuid="a4046cc3-c7d9-4919-b521-bbb311771435">
-							<property name="com.jaspersoft.studio.unit.y" value="px"/>
-							<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
-						</reportElement>
+					</element>
+					<element kind="staticText" positionType="Float" x="480" y="29" width="70" height="19" uuid="a4046cc3-c7d9-4919-b521-bbb311771435" hTextAlign="Right" vTextAlign="Middle" rotation="None" fontSize="6" italic="true">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<printWhenExpression><![CDATA[$P{flRaggCatGruppo}]]></printWhenExpression>
 						<box padding="5">
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None">
-							<font size="6" isItalic="true"/>
-						</textElement>
 						<text><![CDATA[C.M.P. Periodo]]></text>
-					</staticText>
-				</frame>
+					</element>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band height="33">
-				<textField>
-					<reportElement positionType="Float" x="0" y="0" width="420" height="30" uuid="716e334a-efb8-48db-8987-284ed7e197a9"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA["Tot. Raggruppamento "+$F{CD_RAGGR_MAG}+"  "]]></textFieldExpression>
-				</textField>
-				<textField textAdjust="StretchHeight">
-					<reportElement positionType="Float" x="420" y="0" width="130" height="30" uuid="181d5c4f-e096-4553-bb4b-3f0cc60be94f">
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpRaggruppamento})]]></textFieldExpression>
-				</textField>
+				<element kind="textField" positionType="Float" x="0" y="0" width="420" height="30" uuid="716e334a-efb8-48db-8987-284ed7e197a9" hTextAlign="Right">
+					<expression><![CDATA["Tot. Raggruppamento "+$F{CD_RAGGR_MAG}+"  "]]></expression>
+				</element>
+				<element kind="textField" positionType="Float" x="420" y="0" width="130" height="30" uuid="181d5c4f-e096-4553-bb4b-3f0cc60be94f" textAdjust="StretchHeight" hTextAlign="Right">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<expression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpRaggruppamento})]]></expression>
+				</element>
 			</band>
 		</groupFooter>
 	</group>
-	<group name="Categoria" isReprintHeaderOnEachPage="true" preventOrphanFooter="true">
-		<groupExpression><![CDATA[$F{CD_CATEGORIA}]]></groupExpression>
+	<group name="Categoria" reprintHeaderOnEachPage="true" preventOrphanFooter="true">
+		<expression><![CDATA[$F{CD_CATEGORIA}]]></expression>
 		<groupHeader>
 			<band height="42">
 				<property name="com.jaspersoft.studio.unit.height" value=""/>
-				<frame>
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="550" height="40" uuid="bcf68684-473a-4504-8e03-c61d961d03b9"/>
+				<element kind="frame" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="550" height="40" uuid="bcf68684-473a-4504-8e03-c61d961d03b9">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<staticText>
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="100" height="40" uuid="763bb8e1-e545-4da3-bfa0-3de2d2ca3151"/>
+					<element kind="staticText" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="100" height="40" uuid="763bb8e1-e545-4da3-bfa0-3de2d2ca3151" hTextAlign="Justified" vTextAlign="Bottom" fontSize="10" bold="false" italic="true">
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
-						<textElement textAlignment="Justified" verticalAlignment="Bottom">
-							<font size="10" isBold="false" isItalic="true"/>
-						</textElement>
 						<text><![CDATA[Categoria]]></text>
-					</staticText>
-					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="100" y="0" width="62" height="40" uuid="95375531-8aa1-479f-b0aa-e88fc065490a"/>
+					</element>
+					<element kind="textField" positionType="Float" stretchType="ElementGroupHeight" x="100" y="0" width="62" height="40" uuid="95375531-8aa1-479f-b0aa-e88fc065490a" textAdjust="StretchHeight" hTextAlign="Justified" vTextAlign="Bottom" fontSize="10">
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
-						<textElement textAlignment="Justified" verticalAlignment="Bottom">
-							<font size="10"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{CD_CATEGORIA}]]></textFieldExpression>
-					</textField>
-					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="200" y="0" width="220" height="40" uuid="8e7c7b2e-523d-4abb-814c-c50b70f3a8ca"/>
+						<expression><![CDATA[$F{CD_CATEGORIA}]]></expression>
+					</element>
+					<element kind="textField" positionType="Float" stretchType="ElementGroupHeight" x="200" y="0" width="220" height="40" uuid="8e7c7b2e-523d-4abb-814c-c50b70f3a8ca" textAdjust="StretchHeight" hTextAlign="Justified" vTextAlign="Bottom" fontSize="10">
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
-						<textElement textAlignment="Justified" verticalAlignment="Bottom">
-							<font size="10"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{DS_CATEGORIA_GRUPPO}]]></textFieldExpression>
-					</textField>
-				</frame>
+						<expression><![CDATA[$F{DS_CATEGORIA_GRUPPO}]]></expression>
+					</element>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band height="37">
-				<textField>
-					<reportElement positionType="Float" x="0" y="1" width="420" height="30" uuid="fe80db40-c905-4fec-9b01-02ddb01eaab2"/>
+				<element kind="textField" positionType="Float" x="0" y="1" width="420" height="30" uuid="fe80db40-c905-4fec-9b01-02ddb01eaab2" hTextAlign="Right">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[$P{flDettaglioArticolo}!=null&&$P{flDettaglioArticolo}?"Tot. Categoria "+$F{CD_CATEGORIA}+"  " : ""]]></textFieldExpression>
-				</textField>
-				<textField textAdjust="StretchHeight">
-					<reportElement positionType="Float" x="420" y="1" width="130" height="30" uuid="c17006a7-6236-402c-8d1b-dc694fc6c7f8">
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
+					<expression><![CDATA[$P{flDettaglioArticolo}!=null&&$P{flDettaglioArticolo}?"Tot. Categoria "+$F{CD_CATEGORIA}+"  " : ""]]></expression>
+				</element>
+				<element kind="textField" positionType="Float" x="420" y="1" width="130" height="30" uuid="c17006a7-6236-402c-8d1b-dc694fc6c7f8" textAdjust="StretchHeight" hTextAlign="Right">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpCategoria})]]></textFieldExpression>
-				</textField>
+					<expression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpCategoria})]]></expression>
+				</element>
 			</band>
 		</groupFooter>
 	</group>
-	<group name="Gruppo" isReprintHeaderOnEachPage="true" preventOrphanFooter="true">
-		<groupExpression><![CDATA[$F{CD_CATEGORIA}]]></groupExpression>
+	<group name="Gruppo" reprintHeaderOnEachPage="true" preventOrphanFooter="true">
+		<expression><![CDATA[$F{CD_CATEGORIA}]]></expression>
 		<groupHeader>
 			<band height="33">
 				<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
-				<staticText>
-					<reportElement positionType="Float" x="420" y="0" width="130" height="31" uuid="f9c2ff37-e5ac-470e-bc93-8d5f8654e7ba">
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
+				<element kind="staticText" positionType="Float" x="420" y="0" width="130" height="31" uuid="f9c2ff37-e5ac-470e-bc93-8d5f8654e7ba" hTextAlign="Right" vTextAlign="Middle">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<box padding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
 					<text><![CDATA[C.M.P. Periodo]]></text>
-				</staticText>
-				<staticText>
-					<reportElement positionType="Float" x="239" y="0" width="181" height="31" uuid="a6b0bdb5-408e-4cfd-831f-2fea303b2ce8"/>
+				</element>
+				<element kind="staticText" positionType="Float" x="239" y="0" width="181" height="31" uuid="a6b0bdb5-408e-4cfd-831f-2fea303b2ce8" hTextAlign="Right" vTextAlign="Middle">
 					<box padding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
 					<text><![CDATA[Quantità]]></text>
-				</staticText>
-				<staticText>
-					<reportElement positionType="Float" x="60" y="0" width="140" height="31" uuid="39042c81-d6f2-4684-9a96-d0dbb8d39c2d">
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
+				</element>
+				<element kind="staticText" positionType="Float" x="60" y="0" width="140" height="31" uuid="39042c81-d6f2-4684-9a96-d0dbb8d39c2d" hTextAlign="Justified" vTextAlign="Middle">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<box padding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
 					<text><![CDATA[Descrizione]]></text>
-				</staticText>
-				<staticText>
-					<reportElement positionType="Float" x="0" y="0" width="60" height="31" uuid="b4aacf4e-2568-4959-892b-c9a1c1a753e5"/>
+				</element>
+				<element kind="staticText" positionType="Float" x="0" y="0" width="60" height="31" uuid="b4aacf4e-2568-4959-892b-c9a1c1a753e5" hTextAlign="Justified" vTextAlign="Middle">
 					<box padding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
 					<text><![CDATA[Articolo]]></text>
-				</staticText>
-				<staticText>
-					<reportElement positionType="Float" x="200" y="0" width="39" height="31" uuid="2108a62c-fc7d-4941-9e79-0b6aa1bd1888">
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
+				</element>
+				<element kind="staticText" positionType="Float" x="200" y="0" width="39" height="31" uuid="2108a62c-fc7d-4941-9e79-0b6aa1bd1888" hTextAlign="Justified" vTextAlign="Middle">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<box padding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Justified" verticalAlignment="Middle"/>
 					<text><![CDATA[U.M.]]></text>
-				</staticText>
+				</element>
 			</band>
 		</groupHeader>
 	</group>
 	<group name="Articolo" preventOrphanFooter="true">
-		<groupExpression><![CDATA[$F{CD_BENE_SERVIZIO}]]></groupExpression>
+		<expression><![CDATA[$F{CD_BENE_SERVIZIO}]]></expression>
 		<groupHeader>
 			<band>
 				<property name="com.jaspersoft.studio.unit.height" value=""/>
@@ -340,84 +285,59 @@ order by  c.CD_CDS_RAGGR_MAG,c.CD_RAGGR_MAG, cg.CD_CATEGORIA_PADRE, cg.CD_PROPRI
 		<groupFooter>
 			<band height="36" splitType="Prevent">
 				<printWhenExpression><![CDATA[$P{flDettaglioArticolo}]]></printWhenExpression>
-				<frame>
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="-2" width="550" height="30" uuid="bc9980ac-49b6-4cfb-ab1a-e9d37d4722bb">
-						<property name="ShowOutOfBoundContent" value="true"/>
-					</reportElement>
-					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="239" y="0" width="181" height="30" uuid="d17c53a7-5145-4af5-a324-7c5eacdf15a3"/>
+				<element kind="frame" positionType="Float" stretchType="ElementGroupHeight" x="0" y="-2" width="550" height="30" uuid="bc9980ac-49b6-4cfb-ab1a-e9d37d4722bb">
+					<property name="ShowOutOfBoundContent" value="true"/>
+					<element kind="textField" positionType="Float" stretchType="ElementGroupHeight" x="239" y="0" width="181" height="30" uuid="d17c53a7-5145-4af5-a324-7c5eacdf15a3" textAdjust="StretchHeight" hTextAlign="Right" vTextAlign="Middle">
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[$V{giacenzaArticolo}]]></textFieldExpression>
-					</textField>
-					<textField textAdjust="StretchHeight">
-						<reportElement key="" positionType="Float" stretchType="ElementGroupHeight" x="420" y="0" width="130" height="30" uuid="73ec9610-7739-414f-83ce-b461973a775b"/>
+						<expression><![CDATA[$V{giacenzaArticolo}]]></expression>
+					</element>
+					<element kind="textField" key="" positionType="Float" stretchType="ElementGroupHeight" x="420" y="0" width="130" height="30" uuid="73ec9610-7739-414f-83ce-b461973a775b" textAdjust="StretchHeight" hTextAlign="Right" vTextAlign="Middle">
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Right" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpArticolo})]]></textFieldExpression>
-					</textField>
-					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="2" width="60" height="28" uuid="996cf5ed-f080-46f9-848a-a7786540a753"/>
+						<expression><![CDATA[new DecimalFormat("#,##0.00").format($V{CmpArticolo})]]></expression>
+					</element>
+					<element kind="textField" positionType="Float" stretchType="ElementGroupHeight" x="0" y="2" width="60" height="28" uuid="996cf5ed-f080-46f9-848a-a7786540a753" textAdjust="StretchHeight" hTextAlign="Justified" vTextAlign="Middle">
 						<box padding="5">
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
-						<textElement textAlignment="Justified" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[$F{CD_BENE_SERVIZIO}]]></textFieldExpression>
-					</textField>
-					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="60" y="2" width="140" height="28" uuid="d618fc79-3413-434d-a667-7eb6ce2a7257"/>
+						<expression><![CDATA[$F{CD_BENE_SERVIZIO}]]></expression>
+					</element>
+					<element kind="textField" positionType="Float" stretchType="ElementGroupHeight" x="60" y="2" width="140" height="28" uuid="d618fc79-3413-434d-a667-7eb6ce2a7257" textAdjust="StretchHeight" hTextAlign="Left" vTextAlign="Middle">
 						<box padding="5">
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
-						<textElement textAlignment="Left" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[$F{DS_BENE_SERVIZIO}]]></textFieldExpression>
-					</textField>
-					<textField textAdjust="StretchHeight">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="200" y="0" width="39" height="30" uuid="b748c039-e15f-479b-8e14-b76f60f7d917"/>
+						<expression><![CDATA[$F{DS_BENE_SERVIZIO}]]></expression>
+					</element>
+					<element kind="textField" positionType="Float" stretchType="ElementGroupHeight" x="200" y="0" width="39" height="30" uuid="b748c039-e15f-479b-8e14-b76f60f7d917" textAdjust="StretchHeight" hTextAlign="Justified" vTextAlign="Middle">
 						<box padding="5">
 							<bottomPen lineWidth="1.0"/>
 						</box>
-						<textElement textAlignment="Justified" verticalAlignment="Middle"/>
-						<textFieldExpression><![CDATA[$F{UNITA_MISURA}]]></textFieldExpression>
-					</textField>
-				</frame>
+						<expression><![CDATA[$F{UNITA_MISURA}]]></expression>
+					</element>
+				</element>
 			</band>
 		</groupFooter>
 	</group>
-	<pageHeader>
-		<band height="44">
-			<textField>
-				<reportElement x="0" y="10" width="550" height="30" uuid="5bf77e6e-8e9e-4abf-b9ce-c789da480e84"/>
-				<textElement>
-					<font size="18" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Valorizzazione Rimanenze al : "+new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{dataInventario})]]></textFieldExpression>
-			</textField>
-		</band>
+	<pageHeader height="44">
+		<element kind="textField" x="0" y="10" width="550" height="30" uuid="5bf77e6e-8e9e-4abf-b9ce-c789da480e84" fontSize="18" bold="true">
+			<expression><![CDATA["Valorizzazione Rimanenze al : "+new java.text.SimpleDateFormat("dd-MM-yyyy").format($P{dataInventario})]]></expression>
+		</element>
 	</pageHeader>
-	<noData>
-		<band height="86">
-			<staticText>
-				<reportElement positionType="Float" x="360" y="0" width="190" height="30" uuid="644e76a7-8cc2-4f03-8562-2a5521d06341"/>
-				<textElement>
-					<font size="14"/>
-				</textElement>
-				<text><![CDATA[Istituto Superiore Sanita`]]></text>
-			</staticText>
-			<staticText>
-				<reportElement positionType="Float" x="166" y="40" width="218" height="30" uuid="19b4422e-f150-4939-8a7e-5ff5174044fb"/>
-				<text><![CDATA[Nessun dato da stampare]]></text>
-			</staticText>
-		</band>
+	<noData height="86">
+		<element kind="staticText" positionType="Float" x="360" y="0" width="190" height="30" uuid="644e76a7-8cc2-4f03-8562-2a5521d06341" fontSize="14">
+			<text><![CDATA[Istituto Superiore Sanita`]]></text>
+		</element>
+		<element kind="staticText" positionType="Float" x="166" y="40" width="218" height="30" uuid="19b4422e-f150-4939-8a7e-5ff5174044fb">
+			<text><![CDATA[Nessun dato da stampare]]></text>
+		</element>
 	</noData>
 </jasperReport>

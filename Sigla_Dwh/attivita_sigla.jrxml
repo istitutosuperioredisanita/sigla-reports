@@ -1,301 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"  ?>
-<!-- Created with iReport - A designer for JasperReports -->
-<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-<jasperReport
-		 name="attivita_sigla"
-		 columnCount="1"
-		 printOrder="Vertical"
-		 orientation="Landscape"
-		 pageWidth="842"
-		 pageHeight="595"
-		 columnWidth="802"
-		 columnSpacing="0"
-		 leftMargin="20"
-		 rightMargin="20"
-		 topMargin="20"
-		 bottomMargin="20"
-		 whenNoDataType="NoPages"
-		 isTitleNewPage="false"
-		 isSummaryNewPage="false">
-	<property name="ireport.scriptlethandling" value="0" />
-	<property name="ireport.encoding" value="UTF-8" />
-	<import value="java.util.*" />
-	<import value="net.sf.jasperreports.engine.*" />
-	<import value="net.sf.jasperreports.engine.data.*" />
-
-	<style 
-		name="TNR6"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="6"
-		pdfFontName="Times-Roman"
-	>
-	</style>
-	<style 
-		name="TNRG6"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="6"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	>
-	</style>
-	<style 
-		name="TNRC6"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="6"
-		isItalic="true"
-		pdfFontName="Times-Italic"
-	>
-	</style>
-	<style 
-		name="TNRGC6"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="6"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	>
-	</style>
-	<style 
-		name="TNR7"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="7"
-		pdfFontName="Times-Roman"
-	>
-	</style>
-	<style 
-		name="TNRG7"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="7"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	>
-	</style>
-	<style 
-		name="TNRC7"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="7"
-		isItalic="true"
-		pdfFontName="Times-Italic"
-	>
-	</style>
-	<style 
-		name="TNRGC7"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="7"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	>
-	</style>
-	<style 
-		name="TNR8"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="8"
-		pdfFontName="Times-Roman"
-	>
-	</style>
-	<style 
-		name="TNRG8"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="8"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	>
-	</style>
-	<style 
-		name="TNR9"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="9"
-		pdfFontName="Times-Roman"
-	>
-	</style>
-	<style 
-		name="TNRG9"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="9"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	>
-	</style>
-	<style 
-		name="TNRC9"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="9"
-		isItalic="true"
-		pdfFontName="Times-Italic"
-	>
-	</style>
-	<style 
-		name="TNRGC9"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="9"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	>
-	</style>
-	<style 
-		name="TNR10"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="10"
-		pdfFontName="Times-Roman"
-	>
-	</style>
-	<style 
-		name="TNRG10"
-		isDefault="false"
-		fontName="Times New Roman"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	>
-	</style>
-	<style 
-		name="TNRC10"
-		isDefault="false"
-		fontName="Times New Roman"
-		isItalic="true"
-		pdfFontName="Times-Italic"
-	>
-	</style>
-	<style 
-		name="TNRGC12"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="12"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	>
-	</style>
-	<style 
-		name="TNRG12"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="12"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	>
-	</style>
-	<style 
-		name="TNRGC14"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="14"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	>
-	</style>
-	<style 
-		name="TNRG14"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="14"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	>
-	</style>
-	<style 
-		name="TNRGC16"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="16"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	>
-	</style>
-	<style 
-		name="TNRG16"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="16"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	>
-	</style>
-	<style 
-		name="TNRC16"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="16"
-		isItalic="true"
-		pdfFontName="Times-Italic"
-	>
-	</style>
-	<style 
-		name="TNR16"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="16"
-		pdfFontName="Times-Roman"
-	>
-	</style>
-
-	<parameter name="Esercizio" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["2009"]]></defaultValueExpression>
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="attivita_sigla" columnCount="1" printOrder="Vertical" orientation="Landscape" pageWidth="842" pageHeight="595" columnWidth="802" columnSpacing="0" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenNoDataType="NoPages" titleNewPage="false" summaryNewPage="false" language="java">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<style name="TNR6" default="false" fontName="Times New Roman" fontSize="6" pdfFontName="Times-Roman"/>
+	<style name="TNRG6" default="false" fontName="Times New Roman" fontSize="6" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC6" default="false" fontName="Times New Roman" fontSize="6" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRGC6" default="false" fontName="Times New Roman" fontSize="6" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNR7" default="false" fontName="Times New Roman" fontSize="7" pdfFontName="Times-Roman"/>
+	<style name="TNRG7" default="false" fontName="Times New Roman" fontSize="7" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC7" default="false" fontName="Times New Roman" fontSize="7" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRGC7" default="false" fontName="Times New Roman" fontSize="7" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNR8" default="false" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
+	<style name="TNRG8" default="false" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR9" default="false" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman"/>
+	<style name="TNRG9" default="false" fontName="Times New Roman" fontSize="9" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC9" default="false" fontName="Times New Roman" fontSize="9" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRGC9" default="false" fontName="Times New Roman" fontSize="9" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNR10" default="false" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
+	<style name="TNRG10" default="false" fontName="Times New Roman" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC10" default="false" fontName="Times New Roman" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRGC12" default="false" fontName="Times New Roman" fontSize="12" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRG12" default="false" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRGC14" default="false" fontName="Times New Roman" fontSize="14" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRG14" default="false" fontName="Times New Roman" fontSize="14" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRGC16" default="false" fontName="Times New Roman" fontSize="16" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRG16" default="false" fontName="Times New Roman" fontSize="16" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC16" default="false" fontName="Times New Roman" fontSize="16" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNR16" default="false" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman"/>
+	<parameter name="Esercizio" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2009"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Tipo" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA[new String ("%")]]></defaultValueExpression>
+	<parameter name="Tipo" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA[new String ("%")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Stato" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA[new String ("%")]]></defaultValueExpression>
+	<parameter name="Stato" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA[new String ("%")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Responsabile" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["%"]]></defaultValueExpression>
+	<parameter name="Responsabile" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Stato_analisi" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Stato_analisi" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Stato_sviluppo" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Stato_sviluppo" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Stato_test" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Stato_test" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Stato_rilasciato" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Stato_rilasciato" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Tipo_att_correttiva" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Tipo_att_correttiva" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Tipo_att_evolutiva" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Tipo_att_evolutiva" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Tipo_att_manutentiva" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Tipo_att_manutentiva" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Tipo_att_estrazione_dati" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Tipo_att_estrazione_dati" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Tipo_att_supporto_gestione" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Tipo_att_supporto_gestione" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Stato_iniziale" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Stato_iniziale" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="SUBREPORT_DIR" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	<parameter name="SUBREPORT_DIR" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Stato_differito" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["true"]]></defaultValueExpression>
+	<parameter name="Stato_differito" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["true"]]></defaultValueExpression>
 	</parameter>
-	<queryString><![CDATA[select a.*,t1.cd_terzo cd1,t1.denominazione_sede ds1,
+	<query language="sql"><![CDATA[select a.*,t1.cd_terzo cd1,t1.denominazione_sede ds1,
 t2.denominazione_sede ds2,
 t3.denominazione_sede ds3,
 t4.denominazione_sede ds4,
@@ -325,8 +108,7 @@ and ((a.tipo_attivita='C' and $P{Tipo_att_correttiva}='true')
 or (a.tipo_attivita='E' and $P{Tipo_att_evolutiva}='true')
 or (a.tipo_attivita='M' and $P{Tipo_att_manutentiva}='true')
 or (a.tipo_attivita='D' and $P{Tipo_att_estrazione_dati}='true')
-or (a.tipo_attivita='G' and $P{Tipo_att_supporto_gestione}='true'))]]></queryString>
-
+or (a.tipo_attivita='G' and $P{Tipo_att_supporto_gestione}='true'))]]></query>
 	<field name="ESERCIZIO" class="java.math.BigDecimal"/>
 	<field name="PG_ATTIVITA" class="java.math.BigDecimal"/>
 	<field name="PROTOCOLLO" class="java.lang.String"/>
@@ -366,594 +148,209 @@ or (a.tipo_attivita='G' and $P{Tipo_att_supporto_gestione}='true'))]]></queryStr
 	<field name="DS4" class="java.lang.String"/>
 	<field name="DS5" class="java.lang.String"/>
 	<field name="DS6" class="java.lang.String"/>
-
-	<sortField name="ESERCIZIO" />
-	<sortField name="PG_ATTIVITA" />
-
-		<background>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</background>
-		<title>
-			<band height="78"  isSplitAllowed="true" >
-				<staticText>
-					<reportElement
-						style="TNRGC14"
-						x="0"
-						y="0"
-						width="802"
-						height="18"
-						key="staticText-1"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-BoldOblique" isBold="true" isItalic="true"/>
-					</textElement>
-				<text><![CDATA[Attività Sigla]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR9"
-						x="0"
-						y="18"
-						width="100"
-						height="12"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["Esercizio: "+($P{Esercizio}.equals("%")?"Tutti":$P{Esercizio})]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR9"
-						x="0"
-						y="30"
-						width="802"
-						height="12"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["Tipo Attività: "+
+	<sortField name="ESERCIZIO"/>
+	<sortField name="PG_ATTIVITA"/>
+	<background height="0" splitAllowed="true"/>
+	<title height="78" splitAllowed="true">
+		<element kind="staticText" style="TNRGC14" x="0" y="0" width="802" height="18" key="staticText-1" hTextAlign="Center" pdfFontName="Helvetica-BoldOblique" bold="true" italic="true">
+			<box/>
+			<text><![CDATA[Attività Sigla]]></text>
+		</element>
+		<element kind="textField" textAdjust="StretchHeight" style="TNR9" x="0" y="18" width="100" height="12" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+			<box/>
+			<expression><![CDATA["Esercizio: "+($P{Esercizio}.equals("%")?"Tutti":$P{Esercizio})]]></expression>
+		</element>
+		<element kind="textField" textAdjust="StretchHeight" style="TNR9" x="0" y="30" width="802" height="12" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+			<box/>
+			<expression><![CDATA["Tipo Attività: "+
 ($P{Tipo_att_correttiva}.equals("true") ? "Correttiva - " :"")+
 ($P{Tipo_att_evolutiva}.equals("true")? "Evolutiva - ":"")+
 ($P{Tipo_att_manutentiva}.equals("true")? "Manutentiva - ":"")+
 ($P{Tipo_att_estrazione_dati}.equals("true")? "Estrazione Dati - " :"")+
-($P{Tipo_att_supporto_gestione}.equals("true")? "Supporto Gestione":"")]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR9"
-						x="0"
-						y="42"
-						width="802"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["Stato: "+
+($P{Tipo_att_supporto_gestione}.equals("true")? "Supporto Gestione":"")]]></expression>
+		</element>
+		<element kind="textField" style="TNR9" x="0" y="42" width="802" height="11" key="textField" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+			<box/>
+			<expression><![CDATA["Stato: "+
 ($P{Stato_iniziale}.equals("true")? "Iniziale - ":"")+
 ($P{Stato_analisi}.equals("true") ? "Analisi - " :"")+
 ($P{Stato_sviluppo}.equals("true")? "Sviluppo - ":"")+
 ($P{Stato_test}.equals("true")? "Test - ":"")+
-($P{Stato_rilasciato}.equals("true")? "Rilasciato" :"")]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR9"
-						x="0"
-						y="53"
-						width="802"
-						height="13"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["Responsabile: "+($P{Responsabile}.equals($F{CD_RESPONSABILE_1})?$F{DS1}:
+($P{Stato_rilasciato}.equals("true")? "Rilasciato" :"")]]></expression>
+		</element>
+		<element kind="textField" textAdjust="StretchHeight" style="TNR9" x="0" y="53" width="802" height="13" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+			<box/>
+			<expression><![CDATA["Responsabile: "+($P{Responsabile}.equals($F{CD_RESPONSABILE_1})?$F{DS1}:
 ($P{Responsabile}.equals($F{CD_RESPONSABILE_2})?$F{DS2}:
 ($P{Responsabile}.equals($F{CD_RESPONSABILE_3})?$F{DS3}:
 ($P{Responsabile}.equals($F{CD_RESPONSABILE_4})?$F{DS4}:
 ($P{Responsabile}.equals($F{CD_RESPONSABILE_5})?$F{DS5}:
-($P{Responsabile}.equals($F{CD_RESPONSABILE_6})?$F{DS6}:"Tutti"))))))]]></textFieldExpression>
-				</textField>
-				<line direction="TopDown">
-					<reportElement
-						x="0"
-						y="71"
-						width="802"
-						height="0"
-						key="line-1"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-			</band>
-		</title>
-		<pageHeader>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</pageHeader>
-		<columnHeader>
-			<band height="30"  isSplitAllowed="true" >
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="0"
-						y="0"
-						width="32"
-						height="17"
-						key="staticText-2"/>
-					<box></box>
-					<textElement textAlignment="Justified">
-						<font/>
-					</textElement>
-				<text><![CDATA[N.]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="32"
-						y="0"
-						width="45"
-						height="17"
-						key="staticText-3"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Protocollo]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="86"
-						y="0"
-						width="39"
-						height="30"
-						key="staticText-4"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Data Richiesta]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="126"
-						y="0"
-						width="64"
-						height="17"
-						key="staticText-5"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Richiedente]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="199"
-						y="0"
-						width="64"
-						height="17"
-						key="staticText-6"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Descrizione]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="317"
-						y="0"
-						width="64"
-						height="17"
-						key="staticText-7"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Note]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="435"
-						y="0"
-						width="21"
-						height="17"
-						key="staticText-8"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Priorità]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="458"
-						y="0"
-						width="36"
-						height="30"
-						key="staticText-10"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Data Massima]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="498"
-						y="0"
-						width="52"
-						height="17"
-						key="staticText-11"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Stato]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="551"
-						y="0"
-						width="55"
-						height="17"
-						key="staticText-12"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Tipo]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="607"
-						y="0"
-						width="36"
-						height="30"
-						key="staticText-13"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Data Inizio]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="644"
-						y="0"
-						width="30"
-						height="30"
-						key="staticText-14"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Data Fine]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="681"
-						y="0"
-						width="55"
-						height="17"
-						key="staticText-15"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Responsabile]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR9"
-						x="774"
-						y="0"
-						width="28"
-						height="17"
-						key="staticText-16"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<text><![CDATA[Id. Bug]]></text>
-				</staticText>
-			</band>
-		</columnHeader>
-		<detail>
-			<band height="21"  isSplitAllowed="false" >
-				<textField isStretchWithOverflow="true" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="0"
-						y="6"
-						width="27"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PG_ATTIVITA}+"/"+$F{ESERCIZIO}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="28"
-						y="6"
-						width="58"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROTOCOLLO}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="86"
-						y="6"
-						width="39"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{DT_ATTIVITA}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="126"
-						y="6"
-						width="72"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{RICHIEDENTE}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="199"
-						y="6"
-						width="114"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DS_ATTIVITA}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="317"
-						y="6"
-						width="112"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NOTE}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="435"
-						y="6"
-						width="21"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PRIORITA}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="458"
-						y="6"
-						width="36"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{DT_CONSEGNA}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="498"
-						y="6"
-						width="52"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[($F{STATO}.equals("I")?"":
+($P{Responsabile}.equals($F{CD_RESPONSABILE_6})?$F{DS6}:"Tutti"))))))]]></expression>
+		</element>
+		<element kind="line" x="0" y="71" width="802" height="0" key="line-1" direction="TopDown"/>
+	</title>
+	<pageHeader height="0" splitAllowed="true"/>
+	<columnHeader height="30" splitAllowed="true">
+		<element kind="staticText" style="TNR9" x="0" y="0" width="32" height="17" key="staticText-2" hTextAlign="Justified">
+			<box/>
+			<text><![CDATA[N.]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="32" y="0" width="45" height="17" key="staticText-3">
+			<box/>
+			<text><![CDATA[Protocollo]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="86" y="0" width="39" height="30" key="staticText-4">
+			<box/>
+			<text><![CDATA[Data Richiesta]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="126" y="0" width="64" height="17" key="staticText-5">
+			<box/>
+			<text><![CDATA[Richiedente]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="199" y="0" width="64" height="17" key="staticText-6">
+			<box/>
+			<text><![CDATA[Descrizione]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="317" y="0" width="64" height="17" key="staticText-7">
+			<box/>
+			<text><![CDATA[Note]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="435" y="0" width="21" height="17" key="staticText-8">
+			<box/>
+			<text><![CDATA[Priorità]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="458" y="0" width="36" height="30" key="staticText-10">
+			<box/>
+			<text><![CDATA[Data Massima]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="498" y="0" width="52" height="17" key="staticText-11">
+			<box/>
+			<text><![CDATA[Stato]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="551" y="0" width="55" height="17" key="staticText-12">
+			<box/>
+			<text><![CDATA[Tipo]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="607" y="0" width="36" height="30" key="staticText-13">
+			<box/>
+			<text><![CDATA[Data Inizio]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="644" y="0" width="30" height="30" key="staticText-14">
+			<box/>
+			<text><![CDATA[Data Fine]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="681" y="0" width="55" height="17" key="staticText-15">
+			<box/>
+			<text><![CDATA[Responsabile]]></text>
+		</element>
+		<element kind="staticText" style="TNR9" x="774" y="0" width="28" height="17" key="staticText-16" hTextAlign="Center">
+			<box/>
+			<text><![CDATA[Id. Bug]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="21" splitAllowed="false">
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="0" y="6" width="27" height="11" key="textField" pattern="###0" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<box/>
+				<expression><![CDATA[$F{PG_ATTIVITA}+"/"+$F{ESERCIZIO}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="28" y="6" width="58" height="11" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<box/>
+				<expression><![CDATA[$F{PROTOCOLLO}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="86" y="6" width="39" height="11" key="textField" pattern="dd/MM/yy" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<box/>
+				<expression><![CDATA[$F{DT_ATTIVITA}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="126" y="6" width="72" height="11" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<box/>
+				<expression><![CDATA[$F{RICHIEDENTE}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="199" y="6" width="114" height="11" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<box/>
+				<expression><![CDATA[$F{DS_ATTIVITA}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="317" y="6" width="112" height="11" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<box/>
+				<expression><![CDATA[$F{NOTE}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="435" y="6" width="21" height="11" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<box/>
+				<expression><![CDATA[$F{PRIORITA}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="458" y="6" width="36" height="11" key="textField" pattern="dd/MM/yy" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<box/>
+				<expression><![CDATA[$F{DT_CONSEGNA}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="498" y="6" width="52" height="11" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<box/>
+				<expression><![CDATA[($F{STATO}.equals("I")?"":
 ($F{STATO}.equals("A")?"Analisi":
 ($F{STATO}.equals("S")?"Sviluppo":
 ($F{STATO}.equals("T")?"Test":
 ($F{STATO}.equals("R")?"Rilasciata":
-($F{STATO}.equals("D")?"Differito":""))))))]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="551"
-						y="6"
-						width="55"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[($F{TIPO_ATTIVITA}.equals("C")?"Correttiva":
+($F{STATO}.equals("D")?"Differito":""))))))]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="551" y="6" width="55" height="11" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<box/>
+				<expression><![CDATA[($F{TIPO_ATTIVITA}.equals("C")?"Correttiva":
 ($F{TIPO_ATTIVITA}.equals("E")?"Evolutiva": 
 ($F{TIPO_ATTIVITA}.equals("M")?"Manutentiva": 
 ($F{TIPO_ATTIVITA}.equals("G")?"Supporto alla Gestione": 
-($F{TIPO_ATTIVITA}.equals("D")?"Estrazione dati":"")))))]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="607"
-						y="6"
-						width="36"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{DT_INIZIO_ATTIVITA}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="681"
-						y="6"
-						width="93"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[($F{DS1}==null?"":$F{DS1})+
+($F{TIPO_ATTIVITA}.equals("D")?"Estrazione dati":"")))))]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="607" y="6" width="36" height="11" key="textField" pattern="dd/MM/yy" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<box/>
+				<expression><![CDATA[$F{DT_INIZIO_ATTIVITA}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="681" y="6" width="93" height="11" key="textField" pattern="##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<box/>
+				<expression><![CDATA[($F{DS1}==null?"":$F{DS1})+
 ($F{DS2}==null?"":'-'+$F{DS2})+
 ($F{DS3}==null?"":'-'+$F{DS3})+
 ($F{DS4}==null?"":'-'+$F{DS4})+
 ($F{DS5}==null?"":'-'+$F{DS5})+
-($F{DS6}==null?"":'-'+$F{DS6})]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="644"
-						y="6"
-						width="36"
-						height="11"
-						key="textField-1"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{DT_FINE_ATTIVITA}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR8"
-						x="774"
-						y="6"
-						width="28"
-						height="11"
-						key="textField"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ID_BUGZILLA}]]></textFieldExpression>
-				</textField>
-			</band>
-		</detail>
-		<columnFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnFooter>
-		<pageFooter>
-			<band height="22"  isSplitAllowed="true" >
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNRG9"
-						x="740"
-						y="9"
-						width="55"
-						height="12"
-						key="textField-2"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNRG9"
-						x="640"
-						y="9"
-						width="100"
-						height="12"
-						key="textField-3"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Right">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy HH.mm.ss" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNRG9"
-						x="0"
-						y="9"
-						width="172"
-						height="12"
-						key="textField-4"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["Data di stampa "+ new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></textFieldExpression>
-				</textField>
-			</band>
-		</pageFooter>
-		<summary>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</summary>
+($F{DS6}==null?"":'-'+$F{DS6})]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="644" y="6" width="36" height="11" key="textField-1" pattern="dd/MM/yy" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<box/>
+				<expression><![CDATA[$F{DT_FINE_ATTIVITA}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR8" x="774" y="6" width="28" height="11" key="textField" pattern="###0" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<box/>
+				<expression><![CDATA[$F{ID_BUGZILLA}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="0" splitAllowed="true"/>
+	<pageFooter height="22" splitAllowed="true">
+		<element kind="textField" style="TNRG9" x="740" y="9" width="55" height="12" key="textField-2" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
+		</element>
+		<element kind="textField" style="TNRG9" x="640" y="9" width="100" height="12" key="textField-3" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
+		</element>
+		<element kind="textField" style="TNRG9" x="0" y="9" width="172" height="12" key="textField-4" pattern="dd/MM/yyyy HH.mm.ss" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Data di stampa "+ new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="0" splitAllowed="true"/>
 </jasperReport>

@@ -1,234 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rimodula_ppe_anno_sub" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ed4c3ee2-64bb-4905-8efa-d1579b9f05c9">
+<jasperReport name="rimodula_ppe_anno_sub" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ed4c3ee2-64bb-4905-8efa-d1579b9f05c9" language="java">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<style name="VER6" fontName="Times New Roman" fontSize="6" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI6" fontName="Times New Roman" fontSize="6" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB6" fontName="Times New Roman" fontSize="6" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER7" fontName="Times New Roman" fontSize="7" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI7" fontName="Times New Roman" fontSize="7" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB7" fontName="Times New Roman" fontSize="7" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB8" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI8" fontName="Times New Roman" fontSize="8" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB12" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI14" fontName="Times New Roman" fontSize="14" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER16" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB20" fontName="Times New Roman" fontSize="20" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB10" fontName="Times New Roman" fontSize="10" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+	<style name="VER6" fontName="Times New Roman" fontSize="6" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI6" fontName="Times New Roman" fontSize="6" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB6" fontName="Times New Roman" fontSize="6" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER7" fontName="Times New Roman" fontSize="7" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI7" fontName="Times New Roman" fontSize="7" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB7" fontName="Times New Roman" fontSize="7" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB8" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI8" fontName="Times New Roman" fontSize="8" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB12" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI14" fontName="Times New Roman" fontSize="14" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER16" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB20" fontName="Times New Roman" fontSize="20" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB10" fontName="Times New Roman" fontSize="10" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman" pdfEmbedded="true"/>
 	<parameter name="P_ANNO" class="java.lang.String"/>
-	<queryString language="json">
-		<![CDATA[]]>
-	</queryString>
+	<query language="json"/>
 	<field name="cdVoce" class="java.lang.String">
-		<fieldDescription><![CDATA[cdVoce]]></fieldDescription>
+		<description><![CDATA[cdVoce]]></description>
 	</field>
 	<field name="dsVoce" class="java.lang.String">
-		<fieldDescription><![CDATA[dsVoce]]></fieldDescription>
+		<description><![CDATA[dsVoce]]></description>
 	</field>
 	<field name="quotaFinanziataCorrente" class="java.lang.String">
-		<fieldDescription><![CDATA[quotaFinanziataCorrente]]></fieldDescription>
+		<description><![CDATA[quotaFinanziataCorrente]]></description>
 	</field>
 	<field name="quotaFinanziataRimodulata" class="java.lang.String">
-		<fieldDescription><![CDATA[quotaFinanziataRimodulata]]></fieldDescription>
+		<description><![CDATA[quotaFinanziataRimodulata]]></description>
 	</field>
 	<field name="quotaFinanziataStanziata" class="java.lang.String">
-		<fieldDescription><![CDATA[quotaFinanziataStanziata]]></fieldDescription>
+		<description><![CDATA[quotaFinanziataStanziata]]></description>
 	</field>
 	<field name="quotaFinanziataPagata" class="java.lang.String">
-		<fieldDescription><![CDATA[quotaFinanziataPagata]]></fieldDescription>
+		<description><![CDATA[quotaFinanziataPagata]]></description>
 	</field>
 	<field name="quotaCofinanziataCorrente" class="java.lang.String">
-		<fieldDescription><![CDATA[quotaCofinanziataCorrente]]></fieldDescription>
+		<description><![CDATA[quotaCofinanziataCorrente]]></description>
 	</field>
 	<field name="quotaCofinanziataRimodulata" class="java.lang.String">
-		<fieldDescription><![CDATA[quotaCofinanziataRimodulata]]></fieldDescription>
+		<description><![CDATA[quotaCofinanziataRimodulata]]></description>
 	</field>
 	<field name="quotaCofinanziataStanziata" class="java.lang.String">
-		<fieldDescription><![CDATA[quotaCofinanziataStanziata]]></fieldDescription>
+		<description><![CDATA[quotaCofinanziataStanziata]]></description>
 	</field>
 	<field name="quotaCofinanziataPagata" class="java.lang.String">
-		<fieldDescription><![CDATA[quotaCofinanziataPagata]]></fieldDescription>
+		<description><![CDATA[quotaCofinanziataPagata]]></description>
 	</field>
 	<variable name="varQuotaFinanziataCorrente" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[new BigDecimal($F{quotaFinanziataCorrente})]]></variableExpression>
+		<expression><![CDATA[new BigDecimal($F{quotaFinanziataCorrente})]]></expression>
 	</variable>
 	<variable name="varQuotaFinanziataRimodulata" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[new BigDecimal($F{quotaFinanziataRimodulata})]]></variableExpression>
+		<expression><![CDATA[new BigDecimal($F{quotaFinanziataRimodulata})]]></expression>
 	</variable>
 	<variable name="varQuotaFinanziataStanziata" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[new BigDecimal($F{quotaFinanziataStanziata})]]></variableExpression>
+		<expression><![CDATA[new BigDecimal($F{quotaFinanziataStanziata})]]></expression>
 	</variable>
 	<variable name="varQuotaFinanziataPagata" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[new BigDecimal($F{quotaFinanziataPagata})]]></variableExpression>
+		<expression><![CDATA[new BigDecimal($F{quotaFinanziataPagata})]]></expression>
 	</variable>
 	<variable name="varQuotaCofinanziataCorrente" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[new BigDecimal($F{quotaCofinanziataCorrente})]]></variableExpression>
+		<expression><![CDATA[new BigDecimal($F{quotaCofinanziataCorrente})]]></expression>
 	</variable>
 	<variable name="varQuotaCofinanziataRimodulata" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[new BigDecimal($F{quotaCofinanziataRimodulata})]]></variableExpression>
+		<expression><![CDATA[new BigDecimal($F{quotaCofinanziataRimodulata})]]></expression>
 	</variable>
 	<variable name="varQuotaCofinanziataStanziata" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[new BigDecimal($F{quotaCofinanziataStanziata})]]></variableExpression>
+		<expression><![CDATA[new BigDecimal($F{quotaCofinanziataStanziata})]]></expression>
 	</variable>
 	<variable name="varQuotaCofinanziataPagata" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[new BigDecimal($F{quotaCofinanziataPagata})]]></variableExpression>
+		<expression><![CDATA[new BigDecimal($F{quotaCofinanziataPagata})]]></expression>
 	</variable>
-	<columnHeader>
-		<band height="53">
-			<staticText>
-				<reportElement style="VERB8" x="160" y="2" width="240" height="20" uuid="4d924f38-e682-4e0a-a378-b3a81f48571f"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Quote Finanziate]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="160" y="22" width="80" height="30" uuid="e48cb8fa-812f-4287-b5e7-5666eb0f05ae"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Corrente
+	<columnHeader height="53">
+		<element kind="staticText" style="VERB8" x="160" y="2" width="240" height="20" uuid="4d924f38-e682-4e0a-a378-b3a81f48571f" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Quote Finanziate]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="160" y="22" width="80" height="30" uuid="e48cb8fa-812f-4287-b5e7-5666eb0f05ae" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Corrente
 (A)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="240" y="22" width="80" height="30" uuid="9de244fb-8ce5-4efe-8895-ff194593c3a2"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Rimodulata
+		</element>
+		<element kind="staticText" style="VERB8" x="240" y="22" width="80" height="30" uuid="9de244fb-8ce5-4efe-8895-ff194593c3a2" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Rimodulata
 (A1)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="320" y="22" width="80" height="30" uuid="7ffaf729-f450-4de8-baec-c684f1a69507"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Stanziata]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="400" y="2" width="240" height="20" uuid="77cf4d4c-5f03-4cb0-89f0-15ca036109f2"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Quote Cofinanziate]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="560" y="22" width="80" height="30" uuid="c547b9c8-161a-4e13-a22e-7d38426691c1"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Stanziata]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="400" y="22" width="80" height="30" uuid="2f1186e1-54e4-4684-b71d-1e68431c0c4f"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Corrente
+		</element>
+		<element kind="staticText" style="VERB8" x="320" y="22" width="80" height="30" uuid="7ffaf729-f450-4de8-baec-c684f1a69507" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Stanziata]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="400" y="2" width="240" height="20" uuid="77cf4d4c-5f03-4cb0-89f0-15ca036109f2" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Quote Cofinanziate]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="560" y="22" width="80" height="30" uuid="c547b9c8-161a-4e13-a22e-7d38426691c1" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Stanziata]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="400" y="22" width="80" height="30" uuid="2f1186e1-54e4-4684-b71d-1e68431c0c4f" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Corrente
 (B)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="480" y="22" width="80" height="30" uuid="d77d61d5-9499-4fa0-886c-f75fc1ec23b1"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Rimodulata
+		</element>
+		<element kind="staticText" style="VERB8" x="480" y="22" width="80" height="30" uuid="d77d61d5-9499-4fa0-886c-f75fc1ec23b1" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Rimodulata
 (B1)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="640" y="2" width="162" height="20" uuid="7bf64d9f-9f90-4280-95e3-5b3e3b05d430"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Totale Quote PE]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="640" y="22" width="82" height="30" uuid="8ee48516-0365-4d61-a9ae-a8d2c05d1ca1"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Corrente
+		</element>
+		<element kind="staticText" style="VERB8" x="640" y="2" width="162" height="20" uuid="7bf64d9f-9f90-4280-95e3-5b3e3b05d430" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Totale Quote PE]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="640" y="22" width="82" height="30" uuid="8ee48516-0365-4d61-a9ae-a8d2c05d1ca1" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Corrente
 (A+B)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="722" y="22" width="80" height="30" uuid="1b68ddcd-3793-4f38-90d2-fe1c1824dc0e"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Rimodulata
+		</element>
+		<element kind="staticText" style="VERB8" x="722" y="22" width="80" height="30" uuid="1b68ddcd-3793-4f38-90d2-fe1c1824dc0e" hTextAlign="Center">
+			<box>
+				<pen lineWidth="1.0"/>
+				<topPen lineWidth="1.0"/>
+				<leftPen lineWidth="1.0"/>
+				<bottomPen lineWidth="1.0"/>
+				<rightPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Rimodulata
 (A1+B1)]]></text>
-			</staticText>
-			<textField>
-				<reportElement style="VERB10" x="12" y="12" width="138" height="28" uuid="be1578f0-4624-4153-b0d1-6ad1339ace08"/>
-				<textElement>
-					<font size="14" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["ANNO " + $P{P_ANNO}]]></textFieldExpression>
-			</textField>
-		</band>
+		</element>
+		<element kind="textField" style="VERB10" x="12" y="12" width="138" height="28" uuid="be1578f0-4624-4153-b0d1-6ad1339ace08" fontSize="14" bold="true">
+			<expression><![CDATA["ANNO " + $P{P_ANNO}]]></expression>
+		</element>
 	</columnHeader>
 	<detail>
 		<band height="21" splitType="Stretch">
-			<textField>
-				<reportElement style="VER8" x="0" y="0" width="160" height="20" uuid="b7d7b00a-4d62-4f7a-94a8-55753a1ea308"/>
+			<element kind="textField" style="VER8" x="0" y="0" width="160" height="20" uuid="b7d7b00a-4d62-4f7a-94a8-55753a1ea308" vTextAlign="Middle">
 				<box leftPadding="3">
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -236,11 +205,9 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{cdVoce}+" - "+$F{dsVoce}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement style="VER8" x="160" y="0" width="80" height="20" uuid="4786510a-ac42-4c33-877e-d40464e6f74e"/>
+				<expression><![CDATA[$F{cdVoce}+" - "+$F{dsVoce}]]></expression>
+			</element>
+			<element kind="textField" style="VER8" x="160" y="0" width="80" height="20" uuid="4786510a-ac42-4c33-877e-d40464e6f74e" pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="4">
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -248,11 +215,9 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{varQuotaFinanziataCorrente}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement style="VER8" x="240" y="0" width="80" height="20" uuid="4082a771-5492-432f-b2f4-fce424c3ace5"/>
+				<expression><![CDATA[$V{varQuotaFinanziataCorrente}]]></expression>
+			</element>
+			<element kind="textField" style="VER8" x="240" y="0" width="80" height="20" uuid="4082a771-5492-432f-b2f4-fce424c3ace5" pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="4">
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -260,11 +225,9 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{varQuotaFinanziataRimodulata}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement style="VER8" x="320" y="0" width="80" height="20" uuid="e25f01b9-37cc-4115-a26b-839fa59c4cb0"/>
+				<expression><![CDATA[$V{varQuotaFinanziataRimodulata}]]></expression>
+			</element>
+			<element kind="textField" style="VER8" x="320" y="0" width="80" height="20" uuid="e25f01b9-37cc-4115-a26b-839fa59c4cb0" pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="4">
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -272,11 +235,9 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{varQuotaFinanziataStanziata}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement style="VER8" x="400" y="0" width="80" height="20" uuid="3dab516a-f668-403c-a6e4-49aa0f7d6476"/>
+				<expression><![CDATA[$V{varQuotaFinanziataStanziata}]]></expression>
+			</element>
+			<element kind="textField" style="VER8" x="400" y="0" width="80" height="20" uuid="3dab516a-f668-403c-a6e4-49aa0f7d6476" pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="4">
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -284,11 +245,9 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{varQuotaCofinanziataCorrente}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement style="VER8" x="480" y="0" width="80" height="20" uuid="f4daf768-a6f1-4b76-911c-a887d9d209f2"/>
+				<expression><![CDATA[$V{varQuotaCofinanziataCorrente}]]></expression>
+			</element>
+			<element kind="textField" style="VER8" x="480" y="0" width="80" height="20" uuid="f4daf768-a6f1-4b76-911c-a887d9d209f2" pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="4">
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -296,11 +255,9 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{varQuotaCofinanziataRimodulata}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement style="VER8" x="560" y="0" width="80" height="20" uuid="645aa15c-854e-4290-9547-4bc75f152269"/>
+				<expression><![CDATA[$V{varQuotaCofinanziataRimodulata}]]></expression>
+			</element>
+			<element kind="textField" style="VER8" x="560" y="0" width="80" height="20" uuid="645aa15c-854e-4290-9547-4bc75f152269" pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="4">
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -308,11 +265,9 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{varQuotaCofinanziataStanziata}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement style="VER8" x="640" y="0" width="82" height="20" uuid="0eaf7f37-9f7f-40af-af71-e34edc153eff"/>
+				<expression><![CDATA[$V{varQuotaCofinanziataStanziata}]]></expression>
+			</element>
+			<element kind="textField" style="VER8" x="640" y="0" width="82" height="20" uuid="0eaf7f37-9f7f-40af-af71-e34edc153eff" pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="4">
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -320,11 +275,9 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{varQuotaFinanziataCorrente}.add($V{varQuotaCofinanziataCorrente})]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement style="VER8" x="722" y="0" width="80" height="20" uuid="ca5fc044-a2fa-43f8-892c-0b61e4d3a610"/>
+				<expression><![CDATA[$V{varQuotaFinanziataCorrente}.add($V{varQuotaCofinanziataCorrente})]]></expression>
+			</element>
+			<element kind="textField" style="VER8" x="722" y="0" width="80" height="20" uuid="ca5fc044-a2fa-43f8-892c-0b61e4d3a610" pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="4">
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -332,9 +285,8 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{varQuotaFinanziataRimodulata}.add($V{varQuotaCofinanziataRimodulata})]]></textFieldExpression>
-			</textField>
+				<expression><![CDATA[$V{varQuotaFinanziataRimodulata}.add($V{varQuotaCofinanziataRimodulata})]]></expression>
+			</element>
 		</band>
 	</detail>
 </jasperReport>

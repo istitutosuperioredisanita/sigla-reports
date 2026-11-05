@@ -1,177 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="situazione_sintetica_x_progetto" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e2b12cdf-7e2e-475f-8db5-046d497e7fd2">
+<jasperReport name="situazione_sintetica_x_progetto" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e2b12cdf-7e2e-475f-8db5-046d497e7fd2" language="java">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="ISO-8859-1"/>
 	<property name="ireport.zoom" value="1.6105100000000008"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
-	<style name="VER6" fontName="Times New Roman" fontSize="6" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI6" fontName="Times New Roman" fontSize="6" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB6" fontName="Times New Roman" fontSize="6" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER7" fontName="Times New Roman" fontSize="7" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI7" fontName="Times New Roman" fontSize="7" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB7" fontName="Times New Roman" fontSize="7" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB8" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI8" fontName="Times New Roman" fontSize="8" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB12" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI14" fontName="Times New Roman" fontSize="14" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER16" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB20" fontName="Times New Roman" fontSize="20" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB10" fontName="Times New Roman" fontSize="10" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<style name="VER6" fontName="Times New Roman" fontSize="6" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI6" fontName="Times New Roman" fontSize="6" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB6" fontName="Times New Roman" fontSize="6" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER7" fontName="Times New Roman" fontSize="7" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI7" fontName="Times New Roman" fontSize="7" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB7" fontName="Times New Roman" fontSize="7" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB8" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI8" fontName="Times New Roman" fontSize="8" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB12" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI14" fontName="Times New Roman" fontSize="14" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER16" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB20" fontName="Times New Roman" fontSize="20" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB10" fontName="Times New Roman" fontSize="10" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
-	<parameter name="PATH_LOGO1" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	<parameter name="PATH_LOGO1" class="java.lang.String" forPrompting="false">
+		<defaultValueExpression/>
 	</parameter>
-	<parameter name="PATH_LOGO_FORNITORE" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	<parameter name="PATH_LOGO_FORNITORE" class="java.lang.String" forPrompting="false">
+		<defaultValueExpression/>
 	</parameter>
-	<parameter name="UTENTE" class="java.lang.String" isForPrompting="false">
+	<parameter name="UTENTE" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["ADMIN"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="NOME_EST" class="java.lang.String" isForPrompting="false">
+	<parameter name="NOME_EST" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["CONSIGLIO NAZIONALE DELLE RICERCHE"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="DESCR_AGG_ENTE" class="java.lang.String" isForPrompting="false">
+	<parameter name="DESCR_AGG_ENTE" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["."]]></defaultValueExpression>
 	</parameter>
 	<parameter name="P_ESERCIZIO" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[new Integer(2016)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="P_UO" class="java.lang.String">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		<defaultValueExpression/>
 	</parameter>
 	<parameter name="P_PROGETTO" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		<defaultValueExpression/>
 	</parameter>
 	<parameter name="P_GAE" class="java.lang.String">
 		<defaultValueExpression><![CDATA[new String("*")]]></defaultValueExpression>
 	</parameter>
 	<parameter name="P_RESPONSABILE_GAE" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		<defaultValueExpression/>
 	</parameter>
-	<parameter name="P_DS_RESPONSABILE_GAE" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	<parameter name="P_DS_RESPONSABILE_GAE" class="java.lang.String" forPrompting="false">
+		<defaultValueExpression/>
 	</parameter>
 	<parameter name="P_PRINT_GAE" class="java.lang.Boolean">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		<defaultValueExpression/>
 	</parameter>
 	<parameter name="P_PRINT_VOCE" class="java.lang.Boolean">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		<defaultValueExpression/>
 	</parameter>
 	<parameter name="P_PRINT_ANNO" class="java.lang.Boolean">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		<defaultValueExpression/>
 	</parameter>
 	<parameter name="P_PRINT_MOVIMENTAZIONE" class="java.lang.Boolean">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		<defaultValueExpression/>
 	</parameter>
 	<parameter name="P_PRINT_SOLO_GAE_ATTIVE" class="java.lang.Boolean">
-		<parameterDescription><![CDATA[Stampa solo GAE movimentate nell'anno]]></parameterDescription>
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		<description><![CDATA[Stampa solo GAE movimentate nell'anno]]></description>
+		<defaultValueExpression/>
 	</parameter>
 	<parameter name="P_PRINT_PIANO_ECO" class="java.lang.Boolean">
-		<parameterDescription><![CDATA[Stampa Piano Economico Progetto (true/false)]]></parameterDescription>
+		<description><![CDATA[Stampa Piano Economico Progetto (true/false)]]></description>
 		<defaultValueExpression><![CDATA[new Boolean(false)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="P_ORDINE" class="java.lang.String">
-		<parameterDescription><![CDATA["V": Voce - "A": Anno]]></parameterDescription>
+		<description><![CDATA["V": Voce - "A": Anno]]></description>
 		<defaultValueExpression><![CDATA["A"]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[SELECT SUM(DECODE(TI_GESTIONE,'E',TOT_NUMMOV,0)) NUM_DETTAGLI_ETR,
+	<query language="sql"><![CDATA[
+		SELECT SUM(DECODE(TI_GESTIONE,'E',TOT_NUMMOV,0)) NUM_DETTAGLI_ETR,
        SUM(DECODE(TI_GESTIONE,'S',TOT_NUMMOV,0)) NUM_DETTAGLI_SPE,
        CD_CENTRO_RESPONSABILITA, PG_PROGETTO PG_PROGLIV2
 FROM TMP_STAMPA_SITUAZIONE_PROGETTI
 WHERE ESERCIZIO = $P{P_ESERCIZIO}
 AND   TIPO_RECORD = 'PRINC'
 GROUP BY CD_CENTRO_RESPONSABILITA, PG_PROGETTO
-ORDER BY CD_CENTRO_RESPONSABILITA]]>
-	</queryString>
+ORDER BY CD_CENTRO_RESPONSABILITA
+	]]></query>
 	<field name="NUM_DETTAGLI_ETR" class="java.lang.Integer"/>
 	<field name="NUM_DETTAGLI_SPE" class="java.lang.Integer"/>
 	<field name="CD_CENTRO_RESPONSABILITA" class="java.lang.String"/>
 	<field name="PG_PROGLIV2" class="java.lang.Integer"/>
 	<detail>
 		<band height="16">
-			<subreport>
-				<reportElement x="2" y="0" width="834" height="10" isRemoveLineWhenBlank="true" uuid="2a15b921-aa04-4dc5-84b0-9656266ba147"/>
-				<subreportParameter name="P_UO">
-					<subreportParameterExpression><![CDATA[$P{P_UO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_PRINT_ANNO">
-					<subreportParameterExpression><![CDATA[$P{P_PRINT_ANNO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_NUM_DETTAGLI_ETR">
-					<subreportParameterExpression><![CDATA[$F{NUM_DETTAGLI_ETR}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="PATH_LOGO_FORNITORE">
-					<subreportParameterExpression><![CDATA[$P{PATH_LOGO_FORNITORE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_CENTRO_RESPONSABILITA">
-					<subreportParameterExpression><![CDATA[$F{CD_CENTRO_RESPONSABILITA}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_PROGETTO">
-					<subreportParameterExpression><![CDATA[$P{P_PROGETTO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_PRINT_SOLO_GAE_ATTIVE">
-					<subreportParameterExpression><![CDATA[$P{P_PRINT_SOLO_GAE_ATTIVE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_PRINT_GAE">
-					<subreportParameterExpression><![CDATA[$P{P_PRINT_GAE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUBREPORT_DIR">
-					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_DS_RESPONSABILE_GAE">
-					<subreportParameterExpression><![CDATA[$P{P_DS_RESPONSABILE_GAE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_ORDINE">
-					<subreportParameterExpression><![CDATA[$P{P_ORDINE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_ESERCIZIO">
-					<subreportParameterExpression><![CDATA[$P{P_ESERCIZIO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_PRINT_VOCE">
-					<subreportParameterExpression><![CDATA[$P{P_PRINT_VOCE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="NOME_EST">
-					<subreportParameterExpression><![CDATA[$P{NOME_EST}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_PG_PROGLIV2">
-					<subreportParameterExpression><![CDATA[$F{PG_PROGLIV2}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="PATH_LOGO1">
-					<subreportParameterExpression><![CDATA[$P{PATH_LOGO1}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="UTENTE">
-					<subreportParameterExpression><![CDATA[$P{UTENTE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_PRINT_MOVIMENTAZIONE">
-					<subreportParameterExpression><![CDATA[$P{P_PRINT_MOVIMENTAZIONE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="DESCR_AGG_ENTE">
-					<subreportParameterExpression><![CDATA[$P{DESCR_AGG_ENTE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_PRINT_PIANO_ECO">
-					<subreportParameterExpression><![CDATA[$P{P_PRINT_PIANO_ECO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_RESPONSABILE_GAE">
-					<subreportParameterExpression><![CDATA[$P{P_RESPONSABILE_GAE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_NUM_DETTAGLI_SPE">
-					<subreportParameterExpression><![CDATA[$F{NUM_DETTAGLI_SPE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="P_GAE">
-					<subreportParameterExpression><![CDATA[$P{P_GAE}]]></subreportParameterExpression>
-				</subreportParameter>
+			<element kind="subreport" x="2" y="0" width="834" height="10" removeLineWhenBlank="true" uuid="2a15b921-aa04-4dc5-84b0-9656266ba147">
+				<parameter name="P_UO">
+					<expression><![CDATA[$P{P_UO}]]></expression>
+				</parameter>
+				<parameter name="P_PRINT_ANNO">
+					<expression><![CDATA[$P{P_PRINT_ANNO}]]></expression>
+				</parameter>
+				<parameter name="P_NUM_DETTAGLI_ETR">
+					<expression><![CDATA[$F{NUM_DETTAGLI_ETR}]]></expression>
+				</parameter>
+				<parameter name="PATH_LOGO_FORNITORE">
+					<expression><![CDATA[$P{PATH_LOGO_FORNITORE}]]></expression>
+				</parameter>
+				<parameter name="P_CENTRO_RESPONSABILITA">
+					<expression><![CDATA[$F{CD_CENTRO_RESPONSABILITA}]]></expression>
+				</parameter>
+				<parameter name="P_PROGETTO">
+					<expression><![CDATA[$P{P_PROGETTO}]]></expression>
+				</parameter>
+				<parameter name="P_PRINT_SOLO_GAE_ATTIVE">
+					<expression><![CDATA[$P{P_PRINT_SOLO_GAE_ATTIVE}]]></expression>
+				</parameter>
+				<parameter name="P_PRINT_GAE">
+					<expression><![CDATA[$P{P_PRINT_GAE}]]></expression>
+				</parameter>
+				<parameter name="SUBREPORT_DIR">
+					<expression><![CDATA[$P{SUBREPORT_DIR}]]></expression>
+				</parameter>
+				<parameter name="P_DS_RESPONSABILE_GAE">
+					<expression><![CDATA[$P{P_DS_RESPONSABILE_GAE}]]></expression>
+				</parameter>
+				<parameter name="P_ORDINE">
+					<expression><![CDATA[$P{P_ORDINE}]]></expression>
+				</parameter>
+				<parameter name="P_ESERCIZIO">
+					<expression><![CDATA[$P{P_ESERCIZIO}]]></expression>
+				</parameter>
+				<parameter name="P_PRINT_VOCE">
+					<expression><![CDATA[$P{P_PRINT_VOCE}]]></expression>
+				</parameter>
+				<parameter name="NOME_EST">
+					<expression><![CDATA[$P{NOME_EST}]]></expression>
+				</parameter>
+				<parameter name="P_PG_PROGLIV2">
+					<expression><![CDATA[$F{PG_PROGLIV2}]]></expression>
+				</parameter>
+				<parameter name="PATH_LOGO1">
+					<expression><![CDATA[$P{PATH_LOGO1}]]></expression>
+				</parameter>
+				<parameter name="UTENTE">
+					<expression><![CDATA[$P{UTENTE}]]></expression>
+				</parameter>
+				<parameter name="P_PRINT_MOVIMENTAZIONE">
+					<expression><![CDATA[$P{P_PRINT_MOVIMENTAZIONE}]]></expression>
+				</parameter>
+				<parameter name="DESCR_AGG_ENTE">
+					<expression><![CDATA[$P{DESCR_AGG_ENTE}]]></expression>
+				</parameter>
+				<parameter name="P_PRINT_PIANO_ECO">
+					<expression><![CDATA[$P{P_PRINT_PIANO_ECO}]]></expression>
+				</parameter>
+				<parameter name="P_RESPONSABILE_GAE">
+					<expression><![CDATA[$P{P_RESPONSABILE_GAE}]]></expression>
+				</parameter>
+				<parameter name="P_NUM_DETTAGLI_SPE">
+					<expression><![CDATA[$F{NUM_DETTAGLI_SPE}]]></expression>
+				</parameter>
+				<parameter name="P_GAE">
+					<expression><![CDATA[$P{P_GAE}]]></expression>
+				</parameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "situazione_sintetica_x_progetto_main.jasper"]]></subreportExpression>
-			</subreport>
+				<expression><![CDATA[$P{SUBREPORT_DIR} + "situazione_sintetica_x_progetto_main.jasper"]]></expression>
+			</element>
 		</band>
 	</detail>
 </jasperReport>

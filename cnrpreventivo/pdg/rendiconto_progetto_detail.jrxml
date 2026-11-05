@@ -1,63 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rendiconto_progetto_detail" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a8d3c8a2-9f0e-4b1c-8a7f-3e2d1c0b9a8e">
+<jasperReport name="rendiconto_progetto_detail" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a8d3c8a2-9f0e-4b1c-8a7f-3e2d1c0b9a8e" language="java">
 	<property name="net.sf.jasperreports.json.DATE_PATTERN" value="yyyy-MM-dd"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLA-COLL-CONN.xml"/>
-	<style name="VER6" fontName="Times New Roman" fontSize="6" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI6" fontName="Times New Roman" fontSize="6" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB6" fontName="Times New Roman" fontSize="6" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER7" fontName="Times New Roman" fontSize="7" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI7" fontName="Times New Roman" fontSize="7" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB7" fontName="Times New Roman" fontSize="7" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB8" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB9" fontName="Times New Roman" fontSize="9" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI8" fontName="Times New Roman" fontSize="8" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER9" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB12" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERBI14" fontName="Times New Roman" fontSize="14" isBold="true" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VER16" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB20" fontName="Times New Roman" fontSize="20" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="VERB10" fontName="Times New Roman" fontSize="10" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
-	<style name="NORMAL" isDefault="true" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
-	<parameter name="P_CD_PROGETTO" class="java.lang.String" isForPrompting="false"/>
+	<style name="VER6" fontName="Times New Roman" fontSize="6" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI6" fontName="Times New Roman" fontSize="6" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB6" fontName="Times New Roman" fontSize="6" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER7" fontName="Times New Roman" fontSize="7" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI7" fontName="Times New Roman" fontSize="7" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB7" fontName="Times New Roman" fontSize="7" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB8" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB9" fontName="Times New Roman" fontSize="9" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI8" fontName="Times New Roman" fontSize="8" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER9" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB12" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERBI14" fontName="Times New Roman" fontSize="14" bold="true" italic="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VER16" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB20" fontName="Times New Roman" fontSize="20" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="VERB10" fontName="Times New Roman" fontSize="10" bold="true" pdfFontName="Times-Roman" pdfEmbedded="true"/>
+	<style name="NORMAL" default="true" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
+	<parameter name="P_CD_PROGETTO" class="java.lang.String" forPrompting="false"/>
 	<parameter name="P_DS_PROGETTO" class="java.lang.String"/>
-	<parameter name="P_RESPONSABILE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_RESPONSABILE" class="java.lang.String" forPrompting="false"/>
 	<parameter name="P_NOTE" class="java.lang.String"/>
-	<parameter name="P_CUP" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="P_IMPORTO_TOTALE_PROGETTO" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="P_DT_INIZIO" class="java.sql.Timestamp" isForPrompting="false"/>
-	<parameter name="P_DT_FINE" class="java.sql.Timestamp" isForPrompting="false"/>
-	<parameter name="P_DT_PROROGA" class="java.sql.Timestamp" isForPrompting="false"/>
-	<parameter name="P_DESC_FINANZIAMENTO" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="P_FL_PIANO_ECO_FIN" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="P_IM_FINANZIATO" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="P_TOTALE_ENTRATE" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="P_TOTALE_REVERSALI" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="P_UO_ENTE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_CUP" class="java.lang.String" forPrompting="false"/>
+	<parameter name="P_IMPORTO_TOTALE_PROGETTO" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="P_DT_INIZIO" class="java.sql.Timestamp" forPrompting="false"/>
+	<parameter name="P_DT_FINE" class="java.sql.Timestamp" forPrompting="false"/>
+	<parameter name="P_DT_PROROGA" class="java.sql.Timestamp" forPrompting="false"/>
+	<parameter name="P_DESC_FINANZIAMENTO" class="java.lang.String" forPrompting="false"/>
+	<parameter name="P_FL_PIANO_ECO_FIN" class="java.lang.String" forPrompting="false"/>
+	<parameter name="P_IM_FINANZIATO" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="P_TOTALE_ENTRATE" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="P_TOTALE_REVERSALI" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="P_UO_ENTE" class="java.lang.String" forPrompting="false"/>
 	<parameter name="P_PG_PROGETTO" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[Integer.valueOf(0)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="P_ESERCIZIO" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[Integer.valueOf(2025)]]></defaultValueExpression>
 	</parameter>
-	<parameter name="P_CENTRO_RESPONSABILITA" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="P_UO_COORDINATRICE" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="P_PRINT_DETAIL" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_CENTRO_RESPONSABILITA" class="java.lang.String" forPrompting="false"/>
+	<parameter name="P_UO_COORDINATRICE" class="java.lang.String" forPrompting="false"/>
+	<parameter name="P_PRINT_DETAIL" class="java.lang.String" forPrompting="false"/>
 	<parameter name="P_CD_VOCE_PIANO" class="java.lang.String"/>
 	<parameter name="P_CD_ELEMENTO_VOCE" class="java.lang.String"/>
 	<parameter name="P_STANZIAMENTO_FIN" class="java.math.BigDecimal"/>
 	<parameter name="P_VARIAPIU_FIN" class="java.math.BigDecimal"/>
 	<parameter name="P_VARIAMENO_FIN" class="java.math.BigDecimal"/>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[WITH dati_base AS (
+	<query language="sql"><![CDATA[
+		WITH dati_base AS (
     SELECT
         a.pg_progetto,
         a.esercizio_piano AS esercizio_voce_piano,
@@ -209,8 +208,8 @@ ORDER BY
     q.ESERCIZIO_ORIGINALE_OBBL,
     q.CDS_OBBL,
     q.PG_OBBL,
-    q.pg_obbl_scad]]>
-	</queryString>
+    q.pg_obbl_scad
+	]]></query>
 	<field name="ORDINE_ESERCIZIO" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="ORDINE_ESERCIZIO"/>
 	</field>
@@ -329,472 +328,300 @@ ORDER BY
 		<property name="com.jaspersoft.studio.field.label" value="STATO"/>
 	</field>
 	<variable name="SUM_IMPORTO_FIN_GEN" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPORTO_FIN} != null ? $F{IMPORTO_FIN} : 0]]></variableExpression>
+		<expression><![CDATA[$F{IMPORTO_FIN} != null ? $F{IMPORTO_FIN} : 0]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="SUM_IMP_SCAD_GEN" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMP_SCAD} != null ? $F{IMP_SCAD} : 0]]></variableExpression>
+		<expression><![CDATA[$F{IMP_SCAD} != null ? $F{IMP_SCAD} : 0]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="DISP_IMPEGNO_FIN" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[$F{STANZIAMENTO_FIN}.add($F{VARIAPIU_FIN}).subtract($F{VARIAMENO_FIN}).subtract($F{IMPACC_FIN})]]></variableExpression>
+		<expression><![CDATA[$F{STANZIAMENTO_FIN}.add($F{VARIAPIU_FIN}).subtract($F{VARIAMENO_FIN}).subtract($F{IMPACC_FIN})]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="SUM_DISP_EFF_GEN" class="java.math.BigDecimal" incrementType="Group" incrementGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISP_EFF_PIANO_ECO}]]></variableExpression>
+		<expression><![CDATA[$V{DISP_EFF_PIANO_ECO}]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="SUM_DISP_GEN" class="java.math.BigDecimal" incrementType="Group" incrementGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$V{DISP_PIANO_ECO}]]></variableExpression>
+		<expression><![CDATA[$V{DISP_PIANO_ECO}]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="STANZIAMENTO_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{STANZIAMENTO_FIN} != null ? $F{STANZIAMENTO_FIN} : new java.math.BigDecimal("0")]]></variableExpression>
+		<expression><![CDATA[$F{STANZIAMENTO_FIN} != null ? $F{STANZIAMENTO_FIN} : new java.math.BigDecimal("0")]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="VARIAPIU_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{VARIAPIU_FIN} != null ? $F{VARIAPIU_FIN} : new java.math.BigDecimal("0")]]></variableExpression>
+		<expression><![CDATA[$F{VARIAPIU_FIN} != null ? $F{VARIAPIU_FIN} : new java.math.BigDecimal("0")]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="VARIAMENO_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{VARIAMENO_FIN} != null ? $F{VARIAMENO_FIN} : new java.math.BigDecimal("0")]]></variableExpression>
+		<expression><![CDATA[$F{VARIAMENO_FIN} != null ? $F{VARIAMENO_FIN} : new java.math.BigDecimal("0")]]></expression>
 	</variable>
 	<variable name="IMPACC_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{IMPACC_FIN} != null ? $F{IMPACC_FIN}  : new java.math.BigDecimal("0")]]></variableExpression>
+		<expression><![CDATA[$F{IMPACC_FIN} != null ? $F{IMPACC_FIN}  : new java.math.BigDecimal("0")]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="MANRIS_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup" calculation="Sum">
-		<variableExpression><![CDATA[$F{MANRIS_FIN} != null ? $F{MANRIS_FIN} : new java.math.BigDecimal("0")]]></variableExpression>
+		<expression><![CDATA[$F{MANRIS_FIN} != null ? $F{MANRIS_FIN} : new java.math.BigDecimal("0")]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="ASSESTATO_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup">
-		<variableExpression><![CDATA[$V{STANZIAMENTO_PIANO_ECO}.add($V{VARIAPIU_PIANO_ECO}).subtract($V{VARIAMENO_PIANO_ECO})]]></variableExpression>
+		<expression><![CDATA[$V{STANZIAMENTO_PIANO_ECO}.add($V{VARIAPIU_PIANO_ECO}).subtract($V{VARIAMENO_PIANO_ECO})]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="DISP_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup">
-		<variableExpression><![CDATA[$V{ASSESTATO_PIANO_ECO}.subtract($V{IMPACC_PIANO_ECO})]]></variableExpression>
+		<expression><![CDATA[$V{ASSESTATO_PIANO_ECO}.subtract($V{IMPACC_PIANO_ECO})]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<variable name="DISP_EFF_PIANO_ECO" class="java.math.BigDecimal" resetType="Group" resetGroup="VocePianoGroup">
-		<variableExpression><![CDATA[$V{ASSESTATO_PIANO_ECO}.subtract($V{MANRIS_PIANO_ECO})]]></variableExpression>
+		<expression><![CDATA[$V{ASSESTATO_PIANO_ECO}.subtract($V{MANRIS_PIANO_ECO})]]></expression>
 		<initialValueExpression><![CDATA[new java.math.BigDecimal("0")]]></initialValueExpression>
 	</variable>
 	<group name="VocePianoGroup">
-		<groupExpression><![CDATA[$F{CD_VOCE_PIANO}]]></groupExpression>
+		<expression><![CDATA[$F{CD_VOCE_PIANO}]]></expression>
 		<groupHeader>
 			<band height="43" splitType="Stretch">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.layout"/>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="VERB9" mode="Transparent" x="5" y="10" width="58" height="20" printWhenGroupChanges="VocePianoGroup" backcolor="#EBEBEB" uuid="9e25d203-34ac-4838-bfa9-45550a221f7e"/>
-					<textElement verticalAlignment="Top"/>
-					<textFieldExpression><![CDATA[$F{DS_VOCE_PIANO}]]></textFieldExpression>
-				</textField>
-				<textField textAdjust="StretchHeight" evaluationTime="Group" evaluationGroup="VocePianoGroup" pattern="€ #,##0.00" isBlankWhenNull="false">
-					<reportElement style="VERB9" positionType="Float" mode="Transparent" x="63" y="10" width="80" height="12" isPrintInFirstWholeBand="true" printWhenGroupChanges="VocePianoGroup" backcolor="#EBEBEB" uuid="2e1afb79-f0ad-4021-8c5a-fa83cab53fde"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="true" isItalic="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$V{DISP_EFF_PIANO_ECO}]]></textFieldExpression>
-				</textField>
-				<textField textAdjust="StretchHeight" evaluationTime="Group" evaluationGroup="VocePianoGroup" pattern="€ #,##0.00">
-					<reportElement style="VERB9" positionType="Float" mode="Transparent" x="270" y="10" width="80" height="12" isPrintInFirstWholeBand="true" printWhenGroupChanges="VocePianoGroup" backcolor="#EBEBEB" uuid="80672dd9-3df4-43bf-9ca3-73eed12627ca"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$V{DISP_PIANO_ECO}]]></textFieldExpression>
-				</textField>
+				<element kind="textField" style="VERB9" mode="Transparent" x="5" y="10" width="58" height="20" printWhenGroupChanges="VocePianoGroup" backcolor="#EBEBEB" uuid="9e25d203-34ac-4838-bfa9-45550a221f7e" textAdjust="StretchHeight" blankWhenNull="true" vTextAlign="Top">
+					<expression><![CDATA[$F{DS_VOCE_PIANO}]]></expression>
+				</element>
+				<element kind="textField" style="VERB9" positionType="Float" mode="Transparent" x="63" y="10" width="80" height="12" printInFirstWholeBand="true" printWhenGroupChanges="VocePianoGroup" backcolor="#EBEBEB" uuid="2e1afb79-f0ad-4021-8c5a-fa83cab53fde" textAdjust="StretchHeight" evaluationTime="Group" evaluationGroup="VocePianoGroup" pattern="€ #,##0.00" blankWhenNull="false" hTextAlign="Center" vTextAlign="Middle" bold="true" italic="false">
+					<expression><![CDATA[$V{DISP_EFF_PIANO_ECO}]]></expression>
+				</element>
+				<element kind="textField" style="VERB9" positionType="Float" mode="Transparent" x="270" y="10" width="80" height="12" printInFirstWholeBand="true" printWhenGroupChanges="VocePianoGroup" backcolor="#EBEBEB" uuid="80672dd9-3df4-43bf-9ca3-73eed12627ca" textAdjust="StretchHeight" evaluationTime="Group" evaluationGroup="VocePianoGroup" pattern="€ #,##0.00" hTextAlign="Center" vTextAlign="Middle" bold="true">
+					<expression><![CDATA[$V{DISP_PIANO_ECO}]]></expression>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band height="15" splitType="Stretch">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				<line>
-					<reportElement style="VERB8" mode="Transparent" x="0" y="7" width="842" height="1" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" printWhenGroupChanges="VocePianoGroup" forecolor="#EBEBEB" uuid="d2836267-338c-4a1e-9273-03e3906a59e9">
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					</reportElement>
-				</line>
+				<element kind="line" style="VERB8" mode="Transparent" x="0" y="7" width="842" height="1" removeLineWhenBlank="true" printInFirstWholeBand="true" printWhenDetailOverflows="true" printWhenGroupChanges="VocePianoGroup" forecolor="#EBEBEB" uuid="d2836267-338c-4a1e-9273-03e3906a59e9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</element>
 			</band>
 		</groupFooter>
 	</group>
 	<group name="EsercizioGroup">
-		<groupExpression><![CDATA[$F{ESERCIZIO_VOCE_PIANO}]]></groupExpression>
+		<expression><![CDATA[$F{ESERCIZIO_VOCE_PIANO}]]></expression>
 	</group>
 	<group name="ImpegnoGroup" keepTogether="true">
-		<groupExpression><![CDATA[$F{CDS_OBBL}+$F{ESERCIZIO_OBBL}+$F{ESERCIZIO_ORIGINALE_OBBL}+$F{PG_OBBL}+$F{NUM_SCAD}]]></groupExpression>
+		<expression><![CDATA[$F{CDS_OBBL}+$F{ESERCIZIO_OBBL}+$F{ESERCIZIO_ORIGINALE_OBBL}+$F{PG_OBBL}+$F{NUM_SCAD}]]></expression>
 		<groupHeader>
 			<band height="36" splitType="Stretch">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="178" y="13" width="31" height="12" uuid="d6e53066-e3d8-4f18-97c7-248e354070a9">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{PG_OBBL}]]></textFieldExpression>
-				</textField>
-				<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="209" y="13" width="59" height="12" uuid="9422a16d-3e5f-410a-8149-16e789f280a9">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-						<printWhenExpression><![CDATA[$F{IMPORTO_FIN}!=new java.math.BigDecimal("0")]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{IMPORTO_FIN} != null ? $F{IMPORTO_FIN} : new java.math.BigDecimal("0")]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="793" y="13" width="45" height="12" uuid="f0d2c94a-81e5-4a57-b08e-5b1b11f3d64c">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="349" y="13" width="30" height="12" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{NUM_SCAD}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="382" y="13" width="54" height="12" uuid="88219c6e-1d54-4462-8566-267922d51174">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{DATA_MANDATO}]]></textFieldExpression>
-				</textField>
-				<textField evaluationTime="Group" evaluationGroup="ImpegnoGroup" pattern="€ #,##0.00" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="743" y="13" width="49" height="12" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-						<printWhenExpression><![CDATA[$F{IMPORTO_FIN}.subtract($F{IMPORTO_FIN}) == $F{IMPORTO_FIN}]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{IMP_SCAD} != null ? $F{IMP_SCAD} : new java.math.BigDecimal("0")]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="140" y="13" width="33" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{ESERCIZIO_VOCE_PIANO}]]></textFieldExpression>
-				</textField>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="548" y="13" width="122" height="12" uuid="179a3755-b5f6-4b08-a09e-c0dab971d3f4">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{DS_SCAD}]]></textFieldExpression>
-				</textField>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement style="VERB8" x="673" y="13" width="67" height="12" uuid="cb6972ae-ea1f-4d54-9572-d35f3d06c649">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{CREDITORE}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="438" y="13" width="46" height="12" uuid="006d5564-3cb8-4e26-b3b1-639398e5afd2">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{PG_MANDATO}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement style="VERB8" x="490" y="13" width="56" height="12" uuid="f44a427e-b4e7-4588-bcfe-a78431633051">
-						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{PG_DOC_AMM}]]></textFieldExpression>
-				</textField>
+				<element kind="textField" style="VERB8" x="178" y="13" width="31" height="12" uuid="d6e53066-e3d8-4f18-97c7-248e354070a9" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<expression><![CDATA[$F{PG_OBBL}]]></expression>
+				</element>
+				<element kind="textField" style="VERB8" x="209" y="13" width="59" height="12" uuid="9422a16d-3e5f-410a-8149-16e789f280a9" pattern="€ #,##0.00" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<printWhenExpression><![CDATA[$F{IMPORTO_FIN}!=new java.math.BigDecimal("0")]]></printWhenExpression>
+					<expression><![CDATA[$F{IMPORTO_FIN} != null ? $F{IMPORTO_FIN} : new java.math.BigDecimal("0")]]></expression>
+				</element>
+				<element kind="textField" style="VERB8" x="793" y="13" width="45" height="12" uuid="f0d2c94a-81e5-4a57-b08e-5b1b11f3d64c" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<expression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></expression>
+				</element>
+				<element kind="textField" style="VERB8" x="349" y="13" width="30" height="12" uuid="3d8e574c-42b7-4f6c-843e-f190e25c77bd" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<expression><![CDATA[$F{NUM_SCAD}]]></expression>
+				</element>
+				<element kind="textField" style="VERB8" x="382" y="13" width="54" height="12" uuid="88219c6e-1d54-4462-8566-267922d51174" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<expression><![CDATA[$F{DATA_MANDATO}]]></expression>
+				</element>
+				<element kind="textField" style="VERB8" x="743" y="13" width="49" height="12" uuid="89882a6f-1296-4171-aa3a-6a56e01a4e0a" evaluationTime="Group" evaluationGroup="ImpegnoGroup" pattern="€ #,##0.00" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<printWhenExpression><![CDATA[$F{IMPORTO_FIN}.subtract($F{IMPORTO_FIN}) == $F{IMPORTO_FIN}]]></printWhenExpression>
+					<expression><![CDATA[$F{IMP_SCAD} != null ? $F{IMP_SCAD} : new java.math.BigDecimal("0")]]></expression>
+				</element>
+				<element kind="textField" style="VERB8" x="140" y="13" width="33" height="12" uuid="b1945f3c-539c-4828-8547-2e40e0b3558c" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<expression><![CDATA[$F{ESERCIZIO_VOCE_PIANO}]]></expression>
+				</element>
+				<element kind="textField" style="VERB8" x="548" y="13" width="122" height="12" uuid="179a3755-b5f6-4b08-a09e-c0dab971d3f4" textAdjust="StretchHeight" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<expression><![CDATA[$F{DS_SCAD}]]></expression>
+				</element>
+				<element kind="textField" style="VERB8" x="673" y="13" width="67" height="12" uuid="cb6972ae-ea1f-4d54-9572-d35f3d06c649" textAdjust="StretchHeight" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<expression><![CDATA[$F{CREDITORE}]]></expression>
+				</element>
+				<element kind="textField" style="VERB8" x="438" y="13" width="46" height="12" uuid="006d5564-3cb8-4e26-b3b1-639398e5afd2" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<expression><![CDATA[$F{PG_MANDATO}]]></expression>
+				</element>
+				<element kind="textField" style="VERB8" x="490" y="13" width="56" height="12" uuid="f44a427e-b4e7-4588-bcfe-a78431633051" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" bold="false">
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" spacingAfter="0"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<expression><![CDATA[$F{PG_DOC_AMM}]]></expression>
+				</element>
 			</band>
 		</groupHeader>
 	</group>
-	<title>
-		<band height="40" splitType="Stretch">
-			<property name="com.jaspersoft.studio.layout"/>
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<staticText>
-				<reportElement style="VERB8" x="5" y="5" width="78" height="12" uuid="629eaaa9-adb6-464a-b57d-51212a80d792">
-					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<paragraph tabStopWidth="40"/>
-				</textElement>
-				<text><![CDATA[Progetto]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="5" y="17" width="78" height="12" uuid="62ade0b9-3970-4135-9cdd-bc4f2344cc20"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_CD_PROGETTO}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="VERB8" x="100" y="5" width="90" height="12" uuid="d6b62fb9-689a-47a5-a843-c7b91b8ad096">
-					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<paragraph tabStopWidth="40"/>
-				</textElement>
-				<text><![CDATA[Responsabile]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="100" y="17" width="90" height="12" uuid="592c017f-db96-4bb8-95f6-ffbd33b366d9"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_RESPONSABILE}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="VERB8" x="200" y="5" width="68" height="12" uuid="2163a081-fa62-40fd-9a10-ce8a0f070852">
-					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<paragraph tabStopWidth="40"/>
-				</textElement>
-				<text><![CDATA[Data Inizio]]></text>
-			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="200" y="17" width="68" height="12" uuid="9067f96a-422e-4145-9361-ffd59724e7ff"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_DT_INIZIO}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="VERB8" x="280" y="5" width="58" height="12" uuid="15c49a1c-8863-425b-8a39-d747cce919d7">
-					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<paragraph tabStopWidth="40"/>
-				</textElement>
-				<text><![CDATA[Data scad.]]></text>
-			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="280" y="17" width="58" height="12" uuid="b1dd9504-9fb0-4980-87fe-28957e2a03cd"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_DT_FINE}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="VERB8" x="353" y="5" width="78" height="12" uuid="f9373b7d-239e-437d-930b-2565d8e51228">
-					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<paragraph tabStopWidth="40"/>
-				</textElement>
-				<text><![CDATA[Data Proroga]]></text>
-			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="353" y="17" width="78" height="12" uuid="ea9174ac-7f97-4eeb-b51c-fbe593ab555c"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_DT_PROROGA}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="VERB8" x="450" y="5" width="88" height="12" uuid="6b1e0330-ad69-49b2-bbd3-25185c02881e">
-					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<paragraph tabStopWidth="40"/>
-				</textElement>
-				<text><![CDATA[Importo Finanziato]]></text>
-			</staticText>
-			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="450" y="17" width="88" height="12" uuid="7525a0a1-12c0-4f50-a4ca-f16388eed9f8"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_IM_FINANZIATO}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="VERB8" x="551" y="5" width="50" height="12" uuid="eccc9367-77b1-45be-a514-903e505c643c">
-					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<paragraph tabStopWidth="40"/>
-				</textElement>
-				<text><![CDATA[CUP]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="551" y="17" width="50" height="12" uuid="cc523882-7f4b-4eac-ba99-d15b6e4d03e4"/>
-				<textElement verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{P_CUP}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="VERB8" x="610" y="5" width="220" height="12" uuid="baa28360-5be4-4937-9139-9c365d0d308e">
-					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<paragraph tabStopWidth="40"/>
-				</textElement>
-				<text><![CDATA[Descrizione]]></text>
-			</staticText>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement style="VER9" stretchType="ElementGroupHeight" x="610" y="17" width="220" height="12" uuid="4a725496-1a66-4a3a-9592-ceae08159875">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{P_DS_PROGETTO}]]></textFieldExpression>
-			</textField>
-		</band>
+	<title height="40" splitType="Stretch">
+		<property name="com.jaspersoft.studio.layout"/>
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		<element kind="staticText" style="VERB8" x="5" y="5" width="78" height="12" uuid="629eaaa9-adb6-464a-b57d-51212a80d792" vTextAlign="Middle">
+			<paragraph tabStopWidth="40"/>
+			<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+			<text><![CDATA[Progetto]]></text>
+		</element>
+		<element kind="textField" style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="5" y="17" width="78" height="12" uuid="62ade0b9-3970-4135-9cdd-bc4f2344cc20" blankWhenNull="true" hTextAlign="Left" vTextAlign="Top">
+			<expression><![CDATA[$P{P_CD_PROGETTO}]]></expression>
+		</element>
+		<element kind="staticText" style="VERB8" x="100" y="5" width="90" height="12" uuid="d6b62fb9-689a-47a5-a843-c7b91b8ad096" vTextAlign="Middle">
+			<paragraph tabStopWidth="40"/>
+			<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+			<text><![CDATA[Responsabile]]></text>
+		</element>
+		<element kind="textField" style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="100" y="17" width="90" height="12" uuid="592c017f-db96-4bb8-95f6-ffbd33b366d9" blankWhenNull="true" vTextAlign="Top">
+			<expression><![CDATA[$P{P_RESPONSABILE}]]></expression>
+		</element>
+		<element kind="staticText" style="VERB8" x="200" y="5" width="68" height="12" uuid="2163a081-fa62-40fd-9a10-ce8a0f070852" vTextAlign="Middle">
+			<paragraph tabStopWidth="40"/>
+			<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+			<text><![CDATA[Data Inizio]]></text>
+		</element>
+		<element kind="textField" style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="200" y="17" width="68" height="12" uuid="9067f96a-422e-4145-9361-ffd59724e7ff" pattern="dd/MM/yyyy" blankWhenNull="true" vTextAlign="Top">
+			<expression><![CDATA[$P{P_DT_INIZIO}]]></expression>
+		</element>
+		<element kind="staticText" style="VERB8" x="280" y="5" width="58" height="12" uuid="15c49a1c-8863-425b-8a39-d747cce919d7" vTextAlign="Middle">
+			<paragraph tabStopWidth="40"/>
+			<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+			<text><![CDATA[Data scad.]]></text>
+		</element>
+		<element kind="textField" style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="280" y="17" width="58" height="12" uuid="b1dd9504-9fb0-4980-87fe-28957e2a03cd" pattern="dd/MM/yyyy" blankWhenNull="true" vTextAlign="Top">
+			<expression><![CDATA[$P{P_DT_FINE}]]></expression>
+		</element>
+		<element kind="staticText" style="VERB8" x="353" y="5" width="78" height="12" uuid="f9373b7d-239e-437d-930b-2565d8e51228" vTextAlign="Middle">
+			<paragraph tabStopWidth="40"/>
+			<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+			<text><![CDATA[Data Proroga]]></text>
+		</element>
+		<element kind="textField" style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="353" y="17" width="78" height="12" uuid="ea9174ac-7f97-4eeb-b51c-fbe593ab555c" pattern="dd/MM/yyyy" blankWhenNull="true" vTextAlign="Top">
+			<expression><![CDATA[$P{P_DT_PROROGA}]]></expression>
+		</element>
+		<element kind="staticText" style="VERB8" x="450" y="5" width="88" height="12" uuid="6b1e0330-ad69-49b2-bbd3-25185c02881e" vTextAlign="Middle">
+			<paragraph tabStopWidth="40"/>
+			<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+			<text><![CDATA[Importo Finanziato]]></text>
+		</element>
+		<element kind="textField" style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="450" y="17" width="88" height="12" uuid="7525a0a1-12c0-4f50-a4ca-f16388eed9f8" pattern="€ #,##0.00" blankWhenNull="true" hTextAlign="Left" vTextAlign="Top">
+			<expression><![CDATA[$P{P_IM_FINANZIATO}]]></expression>
+		</element>
+		<element kind="staticText" style="VERB8" x="551" y="5" width="50" height="12" uuid="eccc9367-77b1-45be-a514-903e505c643c" vTextAlign="Middle">
+			<paragraph tabStopWidth="40"/>
+			<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+			<text><![CDATA[CUP]]></text>
+		</element>
+		<element kind="textField" style="VER9" positionType="Float" stretchType="ElementGroupHeight" x="551" y="17" width="50" height="12" uuid="cc523882-7f4b-4eac-ba99-d15b6e4d03e4" blankWhenNull="true" vTextAlign="Top">
+			<expression><![CDATA[$P{P_CUP}]]></expression>
+		</element>
+		<element kind="staticText" style="VERB8" x="610" y="5" width="220" height="12" uuid="baa28360-5be4-4937-9139-9c365d0d308e" hTextAlign="Center" vTextAlign="Middle">
+			<paragraph tabStopWidth="40"/>
+			<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+			<text><![CDATA[Descrizione]]></text>
+		</element>
+		<element kind="textField" style="VER9" stretchType="ElementGroupHeight" x="610" y="17" width="220" height="12" uuid="4a725496-1a66-4a3a-9592-ceae08159875" textAdjust="StretchHeight" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<expression><![CDATA[$P{P_DS_PROGETTO}]]></expression>
+		</element>
 	</title>
-	<columnHeader>
-		<band height="37" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<staticText>
-				<reportElement style="VERB8" x="1" y="8" width="62" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000001"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Tipologia]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="65" y="8" width="74" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000004"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Disp. effettiva]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="176" y="8" width="31" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000d"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Impegno]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="139" y="8" width="34" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000a"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Anno Bil.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="207" y="8" width="61" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000010"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Importo Imp.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="270" y="8" width="79" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000013"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Disponibilità]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="350" y="8" width="29" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000016"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[N. Scad]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="382" y="8" width="54" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000019"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Data Mandato]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="743" y="8" width="48" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Importo]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="793" y="8" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000022"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Voce di bil.]]></text>
-			</staticText>
-			<line>
-				<reportElement x="0" y="23" width="842" height="1" uuid="c4d23b21-82a3-4b21-9c11-30ab22abc002">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-			</line>
-			<line>
-				<reportElement x="0" y="5" width="842" height="1" uuid="349d9720-5420-41f8-8ad9-fef3369824fc">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-			</line>
-			<staticText>
-				<reportElement style="VERB8" x="548" y="8" width="122" height="12" uuid="00b27d0f-6076-468e-8b0e-61e1f1edba4a"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Descrizione scad.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="673" y="8" width="67" height="12" uuid="b16e3198-a910-4ad4-aed1-3cc28796a7eb"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Creditore]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="438" y="8" width="46" height="12" uuid="63e89492-d9d0-4fe7-91c8-17942330a787"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[N. Mandato]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="490" y="8" width="56" height="12" uuid="ec2062fb-0376-4b22-8996-e933d3981250"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[N. Doc. Amm.]]></text>
-			</staticText>
-		</band>
+	<columnHeader height="37" splitType="Stretch">
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		<element kind="staticText" style="VERB8" x="1" y="8" width="62" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000001" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Tipologia]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="65" y="8" width="74" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000004" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Disp. effettiva]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="176" y="8" width="31" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000d" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Impegno]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="139" y="8" width="34" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000000a" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Anno Bil.]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="207" y="8" width="61" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000010" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Importo Imp.]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="270" y="8" width="79" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000013" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Disponibilità]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="350" y="8" width="29" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000016" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[N. Scad]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="382" y="8" width="54" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000019" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Data Mandato]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="743" y="8" width="48" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-00000000001f" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Importo]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="793" y="8" width="45" height="12" uuid="f1f1f1f0-f0f0-f0f0-f0f0-000000000022" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Voce di bil.]]></text>
+		</element>
+		<element kind="line" x="0" y="23" width="842" height="1" uuid="c4d23b21-82a3-4b21-9c11-30ab22abc002">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+		</element>
+		<element kind="line" x="0" y="5" width="842" height="1" uuid="349d9720-5420-41f8-8ad9-fef3369824fc">
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+		</element>
+		<element kind="staticText" style="VERB8" x="548" y="8" width="122" height="12" uuid="00b27d0f-6076-468e-8b0e-61e1f1edba4a" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Descrizione scad.]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="673" y="8" width="67" height="12" uuid="b16e3198-a910-4ad4-aed1-3cc28796a7eb" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Creditore]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="438" y="8" width="46" height="12" uuid="63e89492-d9d0-4fe7-91c8-17942330a787" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[N. Mandato]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="490" y="8" width="56" height="12" uuid="ec2062fb-0376-4b22-8996-e933d3981250" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[N. Doc. Amm.]]></text>
+		</element>
 	</columnHeader>
-	<summary>
-		<band height="56" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-			<line>
-				<reportElement x="0" y="12" width="842" height="1" uuid="43a259c6-070a-42a9-86c2-19e35520a216">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-			</line>
-			<staticText>
-				<reportElement style="VERB8" x="211" y="17" width="67" height="10" uuid="4a6a57e3-ff39-4a37-b2e1-45a706f363c4"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Tot. Impegnato]]></text>
-			</staticText>
-			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="VERB12" x="200" y="29" width="87" height="15" uuid="b5a86d26-78c6-4d10-914b-2f22b8344177"/>
-				<textElement textAlignment="Center" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$V{SUM_IMPORTO_FIN_GEN}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="VERB8" x="724" y="17" width="85" height="10" uuid="c082725e-3151-4091-a53c-134ac8566299"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Tot. sub/ordini/fatture]]></text>
-			</staticText>
-			<textField pattern="€ #,##0.00" isBlankWhenNull="true">
-				<reportElement style="VERB12" x="711" y="29" width="110" height="14" uuid="8a619280-5a3d-4780-b2df-12d8a5996f26"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$V{SUM_IMP_SCAD_GEN}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="VERB8" x="65" y="17" width="73" height="10" uuid="98dedf38-8d2a-447e-a11b-b6c9487a7f07"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Tot. disp. eff.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="VERB8" x="310" y="16" width="73" height="11" uuid="aff1d763-e096-48ff-8f3f-8a2136711493"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Tot. Disponibile]]></text>
-			</staticText>
-			<textField pattern="€ #,##0.00" isBlankWhenNull="false">
-				<reportElement style="VERB12" isPrintRepeatedValues="false" x="296" y="29" width="100" height="14" isPrintInFirstWholeBand="true" uuid="5fed6b69-bd62-4590-94f9-c9b4c46be40c"/>
-				<textElement textAlignment="Center" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$V{SUM_DISP_GEN}]]></textFieldExpression>
-			</textField>
-			<textField pattern="€ #,##0.00" isBlankWhenNull="false">
-				<reportElement style="VERB12" isPrintRepeatedValues="false" x="50" y="29" width="100" height="14" isPrintInFirstWholeBand="true" uuid="26b757e9-0b3e-4239-8233-88024f85aeb2"/>
-				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
-				<textFieldExpression><![CDATA[$V{SUM_DISP_EFF_GEN}]]></textFieldExpression>
-			</textField>
-		</band>
+	<summary height="56" splitType="Stretch">
+		<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		<element kind="line" x="0" y="12" width="842" height="1" uuid="43a259c6-070a-42a9-86c2-19e35520a216">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+		</element>
+		<element kind="staticText" style="VERB8" x="211" y="17" width="67" height="10" uuid="4a6a57e3-ff39-4a37-b2e1-45a706f363c4" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Tot. Impegnato]]></text>
+		</element>
+		<element kind="textField" style="VERB12" x="200" y="29" width="87" height="15" uuid="b5a86d26-78c6-4d10-914b-2f22b8344177" pattern="€ #,##0.00" blankWhenNull="true" hTextAlign="Center" vTextAlign="Top">
+			<expression><![CDATA[$V{SUM_IMPORTO_FIN_GEN}]]></expression>
+		</element>
+		<element kind="staticText" style="VERB8" x="724" y="17" width="85" height="10" uuid="c082725e-3151-4091-a53c-134ac8566299" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Tot. sub/ordini/fatture]]></text>
+		</element>
+		<element kind="textField" style="VERB12" x="711" y="29" width="110" height="14" uuid="8a619280-5a3d-4780-b2df-12d8a5996f26" pattern="€ #,##0.00" blankWhenNull="true" hTextAlign="Center">
+			<expression><![CDATA[$V{SUM_IMP_SCAD_GEN}]]></expression>
+		</element>
+		<element kind="staticText" style="VERB8" x="65" y="17" width="73" height="10" uuid="98dedf38-8d2a-447e-a11b-b6c9487a7f07" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Tot. disp. eff.]]></text>
+		</element>
+		<element kind="staticText" style="VERB8" x="310" y="16" width="73" height="11" uuid="aff1d763-e096-48ff-8f3f-8a2136711493" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Tot. Disponibile]]></text>
+		</element>
+		<element kind="textField" style="VERB12" printRepeatedValues="false" x="296" y="29" width="100" height="14" printInFirstWholeBand="true" uuid="5fed6b69-bd62-4590-94f9-c9b4c46be40c" pattern="€ #,##0.00" blankWhenNull="false" hTextAlign="Center" vTextAlign="Top">
+			<expression><![CDATA[$V{SUM_DISP_GEN}]]></expression>
+		</element>
+		<element kind="textField" style="VERB12" printRepeatedValues="false" x="50" y="29" width="100" height="14" printInFirstWholeBand="true" uuid="26b757e9-0b3e-4239-8233-88024f85aeb2" pattern="€ #,##0.00" blankWhenNull="false" hTextAlign="Center" vTextAlign="Top" markup="none">
+			<expression><![CDATA[$V{SUM_DISP_EFF_GEN}]]></expression>
+		</element>
 	</summary>
 </jasperReport>

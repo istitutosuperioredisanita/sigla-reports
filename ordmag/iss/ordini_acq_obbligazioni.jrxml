@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ordini_acq_obbligazioni" pageWidth="300" pageHeight="77" columnWidth="300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e8af5135-f4af-44fe-a407-7f60a3cf6368">
+<jasperReport name="ordini_acq_obbligazioni" pageWidth="300" pageHeight="77" columnWidth="300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e8af5135-f4af-44fe-a407-7f60a3cf6368" language="java">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLACOLL"/>
 	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
-	<style name="TNR10B" fontName="Times New Roman" fontSize="10" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNR16B" fontName="Times New Roman" fontSize="16" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNR8B" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR10B" fontName="Times New Roman" fontSize="10" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR16B" fontName="Times New Roman" fontSize="16" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR8B" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman">
 		<paragraph lineSpacing="Single"/>
 	</style>
 	<style name="TNR12" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
-	<style name="TNR12B" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR12B" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Bold"/>
 	<parameter name="CD_CDS" class="java.lang.String">
 		<defaultValueExpression><![CDATA["000"]]></defaultValueExpression>
 	</parameter>
@@ -27,8 +26,8 @@
 	<parameter name="NUMERO" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
 	</parameter>
-	<queryString language="SQL">
-		<![CDATA[select  distinct
+	<query language="SQL"><![CDATA[
+		select  distinct
 obb.esercizio as esercizio_obb,
 obb.pg_obbligazione,
 sca.pg_obbligazione_scadenzario,
@@ -50,8 +49,8 @@ where cr.CD_CDS=  $P{CD_CDS}
 and cr.CD_UNITA_OPERATIVA=  $P{CD_UNITA_OPERATIVA}
 and cr.ESERCIZIO=  $P{ESERCIZIO}
 and cr.CD_NUMERATORE= $P{CD_NUMERATORE}
-and cr.NUMERO= $P{NUMERO}]]>
-	</queryString>
+and cr.NUMERO= $P{NUMERO}
+	]]></query>
 	<field name="ESERCIZIO_OBB" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO_OBB"/>
 	</field>
@@ -67,36 +66,25 @@ and cr.NUMERO= $P{NUMERO}]]>
 	<field name="CD_ELEMENTO_VOCE" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CD_ELEMENTO_VOCE"/>
 	</field>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band height="15">
+	<background splitType="Stretch"/>
+	<title height="15">
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		<element kind="staticText" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="300" height="13" uuid="eb774dfa-b736-4645-9ebe-69f13f4f305a">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<staticText>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="300" height="13" uuid="eb774dfa-b736-4645-9ebe-69f13f4f305a">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<text><![CDATA[Impegno/i di spesa]]></text>
-			</staticText>
-		</band>
+			<property name="com.jaspersoft.studio.unit.y" value="px"/>
+			<text><![CDATA[Impegno/i di spesa]]></text>
+		</element>
 	</title>
 	<detail>
 		<band height="10" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField textAdjust="StretchHeight">
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="300" height="10" uuid="08918be5-8fe9-4c2b-8bb9-d413c94ad783">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2c00aa66-0975-4191-9f21-37aa238afa6b"/>
-					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement>
-					<font fontName="Times New Roman" size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ESERCIZIO_OBB} == null ? "" : $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+	
-" EUR	"+$F{IM_SCADENZA}  ]]></textFieldExpression>
-			</textField>
+			<element kind="textField" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="300" height="10" uuid="08918be5-8fe9-4c2b-8bb9-d413c94ad783" textAdjust="StretchHeight" fontName="Times New Roman" fontSize="8">
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2c00aa66-0975-4191-9f21-37aa238afa6b"/>
+				<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<expression><![CDATA[$F{ESERCIZIO_OBB} == null ? "" : $F{ESERCIZIO_OBB}+"/"+$F{PG_OBBLIGAZIONE}+"/"+$F{PG_OBBLIGAZIONE_SCADENZARIO}+	
+" EUR	"+$F{IM_SCADENZA}  ]]></expression>
+			</element>
 		</band>
 	</detail>
 </jasperReport>

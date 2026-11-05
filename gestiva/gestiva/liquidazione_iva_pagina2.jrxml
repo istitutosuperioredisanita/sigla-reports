@@ -1,119 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"  ?>
-<!-- Created with iReport - A designer for JasperReports -->
-<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-<jasperReport
-		 name="liquidazione_iva_pagina2"
-		 columnCount="1"
-		 printOrder="Vertical"
-		 orientation="Portrait"
-		 pageWidth="595"
-		 pageHeight="842"
-		 columnWidth="595"
-		 columnSpacing="0"
-		 leftMargin="0"
-		 rightMargin="0"
-		 topMargin="0"
-		 bottomMargin="0"
-		 whenNoDataType="NoPages"
-		 isTitleNewPage="false"
-		 isSummaryNewPage="false">
-	<property name="ireport.scriptlethandling" value="0" />
-	<property name="ireport.encoding" value="UTF-8" />
-	<import value="java.util.*" />
-	<import value="net.sf.jasperreports.engine.*" />
-	<import value="net.sf.jasperreports.engine.data.*" />
-
-	<style 
-		name="TNR10"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="10"
-		pdfFontName="Times-Roman"
-	/>
-	<style 
-		name="TNR10BOLD"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="10"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-	<style 
-		name="TNR12"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="12"
-		pdfFontName="Times-Roman"
-	/>
-	<style 
-		name="TNR10ITALIC"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="10"
-		isItalic="true"
-		pdfFontName="Times-Italic"
-		isPdfEmbedded="true"
-	/>
-	<style 
-		name="TNR10BI"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="10"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	/>
-	<style 
-		name="TNR12BOLD"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="12"
-		isBold="true"
-		pdfFontName="Times-Roman"
-		isPdfEmbedded="false"
-	/>
-	<style 
-		name="TNR12ITALIC"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="12"
-		isItalic="true"
-		pdfFontName="Times-Italic"
-		isPdfEmbedded="true"
-	/>
-	<style 
-		name="TNR12BI"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="12"
-		isBold="true"
-		isItalic="false"
-		pdfFontName="Times-BoldItalic"
-	/>
-
-	<parameter name="idReport" isForPrompting="false" class="java.lang.Integer">
-		<defaultValueExpression ><![CDATA[new Integer(0)]]></defaultValueExpression>
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="liquidazione_iva_pagina2" columnCount="1" printOrder="Vertical" orientation="Portrait" pageWidth="595" pageHeight="842" columnWidth="595" columnSpacing="0" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenNoDataType="NoPages" titleNewPage="false" summaryNewPage="false" language="java">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<style name="TNR10" default="false" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
+	<style name="TNR10BOLD" default="false" fontName="Times New Roman" fontSize="10" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR12" default="false" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
+	<style name="TNR10ITALIC" default="false" fontName="Times New Roman" fontSize="10" italic="true" pdfFontName="Times-Italic" pdfEmbedded="true"/>
+	<style name="TNR10BI" default="false" fontName="Times New Roman" fontSize="10" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNR12BOLD" default="false" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Roman" pdfEmbedded="false"/>
+	<style name="TNR12ITALIC" default="false" fontName="Times New Roman" fontSize="12" italic="true" pdfFontName="Times-Italic" pdfEmbedded="true"/>
+	<style name="TNR12BI" default="false" fontName="Times New Roman" fontSize="12" bold="true" italic="false" pdfFontName="Times-BoldItalic"/>
+	<parameter name="idReport" forPrompting="false" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer(0)]]></defaultValueExpression>
 	</parameter>
-	<parameter name="aPagIniziale" isForPrompting="false" class="java.lang.String"/>
-	<parameter name="cd_cds" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["054"]]></defaultValueExpression>
+	<parameter name="aPagIniziale" forPrompting="false" class="java.lang.String"/>
+	<parameter name="cd_cds" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["054"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="cd_unita_organizzativa" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["054.001"]]></defaultValueExpression>
+	<parameter name="cd_unita_organizzativa" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["054.001"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="esercizio" isForPrompting="false" class="java.lang.Integer">
-		<defaultValueExpression ><![CDATA[new Integer("2006")]]></defaultValueExpression>
+	<parameter name="esercizio" forPrompting="false" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer("2006")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="ti_liquidazione" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["S"]]></defaultValueExpression>
+	<parameter name="ti_liquidazione" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["S"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="dataInizio" isForPrompting="false" class="java.util.Date">
-		<defaultValueExpression ><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse("2006/02/01")]]></defaultValueExpression>
+	<parameter name="dataInizio" forPrompting="false" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse("2006/02/01")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="dataFine" isForPrompting="false" class="java.util.Date">
-		<defaultValueExpression ><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse("2006/02/28")]]></defaultValueExpression>
+	<parameter name="dataFine" forPrompting="false" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse("2006/02/28")]]></defaultValueExpression>
 	</parameter>
-	<queryString><![CDATA[SELECT 2 PAGINA,LIQUIDAZIONE_IVA.*,UO.DS_UNITA_ORGANIZZATIVA DS_UNITA_ORGANIZZATIVA
+	<query language="sql"><![CDATA[SELECT 2 PAGINA,LIQUIDAZIONE_IVA.*,UO.DS_UNITA_ORGANIZZATIVA DS_UNITA_ORGANIZZATIVA
 FROM LIQUIDAZIONE_IVA, UNITA_ORGANIZZATIVA UO
 WHERE LIQUIDAZIONE_IVA.ESERCIZIO = $P{esercizio}
   AND LIQUIDAZIONE_IVA.CD_CDS = $P{cd_cds} 
@@ -122,8 +44,7 @@ WHERE LIQUIDAZIONE_IVA.ESERCIZIO = $P{esercizio}
   AND LIQUIDAZIONE_IVA.REPORT_ID = $P{idReport}
   AND LIQUIDAZIONE_IVA.DT_INIZIO = $P{dataInizio}
   AND LIQUIDAZIONE_IVA.DT_FINE = $P{dataFine}
-  AND UO.CD_UNITA_ORGANIZZATIVA =  LIQUIDAZIONE_IVA.CD_UNITA_ORGANIZZATIVA]]></queryString>
-
+  AND UO.CD_UNITA_ORGANIZZATIVA =  LIQUIDAZIONE_IVA.CD_UNITA_ORGANIZZATIVA]]></query>
 	<field name="PAGINA" class="java.lang.Integer"/>
 	<field name="CD_CDS" class="java.lang.String"/>
 	<field name="ESERCIZIO" class="java.math.BigDecimal"/>
@@ -179,849 +100,250 @@ WHERE LIQUIDAZIONE_IVA.ESERCIZIO = $P{esercizio}
 	<field name="IVA_VEND_DIFF_ES_PREC_ESIG" class="java.math.BigDecimal"/>
 	<field name="IVA_ACQ_DIFF_ES_PREC_ESIG" class="java.math.BigDecimal"/>
 	<field name="DS_UNITA_ORGANIZZATIVA" class="java.lang.String"/>
-
-	<variable name="INTESTAZIONE" class="java.lang.String" resetType="Report" calculation="Nothing">
-	</variable>
-	<variable name="DESCRIZIONE1" class="java.lang.String" resetType="Report" calculation="Nothing">
-	</variable>
-	<variable name="PERIODO" class="java.lang.String" resetType="Report" calculation="Nothing">
-	</variable>
-
-		<group  name="PAGINA" isStartNewPage="true" >
-			<groupExpression><![CDATA[$F{PAGINA}]]></groupExpression>
-			<groupHeader>
-			<band height="674"  isSplitAllowed="false" >
-				<rectangle>
-					<reportElement
-						x="2"
-						y="15"
-						width="498"
-						height="353"
-						key="rectangle-2"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</rectangle>
-				<line direction="TopDown">
-					<reportElement
-						x="3"
-						y="64"
-						width="496"
-						height="0"
-						key="line-11"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="3"
-						y="100"
-						width="496"
-						height="0"
-						key="line-12"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="3"
-						y="340"
-						width="496"
-						height="0"
-						key="line-13"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="3"
-						y="148"
-						width="496"
-						height="0"
-						key="line-14"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="3"
-						y="183"
-						width="496"
-						height="0"
-						key="line-15"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="3"
-						y="223"
-						width="496"
-						height="0"
-						key="line-16"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="3"
-						y="272"
-						width="496"
-						height="0"
-						key="line-17"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="3"
-						y="305"
-						width="496"
-						height="0"
-						key="line-18"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="282"
-						y="15"
-						width="0"
-						height="353"
-						key="line-19"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="388"
-						y="15"
-						width="0"
-						height="353"
-						key="line-20"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<textField isStretchWithOverflow="false" pattern="¤ #,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="5"
-						y="26"
-						width="275"
-						height="28"
-						key="textField-6"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+	<variable name="INTESTAZIONE" class="java.lang.String" resetType="Report" calculation="Nothing"/>
+	<variable name="DESCRIZIONE1" class="java.lang.String" resetType="Report" calculation="Nothing"/>
+	<variable name="PERIODO" class="java.lang.String" resetType="Report" calculation="Nothing"/>
+	<group name="PAGINA" startNewPage="true">
+		<expression><![CDATA[$F{PAGINA}]]></expression>
+		<groupHeader>
+			<band height="674" splitAllowed="false">
+				<element kind="rectangle" x="2" y="15" width="498" height="353" key="rectangle-2" positionType="Float" removeLineWhenBlank="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="3" y="64" width="496" height="0" key="line-11" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="3" y="100" width="496" height="0" key="line-12" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="3" y="340" width="496" height="0" key="line-13" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="3" y="148" width="496" height="0" key="line-14" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="3" y="183" width="496" height="0" key="line-15" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="3" y="223" width="496" height="0" key="line-16" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="3" y="272" width="496" height="0" key="line-17" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="3" y="305" width="496" height="0" key="line-18" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="282" y="15" width="0" height="353" key="line-19" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="388" y="15" width="0" height="353" key="line-20" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="textField" x="5" y="26" width="275" height="28" key="textField-6" positionType="Float" removeLineWhenBlank="true" pattern="¤ #,##0" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" vTextAlign="Top" rotation="None" markup="styled" fontName="Times New Roman" pdfFontName="Times-BoldItalic" fontSize="12" bold="true" italic="true" underline="false" pdfEncoding="Cp1252" strikeThrough="false">
+					<paragraph lineSpacing="Single"/>
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement verticalAlignment="Top" rotation="None" isStyledText="true" lineSpacing="Single">
-						<font fontName="Times New Roman" pdfFontName="Times-BoldItalic" size="12" isBold="true" isItalic="true" isUnderline="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["Debito d'imposta non superiore a "+ new DecimalFormat("¤ #,##0").format(new BigDecimal("26")) +" relativo al periodo precedente"]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						style="TNR12BI"
-						x="5"
-						y="75"
-						width="275"
-						height="18"
-						key="staticText-33"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA["Debito d'imposta non superiore a "+ new DecimalFormat("¤ #,##0").format(new BigDecimal("26")) +" relativo al periodo precedente"]]></expression>
+				</element>
+				<element kind="staticText" style="TNR12BI" x="5" y="75" width="275" height="18" key="staticText-33" positionType="Float" removeLineWhenBlank="true" markup="styled" fontSize="12" italic="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font size="12" isItalic="true"/>
-					</textElement>
-				<text><![CDATA[Credito di imposta riportato dal periodo precedente]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR12BI"
-						x="5"
-						y="110"
-						width="275"
-						height="28"
-						key="staticText-34"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<text><![CDATA[Credito di imposta riportato dal periodo precedente]]></text>
+				</element>
+				<element kind="staticText" style="TNR12BI" x="5" y="110" width="275" height="28" key="staticText-34" positionType="Float" removeLineWhenBlank="true" markup="styled" fontSize="12" italic="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font size="12" isItalic="true"/>
-					</textElement>
-				<text><![CDATA[Credito IVA compesabile portato in detrazione nella
+					<text><![CDATA[Credito IVA compesabile portato in detrazione nella
 liquidazione periodica]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR12BI"
-						x="5"
-						y="157"
-						width="275"
-						height="19"
-						key="staticText-35"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+				</element>
+				<element kind="staticText" style="TNR12BI" x="5" y="157" width="275" height="19" key="staticText-35" positionType="Float" removeLineWhenBlank="true" markup="styled" fontSize="12" italic="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font size="12" isItalic="true"/>
-					</textElement>
-				<text><![CDATA[IVA dovuta o a credito del periodo]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR12BI"
-						x="5"
-						y="190"
-						width="275"
-						height="28"
-						key="staticText-36"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<text><![CDATA[IVA dovuta o a credito del periodo]]></text>
+				</element>
+				<element kind="staticText" style="TNR12BI" x="5" y="190" width="275" height="28" key="staticText-36" positionType="Float" removeLineWhenBlank="true" markup="styled" fontSize="12" italic="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font size="12" isItalic="true"/>
-					</textElement>
-				<text><![CDATA[Interessi dovuti su liquidazioni trimestrali 
+					<text><![CDATA[Interessi dovuti su liquidazioni trimestrali 
 art.33 DPR.633/1972]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR12BI"
-						x="5"
-						y="234"
-						width="275"
-						height="30"
-						key="staticText-37"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+				</element>
+				<element kind="staticText" style="TNR12BI" x="5" y="234" width="275" height="30" key="staticText-37" positionType="Float" removeLineWhenBlank="true" markup="styled" fontSize="12" italic="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font size="12" isItalic="true"/>
-					</textElement>
-				<text><![CDATA[Crediti IVA speciali portati in detrazione nella liquidazione periodica]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR12BI"
-						x="5"
-						y="280"
-						width="275"
-						height="17"
-						key="staticText-38"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<text><![CDATA[Crediti IVA speciali portati in detrazione nella liquidazione periodica]]></text>
+				</element>
+				<element kind="staticText" style="TNR12BI" x="5" y="280" width="275" height="17" key="staticText-38" positionType="Float" removeLineWhenBlank="true" markup="styled" fontSize="12" italic="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font size="12" isItalic="true"/>
-					</textElement>
-				<text><![CDATA[Acconto IVA Versato
+					<text><![CDATA[Acconto IVA Versato
 ]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR12BI"
-						x="5"
-						y="315"
-						width="275"
-						height="18"
-						key="staticText-39"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+				</element>
+				<element kind="staticText" style="TNR12BI" x="5" y="315" width="275" height="18" key="staticText-39" positionType="Float" removeLineWhenBlank="true" markup="styled" fontSize="12" italic="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font size="12" isItalic="true"/>
-					</textElement>
-				<text><![CDATA[Importo da versare/ compensare del periodo]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR12BI"
-						x="5"
-						y="345"
-						width="275"
-						height="18"
-						key="staticText-40"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<text><![CDATA[Importo da versare/ compensare del periodo]]></text>
+				</element>
+				<element kind="staticText" style="TNR12BI" x="5" y="345" width="275" height="18" key="staticText-40" positionType="Float" removeLineWhenBlank="true" markup="styled" fontSize="12" italic="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font size="12" isItalic="true"/>
-					</textElement>
-				<text><![CDATA[Versamento IVA]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="285"
-						y="34"
-						width="100"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
+					<text><![CDATA[Versamento IVA]]></text>
+				</element>
+				<element kind="textField" style="TNR12" x="285" y="34" width="100" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
             && $F{IVA_DEB_CRED_PER_PREC}.compareTo(new BigDecimal(0)) <= 0)]]></printWhenExpression>
-						</reportElement>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{IVA_DEB_CRED_PER_PREC}.abs()]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="392"
-						y="75"
-						width="104"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
+					<expression><![CDATA[$F{IVA_DEB_CRED_PER_PREC}.abs()]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="392" y="75" width="104" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
             && $F{IVA_DEB_CRED_PER_PREC}.compareTo(new BigDecimal(0))> 0)]]></printWhenExpression>
-						</reportElement>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{IVA_DEB_CRED_PER_PREC}.abs()]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="392"
-						y="120"
-						width="104"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{IVA_DEB_CRED_PER_PREC}.abs()]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="392" y="120" width="104" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{CRED_IVA_COMP_DETR}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="285"
-						y="158"
-						width="100"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
+					<expression><![CDATA[$F{CRED_IVA_COMP_DETR}]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="285" y="158" width="100" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
             && $F{IVA_DEB_CRED}.compareTo(new BigDecimal(0)) <= 0)]]></printWhenExpression>
-						</reportElement>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{IVA_DEB_CRED}.abs()]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="392"
-						y="158"
-						width="104"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
+					<expression><![CDATA[$F{IVA_DEB_CRED}.abs()]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="392" y="158" width="104" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
             && $F{IVA_DEB_CRED}.compareTo(new BigDecimal(0)) > 0)]]></printWhenExpression>
-						</reportElement>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{IVA_DEB_CRED}.abs()]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="285"
-						y="198"
-						width="100"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{IVA_DEB_CRED}.abs()]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="285" y="198" width="100" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{INT_DEB_LIQ_TRIM}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="392"
-						y="242"
-						width="104"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{INT_DEB_LIQ_TRIM}]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="392" y="242" width="104" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{CRED_IVA_SPEC_DETR}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="392"
-						y="279"
-						width="104"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{CRED_IVA_SPEC_DETR}]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="392" y="279" width="104" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ACCONTO_IVA_VERS}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="285"
-						y="315"
-						width="100"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
+					<expression><![CDATA[$F{ACCONTO_IVA_VERS}]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="285" y="315" width="100" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
             && $F{IVA_DA_VERSARE}.compareTo(new BigDecimal(0)) <= 0)]]></printWhenExpression>
-						</reportElement>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{IVA_DA_VERSARE}.abs()]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="392"
-						y="315"
-						width="104"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
+					<expression><![CDATA[$F{IVA_DA_VERSARE}.abs()]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="392" y="315" width="104" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)) 
             && $F{IVA_DA_VERSARE}.compareTo(new BigDecimal(0)) > 0)]]></printWhenExpression>
-						</reportElement>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{IVA_DA_VERSARE}.abs()]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="285"
-						y="345"
-						width="100"
-						height="18"
-						key="textField"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{IVA_DA_VERSARE}.abs()]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="285" y="345" width="100" height="18" key="textField" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{IVA_VERSATA}]]></textFieldExpression>
-				</textField>
-				<rectangle>
-					<reportElement
-						x="2"
-						y="387"
-						width="498"
-						height="61"
-						key="rectangle-3"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</rectangle>
-				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="5"
-						y="422"
-						width="220"
-						height="18"
-						key="textField-5"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{IVA_VERSATA}]]></expression>
+				</element>
+				<element kind="rectangle" x="2" y="387" width="498" height="61" key="rectangle-3" positionType="Float" removeLineWhenBlank="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="textField" style="TNR12" x="5" y="422" width="220" height="18" key="textField-5" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" markup="styled" pdfFontName="Times-Roman">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font pdfFontName="Times-Roman"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["Giorno " + ($F{DT_VERSAMENTO} == null ? "              " : new SimpleDateFormat("DD").format($F{DT_VERSAMENTO}))
+					<expression><![CDATA["Giorno " + ($F{DT_VERSAMENTO} == null ? "              " : new SimpleDateFormat("DD").format($F{DT_VERSAMENTO}))
 + "Mese " + ($F{DT_VERSAMENTO} == null ? "              " : new SimpleDateFormat("MM").format($F{DT_VERSAMENTO}))
-+ "Anno " + ($F{DT_VERSAMENTO} == null ? "              " : new SimpleDateFormat("YYYY").format($F{DT_VERSAMENTO}))]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						style="TNR12BOLD"
-						x="5"
-						y="393"
-						width="230"
-						height="18"
-						key="staticText-41"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
++ "Anno " + ($F{DT_VERSAMENTO} == null ? "              " : new SimpleDateFormat("YYYY").format($F{DT_VERSAMENTO}))]]></expression>
+				</element>
+				<element kind="staticText" style="TNR12BOLD" x="5" y="393" width="230" height="18" key="staticText-41" positionType="Float" removeLineWhenBlank="true" markup="styled" pdfFontName="Times-Bold" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font pdfFontName="Times-Bold" size="12"/>
-					</textElement>
-				<text><![CDATA[Estremi del versamento]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="332"
-						y="423"
-						width="57"
-						height="15"
-						key="textField">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<text><![CDATA[Estremi del versamento]]></text>
+				</element>
+				<element kind="textField" style="TNR12" x="332" y="423" width="57" height="15" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" markup="styled">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COD_AZIENDA}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="435"
-						y="423"
-						width="39"
-						height="15"
-						key="textField">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{COD_AZIENDA}]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="435" y="423" width="39" height="15" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" markup="styled">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CAB}]]></textFieldExpression>
-				</textField>
-				<rectangle>
-					<reportElement
-						x="2"
-						y="468"
-						width="498"
-						height="81"
-						key="rectangle-4"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</rectangle>
-				<staticText>
-					<reportElement
-						style="TNR12BI"
-						x="5"
-						y="479"
-						width="274"
-						height="18"
-						key="staticText-42"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{CAB}]]></expression>
+				</element>
+				<element kind="rectangle" x="2" y="468" width="498" height="81" key="rectangle-4" positionType="Float" removeLineWhenBlank="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="staticText" style="TNR12BI" x="5" y="479" width="274" height="18" key="staticText-42" positionType="Float" removeLineWhenBlank="true" markup="styled" italic="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font isItalic="true"/>
-					</textElement>
-				<text><![CDATA[Credito IVA infrannuale chiesto a rimborso]]></text>
-				</staticText>
-				<line direction="TopDown">
-					<reportElement
-						x="3"
-						y="506"
-						width="496"
-						height="0"
-						key="line-21"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<staticText>
-					<reportElement
-						style="TNR12BI"
-						x="5"
-						y="511"
-						width="269"
-						height="33"
-						key="staticText-43"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<text><![CDATA[Credito IVA infrannuale chiesto a rimborso]]></text>
+				</element>
+				<element kind="line" x="3" y="506" width="496" height="0" key="line-21" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="staticText" style="TNR12BI" x="5" y="511" width="269" height="33" key="staticText-43" positionType="Float" removeLineWhenBlank="true" markup="styled" italic="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font isItalic="true"/>
-					</textElement>
-				<text><![CDATA[Credito IVA infrannuale destinato alla compensazione]]></text>
-				</staticText>
-				<line direction="TopDown">
-					<reportElement
-						x="282"
-						y="469"
-						width="0"
-						height="80"
-						key="line-22"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="388"
-						y="469"
-						width="0"
-						height="80"
-						key="line-23"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="392"
-						y="480"
-						width="104"
-						height="18"
-						key="textField">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<text><![CDATA[Credito IVA infrannuale destinato alla compensazione]]></text>
+				</element>
+				<element kind="line" x="282" y="469" width="0" height="80" key="line-22" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="line" x="388" y="469" width="0" height="80" key="line-23" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="textField" style="TNR12" x="392" y="480" width="104" height="18" key="textField" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{CRED_IVA_INFRANN_RIMB}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="392"
-						y="518"
-						width="104"
-						height="18"
-						key="textField">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{CRED_IVA_INFRANN_RIMB}]]></expression>
+				</element>
+				<element kind="textField" style="TNR12" x="392" y="518" width="104" height="18" key="textField" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{CRED_IVA_INFRANN_COMP}]]></textFieldExpression>
-				</textField>
-				<rectangle>
-					<reportElement
-						style="TNR10BOLD"
-						x="2"
-						y="570"
-						width="498"
-						height="96"
-						key="rectangle-5"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
-					<graphicElement stretchType="NoStretch"/>
-				</rectangle>
-				<staticText>
-					<reportElement
-						style="TNR12BOLD"
-						x="5"
-						y="572"
-						width="77"
-						height="17"
-						key="staticText-44"
-						positionType="Float"
-						isRemoveLineWhenBlank="true">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{CRED_IVA_INFRANN_COMP}]]></expression>
+				</element>
+				<element kind="rectangle" style="TNR10BOLD" x="2" y="570" width="498" height="96" key="rectangle-5" positionType="Float" removeLineWhenBlank="true">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
+				</element>
+				<element kind="staticText" style="TNR12BOLD" x="5" y="572" width="77" height="17" key="staticText-44" positionType="Float" removeLineWhenBlank="true" markup="styled" pdfFontName="Times-Bold" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font pdfFontName="Times-Bold" size="12"/>
-					</textElement>
-				<text><![CDATA[Annotazioni:]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12"
-						x="87"
-						y="572"
-						width="410"
-						height="91"
-						key="textField">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<text><![CDATA[Annotazioni:]]></text>
+				</element>
+				<element kind="textField" style="TNR12" x="87" y="572" width="410" height="91" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" markup="styled" fontSize="12">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ANNOTAZIONI}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						style="TNR12"
-						x="236"
-						y="423"
-						width="93"
-						height="17"
-						key="staticText-45">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<expression><![CDATA[$F{ANNOTAZIONI}]]></expression>
+				</element>
+				<element kind="staticText" style="TNR12" x="236" y="423" width="93" height="17" key="staticText-45">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Codice Azienda]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNR12"
-						x="400"
-						y="423"
-						width="35"
-						height="17"
-						key="staticText-46">
-							<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
-						</reportElement>
+					<text><![CDATA[Codice Azienda]]></text>
+				</element>
+				<element kind="staticText" style="TNR12" x="400" y="423" width="35" height="17" key="staticText-46">
+					<printWhenExpression><![CDATA[new Boolean($F{PAGINA}.equals(new Integer(2)))]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Cab]]></text>
-				</staticText>
+					<text><![CDATA[Cab]]></text>
+				</element>
 			</band>
-			</groupHeader>
-			<groupFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-			</groupFooter>
-		</group>
-		<background>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</background>
-		<title>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</title>
-		<pageHeader>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</pageHeader>
-		<columnHeader>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnHeader>
-		<detail>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</detail>
-		<columnFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnFooter>
-		<pageFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</pageFooter>
-		<summary>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</summary>
+		</groupHeader>
+		<groupFooter>
+			<band height="0" splitAllowed="true"/>
+		</groupFooter>
+	</group>
+	<background height="0" splitAllowed="true"/>
+	<title height="0" splitAllowed="true"/>
+	<pageHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitAllowed="true"/>
+	<detail>
+		<band height="0" splitAllowed="true"/>
+	</detail>
+	<columnFooter height="0" splitAllowed="true"/>
+	<pageFooter height="0" splitAllowed="true"/>
+	<summary height="0" splitAllowed="true"/>
 </jasperReport>

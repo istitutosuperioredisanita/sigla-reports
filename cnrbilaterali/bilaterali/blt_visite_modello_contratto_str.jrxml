@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ModelloContratto" pageWidth="595" pageHeight="842" columnWidth="465" leftMargin="65" rightMargin="65" topMargin="20" bottomMargin="40" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Blt_visite_stampe_candidaturaScriptlet">
+<jasperReport name="ModelloContratto" pageWidth="595" pageHeight="842" columnWidth="465" leftMargin="65" rightMargin="65" topMargin="20" bottomMargin="40" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Blt_visite_stampe_candidaturaScriptlet" language="java">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.2100000000000002"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="471"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
 	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
-	<style name="TNRG8" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRC8" fontName="Times New Roman" fontSize="8" isItalic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRG8" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC8" fontName="Times New Roman" fontSize="8" italic="true" pdfFontName="Times-Italic"/>
 	<style name="TNR9" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman"/>
-	<style name="TNRG9" fontName="Times New Roman" fontSize="9" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRC9" fontName="Times New Roman" fontSize="9" isItalic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRG9" fontName="Times New Roman" fontSize="9" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC9" fontName="Times New Roman" fontSize="9" italic="true" pdfFontName="Times-Italic"/>
 	<style name="TNR10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
-	<style name="TNRG10" fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRC10" fontName="Times New Roman" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNRG11" fontName="Times New Roman" fontSize="11" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG10" fontName="Times New Roman" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC10" fontName="Times New Roman" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRG11" fontName="Times New Roman" fontSize="11" bold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR12" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
-	<style name="TNRG12" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRC12" fontName="Times New Roman" fontSize="12" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNRGC12" fontName="Times New Roman" fontSize="12" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
-	<style name="TNRGC14" fontName="Times New Roman" fontSize="14" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
-	<style name="TNRG14" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG12" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC12" fontName="Times New Roman" fontSize="12" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRGC12" fontName="Times New Roman" fontSize="12" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRGC14" fontName="Times New Roman" fontSize="14" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRG14" fontName="Times New Roman" fontSize="14" bold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR16" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman"/>
-	<style name="TNRC16" fontName="Times New Roman" fontSize="16" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNRG16" fontName="Times New Roman" fontSize="16" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRGC16" fontName="Times New Roman" fontSize="16" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRC16" fontName="Times New Roman" fontSize="16" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRG16" fontName="Times New Roman" fontSize="16" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRGC16" fontName="Times New Roman" fontSize="16" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
 	<style name="TNR11" fontName="Times New Roman" fontSize="11" pdfFontName="Times-Roman"/>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
 	<parameter name="cd_accordo" class="java.lang.String">
@@ -41,13 +41,13 @@
 	<parameter name="cd_terzo" class="java.lang.Integer"/>
 	<parameter name="pg_autorizzazione" class="java.lang.Long"/>
 	<parameter name="pg_visita" class="java.lang.Long"/>
-	<parameter name="pg_ver_rec" class="java.lang.Long" isForPrompting="false"/>
-	<parameter name="flag_to_update" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="pg_ver_rec" class="java.lang.Long" forPrompting="false"/>
+	<parameter name="flag_to_update" class="java.lang.String" forPrompting="false"/>
 	<parameter name="DIR_IMAGE" class="java.lang.String">
 		<defaultValueExpression><![CDATA["/home/mspasiano/STAMPE BILATERALI/"]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[select
+	<query language="sql"><![CDATA[
+		select
 a.dt_ini_visita, a.dt_fin_visita, s.codice_fiscale, s.dt_nascita, l.ds_comune comune_nascita, a.im_rimb_previsto, banca.intestazione,
 b.denominazione_sede ds_terzo_autorizzato, a.num_prot_attrib_incarico, e.anno_ini, e.anno_fin, a.fl_stampato_provv_pagam_ant, a.dt_prot_attrib_incarico,a.fl_pagamento_con_bonifico, e.fl_pagamento_ente, a.im_rimb_spese_ant, a.im_rimb_spese, e.num_articolo_prop_intel, e.ds_nazione_eng, e.ds_aggettivo_nazional, a.fl_pagamento_fine_visita,f.ds_nazione, a.fl_pagamento_fine_visita, e.fl_salta_convenzione, e.diaria_lungo_periodo, a.fl_breve_periodo,
 (select l.ds_comune from comune l where l.pg_comune = s.pg_comune_fiscale) comune_fiscale, s. via_fiscale,
@@ -78,8 +78,8 @@ and a.cd_progetto = g.cd_progetto
 and s.cd_anag = b.cd_anag
 and s.pg_comune_nascita = l.pg_comune
 and banca.cd_terzo (+) = a.cd_terzo
-and banca.ti_pagamento (+) = 'N']]>
-	</queryString>
+and banca.ti_pagamento (+) = 'N'
+	]]></query>
 	<field name="DT_INI_VISITA" class="java.sql.Timestamp"/>
 	<field name="DT_FIN_VISITA" class="java.sql.Timestamp"/>
 	<field name="CODICE_FISCALE" class="java.lang.String"/>
@@ -135,525 +135,288 @@ and banca.ti_pagamento (+) = 'N']]>
 	<field name="DATA_FIRMA_ADDENDUM" class="java.sql.Timestamp"/>
 	<field name="FL_ACCETTAZIONE_CONVENZIONE" class="java.lang.String"/>
 	<variable name="numGiorni" class="java.lang.Long">
-		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.getGiorniVisita($F{DT_INI_VISITA}, $F{DT_FIN_VISITA})]]></variableExpression>
+		<expression><![CDATA[$P{REPORT_SCRIPTLET}.getGiorniVisita($F{DT_INI_VISITA}, $F{DT_FIN_VISITA})]]></expression>
 	</variable>
-	<background>
-		<band splitType="Prevent"/>
-	</background>
-	<title>
-		<band splitType="Prevent"/>
-	</title>
-	<pageHeader>
-		<band height="100" splitType="Prevent">
-			<image scaleImage="FillFrame" onErrorType="Icon">
-				<reportElement key="image-1" x="0" y="0" width="465" height="58"/>
-				<imageExpression class="java.lang.String"><![CDATA[$P{DIR_IMAGE}+"Logo CNR-2010-ITA-09-high.png"]]></imageExpression>
-			</image>
-		</band>
+	<background splitType="Prevent"/>
+	<title splitType="Prevent"/>
+	<pageHeader height="100" splitType="Prevent">
+		<element kind="image" key="image-1" x="0" y="0" width="465" height="58" scaleImage="FillFrame" onErrorType="Icon">
+			<expression><![CDATA[$P{DIR_IMAGE}+"Logo CNR-2010-ITA-09-high.png"]]></expression>
+		</element>
 	</pageHeader>
 	<detail>
 		<band height="49" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="-1" y="35" width="465" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Within the framework of the Agreement on Scientific Cooperation signed between the CNR and the "+$F{NOME_ENTE_STR}+" ("+$F{ACRONIMO_ENTE_STR}+") - "+$F{DS_NAZIONE_ENG}+""]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="1" y="0" width="465" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["TEMPORARY INDEPENDENT WORK SERVICE AGREEMENT FOR PROFESSIONAL SERVICES RENDERED N ACCORDANCE WITH CURRENT REGULATIONS OF\nArticles 2222 – 2228 of the Italian Civil Code"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="-1" y="35" width="465" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10">
+				<expression><![CDATA["Within the framework of the Agreement on Scientific Cooperation signed between the CNR and the "+$F{NOME_ENTE_STR}+" ("+$F{ACRONIMO_ENTE_STR}+") - "+$F{DS_NAZIONE_ENG}+""]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="1" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10">
+				<expression><![CDATA["TEMPORARY INDEPENDENT WORK SERVICE AGREEMENT FOR PROFESSIONAL SERVICES RENDERED N ACCORDANCE WITH CURRENT REGULATIONS OF\nArticles 2222 – 2228 of the Italian Civil Code"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["BETWEEN"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["BETWEEN"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The National Research Council of Italy, Fiscal Code No 80054330586, which is based in Rome, at 7, Piazzale Aldo Moro, here represented by the Director of the International Agreements and Relations Office, in the person of Dr. Virginia Coda Nunziante, born in Rome on 18/04/1966, hence referred to as “CNR”"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10">
+				<expression><![CDATA["The National Research Council of Italy, Fiscal Code No 80054330586, which is based in Rome, at 7, Piazzale Aldo Moro, here represented by the Director of the International Agreements and Relations Office, in the person of Dr. Virginia Coda Nunziante, born in Rome on 18/04/1966, hence referred to as “CNR”"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["AND"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["AND"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[""+($F{SESSO_AUTORIZZATO}.equals("M")?"Mr":"Ms")+" "+$F{DS_TERZO_AUTORIZZATO}.toUpperCase()+", born in "+$F{COMUNE_NASCITA}+" ("+$F{DS_NAZIONE}+") on "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_NASCITA})+", who permanently resides in "+$F{COMUNE_FISCALE}+", "+$F{VIA_FISCALE}+" hence referred to as the “Contractor”"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10">
+				<expression><![CDATA[""+($F{SESSO_AUTORIZZATO}.equals("M")?"Mr":"Ms")+" "+$F{DS_TERZO_AUTORIZZATO}.toUpperCase()+", born in "+$F{COMUNE_NASCITA}+" ("+$F{DS_NAZIONE}+") on "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_NASCITA})+", who permanently resides in "+$F{COMUNE_FISCALE}+", "+$F{VIA_FISCALE}+" hence referred to as the “Contractor”"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["PRELIMINARY REMARKS"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["PRELIMINARY REMARKS"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="13" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="13" y="0" width="452" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["an Agreement of Scientific Cooperation is currently in force between CNR and "+$F{ACRONIMO_ENTE_STR}+", signed on "+new SimpleDateFormat("dd/MM/yyyy").format($F{DATA_FIRMA_ACCORDO})+", which includes the exchange of researchers for carrying out joint bilateral projects between the two Academies and the corresponding Addendum signed on "+new SimpleDateFormat("dd/MM/yyyy").format($F{DATA_FIRMA_ADDENDUM})+";"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="13" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["-"]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="13" y="0" width="452" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10">
+				<expression><![CDATA["an Agreement of Scientific Cooperation is currently in force between CNR and "+$F{ACRONIMO_ENTE_STR}+", signed on "+new SimpleDateFormat("dd/MM/yyyy").format($F{DATA_FIRMA_ACCORDO})+", which includes the exchange of researchers for carrying out joint bilateral projects between the two Academies and the corresponding Addendum signed on "+new SimpleDateFormat("dd/MM/yyyy").format($F{DATA_FIRMA_ADDENDUM})+";"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="13" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="13" y="0" width="452" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["the above – mentioned activity is not subject to the procedure of internal professionalism verification since the contract itself does not fall under Art. 7, paragraph 6 of the Legislative Decree No 165, of 30/03/2001, but rather it is regulated by the Scientific Cooperation Agreement between CNR and "+$F{ACRONIMO_ENTE_STR}+";"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="13" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["-"]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="13" y="0" width="452" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10">
+				<expression><![CDATA["the above – mentioned activity is not subject to the procedure of internal professionalism verification since the contract itself does not fall under Art. 7, paragraph 6 of the Legislative Decree No 165, of 30/03/2001, but rather it is regulated by the Scientific Cooperation Agreement between CNR and "+$F{ACRONIMO_ENTE_STR}+";"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="13" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="13" y="0" width="452" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["the CNR is hereby signing an independent work service agreement for professional services exclusively of a temporary and extraordinary nature;"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="13" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["-"]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="13" y="0" width="452" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10">
+				<expression><![CDATA["the CNR is hereby signing an independent work service agreement for professional services exclusively of a temporary and extraordinary nature;"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="13" y="0" width="452" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["the Bilateral Research Project '"+$F{DS_PROGETTO_ENG}+"' (Italian Project Coordinator "+($F{SESSO_RESPONSABILE_ITA}.equals("M")?"Mr":"Ms")+" "+$F{DS_RESPONSABILE_ITA}.toUpperCase()+", "+$F{DS_AGGETTIVO_NAZIONAL}+" Project Coordinator "+($F{SESSO_RESPONSABILE_STR}.equals("M")?"Mr":"Ms")+" "+$F{DS_RESPONSABILE_STR}.toUpperCase()+") which has been jointly approved by CNR and "+$F{ACRONIMO_ENTE_STR}+" for the "+($F{ANNO_FIN}.subtract($F{ANNO_INI}).compareTo(BigDecimal.ONE)==0?"biennium":($F{ANNO_FIN}.subtract($F{ANNO_INI}).compareTo(new BigDecimal(2))==0?"triennium":"years"))+ " " +$F{ANNO_INI}+"-"+$F{ANNO_FIN}+", involves "+($F{SESSO_AUTORIZZATO}.equals("M")?"Mr":"Ms")+" "+$F{DS_TERZO_AUTORIZZATO}.toUpperCase()+" in the list of candidates selected and approved by "+$F{ACRONIMO_ENTE_STR}+";"]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="13" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="13" y="0" width="452" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10">
+				<expression><![CDATA["the Bilateral Research Project '"+$F{DS_PROGETTO_ENG}+"' (Italian Project Coordinator "+($F{SESSO_RESPONSABILE_ITA}.equals("M")?"Mr":"Ms")+" "+$F{DS_RESPONSABILE_ITA}.toUpperCase()+", "+$F{DS_AGGETTIVO_NAZIONAL}+" Project Coordinator "+($F{SESSO_RESPONSABILE_STR}.equals("M")?"Mr":"Ms")+" "+$F{DS_RESPONSABILE_STR}.toUpperCase()+") which has been jointly approved by CNR and "+$F{ACRONIMO_ENTE_STR}+" for the "+($F{ANNO_FIN}.subtract($F{ANNO_INI}).compareTo(BigDecimal.ONE)==0?"biennium":($F{ANNO_FIN}.subtract($F{ANNO_INI}).compareTo(new BigDecimal(2))==0?"triennium":"years"))+ " " +$F{ANNO_INI}+"-"+$F{ANNO_FIN}+", involves "+($F{SESSO_AUTORIZZATO}.equals("M")?"Mr":"Ms")+" "+$F{DS_TERZO_AUTORIZZATO}.toUpperCase()+" in the list of candidates selected and approved by "+$F{ACRONIMO_ENTE_STR}+";"]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="13" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["-"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="13" y="0" width="452" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["the CNR with the Official Note, Ref. No. AMMCNT - CNR n. "+$F{NUM_PROT_ATTRIB_INCARICO}+" dated "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_PROT_ATTRIB_INCARICO})+", has ratified the research stay of "+($F{SESSO_AUTORIZZATO}.equals("M")?"Mr":"Ms")+" "+$F{DS_TERZO_AUTORIZZATO}.toUpperCase()+";"]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="-1" y="0" width="13" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="13" y="0" width="452" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["the CNR with the Official Note, Ref. No. AMMCNT - CNR n. "+$F{NUM_PROT_ATTRIB_INCARICO}+" dated "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_PROT_ATTRIB_INCARICO})+", has ratified the research stay of "+($F{SESSO_AUTORIZZATO}.equals("M")?"Mr":"Ms")+" "+$F{DS_TERZO_AUTORIZZATO}.toUpperCase()+";"]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="-1" y="0" width="13" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["-"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="6" width="465" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["IT IS HEREBY AGREED AS FOLLOWS:"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="6" width="465" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["IT IS HEREBY AGREED AS FOLLOWS:"]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="6" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The above – mentioned preliminary remarks constitute an integral part of the present Agreement. "]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="6" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The above – mentioned preliminary remarks constitute an integral part of the present Agreement. "]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="465" height="14"/>
-				<textElement>
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["ART. 1 –  Type of Agreement"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="465" height="14" blankWhenNull="true" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["ART. 1 –  Type of Agreement"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The contracting parties mutually agree to stipulate a temporary independent work service agreement for professional services rendered in accordance with current regulations of Articles 2222 and following of the Italian Civil Code, in compliance with the following terms and conditions."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The contracting parties mutually agree to stipulate a temporary independent work service agreement for professional services rendered in accordance with current regulations of Articles 2222 and following of the Italian Civil Code, in compliance with the following terms and conditions."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="465" height="14"/>
-				<textElement>
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["ART. 2 –  Scope of the Contract "]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="465" height="14" blankWhenNull="true" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["ART. 2 –  Scope of the Contract "]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The “Contractor” undertakes to carry out a research stay of "+$V{numGiorni}+" days, at "+$F{LUOGO_VISITA}+", starting from "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_INI_VISITA})+" and ending on "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_FIN_VISITA})+" in order to conduct research activities for the Research Project '"+$F{DS_PROGETTO_ENG}+"', within the framework of the Scientific Cooperation Agreement currently in force between CNR and "+$F{ACRONIMO_ENTE_STR}+" and relative Addendum."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The “Contractor” undertakes to carry out a research stay of "+$V{numGiorni}+" days, at "+$F{LUOGO_VISITA}+", starting from "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_INI_VISITA})+" and ending on "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_FIN_VISITA})+" in order to conduct research activities for the Research Project '"+$F{DS_PROGETTO_ENG}+"', within the framework of the Scientific Cooperation Agreement currently in force between CNR and "+$F{ACRONIMO_ENTE_STR}+" and relative Addendum."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="465" height="14"/>
-				<textElement>
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["ART. 3 – Terms and Conditions"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="465" height="14" blankWhenNull="true" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["ART. 3 – Terms and Conditions"]]></expression>
+			</element>
 		</band>
 		<band height="31" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The Contractor undertakes to accomplish the task in person, without any subordination or time-keeping obligation, in full technical and logistical independence. The present contract does not entail any kind of hierarchical subordination since the Contractor will not follow precise orders but, on the contrary, will act in full autonomy both in the organization and the management of  "+($F{SESSO_AUTORIZZATO}.equals("M")?"him":"her")+" activity as seen fit, with the sole purpose of achieving the expected results within the above - mentioned Research Project."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The Contractor undertakes to accomplish the task in person, without any subordination or time-keeping obligation, in full technical and logistical independence. The present contract does not entail any kind of hierarchical subordination since the Contractor will not follow precise orders but, on the contrary, will act in full autonomy both in the organization and the management of  "+($F{SESSO_AUTORIZZATO}.equals("M")?"him":"her")+" activity as seen fit, with the sole purpose of achieving the expected results within the above - mentioned Research Project."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="465" height="14"/>
-				<textElement>
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["ART. 4 – Duration and Starting Date of the Contract "]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="465" height="14" blankWhenNull="true" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["ART. 4 – Duration and Starting Date of the Contract "]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The present Contract will have a duration of "+$V{numGiorni}+" days, starting from "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_INI_VISITA})+" and will terminate on "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_FIN_VISITA})+". The starting date can be postponed only owing to an act of God, and will have to be officially authorized by CNR."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The present Contract will have a duration of "+$V{numGiorni}+" days, starting from "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_INI_VISITA})+" and will terminate on "+new SimpleDateFormat("dd/MM/yyyy").format($F{DT_FIN_VISITA})+". The starting date can be postponed only owing to an act of God, and will have to be officially authorized by CNR."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="465" height="14"/>
-				<textElement>
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["ART. 5 – "+($F{IM_DIARIA_CONTRIB_SOGG_ITA}!=null?"Maintenance allowances":"Remuneration")+", tax regime and Payment procedures."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="465" height="14" blankWhenNull="true" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["ART. 5 – "+($F{IM_DIARIA_CONTRIB_SOGG_ITA}!=null?"Maintenance allowances":"Remuneration")+", tax regime and Payment procedures."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The parties agree that, under the provisions by the Agreement of Scientific Cooperation between CNR and "+$F{ACRONIMO_ENTE_STR}+" and relative Addendum currently in force, "+($F{IM_DIARIA_CONTRIB_SOGG_ITA}!=null?"the means for the accomodation, maintenance and other expenses, including municipal transportation":"the remuneration")+" due to the Contractor for carrying out the above–mentioned temporary and independent undertaking will be a total sum of Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IM_RIMB_PREVISTO})+"."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The parties agree that, under the provisions by the Agreement of Scientific Cooperation between CNR and "+$F{ACRONIMO_ENTE_STR}+" and relative Addendum currently in force, "+($F{IM_DIARIA_CONTRIB_SOGG_ITA}!=null?"the means for the accomodation, maintenance and other expenses, including municipal transportation":"the remuneration")+" due to the Contractor for carrying out the above–mentioned temporary and independent undertaking will be a total sum of Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IM_RIMB_PREVISTO})+"."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
 			<printWhenExpression><![CDATA[$F{FL_ACCETTAZIONE_CONVENZIONE}.equals("N") && $F{FL_SALTA_CONVENZIONE}.equals( "N" )]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The Contractor doesn’t wish to avail "+($F{SESSO_AUTORIZZATO}.equals("M")?"himself":"herself")+" of the appropriate Convention for the Avoidance of Double Taxation."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The Contractor doesn’t wish to avail "+($F{SESSO_AUTORIZZATO}.equals("M")?"himself":"herself")+" of the appropriate Convention for the Avoidance of Double Taxation."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
 			<printWhenExpression><![CDATA[$F{FL_ACCETTAZIONE_CONVENZIONE}.equals("Y")]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The Contractor wishes to avail "+($F{SESSO_AUTORIZZATO}.equals("M")?"himself":"herself")+" of the appropriate Convention for the Avoidance of Double Taxation."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The Contractor wishes to avail "+($F{SESSO_AUTORIZZATO}.equals("M")?"himself":"herself")+" of the appropriate Convention for the Avoidance of Double Taxation."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
 			<printWhenExpression><![CDATA[$F{FL_PAGAMENTO_CON_BONIFICO}.equals( "Y" ) && $F{FL_PAGAMENTO_FINE_VISITA}.equals( "Y")]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The sum payable by CNR (should duration of the stay be shortened, the sum will be reduced by "+($F{FL_BREVE_PERIODO}.equals("Y")?"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IMPORTO_DIARIA_STR})+"":"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{DIARIA_LUNGO_PERIODO})+"")+" for each day which has been cancelled) will be paid at the end of the stay by bank transfer directly onto the Contractor’s own bank account "+($F{CODICE_IBAN}==null?"intested to "+$F{INTESTAZIONE}+"":"IBAN code "+$F{CODICE_IBAN}+"")+", SWIFT Code "+$F{CODICE_SWIFT}+"."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The sum payable by CNR (should duration of the stay be shortened, the sum will be reduced by "+($F{FL_BREVE_PERIODO}.equals("Y")?"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IMPORTO_DIARIA_STR})+"":"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{DIARIA_LUNGO_PERIODO})+"")+" for each day which has been cancelled) will be paid at the end of the stay by bank transfer directly onto the Contractor’s own bank account "+($F{CODICE_IBAN}==null?"intested to "+$F{INTESTAZIONE}+"":"IBAN code "+$F{CODICE_IBAN}+"")+", SWIFT Code "+$F{CODICE_SWIFT}+"."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
 			<printWhenExpression><![CDATA[$F{FL_PAGAMENTO_CON_BONIFICO}.equals( "N" ) && $F{FL_PAGAMENTO_FINE_VISITA}.equals( "N" )]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The sum payable by CNR will be available for collection, during the Contractor’s research stay in Italy, at any branch of the Banca Nazionale del Lavoro (BNL) on the Italian territory. Should the Contractor reduce the duration of "+($F{SESSO_AUTORIZZATO}.equals("M")?"him":"her")+" approved stay, the sum of "+($F{FL_BREVE_PERIODO}.equals("Y")?"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IMPORTO_DIARIA_STR})+"":"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{DIARIA_LUNGO_PERIODO})+"")+" per each day which have been cancelled, will have to be returned to CNR by bank transfer made payable to the following beneficiary:\nConsiglio Nazionale delle Ricerche\nBanca Nazionale del Lavoro – Sportello CNR n. 6392\nPiazzale Aldo Moro, 7 - 00185 Roma - Italia \nIBAN Code IT57S0100503392000000218155, SWIFT Code BNLIITRR, with the indication 'Ufficio Accordi e Relazioni Internazionali - mandato n. (Mandate Number) …………………… – giorni non effettuati n. (Number of days of reduction) ……………….'"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The sum payable by CNR will be available for collection, during the Contractor’s research stay in Italy, at any branch of the Banca Nazionale del Lavoro (BNL) on the Italian territory. Should the Contractor reduce the duration of "+($F{SESSO_AUTORIZZATO}.equals("M")?"him":"her")+" approved stay, the sum of "+($F{FL_BREVE_PERIODO}.equals("Y")?"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IMPORTO_DIARIA_STR})+"":"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{DIARIA_LUNGO_PERIODO})+"")+" per each day which have been cancelled, will have to be returned to CNR by bank transfer made payable to the following beneficiary:\nConsiglio Nazionale delle Ricerche\nBanca Nazionale del Lavoro – Sportello CNR n. 6392\nPiazzale Aldo Moro, 7 - 00185 Roma - Italia \nIBAN Code IT57S0100503392000000218155, SWIFT Code BNLIITRR, with the indication 'Ufficio Accordi e Relazioni Internazionali - mandato n. (Mandate Number) …………………… – giorni non effettuati n. (Number of days of reduction) ……………….'"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
 			<printWhenExpression><![CDATA[$F{IM_RIMB_SPESE_ANT}!=null && $F{FL_PAGAMENTO_FINE_VISITA}.equals("N") && $F{FL_PAGAMENTO_ENTE}.equals("N") && $F{FL_PAGAMENTO_CON_BONIFICO}.equals( "Y" )]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The CNR will pay the due sum in two installments:"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The CNR will pay the due sum in two installments:"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
 			<printWhenExpression><![CDATA[$F{IM_RIMB_SPESE_ANT}!=null && $F{FL_PAGAMENTO_FINE_VISITA}.equals("N") && $F{FL_PAGAMENTO_ENTE}.equals("N") && $F{FL_PAGAMENTO_CON_BONIFICO}.equals( "Y" )]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="13" y="0" width="453" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The first of Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IM_RIMB_SPESE_ANT})+" will be paid to the Contractor during "+($F{SESSO_AUTORIZZATO}.equals("M")?"his":"her")+" stay by any branch of the Banca Nazionale del Lavoro (BNL) on the Italian territory."]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="13" height="12"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="13" y="0" width="453" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10">
+				<expression><![CDATA["The first of Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IM_RIMB_SPESE_ANT})+" will be paid to the Contractor during "+($F{SESSO_AUTORIZZATO}.equals("M")?"his":"her")+" stay by any branch of the Banca Nazionale del Lavoro (BNL) on the Italian territory."]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="13" height="12" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["-"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
 			<printWhenExpression><![CDATA[$F{IM_RIMB_SPESE_ANT}!=null && $F{FL_PAGAMENTO_FINE_VISITA}.equals("N") && $F{FL_PAGAMENTO_ENTE}.equals("N") && $F{FL_PAGAMENTO_CON_BONIFICO}.equals( "Y" )]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="13" y="0" width="453" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The second of Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IM_RIMB_SPESE})+" (should duration of the stay be shortened, the sum will be reduced by "+($F{FL_BREVE_PERIODO}.equals("Y")?"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IMPORTO_DIARIA_STR})+"":"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{DIARIA_LUNGO_PERIODO})+"")+" for each day which has been cancelled) will be paid at the end of the stay by bank transfer directly onto the Contractor’s own bank account "+($F{CODICE_IBAN}==null?"intested to "+$F{INTESTAZIONE}+"":"IBAN code "+$F{CODICE_IBAN}+"")+", SWIFT Code "+$F{CODICE_SWIFT}+". In the case in which the reduced lenght of stay should determine a higher compensation than the amount recevied, the Contractor must repay the amount not owed. The Contractor will have to return the amount not owed ("+($F{FL_BREVE_PERIODO}.equals("Y")?"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IMPORTO_DIARIA_STR})+"":"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{DIARIA_LUNGO_PERIODO})+"")+" for each day which has been cancelled) to CNR by bank transfer made payable to the following beneficiary:\nConsiglio Nazionale delle Ricerche\nBanca Nazionale del Lavoro – Sportello CNR n. 6392\nPiazzale Aldo Moro, 7 00185 Roma - Italia \nIBAN Code IT57S0100503392000000218155, SWIFT Code BNLIITRR, with the indication 'Ufficio Accordi e Relazioni Internazionali - mandato n. (Mandate Number) …………………… – giorni non effettuati n. (Number of days of reduction) ……………….'"]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="13" height="12"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="13" y="0" width="453" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10">
+				<expression><![CDATA["The second of Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IM_RIMB_SPESE})+" (should duration of the stay be shortened, the sum will be reduced by "+($F{FL_BREVE_PERIODO}.equals("Y")?"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IMPORTO_DIARIA_STR})+"":"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{DIARIA_LUNGO_PERIODO})+"")+" for each day which has been cancelled) will be paid at the end of the stay by bank transfer directly onto the Contractor’s own bank account "+($F{CODICE_IBAN}==null?"intested to "+$F{INTESTAZIONE}+"":"IBAN code "+$F{CODICE_IBAN}+"")+", SWIFT Code "+$F{CODICE_SWIFT}+". In the case in which the reduced lenght of stay should determine a higher compensation than the amount recevied, the Contractor must repay the amount not owed. The Contractor will have to return the amount not owed ("+($F{FL_BREVE_PERIODO}.equals("Y")?"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{IMPORTO_DIARIA_STR})+"":"Euro "+new java.text.DecimalFormat("#,##0.00").format($F{DIARIA_LUNGO_PERIODO})+"")+" for each day which has been cancelled) to CNR by bank transfer made payable to the following beneficiary:\nConsiglio Nazionale delle Ricerche\nBanca Nazionale del Lavoro – Sportello CNR n. 6392\nPiazzale Aldo Moro, 7 00185 Roma - Italia \nIBAN Code IT57S0100503392000000218155, SWIFT Code BNLIITRR, with the indication 'Ufficio Accordi e Relazioni Internazionali - mandato n. (Mandate Number) …………………… – giorni non effettuati n. (Number of days of reduction) ……………….'"]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="13" height="12" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["-"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="465" height="14"/>
-				<textElement>
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["ART. 6 – Renunciation"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="465" height="14" blankWhenNull="true" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["ART. 6 – Renunciation"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["The Contractor must communicate at once to the International Relations and Agreements Office of the CNR "+($F{SESSO_AUTORIZZATO}.equals("M")?"himself":"herself")+" renunciation to the research stay. Should the Contractor announce "+($F{SESSO_AUTORIZZATO}.equals("M")?"himself":"herself")+" renunciation, no money will payable by CNR."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["The Contractor must communicate at once to the International Relations and Agreements Office of the CNR "+($F{SESSO_AUTORIZZATO}.equals("M")?"himself":"herself")+" renunciation to the research stay. Should the Contractor announce "+($F{SESSO_AUTORIZZATO}.equals("M")?"himself":"herself")+" renunciation, no money will payable by CNR."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="465" height="14"/>
-				<textElement>
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["ART. 7 – Intellectual Property and Rights"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="465" height="14" blankWhenNull="true" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["ART. 7 – Intellectual Property and Rights"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["See Art. "+$F{NUM_ARTICOLO_PROP_INTEL}+" of the Agreement of Scientific Cooperation signed between CNR and "+$F{ACRONIMO_ENTE_STR}+"."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["See Art. "+$F{NUM_ARTICOLO_PROP_INTEL}+" of the Agreement of Scientific Cooperation signed between CNR and "+$F{ACRONIMO_ENTE_STR}+"."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="465" height="14"/>
-				<textElement>
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["ART. 8 – Personal Data Protection"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="465" height="14" blankWhenNull="true" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["ART. 8 – Personal Data Protection"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["For the safeguard of the Contractor, the provisions detailed by the Legislative Decree no. 196 of 30/06/2003 will be implemented with reference to Personal Data Protection."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["For the safeguard of the Contractor, the provisions detailed by the Legislative Decree no. 196 of 30/06/2003 will be implemented with reference to Personal Data Protection."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="465" height="14"/>
-				<textElement>
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["ART. 9 – Place of Lawful Jurisdiction"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="465" height="14" blankWhenNull="true" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["ART. 9 – Place of Lawful Jurisdiction"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Should any legal controversy arise, the Contractor declares "+($F{SESSO_AUTORIZZATO}.equals("M")?"his":"her")+" acceptance of the Tribunal of Rome as the place of lawful jurisdiction."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["Should any legal controversy arise, the Contractor declares "+($F{SESSO_AUTORIZZATO}.equals("M")?"his":"her")+" acceptance of the Tribunal of Rome as the place of lawful jurisdiction."]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Rome, ................................."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["Rome, ................................."]]></expression>
+			</element>
 		</band>
 		<band height="20" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="156" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Read and Signed for Acceptance,"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="156" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["Read and Signed for Acceptance,"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="27" y="0" width="117" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["CNR"]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="294" y="0" width="117" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["CONTRACTOR"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="27" y="0" width="117" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["CNR"]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="294" y="0" width="117" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["CONTRACTOR"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="294" y="4" width="117" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["..................................."]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="27" y="0" width="117" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["..................................."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="294" y="4" width="117" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["..................................."]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="27" y="0" width="117" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["..................................."]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="0" width="465" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["In accordance to Art. 1341 of the Italian Civil Code, the undersigned explicitly declares "+($F{SESSO_AUTORIZZATO}.equals("M")?"his":"her")+" acceptance of the following articles herewith specified:"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="0" width="465" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["In accordance to Art. 1341 of the Italian Civil Code, the undersigned explicitly declares "+($F{SESSO_AUTORIZZATO}.equals("M")?"his":"her")+" acceptance of the following articles herewith specified:"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="156" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Art. 6 – Renunciation"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="156" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["Art. 6 – Renunciation"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="0" y="4" width="156" height="14"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Art. 9 – Place of Lawful Jurisdiction"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="0" y="4" width="156" height="14" blankWhenNull="true" hTextAlign="Justified" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["Art. 9 – Place of Lawful Jurisdiction"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="295" y="0" width="117" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["CONTRACTOR"]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="295" y="0" width="117" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["CONTRACTOR"]]></expression>
+			</element>
 		</band>
 		<band height="18" splitType="Prevent">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-2" style="TNR11" x="295" y="0" width="117" height="14"/>
-				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["..................................."]]></textFieldExpression>
-			</textField>
+			<element kind="textField" textAdjust="StretchHeight" key="textField-2" style="TNR11" x="295" y="0" width="117" height="14" blankWhenNull="true" hTextAlign="Center" fontName="Times New Roman" fontSize="10" bold="false">
+				<expression><![CDATA["..................................."]]></expression>
+			</element>
 		</band>
 	</detail>
-	<summary>
-		<band splitType="Prevent"/>
-	</summary>
+	<summary splitType="Prevent"/>
 </jasperReport>

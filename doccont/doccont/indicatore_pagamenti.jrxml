@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="indicatore_pagamenti" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<jasperReport name="indicatore_pagamenti" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1cb3219d-d1ab-4ef3-bf04-205bc7866043">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<subDataset name="media">
-		<parameter name="esercizio" class="java.lang.Integer" isForPrompting="false">
+	<dataset name="media" uuid="59fd741b-8477-4cbe-9b83-b8c1eff11b51">
+		<parameter name="esercizio" forPrompting="false" class="java.lang.Integer">
 			<defaultValueExpression><![CDATA[$P{esercizio}]]></defaultValueExpression>
 		</parameter>
-		<queryString>
-			<![CDATA[select  ROUND(AVG(M.DT_TRASMISSIONE- (f.dt_scadenza)),0) media, to_date('01'||to_char(M.dt_EMISSIONE,'mmyyyy'),'ddmmyyyy') mese
+		<query language="sql"><![CDATA[select  ROUND(AVG(M.DT_TRASMISSIONE- (f.dt_scadenza)),0) media, to_date('01'||to_char(M.dt_EMISSIONE,'mmyyyy'),'ddmmyyyy') mese
 from contratto c,
      obbligazione o,
      obbligazione_scadenzario os ,
@@ -54,74 +52,40 @@ and m.dt_emissione < sysdate -30
 group by
 to_date('01'||to_char(M.DT_EMISSIONE,'mmyyyy'),'ddmmyyyy')
 order  by
-to_date('01'||to_char(M.DT_EMISSIONE,'mmyyyy'),'ddmmyyyy') ASC]]>
-		</queryString>
+to_date('01'||to_char(M.DT_EMISSIONE,'mmyyyy'),'ddmmyyyy') ASC]]></query>
 		<field name="MEDIA" class="java.math.BigDecimal"/>
 		<field name="MESE" class="java.sql.Timestamp"/>
-	</subDataset>
+	</dataset>
 	<parameter name="esercizio" class="java.lang.Integer"/>
-	<queryString>
-		<![CDATA[select 1 from dual]]>
-	</queryString>
+	<query language="sql"><![CDATA[select 1 from dual]]></query>
 	<field name="1" class="java.math.BigDecimal"/>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<summary>
-		<band height="287" splitType="Stretch">
-			<timeSeriesChart>
-				<chart isShowLegend="false">
-					<reportElement x="0" y="20" width="802" height="265"/>
-					<chartTitle/>
-					<chartSubtitle/>
-					<chartLegend/>
-				</chart>
-				<timeSeriesDataset timePeriod="Milisecond">
-					<dataset>
-						<datasetRun subDataset="media">
-							<datasetParameter name="esercizio">
-								<datasetParameterExpression><![CDATA[$P{esercizio}]]></datasetParameterExpression>
-							</datasetParameter>
-							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-						</datasetRun>
-					</dataset>
-					<timeSeries>
-						<seriesExpression><![CDATA[""]]></seriesExpression>
-						<timePeriodExpression><![CDATA[$F{MESE}]]></timePeriodExpression>
-						<valueExpression><![CDATA[$F{MEDIA}]]></valueExpression>
-					</timeSeries>
-				</timeSeriesDataset>
-				<timeSeriesPlot isShowShapes="false">
-					<plot orientation="Horizontal"/>
-					<timeAxisFormat>
-						<axisFormat verticalTickLabels="false">
-							<labelFont/>
-							<tickLabelFont/>
-						</axisFormat>
-					</timeAxisFormat>
-					<valueAxisLabelExpression><![CDATA["gg"]]></valueAxisLabelExpression>
-					<valueAxisFormat>
-						<axisFormat verticalTickLabels="true">
-							<labelFont/>
-							<tickLabelFont/>
-						</axisFormat>
-					</valueAxisFormat>
-					<domainAxisMinValueExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse($P{esercizio}.toString()+"/01/01")]]></domainAxisMinValueExpression>
-					<domainAxisMaxValueExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse(($P{esercizio}+1).toString()+"/01/01")]]></domainAxisMaxValueExpression>
-					<rangeAxisMinValueExpression><![CDATA[0]]></rangeAxisMinValueExpression>
-					<rangeAxisMaxValueExpression><![CDATA[100]]></rangeAxisMaxValueExpression>
-				</timeSeriesPlot>
-			</timeSeriesChart>
-			<textField>
-				<reportElement x="282" y="0" width="292" height="20"/>
-				<textElement>
-					<font fontName="Times New Roman" size="14" isBold="true"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Trend Indicatore pagamenti "+$P{esercizio}.toString()]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="43" y="192" width="750" height="1" forecolor="#3300FF"/>
-			</line>
-		</band>
+	<background splitType="Stretch"/>
+	<summary height="287" splitType="Stretch">
+		<element kind="chart" uuid="e68bc1d2-4c3c-40f3-8816-a686a5fdf77a" x="0" y="20" width="802" height="265" showLegend="false" chartType="timeSeries">
+			<dataset kind="timeSeries" timePeriod="Millisecond">
+				<datasetRun uuid="b00aa5a2-97d0-4b0c-b6f8-3fa7e2dda0d7" subDataset="media">
+					<parameter name="esercizio">
+						<expression><![CDATA[$P{esercizio}]]></expression>
+					</parameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				</datasetRun>
+				<series>
+					<seriesExpression><![CDATA[""]]></seriesExpression>
+					<timePeriodExpression><![CDATA[$F{MESE}]]></timePeriodExpression>
+					<valueExpression><![CDATA[$F{MEDIA}]]></valueExpression>
+				</series>
+			</dataset>
+			<plot orientation="Horizontal" showShapes="false" timeAxisVerticalTickLabels="false" valueAxisVerticalTickLabels="true">
+				<valueAxisLabelExpression><![CDATA["gg"]]></valueAxisLabelExpression>
+				<domainAxisMinValueExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse($P{esercizio}.toString()+"/01/01")]]></domainAxisMinValueExpression>
+				<domainAxisMaxValueExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").parse(($P{esercizio}+1).toString()+"/01/01")]]></domainAxisMaxValueExpression>
+				<rangeAxisMinValueExpression><![CDATA[0]]></rangeAxisMinValueExpression>
+				<rangeAxisMaxValueExpression><![CDATA[100]]></rangeAxisMaxValueExpression>
+			</plot>
+		</element>
+		<element kind="textField" uuid="b995ff8d-6a75-4832-9ca0-56bec2d72be5" x="282" y="0" width="292" height="20" fontName="Times New Roman" fontSize="14.0" bold="true">
+			<expression><![CDATA["Trend Indicatore pagamenti "+$P{esercizio}.toString()]]></expression>
+		</element>
+		<element kind="line" uuid="af032d8c-461d-4f94-b10e-779cca96016d" x="43" y="192" width="750" height="1" forecolor="#3300FF"/>
 	</summary>
 </jasperReport>

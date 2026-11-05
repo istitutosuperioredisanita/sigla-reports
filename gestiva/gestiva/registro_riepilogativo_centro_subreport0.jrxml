@@ -1,65 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"  ?>
-<!-- Created with iReport - A designer for JasperReports -->
-<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-<jasperReport
-		 name="registro_riepilogativo_centro_subreport0"
-		 columnCount="1"
-		 printOrder="Vertical"
-		 orientation="Landscape"
-		 pageWidth="802"
-		 pageHeight="535"
-		 columnWidth="802"
-		 columnSpacing="0"
-		 leftMargin="0"
-		 rightMargin="0"
-		 topMargin="0"
-		 bottomMargin="0"
-		 whenNoDataType="NoPages"
-		 isTitleNewPage="false"
-		 isSummaryNewPage="false">
-	<property name="ireport.scriptlethandling" value="0" />
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="registro_riepilogativo_centro_subreport0" columnCount="1" printOrder="Vertical" orientation="Landscape" pageWidth="802" pageHeight="535" columnWidth="802" columnSpacing="0" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenNoDataType="NoPages" titleNewPage="false" summaryNewPage="false" language="java">
+	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
-	<property name="ireport.encoding" value="UTF-8" />
-	<import value="java.util.*" />
-	<import value="net.sf.jasperreports.engine.*" />
-	<import value="net.sf.jasperreports.engine.data.*" />
-
-	<style 
-		name="TNR12BOLD"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="12"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-	<style 
-		name="TNR8BOLD"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="8"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-	<style 
-		name="TNR10BOLD"
-		isDefault="false"
-		fontName="Times New Roman"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-
-	<parameter name="idReport" isForPrompting="false" class="java.lang.Integer">
-		<defaultValueExpression ><![CDATA[new Integer(250543)]]></defaultValueExpression>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<style name="TNR12BOLD" default="false" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR8BOLD" default="false" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR10BOLD" default="false" fontName="Times New Roman" bold="true" pdfFontName="Times-Bold"/>
+	<parameter name="idReport" forPrompting="false" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer(250543)]]></defaultValueExpression>
 	</parameter>
-	<queryString><![CDATA[SELECT DISTINCT ID_REPORT, GRUPPO, TIPOLOGIA_RIGA, SEQUENZA, CD_CDS, CD_UO, DS_UO, STATO_REGISTRO, CD_IVA, 
+	<query language="sql"><![CDATA[SELECT DISTINCT ID_REPORT, GRUPPO, TIPOLOGIA_RIGA, SEQUENZA, CD_CDS, CD_UO, DS_UO, STATO_REGISTRO, CD_IVA, 
                 DESCRIZIONE_RIGA, IMPONIBILE, IVA, IVA_INDETRAIBILE,
                 IVA_ESIGIBILE, TOTALE, PROGRESSIVO_UO, ESERCIZIO_RIF,
                 RAGIONE_SOCIALE_ENTE, PARTITA_IVA_ENTE, ACQUISTI_VENDITE
 FROM VP_STM_RIEPILOGATIVO_CENTRO
 WHERE ID_REPORT = $P{idReport}
 and GRUPPO = 'A'
-AND TIPOLOGIA_RIGA = 'R']]></queryString>
-
+AND TIPOLOGIA_RIGA = 'R']]></query>
 	<field name="ID_REPORT" class="java.math.BigDecimal"/>
 	<field name="GRUPPO" class="java.lang.String"/>
 	<field name="TIPOLOGIA_RIGA" class="java.lang.String"/>
@@ -80,117 +40,40 @@ AND TIPOLOGIA_RIGA = 'R']]></queryString>
 	<field name="RAGIONE_SOCIALE_ENTE" class="java.lang.String"/>
 	<field name="PARTITA_IVA_ENTE" class="java.lang.String"/>
 	<field name="ACQUISTI_VENDITE" class="java.lang.String"/>
-
-		<background>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</background>
-		<title>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</title>
-		<pageHeader>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</pageHeader>
-		<columnHeader>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnHeader>
-		<detail>
-			<band height="104"  isSplitAllowed="true" >
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR10BOLD"
-						x="4"
-						y="13"
-						width="358"
-						height="17"
-						key="textField-1">
-							<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A"))]]></printWhenExpression>
-						</reportElement>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[( $F{RAGIONE_SOCIALE_ENTE}.equals("") ? " " : 
-  $F{PARTITA_IVA_ENTE}.equals("") ? $F{RAGIONE_SOCIALE_ENTE} : $F{RAGIONE_SOCIALE_ENTE} + "  " + $F{PARTITA_IVA_ENTE})]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR10BOLD"
-						x="4"
-						y="32"
-						width="88"
-						height="14"
-						key="textField-2">
-							<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A"))]]></printWhenExpression>
-						</reportElement>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement isStyledText="true">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12BOLD"
-						x="34"
-						y="49"
-						width="727"
-						height="21"
-						key="textField-3"
-						positionType="Float">
-							<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A") && $F{TIPOLOGIA_RIGA}.equals("R"))]]></printWhenExpression>
-						</reportElement>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CD_UO}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR12BOLD"
-						x="34"
-						y="79"
-						width="728"
-						height="19"
-						key="textField-4">
-							<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A") && $F{TIPOLOGIA_RIGA}.equals("R"))]]></printWhenExpression>
-						</reportElement>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CD_CDS}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR10BOLD"
-						x="679"
-						y="5"
-						width="40"
-						height="14"
-						key="textField-5"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right" isStyledText="true">
-						<font pdfFontName="Times-Bold" size="10"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ESERCIZIO_RIF}]]></textFieldExpression>
-				</textField>
-			</band>
-		</detail>
-		<columnFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnFooter>
-		<pageFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</pageFooter>
-		<summary>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</summary>
+	<background height="0" splitAllowed="true"/>
+	<title height="0" splitAllowed="true"/>
+	<pageHeader height="0" splitAllowed="true"/>
+	<columnHeader height="0" splitAllowed="true"/>
+	<detail>
+		<band height="104" splitAllowed="true">
+			<element kind="textField" style="TNR10BOLD" x="4" y="13" width="358" height="17" key="textField-1" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A"))]]></printWhenExpression>
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[( $F{RAGIONE_SOCIALE_ENTE}.equals("") ? " " : 
+  $F{PARTITA_IVA_ENTE}.equals("") ? $F{RAGIONE_SOCIALE_ENTE} : $F{RAGIONE_SOCIALE_ENTE} + "  " + $F{PARTITA_IVA_ENTE})]]></expression>
+			</element>
+			<element kind="textField" style="TNR10BOLD" x="4" y="32" width="88" height="14" key="textField-2" pattern="dd/MM/yyyy" blankWhenNull="true" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" markup="styled">
+				<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A"))]]></printWhenExpression>
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[new java.util.Date()]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR12BOLD" x="34" y="49" width="727" height="21" key="textField-3" positionType="Float" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A") && $F{TIPOLOGIA_RIGA}.equals("R"))]]></printWhenExpression>
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[$F{CD_UO}]]></expression>
+			</element>
+			<element kind="textField" style="TNR12BOLD" x="34" y="79" width="728" height="19" key="textField-4" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A") && $F{TIPOLOGIA_RIGA}.equals("R"))]]></printWhenExpression>
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[$F{CD_CDS}]]></expression>
+			</element>
+			<element kind="textField" style="TNR10BOLD" x="679" y="5" width="40" height="14" key="textField-5" pattern="" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" pdfFontName="Times-Bold" fontSize="10">
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[$F{ESERCIZIO_RIF}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="0" splitAllowed="true"/>
+	<pageFooter height="0" splitAllowed="true"/>
+	<summary height="0" splitAllowed="true"/>
 </jasperReport>

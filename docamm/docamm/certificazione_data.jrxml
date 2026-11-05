@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certificazione_data" pageWidth="311" pageHeight="842" columnWidth="311" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2bae31e7-1853-4c7b-9fee-4515efd464cd">
+<jasperReport name="certificazione_data" pageWidth="311" pageHeight="842" columnWidth="311" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2bae31e7-1853-4c7b-9fee-4515efd464cd" language="java">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
 	<style name="TNR10" fontName="Times New Roman" pdfFontName="Times-Roman"/>
-	<parameter name="esercizio" class="java.lang.Integer" isForPrompting="false">
+	<parameter name="esercizio" class="java.lang.Integer" forPrompting="false">
 		<defaultValueExpression><![CDATA[2016]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[SELECT
+	<query language="sql"><![CDATA[
+		SELECT
      *
 FROM
      firme
 WHERE
-     esercizio = $P{esercizio}]]>
-	</queryString>
+     esercizio = $P{esercizio}
+	]]></query>
 	<field name="ESERCIZIO" class="java.math.BigDecimal"/>
 	<field name="TIPO" class="java.lang.String"/>
 	<field name="FIRMA1" class="java.lang.String"/>
@@ -32,34 +32,18 @@ WHERE
 	<field name="UTUV" class="java.lang.String"/>
 	<field name="PG_VER_REC" class="java.math.BigDecimal"/>
 	<field name="DT_STAMPA" class="java.util.Date"/>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
+	<background splitType="Stretch"/>
+	<title splitType="Stretch"/>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader splitType="Stretch"/>
 	<detail>
 		<band height="13" splitType="Stretch">
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField-1" style="TNR10" x="5" y="1" width="77" height="12" uuid="6d55b7da-c96b-4e5b-aa4b-5912813cbdac"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[($F{DT_STAMPA}==null? new java.util.Date():$F{DT_STAMPA})]]></textFieldExpression>
-			</textField>
+			<element kind="textField" key="textField-1" style="TNR10" x="5" y="1" width="77" height="12" uuid="6d55b7da-c96b-4e5b-aa4b-5912813cbdac" pattern="dd/MM/yyyy" blankWhenNull="true" hTextAlign="Center">
+				<expression><![CDATA[($F{DT_STAMPA}==null? new java.util.Date():$F{DT_STAMPA})]]></expression>
+			</element>
 		</band>
 	</detail>
-	<columnFooter>
-		<band splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band splitType="Stretch"/>
-	</summary>
+	<columnFooter splitType="Stretch"/>
+	<pageFooter splitType="Stretch"/>
+	<summary splitType="Stretch"/>
 </jasperReport>

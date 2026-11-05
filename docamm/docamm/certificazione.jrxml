@@ -1,106 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certificazione" pageWidth="595" pageHeight="842" columnWidth="567" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.CertificazioneScriptlet">
+<jasperReport name="certificazione" pageWidth="595" pageHeight="842" columnWidth="567" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.CertificazioneScriptlet" language="java">
 	<property name="ireport.scriptlethandling" value="2"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
 	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
-	<style name="TNR10B" fontName="Times New Roman" fontSize="10" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNR16B" fontName="Times New Roman" fontSize="16" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNR8B" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR10B" fontName="Times New Roman" fontSize="10" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR16B" fontName="Times New Roman" fontSize="16" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR8B" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
 	<style name="TNR12" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
-	<style name="TNR12B" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Bold"/>
-	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
+	<style name="TNR12B" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Bold"/>
+	<parameter name="DIR_IMAGE" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="esercizio" class="java.lang.Integer" isForPrompting="false">
+	<parameter name="esercizio" class="java.lang.Integer" forPrompting="false">
 		<defaultValueExpression><![CDATA[new Integer(2011)]]></defaultValueExpression>
 	</parameter>
-	<parameter name="nota" class="java.lang.String" isForPrompting="false">
+	<parameter name="nota" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
-	<parameter name="cd_anag" class="java.lang.String" isForPrompting="false">
+	<parameter name="cd_anag" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[new String("101253")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="ti_cert" class="java.lang.String" isForPrompting="false">
+	<parameter name="ti_cert" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[new String("RAPPT")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[select 1 from dual]]>
-	</queryString>
+	<query language="sql"><![CDATA[
+		select 1 from dual
+	]]></query>
 	<field name="1" class="java.math.BigDecimal"/>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="14" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
+	<background splitType="Stretch"/>
+	<title splitType="Stretch"/>
+	<pageHeader height="14" splitType="Stretch"/>
+	<columnHeader splitType="Stretch"/>
 	<detail>
 		<band height="20" splitType="Stretch">
-			<subreport isUsingCache="true">
-				<reportElement key="subreport-1" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="0" width="566" height="20" isRemoveLineWhenBlank="true"/>
-				<subreportParameter name="DIR_IMAGE">
-					<subreportParameterExpression><![CDATA[$P{DIR_IMAGE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="esercizio">
-					<subreportParameterExpression><![CDATA[$P{esercizio}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="SUBREPORT_DIR">
-					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
-				</subreportParameter>
+			<element kind="subreport" key="subreport-1" positionType="Float" stretchType="ContainerHeight" x="1" y="0" width="566" height="20" removeLineWhenBlank="true" usingCache="true">
+				<parameter name="DIR_IMAGE">
+					<expression><![CDATA[$P{DIR_IMAGE}]]></expression>
+				</parameter>
+				<parameter name="esercizio">
+					<expression><![CDATA[$P{esercizio}]]></expression>
+				</parameter>
+				<parameter name="SUBREPORT_DIR">
+					<expression><![CDATA[$P{SUBREPORT_DIR}]]></expression>
+				</parameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR}+"certificazione_subreport0.jasper"]]></subreportExpression>
-			</subreport>
+				<expression><![CDATA[$P{SUBREPORT_DIR}+"certificazione_subreport0.jasper"]]></expression>
+			</element>
 		</band>
 	</detail>
-	<columnFooter>
-		<band splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="17" splitType="Stretch">
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField-2" style="TNR10" x="436" y="0" width="73" height="17">
-					<printWhenExpression><![CDATA[new Boolean(false)]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression class="java.lang.String"><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report" isBlankWhenNull="false">
-				<reportElement key="textField-3" style="TNR10" x="509" y="0" width="25" height="17">
-					<printWhenExpression><![CDATA[new Boolean(false)]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></textFieldExpression>
-			</textField>
-		</band>
+	<columnFooter splitType="Stretch"/>
+	<pageFooter height="17" splitType="Stretch">
+		<element kind="textField" key="textField-2" style="TNR10" x="436" y="0" width="73" height="17" blankWhenNull="false" hTextAlign="Right">
+			<printWhenExpression><![CDATA[new Boolean(false)]]></printWhenExpression>
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
+		</element>
+		<element kind="textField" key="textField-3" style="TNR10" x="509" y="0" width="25" height="17" evaluationTime="Report" blankWhenNull="false" hTextAlign="Left">
+			<printWhenExpression><![CDATA[new Boolean(false)]]></printWhenExpression>
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
+		</element>
 	</pageFooter>
-	<summary>
-		<band splitType="Stretch"/>
-	</summary>
+	<summary splitType="Stretch"/>
 </jasperReport>

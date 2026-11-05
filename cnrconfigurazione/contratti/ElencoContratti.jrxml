@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ElencoContratti" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="812" leftMargin="15" rightMargin="15" topMargin="10" bottomMargin="10" uuid="e62a9dad-ca3b-4183-a3ea-2b4c315ca10d">
+<jasperReport name="ElencoContratti" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="812" leftMargin="15" rightMargin="15" topMargin="10" bottomMargin="10" uuid="e62a9dad-ca3b-4183-a3ea-2b4c315ca10d" language="java">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
-	<style name="NORMAL" isDefault="true" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
-	<style name="BOLD" style="NORMAL" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TITLE" style="BOLD" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Bold"/>
-	<parameter name="DIR_SUBREPORT" class="java.lang.String" isForPrompting="false">
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<style name="NORMAL" default="true" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
+	<style name="BOLD" style="NORMAL" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TITLE" style="BOLD" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Bold"/>
+	<parameter name="DIR_SUBREPORT" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
-	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
+	<parameter name="DIR_IMAGE" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="unita_organizzativa" class="java.lang.String">
 		<defaultValueExpression><![CDATA["*"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="firmatario" class="java.lang.String" isForPrompting="false">
+	<parameter name="firmatario" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["*"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="figura_giuridica" class="java.lang.String" isForPrompting="false">
+	<parameter name="figura_giuridica" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["*"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="stato" class="java.lang.String" isForPrompting="false">
+	<parameter name="stato" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["NOPROV"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="tipologia" class="java.lang.String">
 		<defaultValueExpression><![CDATA["*"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="data_stipula_da" class="java.lang.String" isForPrompting="false">
+	<parameter name="data_stipula_da" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["1970/01/01"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="data_stipula_a" class="java.lang.String" isForPrompting="false">
+	<parameter name="data_stipula_a" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["2018/12/31"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="data_inizio_da" class="java.lang.String" isForPrompting="false">
+	<parameter name="data_inizio_da" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["1980/01/01"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="data_inizio_a" class="java.lang.String" isForPrompting="false">
+	<parameter name="data_inizio_a" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["2018/12/31"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="data_fine_da" class="java.lang.String" isForPrompting="false">
+	<parameter name="data_fine_da" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["2018/01/01"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="data_fine_a" class="java.lang.String" isForPrompting="false">
+	<parameter name="data_fine_a" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["2100/12/31"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="VERSIONE" class="java.lang.String" isForPrompting="false">
-		<parameterDescription><![CDATA[versione 1.0  [29/9/2006] by Aurelio D'Amico]]></parameterDescription>
+	<parameter name="VERSIONE" class="java.lang.String" forPrompting="false">
+		<description><![CDATA[versione 1.0  [29/9/2006] by Aurelio D'Amico]]></description>
 	</parameter>
-	<queryString>
-		<![CDATA[select * from PRT_ELENCO_CONTRATTI
+	<query language="sql"><![CDATA[
+		select * from PRT_ELENCO_CONTRATTI
 where CD_UNITA_ORGANIZZATIVA like decode($P{unita_organizzativa},'*','%',$P{unita_organizzativa})
   and (($P{stato} ='NOPROV' and STATO in('D','C')) or
        ($P{stato} !='NOPROV' and STATO like decode($P{stato},'*','%',$P{stato})))
@@ -73,8 +73,8 @@ where CD_UNITA_ORGANIZZATIVA like decode($P{unita_organizzativa},'*','%',$P{unit
   and ( DT_FINE_VALIDITA is null or
         DT_FINE_VALIDITA >= to_date($P{data_fine_da}, 'YYYY/MM/DD') and
         DT_FINE_VALIDITA <= to_date($P{data_fine_a}, 'YYYY/MM/DD') )
-order by  decode($P{unita_organizzativa},'*',null,cd_unita_organizzativa),ESERCIZIO, PG_CONTRATTO, STATO]]>
-	</queryString>
+order by  decode($P{unita_organizzativa},'*',null,cd_unita_organizzativa),ESERCIZIO, PG_CONTRATTO, STATO
+	]]></query>
 	<field name="CD_UNITA_ORGANIZZATIVA" class="java.lang.String"/>
 	<field name="ESERCIZIO" class="java.math.BigDecimal"/>
 	<field name="STATO" class="java.lang.String"/>
@@ -103,498 +103,411 @@ order by  decode($P{unita_organizzativa},'*',null,cd_unita_organizzativa),ESERCI
 	<field name="DS_FIG_GIUR_EST" class="java.lang.String"/>
 	<field name="DS_TIPO_CONTRATTO" class="java.lang.String"/>
 	<variable name="identificativo" class="java.lang.String">
-		<variableExpression><![CDATA[$F{ESERCIZIO}.toString() + " " + $F{PG_CONTRATTO}.toString() + " " + $F{STATO}]]></variableExpression>
+		<expression><![CDATA[$F{ESERCIZIO}.toString() + " " + $F{PG_CONTRATTO}.toString() + " " + $F{STATO}]]></expression>
 	</variable>
 	<variable name="decode_natura" class="java.lang.String">
-		<variableExpression><![CDATA[$F{NATURA_CONTABILE}.equals("A")?"Attivo":$F{NATURA_CONTABILE}.equals("P")?"Passivo":$F{NATURA_CONTABILE}.equals("E")?"Attivo e Passivo":$F{NATURA_CONTABILE}.equals("N")?"Senza flussi finanziari":""]]></variableExpression>
+		<expression><![CDATA[$F{NATURA_CONTABILE}.equals("A")?"Attivo":$F{NATURA_CONTABILE}.equals("P")?"Passivo":$F{NATURA_CONTABILE}.equals("E")?"Attivo e Passivo":$F{NATURA_CONTABILE}.equals("N")?"Senza flussi finanziari":""]]></expression>
 	</variable>
 	<variable name="terzo_a" class="java.lang.String">
-		<variableExpression><![CDATA[$F{CD_TERZO_FIRMATARIO}.toString().equals("0")?"": "a) " + $F{CD_TERZO_FIRMATARIO}.toString()]]></variableExpression>
+		<expression><![CDATA[$F{CD_TERZO_FIRMATARIO}.toString().equals("0")?"": "a) " + $F{CD_TERZO_FIRMATARIO}.toString()]]></expression>
 	</variable>
 	<variable name="decode_importo" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[$F{NATURA_CONTABILE}.equals("A")?$F{IM_CONTRATTO_ATTIVO}:$F{NATURA_CONTABILE}.equals("P")?$F{IM_CONTRATTO_PASSIVO}:new BigDecimal(0)]]></variableExpression>
+		<expression><![CDATA[$F{NATURA_CONTABILE}.equals("A")?$F{IM_CONTRATTO_ATTIVO}:$F{NATURA_CONTABILE}.equals("P")?$F{IM_CONTRATTO_PASSIVO}:new BigDecimal(0)]]></expression>
 	</variable>
 	<variable name="terzo_b" class="java.lang.String">
-		<variableExpression><![CDATA[$F{CD_TERZO_RESP}.toString().equals("0")?"": "b) " + $F{CD_TERZO_RESP}.toString()]]></variableExpression>
+		<expression><![CDATA[$F{CD_TERZO_RESP}.toString().equals("0")?"": "b) " + $F{CD_TERZO_RESP}.toString()]]></expression>
 	</variable>
 	<variable name="terzo_c" class="java.lang.String">
-		<variableExpression><![CDATA[$F{FIG_GIUR_EST}.toString().equals("0")?"": "c) " + $F{FIG_GIUR_EST}.toString()]]></variableExpression>
+		<expression><![CDATA[$F{FIG_GIUR_EST}.toString().equals("0")?"": "c) " + $F{FIG_GIUR_EST}.toString()]]></expression>
 	</variable>
-	<group name="TESTATA" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
+	<group name="TESTATA" reprintHeaderOnEachPage="true">
+		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
 			<band height="33" splitType="Stretch">
-				<staticText>
-					<reportElement key="staticText-1" style="BOLD" x="5" y="0" width="54" height="30" uuid="3565e08b-5744-4fe4-9290-fb2ed1f01ed3"/>
+				<element kind="staticText" key="staticText-1" style="BOLD" x="5" y="0" width="54" height="30" uuid="3565e08b-5744-4fe4-9290-fb2ed1f01ed3" markup="styled">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement markup="styled"/>
 					<text><![CDATA[Anno, Identificativo
 Ente e Stato]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-2" style="BOLD" x="65" y="0" width="85" height="30" uuid="cc958898-07c9-4b10-bc80-f9fe3e908c86"/>
+				</element>
+				<element kind="staticText" key="staticText-2" style="BOLD" x="65" y="0" width="85" height="30" uuid="cc958898-07c9-4b10-bc80-f9fe3e908c86" markup="styled">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement markup="styled"/>
 					<text><![CDATA[Natura Contabile
 Tipologia
 Oggetto]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-3" style="BOLD" x="155" y="0" width="165" height="30" uuid="22d979a9-0c48-4a28-b3fe-373f6f71628d"/>
+				</element>
+				<element kind="staticText" key="staticText-3" style="BOLD" x="155" y="0" width="165" height="30" uuid="22d979a9-0c48-4a28-b3fe-373f6f71628d" markup="styled">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement markup="styled"/>
 					<text><![CDATA[Protocollo Generale]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-4" style="BOLD" x="325" y="0" width="219" height="30" uuid="c33af9c3-6b9c-44ec-9453-6994fd412b5c"/>
+				</element>
+				<element kind="staticText" key="staticText-4" style="BOLD" x="325" y="0" width="219" height="30" uuid="c33af9c3-6b9c-44ec-9453-6994fd412b5c" markup="styled">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement markup="styled"/>
 					<text><![CDATA[a) Firmatario
 b) Responsabile interno
 c) Figura Giuridica esterna]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-5" style="BOLD" x="545" y="0" width="45" height="30" uuid="d5f242c6-c8d4-4ab2-be72-cbb700ed2f09"/>
+				</element>
+				<element kind="staticText" key="staticText-5" style="BOLD" x="545" y="0" width="45" height="30" uuid="d5f242c6-c8d4-4ab2-be72-cbb700ed2f09" markup="styled">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement markup="styled"/>
 					<text><![CDATA[Data stipula
 
 Data inizio]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-6" style="BOLD" x="590" y="0" width="45" height="30" uuid="51f6225b-d259-48d7-8e9e-b65c42ae8ddd"/>
+				</element>
+				<element kind="staticText" key="staticText-6" style="BOLD" x="590" y="0" width="45" height="30" uuid="51f6225b-d259-48d7-8e9e-b65c42ae8ddd" markup="styled">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement markup="styled"/>
 					<text><![CDATA[Data proroga
 Data fine]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-7" style="BOLD" x="635" y="0" width="50" height="30" uuid="9010e821-212e-4025-9e99-3bf525775928"/>
+				</element>
+				<element kind="staticText" key="staticText-7" style="BOLD" x="635" y="0" width="50" height="30" uuid="9010e821-212e-4025-9e99-3bf525775928" hTextAlign="Right" markup="styled">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" markup="styled"/>
 					<text><![CDATA[Importo]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-8" style="BOLD" x="685" y="0" width="60" height="30" uuid="5096ad76-f9a2-43d1-b0e6-96dc8acc330e"/>
+				</element>
+				<element kind="staticText" key="staticText-8" style="BOLD" x="685" y="0" width="60" height="30" uuid="5096ad76-f9a2-43d1-b0e6-96dc8acc330e" hTextAlign="Right" markup="styled">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" markup="styled"/>
 					<text><![CDATA[Totale Docum.
 Entrata assoc.
 ]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-9" style="BOLD" x="745" y="0" width="60" height="30" uuid="3921c202-475a-4286-a98a-7e9eefc788cc"/>
+				</element>
+				<element kind="staticText" key="staticText-9" style="BOLD" x="745" y="0" width="60" height="30" uuid="3921c202-475a-4286-a98a-7e9eefc788cc" hTextAlign="Right" markup="styled">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" markup="styled"/>
 					<text><![CDATA[Totale Docum.
 Spesa assoc.
 ]]></text>
-				</staticText>
-				<line>
-					<reportElement key="line-2" positionType="FixRelativeToBottom" x="5" y="31" width="800" height="1" uuid="40c39315-c92b-40a5-91dd-c2b0dd835b25"/>
-				</line>
+				</element>
+				<element kind="line" key="line-2" positionType="FixRelativeToBottom" x="5" y="31" width="800" height="1" uuid="40c39315-c92b-40a5-91dd-c2b0dd835b25"/>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Prevent"/>
 		</groupFooter>
 	</group>
-	<group name="UO" isStartNewPage="true">
-		<groupExpression><![CDATA[null]]></groupExpression>
+	<group name="UO" startNewPage="true">
+		<expression><![CDATA[null]]></expression>
 		<groupHeader>
 			<band height="14" splitType="Stretch">
 				<printWhenExpression><![CDATA[($P{unita_organizzativa}.compareTo(new String("*"))!=0)]]></printWhenExpression>
-				<staticText>
-					<reportElement key="staticText-11" style="BOLD" x="5" y="0" width="75" height="10" uuid="f6ac8ae7-457f-4a2e-aeba-6f9a764aba39"/>
+				<element kind="staticText" key="staticText-11" style="BOLD" x="5" y="0" width="75" height="10" uuid="f6ac8ae7-457f-4a2e-aeba-6f9a764aba39" markup="styled" bold="false">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement markup="styled">
-						<font isBold="false"/>
-					</textElement>
 					<text><![CDATA[Unità Organizzativa:]]></text>
-				</staticText>
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField" style="BOLD" x="85" y="0" width="40" height="10" uuid="f0dfd201-d780-4d7d-a1bb-a36f53b77e56"/>
+				</element>
+				<element kind="textField" key="textField" style="BOLD" x="85" y="0" width="40" height="10" uuid="f0dfd201-d780-4d7d-a1bb-a36f53b77e56" blankWhenNull="false">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField" style="NORMAL" x="130" y="0" width="675" height="10" uuid="ee6d455d-c5d0-4011-aa4b-d4bd65828e57"/>
+					<expression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="NORMAL" x="130" y="0" width="675" height="10" uuid="ee6d455d-c5d0-4011-aa4b-d4bd65828e57" blankWhenNull="false">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA[$F{DS_UNITA_ORGANIZZATIVA}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement key="line-3" x="5" y="12" width="800" height="1" uuid="44ad19d1-46bd-4151-8616-735f1aa3ad0a"/>
-				</line>
+					<expression><![CDATA[$F{DS_UNITA_ORGANIZZATIVA}]]></expression>
+				</element>
+				<element kind="line" key="line-3" x="5" y="12" width="800" height="1" uuid="44ad19d1-46bd-4151-8616-735f1aa3ad0a"/>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="39" splitType="Stretch">
-			<image scaleImage="RetainShape">
-				<reportElement key="image-1" x="5" y="0" width="400" height="36" uuid="162e82c9-adde-4a4d-bff0-3cf9a70cef8a"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<imageExpression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
-			</image>
-			<line>
-				<reportElement key="line-1" x="5" y="38" width="800" height="1" uuid="87b826fb-1ef7-40ff-8f61-5a46718aeb73"/>
-			</line>
-			<staticText>
-				<reportElement key="staticText-10" style="TITLE" x="665" y="21" width="140" height="15" uuid="39027168-2909-4bba-8330-78cac528df87"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right">
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Stampa Elenco Contratti]]></text>
-			</staticText>
-		</band>
+	<background splitType="Stretch"/>
+	<title splitType="Stretch"/>
+	<pageHeader height="39" splitType="Stretch">
+		<element kind="image" key="image-1" x="5" y="0" width="400" height="36" uuid="162e82c9-adde-4a4d-bff0-3cf9a70cef8a" scaleImage="RetainShape">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
+		</element>
+		<element kind="line" key="line-1" x="5" y="38" width="800" height="1" uuid="87b826fb-1ef7-40ff-8f61-5a46718aeb73"/>
+		<element kind="staticText" key="staticText-10" style="TITLE" x="665" y="21" width="140" height="15" uuid="39027168-2909-4bba-8330-78cac528df87" hTextAlign="Right" fontSize="12">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<text><![CDATA[Stampa Elenco Contratti]]></text>
+		</element>
 	</pageHeader>
-	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
+	<columnHeader splitType="Stretch"/>
 	<detail>
 		<band height="37" splitType="Stretch">
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="65" y="0" width="85" height="10" uuid="7453c6c7-2659-446a-9a74-ccdc1e6ca2f8"/>
+			<element kind="textField" key="textField" style="NORMAL" x="65" y="0" width="85" height="10" uuid="7453c6c7-2659-446a-9a74-ccdc1e6ca2f8" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$V{decode_natura}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="5" y="0" width="54" height="10" uuid="3a8efe0b-a354-4b6a-a5f1-5089e0e57c0d"/>
+				<expression><![CDATA[$V{decode_natura}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="5" y="0" width="54" height="10" uuid="3a8efe0b-a354-4b6a-a5f1-5089e0e57c0d" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$V{identificativo}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="155" y="0" width="165" height="10" uuid="cd053b30-81a1-48b9-9a80-212d127be94e"/>
+				<expression><![CDATA[$V{identificativo}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="155" y="0" width="165" height="10" uuid="cd053b30-81a1-48b9-9a80-212d127be94e" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{CD_PROTOCOLLO_GENERALE}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="325" y="0" width="35" height="10" uuid="b83abc42-e4b3-44c4-936a-4fe2b23dd3ea"/>
+				<expression><![CDATA[$F{CD_PROTOCOLLO_GENERALE}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="325" y="0" width="35" height="10" uuid="b83abc42-e4b3-44c4-936a-4fe2b23dd3ea" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$V{terzo_a}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="363" y="0" width="180" height="10" uuid="007097a6-ecdb-439f-9f30-7424b3fc5915"/>
+				<expression><![CDATA[$V{terzo_a}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="363" y="0" width="180" height="10" uuid="007097a6-ecdb-439f-9f30-7424b3fc5915" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{DS_TERZO_FIRMATARIO}]]></textFieldExpression>
-			</textField>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="545" y="0" width="45" height="10" uuid="ed20ec13-c8f0-48ad-ad98-420d5aca6af4"/>
+				<expression><![CDATA[$F{DS_TERZO_FIRMATARIO}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="545" y="0" width="45" height="10" uuid="ed20ec13-c8f0-48ad-ad98-420d5aca6af4" pattern="dd/MM/yyyy" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{DT_STIPULA}]]></textFieldExpression>
-			</textField>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField-3" style="NORMAL" x="590" y="0" width="45" height="10" uuid="863d94ca-4f02-4b1e-bcb1-86dbec0ecf63"/>
+				<expression><![CDATA[$F{DT_STIPULA}]]></expression>
+			</element>
+			<element kind="textField" key="textField-3" style="NORMAL" x="590" y="0" width="45" height="10" uuid="863d94ca-4f02-4b1e-bcb1-86dbec0ecf63" pattern="dd/MM/yyyy" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{DT_PROROGA}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="635" y="0" width="50" height="10" uuid="57a91994-3525-46c7-bfd1-96d7c42b3332"/>
+				<expression><![CDATA[$F{DT_PROROGA}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="635" y="0" width="50" height="10" uuid="57a91994-3525-46c7-bfd1-96d7c42b3332" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$V{decode_importo}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="685" y="0" width="60" height="10" uuid="dde9698f-b3d2-48ad-aba0-01a89ab00515"/>
+				<expression><![CDATA[$V{decode_importo}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="685" y="0" width="60" height="10" uuid="dde9698f-b3d2-48ad-aba0-01a89ab00515" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$F{IM_ENTRATA_ASS}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="745" y="0" width="60" height="10" uuid="138e9b02-4e4c-4b79-b1ff-e568abfe7302"/>
+				<expression><![CDATA[$F{IM_ENTRATA_ASS}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="745" y="0" width="60" height="10" uuid="138e9b02-4e4c-4b79-b1ff-e568abfe7302" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$F{IM_SPESA_ASS}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="65" y="10" width="30" height="10" uuid="4d5b1939-1c95-461c-9c8a-676049d5e431"/>
+				<expression><![CDATA[$F{IM_SPESA_ASS}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="65" y="10" width="30" height="10" uuid="4d5b1939-1c95-461c-9c8a-676049d5e431" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{CD_TIPO_CONTRATTO}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="100" y="10" width="220" height="10" uuid="c4b0bdd0-4333-4819-a457-12d537e40154"/>
+				<expression><![CDATA[$F{CD_TIPO_CONTRATTO}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="100" y="10" width="220" height="10" uuid="c4b0bdd0-4333-4819-a457-12d537e40154" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{DS_TIPO_CONTRATTO}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="65" y="20" width="255" height="10" uuid="2d3d975b-c952-4300-9171-8017cf241276"/>
+				<expression><![CDATA[$F{DS_TIPO_CONTRATTO}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField" style="NORMAL" x="65" y="20" width="255" height="10" uuid="2d3d975b-c952-4300-9171-8017cf241276" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{OGGETTO}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="325" y="10" width="35" height="10" uuid="4e815e66-1405-4af9-9bae-b3d8a094e1ed"/>
+				<expression><![CDATA[$F{OGGETTO}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="325" y="10" width="35" height="10" uuid="4e815e66-1405-4af9-9bae-b3d8a094e1ed" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$V{terzo_b}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="363" y="10" width="180" height="10" uuid="96a0e50e-9707-42a3-91bc-62e41434e29c"/>
+				<expression><![CDATA[$V{terzo_b}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="363" y="10" width="180" height="10" uuid="96a0e50e-9707-42a3-91bc-62e41434e29c" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{DS_TERZO_RESP}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="325" y="20" width="35" height="10" uuid="38a0db1b-b1b8-4d81-aeec-9243912731b4"/>
+				<expression><![CDATA[$F{DS_TERZO_RESP}]]></expression>
+			</element>
+			<element kind="textField" key="textField" style="NORMAL" x="325" y="20" width="35" height="10" uuid="38a0db1b-b1b8-4d81-aeec-9243912731b4" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$V{terzo_c}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" style="NORMAL" x="363" y="20" width="180" height="10" uuid="0f5c402b-37c3-40e4-b9af-44a85883523f"/>
+				<expression><![CDATA[$V{terzo_c}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" key="textField" style="NORMAL" x="363" y="20" width="180" height="10" uuid="0f5c402b-37c3-40e4-b9af-44a85883523f" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{DS_FIG_GIUR_EST}]]></textFieldExpression>
-			</textField>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField-4" style="NORMAL" x="545" y="20" width="45" height="10" uuid="80f9fcee-fb75-4054-afed-5e6eaded8a6c"/>
+				<expression><![CDATA[$F{DS_FIG_GIUR_EST}]]></expression>
+			</element>
+			<element kind="textField" key="textField-4" style="NORMAL" x="545" y="20" width="45" height="10" uuid="80f9fcee-fb75-4054-afed-5e6eaded8a6c" pattern="dd/MM/yyyy" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{DT_INIZIO_VALIDITA}]]></textFieldExpression>
-			</textField>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField-5" style="NORMAL" x="590" y="20" width="45" height="10" uuid="b578dc9e-34eb-4552-bad4-e233fd9a08e8"/>
+				<expression><![CDATA[$F{DT_INIZIO_VALIDITA}]]></expression>
+			</element>
+			<element kind="textField" key="textField-5" style="NORMAL" x="590" y="20" width="45" height="10" uuid="b578dc9e-34eb-4552-bad4-e233fd9a08e8" pattern="dd/MM/yyyy" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{DT_FINE_VALIDITA}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement key="line-4" positionType="Float" x="5" y="32" width="800" height="1" uuid="b9b16ac2-67ef-49ad-8d1f-ae2c2db43752"/>
-				<graphicElement fill="Solid">
-					<pen lineWidth="1.0" lineStyle="Dashed"/>
-				</graphicElement>
-			</line>
-			<subreport isUsingCache="true">
-				<reportElement key="subreport-1" style="NORMAL" positionType="Float" x="0" y="34" width="810" height="2" uuid="922c322d-4548-4f86-ac20-f3a247147801"/>
-				<subreportParameter name="progressivo">
-					<subreportParameterExpression><![CDATA[$F{PG_CONTRATTO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="stato">
-					<subreportParameterExpression><![CDATA[$F{STATO}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="esercizio">
-					<subreportParameterExpression><![CDATA[$F{ESERCIZIO}]]></subreportParameterExpression>
-				</subreportParameter>
+				<expression><![CDATA[$F{DT_FINE_VALIDITA}]]></expression>
+			</element>
+			<element kind="line" key="line-4" positionType="Float" x="5" y="32" width="800" height="1" uuid="b9b16ac2-67ef-49ad-8d1f-ae2c2db43752" fill="Solid">
+				<pen lineWidth="1.0" lineStyle="Dashed"/>
+			</element>
+			<element kind="subreport" key="subreport-1" style="NORMAL" positionType="Float" x="0" y="34" width="810" height="2" uuid="922c322d-4548-4f86-ac20-f3a247147801" usingCache="true">
+				<parameter name="progressivo">
+					<expression><![CDATA[$F{PG_CONTRATTO}]]></expression>
+				</parameter>
+				<parameter name="stato">
+					<expression><![CDATA[$F{STATO}]]></expression>
+				</parameter>
+				<parameter name="esercizio">
+					<expression><![CDATA[$F{ESERCIZIO}]]></expression>
+				</parameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{DIR_SUBREPORT} + "ElencoContratti_sub.jasper"]]></subreportExpression>
-			</subreport>
+				<expression><![CDATA[$P{DIR_SUBREPORT} + "ElencoContratti_sub.jasper"]]></expression>
+			</element>
 		</band>
 	</detail>
-	<columnFooter>
-		<band splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="15" splitType="Stretch">
-			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" style="NORMAL" x="481" y="5" width="294" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="4c85af5a-4f70-4716-97e9-3055c4dcbb03"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right">
-					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report" isBlankWhenNull="false">
-				<reportElement key="textField-2" style="NORMAL" x="777" y="5" width="27" height="10" uuid="578d9294-cf0a-46de-8b88-8afc49a9ec9d"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement>
-					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report" pattern="dd/MM/yyyy HH.mm.ss" isBlankWhenNull="false">
-				<reportElement key="textField" style="NORMAL" x="5" y="5" width="143" height="10" uuid="1bd8f8b0-541e-48a2-a8ac-ace5b67209ec"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement markup="styled"/>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement key="line-5" positionType="Float" x="5" y="2" width="800" height="1" uuid="f1dd5c64-875d-462d-ac39-b2cac9dd6fb2"/>
-			</line>
-		</band>
+	<columnFooter splitType="Stretch"/>
+	<pageFooter height="15" splitType="Stretch">
+		<element kind="textField" key="textField-1" style="NORMAL" x="481" y="5" width="294" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="4c85af5a-4f70-4716-97e9-3055c4dcbb03" pattern="" blankWhenNull="false" hTextAlign="Right" fontName="Times New Roman" fontSize="8" bold="false" italic="false" underline="false" strikeThrough="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" pdfEmbedded="false">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
+		</element>
+		<element kind="textField" key="textField-2" style="NORMAL" x="777" y="5" width="27" height="10" uuid="578d9294-cf0a-46de-8b88-8afc49a9ec9d" evaluationTime="Report" blankWhenNull="false" fontName="Times New Roman" fontSize="8" bold="false" italic="false" underline="false" strikeThrough="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" pdfEmbedded="false">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" key="textField" style="NORMAL" x="5" y="5" width="143" height="10" uuid="1bd8f8b0-541e-48a2-a8ac-ace5b67209ec" evaluationTime="Report" pattern="dd/MM/yyyy HH.mm.ss" blankWhenNull="false" markup="styled">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="line" key="line-5" positionType="Float" x="5" y="2" width="800" height="1" uuid="f1dd5c64-875d-462d-ac39-b2cac9dd6fb2"/>
 	</pageFooter>
-	<summary>
-		<band splitType="Stretch"/>
-	</summary>
+	<summary splitType="Stretch"/>
 </jasperReport>

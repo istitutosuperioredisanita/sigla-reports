@@ -1,193 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"  ?>
-<!-- Created with iReport - A designer for JasperReports -->
-<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-<jasperReport
-		 name="stampasospesiassmnd"
-		 columnCount="1"
-		 printOrder="Vertical"
-		 orientation="Landscape"
-		 pageWidth="842"
-		 pageHeight="595"
-		 columnWidth="782"
-		 columnSpacing="0"
-		 leftMargin="30"
-		 rightMargin="30"
-		 topMargin="20"
-		 bottomMargin="20"
-		 whenNoDataType="NoPages"
-		 isTitleNewPage="false"
-		 isSummaryNewPage="false">
-	<property name="ireport.scriptlethandling" value="0" />
-	<property name="ireport.encoding" value="UTF-8" />
-	<import value="java.util.*" />
-	<import value="net.sf.jasperreports.engine.*" />
-	<import value="net.sf.jasperreports.engine.data.*" />
-
-	<style 
-		name="TNRGC14"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="14"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	/>
-	<style 
-		name="TNRC10"
-		isDefault="false"
-		fontName="Times New Roman"
-		isItalic="true"
-		pdfFontName="Times-Italic"
-	/>
-	<style 
-		name="TNRGC12"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="12"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	/>
-	<style 
-		name="TNR10"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="10"
-		pdfFontName="Times-Roman"
-	/>
-	<style 
-		name="TNR8"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="8"
-		pdfFontName="Times-Roman"
-	/>
-	<style 
-		name="TNRG10"
-		isDefault="false"
-		fontName="Times New Roman"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-	<style 
-		name="TNRG12"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="12"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-	<style 
-		name="TNRG8"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="8"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-	<style 
-		name="TNR9"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="9"
-		pdfFontName="Times-Roman"
-	/>
-	<style 
-		name="TNRG9"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="9"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-	<style 
-		name="TNRG14"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="14"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-	<style 
-		name="TNRGC16"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="16"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	/>
-	<style 
-		name="TNRG16"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="16"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-	<style 
-		name="TNRC16"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="16"
-		isItalic="true"
-		pdfFontName="Times-Italic"
-	/>
-	<style 
-		name="TNR16"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="16"
-		pdfFontName="Times-Roman"
-	/>
-	<style 
-		name="TNRC9"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="9"
-		isItalic="true"
-		pdfFontName="Times-Italic"
-	/>
-	<style 
-		name="TNRG11"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="11"
-		isBold="true"
-		pdfFontName="Times-Bold"
-	/>
-	<style 
-		name="TNR12"
-		isDefault="false"
-		fontName="Times New Roman"
-		fontSize="12"
-		pdfFontName="Times-Roman"
-	/>
-	<style 
-		name="TNRGC10"
-		isDefault="false"
-		fontName="Times New Roman"
-		isBold="true"
-		isItalic="true"
-		pdfFontName="Times-BoldItalic"
-	/>
-
-	<parameter name="DIR_IMAGE" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="stampasospesiassmnd" columnCount="1" printOrder="Vertical" orientation="Landscape" pageWidth="842" pageHeight="595" columnWidth="782" columnSpacing="0" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" whenNoDataType="NoPages" titleNewPage="false" summaryNewPage="false" language="java">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<style name="TNRGC14" default="false" fontName="Times New Roman" fontSize="14" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRC10" default="false" fontName="Times New Roman" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRGC12" default="false" fontName="Times New Roman" fontSize="12" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNR10" default="false" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
+	<style name="TNR8" default="false" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
+	<style name="TNRG10" default="false" fontName="Times New Roman" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG12" default="false" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG8" default="false" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR9" default="false" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman"/>
+	<style name="TNRG9" default="false" fontName="Times New Roman" fontSize="9" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG14" default="false" fontName="Times New Roman" fontSize="14" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRGC16" default="false" fontName="Times New Roman" fontSize="16" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRG16" default="false" fontName="Times New Roman" fontSize="16" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC16" default="false" fontName="Times New Roman" fontSize="16" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNR16" default="false" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman"/>
+	<style name="TNRC9" default="false" fontName="Times New Roman" fontSize="9" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRG11" default="false" fontName="Times New Roman" fontSize="11" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNR12" default="false" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman"/>
+	<style name="TNRGC10" default="false" fontName="Times New Roman" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<parameter name="DIR_IMAGE" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="DaData" isForPrompting="false" class="java.util.Date">
-		<defaultValueExpression ><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2003/01/01")]]></defaultValueExpression>
+	<parameter name="DaData" forPrompting="false" class="java.util.Date">
+		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2003/01/01")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="AData" isForPrompting="false" class="java.util.Date">
-		<defaultValueExpression ><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2003/12/31")]]></defaultValueExpression>
+	<parameter name="AData" forPrompting="false" class="java.util.Date">
+		<defaultValueExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).parse("2003/12/31")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="CDS" isForPrompting="false" class="java.lang.String">
-		<defaultValueExpression ><![CDATA["*"]]></defaultValueExpression>
+	<parameter name="CDS" forPrompting="false" class="java.lang.String">
+		<defaultValueExpression><![CDATA["*"]]></defaultValueExpression>
 	</parameter>
-	<queryString><![CDATA[SELECT * FROM PRT_STAMPA_SOSP_MND
+	<query language="sql"><![CDATA[SELECT * FROM PRT_STAMPA_SOSP_MND
 where dt_registrazione between $P{DaData} and $P{AData}
-and cd_cds_origine like decode($P{CDS},'*','%',$P{CDS})]]></queryString>
-
+and cd_cds_origine like decode($P{CDS},'*','%',$P{CDS})]]></query>
 	<field name="ESERCIZIO" class="java.math.BigDecimal"/>
 	<field name="CD_CDS_ORIGINE" class="java.lang.String"/>
 	<field name="CD_UO_ORIGINE" class="java.lang.String"/>
@@ -200,372 +51,117 @@ and cd_cds_origine like decode($P{CDS},'*','%',$P{CDS})]]></queryString>
 	<field name="DS_ANAGRAFICO" class="java.lang.String"/>
 	<field name="PG_MANDATO" class="java.math.BigDecimal"/>
 	<field name="DISPONIBILE" class="java.math.BigDecimal"/>
-
-
-		<group  name="CD_CDS_ORIGINE" >
-			<groupExpression><![CDATA[$F{CD_CDS_ORIGINE}]]></groupExpression>
-			<groupHeader>
-			<band height="18"  isSplitAllowed="true" >
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNRG10"
-						x="0"
-						y="2"
-						width="45"
-						height="13"
-						key="textField"/>
+	<group name="CD_CDS_ORIGINE">
+		<expression><![CDATA[$F{CD_CDS_ORIGINE}]]></expression>
+		<groupHeader>
+			<band height="18" splitAllowed="true">
+				<element kind="textField" style="TNRG10" x="0" y="2" width="45" height="13" key="textField" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CD_CDS_ORIGINE}]]></textFieldExpression>
-				</textField>
+					<expression><![CDATA[$F{CD_CDS_ORIGINE}]]></expression>
+				</element>
 			</band>
-			</groupHeader>
-			<groupFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-			</groupFooter>
-		</group>
-		<background>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</background>
-		<title>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</title>
-		<pageHeader>
-			<band height="108"  isSplitAllowed="true" >
-				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="1"
-						y="2"
-						width="497"
-						height="40"
-						key="image-1"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<graphicElement stretchType="NoStretch"/>
-					<imageExpression class="java.lang.String"><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
-				</image>
-				<staticText>
-					<reportElement
-						style="TNRG12"
-						x="0"
-						y="50"
-						width="782"
-						height="15"
-						key="staticText-1"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<text><![CDATA[STAMPA SOSPESI CNR ASSOCIATI A MANDATI]]></text>
-				</staticText>
-				<line direction="TopDown">
-					<reportElement
-						x="0"
-						y="71"
-						width="782"
-						height="0"
-						key="line-1"/>
-					<graphicElement stretchType="NoStretch" pen="2Point"/>
-				</line>
-				<staticText>
-					<reportElement
-						style="TNRG10"
-						x="3"
-						y="80"
-						width="39"
-						height="12"
-						key="staticText-2"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<text><![CDATA[CDS]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNRG10"
-						x="38"
-						y="80"
-						width="75"
-						height="12"
-						key="staticText-3"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<text><![CDATA[Cod. Sospeso]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNRG10"
-						x="149"
-						y="73"
-						width="51"
-						height="27"
-						key="staticText-4"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right">
-						<font/>
-					</textElement>
-				<text><![CDATA[Importo Sospeso]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNRG10"
-						x="205"
-						y="80"
-						width="30"
-						height="12"
-						key="staticText-5"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<text><![CDATA[Data]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNRG10"
-						x="259"
-						y="74"
-						width="48"
-						height="27"
-						key="staticText-6"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<text><![CDATA[Tipo Banca]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNRG10"
-						x="365"
-						y="80"
-						width="75"
-						height="12"
-						key="staticText-7"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Causale]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNRG10"
-						x="543"
-						y="80"
-						width="75"
-						height="12"
-						key="staticText-8"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement>
-						<font/>
-					</textElement>
-				<text><![CDATA[Descrizione]]></text>
-				</staticText>
-				<line direction="TopDown">
-					<reportElement
-						x="0"
-						y="104"
-						width="782"
-						height="0"
-						key="line-2"/>
-					<graphicElement stretchType="NoStretch" pen="Thin"/>
-				</line>
-				<staticText>
-					<reportElement
-						style="TNRG10"
-						x="667"
-						y="80"
-						width="55"
-						height="12"
-						key="staticText-9"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right">
-						<font/>
-					</textElement>
-				<text><![CDATA[Mandato]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="TNRG10"
-						x="723"
-						y="73"
-						width="59"
-						height="27"
-						key="staticText-10"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right">
-						<font/>
-					</textElement>
-				<text><![CDATA[Importo Disponibile]]></text>
-				</staticText>
-			</band>
-		</pageHeader>
-		<columnHeader>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnHeader>
-		<detail>
-			<band height="18"  isSplitAllowed="false" >
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR10"
-						x="38"
-						y="2"
-						width="111"
-						height="13"
-						key="textField"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CD_SOSPESO}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR10"
-						x="149"
-						y="2"
-						width="51"
-						height="13"
-						key="textField"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{IM_SOSPESO}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR10"
-						x="205"
-						y="2"
-						width="49"
-						height="13"
-						key="textField"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{DT_REGISTRAZIONE}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR9"
-						x="255"
-						y="2"
-						width="57"
-						height="13"
-						key="textField"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Center">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[($F{TI_CC_BI}.equals("C")?"C/C":($F{TI_CC_BI}.equals("B")?"Banca d'Italia":$F{TI_CC_BI}))]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR9"
-						x="315"
-						y="2"
-						width="175"
-						height="13"
-						key="textField"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CAUSALE}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR9"
-						x="494"
-						y="2"
-						width="172"
-						height="13"
-						key="textField"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DS_ANAGRAFICO}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="###0;-###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR10"
-						x="667"
-						y="2"
-						width="55"
-						height="13"
-						key="textField"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PG_MANDATO}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR10"
-						x="723"
-						y="2"
-						width="59"
-						height="13"
-						key="textField"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DISPONIBILE}]]></textFieldExpression>
-				</textField>
-			</band>
-		</detail>
-		<columnFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnFooter>
-		<pageFooter>
-			<band height="50"  isSplitAllowed="true" >
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR10"
-						x="579"
-						y="32"
-						width="100"
-						height="18"
-						key="textField"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement textAlignment="Right">
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						style="TNR10"
-						x="679"
-						y="32"
-						width="100"
-						height="18"
-						key="textField"/>
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER} + ""]]></textFieldExpression>
-				</textField>
-			</band>
-		</pageFooter>
-		<summary>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</summary>
+		</groupHeader>
+		<groupFooter>
+			<band height="0" splitAllowed="true"/>
+		</groupFooter>
+	</group>
+	<background height="0" splitAllowed="true"/>
+	<title height="0" splitAllowed="true"/>
+	<pageHeader height="108" splitAllowed="true">
+		<element kind="image" x="1" y="2" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
+		</element>
+		<element kind="staticText" style="TNRG12" x="0" y="50" width="782" height="15" key="staticText-1" hTextAlign="Center">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<text><![CDATA[STAMPA SOSPESI CNR ASSOCIATI A MANDATI]]></text>
+		</element>
+		<element kind="line" x="0" y="71" width="782" height="0" key="line-1" direction="TopDown"/>
+		<element kind="staticText" style="TNRG10" x="3" y="80" width="39" height="12" key="staticText-2" hTextAlign="Center">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<text><![CDATA[CDS]]></text>
+		</element>
+		<element kind="staticText" style="TNRG10" x="38" y="80" width="75" height="12" key="staticText-3" hTextAlign="Center">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<text><![CDATA[Cod. Sospeso]]></text>
+		</element>
+		<element kind="staticText" style="TNRG10" x="149" y="73" width="51" height="27" key="staticText-4" hTextAlign="Right">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<text><![CDATA[Importo Sospeso]]></text>
+		</element>
+		<element kind="staticText" style="TNRG10" x="205" y="80" width="30" height="12" key="staticText-5" hTextAlign="Center">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<text><![CDATA[Data]]></text>
+		</element>
+		<element kind="staticText" style="TNRG10" x="259" y="74" width="48" height="27" key="staticText-6" hTextAlign="Center">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<text><![CDATA[Tipo Banca]]></text>
+		</element>
+		<element kind="staticText" style="TNRG10" x="365" y="80" width="75" height="12" key="staticText-7">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<text><![CDATA[Causale]]></text>
+		</element>
+		<element kind="staticText" style="TNRG10" x="543" y="80" width="75" height="12" key="staticText-8">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<text><![CDATA[Descrizione]]></text>
+		</element>
+		<element kind="line" x="0" y="104" width="782" height="0" key="line-2" direction="TopDown"/>
+		<element kind="staticText" style="TNRG10" x="667" y="80" width="55" height="12" key="staticText-9" hTextAlign="Right">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<text><![CDATA[Mandato]]></text>
+		</element>
+		<element kind="staticText" style="TNRG10" x="723" y="73" width="59" height="27" key="staticText-10" hTextAlign="Right">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<text><![CDATA[Importo Disponibile]]></text>
+		</element>
+	</pageHeader>
+	<columnHeader height="0" splitAllowed="true"/>
+	<detail>
+		<band height="18" splitAllowed="false">
+			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="38" y="2" width="111" height="13" key="textField" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[$F{CD_SOSPESO}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="149" y="2" width="51" height="13" key="textField" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[$F{IM_SOSPESO}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="205" y="2" width="49" height="13" key="textField" pattern="dd/MM/yyyy" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[$F{DT_REGISTRAZIONE}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR9" x="255" y="2" width="57" height="13" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[($F{TI_CC_BI}.equals("C")?"C/C":($F{TI_CC_BI}.equals("B")?"Banca d'Italia":$F{TI_CC_BI}))]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR9" x="315" y="2" width="175" height="13" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[$F{CAUSALE}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR9" x="494" y="2" width="172" height="13" key="textField" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[$F{DS_ANAGRAFICO}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="667" y="2" width="55" height="13" key="textField" pattern="###0;-###0" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[$F{PG_MANDATO}]]></expression>
+			</element>
+			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="723" y="2" width="59" height="13" key="textField" pattern="#,##0.00;-#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
+				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<expression><![CDATA[$F{DISPONIBILE}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="0" splitAllowed="true"/>
+	<pageFooter height="50" splitAllowed="true">
+		<element kind="textField" style="TNR10" x="579" y="32" width="100" height="18" key="textField" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
+		</element>
+		<element kind="textField" style="TNR10" x="679" y="32" width="100" height="18" key="textField" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self">
+			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<expression><![CDATA["" + $V{PAGE_NUMBER} + ""]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="0" splitAllowed="true"/>
 </jasperReport>

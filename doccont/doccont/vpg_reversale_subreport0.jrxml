@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vpg_reversale_subreport0" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+<jasperReport name="vpg_reversale_subreport0" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" language="java">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="ISO-8859-1"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="178"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
-	<style name="TNRGC14" fontName="Times New Roman" fontSize="14" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
-	<style name="TNRC10" fontName="Times New Roman" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNRGC12" fontName="Times New Roman" fontSize="12" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<style name="TNRGC14" fontName="Times New Roman" fontSize="14" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRC10" fontName="Times New Roman" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRGC12" fontName="Times New Roman" fontSize="12" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
 	<style name="TNR10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
 	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
-	<style name="TNRG10" fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRG12" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRG8" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG10" fontName="Times New Roman" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG12" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG8" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR9" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman"/>
-	<style name="TNRG9" fontName="Times New Roman" fontSize="9" isBold="true" pdfFontName="Times-Bold"/>
-	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
+	<style name="TNRG9" fontName="Times New Roman" fontSize="9" bold="true" pdfFontName="Times-Bold"/>
+	<parameter name="DIR_IMAGE" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="aEs" class="java.lang.Integer" isForPrompting="false">
+	<parameter name="aEs" class="java.lang.Integer" forPrompting="false">
 		<defaultValueExpression><![CDATA[new Integer("2007")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="aCd_cds" class="java.lang.String" isForPrompting="false">
+	<parameter name="aCd_cds" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["999"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="aPg_da" class="java.lang.Long" isForPrompting="false">
+	<parameter name="aPg_da" class="java.lang.Long" forPrompting="false">
 		<defaultValueExpression><![CDATA[new Long("72")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="pg_reversale" class="java.math.BigDecimal" isForPrompting="false">
+	<parameter name="pg_reversale" class="java.math.BigDecimal" forPrompting="false">
 		<defaultValueExpression><![CDATA[new java.math.BigDecimal("1")]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[SELECT *
+	<query language="sql"><![CDATA[
+		SELECT *
 FROM VPG_REVERSALE
 Where CD_CDS = $P{aCd_cds}
 And ESERCIZIO = $P{aEs}
 And PG_REVERSALE = $P{pg_reversale}
-ORDER BY ESERCIZIO, CD_CDS, PG_REVERSALE, Decode(TI_RECORD,'A',1,'D',2,'E',3,'C',4,5)]]>
-	</queryString>
+ORDER BY ESERCIZIO, CD_CDS, PG_REVERSALE, Decode(TI_RECORD,'A',1,'D',2,'E',3,'C',4,5)
+	]]></query>
 	<field name="ID" class="java.math.BigDecimal"/>
 	<field name="CHIAVE" class="java.lang.String"/>
 	<field name="SEQUENZA" class="java.math.BigDecimal"/>
@@ -99,125 +99,107 @@ ORDER BY ESERCIZIO, CD_CDS, PG_REVERSALE, Decode(TI_RECORD,'A',1,'D',2,'E',3,'C'
 	<field name="IM_CUP" class="java.math.BigDecimal"/>
 	<field name="STATO" class="java.lang.String"/>
 	<variable name="Totale_Cod_Siope" class="java.math.BigDecimal" resetType="Group" resetGroup="PK_REVERSALE" calculation="Sum">
-		<variableExpression><![CDATA[$F{IM_SIOPE}]]></variableExpression>
+		<expression><![CDATA[$F{IM_SIOPE}]]></expression>
 	</variable>
 	<variable name="Totale_cup" class="java.math.BigDecimal" resetType="Group" resetGroup="PK_REVERSALE" calculation="Sum">
-		<variableExpression><![CDATA[$F{IM_CUP}]]></variableExpression>
+		<expression><![CDATA[$F{IM_CUP}]]></expression>
 	</variable>
-	<group name="PageHeaderB" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
+	<group name="PageHeaderB" reprintHeaderOnEachPage="true">
+		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
 			<band height="29" splitType="Stretch">
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField-1" style="TNRG12" x="4" y="0" width="561" height="15"/>
+				<element kind="textField" key="textField-1" style="TNRG12" x="4" y="0" width="561" height="15" blankWhenNull="false" hTextAlign="Center">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{TI_REVERSALE}.equals("A")?"Reversale di Accreditamento"
+					<expression><![CDATA[$F{TI_REVERSALE}.equals("A")?"Reversale di Accreditamento"
 :$F{TI_REVERSALE}.equals("I")?"Reversale per Ritenute"
 :$F{TI_REVERSALE}.equals("R")?"Reversale di Regolarizzazione"
 :$F{TI_REVERSALE}.equals("S")?"Reversale a Regolamento di Sospeso"
-:"Reversale"]]></textFieldExpression>
-				</textField>
+:"Reversale"]]></expression>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="PageHeaderC" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
+	<group name="PageHeaderC" reprintHeaderOnEachPage="true">
+		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
 			<band height="46" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD}.equals("A"))]]></printWhenExpression>
-				<rectangle radius="0">
-					<reportElement key="rectangle-1" x="4" y="5" width="561" height="36"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</rectangle>
-				<staticText>
-					<reportElement key="staticText-1" style="TNR10" x="10" y="10" width="96" height="13"/>
+				<element kind="rectangle" key="rectangle-1" x="4" y="5" width="561" height="36" radius="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="staticText" key="staticText-1" style="TNR10" x="10" y="10" width="96" height="13">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[Numero della reversale]]></text>
-				</staticText>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-2" style="TNRG10" x="109" y="10" width="51" height="13" isRemoveLineWhenBlank="true"/>
+				</element>
+				<element kind="textField" key="textField-2" style="TNRG10" x="109" y="10" width="51" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{PG_REVERSALE}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField-3" style="TNR10" x="170" y="10" width="390" height="13"/>
+					<expression><![CDATA[$F{PG_REVERSALE}]]></expression>
+				</element>
+				<element kind="textField" key="textField-3" style="TNR10" x="170" y="10" width="390" height="13" blankWhenNull="false">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[" del "+
-(new java.text.SimpleDateFormat("dd/MM/yyyy")).format($F{DT_EMISSIONE})]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement key="staticText-2" style="TNR10" x="10" y="25" width="43" height="13"/>
+					<expression><![CDATA[" del "+
+(new java.text.SimpleDateFormat("dd/MM/yyyy")).format($F{DT_EMISSIONE})]]></expression>
+				</element>
+				<element kind="staticText" key="staticText-2" style="TNR10" x="10" y="25" width="43" height="13">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[Esercizio :]]></text>
-				</staticText>
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField-4" style="TNRG10" x="54" y="25" width="29" height="13"/>
+				</element>
+				<element kind="textField" key="textField-4" style="TNRG10" x="54" y="25" width="29" height="13" blankWhenNull="false">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{ESERCIZIO}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField-49" style="TNR10" x="142" y="25" width="194" height="13">
-						<printWhenExpression><![CDATA[new Boolean($F{TI_COMPETENZA_RESIDUO} != null)]]></printWhenExpression>
-					</reportElement>
+					<expression><![CDATA[$F{ESERCIZIO}]]></expression>
+				</element>
+				<element kind="textField" key="textField-49" style="TNR10" x="142" y="25" width="194" height="13" blankWhenNull="false">
+					<printWhenExpression><![CDATA[new Boolean($F{TI_COMPETENZA_RESIDUO} != null)]]></printWhenExpression>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Gestione: "+
-($F{TI_COMPETENZA_RESIDUO}.equals("C")?"Competenza":"Residuo")]]></textFieldExpression>
-				</textField>
+					<expression><![CDATA["Gestione: "+
+($F{TI_COMPETENZA_RESIDUO}.equals("C")?"Competenza":"Residuo")]]></expression>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="PageheaderD" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
+	<group name="PageheaderD" reprintHeaderOnEachPage="true">
+		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
 			<band height="42" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!(
@@ -225,375 +207,292 @@ $F{TI_REVERSALE}.equals("I")||
 $V{PAGE_NUMBER}.equals(new Integer(1))||
 $F{TI_COMPETENZA_RESIDUO} == null
 ))]]></printWhenExpression>
-				<rectangle radius="0">
-					<reportElement key="rectangle-2" x="4" y="2" width="561" height="36"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</rectangle>
-				<staticText>
-					<reportElement key="staticText-3" style="TNR10" x="10" y="6" width="97" height="13"/>
+				<element kind="rectangle" key="rectangle-2" x="4" y="2" width="561" height="36" radius="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="staticText" key="staticText-3" style="TNR10" x="10" y="6" width="97" height="13">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[Allegato alla reversale numero]]></text>
-				</staticText>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-5" style="TNRG10" x="109" y="6" width="51" height="13" isRemoveLineWhenBlank="true"/>
+				</element>
+				<element kind="textField" key="textField-5" style="TNRG10" x="109" y="6" width="51" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{PG_REVERSALE}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField-6" style="TNR10" x="170" y="6" width="390" height="13">
-						<printWhenExpression><![CDATA[new Boolean($F{DT_EMISSIONE} != null)]]></printWhenExpression>
-					</reportElement>
+					<expression><![CDATA[$F{PG_REVERSALE}]]></expression>
+				</element>
+				<element kind="textField" key="textField-6" style="TNR10" x="170" y="6" width="390" height="13" blankWhenNull="false">
+					<printWhenExpression><![CDATA[new Boolean($F{DT_EMISSIONE} != null)]]></printWhenExpression>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[" del "+
-(new java.text.SimpleDateFormat("dd/MM/yyyy")).format($F{DT_EMISSIONE})]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement key="staticText-4" style="TNR10" x="10" y="21" width="43" height="13"/>
+					<expression><![CDATA[" del "+
+(new java.text.SimpleDateFormat("dd/MM/yyyy")).format($F{DT_EMISSIONE})]]></expression>
+				</element>
+				<element kind="staticText" key="staticText-4" style="TNR10" x="10" y="21" width="43" height="13">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[Esercizio :]]></text>
-				</staticText>
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField-7" style="TNRG10" x="54" y="21" width="29" height="13"/>
+				</element>
+				<element kind="textField" key="textField-7" style="TNRG10" x="54" y="21" width="29" height="13" blankWhenNull="false">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{ESERCIZIO}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField-8" style="TNR10" x="142" y="21" width="188" height="13">
-						<printWhenExpression><![CDATA[new Boolean($F{TI_COMPETENZA_RESIDUO} != null)]]></printWhenExpression>
-					</reportElement>
+					<expression><![CDATA[$F{ESERCIZIO}]]></expression>
+				</element>
+				<element kind="textField" key="textField-8" style="TNR10" x="142" y="21" width="188" height="13" blankWhenNull="false">
+					<printWhenExpression><![CDATA[new Boolean($F{TI_COMPETENZA_RESIDUO} != null)]]></printWhenExpression>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Gestione: "+
-($F{TI_COMPETENZA_RESIDUO}.equals("C")?"Competenza":"Residuo")]]></textFieldExpression>
-				</textField>
+					<expression><![CDATA["Gestione: "+
+($F{TI_COMPETENZA_RESIDUO}.equals("C")?"Competenza":"Residuo")]]></expression>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="PageHeaderE" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
+	<group name="PageHeaderE" reprintHeaderOnEachPage="true">
+		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
 			<band height="168" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!$F{TI_RECORD}.equals("B") &&
 $F{CD_UO_ORIGINE}!= null)]]></printWhenExpression>
-				<rectangle radius="0">
-					<reportElement key="rectangle-3" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="4" width="561" height="36"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</rectangle>
-				<staticText>
-					<reportElement key="staticText-5" style="TNR10" x="10" y="7" width="37" height="13"/>
+				<element kind="rectangle" key="rectangle-3" positionType="Float" stretchType="ContainerHeight" x="4" y="4" width="561" height="36" radius="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="staticText" key="staticText-5" style="TNR10" x="10" y="7" width="37" height="13">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[Bilancio:  ]]></text>
-				</staticText>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-9" style="TNRG10" x="49" y="7" width="27" height="13" isRemoveLineWhenBlank="true"/>
+				</element>
+				<element kind="textField" key="textField-9" style="TNRG10" x="49" y="7" width="27" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Right">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{CD_CDS}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField-10" style="TNR10" x="77" y="7" width="486" height="13"/>
+					<expression><![CDATA[$F{CD_CDS}]]></expression>
+				</element>
+				<element kind="textField" key="textField-10" style="TNR10" x="77" y="7" width="486" height="13" blankWhenNull="false">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[" - "+$F{DS_CDS}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement key="staticText-6" style="TNR10" x="10" y="23" width="124" height="13"/>
+					<expression><![CDATA[" - "+$F{DS_CDS}]]></expression>
+				</element>
+				<element kind="staticText" key="staticText-6" style="TNR10" x="10" y="23" width="124" height="13">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[Unità Organizzativa emittente:  ]]></text>
-				</staticText>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-11" style="TNRG10" x="136" y="23" width="43" height="13" isRemoveLineWhenBlank="true"/>
+				</element>
+				<element kind="textField" key="textField-11" style="TNRG10" x="136" y="23" width="43" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Right">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{CD_UO_ORIGINE}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement key="textField-12" style="TNR10" x="182" y="23" width="381" height="13"/>
+					<expression><![CDATA[$F{CD_UO_ORIGINE}]]></expression>
+				</element>
+				<element kind="textField" textAdjust="StretchHeight" key="textField-12" style="TNR10" x="182" y="23" width="381" height="13" blankWhenNull="true">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[" - "+$F{DS_UO_CDS}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField-13" style="TNR10" x="10" y="58" width="551" height="13"/>
+					<expression><![CDATA[" - "+$F{DS_UO_CDS}]]></expression>
+				</element>
+				<element kind="textField" key="textField-13" style="TNR10" x="10" y="58" width="551" height="13" blankWhenNull="false">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA["L'Istituto cassiere del "+$F{DS_CDS}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement key="staticText-7" style="TNR10" x="10" y="74" width="38" height="13"/>
+					<expression><![CDATA["L'Istituto cassiere del "+$F{DS_CDS}]]></expression>
+				</element>
+				<element kind="staticText" key="staticText-7" style="TNR10" x="10" y="74" width="38" height="13">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[sul c/c n.  ]]></text>
-				</staticText>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-14" style="TNRG10" x="51" y="74" width="509" height="13" isRemoveLineWhenBlank="true">
-						<printWhenExpression><![CDATA[new Boolean($F{ABI}!=null)]]></printWhenExpression>
-					</reportElement>
+				</element>
+				<element kind="textField" key="textField-14" style="TNRG10" x="51" y="74" width="509" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
+					<printWhenExpression><![CDATA[new Boolean($F{ABI}!=null)]]></printWhenExpression>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[($F{CIN}==null?"":$F{CIN}+" ")+$F{ABI}+" "+$F{CAB}+" "+$F{NUMERO_CONTO}+","+($F{IBAN}==null?" ":"IBAN "+$F{IBAN})]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement key="staticText-8" style="TNR10" x="10" y="91" width="38" height="13"/>
+					<expression><![CDATA[($F{CIN}==null?"":$F{CIN}+" ")+$F{ABI}+" "+$F{CAB}+" "+$F{NUMERO_CONTO}+","+($F{IBAN}==null?" ":"IBAN "+$F{IBAN})]]></expression>
+				</element>
+				<element kind="staticText" key="staticText-8" style="TNR10" x="10" y="91" width="38" height="13">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[presso]]></text>
-				</staticText>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-15" style="TNR10" x="51" y="91" width="509" height="13" isRemoveLineWhenBlank="true"/>
+				</element>
+				<element kind="textField" key="textField-15" style="TNR10" x="51" y="91" width="509" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{DS_ABICAB}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-16" style="TNR10" x="51" y="108" width="509" height="13" isRemoveLineWhenBlank="true">
-						<printWhenExpression><![CDATA[new Boolean($F{VIA}!= null)]]></printWhenExpression>
-					</reportElement>
+					<expression><![CDATA[$F{DS_ABICAB}]]></expression>
+				</element>
+				<element kind="textField" key="textField-16" style="TNR10" x="51" y="108" width="509" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
+					<printWhenExpression><![CDATA[new Boolean($F{VIA}!= null)]]></printWhenExpression>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{VIA}+" "+$F{CAP}+" "+$F{DS_COMUNE}+" ("+$F{CD_PROVINCIA}+")"]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement key="staticText-9" style="TNR10" x="10" y="149" width="95" height="13"/>
+					<expression><![CDATA[$F{VIA}+" "+$F{CAP}+" "+$F{DS_COMUNE}+" ("+$F{CD_PROVINCIA}+")"]]></expression>
+				</element>
+				<element kind="staticText" key="staticText-9" style="TNR10" x="10" y="149" width="95" height="13">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[incasserà la somma di:]]></text>
-				</staticText>
-				<textField pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-17" style="TNRG10" x="114" y="149" width="85" height="13" isRemoveLineWhenBlank="true"/>
+				</element>
+				<element kind="textField" key="textField-17" style="TNRG10" x="114" y="149" width="85" height="13" removeLineWhenBlank="true" pattern="" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("¤ #,##0.00").format($F{IM_REVERSALE}) + " #"]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-18" style="TNR10" x="240" y="149" width="320" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA[new DecimalFormat("¤ #,##0.00").format($F{IM_REVERSALE}) + " #"]]></expression>
+				</element>
+				<element kind="textField" key="textField-18" style="TNR10" x="240" y="149" width="320" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Euro "+$F{IM_REVERSALE_LETTERE}+" #"]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-63" style="TNRG9" x="10" y="124" width="550" height="23" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA["Euro "+$F{IM_REVERSALE_LETTERE}+" #"]]></expression>
+				</element>
+				<element kind="textField" key="textField-63" style="TNRG9" x="10" y="124" width="550" height="23" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{INTESTAZIONE}.toUpperCase()]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement key="line-60" stretchType="RelativeToBandHeight" x="4" y="39" width="1" height="126"/>
-				</line>
-				<line>
-					<reportElement key="line-59" stretchType="RelativeToBandHeight" x="564" y="39" width="1" height="126"/>
-				</line>
-				<line>
-					<reportElement key="line-58" x="4" y="39" width="561" height="1"/>
-				</line>
-				<line>
-					<reportElement key="line-57" positionType="FixRelativeToBottom" x="3" y="165" width="561" height="1"/>
-				</line>
+					<expression><![CDATA[$F{INTESTAZIONE}.toUpperCase()]]></expression>
+				</element>
+				<element kind="line" key="line-60" stretchType="ContainerHeight" x="4" y="39" width="1" height="126"/>
+				<element kind="line" key="line-59" stretchType="ContainerHeight" x="564" y="39" width="1" height="126"/>
+				<element kind="line" key="line-58" x="4" y="39" width="561" height="1"/>
+				<element kind="line" key="line-57" positionType="FixRelativeToBottom" x="3" y="165" width="561" height="1"/>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="PageheaderG" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
+	<group name="PageheaderG" reprintHeaderOnEachPage="true">
+		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
 			<band height="50" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!($F{TI_REVERSALE}.equals("I") ||
 $F{DENOMINAZIONE_SEDE} == null ||
 !$V{PAGE_NUMBER}.equals(new Integer(1))))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-1" x="4" y="3" width="562" height="1"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-2" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="3" width="1" height="47"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-3" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="3" width="1" height="47"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-23" style="TNR10" x="33" y="7" width="527" height="13" isRemoveLineWhenBlank="true"/>
+				<element kind="line" key="line-1" x="4" y="3" width="562" height="1">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-2" positionType="Float" stretchType="ContainerHeight" x="4" y="3" width="1" height="47">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-3" positionType="Float" stretchType="ContainerHeight" x="565" y="3" width="1" height="47">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="textField" key="textField-23" style="TNR10" x="33" y="7" width="527" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left" bold="false" pdfFontName="Times-Roman">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left">
-						<font isBold="false" pdfFontName="Times-Roman"/>
-					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{DENOMINAZIONE_SEDE}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-24" style="TNR10" x="33" y="22" width="527" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA[$F{DENOMINAZIONE_SEDE}]]></expression>
+				</element>
+				<element kind="textField" key="textField-24" style="TNR10" x="33" y="22" width="527" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{VIA_SEDE}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-25" style="TNR10" x="33" y="37" width="527" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA[$F{VIA_SEDE}]]></expression>
+				</element>
+				<element kind="textField" key="textField-25" style="TNR10" x="33" y="37" width="527" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[($F{CAP_COMUNE_SEDE}==null?"":$F{CAP_COMUNE_SEDE}+" ")+
+					<expression><![CDATA[($F{CAP_COMUNE_SEDE}==null?"":$F{CAP_COMUNE_SEDE}+" ")+
 ($F{DS_COMUNE_SEDE}==null?"":$F{DS_COMUNE_SEDE})+
-($F{CD_PV_TERZO}==null?"":" ("+$F{CD_PV_TERZO}+")")]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement key="staticText-11" style="TNR10" x="10" y="7" width="20" height="13"/>
+($F{CD_PV_TERZO}==null?"":" ("+$F{CD_PV_TERZO}+")")]]></expression>
+				</element>
+				<element kind="staticText" key="staticText-11" style="TNR10" x="10" y="7" width="20" height="13" bold="false" pdfFontName="Times-Roman">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement>
-						<font isBold="false" pdfFontName="Times-Roman"/>
-					</textElement>
 					<text><![CDATA[Da:]]></text>
-				</staticText>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -601,76 +500,58 @@ $F{DENOMINAZIONE_SEDE} == null ||
 		</groupFooter>
 	</group>
 	<group name="PageheaderG1">
-		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
+		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
 			<band height="16" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!($F{TI_REVERSALE}.equals("I") ||
 $F{DENOMINAZIONE_SEDE} == null ||
 !$V{PAGE_NUMBER}.equals(new Integer(1))))]]></printWhenExpression>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-26" style="TNR10" positionType="Float" stretchType="RelativeToBandHeight" x="33" y="3" width="527" height="13" isRemoveLineWhenBlank="true">
-						<printWhenExpression><![CDATA[new Boolean($F{CODICE_FISCALE}!=null)]]></printWhenExpression>
-					</reportElement>
+				<element kind="textField" key="textField-26" style="TNR10" positionType="Float" stretchType="ContainerHeight" x="33" y="3" width="527" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
+					<printWhenExpression><![CDATA[new Boolean($F{CODICE_FISCALE}!=null)]]></printWhenExpression>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Codice Fiscale: "+ $F{CODICE_FISCALE}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement key="line-4" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="0" width="1" height="16"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-5" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="0" width="1" height="16"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+					<expression><![CDATA["Codice Fiscale: "+ $F{CODICE_FISCALE}]]></expression>
+				</element>
+				<element kind="line" key="line-4" positionType="Float" stretchType="ContainerHeight" x="565" y="0" width="1" height="16">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-5" positionType="Float" stretchType="ContainerHeight" x="4" y="0" width="1" height="16">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="PageheaderK" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
+	<group name="PageheaderK" reprintHeaderOnEachPage="true">
+		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
 			<band height="4" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!($F{TI_REVERSALE}.equals("I") ||
 $F{DENOMINAZIONE_SEDE} == null ||
 !$V{PAGE_NUMBER}.equals(new Integer(1))))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-14" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="0" width="1" height="3"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-15" mode="Transparent" x="4" y="2" width="561" height="1" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-16" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="0" width="1" height="3"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+				<element kind="line" key="line-14" positionType="Float" stretchType="ContainerHeight" x="565" y="0" width="1" height="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-15" mode="Transparent" x="4" y="2" width="561" height="1" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-16" positionType="Float" stretchType="ContainerHeight" x="4" y="0" width="1" height="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="PageHeaderL" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA["DUMMY"]]></groupExpression>
+	<group name="PageHeaderL" reprintHeaderOnEachPage="true">
+		<expression><![CDATA["DUMMY"]]></expression>
 		<groupHeader>
 			<band splitType="Stretch"/>
 		</groupHeader>
@@ -678,8 +559,8 @@ $F{DENOMINAZIONE_SEDE} == null ||
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="PK_REVERSALE" isStartNewPage="true" isResetPageNumber="true">
-		<groupExpression><![CDATA[$F{CD_CDS}+$F{ESERCIZIO}+$F{PG_REVERSALE}]]></groupExpression>
+	<group name="PK_REVERSALE" startNewPage="true" resetPageNumber="true">
+		<expression><![CDATA[$F{CD_CDS}+$F{ESERCIZIO}+$F{PG_REVERSALE}]]></expression>
 		<groupHeader>
 			<band splitType="Stretch"/>
 		</groupHeader>
@@ -687,11 +568,11 @@ $F{DENOMINAZIONE_SEDE} == null ||
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="ALLEGATO" isStartNewPage="true">
-		<groupExpression><![CDATA[!$F{TI_REVERSALE}.equals("I")&&
+	<group name="ALLEGATO" startNewPage="true">
+		<expression><![CDATA[!$F{TI_REVERSALE}.equals("I")&&
 $F{TI_RECORD}.equals("B")&&
 $V{PAGE_NUMBER}.equals(new Integer(1))
-?$F{TI_RECORD}:""]]></groupExpression>
+?$F{TI_RECORD}:""]]></expression>
 		<groupHeader>
 			<band splitType="Stretch"/>
 		</groupHeader>
@@ -700,259 +581,189 @@ $V{PAGE_NUMBER}.equals(new Integer(1))
 		</groupFooter>
 	</group>
 	<group name="TI_RECORD_1">
-		<groupExpression><![CDATA[$F{TI_RECORD}]]></groupExpression>
+		<expression><![CDATA[$F{TI_RECORD}]]></expression>
 		<groupHeader>
 			<band height="31" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD}.equals("D"))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-54" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="2" width="1" height="29" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<staticText>
-					<reportElement key="staticText-17" style="TNRG10" positionType="Float" stretchType="RelativeToBandHeight" x="10" y="3" width="122" height="13" isRemoveLineWhenBlank="true"/>
+				<element kind="line" key="line-54" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="2" width="1" height="29" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="staticText" key="staticText-17" style="TNRG10" positionType="Float" stretchType="ContainerHeight" x="10" y="3" width="122" height="13" removeLineWhenBlank="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
 					<text><![CDATA[Riepilogo Codici Siope:]]></text>
-				</staticText>
-				<line>
-					<reportElement key="line-55" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="565" y="2" width="1" height="29" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-56" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="2" width="562" height="1" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<staticText>
-					<reportElement key="staticText-18" style="TNR10" x="10" y="18" width="98" height="13"/>
+				</element>
+				<element kind="line" key="line-55" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="565" y="2" width="1" height="29" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-56" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="2" width="562" height="1" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="staticText" key="staticText-18" style="TNR10" x="10" y="18" width="98" height="13" hTextAlign="Center">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Codice Siope]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-19" style="TNR10" x="459" y="18" width="89" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-19" style="TNR10" x="459" y="18" width="89" height="13" hTextAlign="Center">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Importo]]></text>
-				</staticText>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band height="16" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD}.equals("D"))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-57" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="0" width="1" height="16" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-58" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="15" width="562" height="1" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-59" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="565" y="0" width="1" height="16" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<staticText>
-					<reportElement key="staticText-20" style="TNRG10" x="10" y="1" width="98" height="13"/>
+				<element kind="line" key="line-57" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="0" width="1" height="16" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-58" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="15" width="562" height="1" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-59" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="565" y="0" width="1" height="16" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="staticText" key="staticText-20" style="TNRG10" x="10" y="1" width="98" height="13" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
 					<text><![CDATA[Totale]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="true" pattern="¤ #,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField" style="TNR10" x="456" y="1" width="104" height="13"/>
+				</element>
+				<element kind="textField" textAdjust="StretchHeight" key="textField" style="TNR10" x="456" y="1" width="104" height="13" pattern="¤ #,##0.00" blankWhenNull="true" hTextAlign="Right">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{Totale_Cod_Siope}]]></textFieldExpression>
-				</textField>
+					<expression><![CDATA[$V{Totale_Cod_Siope}]]></expression>
+				</element>
 			</band>
 		</groupFooter>
 	</group>
 	<group name="TI_RECORD_L2">
-		<groupExpression><![CDATA[$F{TI_RECORD}]]></groupExpression>
+		<expression><![CDATA[$F{TI_RECORD}]]></expression>
 		<groupHeader>
 			<band height="31" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD}.equals("E"))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-64" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="2" width="1" height="29" isRemoveLineWhenBlank="true"/>
-				</line>
-				<line>
-					<reportElement key="line-65" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="565" y="2" width="1" height="29" isRemoveLineWhenBlank="true"/>
-				</line>
-				<staticText>
-					<reportElement key="staticText-21" style="TNR10" x="10" y="18" width="98" height="13"/>
+				<element kind="line" key="line-64" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="2" width="1" height="29" removeLineWhenBlank="true"/>
+				<element kind="line" key="line-65" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="565" y="2" width="1" height="29" removeLineWhenBlank="true"/>
+				<element kind="staticText" key="staticText-21" style="TNR10" x="10" y="18" width="98" height="13" hTextAlign="Center">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Codice Cup]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-22" style="TNR10" x="459" y="18" width="89" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-22" style="TNR10" x="459" y="18" width="89" height="13" hTextAlign="Center">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Importo]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-23" style="TNRG10" positionType="Float" stretchType="RelativeToBandHeight" x="10" y="3" width="122" height="13" isRemoveLineWhenBlank="true"/>
+				</element>
+				<element kind="staticText" key="staticText-23" style="TNRG10" positionType="Float" stretchType="ContainerHeight" x="10" y="3" width="122" height="13" removeLineWhenBlank="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
 					<text><![CDATA[Riepilogo Codici Cup:]]></text>
-				</staticText>
-				<line>
-					<reportElement key="line-66" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="2" width="562" height="1" isRemoveLineWhenBlank="true"/>
-				</line>
+				</element>
+				<element kind="line" key="line-66" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="2" width="562" height="1" removeLineWhenBlank="true"/>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band height="16" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD}.equals("E"))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-69" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="0" width="1" height="16" isRemoveLineWhenBlank="true"/>
-				</line>
-				<line>
-					<reportElement key="line-70" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="15" width="562" height="1" isRemoveLineWhenBlank="true"/>
-				</line>
-				<line>
-					<reportElement key="line-71" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="565" y="0" width="1" height="16" isRemoveLineWhenBlank="true"/>
-				</line>
-				<staticText>
-					<reportElement key="staticText-24" style="TNRG10" x="10" y="1" width="98" height="13"/>
+				<element kind="line" key="line-69" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="0" width="1" height="16" removeLineWhenBlank="true"/>
+				<element kind="line" key="line-70" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="15" width="562" height="1" removeLineWhenBlank="true"/>
+				<element kind="line" key="line-71" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="565" y="0" width="1" height="16" removeLineWhenBlank="true"/>
+				<element kind="staticText" key="staticText-24" style="TNRG10" x="10" y="1" width="98" height="13" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
 					<text><![CDATA[Totale]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="true" pattern="¤ #,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-68" style="TNR10" x="456" y="1" width="104" height="13"/>
+				</element>
+				<element kind="textField" textAdjust="StretchHeight" key="textField-68" style="TNR10" x="456" y="1" width="104" height="13" pattern="¤ #,##0.00" blankWhenNull="true" hTextAlign="Right">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{Totale_cup}]]></textFieldExpression>
-				</textField>
+					<expression><![CDATA[$V{Totale_cup}]]></expression>
+				</element>
 			</band>
 		</groupFooter>
 	</group>
-	<group name="TI_RECORD" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA[$F{TI_RECORD}]]></groupExpression>
+	<group name="TI_RECORD" reprintHeaderOnEachPage="true">
+		<expression><![CDATA[$F{TI_RECORD}]]></expression>
 		<groupHeader>
 			<band height="24" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!(!$F{TI_RECORD}.equals("C")||
 $F{CD_SOSPESO}==null))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-21" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="3" width="1" height="21" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<staticText>
-					<reportElement key="staticText-14" style="TNR10" positionType="Float" stretchType="RelativeToBandHeight" x="10" y="6" width="99" height="13" isRemoveLineWhenBlank="true"/>
+				<element kind="line" key="line-21" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="3" width="1" height="21" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="staticText" key="staticText-14" style="TNR10" positionType="Float" stretchType="ContainerHeight" x="10" y="6" width="99" height="13" removeLineWhenBlank="true">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[A chiusura sospesi:]]></text>
-				</staticText>
-				<line>
-					<reportElement key="line-22" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="565" y="3" width="1" height="21" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-37" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="3" width="562" height="1" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+				</element>
+				<element kind="line" key="line-22" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="565" y="3" width="1" height="21" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-37" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="3" width="562" height="1" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band height="6" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!(!$F{TI_RECORD}.equals("C")
 ||$F{CD_SOSPESO} == null))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-51" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="0" width="1" height="5" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-52" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="4" width="562" height="1" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-53" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="565" y="0" width="1" height="5" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+				<element kind="line" key="line-51" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="0" width="1" height="5" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-52" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="4" width="562" height="1" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-53" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="565" y="0" width="1" height="5" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupFooter>
 	</group>
 	<group name="DetailsA">
-		<groupExpression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></groupExpression>
+		<expression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></expression>
 		<groupHeader>
 			<band height="6" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!(
@@ -960,24 +771,15 @@ $F{TI_RECORD}.equals("A") ||
 $F{TI_RECORD}.equals("C") ||
 $F{TI_RECORD}.equals("D")
 ))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-20" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="1" width="562" height="1" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-62" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="1" width="1" height="5"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-63" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="1" width="1" height="5"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+				<element kind="line" key="line-20" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="1" width="562" height="1" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-62" positionType="Float" stretchType="ContainerHeight" x="565" y="1" width="1" height="5">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-63" positionType="Float" stretchType="ContainerHeight" x="4" y="1" width="1" height="5">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -985,86 +787,65 @@ $F{TI_RECORD}.equals("D")
 		</groupFooter>
 	</group>
 	<group name="DetailsB">
-		<groupExpression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></groupExpression>
+		<expression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></expression>
 		<groupHeader>
 			<band height="67" splitType="Prevent">
 				<printWhenExpression><![CDATA[new Boolean(
 $F{TI_RECORD}.equals("B"))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-38" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="1" width="1" height="65"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<staticText>
-					<reportElement key="staticText-15" style="TNR10" x="10" y="4" width="20" height="13"/>
+				<element kind="line" key="line-38" positionType="Float" stretchType="ContainerHeight" x="4" y="1" width="1" height="65">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="staticText" key="staticText-15" style="TNR10" x="10" y="4" width="20" height="13" bold="false" pdfFontName="Times-Roman">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement>
-						<font isBold="false" pdfFontName="Times-Roman"/>
-					</textElement>
 					<text><![CDATA[Da:]]></text>
-				</staticText>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-50" style="TNR10" x="33" y="4" width="527" height="13" isRemoveLineWhenBlank="true"/>
+				</element>
+				<element kind="textField" key="textField-50" style="TNR10" x="33" y="4" width="527" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left" bold="false" pdfFontName="Times-Roman">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left">
-						<font isBold="false" pdfFontName="Times-Roman"/>
-					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{DENOMINAZIONE_SEDE}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-51" style="TNR10" x="33" y="19" width="527" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA[$F{DENOMINAZIONE_SEDE}]]></expression>
+				</element>
+				<element kind="textField" key="textField-51" style="TNR10" x="33" y="19" width="527" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{VIA_SEDE}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-52" style="TNR10" x="33" y="34" width="527" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA[$F{VIA_SEDE}]]></expression>
+				</element>
+				<element kind="textField" key="textField-52" style="TNR10" x="33" y="34" width="527" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[($F{CAP_COMUNE_SEDE}==null?"":$F{CAP_COMUNE_SEDE}+" ")+
+					<expression><![CDATA[($F{CAP_COMUNE_SEDE}==null?"":$F{CAP_COMUNE_SEDE}+" ")+
 ($F{DS_COMUNE_SEDE}==null?"":$F{DS_COMUNE_SEDE})+
-($F{CD_PV_TERZO}==null?"":" ("+$F{CD_PV_TERZO}+")")]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-53" style="TNR10" positionType="Float" stretchType="RelativeToBandHeight" x="33" y="50" width="527" height="13" isRemoveLineWhenBlank="true">
-						<printWhenExpression><![CDATA[new Boolean($F{CODICE_FISCALE}!=null)]]></printWhenExpression>
-					</reportElement>
+($F{CD_PV_TERZO}==null?"":" ("+$F{CD_PV_TERZO}+")")]]></expression>
+				</element>
+				<element kind="textField" key="textField-53" style="TNR10" positionType="Float" stretchType="ContainerHeight" x="33" y="50" width="527" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
+					<printWhenExpression><![CDATA[new Boolean($F{CODICE_FISCALE}!=null)]]></printWhenExpression>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Codice Fiscale: "+ $F{CODICE_FISCALE}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement key="line-39" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="1" width="1" height="65"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+					<expression><![CDATA["Codice Fiscale: "+ $F{CODICE_FISCALE}]]></expression>
+				</element>
+				<element kind="line" key="line-39" positionType="Float" stretchType="ContainerHeight" x="565" y="1" width="1" height="65">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -1072,7 +853,7 @@ $F{TI_RECORD}.equals("B"))]]></printWhenExpression>
 		</groupFooter>
 	</group>
 	<group name="DetailsC">
-		<groupExpression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></groupExpression>
+		<expression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></expression>
 		<groupHeader>
 			<band height="47" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!(
@@ -1080,49 +861,41 @@ $F{TI_RECORD}.equals("B"))]]></printWhenExpression>
 ($F{TI_RECORD}.equals("B")&&
 !$F{TI_REVERSALE}.equals("I"))
 ))]]></printWhenExpression>
-				<staticText>
-					<reportElement key="staticText-16" style="TNR10" x="10" y="-1" width="57" height="13"/>
+				<element kind="staticText" key="staticText-16" style="TNR10" x="10" y="-1" width="57" height="13">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[La somma di:]]></text>
-				</staticText>
-				<textField pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-54" style="TNRG10" x="73" y="-1" width="85" height="13" isRemoveLineWhenBlank="true"/>
+				</element>
+				<element kind="textField" key="textField-54" style="TNRG10" x="73" y="-1" width="85" height="13" removeLineWhenBlank="true" pattern="" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("¤ #,##0.00").format($F{IM_REVERSALE_RIGA}) + " #"]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-55" style="TNR10" x="172" y="-1" width="320" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA[new DecimalFormat("¤ #,##0.00").format($F{IM_REVERSALE_RIGA}) + " #"]]></expression>
+				</element>
+				<element kind="textField" key="textField-55" style="TNR10" x="172" y="-1" width="320" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Euro "+$F{IM_REVERSALE_RIGA_LETTERE}+" #"]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-56" style="TNR10" x="10" y="18" width="550" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA["Euro "+$F{IM_REVERSALE_RIGA_LETTERE}+" #"]]></expression>
+				</element>
+				<element kind="textField" key="textField-56" style="TNR10" x="10" y="18" width="550" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Riferimenti "+
+					<expression><![CDATA["Riferimenti "+
 ($F{CD_TIPO_DOCUMENTO_AMM}.equals("FATTURA_A")?"Fattura attiva":
 $F{CD_TIPO_DOCUMENTO_AMM}.equals("FATTURA_P")?"Fattura passiva":
 $F{CD_TIPO_DOCUMENTO_AMM}.equals("GENERICO_E")?"Documento generico di entrata":
@@ -1134,31 +907,23 @@ $F{CD_TIPO_DOCUMENTO_AMM}.equals("AUTOFATT")?"Autofattura":
 $F{CD_TIPO_DOCUMENTO_AMM}.equals("LT_ESTERO")?"Modello 1210":
 $F{CD_TIPO_DOCUMENTO_AMM}.equals("COMPENSO")?"Compenso":
 $F{CD_TIPO_DOCUMENTO_AMM}.equals("MISSIONE")?"Missione":
-"Documento generico")+ " n. " + $F{PG_DOC_AMM}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-57" style="TNR10" x="10" y="34" width="320" height="13" isRemoveLineWhenBlank="true"/>
+"Documento generico")+ " n. " + $F{PG_DOC_AMM}]]></expression>
+				</element>
+				<element kind="textField" key="textField-57" style="TNR10" x="10" y="34" width="320" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Causale: "+$F{DS_REVERSALE_RIGA}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement key="line-40" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="-3" width="1" height="50"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-41" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="-3" width="1" height="50"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+					<expression><![CDATA["Causale: "+$F{DS_REVERSALE_RIGA}]]></expression>
+				</element>
+				<element kind="line" key="line-40" positionType="Float" stretchType="ContainerHeight" x="4" y="-3" width="1" height="50">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-41" positionType="Float" stretchType="ContainerHeight" x="565" y="-3" width="1" height="50">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -1166,33 +931,25 @@ $F{CD_TIPO_DOCUMENTO_AMM}.equals("MISSIONE")?"Missione":
 		</groupFooter>
 	</group>
 	<group name="DetailsD">
-		<groupExpression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></groupExpression>
+		<expression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></expression>
 		<groupHeader>
 			<band height="17" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD}.equals("B"))]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement key="textField-58" style="TNR10" x="10" y="2" width="552" height="13" isRemoveLineWhenBlank="true"/>
+				<element kind="textField" textAdjust="StretchHeight" key="textField-58" style="TNR10" x="10" y="2" width="552" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Accertamento: n. "+ $F{PG_ACCERTAMENTO}+ " " + $F{DS_ACCERTAMENTO}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement key="line-42" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="0" width="1" height="17"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-43" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="0" width="1" height="17"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+					<expression><![CDATA["Accertamento: n. "+ $F{PG_ACCERTAMENTO}+ " " + $F{DS_ACCERTAMENTO}]]></expression>
+				</element>
+				<element kind="line" key="line-42" positionType="Float" stretchType="ContainerHeight" x="4" y="0" width="1" height="17">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-43" positionType="Float" stretchType="ContainerHeight" x="565" y="0" width="1" height="17">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -1200,33 +957,25 @@ $F{CD_TIPO_DOCUMENTO_AMM}.equals("MISSIONE")?"Missione":
 		</groupFooter>
 	</group>
 	<group name="DetailsD1">
-		<groupExpression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></groupExpression>
+		<expression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></expression>
 		<groupHeader>
 			<band height="17" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD}.equals("B"))]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement key="textField-59" style="TNR10" stretchType="RelativeToBandHeight" x="10" y="2" width="552" height="13" isRemoveLineWhenBlank="true"/>
+				<element kind="textField" textAdjust="StretchHeight" key="textField-59" style="TNR10" stretchType="ContainerHeight" x="10" y="2" width="552" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Capitolo / Articolo: "+ $F{CD_VOCE}+ " " + $F{DS_VOCE}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement key="line-44" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="0" width="1" height="17"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-45" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="0" width="1" height="17"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+					<expression><![CDATA["Capitolo / Articolo: "+ $F{CD_VOCE}+ " " + $F{DS_VOCE}]]></expression>
+				</element>
+				<element kind="line" key="line-44" positionType="Float" stretchType="ContainerHeight" x="4" y="0" width="1" height="17">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-45" positionType="Float" stretchType="ContainerHeight" x="565" y="0" width="1" height="17">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -1234,83 +983,65 @@ $F{CD_TIPO_DOCUMENTO_AMM}.equals("MISSIONE")?"Missione":
 		</groupFooter>
 	</group>
 	<group name="DetailsG">
-		<groupExpression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></groupExpression>
+		<expression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></expression>
 		<groupHeader>
 			<band height="16" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD}.equals("D"))]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement key="textField-64" style="TNR10" positionType="Float" stretchType="RelativeToBandHeight" x="10" y="2" width="409" height="13" isRemoveLineWhenBlank="true"/>
+				<element kind="textField" textAdjust="StretchHeight" key="textField-64" style="TNR10" positionType="Float" stretchType="ContainerHeight" x="10" y="2" width="409" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{CD_SIOPE}+"   "+$F{DS_SIOPE}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="¤ #,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-65" style="TNR10" positionType="Float" stretchType="RelativeToBandHeight" x="456" y="2" width="104" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA[$F{CD_SIOPE}+"   "+$F{DS_SIOPE}]]></expression>
+				</element>
+				<element kind="textField" textAdjust="StretchHeight" key="textField-65" style="TNR10" positionType="Float" stretchType="ContainerHeight" x="456" y="2" width="104" height="13" removeLineWhenBlank="true" pattern="¤ #,##0.00" blankWhenNull="true" hTextAlign="Right">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{IM_SIOPE}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement key="line-60" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="0" width="1" height="16"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-61" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="0" width="1" height="16"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+					<expression><![CDATA[$F{IM_SIOPE}]]></expression>
+				</element>
+				<element kind="line" key="line-60" positionType="Float" stretchType="ContainerHeight" x="565" y="0" width="1" height="16">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-61" positionType="Float" stretchType="ContainerHeight" x="4" y="0" width="1" height="16">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="DetailG1" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></groupExpression>
+	<group name="DetailG1" reprintHeaderOnEachPage="true">
+		<expression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></expression>
 		<groupHeader>
 			<band height="16" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD}.equals("E"))]]></printWhenExpression>
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-66" style="TNR10" positionType="Float" stretchType="RelativeToBandHeight" x="10" y="2" width="409" height="13" isRemoveLineWhenBlank="true"/>
+				<element kind="textField" textAdjust="StretchHeight" key="textField-66" style="TNR10" positionType="Float" stretchType="ContainerHeight" x="10" y="2" width="409" height="13" removeLineWhenBlank="true" pattern="" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{CD_CUP}+"   "+$F{DS_CUP}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="¤ #,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-67" style="TNR10" positionType="Float" stretchType="RelativeToBandHeight" x="456" y="2" width="104" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA[$F{CD_CUP}+"   "+$F{DS_CUP}]]></expression>
+				</element>
+				<element kind="textField" textAdjust="StretchHeight" key="textField-67" style="TNR10" positionType="Float" stretchType="ContainerHeight" x="456" y="2" width="104" height="13" removeLineWhenBlank="true" pattern="¤ #,##0.00" blankWhenNull="true" hTextAlign="Right">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{IM_CUP}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement key="line-67" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="0" width="1" height="16"/>
-				</line>
-				<line>
-					<reportElement key="line-68" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="0" width="1" height="16"/>
-				</line>
+					<expression><![CDATA[$F{IM_CUP}]]></expression>
+				</element>
+				<element kind="line" key="line-67" positionType="Float" stretchType="ContainerHeight" x="565" y="0" width="1" height="16"/>
+				<element kind="line" key="line-68" positionType="Float" stretchType="ContainerHeight" x="4" y="0" width="1" height="16"/>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -1318,58 +1049,46 @@ $F{CD_TIPO_DOCUMENTO_AMM}.equals("MISSIONE")?"Missione":
 		</groupFooter>
 	</group>
 	<group name="DetailsE">
-		<groupExpression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></groupExpression>
+		<expression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></expression>
 		<groupHeader>
 			<band height="17" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean(!(
 !$F{TI_RECORD}.equals("C")||
 $F{CD_SOSPESO}== null))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-46" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="0" width="1" height="17"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-47" positionType="Float" stretchType="RelativeToBandHeight" x="565" y="0" width="1" height="17"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement key="textField-60" style="TNRG10" positionType="Float" stretchType="RelativeToBandHeight" x="15" y="3" width="171" height="13" isRemoveLineWhenBlank="true"/>
+				<element kind="line" key="line-46" positionType="Float" stretchType="ContainerHeight" x="4" y="0" width="1" height="17">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-47" positionType="Float" stretchType="ContainerHeight" x="565" y="0" width="1" height="17">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="textField" textAdjust="StretchHeight" key="textField-60" style="TNRG10" positionType="Float" stretchType="ContainerHeight" x="15" y="3" width="171" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Right">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.lang.String"><![CDATA["n. "+$F{CD_SOSPESO}.substring(0,$F{CD_SOSPESO}.length()-4)]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement key="textField-61" style="TNR10" positionType="Float" stretchType="RelativeToBandHeight" x="189" y="3" width="123" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA["n. "+$F{CD_SOSPESO}.substring(0,$F{CD_SOSPESO}.length()-4)]]></expression>
+				</element>
+				<element kind="textField" textAdjust="StretchHeight" key="textField-61" style="TNR10" positionType="Float" stretchType="ContainerHeight" x="189" y="3" width="123" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{CD_SOSPESO}.substring($F{CD_SOSPESO}.length()-4,$F{CD_SOSPESO}.length())+
-" del " + (new java.text.SimpleDateFormat("dd/MM/yyyy")).format($F{DT_REGISTRAZ_SOSPESO})]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-62" style="TNR10" x="345" y="3" width="158" height="13" isRemoveLineWhenBlank="true"/>
+					<expression><![CDATA[$F{CD_SOSPESO}.substring($F{CD_SOSPESO}.length()-4,$F{CD_SOSPESO}.length())+
+" del " + (new java.text.SimpleDateFormat("dd/MM/yyyy")).format($F{DT_REGISTRAZ_SOSPESO})]]></expression>
+				</element>
+				<element kind="textField" key="textField-62" style="TNR10" x="345" y="3" width="158" height="13" removeLineWhenBlank="true" blankWhenNull="true" hTextAlign="Left">
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left"/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Importo associato: "+new DecimalFormat("¤ #,##0.00").format($F{IM_ASSOCIATO})]]></textFieldExpression>
-				</textField>
+					<expression><![CDATA["Importo associato: "+new DecimalFormat("¤ #,##0.00").format($F{IM_ASSOCIATO})]]></expression>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -1377,74 +1096,48 @@ $F{CD_SOSPESO}== null))]]></printWhenExpression>
 		</groupFooter>
 	</group>
 	<group name="DetailsF">
-		<groupExpression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></groupExpression>
+		<expression><![CDATA[($F{PG_ACCERTAMENTO}==null?$V{REPORT_COUNT}:new Integer($F{PG_ACCERTAMENTO}.intValue()))]]></expression>
 		<groupHeader>
 			<band height="6" splitType="Stretch">
 				<printWhenExpression><![CDATA[new Boolean($F{TI_RECORD}.equals("B"))]]></printWhenExpression>
-				<line>
-					<reportElement key="line-48" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="0" width="1" height="5" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-49" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="4" y="4" width="562" height="1" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement key="line-50" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="565" y="0" width="1" height="5" isRemoveLineWhenBlank="true"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineStyle="Solid"/>
-					</graphicElement>
-				</line>
+				<element kind="line" key="line-48" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="0" width="1" height="5" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-49" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="4" y="4" width="562" height="1" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
+				<element kind="line" key="line-50" positionType="Float" stretchType="ContainerHeight" mode="Transparent" x="565" y="0" width="1" height="5" removeLineWhenBlank="true">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background>
-		<band height="717" splitType="Stretch">
-			<image>
-				<reportElement x="0" y="29" width="595" height="669" isPrintWhenDetailOverflows="true" printWhenGroupChanges="PK_REVERSALE">
-					<printWhenExpression><![CDATA[$F{STATO}.compareTo( "A" )==0]]></printWhenExpression>
-				</reportElement>
-				<imageExpression class="java.lang.String"><![CDATA[$P{DIR_IMAGE} +"Annullato.gif"]]></imageExpression>
-			</image>
-		</band>
+	<background height="717" splitType="Stretch">
+		<element kind="image" x="0" y="29" width="595" height="669" printWhenDetailOverflows="true" printWhenGroupChanges="PK_REVERSALE">
+			<printWhenExpression><![CDATA[$F{STATO}.compareTo( "A" )==0]]></printWhenExpression>
+			<expression><![CDATA[$P{DIR_IMAGE} +"Annullato.gif"]]></expression>
+		</element>
 	</background>
-	<title>
-		<band splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="50" splitType="Stretch">
-			<image>
-				<reportElement key="image-1" x="2" y="0" width="531" height="41"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<imageExpression class="java.lang.String"><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
-			</image>
-		</band>
+	<title splitType="Stretch"/>
+	<pageHeader height="50" splitType="Stretch">
+		<element kind="image" key="image-1" x="2" y="0" width="531" height="41">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
+		</element>
 	</pageHeader>
-	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
+	<columnHeader splitType="Stretch"/>
 	<detail>
 		<band splitType="Stretch"/>
 	</detail>
-	<columnFooter>
-		<band splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band splitType="Stretch"/>
-	</summary>
+	<columnFooter splitType="Stretch"/>
+	<pageFooter splitType="Stretch"/>
+	<summary splitType="Stretch"/>
 </jasperReport>

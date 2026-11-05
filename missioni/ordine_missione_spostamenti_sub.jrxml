@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ordine_missione_spostamenti_sub" pageWidth="595" pageHeight="802" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="511b4f54-a834-44fd-aa94-c84429234118">
+<jasperReport name="ordine_missione_spostamenti_sub" pageWidth="595" pageHeight="802" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="511b4f54-a834-44fd-aa94-c84429234118" language="java">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -8,26 +8,24 @@
 			<pen lineWidth="1.0" lineColor="#000000"/>
 		</box>
 	</style>
-	<style name="bold" mode="Transparent" fontName="Times New Roman" isItalic="true" isUnderline="true" isStrikeThrough="true" pdfFontName="Times-Bold"/>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	<style name="bold" mode="Transparent" fontName="Times New Roman" italic="true" underline="true" strikeThrough="true" pdfFontName="Times-Bold"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" forPrompting="false">
+		<defaultValueExpression/>
 	</parameter>
-	<queryString language="json">
-		<![CDATA[spostamenti]]>
-	</queryString>
+	<query language="json"><![CDATA[
+		spostamenti
+	]]></query>
 	<field name="percorsoDa" class="java.lang.String">
-		<fieldDescription><![CDATA[percorsoDa]]></fieldDescription>
+		<description><![CDATA[percorsoDa]]></description>
 	</field>
 	<field name="percorsoA" class="java.lang.String">
-		<fieldDescription><![CDATA[percorsoA]]></fieldDescription>
+		<description><![CDATA[percorsoA]]></description>
 	</field>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
+	<background splitType="Stretch"/>
 	<detail>
 		<band height="25">
-			<textField>
-				<reportElement mode="Transparent" x="0" y="0" width="270" height="22" backcolor="#FFFFFF" uuid="45508ba6-abfa-4c41-8f4d-d03c0c1a44b1"/>
+			<element kind="textField" mode="Transparent" x="0" y="0" width="270" height="22" backcolor="#FFFFFF" uuid="45508ba6-abfa-4c41-8f4d-d03c0c1a44b1" hTextAlign="Left" vTextAlign="Middle" markup="styled" fontName="Times New Roman" bold="false">
+				<paragraph lineSpacing="Single" leftIndent="5"/>
 				<box>
 					<pen lineWidth="0.0"/>
 					<topPen lineWidth="0.0"/>
@@ -35,14 +33,10 @@
 					<bottomPen lineWidth="0.0"/>
 					<rightPen lineWidth="0.0"/>
 				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-					<font fontName="Times New Roman" isBold="false"/>
-					<paragraph lineSpacing="Single" leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Da   </style>"+ $F{percorsoDa}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement mode="Opaque" x="271" y="0" width="242" height="22" backcolor="#FFFFFF" uuid="1092c234-69f7-4b43-9837-f9926fd6defa"/>
+				<expression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>Da   </style>"+ $F{percorsoDa}]]></expression>
+			</element>
+			<element kind="textField" mode="Opaque" x="271" y="0" width="242" height="22" backcolor="#FFFFFF" uuid="1092c234-69f7-4b43-9837-f9926fd6defa" blankWhenNull="true" hTextAlign="Left" vTextAlign="Middle" markup="styled" fontName="Times New Roman">
+				<paragraph leftIndent="5"/>
 				<box>
 					<pen lineWidth="0.0"/>
 					<topPen lineWidth="0.0"/>
@@ -50,12 +44,8 @@
 					<bottomPen lineWidth="0.0"/>
 					<rightPen lineWidth="0.0"/>
 				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-					<font fontName="Times New Roman"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>A    </style>"+ $F{percorsoA}]]></textFieldExpression>
-			</textField>
+				<expression><![CDATA["<style pdfFontName='Times-Bold' isBold='true'>A    </style>"+ $F{percorsoA}]]></expression>
+			</element>
 		</band>
 	</detail>
 </jasperReport>

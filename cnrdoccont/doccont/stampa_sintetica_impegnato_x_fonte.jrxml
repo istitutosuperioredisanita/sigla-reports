@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="stampa_sintetica_impegnato_x_fonte" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="782" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+<jasperReport name="stampa_sintetica_impegnato_x_fonte" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="782" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" language="java">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
-	<style name="TNRGC14" fontName="Times New Roman" fontSize="14" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
-	<style name="TNRC10" fontName="Times New Roman" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNRGC12" fontName="Times New Roman" fontSize="12" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<style name="TNRGC14" fontName="Times New Roman" fontSize="14" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRC10" fontName="Times New Roman" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRGC12" fontName="Times New Roman" fontSize="12" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
 	<style name="TNR10" fontName="Times New Roman" fontSize="10" pdfFontName="Times-Roman"/>
 	<style name="TNR8" fontName="Times New Roman" fontSize="8" pdfFontName="Times-Roman"/>
-	<style name="TNRG10" fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRG12" fontName="Times New Roman" fontSize="12" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRG8" fontName="Times New Roman" fontSize="8" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG10" fontName="Times New Roman" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG12" fontName="Times New Roman" fontSize="12" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG8" fontName="Times New Roman" fontSize="8" bold="true" pdfFontName="Times-Bold"/>
 	<style name="TNR9" fontName="Times New Roman" fontSize="9" pdfFontName="Times-Roman"/>
-	<style name="TNRG9" fontName="Times New Roman" fontSize="9" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRG14" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRGC16" fontName="Times New Roman" fontSize="16" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
-	<style name="TNRG16" fontName="Times New Roman" fontSize="16" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRC16" fontName="Times New Roman" fontSize="16" isItalic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRG9" fontName="Times New Roman" fontSize="9" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRG14" fontName="Times New Roman" fontSize="14" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRGC16" fontName="Times New Roman" fontSize="16" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<style name="TNRG16" fontName="Times New Roman" fontSize="16" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRC16" fontName="Times New Roman" fontSize="16" italic="true" pdfFontName="Times-Italic"/>
 	<style name="TNR16" fontName="Times New Roman" fontSize="16" pdfFontName="Times-Roman"/>
-	<style name="TNRC9" fontName="Times New Roman" fontSize="9" isItalic="true" pdfFontName="Times-Italic"/>
-	<style name="TNRG11" fontName="Times New Roman" fontSize="11" isBold="true" pdfFontName="Times-Bold"/>
-	<style name="TNRGC10" fontName="Times New Roman" fontSize="10" isBold="true" isItalic="true" pdfFontName="Times-BoldItalic"/>
-	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false">
+	<style name="TNRC9" fontName="Times New Roman" fontSize="9" italic="true" pdfFontName="Times-Italic"/>
+	<style name="TNRG11" fontName="Times New Roman" fontSize="11" bold="true" pdfFontName="Times-Bold"/>
+	<style name="TNRGC10" fontName="Times New Roman" fontSize="10" bold="true" italic="true" pdfFontName="Times-BoldItalic"/>
+	<parameter name="DIR_IMAGE" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["..\\..\\img\\"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Esercizio" class="java.lang.Integer" isForPrompting="false">
+	<parameter name="Esercizio" class="java.lang.Integer" forPrompting="false">
 		<defaultValueExpression><![CDATA[new Integer ("2014")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="CDR" class="java.lang.String" isForPrompting="false">
+	<parameter name="CDR" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[new String("075.000.000")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="CDS" class="java.lang.String" isForPrompting="false">
+	<parameter name="CDS" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[new String ("075")]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[select * from prt_sintesi_impegnato
+	<query language="sql"><![CDATA[
+		select * from prt_sintesi_impegnato
 where esercizio = $P{Esercizio}
 and decode(substr($P{CDR},5,11),'000.000', substr(cd_centro_responsabilita,1,3), cd_centro_responsabilita) =
-decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
-	</queryString>
+decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})
+	]]></query>
 	<field name="ESERCIZIO" class="java.math.BigDecimal"/>
 	<field name="CD_CENTRO_RESPONSABILITA" class="java.lang.String"/>
 	<field name="DS_CDR" class="java.lang.String"/>
@@ -56,37 +56,34 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 	<field name="TOT_VAR_RES_PRO_INT" class="java.math.BigDecimal"/>
 	<field name="TOT_VAR_RES_PRO_EST" class="java.math.BigDecimal"/>
 	<variable name="Tot_Imp_Res_FI" class="java.math.BigDecimal" resetType="Group" resetGroup="CDR" calculation="Sum">
-		<variableExpression><![CDATA[$F{TOT_RES_IMPROPRI_INT}]]></variableExpression>
+		<expression><![CDATA[$F{TOT_RES_IMPROPRI_INT}]]></expression>
 	</variable>
 	<variable name="Tot_Imp_Res_FE" class="java.math.BigDecimal" resetType="Group" resetGroup="CDR" calculation="Sum">
-		<variableExpression><![CDATA[$F{TOT_RES_IMPROPRI_EST}]]></variableExpression>
+		<expression><![CDATA[$F{TOT_RES_IMPROPRI_EST}]]></expression>
 	</variable>
 	<variable name="Tot_Imp_Comp_FI" class="java.math.BigDecimal" resetType="Group" resetGroup="CDR" calculation="Sum">
-		<variableExpression><![CDATA[$F{TOT_IMP_COMPETENZA_INT}]]></variableExpression>
+		<expression><![CDATA[$F{TOT_IMP_COMPETENZA_INT}]]></expression>
 	</variable>
 	<variable name="Tot_Imp_Comp_FE" class="java.math.BigDecimal" resetType="Group" resetGroup="CDR" calculation="Sum">
-		<variableExpression><![CDATA[$F{TOT_IMP_COMPETENZA_EST}]]></variableExpression>
+		<expression><![CDATA[$F{TOT_IMP_COMPETENZA_EST}]]></expression>
 	</variable>
 	<variable name="Tot_Var_Res_FI" class="java.math.BigDecimal" resetType="Group" resetGroup="CDR" calculation="Sum">
-		<variableExpression><![CDATA[$F{TOT_VAR_RES_PRO_INT}]]></variableExpression>
+		<expression><![CDATA[$F{TOT_VAR_RES_PRO_INT}]]></expression>
 	</variable>
 	<variable name="Tot_Var_Res_FE" class="java.math.BigDecimal" resetType="Group" resetGroup="CDR" calculation="Sum">
-		<variableExpression><![CDATA[$F{TOT_VAR_RES_PRO_EST}]]></variableExpression>
+		<expression><![CDATA[$F{TOT_VAR_RES_PRO_EST}]]></expression>
 	</variable>
 	<variable name="Tot_Impegni" class="java.math.BigDecimal" resetType="Group" resetGroup="CDR" calculation="Sum">
-		<variableExpression><![CDATA[$F{TOT_RES_IMPROPRI_INT}.add($F{TOT_RES_IMPROPRI_EST}).add($F{TOT_IMP_COMPETENZA_INT}).add($F{TOT_IMP_COMPETENZA_EST})]]></variableExpression>
+		<expression><![CDATA[$F{TOT_RES_IMPROPRI_INT}.add($F{TOT_RES_IMPROPRI_EST}).add($F{TOT_IMP_COMPETENZA_INT}).add($F{TOT_IMP_COMPETENZA_EST})]]></expression>
 	</variable>
 	<group name="CDR">
-		<groupExpression><![CDATA[$F{CD_CENTRO_RESPONSABILITA}]]></groupExpression>
+		<expression><![CDATA[$F{CD_CENTRO_RESPONSABILITA}]]></expression>
 		<groupHeader>
 			<band height="63" splitType="Stretch">
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField" style="TNRGC10" x="0" y="8" width="782" height="18"/>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA["CDR "+$F{CD_CENTRO_RESPONSABILITA}+" "+$F{DS_CDR}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement key="staticText-2" style="TNRG10" mode="Opaque" x="0" y="38" width="90" height="13"/>
+				<element kind="textField" key="textField" style="TNRGC10" x="0" y="8" width="782" height="18" blankWhenNull="false">
+					<expression><![CDATA["CDR "+$F{CD_CENTRO_RESPONSABILITA}+" "+$F{DS_CDR}]]></expression>
+				</element>
+				<element kind="staticText" key="staticText-2" style="TNRG10" mode="Opaque" x="0" y="38" width="90" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25"/>
 						<topPen lineWidth="0.25"/>
@@ -94,11 +91,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25"/>
 						<rightPen lineWidth="0.25"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Capitolo]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-3" style="TNRG10" mode="Opaque" x="91" y="38" width="140" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-3" style="TNRG10" mode="Opaque" x="91" y="38" width="140" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25"/>
 						<topPen lineWidth="0.25"/>
@@ -106,11 +101,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25"/>
 						<rightPen lineWidth="0.25"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Descrizione]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-4" style="TNRG10" mode="Opaque" x="233" y="31" width="154" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-4" style="TNRG10" mode="Opaque" x="233" y="31" width="154" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25" lineStyle="Solid"/>
 						<topPen lineWidth="0.25" lineStyle="Solid"/>
@@ -118,11 +111,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
 						<rightPen lineWidth="0.25" lineStyle="Solid"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Impegni Residui Impropri]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-5" style="TNRG10" mode="Opaque" x="233" y="44" width="77" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-5" style="TNRG10" mode="Opaque" x="233" y="44" width="77" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25" lineStyle="Solid"/>
 						<topPen lineWidth="0.25" lineStyle="Solid"/>
@@ -130,11 +121,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
 						<rightPen lineWidth="0.25" lineStyle="Solid"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Fonti Interne]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-6" style="TNRG10" mode="Opaque" x="310" y="44" width="77" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-6" style="TNRG10" mode="Opaque" x="310" y="44" width="77" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25"/>
 						<topPen lineWidth="0.25"/>
@@ -142,11 +131,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25"/>
 						<rightPen lineWidth="0.25"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Fonti Esterne]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-7" style="TNRG10" mode="Opaque" x="388" y="31" width="154" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-7" style="TNRG10" mode="Opaque" x="388" y="31" width="154" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25" lineStyle="Solid"/>
 						<topPen lineWidth="0.25" lineStyle="Solid"/>
@@ -154,11 +141,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
 						<rightPen lineWidth="0.25" lineStyle="Solid"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Impegni Competenza]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-8" style="TNRG10" mode="Opaque" x="388" y="44" width="77" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-8" style="TNRG10" mode="Opaque" x="388" y="44" width="77" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25" lineStyle="Solid"/>
 						<topPen lineWidth="0.25" lineStyle="Solid"/>
@@ -166,11 +151,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
 						<rightPen lineWidth="0.25" lineStyle="Solid"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Fonti Interne]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-9" style="TNRG10" mode="Opaque" x="465" y="44" width="77" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-9" style="TNRG10" mode="Opaque" x="465" y="44" width="77" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25"/>
 						<topPen lineWidth="0.25"/>
@@ -178,11 +161,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25"/>
 						<rightPen lineWidth="0.25"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Fonti Esterne]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-10" style="TNRG10" mode="Opaque" x="544" y="38" width="74" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-10" style="TNRG10" mode="Opaque" x="544" y="38" width="74" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25"/>
 						<topPen lineWidth="0.25"/>
@@ -190,11 +171,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25"/>
 						<rightPen lineWidth="0.25"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Totale Impegni]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-11" style="TNRG10" mode="Opaque" x="620" y="31" width="154" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-11" style="TNRG10" mode="Opaque" x="620" y="31" width="154" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25" lineStyle="Solid"/>
 						<topPen lineWidth="0.25" lineStyle="Solid"/>
@@ -202,11 +181,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
 						<rightPen lineWidth="0.25" lineStyle="Solid"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Variazioni su Residui Propri]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-12" style="TNRG10" mode="Opaque" x="620" y="44" width="77" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-12" style="TNRG10" mode="Opaque" x="620" y="44" width="77" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25" lineStyle="Solid"/>
 						<topPen lineWidth="0.25" lineStyle="Solid"/>
@@ -214,11 +191,9 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
 						<rightPen lineWidth="0.25" lineStyle="Solid"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Fonti Interne]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-13" style="TNRG10" mode="Opaque" x="697" y="44" width="77" height="13"/>
+				</element>
+				<element kind="staticText" key="staticText-13" style="TNRG10" mode="Opaque" x="697" y="44" width="77" height="13" hTextAlign="Center">
 					<box>
 						<pen lineWidth="0.25"/>
 						<topPen lineWidth="0.25"/>
@@ -226,183 +201,121 @@ decode(substr($P{CDR},5,11),'000.000',substr($P{CDR},1,3),$P{CDR})]]>
 						<bottomPen lineWidth="0.25"/>
 						<rightPen lineWidth="0.25"/>
 					</box>
-					<textElement textAlignment="Center"/>
 					<text><![CDATA[Fonti Esterne]]></text>
-				</staticText>
-				<line>
-					<reportElement key="line-5" x="0" y="22" width="782" height="1"/>
-				</line>
+				</element>
+				<element kind="line" key="line-5" x="0" y="22" width="782" height="1"/>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band height="25" splitType="Stretch">
-				<textField isBlankWhenNull="false">
-					<reportElement key="textField-7" style="TNRGC10" x="0" y="6" width="160" height="13"/>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA["Totale CDR "+$F{CD_CENTRO_RESPONSABILITA}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNRG9" x="233" y="6" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{Tot_Imp_Res_FI}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNRG9" x="311" y="6" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{Tot_Imp_Res_FE}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNRG9" x="389" y="6" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{Tot_Imp_Comp_FI}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNRG9" x="466" y="6" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{Tot_Imp_Comp_FE}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNRG9" x="620" y="6" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{Tot_Var_Res_FI}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNRG9" x="698" y="6" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{Tot_Var_Res_FE}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNRG9" x="543" y="6" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{Tot_Impegni}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement key="line-6" x="0" y="3" width="782" height="1"/>
-				</line>
+				<element kind="textField" key="textField-7" style="TNRGC10" x="0" y="6" width="160" height="13" blankWhenNull="false">
+					<expression><![CDATA["Totale CDR "+$F{CD_CENTRO_RESPONSABILITA}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNRG9" x="233" y="6" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$V{Tot_Imp_Res_FI}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNRG9" x="311" y="6" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$V{Tot_Imp_Res_FE}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNRG9" x="389" y="6" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$V{Tot_Imp_Comp_FI}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNRG9" x="466" y="6" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$V{Tot_Imp_Comp_FE}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNRG9" x="620" y="6" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$V{Tot_Var_Res_FI}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNRG9" x="698" y="6" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$V{Tot_Var_Res_FE}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNRG9" x="543" y="6" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$V{Tot_Impegni}]]></expression>
+				</element>
+				<element kind="line" key="line-6" x="0" y="3" width="782" height="1"/>
 			</band>
 		</groupFooter>
 	</group>
 	<group name="Voce">
-		<groupExpression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></groupExpression>
+		<expression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></expression>
 		<groupHeader>
 			<band height="22" splitType="Stretch">
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement key="textField" style="TNR9" x="0" y="3" width="90" height="13"/>
-					<textElement textAlignment="Center"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{CD_ELEMENTO_VOCE}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement key="textField" style="TNR9" x="91" y="3" width="140" height="13"/>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{DS_ELMENTO_VOCE}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNR9" x="233" y="3" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOT_RES_IMPROPRI_INT}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNR9" x="311" y="3" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOT_RES_IMPROPRI_EST}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNR9" x="389" y="3" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOT_IMP_COMPETENZA_INT}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField" style="TNR9" x="466" y="3" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOT_IMP_COMPETENZA_EST}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField-4" style="TNR9" x="620" y="3" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOT_VAR_RES_PRO_INT}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField-5" style="TNR9" x="698" y="3" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOT_VAR_RES_PRO_EST}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement key="textField-6" style="TNR9" x="543" y="3" width="75" height="13"/>
-					<textElement textAlignment="Right"/>
-					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOT_RES_IMPROPRI_INT}.add($F{TOT_RES_IMPROPRI_EST}).add($F{TOT_IMP_COMPETENZA_INT}).add($F{TOT_IMP_COMPETENZA_EST})]]></textFieldExpression>
-				</textField>
+				<element kind="textField" textAdjust="StretchHeight" key="textField" style="TNR9" x="0" y="3" width="90" height="13" blankWhenNull="true" hTextAlign="Center">
+					<expression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></expression>
+				</element>
+				<element kind="textField" textAdjust="StretchHeight" key="textField" style="TNR9" x="91" y="3" width="140" height="13" blankWhenNull="true">
+					<expression><![CDATA[$F{DS_ELMENTO_VOCE}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNR9" x="233" y="3" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$F{TOT_RES_IMPROPRI_INT}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNR9" x="311" y="3" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$F{TOT_RES_IMPROPRI_EST}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNR9" x="389" y="3" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$F{TOT_IMP_COMPETENZA_INT}]]></expression>
+				</element>
+				<element kind="textField" key="textField" style="TNR9" x="466" y="3" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$F{TOT_IMP_COMPETENZA_EST}]]></expression>
+				</element>
+				<element kind="textField" key="textField-4" style="TNR9" x="620" y="3" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$F{TOT_VAR_RES_PRO_INT}]]></expression>
+				</element>
+				<element kind="textField" key="textField-5" style="TNR9" x="698" y="3" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$F{TOT_VAR_RES_PRO_EST}]]></expression>
+				</element>
+				<element kind="textField" key="textField-6" style="TNR9" x="543" y="3" width="75" height="13" pattern="#,##0.00;-#,##0.00" blankWhenNull="false" hTextAlign="Right">
+					<expression><![CDATA[$F{TOT_RES_IMPROPRI_INT}.add($F{TOT_RES_IMPROPRI_EST}).add($F{TOT_IMP_COMPETENZA_INT}).add($F{TOT_IMP_COMPETENZA_EST})]]></expression>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band height="81" splitType="Stretch">
-			<image>
-				<reportElement key="image-1" x="0" y="0" width="395" height="31"/>
-				<imageExpression class="java.lang.String"><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
-			</image>
-			<staticText>
-				<reportElement key="staticText-1" style="TNRGC16" x="0" y="52" width="782" height="23"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Stampa Sintetica Impegnato per Fonte]]></text>
-			</staticText>
-		</band>
+	<background splitType="Stretch"/>
+	<title height="81" splitType="Stretch">
+		<element kind="image" key="image-1" x="0" y="0" width="395" height="31">
+			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
+		</element>
+		<element kind="staticText" key="staticText-1" style="TNRGC16" x="0" y="52" width="782" height="23" hTextAlign="Center">
+			<text><![CDATA[Stampa Sintetica Impegnato per Fonte]]></text>
+		</element>
 	</title>
-	<pageHeader>
-		<band splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader splitType="Stretch"/>
 	<detail>
 		<band splitType="Stretch"/>
 	</detail>
-	<columnFooter>
-		<band splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="28" splitType="Stretch">
-			<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="false">
-				<reportElement key="textField-1" style="TNR10" x="5" y="6" width="103" height="17"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField-2" style="TNR10" x="674" y="6" width="73" height="17"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression class="java.lang.String"><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report" isBlankWhenNull="false">
-				<reportElement key="textField-3" style="TNR10" x="747" y="6" width="25" height="17"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></textFieldExpression>
-			</textField>
-		</band>
+	<columnFooter splitType="Stretch"/>
+	<pageFooter height="28" splitType="Stretch">
+		<element kind="textField" key="textField-1" style="TNR10" x="5" y="6" width="103" height="17" evaluationTime="Report" pattern="dd/MM/yyyy" blankWhenNull="false" hTextAlign="Left">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="textField" key="textField-2" style="TNR10" x="674" y="6" width="73" height="17" blankWhenNull="false" hTextAlign="Right">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
+		</element>
+		<element kind="textField" key="textField-3" style="TNR10" x="747" y="6" width="25" height="17" evaluationTime="Report" blankWhenNull="false" hTextAlign="Left">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
+		</element>
 	</pageFooter>
-	<summary>
-		<band splitType="Stretch"/>
-	</summary>
+	<summary splitType="Stretch"/>
 </jasperReport>

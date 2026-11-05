@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="riaccertamento" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13ed6780-6848-4ebc-8ba3-e1810f8b6bd8">
+<jasperReport name="riaccertamento" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13ed6780-6848-4ebc-8ba3-e1810f8b6bd8" language="java">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGLA-PROD"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -13,9 +12,9 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
 	<parameter name="P_ESERCIZIO" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[new Integer(2023)]]></defaultValueExpression>
 	</parameter>
@@ -36,14 +35,14 @@
 	</parameter>
 	<parameter name="P_VOCE_DA" class="java.lang.String"/>
 	<parameter name="P_VOCE_A" class="java.lang.String"/>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\preventivo\\preventivo\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="DIR_IMAGE" class="java.lang.String">
 		<defaultValueExpression><![CDATA["E:\\iss\\SIGLA_FORK_REPORT_ISS\\sigla-reports\\img\\ISS\\"]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[SELECT 
+	<query language="sql"><![CDATA[
+		SELECT 
 	va.ESERCIZIO,
 	va.ESERCIZIO_RES,
 	va.CD_VOCE,
@@ -69,8 +68,8 @@ GROUP BY
     ev.DS_ELEMENTO_VOCE
 HAVING
 	SUM(IMPORTO_INI_RESIDUI_PROPRI) > 0 
-ORDER BY va.CD_VOCE,ESERCIZIO_RES]]>
-	</queryString>
+ORDER BY va.CD_VOCE,ESERCIZIO_RES
+	]]></query>
 	<field name="ESERCIZIO" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="ESERCIZIO"/>
 		<property name="com.jaspersoft.studio.field.name" value="ESERCIZIO"/>
@@ -98,7 +97,7 @@ ORDER BY va.CD_VOCE,ESERCIZIO_RES]]>
 		<property name="com.jaspersoft.studio.field.label" value="DA_RISCUOTERE"/>
 	</field>
 	<variable name="V_TIPO_DS" class="java.lang.String">
-		<variableExpression><![CDATA[$P{P_TIPO}]]></variableExpression>
+		<expression><![CDATA[$P{P_TIPO}]]></expression>
 		<initialValueExpression><![CDATA[$P{P_TIPO}.equals("E") ? "Entrata" : "Spesa"]]></initialValueExpression>
 	</variable>
 	<variable name="ESERCIZIO_PRECEDENTE" class="java.lang.Integer">
@@ -108,387 +107,276 @@ ORDER BY va.CD_VOCE,ESERCIZIO_RES]]>
 		<initialValueExpression><![CDATA[$P{P_TIPO}.equals("E") ? "attivi" : "passivi"]]></initialValueExpression>
 	</variable>
 	<variable name="SUM_INIZIALE" class="java.math.BigDecimal" resetType="Group" resetGroup="Gruppo1" calculation="Sum">
-		<variableExpression><![CDATA[$F{INIZIALE}]]></variableExpression>
+		<expression><![CDATA[$F{INIZIALE}]]></expression>
 	</variable>
 	<variable name="SUM_VARIAZIONI" class="java.math.BigDecimal" resetType="Group" resetGroup="Gruppo1" calculation="Sum">
-		<variableExpression><![CDATA[$F{VARIAZIONI}]]></variableExpression>
+		<expression><![CDATA[$F{VARIAZIONI}]]></expression>
 	</variable>
 	<variable name="SUM_RISCOSSO" class="java.math.BigDecimal" resetType="Group" resetGroup="Gruppo1" calculation="Sum">
-		<variableExpression><![CDATA[$F{RISCOSSO}]]></variableExpression>
+		<expression><![CDATA[$F{RISCOSSO}]]></expression>
 	</variable>
 	<variable name="SUM_DA_RISCUOTERE" class="java.math.BigDecimal" resetType="Group" resetGroup="Gruppo1" calculation="Sum">
-		<variableExpression><![CDATA[$F{DA_RISCUOTERE}]]></variableExpression>
+		<expression><![CDATA[$F{DA_RISCUOTERE}]]></expression>
 	</variable>
 	<variable name="SUM_TOT_INIZIALE" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{INIZIALE}]]></variableExpression>
+		<expression><![CDATA[$F{INIZIALE}]]></expression>
 	</variable>
 	<variable name="SUM_TOT-VARIAZIONI" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{VARIAZIONI}]]></variableExpression>
+		<expression><![CDATA[$F{VARIAZIONI}]]></expression>
 	</variable>
 	<variable name="SUM_TOT_RISCOSSO" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{RISCOSSO}]]></variableExpression>
+		<expression><![CDATA[$F{RISCOSSO}]]></expression>
 	</variable>
 	<variable name="SUM_TOT_DA_RISCUOTERE" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{DA_RISCUOTERE}]]></variableExpression>
+		<expression><![CDATA[$F{DA_RISCUOTERE}]]></expression>
 	</variable>
 	<group name="Gruppo1">
-		<groupExpression><![CDATA[$F{CD_VOCE}]]></groupExpression>
+		<expression><![CDATA[$F{CD_VOCE}]]></expression>
 		<groupHeader>
 			<band height="47">
-				<textField>
-					<reportElement x="0" y="0" width="80" height="20" forecolor="#525659" uuid="d2fbed9c-c0a6-42b5-a8f7-476f78381869"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Times New Roman" size="12"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{CD_VOCE}]]></textFieldExpression>
-				</textField>
-				<textField textAdjust="StretchHeight">
-					<reportElement isPrintRepeatedValues="false" x="90" y="0" width="460" height="20" forecolor="#525659" uuid="f444d01f-d45e-4849-a093-ed694cd84059"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Times New Roman" size="12"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{DS_ELEMENTO_VOCE}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="430" y="25" width="120" height="20" uuid="75635246-67f0-450c-ad7d-64f8e81ec6d5">
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="Times New Roman" size="8" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E") ? "da riscuotere" : "da pagare"]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="310" y="25" width="120" height="20" uuid="ec53175c-bfbc-49b1-ba54-5920f578ce70">
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="Times New Roman" size="8" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$P{P_TIPO}.equals("E") ? "riscossi per" : "pagati per"]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement x="80" y="25" width="120" height="20" uuid="8a8b6c48-4c57-4264-ba0b-23f368cf7be9">
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
+				<element kind="textField" x="0" y="0" width="80" height="20" forecolor="#525659" uuid="d2fbed9c-c0a6-42b5-a8f7-476f78381869" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" fontSize="12">
+					<expression><![CDATA[$F{CD_VOCE}]]></expression>
+				</element>
+				<element kind="textField" printRepeatedValues="false" x="90" y="0" width="460" height="20" forecolor="#525659" uuid="f444d01f-d45e-4849-a093-ed694cd84059" textAdjust="StretchHeight" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" fontSize="12">
+					<expression><![CDATA[$F{DS_ELEMENTO_VOCE}]]></expression>
+				</element>
+				<element kind="textField" x="430" y="25" width="120" height="20" uuid="75635246-67f0-450c-ad7d-64f8e81ec6d5" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" fontSize="8" bold="true">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<expression><![CDATA[$P{P_TIPO}.equals("E") ? "da riscuotere" : "da pagare"]]></expression>
+				</element>
+				<element kind="textField" x="310" y="25" width="120" height="20" uuid="ec53175c-bfbc-49b1-ba54-5920f578ce70" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" fontSize="8" bold="true">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<expression><![CDATA[$P{P_TIPO}.equals("E") ? "riscossi per" : "pagati per"]]></expression>
+				</element>
+				<element kind="staticText" x="80" y="25" width="120" height="20" uuid="8a8b6c48-4c57-4264-ba0b-23f368cf7be9" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" fontSize="8" bold="true">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="Times New Roman" size="8" isBold="true"/>
-					</textElement>
 					<text><![CDATA[Importo al 1 gennaio]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="200" y="25" width="110" height="20" uuid="77a96816-296f-43df-9e5d-5bbab800b042">
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
+				</element>
+				<element kind="staticText" x="200" y="25" width="110" height="20" uuid="77a96816-296f-43df-9e5d-5bbab800b042" hTextAlign="Right" vTextAlign="Middle" fontName="Times New Roman" fontSize="8" bold="true">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="Times New Roman" size="8" isBold="true"/>
-					</textElement>
 					<text><![CDATA[Variazioni]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="0" y="25" width="80" height="20" uuid="6ad1caa7-86ee-4f9a-bba8-6b69dff813c6">
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
+				</element>
+				<element kind="staticText" x="0" y="25" width="80" height="20" uuid="6ad1caa7-86ee-4f9a-bba8-6b69dff813c6" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" fontSize="8" bold="true">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<box padding="0">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Times New Roman" size="8" isBold="true"/>
-					</textElement>
 					<text><![CDATA[anno provenienza]]></text>
-				</staticText>
+				</element>
 			</band>
 		</groupHeader>
 		<groupFooter>
 			<band height="37">
-				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="200" y="0" width="110" height="20" uuid="008e305a-908c-46a0-9dcd-9a8824f5c30d"/>
+				<element kind="textField" x="200" y="0" width="110" height="20" uuid="008e305a-908c-46a0-9dcd-9a8824f5c30d" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$V{SUM_VARIAZIONI}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="310" y="-1" width="120" height="20" uuid="23335508-3421-44ac-9f7c-1bc47721b9b4"/>
+					<expression><![CDATA[$V{SUM_VARIAZIONI}]]></expression>
+				</element>
+				<element kind="textField" x="310" y="-1" width="120" height="20" uuid="23335508-3421-44ac-9f7c-1bc47721b9b4" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$V{SUM_RISCOSSO}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="430" y="-1" width="120" height="20" uuid="b170acb3-fb0b-4ba2-9612-64d633fb0cf5"/>
+					<expression><![CDATA[$V{SUM_RISCOSSO}]]></expression>
+				</element>
+				<element kind="textField" x="430" y="-1" width="120" height="20" uuid="b170acb3-fb0b-4ba2-9612-64d633fb0cf5" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$V{SUM_DA_RISCUOTERE}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="0" y="0" width="80" height="20" uuid="846e8919-a341-463c-8262-69a8e9b6fc2c"/>
+					<expression><![CDATA[$V{SUM_DA_RISCUOTERE}]]></expression>
+				</element>
+				<element kind="textField" x="0" y="0" width="80" height="20" uuid="846e8919-a341-463c-8262-69a8e9b6fc2c" hTextAlign="Left" vTextAlign="Middle" fontName="Times New Roman" fontSize="8" bold="true">
 					<box padding="0">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Times New Roman" size="8" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA["Totale capitolo  " +  $F{CD_VOCE}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="80" y="0" width="120" height="20" uuid="13d95b5b-2662-4d5a-b1c3-6fef9a21266a"/>
+					<expression><![CDATA["Totale capitolo  " +  $F{CD_VOCE}]]></expression>
+				</element>
+				<element kind="textField" x="80" y="0" width="120" height="20" uuid="13d95b5b-2662-4d5a-b1c3-6fef9a21266a" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$V{SUM_INIZIALE}]]></textFieldExpression>
-				</textField>
+					<expression><![CDATA[$V{SUM_INIZIALE}]]></expression>
+				</element>
 			</band>
 		</groupFooter>
 	</group>
-	<title>
-		<band height="102" splitType="Stretch">
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField-184" x="0" y="41" width="550" height="60" backcolor="#525659" uuid="ed8f4d51-5288-4294-a1f2-c33eacded38a"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
-					<font fontName="Times New Roman" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Riaccertamento residui " + $V{TITLE_ATTIVI_PASSIVI} + " - esercizio finanziario " + $P{P_ESERCIZIO}]]></textFieldExpression>
-			</textField>
-			<image>
-				<reportElement key="image-1" x="0" y="0" width="140" height="40" uuid="54eb459b-0e8b-4b9c-a3ef-884cb754411b"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<imageExpression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></imageExpression>
-			</image>
-		</band>
+	<title height="102" splitType="Stretch">
+		<element kind="textField" key="textField-184" x="0" y="41" width="550" height="60" backcolor="#525659" uuid="ed8f4d51-5288-4294-a1f2-c33eacded38a" blankWhenNull="false" hTextAlign="Center" vTextAlign="Middle" rotation="None" fontName="Times New Roman" fontSize="16" bold="true" italic="false" underline="false" strikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252">
+			<paragraph lineSpacing="Single"/>
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Riaccertamento residui " + $V{TITLE_ATTIVI_PASSIVI} + " - esercizio finanziario " + $P{P_ESERCIZIO}]]></expression>
+		</element>
+		<element kind="image" key="image-1" x="0" y="0" width="140" height="40" uuid="54eb459b-0e8b-4b9c-a3ef-884cb754411b">
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
+		</element>
 	</title>
 	<detail>
 		<band height="21" splitType="Stretch">
-			<textField>
-				<reportElement x="0" y="0" width="80" height="20" uuid="c1838c3d-0985-4229-aec9-11fa3ff309c0"/>
+			<element kind="textField" x="0" y="0" width="80" height="20" uuid="c1838c3d-0985-4229-aec9-11fa3ff309c0" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" fontSize="8" bold="true">
 				<box padding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ESERCIZIO_RES}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="310" y="-1" width="120" height="20" uuid="614442ba-ec7d-44c9-88c8-2681cf9faea5"/>
+				<expression><![CDATA[$F{ESERCIZIO_RES}]]></expression>
+			</element>
+			<element kind="textField" x="310" y="-1" width="120" height="20" uuid="614442ba-ec7d-44c9-88c8-2681cf9faea5" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{RISCOSSO}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="430" y="-1" width="120" height="20" uuid="67459460-d8e4-4777-94ad-7ce490b56445"/>
+				<expression><![CDATA[$F{RISCOSSO}]]></expression>
+			</element>
+			<element kind="textField" x="430" y="-1" width="120" height="20" uuid="67459460-d8e4-4777-94ad-7ce490b56445" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{DA_RISCUOTERE}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="200" y="-1" width="110" height="20" uuid="bacd5507-ee71-4ad6-bec2-2c27e8449e05"/>
+				<expression><![CDATA[$F{DA_RISCUOTERE}]]></expression>
+			</element>
+			<element kind="textField" x="200" y="-1" width="110" height="20" uuid="bacd5507-ee71-4ad6-bec2-2c27e8449e05" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{VARIAZIONI}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="80" y="0" width="120" height="20" uuid="7a5cde81-535b-48c9-a369-f61413b0bf7a"/>
+				<expression><![CDATA[$F{VARIAZIONI}]]></expression>
+			</element>
+			<element kind="textField" x="80" y="0" width="120" height="20" uuid="7a5cde81-535b-48c9-a369-f61413b0bf7a" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{INIZIALE}]]></textFieldExpression>
-			</textField>
+				<expression><![CDATA[$F{INIZIALE}]]></expression>
+			</element>
 		</band>
 	</detail>
-	<pageFooter>
-		<band height="15">
-			<textField evaluationTime="Report" pattern="dd/MM/yyyy HH.mm.ss" isBlankWhenNull="false">
-				<reportElement key="textField" x="0" y="0" width="237" height="15" uuid="85996e43-bf31-4d74-a76d-46b921514a84">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textFieldExpression><![CDATA["Data di stampa "+ new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report" isBlankWhenNull="false">
-				<reportElement key="textField-12" x="500" y="0" width="55" height="15" uuid="ea815ae0-d64d-4e5b-ab99-4007515add9b">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField-11" x="400" y="0" width="100" height="15" uuid="b499348b-4913-4f87-a03b-16639c3a8996">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></textFieldExpression>
-			</textField>
-		</band>
+	<pageFooter height="15">
+		<element kind="textField" key="textField" x="0" y="0" width="237" height="15" uuid="85996e43-bf31-4d74-a76d-46b921514a84" evaluationTime="Report" pattern="dd/MM/yyyy HH.mm.ss" blankWhenNull="false">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Data di stampa "+ new SimpleDateFormat("dd/MM/yyyy HH.mm.ss").format(new java.util.Date())]]></expression>
+		</element>
+		<element kind="textField" key="textField-12" x="500" y="0" width="55" height="15" uuid="ea815ae0-d64d-4e5b-ab99-4007515add9b" evaluationTime="Report" blankWhenNull="false">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
+		</element>
+		<element kind="textField" key="textField-11" x="400" y="0" width="100" height="15" uuid="b499348b-4913-4f87-a03b-16639c3a8996" blankWhenNull="false" hTextAlign="Right">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
+		</element>
 	</pageFooter>
-	<summary>
-		<band height="23">
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="430" y="-1" width="120" height="20" uuid="5fd4b4ac-b230-4162-8472-dccfbef34043"/>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{SUM_TOT_DA_RISCUOTERE}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="310" y="-1" width="120" height="20" uuid="9a4629bf-29e5-4d77-a5d8-198a47adb643"/>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{SUM_TOT_RISCOSSO}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="0" width="80" height="20" uuid="1421c6c8-a857-44d8-9639-ef72ed883b55"/>
-				<box padding="0">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Totale "]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="80" y="0" width="120" height="20" uuid="bf86c4aa-0e6a-48a2-9825-c8d944b71313"/>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{SUM_TOT_INIZIALE}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="200" y="0" width="110" height="20" uuid="83b2453d-6366-4b7e-a14d-a020d4e3eeac"/>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{SUM_TOT-VARIAZIONI}]]></textFieldExpression>
-			</textField>
-		</band>
+	<summary height="23">
+		<element kind="textField" x="430" y="-1" width="120" height="20" uuid="5fd4b4ac-b230-4162-8472-dccfbef34043" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
+			<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[$V{SUM_TOT_DA_RISCUOTERE}]]></expression>
+		</element>
+		<element kind="textField" x="310" y="-1" width="120" height="20" uuid="9a4629bf-29e5-4d77-a5d8-198a47adb643" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
+			<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[$V{SUM_TOT_RISCOSSO}]]></expression>
+		</element>
+		<element kind="textField" x="0" y="0" width="80" height="20" uuid="1421c6c8-a857-44d8-9639-ef72ed883b55" hTextAlign="Left" vTextAlign="Middle" fontName="Times New Roman" fontSize="8" bold="true">
+			<box padding="0">
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA["Totale "]]></expression>
+		</element>
+		<element kind="textField" x="80" y="0" width="120" height="20" uuid="bf86c4aa-0e6a-48a2-9825-c8d944b71313" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
+			<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[$V{SUM_TOT_INIZIALE}]]></expression>
+		</element>
+		<element kind="textField" x="200" y="0" width="110" height="20" uuid="83b2453d-6366-4b7e-a14d-a020d4e3eeac" pattern="#,##0.00" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" fontSize="8">
+			<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<expression><![CDATA[$V{SUM_TOT-VARIAZIONI}]]></expression>
+		</element>
 	</summary>
 </jasperReport>

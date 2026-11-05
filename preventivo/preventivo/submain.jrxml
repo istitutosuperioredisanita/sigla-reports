@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.10.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="submain" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0cd47979-d858-4b3c-92b8-047d04bff09b">
+<jasperReport name="submain" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0cd47979-d858-4b3c-92b8-047d04bff09b" language="java">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SiglaDbSvil"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
-	<parameter name="P_ESERCIZIO" class="java.lang.Integer" isForPrompting="false"/>
-	<parameter name="P_TIPO_AGGREGAZIONE" class="java.lang.String" isForPrompting="false"/>
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<parameter name="P_ESERCIZIO" class="java.lang.Integer" forPrompting="false"/>
+	<parameter name="P_TIPO_AGGREGAZIONE" class="java.lang.String" forPrompting="false"/>
 	<parameter name="P_NUM_LIV" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[6]]></defaultValueExpression>
 	</parameter>
@@ -23,9 +22,9 @@
 	</parameter>
 	<parameter name="P_VOCE_DA" class="java.lang.String"/>
 	<parameter name="P_VOCE_A" class="java.lang.String"/>
-	<queryString language="SQL">
-		<![CDATA[SELECT * FROM TMP_STAMPA_RENDICONTO]]>
-	</queryString>
+	<query language="SQL"><![CDATA[
+		SELECT * FROM TMP_STAMPA_RENDICONTO
+	]]></query>
 	<field name="SEQUENZA" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.name" value="SEQUENZA"/>
 		<property name="com.jaspersoft.studio.field.label" value="SEQUENZA"/>
@@ -234,19 +233,15 @@
 		<property name="com.jaspersoft.studio.field.name" value="CASSA_PREV_ES_PREC"/>
 		<property name="com.jaspersoft.studio.field.label" value="CASSA_PREV_ES_PREC"/>
 	</field>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
+	<background splitType="Stretch"/>
 	<detail>
 		<band height="125" splitType="Stretch">
-			<staticText>
-				<reportElement x="-85" y="38" width="100" height="30" uuid="5791c68e-106a-43d3-a2fd-23321c0b34ef"/>
+			<element kind="staticText" x="-85" y="38" width="100" height="30" uuid="5791c68e-106a-43d3-a2fd-23321c0b34ef">
 				<text><![CDATA[CD_LIVELLO6]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="20" y="41" width="100" height="30" uuid="481d231d-c324-4ea0-a109-2558705b1027"/>
+			</element>
+			<element kind="staticText" x="20" y="41" width="100" height="30" uuid="481d231d-c324-4ea0-a109-2558705b1027">
 				<text><![CDATA[PROVA2]]></text>
-			</staticText>
+			</element>
 		</band>
 	</detail>
 </jasperReport>

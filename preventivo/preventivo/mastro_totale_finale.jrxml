@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.10.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mastro_totale_finale" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="28c51486-615b-445d-80ee-ccba48838be3">
+<jasperReport name="mastro_totale_finale" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="28c51486-615b-445d-80ee-ccba48838be3" language="java">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SiglaDbColl"/>
 	<parameter name="CD_VOCE" class="java.lang.String"/>
 	<parameter name="SUB_P_CD_VOCE" class="java.lang.String"/>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="SUM_ASSESTATO" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RES_TOTALI_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RES_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RES_RIM_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_ASSESTATO_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_TOT_ACC_IMP_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_DIFF_COMP_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_RIM_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
-	<parameter name="SUM_CASSA_RIS_PAG_LIV6" class="java.math.BigDecimal" isForPrompting="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" forPrompting="false"/>
+	<parameter name="SUM_ASSESTATO" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="SUM_RES_TOTALI_LIV6" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="SUM_RES_RIS_PAG_LIV6" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="SUM_RES_RIM_RIS_PAG_LIV6" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="SUM_ASSESTATO_LIV6" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="SUM_TOT_ACC_IMP_LIV6" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="SUM_DIFF_COMP_LIV6" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="SUM_RIS_PAG_LIV6" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="SUM_RIM_RIS_PAG_LIV6" class="java.math.BigDecimal" forPrompting="false"/>
+	<parameter name="SUM_CASSA_RIS_PAG_LIV6" class="java.math.BigDecimal" forPrompting="false"/>
 	<parameter name="SUM_CASSA" class="java.math.BigDecimal"/>
-	<parameter name="P_ESERCIZIO" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="P_ESERCIZIO" class="java.lang.Integer" forPrompting="false"/>
 	<parameter name="P_TIPO_AGGREGAZIONE" class="java.lang.String">
 		<defaultValueExpression><![CDATA["FIN"]]></defaultValueExpression>
 	</parameter>
-	<queryString language="SQL">
-		<![CDATA[select DS_LIVELLO1E, DS_LIVELLO2E, DS_LIVELLO3E, DS_LIVELLO4E, DS_LIVELLO5E, DS_LIVELLO6E, DS_LIVELLO7E, NULL DS_LIVELLO8E, NULL DS_LIVELLO9E,
+	<query language="SQL"><![CDATA[
+		select DS_LIVELLO1E, DS_LIVELLO2E, DS_LIVELLO3E, DS_LIVELLO4E, DS_LIVELLO5E, DS_LIVELLO6E, DS_LIVELLO7E, NULL DS_LIVELLO8E, NULL DS_LIVELLO9E,
 DS_LIVELLO1S, DS_LIVELLO2S, DS_LIVELLO3S, DS_LIVELLO4S, DS_LIVELLO5S, DS_LIVELLO6S, DS_LIVELLO7S, NULL DS_LIVELLO8S, NULL DS_LIVELLO9S,
 (Select IM01 FROM CONFIGURAZIONE_CNR
 WHERE ESERCIZIO=$P{P_ESERCIZIO}
@@ -48,12 +47,10 @@ AND CD_CHIAVE_PRIMARIA='BILANCIO_ENTE'
 AND CD_CHIAVE_SECONDARIA='AVANZO_DEF') AVANZO_DEF
 from parametri_livelli
 where esercizio=$P{P_ESERCIZIO}
-AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI']]>
-	</queryString>
+AND   $P{P_TIPO_AGGREGAZIONE} = 'SCI'
+	]]></query>
 	<variable name="SUM_CASSA" class="java.math.BigDecimal">
-		<variableExpression><![CDATA[$P{SUM_CASSA}]]></variableExpression>
+		<expression><![CDATA[$P{SUM_CASSA}]]></expression>
 	</variable>
-	<summary>
-		<band height="50"/>
-	</summary>
+	<summary height="50"/>
 </jasperReport>

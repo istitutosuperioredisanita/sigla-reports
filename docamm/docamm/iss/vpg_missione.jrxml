@@ -1,94 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vpg_missione" pageWidth="750" pageHeight="842" columnWidth="573" leftMargin="11" rightMargin="11" topMargin="11" bottomMargin="11" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Vpg_missioneScriptlet" uuid="71389263-1ae3-4063-aa04-2ae5b2a7a2b4">
+<jasperReport name="vpg_missione" pageWidth="750" pageHeight="842" columnWidth="573" leftMargin="11" rightMargin="11" topMargin="11" bottomMargin="11" scriptletClass="it.cnr.jasperreports.scriptlet.sigla.Vpg_missioneScriptlet" uuid="71389263-1ae3-4063-aa04-2ae5b2a7a2b4" language="java">
 	<property name="ireport.scriptlethandling" value="2"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
-	<style name="TNR10" isDefault="true" fontName="Times New Roman" pdfFontName="Times-Roman"/>
-	<style name="TNR10BOLD" fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
-	<parameter name="DIR_SUBREPORT" class="java.lang.String" isForPrompting="false">
+	<import><![CDATA[net.sf.jasperreports.engine.*]]></import>
+	<import><![CDATA[java.util.*]]></import>
+	<import><![CDATA[net.sf.jasperreports.engine.data.*]]></import>
+	<style name="TNR10" default="true" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="TNR10BOLD" fontName="Times New Roman" bold="true" pdfFontName="Times-Bold"/>
+	<parameter name="DIR_SUBREPORT" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
-	<parameter name="DIR_IMAGE" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="aCd_cds" class="java.lang.String" isForPrompting="false">
+	<parameter name="DIR_IMAGE" class="java.lang.String" forPrompting="false"/>
+	<parameter name="aCd_cds" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["000"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="aEs" class="java.lang.Integer" isForPrompting="false">
+	<parameter name="aEs" class="java.lang.Integer" forPrompting="false">
 		<defaultValueExpression><![CDATA[new Integer("2011")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="aPg_da" class="java.lang.Long" isForPrompting="false">
+	<parameter name="aPg_da" class="java.lang.Long" forPrompting="false">
 		<defaultValueExpression><![CDATA[new Long("882")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="aPg_a" class="java.lang.Long" isForPrompting="false">
+	<parameter name="aPg_a" class="java.lang.Long" forPrompting="false">
 		<defaultValueExpression><![CDATA[new Long("882")]]></defaultValueExpression>
 	</parameter>
-	<parameter name="aCd_terzo" class="java.lang.String" isForPrompting="false">
+	<parameter name="aCd_terzo" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="aCd_uo" class="java.lang.String" isForPrompting="false">
+	<parameter name="aCd_uo" class="java.lang.String" forPrompting="false">
 		<defaultValueExpression><![CDATA["000.407"]]></defaultValueExpression>
 	</parameter>
-	<queryString>
-		<![CDATA[SELECT 1 FROM DUAL]]>
-	</queryString>
+	<query language="sql"><![CDATA[
+		SELECT 1 FROM DUAL
+	]]></query>
 	<field name="1" class="java.math.BigDecimal"/>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
+	<background splitType="Stretch"/>
+	<title splitType="Stretch"/>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader splitType="Stretch"/>
 	<detail>
 		<band height="16" splitType="Stretch">
-			<subreport isUsingCache="true">
-				<reportElement key="subreport-1" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="572" height="16" isRemoveLineWhenBlank="true" uuid="d27a6688-6186-4f7f-a0a3-4fd973baf927"/>
-				<subreportParameter name="aEs">
-					<subreportParameterExpression><![CDATA[$P{aEs}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="aCd_cds">
-					<subreportParameterExpression><![CDATA[$P{aCd_cds}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="aPg_da">
-					<subreportParameterExpression><![CDATA[$P{aPg_da}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="aPg_a">
-					<subreportParameterExpression><![CDATA[$P{aPg_a}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="DIR_IMAGE">
-					<subreportParameterExpression><![CDATA[$P{DIR_IMAGE}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="aCd_terzo">
-					<subreportParameterExpression><![CDATA[$P{aCd_terzo}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="aCd_uo">
-					<subreportParameterExpression><![CDATA[$P{aCd_uo}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="DIR_SUBREPORT">
-					<subreportParameterExpression><![CDATA[$P{DIR_SUBREPORT}]]></subreportParameterExpression>
-				</subreportParameter>
+			<element kind="subreport" key="subreport-1" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="572" height="16" removeLineWhenBlank="true" uuid="d27a6688-6186-4f7f-a0a3-4fd973baf927" usingCache="true">
+				<parameter name="aEs">
+					<expression><![CDATA[$P{aEs}]]></expression>
+				</parameter>
+				<parameter name="aCd_cds">
+					<expression><![CDATA[$P{aCd_cds}]]></expression>
+				</parameter>
+				<parameter name="aPg_da">
+					<expression><![CDATA[$P{aPg_da}]]></expression>
+				</parameter>
+				<parameter name="aPg_a">
+					<expression><![CDATA[$P{aPg_a}]]></expression>
+				</parameter>
+				<parameter name="DIR_IMAGE">
+					<expression><![CDATA[$P{DIR_IMAGE}]]></expression>
+				</parameter>
+				<parameter name="aCd_terzo">
+					<expression><![CDATA[$P{aCd_terzo}]]></expression>
+				</parameter>
+				<parameter name="aCd_uo">
+					<expression><![CDATA[$P{aCd_uo}]]></expression>
+				</parameter>
+				<parameter name="DIR_SUBREPORT">
+					<expression><![CDATA[$P{DIR_SUBREPORT}]]></expression>
+				</parameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{DIR_SUBREPORT}+"vpg_missione_subreport0.jasper"]]></subreportExpression>
-			</subreport>
+				<expression><![CDATA[$P{DIR_SUBREPORT}+"vpg_missione_subreport0.jasper"]]></expression>
+			</element>
 		</band>
 	</detail>
-	<columnFooter>
-		<band splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band splitType="Stretch"/>
-	</summary>
+	<columnFooter splitType="Stretch"/>
+	<pageFooter splitType="Stretch"/>
+	<summary splitType="Stretch"/>
 </jasperReport>
