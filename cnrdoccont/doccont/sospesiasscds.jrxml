@@ -253,7 +253,7 @@ banca]]></text>
 				</box>
 				<expression><![CDATA[($F{TI_CC_BI}.compareTo("B")==0?"Banca d'Italia":"C/C")]]></expression>
 			</element>
-			<element kind="textField" textAdjust="StretchHeight" key="textField" style="TNR8" positionType="Float" stretchType="RelativeToTallestObject" x="414" y="2" width="144" height="14" uuid="800e0062-595e-45e3-88a6-9a954488ce36" pattern="" blankWhenNull="true">
+			<element kind="textField" textAdjust="StretchHeight" key="textField" style="TNR8" positionType="Float" stretchType="ElementGroupHeight" x="414" y="2" width="144" height="14" uuid="800e0062-595e-45e3-88a6-9a954488ce36" pattern="" blankWhenNull="true">
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>

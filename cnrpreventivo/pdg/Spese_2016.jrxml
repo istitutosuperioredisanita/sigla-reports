@@ -512,7 +512,7 @@ c/competenza]]></text>
 			<printWhenExpression><![CDATA[($F{CD_CLASSIFICAZIONE}.compareTo("0")==0)]]></printWhenExpression>
 			<expression><![CDATA[$F{PREVISIONE_CASSA}]]></expression>
 		</element>
-		<element kind="textField" textAdjust="StretchHeight" style="TNRC8" positionType="Float" stretchType="RelativeToTallestObject" x="165" y="130" width="435" height="15" blankWhenNull="true">
+		<element kind="textField" textAdjust="StretchHeight" style="TNRC8" positionType="Float" stretchType="ElementGroupHeight" x="165" y="130" width="435" height="15" blankWhenNull="true">
 			<printWhenExpression><![CDATA[($F{CD_CLASSIFICAZIONE}.compareTo("0")==0)]]></printWhenExpression>
 			<expression><![CDATA[$F{DS_CLASSIFICAZIONE}]]></expression>
 		</element>

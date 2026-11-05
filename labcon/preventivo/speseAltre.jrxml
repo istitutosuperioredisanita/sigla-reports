@@ -31,7 +31,7 @@
 	<background height="6" splitType="Stretch"/>
 	<detail>
 		<band height="18">
-			<element kind="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="0" width="306" height="18" backcolor="#FFFFFF" uuid="45508ba6-abfa-4c41-8f4d-d03c0c1a44b1" textAdjust="StretchHeight" hTextAlign="Left" vTextAlign="Middle" markup="styled" fontName="Times New Roman" fontSize="8" bold="false">
+			<element kind="textField" stretchType="ElementGroupHeight" mode="Transparent" x="0" y="0" width="306" height="18" backcolor="#FFFFFF" uuid="45508ba6-abfa-4c41-8f4d-d03c0c1a44b1" textAdjust="StretchHeight" hTextAlign="Left" vTextAlign="Middle" markup="styled" fontName="Times New Roman" fontSize="8" bold="false">
 				<paragraph lineSpacing="Single" leftIndent="5" spacingBefore="2" spacingAfter="2"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				<box>
@@ -43,7 +43,7 @@
 				</box>
 				<expression><![CDATA[$F{descrizione}]]></expression>
 			</element>
-			<element kind="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="306" y="0" width="69" height="18" backcolor="#FFFFFF" uuid="45508ba6-abfa-4c41-8f4d-d03c0c1a44b1" textAdjust="StretchHeight" hTextAlign="Left" vTextAlign="Middle" markup="styled" fontName="Times New Roman" fontSize="8" bold="false">
+			<element kind="textField" stretchType="ElementGroupHeight" mode="Transparent" x="306" y="0" width="69" height="18" backcolor="#FFFFFF" uuid="45508ba6-abfa-4c41-8f4d-d03c0c1a44b1" textAdjust="StretchHeight" hTextAlign="Left" vTextAlign="Middle" markup="styled" fontName="Times New Roman" fontSize="8" bold="false">
 				<paragraph lineSpacing="Single" leftIndent="5" spacingBefore="2" spacingAfter="2"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -56,7 +56,7 @@
 				</box>
 				<expression><![CDATA[$F{dettaglio}]]></expression>
 			</element>
-			<element kind="textField" stretchType="RelativeToTallestObject" mode="Opaque" x="469" y="0" width="56" height="18" backcolor="#FFFFFF" uuid="1f113fb8-240f-4d48-a4d3-e3c11884b264" textAdjust="StretchHeight" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" markup="styled" fontName="Times New Roman" fontSize="8">
+			<element kind="textField" stretchType="ElementGroupHeight" mode="Opaque" x="469" y="0" width="56" height="18" backcolor="#FFFFFF" uuid="1f113fb8-240f-4d48-a4d3-e3c11884b264" textAdjust="StretchHeight" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" markup="styled" fontName="Times New Roman" fontSize="8">
 				<paragraph leftIndent="5" rightIndent="5"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -69,7 +69,7 @@
 				</box>
 				<expression><![CDATA[$F{importoPrevisto}]]></expression>
 			</element>
-			<element kind="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="419" y="0" width="50" height="18" backcolor="#FFFFFF" uuid="12319f98-ab4d-4f27-b95c-cc8d5b4acf8b" textAdjust="StretchHeight" hTextAlign="Center" vTextAlign="Middle" markup="styled" fontName="Times New Roman" fontSize="8" bold="false">
+			<element kind="textField" stretchType="ElementGroupHeight" mode="Transparent" x="419" y="0" width="50" height="18" backcolor="#FFFFFF" uuid="12319f98-ab4d-4f27-b95c-cc8d5b4acf8b" textAdjust="StretchHeight" hTextAlign="Center" vTextAlign="Middle" markup="styled" fontName="Times New Roman" fontSize="8" bold="false">
 				<paragraph lineSpacing="Single" leftIndent="5" spacingBefore="2" spacingAfter="2"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				<box>
@@ -81,7 +81,7 @@
 				</box>
 				<expression><![CDATA[$F{costoUnitario}]]></expression>
 			</element>
-			<element kind="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="375" y="0" width="44" height="18" backcolor="#FFFFFF" uuid="a6eb86f0-2a84-43f9-9531-38ae2218760c" textAdjust="StretchHeight" hTextAlign="Center" vTextAlign="Middle" markup="styled" fontName="Times New Roman" fontSize="8" bold="false">
+			<element kind="textField" stretchType="ElementGroupHeight" mode="Transparent" x="375" y="0" width="44" height="18" backcolor="#FFFFFF" uuid="a6eb86f0-2a84-43f9-9531-38ae2218760c" textAdjust="StretchHeight" hTextAlign="Center" vTextAlign="Middle" markup="styled" fontName="Times New Roman" fontSize="8" bold="false">
 				<paragraph lineSpacing="Single" leftIndent="5" spacingBefore="2" spacingAfter="2"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>

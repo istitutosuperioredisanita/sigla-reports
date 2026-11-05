@@ -149,7 +149,7 @@ order by cd_unita_organizzativa,pg_compenso,ordinamento,classificazione]]></quer
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<text><![CDATA[Cognome]]></text>
 				</element>
-				<element kind="textField" style="TNR9" x="112" y="31" width="149" height="15" key="textField" stretchType="RelativeToTallestObject" positionType="Float" printRepeatedValues="false" printWhenGroupChanges="PG_COMPENSO" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<element kind="textField" style="TNR9" x="112" y="31" width="149" height="15" key="textField" stretchType="ElementGroupHeight" positionType="Float" printRepeatedValues="false" printWhenGroupChanges="PG_COMPENSO" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{COGNOME}+" "+" "+$F{NOME}]]></expression>
 				</element>
@@ -229,7 +229,7 @@ $F{DS_COMUNE_NASCITA}+
 				</element>
 				<element kind="line" mode="Transparent" x="7" y="0" width="0" height="31" key="line-39" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" direction="TopDown"/>
 				<element kind="line" mode="Transparent" x="263" y="0" width="0" height="31" key="line-40" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" direction="TopDown"/>
-				<element kind="textField" style="TNR10" x="326" y="9" width="200" height="15" key="textField-30" stretchType="RelativeToTallestObject" positionType="Float" printRepeatedValues="false" printWhenGroupChanges="PG_COMPENSO" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<element kind="textField" style="TNR10" x="326" y="9" width="200" height="15" key="textField-30" stretchType="ElementGroupHeight" positionType="Float" printRepeatedValues="false" printWhenGroupChanges="PG_COMPENSO" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{COGNOME}+" "+ " "+$F{NOME}]]></expression>
 				</element>
@@ -283,7 +283,7 @@ $F{DS_COMUNE_NASCITA}+
 		<expression><![CDATA[$F{PG_COMPENSO}]]></expression>
 		<groupHeader>
 			<band height="83" splitType="Stretch">
-				<element kind="textField" style="TNR9" x="112" y="3" width="149" height="15" key="textField" stretchType="RelativeToTallestObject" printRepeatedValues="false" printWhenGroupChanges="PG_COMPENSO" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<element kind="textField" style="TNR9" x="112" y="3" width="149" height="15" key="textField" stretchType="ElementGroupHeight" printRepeatedValues="false" printWhenGroupChanges="PG_COMPENSO" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{CODICE_FISCALE}]]></expression>
 				</element>

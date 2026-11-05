@@ -637,8 +637,8 @@ and NUM_ORD between $P{Numero_da} and $P{Numero_a}
 		</element>
 		<element kind="line" key="line-29" x="1" y="148" width="532" height="1" uuid="76b8d489-855c-459a-ad0c-88f07236f5b0"/>
 		<element kind="line" key="line-30" positionType="Float" x="1" y="182" width="532" height="1" uuid="ef0c3f70-4e55-4cb3-9433-f27bf374cfd9"/>
-		<element kind="line" key="line-31" positionType="Float" stretchType="RelativeToTallestObject" x="1" y="148" width="1" height="34" uuid="b92922f0-2c3e-4ed8-8e35-04752b04b780"/>
-		<element kind="line" key="line-32" positionType="Float" stretchType="RelativeToTallestObject" x="532" y="148" width="1" height="34" uuid="dda81e54-da4c-4c25-b2b6-c7e67ea38f1f"/>
+		<element kind="line" key="line-31" positionType="Float" stretchType="ElementGroupHeight" x="1" y="148" width="1" height="34" uuid="b92922f0-2c3e-4ed8-8e35-04752b04b780"/>
+		<element kind="line" key="line-32" positionType="Float" stretchType="ElementGroupHeight" x="532" y="148" width="1" height="34" uuid="dda81e54-da4c-4c25-b2b6-c7e67ea38f1f"/>
 		<element kind="staticText" key="staticText-24" style="TNRG11" positionType="Float" stretchType="ContainerHeight" x="12" y="191" width="175" height="28" uuid="f2036585-8267-4d1d-ad32-36356c8de969" hTextAlign="Center" underline="false">
 			<printWhenExpression><![CDATA[new Boolean($F{CLAUSOLA}!=null)]]></printWhenExpression>
 			<box>

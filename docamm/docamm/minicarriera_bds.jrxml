@@ -638,21 +638,21 @@ $F{TI_RECORD_L3}.compareTo("C")==0 ) &&
 $F{PG_RATA}.compareTo($F{MAX_PG_RATA})==0 &&
 $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 ]]></printWhenExpression>
-				<element kind="line" x="296" y="0" width="0" height="30" key="line-22" stretchType="RelativeToTallestObject" positionType="Float" direction="TopDown">
+				<element kind="line" x="296" y="0" width="0" height="30" key="line-22" stretchType="ElementGroupHeight" positionType="Float" direction="TopDown">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_CONIUGE_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 				</element>
-				<element kind="line" x="531" y="0" width="0" height="30" key="line-23" stretchType="RelativeToTallestObject" positionType="Float" direction="TopDown">
+				<element kind="line" x="531" y="0" width="0" height="30" key="line-23" stretchType="ElementGroupHeight" positionType="Float" direction="TopDown">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_CONIUGE_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 				</element>
-				<element kind="line" x="374" y="0" width="0" height="30" key="line-24" stretchType="RelativeToTallestObject" positionType="Float" direction="TopDown">
+				<element kind="line" x="374" y="0" width="0" height="30" key="line-24" stretchType="ElementGroupHeight" positionType="Float" direction="TopDown">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_CONIUGE_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 				</element>
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="14" width="73" height="14" key="textField-27" stretchType="RelativeToTallestObject" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00  €" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="14" width="73" height="14" key="textField-27" stretchType="ElementGroupHeight" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00  €" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_CONIUGE_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{DETRAZIONE_CONIUGE_NETTO}]]></expression>
 				</element>
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="0" width="73" height="14" key="textField-42" stretchType="RelativeToTallestObject" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="0" width="73" height="14" key="textField-42" stretchType="ElementGroupHeight" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_CONIUGE_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["C"]]></expression>
@@ -689,12 +689,12 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 				<element kind="line" x="374" y="0" width="0" height="30" key="line-27" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_FIGLI_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 				</element>
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="14" width="73" height="14" key="textField-28" stretchType="RelativeToTallestObject" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00  €" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="14" width="73" height="14" key="textField-28" stretchType="ElementGroupHeight" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00  €" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_FIGLI_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{DETRAZIONE_FIGLI_NETTO}]]></expression>
 				</element>
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="0" width="73" height="14" key="textField-43" stretchType="RelativeToTallestObject" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="0" width="73" height="14" key="textField-43" stretchType="ElementGroupHeight" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_FIGLI_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["F"]]></expression>
@@ -731,12 +731,12 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 				<element kind="line" x="374" y="0" width="0" height="30" key="line-30" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONI_LA_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 				</element>
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="14" width="73" height="14" key="textField-29" stretchType="RelativeToTallestObject" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00  €" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="14" width="73" height="14" key="textField-29" stretchType="ElementGroupHeight" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00  €" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONI_LA_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{DETRAZIONI_LA_NETTO}]]></expression>
 				</element>
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="0" width="73" height="14" key="textField-44" stretchType="RelativeToTallestObject" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="0" width="73" height="14" key="textField-44" stretchType="ElementGroupHeight" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONI_LA_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["LA"]]></expression>
@@ -773,12 +773,12 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 				<element kind="line" x="374" y="0" width="0" height="30" key="line-33" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONI_PERSONALI_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 				</element>
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="14" width="73" height="14" key="textField-30" stretchType="RelativeToTallestObject" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00  €" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="14" width="73" height="14" key="textField-30" stretchType="ElementGroupHeight" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00  €" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONI_PERSONALI_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{DETRAZIONI_PERSONALI_NETTO}]]></expression>
 				</element>
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="0" width="73" height="14" key="textField-45" stretchType="RelativeToTallestObject" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="0" width="73" height="14" key="textField-45" stretchType="ElementGroupHeight" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONI_PERSONALI_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["P"]]></expression>
@@ -815,12 +815,12 @@ $F{MAX_PG_RATA}.compareTo(new BigDecimal(0))!=0)
 				<element kind="line" x="374" y="0" width="0" height="30" key="line-36" stretchType="ContainerHeight" positionType="Float" removeLineWhenBlank="true" direction="TopDown">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_ALTRI_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 				</element>
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="14" width="73" height="14" key="textField-31" stretchType="RelativeToTallestObject" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00  €" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="14" width="73" height="14" key="textField-31" stretchType="ElementGroupHeight" positionType="Float" removeLineWhenBlank="true" pattern="#,##0.00  €" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_ALTRI_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{DETRAZIONE_ALTRI_NETTO}]]></expression>
 				</element>
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="0" width="73" height="14" key="textField-46" stretchType="RelativeToTallestObject" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="299" y="0" width="73" height="14" key="textField-46" stretchType="ElementGroupHeight" positionType="Float" removeLineWhenBlank="true" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 					<printWhenExpression><![CDATA[new Boolean($F{DETRAZIONE_ALTRI_NETTO}.compareTo(new BigDecimal(0))!=0)]]></printWhenExpression>
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA["A"]]></expression>

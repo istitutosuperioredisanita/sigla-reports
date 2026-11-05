@@ -75,7 +75,7 @@ order by esercizio,tipo_cds,funzione,categoria,voce]]></query>
 		<expression><![CDATA[$F{VOCE}]]></expression>
 		<groupHeader>
 			<band height="18" splitType="Stretch">
-				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="22" y="4" width="750" height="14" key="textField-7" stretchType="RelativeToTallestObject" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
+				<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="22" y="4" width="750" height="14" key="textField-7" stretchType="ElementGroupHeight" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
 					<expression><![CDATA[$F{VOCE}+"   "+$F{DESCRIZIONE_VOCE}]]></expression>
 				</element>

@@ -86,8 +86,8 @@ where
 					</box>
 					<expression><![CDATA[$F{CUP}]]></expression>
 				</element>
-				<element kind="line" key="line-18" positionType="Float" stretchType="RelativeToTallestObject" x="100" y="0" width="1" height="20"/>
-				<element kind="line" key="line-18" positionType="Float" stretchType="RelativeToTallestObject" x="163" y="0" width="1" height="20"/>
+				<element kind="line" key="line-18" positionType="Float" stretchType="ElementGroupHeight" x="100" y="0" width="1" height="20"/>
+				<element kind="line" key="line-18" positionType="Float" stretchType="ElementGroupHeight" x="163" y="0" width="1" height="20"/>
 			</band>
 		</groupHeader>
 	</group>
