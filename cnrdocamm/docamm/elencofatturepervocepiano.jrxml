@@ -93,43 +93,93 @@ order by CD_UNITA_ORGANIZZATIVA,CD_ELEMENTO_VOCE, TI_ISTITUZ_COMMERC,pg_fattura_
 		<groupHeader>
 			<band height="76" splitType="Stretch">
 				<element kind="staticText" style="TNR10B" x="2" y="0" width="49" height="14" key="staticText-2">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Esercizio]]></text>
 				</element>
 				<element kind="textField" style="TNR10" x="52" y="0" width="100" height="14" key="textField-1" pattern="##0" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$F{ESERCIZIO_FATTURA}]]></expression>
 				</element>
 				<element kind="staticText" style="TNR10B" x="3" y="16" width="49" height="14" key="staticText-3">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[CdS]]></text>
 				</element>
 				<element kind="textField" style="TNR10" x="52" y="16" width="694" height="14" key="textField-2" pattern="" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$F{CD_CDS}]]></expression>
 				</element>
 				<element kind="staticText" style="TNR10B" x="3" y="32" width="49" height="14" key="staticText-4">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[UO]]></text>
 				</element>
 				<element kind="textField" style="TNR10" x="52" y="32" width="694" height="14" key="textField-3" pattern="" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$F{CD_UNITA_ORGANIZZATIVA}]]></expression>
 				</element>
 				<element kind="staticText" style="TNR10B" x="3" y="47" width="49" height="14" key="staticText-5">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Stato]]></text>
 				</element>
 				<element kind="textField" style="TNR10" x="52" y="47" width="694" height="14" key="textField-4" pattern="" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[($P{stato}.compareTo("*")==0?"Tutti":$P{stato})]]></expression>
 				</element>
 				<element kind="staticText" style="TNR10B" x="3" y="62" width="49" height="14" key="staticText-6">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Terzo]]></text>
 				</element>
 				<element kind="textField" style="TNR10" x="52" y="62" width="694" height="14" key="textField-5" pattern="" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[($P{terzo}.compareTo("0")==0?"Tutti":$P{terzo})
 ]]></expression>
 				</element>
@@ -144,85 +194,170 @@ order by CD_UNITA_ORGANIZZATIVA,CD_ELEMENTO_VOCE, TI_ISTITUZ_COMMERC,pg_fattura_
 		<groupHeader>
 			<band height="50" splitType="Stretch">
 				<element kind="staticText" style="TNR10B" x="3" y="0" width="49" height="14" key="staticText-7">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Capitolo]]></text>
 				</element>
 				<element kind="textField" style="TNR10" x="52" y="0" width="694" height="14" key="textField-6" pattern="" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$F{CD_ELEMENTO_VOCE}]]></expression>
 				</element>
 				<element kind="staticText" style="TNR10B" x="2" y="20" width="50" height="25" key="staticText-8" hTextAlign="Center" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Num.
 Fattura]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="52" y="20" width="47" height="25" key="staticText-9" hTextAlign="Center" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Prog.
 Riga]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="139" y="20" width="131" height="25" key="staticText-10" hTextAlign="Center">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Descrizione Fattura]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="268" y="20" width="40" height="25" key="staticText-11" hTextAlign="Center" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Terzo
 ]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="381" y="20" width="57" height="25" key="staticText-12" hTextAlign="Right" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Imponibile ]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="553" y="20" width="26" height="25" key="staticText-13" hTextAlign="Center" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Stato
 Pag.]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="589" y="20" width="53" height="25" key="staticText-14" hTextAlign="Right" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Num.
 Impegno]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="645" y="20" width="37" height="25" key="staticText-15" hTextAlign="Center" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Prog.
 Scad.]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="681" y="20" width="55" height="25" key="staticText-16" hTextAlign="Right" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Importo
 Scadenza
 ]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="740" y="20" width="42" height="25" key="staticText-17" hTextAlign="Center" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Esercizio
 Impegno]]></text>
 				</element>
 				<element kind="line" style="TNR10" x="3" y="47" width="775" height="0" key="line-1" direction="BottomUp"/>
 				<element kind="line" style="TNR10" x="3" y="18" width="775" height="0" key="line-2" direction="BottomUp"/>
 				<element kind="staticText" style="TNR10B" x="106" y="20" width="30" height="25" key="staticText-18" hTextAlign="Center" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Cod.
 Bene]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="312" y="20" width="30" height="25" key="staticText-19" hTextAlign="Center" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Tipo
 ]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="347" y="20" width="33" height="25" key="staticText-20" hTextAlign="Center" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Codice Iva
 ]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="453" y="20" width="36" height="25" key="staticText-21" hTextAlign="Right" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Iva ]]></text>
 				</element>
 				<element kind="staticText" style="TNR10B" x="499" y="20" width="50" height="25" key="staticText-22" hTextAlign="Right" pdfFontName="Times-Bold">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Totale
 Fattura]]></text>
 				</element>
@@ -231,19 +366,39 @@ Fattura]]></text>
 		<groupFooter>
 			<band height="20" splitType="Stretch">
 				<element kind="staticText" style="TNR12B" x="278" y="4" width="89" height="16" key="staticText-23" hTextAlign="Right" underline="true">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<text><![CDATA[Totale Capitolo]]></text>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR12B" x="375" y="6" width="63" height="14" key="textField-30" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" underline="false">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_voce_imp}]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR12B" x="442" y="6" width="47" height="14" key="textField-31" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" underline="false">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_voce_iva}]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR12B" x="491" y="6" width="60" height="14" key="textField-32" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" underline="false">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_voce_tot}]]></expression>
 				</element>
 			</band>
@@ -254,7 +409,12 @@ Fattura]]></text>
 		<groupHeader>
 			<band height="20" splitType="Stretch">
 				<element kind="textField" style="TNR10B" x="3" y="2" width="110" height="14" key="textField-7" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[($F{TI_ISTITUZ_COMMERC}.compareTo("I")==0?"Istituzionale":"Commerciale")]]></expression>
 				</element>
 			</band>
@@ -262,19 +422,39 @@ Fattura]]></text>
 		<groupFooter>
 			<band height="16" splitType="Stretch">
 				<element kind="textField" style="TNR12B" x="262" y="2" width="105" height="14" key="textField-26" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" pdfFontName="Times-Bold" underline="true">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA["Totale "+($F{TI_ISTITUZ_COMMERC}.compareTo("I")==0?"Istituzionale":"Commerciale")]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR12B" x="375" y="2" width="63" height="14" key="textField-27" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" underline="false">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_tipo_imp}]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR12B" x="442" y="2" width="47" height="14" key="textField-28" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" underline="false">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_tipo_iva}]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR12B" x="491" y="2" width="60" height="14" key="textField-29" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" underline="false">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_tipo_tot}]]></expression>
 				</element>
 			</band>
@@ -284,11 +464,21 @@ Fattura]]></text>
 	<title height="0" splitType="Stretch"/>
 	<pageHeader height="71" splitType="Stretch">
 		<element kind="image" x="5" y="3" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
 		</element>
 		<element kind="staticText" style="TNR16B" x="204" y="51" width="374" height="20" key="staticText-1" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[Elenco Fatture per Voce del Piano]]></text>
 		</element>
 	</pageHeader>
@@ -296,63 +486,138 @@ Fattura]]></text>
 	<detail>
 		<band height="14" splitType="Prevent">
 			<element kind="textField" style="TNR10" x="2" y="0" width="48" height="14" key="textField-11" pattern="##0" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{PG_FATTURA_PASSIVA}]]></expression>
 			</element>
 			<element kind="textField" style="TNR10" x="52" y="0" width="47" height="14" key="textField-12" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{PROGRESSIVO_RIGA}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="106" y="0" width="30" height="14" key="textField-13" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{CD_BENE_SERVIZIO}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="139" y="0" width="131" height="14" key="textField-14" stretchType="ContainerHeight" positionType="Float" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{DS_RIGA_FATTURA}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="268" y="0" width="40" height="14" key="textField-15" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{CD_TERZO}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="312" y="0" width="30" height="14" key="textField-16" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{TI_FATTURA}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="347" y="0" width="33" height="14" key="textField-17" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{CD_VOCE_IVA}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="385" y="0" width="53" height="14" key="textField-18" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[($F{TI_FATTURA}.compareTo("C")==0?$F{IM_IMPONIBILE}.multiply(new BigDecimal(-1)):$F{IM_IMPONIBILE})]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="442" y="0" width="47" height="14" key="textField-19" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[($F{TI_FATTURA}.compareTo("C")==0?$F{IM_IVA}.multiply(new BigDecimal(-1)):$F{IM_IVA})]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="491" y="0" width="60" height="14" key="textField-20" pattern="#,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[($F{TI_FATTURA}.compareTo("C")==0?($F{IM_IMPONIBILE}.add($F{IM_IVA})).multiply(new BigDecimal(-1)):($F{IM_IMPONIBILE}.add($F{IM_IVA})))]]></expression>
 			</element>
 			<element kind="textField" style="TNR10" x="553" y="0" width="26" height="14" key="textField-21" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{STATO_COFI}]]></expression>
 			</element>
 			<element kind="textField" style="TNR10" x="582" y="0" width="65" height="14" key="textField-22" pattern="##0" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{PG_OBBLIGAZIONE}]]></expression>
 			</element>
 			<element kind="textField" style="TNR10" x="650" y="0" width="29" height="14" key="textField-23" pattern="##0" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{PG_OBBLIGAZIONE_SCADENZARIO}]]></expression>
 			</element>
 			<element kind="textField" style="TNR10" x="681" y="0" width="55" height="14" key="textField-24" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[($F{TI_FATTURA}.compareTo("C")==0?new BigDecimal(0):$F{IM_SCADENZA})]]></expression>
 			</element>
 			<element kind="textField" style="TNR10" x="740" y="0" width="42" height="14" key="textField-25" pattern="" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{ESERCIZIO_OBBLIGAZIONE}]]></expression>
 			</element>
 		</band>
@@ -360,15 +625,30 @@ Fattura]]></text>
 	<columnFooter height="0" splitType="Stretch"/>
 	<pageFooter height="19" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="5" y="1" width="103" height="17" key="textField-8" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[new java.util.Date()]]></expression>
 		</element>
 		<element kind="textField" style="TNR10" x="682" y="2" width="73" height="17" key="textField-9" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
 		</element>
 		<element kind="textField" style="TNR10" x="755" y="2" width="25" height="17" key="textField-10" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>

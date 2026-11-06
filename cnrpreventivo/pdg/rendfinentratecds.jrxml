@@ -98,7 +98,12 @@ ORDER BY TITOLO,CAPITOLO]]></query>
 		<groupHeader>
 			<band height="18" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="2" y="2" width="280" height="14" key="textField-7" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA["TITOLO "+$F{TITOLO}+" - "+$F{DS_TITOLO}]]></expression>
 				</element>
 				<element kind="line" x="285" y="0" width="0" height="18" key="line-18" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -109,7 +114,12 @@ ORDER BY TITOLO,CAPITOLO]]></query>
 		<groupFooter>
 			<band height="20" splitType="Stretch">
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="2" y="2" width="280" height="14" key="textField-34" stretchType="ContainerHeight" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA["Totale Titolo "+$F{TITOLO}]]></expression>
 				</element>
 				<element kind="line" x="0" y="0" width="0" height="20" key="line-62" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -123,31 +133,66 @@ ORDER BY TITOLO,CAPITOLO]]></query>
 				<element kind="line" x="563" y="0" width="0" height="20" key="line-70" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
 				<element kind="line" x="490" y="0" width="0" height="20" key="line-71" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="288" y="2" width="60" height="14" key="textField-35" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_ini_tit}]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="354" y="2" width="65" height="14" key="textField-36" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_var+_tit}]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="423" y="2" width="65" height="14" key="textField-37" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_var-_tit}]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="494" y="2" width="65" height="14" key="textField-38" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_ass_tit}]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="567" y="2" width="65" height="14" key="textField-39" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_ris_tit}]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="645" y="2" width="65" height="14" key="textField-40" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_dif+_tit}]]></expression>
 				</element>
 				<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="713" y="2" width="65" height="14" key="textField-41" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<box>
+					    <topPen lineWidth="0.0" lineColor="#000000"/>
+					    <leftPen lineWidth="0.0" lineColor="#000000"/>
+					    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+					    <rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
 					<expression><![CDATA[$V{tot_dif-_tit}]]></expression>
 				</element>
 			</band>
@@ -157,33 +202,68 @@ ORDER BY TITOLO,CAPITOLO]]></query>
 	<title height="0" splitType="Stretch"/>
 	<pageHeader height="153" splitType="Stretch">
 		<element kind="image" x="1" y="2" width="497" height="40" key="image-1" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$P{DIR_IMAGE}+"CNR.JPG"]]></expression>
 		</element>
 		<element kind="textField" style="TNR16B" x="0" y="46" width="782" height="23" key="textField-4" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA["RENDICONTO FINANZIARIO CDS "+ $P{cds}+ " ENTRATE"]]></expression>
 		</element>
 		<element kind="textField" style="TNR12B" x="0" y="69" width="782" height="16" key="textField-5" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA["ESERCIZIO "+ $P{esercizio}]]></expression>
 		</element>
 		<element kind="line" x="0" y="91" width="780" height="0" key="line-1" direction="TopDown"/>
 		<element kind="line" x="1" y="108" width="562" height="0" key="line-3" direction="TopDown"/>
 		<element kind="staticText" style="TNR10B" x="1" y="93" width="282" height="14" key="staticText-1" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[CAPITOLO]]></text>
 		</element>
 		<element kind="staticText" style="TNR10B" x="288" y="93" width="277" height="14" key="staticText-2" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[PREVISIONE]]></text>
 		</element>
 		<element kind="staticText" style="TNR10B" x="566" y="93" width="70" height="14" key="staticText-3" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[RISCOSSIONI]]></text>
 		</element>
 		<element kind="staticText" style="TNR10B" x="635" y="95" width="145" height="38" key="staticText-4" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[DIFFERENZE RISPETTO
 ALLA PREVISIONE
 in +          in -]]></text>
@@ -195,24 +275,49 @@ in +          in -]]></text>
 		<element kind="line" x="285" y="91" width="0" height="45" key="line-8" direction="BottomUp"/>
 		<element kind="line" x="349" y="108" width="0" height="28" key="line-9" direction="BottomUp"/>
 		<element kind="staticText" style="TNR10B" x="350" y="110" width="140" height="26" key="staticText-5" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[Variazioni
  in +            in -]]></text>
 		</element>
 		<element kind="staticText" style="TNR10B" x="492" y="110" width="70" height="14" key="staticText-6" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[Assestato]]></text>
 		</element>
 		<element kind="staticText" style="TNR10B" x="291" y="110" width="50" height="14" key="staticText-7" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[Iniziali]]></text>
 		</element>
 		<element kind="staticText" style="TNR10B" x="6" y="110" width="87" height="14" key="staticText-8" hTextAlign="Center">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[Numero]]></text>
 		</element>
 		<element kind="staticText" style="TNR10B" x="99" y="110" width="182" height="14" key="staticText-9" hTextAlign="Left">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[Descrizione]]></text>
 		</element>
 		<element kind="line" x="490" y="108" width="0" height="28" key="line-10" direction="BottomUp"/>
@@ -223,35 +328,75 @@ in +          in -]]></text>
 		<element kind="line" x="637" y="118" width="143" height="0" key="line-15" direction="TopDown"/>
 		<element kind="line" x="711" y="119" width="0" height="18" key="line-16" direction="TopDown"/>
 		<element kind="staticText" style="TNR12B" x="4" y="139" width="261" height="14" key="staticText-12" stretchType="ContainerHeight" positionType="Float" hTextAlign="Left" pdfFontName="Times-Bold" italic="false">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[FONDO DI CASSA INIZIALE]]></text>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="290" y="139" width="60" height="14" key="textField-59" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$F{INIZ_CASSA}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="356" y="139" width="65" height="14" key="textField-60" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$F{VAR_PIU_CASSA}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="425" y="139" width="65" height="14" key="textField-61" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$F{VAR_MENO_CASSA}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="496" y="139" width="65" height="14" key="textField-62" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$F{ASSEST_CASSA}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="569" y="139" width="65" height="14" key="textField-63" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$F{FC_INIZIALE}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="647" y="139" width="65" height="14" key="textField-64" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[($F{FC_INIZIALE}.subtract($F{ASSEST_CASSA}).compareTo($F{FC_INIZIALE}.subtract($F{ASSEST_CASSA}).abs())!=0?new BigDecimal(0):$F{FC_INIZIALE}.subtract($F{ASSEST_CASSA}))]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="715" y="139" width="65" height="14" key="textField-65" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[($F{ASSEST_CASSA}.subtract($F{FC_INIZIALE}).compareTo($F{ASSEST_CASSA}.subtract($F{FC_INIZIALE}).abs())!=0?new BigDecimal(0):$F{ASSEST_CASSA}.subtract($F{FC_INIZIALE}))]]></expression>
 		</element>
 		<element kind="line" x="0" y="135" width="0" height="18" key="line-96" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
@@ -271,39 +416,84 @@ in +          in -]]></text>
 			<element kind="line" x="563" y="0" width="0" height="20" key="line-37" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
 			<element kind="line" x="490" y="0" width="0" height="20" key="line-38" stretchType="ContainerHeight" positionType="Float" direction="BottomUp"/>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="2" y="2" width="92" height="14" key="textField-10" stretchType="ContainerHeight" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{CAPITOLO}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="100" y="2" width="184" height="14" key="textField-11" stretchType="ContainerHeight" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{DS_CAPITOLO}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="288" y="2" width="60" height="14" key="textField" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{INIZIALE}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="354" y="2" width="65" height="14" key="textField-12" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{VAR_PIU}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="423" y="2" width="65" height="14" key="textField-13" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{VAR_MENO}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="494" y="2" width="65" height="14" key="textField-14" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{ASSESTATO}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="567" y="2" width="65" height="14" key="textField-15" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{RISCOSSIONI}]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="645" y="2" width="65" height="14" key="textField-16" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[($F{IN_PIU}.compareTo($F{IN_PIU}.abs())!=0?new BigDecimal(0):$F{IN_PIU})]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR10" x="713" y="2" width="65" height="14" key="textField-17" stretchType="ContainerHeight" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[($F{IN_MENO}.compareTo($F{IN_MENO}.abs())!=0?new BigDecimal(0):$F{IN_MENO})]]></expression>
 			</element>
 		</band>
@@ -311,15 +501,30 @@ in +          in -]]></text>
 	<columnFooter height="0" splitType="Stretch"/>
 	<pageFooter height="21" splitType="Stretch">
 		<element kind="textField" style="TNR10" x="4" y="3" width="103" height="17" key="textField-1" pattern="dd/MM/yyyy" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[new java.util.Date()]]></expression>
 		</element>
 		<element kind="textField" style="TNR10" x="681" y="4" width="73" height="17" key="textField-2" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA["Pagina " + $V{PAGE_NUMBER} + " di "]]></expression>
 		</element>
 		<element kind="textField" style="TNR10" x="754" y="4" width="25" height="17" key="textField-3" blankWhenNull="false" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Left">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></expression>
 		</element>
 	</pageFooter>
@@ -329,36 +534,76 @@ in +          in -]]></text>
 		<element kind="line" x="285" y="0" width="0" height="20" key="line-86" stretchType="ContainerHeight" direction="BottomUp"/>
 		<element kind="line" x="780" y="0" width="0" height="20" key="line-89" stretchType="ContainerHeight" direction="BottomUp"/>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="288" y="3" width="60" height="14" key="textField-51" stretchType="ContainerHeight" positionType="Float" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$V{tot_ini}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="354" y="3" width="65" height="14" key="textField-52" stretchType="ContainerHeight" positionType="Float" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$V{tot_var+}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="423" y="3" width="65" height="14" key="textField-53" stretchType="ContainerHeight" positionType="Float" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$V{tot_var-}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="494" y="3" width="65" height="14" key="textField-54" stretchType="ContainerHeight" positionType="Float" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$V{tot_ass}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="567" y="3" width="65" height="14" key="textField-55" stretchType="ContainerHeight" positionType="Float" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$V{tot_ris}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="645" y="3" width="65" height="14" key="textField-56" stretchType="ContainerHeight" positionType="Float" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$V{tot_dif+}]]></expression>
 		</element>
 		<element kind="textField" textAdjust="StretchHeight" style="TNR10B" x="713" y="3" width="65" height="14" key="textField-57" stretchType="ContainerHeight" positionType="Float" pattern=" #,##0.00" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<expression><![CDATA[$V{tot_dif-}]]></expression>
 		</element>
 		<element kind="line" x="0" y="20" width="780" height="0" key="line-94" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>
 		<element kind="staticText" style="TNR12B" x="4" y="3" width="261" height="14" key="staticText-10" stretchType="ContainerHeight" positionType="Float" hTextAlign="Left" pdfFontName="Times-BoldItalic" italic="true">
-			<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+			<box>
+			    <topPen lineWidth="0.0" lineColor="#000000"/>
+			    <leftPen lineWidth="0.0" lineColor="#000000"/>
+			    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+			    <rightPen lineWidth="0.0" lineColor="#000000"/>
+			</box>
 			<text><![CDATA[Totale Generale delle Entrate]]></text>
 		</element>
 		<element kind="line" x="0" y="0" width="780" height="0" key="line-95" stretchType="ContainerHeight" positionType="Float" direction="TopDown"/>

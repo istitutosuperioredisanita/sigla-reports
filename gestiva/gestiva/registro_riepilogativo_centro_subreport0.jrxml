@@ -48,27 +48,52 @@ AND TIPOLOGIA_RIGA = 'R']]></query>
 		<band height="104" splitType="Stretch">
 			<element kind="textField" style="TNR10BOLD" x="4" y="13" width="358" height="17" key="textField-1" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self">
 				<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A"))]]></printWhenExpression>
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[( $F{RAGIONE_SOCIALE_ENTE}.equals("") ? " " : 
   $F{PARTITA_IVA_ENTE}.equals("") ? $F{RAGIONE_SOCIALE_ENTE} : $F{RAGIONE_SOCIALE_ENTE} + "  " + $F{PARTITA_IVA_ENTE})]]></expression>
 			</element>
 			<element kind="textField" style="TNR10BOLD" x="4" y="32" width="88" height="14" key="textField-2" pattern="dd/MM/yyyy" blankWhenNull="true" evaluationTime="Report" hyperlinkType="None" hyperlinkTarget="Self" markup="styled">
 				<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A"))]]></printWhenExpression>
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[new java.util.Date()]]></expression>
 			</element>
 			<element kind="textField" textAdjust="StretchHeight" style="TNR12BOLD" x="34" y="49" width="727" height="21" key="textField-3" positionType="Float" blankWhenNull="true" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 				<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A") && $F{TIPOLOGIA_RIGA}.equals("R"))]]></printWhenExpression>
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{CD_UO}]]></expression>
 			</element>
 			<element kind="textField" style="TNR12BOLD" x="34" y="79" width="728" height="19" key="textField-4" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Center">
 				<printWhenExpression><![CDATA[new Boolean($F{GRUPPO}.equals("A") && $F{TIPOLOGIA_RIGA}.equals("R"))]]></printWhenExpression>
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{CD_CDS}]]></expression>
 			</element>
 			<element kind="textField" style="TNR10BOLD" x="679" y="5" width="40" height="14" key="textField-5" pattern="" blankWhenNull="false" evaluationTime="Now" hyperlinkType="None" hyperlinkTarget="Self" hTextAlign="Right" markup="styled" pdfFontName="Times-Bold" fontSize="10">
-				<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+				<box>
+				    <topPen lineWidth="0.0" lineColor="#000000"/>
+				    <leftPen lineWidth="0.0" lineColor="#000000"/>
+				    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+				    <rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
 				<expression><![CDATA[$F{ESERCIZIO_RIF}]]></expression>
 			</element>
 		</band>
